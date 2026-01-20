@@ -1,0 +1,35 @@
+{
+  "name": "totalizador-estatistica-saude",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:html": "html-minifier-terser src/index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-js",
+    "build:css": "sass src/scss/main.scss dist/css/style.min.css --style compressed && postcss dist/css/style.min.css -o dist/css/style.min.css",
+    "build:js": "terser src/js/main.js -o dist/js/bundle.min.js --source-map \"url='bundle.min.js.map'\"",
+    "copy:assets": "cp -r src/assets dist/assets",
+    "build": "npm run build:css && npm run build:html && npm run build:js && npm run copy:assets",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "cssnano": "^7.1.2",
+    "gh-pages": "^6.3.0",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-preset-env": "^11.1.1",
+    "sass": "^1.97.2",
+    "terser": "^5.46.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.5%"
+  ]
+}
