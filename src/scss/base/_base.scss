@@ -1,0 +1,178 @@
+@use '../abstracts/tokens' as *;
+@use '../abstracts/mixins' as *;
+
+// MODERN BASE REFINEMENTS (Complement of Eric Meyer's Reset)
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; 
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+::selection {
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-0);
+    color: var(--on-surface);
+    line-height: var(--lh-md);
+    cursor: default;
+    font: {
+        size: var(--fs-md);
+        family: Arial, Helvetica, sans-serif;
+    }
+
+    @media print {
+        body {
+            -webkit-print-color-adjust: exact;
+        }
+    }
+}
+
+main {
+    flex: 1;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+picture, figure, img {
+    margin-block: var(--figure-flow-gap-start) var(--figure-flow-gap-end);
+}
+
+picture, figure {
+    img {
+      --figure-flow-gap-start: 0;
+      --figure-flow-gap-end: 0;
+      margin-inline: 0;
+    }
+}
+
+table {
+    width: 100%;
+    margin-block-start: var(--space-sm);
+
+    td, th {
+        padding: var(--space-xs);
+        border: 1px solid var(--border-main);
+    }
+}
+
+figcaption {
+    margin-block-start: var(--figure-caption-gap);
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+input, textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    color: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: inherit;
+    cursor: text;
+}
+
+input {
+    &[readonly] {
+        font-weight: var(--fw-bold);
+        cursor: default;
+        transition: background-color .4s ease-out
+    }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0
+    }
+    &::-webkit-calendar-picker-indicator,
+    &::-webkit-outer-spin-button {
+        display: none !important;
+        -webkit-appearance: none;
+    }
+    &::-moz-list-bullet {
+        display: none !important;
+    }
+    -moz-appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 3em;
+}
+
+a {
+    --link-color: var(--link-main);
+
+    color: var(--link-color);
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--duration-standard) var(--motion-main);
+
+    @include mouse-only {
+        &:hover {
+            --link-color: oklch(from var(--link-main) calc(l + 0.10) c h);
+        }
+    }
+
+    &:active {
+        --link-color: oklch(from var(--link-main) calc(l - 0.2) c h);
+        opacity: 0.7;
+        transition: all var(--duration-instant) var(--motion-interaction);
+    }
+}
+
+p {
+    a {
+        @include mouse-only {
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+    background: none;
+    outline: 0;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+}
