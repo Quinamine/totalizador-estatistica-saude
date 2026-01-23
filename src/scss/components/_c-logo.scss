@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.c-logo {
+    margin: 0;
+    line-height: 1;
+    font-size: var(--fs-2xl);
+    color: currentColor;
+    font-weight: var(--fw-bold);
+
+    &__text {
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+.c-logo--boxed {
+    --box-inset: 0.25rem;
+    padding: var(--box-inset);
+    background-color: var(--brand);
+    color: var(--on-brand);
+}

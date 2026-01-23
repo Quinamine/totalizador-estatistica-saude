@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+.c-btn {
+    --btn-bg: transparent;
+    --btn-text: var(--on-surface);
+
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    @include apply-motion-standard(background-color, transform, opacity);
+
+    @include can-hover {
+        &:hover {
+            --btn-bg: oklch(from currentColor l c h / 6%);
+        }
+    }
+
+    &:active {
+        @include cannot-hover {
+            transform: scale(96);
+        }
+        opacity: 0.7;
+    }
+
+    &--primary {    
+        --btn-bg: var(--primary);
+        --btn-text: var(--on-primary);
+
+        transition-property: background-color;
+
+        @include can-hover {
+            --btn-bg: from(var(--btn-bg) calc(l + 0.05) c h);
+        }
+    }
+
+    &--danger {
+        --btn-bg: var(--danger-subtle);
+        --btn-text: var(--danger);
+
+        transition-property: background-color;
+
+        @include can-hover {
+            --btn-bg: from(var(--btn-bg) calc(l + 0.05) c h);
+        }
+    }
+}

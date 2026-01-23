@@ -35,6 +35,10 @@ $neutral-30-03: #{oklch(30% 0.03 $primary-hue)};
     --border-main: #cdd9e4;
     --favicon-svg: #25984d;
 
+    // Brand 
+    --brand: var(--primary);
+    --on-brand: var(--on-primary);
+
     @supports(color: oklch(0% 0 0)) {
         // Seeds
         --primary-h: 243;
@@ -45,10 +49,6 @@ $neutral-30-03: #{oklch(30% 0.03 $primary-hue)};
         --on-primary-variant: #{$neutral-88-02};
         --on-primary-subtle: #{$neutral-75-03};
         --border-on-primary: oklch(from var(--on-primary) l c h / 0.2);
-
-        // Brand
-        --brand: var(--primary);
-        --on-brand: var(--on-primary);
         
         // Surfaces
         --surface-0: #{$neutral-95-01};
@@ -71,22 +71,25 @@ $neutral-30-03: #{oklch(30% 0.03 $primary-hue)};
         --shadow-main: oklch(10% 0.02 var(--primary-h) / 0.1);
         --border-main: #{$neutral-88-02};
         --border-subtle: #{$neutral-95-01};
-        --favicon-svg: oklch(60% 0.15 150);
     }
 
     // Spacing Scale
     --_fs-base: 1rem;
     --_lh-base: 1.5;
     --_space-base: calc(var(--_fs-base) * var(--_lh-base));
+    
+    --space-micro: 0.125rem;
     --space-xxs: calc(var(--_space-base) / 4); // 6px;
     --space-xs: calc(var(--_space-base) / 3); // 8px;
     --space-sm: calc(var(--_space-base) / 2); // 12px;
     --space-md: var(--_space-base); // 24px;
-    --space-lg: calc(var(--_fs-base) * 1.5); // 36px
-    --space-xl: calc(var(--_fs-base) * 2); // 42px;
+    --space-lg: calc(var(--_space-base) * 1.5); // 36px
+    --space-xl: calc(var(--_space-base) * 2); // 48px;
 
     // Typography (fs = font-size, fw = font-weight, lh = line-height);
+    // > Font Size
     --_fs-step: 0.125rem; // 2px;
+
     --fs-xxs: 0.6875rem; // 11px;
     --fs-xs: calc(var(--_fs-base) - var(--_fs-step) * 2); // 12px;
     --fs-sm: calc(var(--_fs-base) - var(--_fs-step)); // 14px;
@@ -95,13 +98,20 @@ $neutral-30-03: #{oklch(30% 0.03 $primary-hue)};
     --fs-xl: calc(var(--_fs-base) + var(--_fs-step) * 2); // 20px;
     --fs-2xl: calc(var(--_fs-base) + var(--_fs-step) * 3); // 22px;
     --fs-3xl: calc(var(--_fs-base) + var(--_fs-step) * 4); // 24px;
+
+    // > Font Weight
+    --fw-regular: 400;
+    --fw-semibold: 600;
     --fw-bold: 700;
+
+    // > Line Height
     --lh-sm: 1.25;
     --lh-md: var(--_lh-base);
 
     // Border-radius
     --_radius-step: 4px;
-    --radius-sm: var(var(--_radius-step));
+
+    --radius-sm: var(--_radius-step);
     --radius-md: calc(var(--_radius-step) * 2);
     --radius-lg: calc(var(--_radius-step) * 3);
     --radius-xl: calc(var(--_radius-step) * 4);

@@ -1,5 +1,4 @@
-@use '../abstracts/tokens' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts' as *;
 
 h1, h2, h3, h4 {
     line-height: var(--lh-sm);
@@ -39,8 +38,8 @@ article ol {
 
     li {
         ul, ol {
-            margin-top: var(--list-item-flow-gap-block);
-            margin-left: calc(var(--page-gutter) + var(--space-xxs));
+            margin-block-start: var(--list-item-flow-gap-block);
+            margin-inline-start: calc(var(--page-gutter) + var(--space-xxs));
         }
     }
 }
