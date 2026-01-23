@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.u-hide-on-mobile {
+    display: none;
+
+    @include desktop {
+        display: initial;
+    }
+}
+
+.u-hide-on-desktop {
+    display: initial;
+
+    @include desktop {
+        display: none;
+    }
+}

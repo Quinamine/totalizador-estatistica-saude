@@ -1,0 +1,12 @@
+@use '../abstracts/tokens' as *;
+
+.l-container {
+    width: 100%;
+    max-width: var(--layout-max-width);
+    margin-inline: auto;
+    padding-inline: var(--page-gutter);
+
+    @media screen and (min-width: 1445px) {
+        padding: 0;
+    }
+}

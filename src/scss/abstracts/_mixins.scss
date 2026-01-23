@@ -1,33 +1,44 @@
+@use 'sass:list';
+@use 'tokens' as *;
+
+// Media Queries
 @mixin desktop {
     @media screen and (min-width: 1024px) {
         @content;
     }
 }
 
-@mixin desktop {
+@mixin mobile {
     @media screen and (max-width: 1023px) {
         @content;
     }
 }
 
-@mixin mouse-only {
-    @media ((hover: hover)) {
+@mixin can-hover {
+    @media (hover: hover) {
         @content;
     }
 }
 
-@mixin touch-only {
-    @media ((hover: none)) {
+@mixin cannot-hover {
+    @media (hover: none) {
         @content;
     }
 }
-@mixin container {
-    width: 100%;
-    max-width: var(--layout-max-width);
-    margin-inline: auto;
-    padding-inline: var(--page-gutter);
 
-    @media screen and (min-width: 1445px) {
-        padding: 0;
+// Interaction States
+@mixin apply-motion-standard($properties...) {
+    $transition-list: ();
+
+    @each $property in $properties {
+        $transition-list: list.append($transition-list, $property var(--duration-standard) var(--motion-interaction), $separator: comma);
+    }
+
+    transition: $transition-list;
+
+    &:active {
+        transition-duration: var(--duration-instant);
     }
 }
+
+

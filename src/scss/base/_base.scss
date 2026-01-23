@@ -1,5 +1,4 @@
-@use '../abstracts/tokens' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts' as *;
 
 // MODERN BASE REFINEMENTS (Complement of Eric Meyer's Reset)
 
@@ -143,7 +142,7 @@ a {
     cursor: pointer;
     transition: all var(--duration-standard) var(--motion-main);
 
-    @include mouse-only {
+    @include can-hover {
         &:hover {
             --link-color: oklch(from var(--link-main) calc(l + 0.10) c h);
         }
@@ -158,7 +157,7 @@ a {
 
 p {
     a {
-        @include mouse-only {
+        @include can-hover {
             &:hover {
                 text-decoration: underline;
                 text-underline-offset: 4px;
