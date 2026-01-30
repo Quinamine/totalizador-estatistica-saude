@@ -23,30 +23,10 @@
     }
 
     &__title {
-        --heading-flow-gap-end: 0;
+        --eden-sys-heading-flow-gap-end: 0;
         font-size: var(--eden-sys-fs-md);
         font-weight: var(--eden-sys-fw-bold);
         color: var(--eden-sys-primary);
-    } 
-
-    .eden-c-toolbar { 
-        @include desktop {
-            position: static;
-            box-shadow: none;
-            border: none;
-            padding: 0;
-            min-height: initial;
-            width: auto;
-            background-color: transparent;
-            flex: 1;
-            justify-content: flex-end;
-
-            &__btn {
-                flex: 0;
-                padding-inline: var(--eden-sys-space-sm);
-            }
-        }
     }
-
 }
 

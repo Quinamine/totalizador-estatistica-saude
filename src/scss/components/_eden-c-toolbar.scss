@@ -1,31 +1,42 @@
-@use '../abstracts' as *;;
+@use '../abstracts' as *;
 
 .eden-c-toolbar {
-    min-height: 56px;
     display: flex;
     justify-content: center;
+    background-color: var(--eden-sys-surface-1);
+    min-height: 56px;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background: var(--eden-sys-surface-1);
+    z-index: var(--eden-sys-zi-sticky);
     box-shadow: 0 -2px 4px var(--eden-sys-shadow-main);
     border-block-start: thin solid var(--eden-sys-border-subtle);
     padding-block: var(--eden-sys-space-xs) var(--eden-sys-space-sm);
-    z-index: var(--eden-sys-zi-sticky);
 
-    &__btn {
-        font-weight: 600;
-        padding: var(--eden-sys-space-xs) var(--eden-sys-space-xxs);
+    @include desktop {
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        min-height: initial;
+        width: auto;
+        background-color: transparent;
         flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: var(--eden-sys-space-xxs);
+        justify-content: flex-end;
+    }
 
-        span {
-            text-wrap: nowrap;
+    .eden-c-button {
+        --eden-c-button-inset-block: var(--eden-sys-space-xs);
+        --eden-c-button-inset-inline: var(--eden-sys-space-xxs);
+
+        flex: 1;
+
+        @include desktop {
+            --eden-c-button-inset-block: var(--eden-sys-space-sm);
+            --eden-c-button-inset-inline: var(--eden-sys-space-sm);
+
+            flex: 0;
         }
 
     }
