@@ -1,13 +1,13 @@
 @use '../abstracts' as *;
 
-.c-btn {
+.eden-c-btn {
     --btn-bg: transparent;
-    --btn-text: var(--on-surface);
+    --btn-text: var(--eden-sys-on-surface);
 
     background: var(--btn-bg);
     color: var(--btn-text);
-    border-radius: var(--radius-sm);
-    font-size: var(--fs-sm);
+    border-radius: var(--eden-sys-radius-sm);
+    font-size: var(--eden-sys-fs-sm);
     @include apply-motion-standard(background-color, transform, opacity);
 
     @include can-hover {
@@ -24,8 +24,8 @@
     }
 
     &--primary {    
-        --btn-bg: var(--primary);
-        --btn-text: var(--on-primary);
+        --btn-bg: var(--eden-sys-primary);
+        --btn-text: var(--eden-sys-on-primary);
 
         transition-property: background-color;
 
@@ -35,8 +35,8 @@
     }
 
     &--danger {
-        --btn-bg: var(--danger-subtle);
-        --btn-text: var(--danger);
+        --btn-bg: var(--eden-sys-danger-subtle);
+        --btn-text: var(--eden-sys-danger);
 
         transition-property: background-color;
 

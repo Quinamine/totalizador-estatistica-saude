@@ -1,5 +1,5 @@
 @use 'sass:list';
-@use 'tokens' as *;
+@use 'eden-tokens' as *;
 
 // Media Queries
 @mixin desktop {
@@ -31,13 +31,13 @@
     $transition-list: ();
 
     @each $property in $properties {
-        $transition-list: list.append($transition-list, $property var(--duration-standard) var(--motion-interaction), $separator: comma);
+        $transition-list: list.append($transition-list, $property var(--eden-sys-duration-standard) var(--eden-sys-motion-interaction), $separator: comma);
     }
 
     transition: $transition-list;
 
     &:active {
-        transition-duration: var(--duration-instant);
+        transition-duration: var(--eden-sys-duration-instant);
     }
 }
 

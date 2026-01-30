@@ -1,0 +1,180 @@
+@use 'sass:math';
+//  ------------------------------------------------------------
+//  1. PRIMITIVE TOKENS (SASS)
+//  ------------------------------------------------------------ 
+$primary-hue: var(--eden-sys-primary-h);
+
+// 1.3 Achromatic Tokens (Chroma 0) - optimized for print
+$neutral-0: oklch(0% 0 0);
+$neutral-40: oklch(40% 0 0);
+$neutral-80: oklch(80% 0 0);
+$neutral-100: oklch(100% 0 0);
+
+// 1.4 Neutral Low and Mid Saturation
+$neutral-98-01: #{oklch(98% 0.01 $primary-hue)};
+$neutral-95-01: #{oklch(95% 0.01 $primary-hue)};
+$neutral-88-02: #{oklch(88% 0.02 $primary-hue)};
+$neutral-60-02: #{oklch(60% 0.02 $primary-hue)};
+$neutral-45-02: #{oklch(45% 0.02 $primary-hue)};
+$neutral-30-03: #{oklch(30% 0.03 $primary-hue)};
+
+// 1.4 Chromatic colors (g = green, 60 = lightness)
+$chromatic-g-60: oklch(60% 0.15 150);
+
+//  ------------------------------------------------------------
+//  SEMANTIC TOKENS (CSS)
+//  ------------------------------------------------------------
+:root {
+     // Seeds
+    --eden-sys-brand-h: 243;
+    --eden-sys-primary-h: 243;
+
+    // Brand 
+    --eden-sys-brand: oklch(35% 0.08 var(--eden-sys-brand-h));
+    --eden-sys-on-brand: #{$neutral-98-01};
+    --eden-sys-brand-icon-bg: #{$chromatic-g-60};
+
+    // Primary tokens
+    --eden-sys-primary: oklch(35% 0.08 var(--eden-sys-primary-h));
+    --eden-sys-on-primary: #{$neutral-98-01};
+    --eden-sys-on-primary-variant: #{$neutral-88-02};
+    
+    // Surfaces
+    --eden-sys-surface-0: #{$neutral-95-01};
+    --eden-sys-surface-1: #{$neutral-100};
+    --eden-sys-on-surface: #{$neutral-30-03};
+    --eden-sys-on-surface-variant: #{$neutral-45-02};
+    --eden-sys-on-surface-subtle: #{$neutral-60-02};
+
+    // Status and Feedback
+    --eden-sys-danger: oklch(56% 0.27 25);
+    --eden-sys-danger-subtle: oklch(from var(--eden-sys-danger) 0.94 0.05 h);
+    --eden-sys-success: #{$chromatic-g-60};
+    --eden-sys-success-subtle: oklch(from var(--eden-sys-success) 0.94 0.05 h);
+    --eden-sys-warning: oklch(83% 0.19 84);
+    --eden-sys-warning-subtle: oklch(from var(--eden-sys-warning) 0.94 0.05 h);
+    --eden-sys-on-warning: oklch(from var(--eden-sys-warning) 0.25 0.08 h);
+
+    // Layout and UI
+    --eden-sys-link-main: oklch(60% 0.27 var(--eden-sys-primary-h));
+    --eden-sys-shadow-main: oklch(10% 0.02 var(--eden-sys-primary-h) / 0.1);
+    --eden-sys-tes-g-border-main: #{$neutral-88-02};
+    --eden-sys-border-subtle: #{$neutral-95-01};
+    --eden-sys-color-interactive-hover: oklch(from currentColor l c h / 6%);
+    --eden-sys-color-interactive-active: oklch(from currentColor l c h / 15%);
+    --eden-sys-overlay: oklch(10% 0.08 var(--eden-sys-primary-h) / 40%);
+
+    // Spacing Scale
+    --_fs-base: 1rem;
+    --_line-height-base: 1.5;
+    --_space-base: calc(var(--_fs-base) * var(--_line-height-base));
+    
+    --eden-sys-space-micro: 0.125rem;
+    --eden-sys-space-xxs: calc(var(--_space-base) / 4); // 6px;
+    --eden-sys-space-xs: calc(var(--_space-base) / 3); // 8px;
+    --eden-sys-space-sm: calc(var(--_space-base) / 2); // 12px;
+    --eden-sys-space-md: var(--_space-base); // 24px;
+    --eden-sys-space-lg: calc(var(--_space-base) * 1.5); // 36px
+    --eden-sys-space-xl: calc(var(--_space-base) * 2); // 48px;
+
+    // Typography (fs = font-size, fw = font-weight, lh = line-height);
+    // > Font Size
+    --_fs-step: 0.125rem; // 2px;
+
+    --eden-sys-fs-xxs: calc(var(--_fs-base) - var(--_fs-step) * 3); // 10px;
+    --eden-sys-fs-xs: calc(var(--_fs-base) - var(--_fs-step) * 2); // 12px;
+    --eden-sys-fs-sm: calc(var(--_fs-base) - var(--_fs-step)); // 14px;
+    --eden-sys-fs-md: var(--_fs-base); // 16px;
+    --eden-sys-fs-lg: calc(var(--_fs-base) + var(--_fs-step) * 1); // 18px;
+    --eden-sys-fs-xl: calc(var(--_fs-base) + var(--_fs-step) * 2); // 20px;
+    --eden-sys-fs-2xl: calc(var(--_fs-base) + var(--_fs-step) * 3); // 22px;
+    --eden-sys-fs-3xl: calc(var(--_fs-base) + var(--_fs-step) * 4); // 24px;
+
+    // > Font Weight
+    --eden-sys-fw-regular: 400;
+    --eden-sys-fw-semibold: 600;
+    --eden-sys-fw-bold: 700;
+
+    // > Line Height
+    --eden-sys-lh-sm: 1.25;
+    --eden-sys-lh-md: var(--_line-height-base);
+
+    // Border-radius
+    --_radius-step: 4px;
+
+    --eden-sys-radius-sm: var(--_radius-step);
+    --eden-sys-radius-md: calc(var(--_radius-step) * 2);
+    --eden-sys-radius-lg: calc(var(--_radius-step) * 3);
+    --eden-sys-radius-xl: calc(var(--_radius-step) * 4);
+    --eden-sys-radius-full: 99999px;
+
+    // Layout
+    --eden-sys-layout-max-width: 1440px;
+    --eden-sys-page-gutter: 1rem; // 16px
+
+    // Layout flow
+    --eden-sys-heading-flow-gap-start: var(--eden-sys-space-lg);
+    --eden-sys-heading-flow-gap-end: var(--eden-sys-space-sm);
+    --eden-sys-p-flow-gap-block: var(--eden-sys-space-md);
+    --eden-sys-list-flow-gap-block: var(--eden-sys-space-md);
+    --eden-sys-list-item-flow-gap-block: var(--eden-sys-space-sm);
+    --eden-sys-figure-flow-gap-start: var(--eden-sys-space-xl);
+    --eden-sys-figure-flow-gap-end: var(--eden-sys-space-xl);
+    --eden-sys-figure-caption-gap: var(--eden-sys-space-xs);
+
+    // Easings and Timing
+    --eden-sys-motion-main: ease;
+    --eden-sys-motion-interaction: ease-out;
+    --eden-sys-motion-entrance: ease-out;
+    --eden-sys-motion-exit: ease-in;
+    --eden-sys-motion-fluid: ease-in-out;
+    --eden-sys-duration-instant: 50ms;
+    --eden-sys-duration-fast: 100ms;
+    --eden-sys-duration-standard: 200ms;
+    --eden-sys-duration-slow: 300ms;
+
+    // Z-index
+    --_zi-step: 100;
+    --eden-sys-zi-base: 0;
+    --eden-sys-zi-sticky: calc(var(--_zi-step) * 1);
+    --eden-sys-zi-dropdown: calc(var(--_zi-step) * 2);
+    --eden-sys-zi-overlay: calc(var(--_zi-step) * 3);
+    --eden-sys-zi-modal: calc(var(--_zi-step) * 4);
+    --eden-sys-zi-popover: calc(var(--_zi-step) * 5);
+    --eden-sys-zi-toast: calc(var(--_zi-step) * 6);
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        --eden-sys-page-gutter: var(--eden-sys-space-md);
+    }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --eden-sys-motion-main: linear;
+        --eden-sys-motion-interaction: linear;
+        --eden-sys-motion-entrance: linear;
+        --eden-sys-motion-exit: linear;
+        --eden-sys-duration-fast: 50ms;
+        --eden-sys-duration-standard: 100ms;
+        --eden-sys-duration-slow: 150ms;
+    }
+}
+
+// Fallback
+@supports not (color: oklch(0% 0 0)) {
+    :root {
+        --eden-sys-primary: #073e61;
+        --eden-sys-on-primary: #f3f9ff;
+        --eden-sys-surface-0: #e9eff5;
+        --eden-sys-on-surface: #21303c;
+        --eden-sys-danger: #ea0000;
+        --eden-sys-success: #40963e;
+        --eden-sys-warning: #ffba00;
+        --eden-sys-shadow-main: rgb(0 4 8 / 10%);
+        --eden-sys-border-main: #cdd9e4;
+        --eden-sys-brand-icon-bg: var(--success);
+        --eden-sys-overlay: rgba(0, 0, 0, 0.4);
+    }
+}

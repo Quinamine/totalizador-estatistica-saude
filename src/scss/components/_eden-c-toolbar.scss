@@ -1,6 +1,6 @@
 @use '../abstracts' as *;;
 
-.c-toolbar {
+.eden-c-toolbar {
     min-height: 56px;
     display: flex;
     justify-content: center;
@@ -8,21 +8,21 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background: var(--surface-1);
-    box-shadow: 0 -2px 4px var(--shadow-main);
-    border-block-start: thin solid var(--border-subtle);
-    padding-block: var(--space-xs) var(--space-sm);
-    z-index: var(--zi-sticky);
+    background: var(--eden-sys-surface-1);
+    box-shadow: 0 -2px 4px var(--eden-sys-shadow-main);
+    border-block-start: thin solid var(--eden-sys-border-subtle);
+    padding-block: var(--eden-sys-space-xs) var(--eden-sys-space-sm);
+    z-index: var(--eden-sys-zi-sticky);
 
     &__btn {
         font-weight: 600;
-        padding: var(--space-xs) var(--space-xxs);
+        padding: var(--eden-sys-space-xs) var(--eden-sys-space-xxs);
         flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: var(--space-xxs);
+        gap: var(--eden-sys-space-xxs);
 
         span {
             text-wrap: nowrap;
