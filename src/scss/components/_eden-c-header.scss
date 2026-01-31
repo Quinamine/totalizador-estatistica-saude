@@ -1,0 +1,32 @@
+@use '../abstracts' as *;;
+
+.eden-c-header {
+    --_hamburger-size: var(--eden-sys-space-xl);
+    --_hamburger-icon-size: var(--eden-sys-space-md);
+    --_hamburger-alignment-offset: calc((var(--_hamburger-size) - var(--_hamburger-icon-size)) / 2 * -1);
+
+    background: var(--eden-sys-surface-1);
+    position: sticky;
+    top: 0;
+    z-index: var(--eden-sys-zi-sticky);
+    box-shadow: 0 2px 5px var(--eden-sys-shadow-main);
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: var(--eden-sys-space-sm);
+        padding-block: var(--eden-sys-space-xs);
+    }
+
+    &__hamburger {
+        margin-inline-start: var(--_hamburger-alignment-offset);
+    }
+
+    &__title {
+        --eden-sys-heading-flow-gap-end: 0;
+        font-size: var(--eden-sys-fs-md);
+        font-weight: var(--eden-sys-fw-bold);
+        color: var(--eden-sys-primary);
+    }
+}
+

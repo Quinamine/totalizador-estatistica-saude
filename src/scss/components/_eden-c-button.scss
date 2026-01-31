@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+.eden-c-button {
+    // Button API
+    --eden-c-button-fs: var(--eden-c-button-fs-custom, var(--eden-sys-fs-sm));
+    --eden-c-button-fw: var(--eden-c-button-fw-custom, var(--eden-sys-fw-semibold));
+    --eden-c-button-radius: var(--eden-c-button-radius-custom, var(--eden-sys-radius-sm));
+    --eden-c-button-inset-block: var(--eden-c-button-inset-block-custom, var(--eden-sys-space-sm));
+    --eden-c-button-inset-inline: var(--eden-c-button-inset-inline-custom, var(--eden-sys-space-md));
+    --eden-c-button-text: var(--eden-c-button-text-custom, var(--eden-sys-on-surface));
+    --eden-c-button-bg-hover: var(--eden-c-button-bg-hover-custom, var(--eden-sys-color-interactive-hover));
+    --eden-c-button-bg-active: var(--eden-c-button-bg-active-custom, var(--eden-sys-color-interactive-active));
+    // Private tokens
+    --_btn-bg: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: var(--eden-c-button-justify-custom, center);
+    min-height: var(--eden-sys-space-xl);
+    font-size: var(--eden-c-button-fs);
+    font-weight: var(--eden-c-button-fw);
+    border-radius: var(--eden-c-button-radius);
+    padding: var(--eden-c-button-inset-block) var(--eden-c-button-inset-inline);
+    background-color: var(--_btn-bg);
+    color: var(--eden-c-button-text);
+    @include apply-motion-standard(background-color, transform, opacity);
+
+    @include can-hover {
+        &:hover { --_btn-bg: var(--eden-c-button-bg-hover); }
+    }
+
+    &:active {
+        --_btn-bg: var(--eden-c-button-bg-active);
+
+        opacity: 0.7;
+        @include cannot-hover { transform: scale(0.96); }
+    }
+
+    &--primary {
+        --_btn-bg: var(--eden-sys-primary);
+        --eden-c-button-text: var(--eden-sys-on-primary);
+    }
+
+    &--danger {
+        --_btn-bg: var(--eden-sys-danger-subtle);
+        --eden-c-button-text: var(--eden-sys-danger);
+    }
+
+    &--stack {
+        flex-direction: column;
+        gap: var(--eden-sys-space-xxs);
+
+        .eden-c-button__label {
+            white-space: nowrap;
+        }
+    }
+}

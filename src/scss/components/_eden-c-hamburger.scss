@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.eden-c-hamburger {
+    width: var(--eden-sys-space-xl);
+    height: var(--eden-sys-space-xl);
+    border-radius: var(--eden-sys-radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+        width: var(--eden-sys-space-md);
+        height: 0.875rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__bar {
+        width: 100%;
+        height: var(--eden-sys-space-micro);
+        background: var(--eden-sys-primary);
+        border-radius: var(--eden-sys-radius-sm);
+    }
+}

@@ -13,8 +13,8 @@ html {
 }
 
 ::selection {
-    background-color: var(--primary);
-    color: var(--on-primary);
+    background-color: var(--eden-sys-primary);
+    color: var(--eden-sys-on-primary);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -36,12 +36,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: var(--surface-0);
-    color: var(--on-surface);
-    line-height: var(--lh-md);
+    background-color: var(--eden-sys-surface-0);
+    color: var(--eden-sys-on-surface);
+    line-height: var(--eden-sys-lh-md);
     cursor: default;
     font: {
-        size: var(--fs-md);
+        size: var(--eden-sys-fs-md);
         family: Arial, Helvetica, sans-serif;
     }
 
@@ -63,29 +63,29 @@ img, picture, video, canvas, svg {
 }
 
 picture, figure, img {
-    margin-block: var(--figure-flow-gap-start) var(--figure-flow-gap-end);
+    margin-block: var(--eden-sys-figure-flow-gap-start) var(--eden-sys-figure-flow-gap-end);
 }
 
 picture, figure {
     img {
-      --figure-flow-gap-start: 0;
-      --figure-flow-gap-end: 0;
+      --eden-sys-figure-flow-gap-start: 0;
+      --eden-sys-figure-flow-gap-end: 0;
       margin-inline: 0;
     }
 }
 
 table {
     width: 100%;
-    margin-block-start: var(--space-sm);
+    margin-block-start: var(--eden-sys-space-sm);
 
     td, th {
-        padding: var(--space-xs);
-        border: 1px solid var(--border-main);
+        padding: var(--eden-sys-space-xs);
+        border: 1px solid var(--eden-sys-border-main);
     }
 }
 
 figcaption {
-    margin-block-start: var(--figure-caption-gap);
+    margin-block-start: var(--eden-sys-figure-caption-gap);
 }
 
 input, button, textarea, select {
@@ -108,7 +108,7 @@ input, textarea {
 
 input {
     &[readonly] {
-        font-weight: var(--fw-bold);
+        font-weight: var(--eden-sys-fw-bold);
         cursor: default;
         transition: background-color .4s ease-out
     }
@@ -134,24 +134,24 @@ textarea {
 }
 
 a {
-    --link-color: var(--link-main);
+    --_text-color: var(--eden-sys-link-main);
 
-    color: var(--link-color);
+    color: var(--_text-color);
     -webkit-tap-highlight-color: transparent;
     text-decoration: none;
     cursor: pointer;
-    transition: all var(--duration-standard) var(--motion-main);
+    transition: all var(--eden-sys-duration-standard) var(--eden-sys-motion-main);
 
     @include can-hover {
         &:hover {
-            --link-color: oklch(from var(--link-main) calc(l + 0.10) c h);
+            --_text-color: oklch(from var(--link-main) calc(l + 0.10) c h);
         }
     }
 
     &:active {
-        --link-color: oklch(from var(--link-main) calc(l - 0.2) c h);
+        --_text-color: oklch(from var(--link-main) calc(l - 0.2) c h);
         opacity: 0.7;
-        transition: all var(--duration-instant) var(--motion-interaction);
+        transition: all var(--eden-sys-duration-instant) var(--eden-sys-motion-interaction);
     }
 }
 

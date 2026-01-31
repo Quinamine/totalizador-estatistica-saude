@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-.u-hide-on-mobile {
+.eden-u-hide-on-mobile {
     display: none;
 
     @include desktop {
@@ -8,7 +8,7 @@
     }
 }
 
-.u-hide-on-desktop {
+.eden-u-hide-on-desktop {
     display: initial;
 
     @include desktop {

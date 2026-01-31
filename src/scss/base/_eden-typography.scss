@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+h1, h2, h3, h4 {
+    line-height: var(--eden-sys-lh-sm);
+    margin-block: var(--eden-sys-flow-gap-start) var(--eden-sys-flow-gap-end);
+    font-weight: var(--eden-sys-fw-bold);
+}
+
+h1 {
+    --eden-sys-heading-flow-gap-start: 0;
+    font-size: var(--h1-fs, var(--eden-sys-fs-2xl));
+}
+
+h2 {
+  font-size: var(--h2-fs, var(--eden-sys-fs-xl));
+}
+
+h3 {
+  font-size: var(--h3-fs, var(--eden-sys-fs-lg));
+}
+
+h4 {
+  font-size: var(--h1-fs, var(--eden-sys-fs-md));
+}
+
+article ul, 
+article ol {
+    margin-block-end: var(--eden-sys-list-flow-gap-block);
+    margin-inline-start: var(--eden-sys-page-gutter);
+
+    li:not(li:last-of-type) {
+        margin-block-end: var(--eden-sys-list-item-flow-gap-block);
+    }
+
+    li {
+        ul, ol {
+            margin-block-start: var(--eden-sys-list-item-flow-gap-block);
+            margin-inline-start: calc(var(--eden-sys-page-gutter) + var(--eden-sys-space-xxs));
+        }
+    }
+}
+
+article ul {
+    list-style: disc;
+}
+
+article ol {
+    list-style: decimal;
+}
+
+strong, b {
+    font-weight: var(--eden-sys-fw-bold);
+}
