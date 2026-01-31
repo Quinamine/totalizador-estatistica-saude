@@ -1,11 +1,12 @@
 @use 'vendors/meyer-reset';
 @use 'base/eden-base';
 @use 'base/eden-typography';
+@use 'components/eden-c-icon';
+@use 'components/eden-c-brand';
+@use 'components/eden-c-button';
+@use 'components/eden-c-hamburger';
 @use 'layout/eden-layout';
 @use 'components/eden-c-header';
-@use 'components/eden-c-hamburger';
-@use 'components/eden-c-logo';
 @use 'components/eden-c-toolbar';
-@use 'components/eden-c-button';
-@use 'components/eden-c-icon';
+@use 'components/eden-c-sidebar';
 @use 'utilities/eden-utils'

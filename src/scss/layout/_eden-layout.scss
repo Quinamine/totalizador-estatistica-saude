@@ -17,7 +17,7 @@ body {
         grid-template-columns: auto 1fr;
         grid-template-rows: auto 1fr auto;
         grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
-        transition: grid-template-columns var(--eden-g-duration-slow) var(--eden-g-motion-fluid);
+        transition: grid-template-columns var(--eden-sys-duration-slow) var(--eden-sys-motion-fluid);
 
         &.is-sidebar-closed {
             grid-template-columns: 0 1fr;
@@ -34,5 +34,23 @@ body {
 .eden-c-sidebar {
     @include desktop {
         grid-area: sidebar;
+    }
+}
+
+.eden-l-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: var(--eden-sys-overlay);
+    z-index: var(--eden-sys-zi-overlay);
+
+    &.is-active {
+        display: block;  
+    }
+
+    &.is-active-sidebar {
+        @include desktop {
+            display: none !important;
+        }
     }
 }
