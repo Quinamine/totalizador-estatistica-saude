@@ -15,3 +15,7 @@
         display: none;
     }
 }
+
+.eden-u-border-bottom-subtle {
+    border-bottom: 1px solid oklch(from currentColor l c h / 20%)
+}

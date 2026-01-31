@@ -5,6 +5,10 @@
     --_hamburger-icon-size: var(--eden-sys-space-md);
     --_hamburger-alignment-offset: calc((var(--_hamburger-size) - var(--_hamburger-icon-size)) / 2 * -1);
 
+    --_sidebar-trigger-size: var(--eden-sys-space-xl);
+    --_sidebar-trigger-icon-size: 1.25rem; // 20px;
+    --_sidebar-trigger-alignment-offset: calc((var(--_sidebar-trigger-size) - var(--_sidebar-trigger-icon-size)) / 2 * -1);
+
     background: var(--eden-sys-surface-1);
     position: sticky;
     top: 0;
@@ -12,6 +16,7 @@
     box-shadow: 0 2px 5px var(--eden-sys-shadow-main);
 
     &__content {
+        min-height: 64px;
         display: flex;
         align-items: center;
         gap: var(--eden-sys-space-sm);
@@ -20,13 +25,57 @@
 
     .eden-c-hamburger {
         margin-inline-start: var(--_hamburger-alignment-offset);
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    .eden-c-brand {
+        @include desktop {
+            opacity: 0;
+            transition: opacity var(--eden-sys-duration-fast) var(--eden-sys-motion-entrance);
+
+            .is-sidebar-closed & {
+                opacity: 1;
+            }
+        }
     }
 
     &__title {
         --eden-sys-heading-flow-gap-end: 0;
-        font-size: var(--eden-sys-fs-md);
-        font-weight: var(--eden-sys-fw-bold);
+        --h1-fs: var(--eden-sys-fs-md);
+     
         color: var(--eden-sys-primary);
-    }
-}
 
+        @include desktop {
+            position: relative;
+            left: -110px;
+            transition: left var(--eden-sys-duration-fast) var(--eden-sys-motion-entrance);
+
+            .is-sidebar-closed & {
+                left: 0;
+            }
+        }
+    }
+
+    &__sidebar-trigger {
+        display: none;
+
+        @include desktop {
+            --eden-c-button-inset-block-custom: 0;
+            --eden-c-button-inset-inline-custom: 0;
+            --eden-c-button-radius-custom: var(--eden-sys-radius-full);
+
+            display: inline-flex;
+            width: var(--eden-sys-space-xl);
+            margin-inline-start: var(--_sidebar-trigger-alignment-offset);
+            opacity: 0;
+
+            .is-sidebar-closed & {
+                opacity: 1;
+            }
+        }
+    }
+
+}

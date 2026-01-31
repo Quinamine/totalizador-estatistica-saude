@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.eden-c-brand {
+    --eden-c-brand-inset: var(--eden-sys-space-md);
+
+    display: flex;
+    align-items: center;
+    gap: var(--eden-sys-space-sm);
+    padding: var(--eden-c-brand-inset);
+
+    &--compact {
+        --eden-c-brand-inset: 0.25rem;
+
+        padding: var(--eden-c-brand-inset);
+        background-color: var(--eden-sys-brand);
+        color: var(--eden-sys-on-brand);
+    }
+
+    &__icon {
+        stroke-width: 0;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: var(--eden-sys-fs-2xl);
+        line-height: 1;
+        color: currentColor;
+        font-weight: var(--eden-sys-fw-bold);
+    }
+
+    &__description {
+        font-size: var(--eden-sys-fs-xxs);
+        opacity: 0.7;
+    }
+}

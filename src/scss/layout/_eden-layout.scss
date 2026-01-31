@@ -3,10 +3,54 @@
 .eden-l-container {
     width: 100%;
     max-width: var(--eden-sys-layout-max-width);
-    margin-inline: auto;
+    margin-inline-end: auto;
     padding-inline: var(--eden-sys-page-gutter);
+}
 
-    @media screen and (min-width: 1445px) {
-        padding: 0;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    @include desktop {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
+        transition: grid-template-columns var(--eden-sys-duration-slow) var(--eden-sys-motion-fluid);
+
+        &.is-sidebar-closed {
+            grid-template-columns: 0 1fr;
+        }
+    }
+}
+
+.eden-c-header {
+    @include desktop {
+        grid-area: header;
+    }
+}
+
+.eden-c-sidebar {
+    @include desktop {
+        grid-area: sidebar;
+    }
+}
+
+.eden-l-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: var(--eden-sys-overlay);
+    z-index: var(--eden-sys-zi-overlay);
+
+    &.is-active {
+        display: block;  
+    }
+
+    &.is-active-sidebar {
+        @include desktop {
+            display: none !important;
+        }
     }
 }

@@ -1,9 +1,19 @@
 .eden-c-icon {
-    width: 24px;
-    height: 24px;
+    --_size: 1.5rem; // 24px;
+
+    width: var(--_size);
+    height: var(--_size);
     fill: none;
     stroke: currentColor;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
+
+    &--small {
+        --_size: 1.25rem; // 20px;
+    }
+
+    &--large {
+        --_size: 2rem; // 32px;
+    } 
 }

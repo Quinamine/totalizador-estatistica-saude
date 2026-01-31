@@ -1,0 +1,133 @@
+@use "../abstracts/" as *;
+
+.eden-c-sidebar {
+    // Private tokens
+    --_surface: var(--eden-sys-primary);
+    --_surface-sunken: oklch(from var(--_surface) calc(l - .03) c h);
+    --_sidebar-size: 280px;
+    --_pos-in: var(--_sidebar-size);
+    --_pos-out: calc(var(--_sidebar-size) * -1);
+    --_pos-x: var(--_pos-out);
+    --_scrollbar-track: oklch(from var(--_surface) 0.25 0.05 h);
+    --_scrollbar-thumb: oklch(from var(--_surface) 0.55 0.12 h);
+    --_scrollbar-thumb-hover: oklch(from var(--_surface) 0.60 0.15 h);
+    
+    // Other component tokens
+    --eden-c-button-text-custom: var(--eden-sys-on-primary-variant);
+    --eden-c-button-bg-hover-custom: oklch(from currentColor l c h / 10%);
+    --eden-c-button-bg-active-custom: oklch(from currentColor l c h / 6%);
+
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    z-index: var(--eden-sys-zi-modal);
+    width: var(--_sidebar-size);
+    height: 100vh;
+    background-color: var(--_surface);
+    color: var(--eden-sys-on-primary);
+    transform: translateX(var(--_pos-x));
+    transition: transform var(--eden-sys-duration-slow) var(--eden-sys-motion-fluid);
+
+    @include desktop {
+        --_pos-x: 0;
+        position: relative;
+
+        .is-sidebar-closed & {
+            @include desktop {
+                --_pos-x: var(--_pos-out);
+            }
+        }
+    }
+
+    &.is-open {
+        --_pos-x: 0;
+    }
+
+    .eden-c-button {
+        @include can-hover {
+            &:hover {
+                --eden-c-button-text-custom: var(--eden-sys-on-primary);
+            }
+        }
+    }
+
+    &__action-close {
+        --eden-c-button-inset-block-custom: 0;
+        --eden-c-button-inset-inline-custom: 0;
+        --eden-c-button-radius-custom: var(--eden-sys-radius-full);
+
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: var(--eden-sys-space-xl);
+    }
+
+    &__nav {
+        height: 100%;
+        overflow-y: auto;
+
+        @include desktop {
+            &::-webkit-scrollbar {
+                width: var(--eden-sys-space-sm);
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: var(--_scrollbar-track);
+                border-radius: var(--eden-sys-radius-lg);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--_scrollbar-thumb);
+                border-radius: var(--eden-sys-radius-xl);
+                border: 2px solid var(--_scrollbar-track);
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: var(--_scrollbar-thumb-hover);
+            }
+        }
+    }
+
+    &__accordion-header {
+        --eden-c-button-fs-custom: 0.7rem;
+        --eden-c-button-justify-custom: space-between;
+
+        width: 100%;
+        border-block-start: thin solid oklch(from currentColor l c h / 5%);
+    }
+
+    &__accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--_surface-sunken);
+        transition: max-height var(--eden-sys-duration-slow) var(--eden-sys-motion-fluid);
+    }
+
+    &__item {
+        --eden-c-button-fw-custom: var(--eden-sys-fw-regular);
+        --eden-c-button-justify-custom: flex-start;
+        --eden-c-button-inset-inline-custom: var(--eden-sys-space-lg);
+
+        width: 100%;
+    }
+
+    &__accordion {
+        &:last-of-type {
+            border-block-end: thin solid oklch(from currentColor l c h / 5%);
+        }
+        &.is-open {
+            .eden-c-sidebar__accordion-body {
+                max-height: 1000px;
+            }
+
+            .eden-c-sidebar__accordion-header {
+                --eden-c-button-text-custom: var(--eden-sys-on-primary);
+            }
+
+            .eden-c-sidebar__chevron {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

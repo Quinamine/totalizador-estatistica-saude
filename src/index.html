@@ -6,20 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TES - Totalizador de Estatística de Saúde</title>
         <link rel="stylesheet" href="css/style.min.css">
-        <script src="js/bundle.min.js"></script>
+        <script src="js/bundle.min.js" defer></script>
     </head>
-    <body>
+    <body data-js="main-body">
         <header class="eden-c-header">
             <div class="eden-l-container eden-c-header__content">
-                <button class="eden-c-hamburger"  aria-label="Menu">
+                <button class="eden-c-hamburger" data-group="sidebar-triggers"  data-sidebar-action="open" aria-label="Menu">
                     <div class="eden-c-hamburger__icon">
                         <span class="eden-c-hamburger__bar"></span>
                         <span class="eden-c-hamburger__bar"></span>
                         <span class="eden-c-hamburger__bar"></span>
                     </div>
                 </button>
-                <div class="eden-c-logo eden-c-logo--boxed">
-                    <a href="index.html" class="eden-c-logo__text">TES</a>
+                <button class="eden-c-button eden-c-header__sidebar-trigger" data-group="sidebar-triggers"  data-sidebar-action="open" title="Abrir menu lateral">
+                    <svg class="eden-c-icon eden-c-icon--small" viewBox="0 0 24 24">
+                        <path d="M9 18l6-6-6-6M20 6v12" />
+                    </svg>
+                </button>
+                <div class="eden-c-brand eden-c-brand--compact">
+                    <a href="index.html" class="eden-c-brand__title">TES</a>
                 </div>
                 <h1 class="eden-c-header__title" id="current-title">Painel Principal</h1>
                 <div class="eden-c-toolbar">
@@ -61,5 +66,89 @@
                 </div>
             </div>
         </header>
+        <aside class="eden-c-sidebar" data-js="sidebar">
+            <button class="eden-c-button eden-c-sidebar__action-close" data-group="sidebar-triggers"  data-sidebar-action="close" title="Ocultar menu">
+                <svg class="eden-c-icon eden-c-icon--small eden-u-hide-on-mobile" viewBox="0 0 24 24">
+                    <path d="M15 18l-6-6 6-6M4 6v12" />
+                </svg>
+                <svg class="eden-c-icon eden-c-icon--small eden-u-hide-on-desktop" viewBox="0 0 24 24">
+                    <line x1="10%" x2="90%" y1="17.5%" y2="82.5%"></line>
+                    <line x1="90%" x2="10%" y1="17.5%" y2="82.5%"></line>
+                </svg>
+            </button>
+            <div class="eden-c-brand eden-u-border-bottom-subtle">
+                <svg class="eden-c-icon eden-c-icon--large eden-c-brand__icon" viewBox="0 0 42 42">
+                    <rect width="42" height="42" rx="8" fill="var(--eden-sys-brand-icon-bg)" />
+                    <path d="M11 14H31V18H23V30H19V18H11V14Z" fill="var(--eden-sys-brand)" />
+                </svg>
+                <div class="eden-c-brand__content">
+                    <h1 class="eden-c-brand__title">TES</h1>
+                    <small class="eden-c-brand__description">Totalizador de Estatística de Saúde</small>
+                </div>
+            </div>
+            <nav class="eden-c-sidebar__nav">
+                <div class="eden-c-sidebar__accordion" data-js="sidebar-accordion">
+                    <button class="eden-c-button eden-c-sidebar__accordion-header" data-js="sidebar-accordion-toggles">
+                        CONSULTAS <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <button class="eden-c-button eden-c-sidebar__item">[Item]</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="eden-c-sidebar__accordion" data-js="sidebar-accordion">
+                    <button class="eden-c-button eden-c-sidebar__accordion-header" data-js="sidebar-accordion-toggles">
+                        FARMÁCIA <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <button class="eden-c-button eden-c-sidebar__item">[Item]</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="eden-c-sidebar__accordion" data-js="sidebar-accordion">
+                    <button class="eden-c-button eden-c-sidebar__accordion-header" data-js="sidebar-accordion-toggles">
+                        NUTRIÇÃO <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <button class="eden-c-button eden-c-sidebar__item">[Item]</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="eden-c-sidebar__accordion" data-js="sidebar-accordion">
+                    <button class="eden-c-button eden-c-sidebar__accordion-header" data-js="sidebar-accordion-toggles">
+                        ITS/HIV e SIDA <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <button class="eden-c-button eden-c-sidebar__item">[Item]</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="eden-c-sidebar__accordion" data-js="sidebar-accordion">
+                    <button class="eden-c-button eden-c-sidebar__accordion-header" data-js="sidebar-accordion-toggles">
+                        TUBERCULOSE <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <button class="eden-c-button eden-c-sidebar__item">[Item]</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <div class="eden-l-overlay" data-js="sidebar-overlay" data-group="sidebar-triggers"  data-sidebar-action="close"></div>
     </body>
 </html>
