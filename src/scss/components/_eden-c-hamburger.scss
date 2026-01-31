@@ -1,13 +1,29 @@
 @use '../abstracts' as *;
 
 .eden-c-hamburger {
+    --_hbg-bg: transparent;
+
+    min-height: var(--eden-sys-space-xl);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     width: var(--eden-sys-space-xl);
     height: var(--eden-sys-space-xl);
-    border-radius: var(--eden-sys-radius-md);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: var(--eden-sys-radius-full);
+    background-color: var(--_hbg-bg);
+    
+    @include apply-motion-standard(background-color);
+
+    @include can-hover {
+        &:hover {
+            --_hbg-bg: var(--eden-sys-color-interactive-hover);
+        }
+    }
+
+    &:active {
+        --_hbg-bg: var(--eden-sys-color-interactive-active);
+        opacity: 0.7;
+    }
 
     &__icon {
         width: var(--eden-sys-space-md);
