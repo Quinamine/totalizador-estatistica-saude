@@ -105,7 +105,9 @@
     }
 
     &__item {
+        --eden-c-button-fs-custom: var(--eden-sys-fs-xs);
         --eden-c-button-fw-custom: var(--eden-sys-fw-regular);
+        --eden-c-button-text-custom: oklch(from var(--eden-sys-on-primary-variant) 0.75 c h);
         --eden-c-button-justify-custom: flex-start;
         --eden-c-button-inset-inline-custom: var(--eden-sys-space-lg);
 
@@ -115,7 +117,14 @@
     &__accordion {
         &:last-of-type {
             border-block-end: thin solid oklch(from currentColor l c h / 5%);
+
+            &.is-open {
+                .eden-c-sidebar__accordion-body {
+                    padding-bottom: var(--eden-sys-space-xl);
+                }
+            }
         }
+
         &.is-open {
             .eden-c-sidebar__accordion-body {
                 max-height: 1000px;
