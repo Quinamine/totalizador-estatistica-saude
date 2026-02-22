@@ -33,7 +33,7 @@
         --_pos-x: 0;
         position: relative;
 
-        .is-sidebar-closed & {
+        .is-eden-sidebar-closed & {
             @include desktop {
                 --_pos-x: var(--_pos-out);
             }
