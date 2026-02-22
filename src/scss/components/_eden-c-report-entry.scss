@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.eden-c-report-entry {
+    padding: var(--eden-sys-page-gutter);
+    overflow-x: auto;
+    background-color: transparent;
+}
