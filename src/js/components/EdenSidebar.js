@@ -45,7 +45,7 @@ export const EdenSidebar = {
             <ul class="eden-c-sidebar__list">
                 ${category.itens.map(item => `
                 <li>
-                    <button class="eden-c-button eden-c-sidebar__item" data-eden-template-id=${item.id}>
+                    <button class="eden-c-button eden-c-sidebar__item" data-eden-js="template-render" data-eden-template-id="${item.id}">
                     ${item.name}
                     </button>
                 </li>

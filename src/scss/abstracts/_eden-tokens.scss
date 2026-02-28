@@ -58,7 +58,7 @@ $chromatic-g-60: oklch(60% 0.15 150);
     // Layout and UI
     --eden-sys-link-main: oklch(60% 0.27 var(--eden-sys-primary-h));
     --eden-sys-shadow-main: oklch(10% 0.02 var(--eden-sys-primary-h) / 0.1);
-    --eden-sys-tes-g-border-main: #{$neutral-88-02};
+    --eden-sys-border-main: #{$neutral-88-02};
     --eden-sys-border-subtle: #{$neutral-95-01};
     --eden-sys-color-interactive-hover: oklch(from currentColor l c h / 6%);
     --eden-sys-color-interactive-active: oklch(from currentColor l c h / 15%);

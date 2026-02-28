@@ -4,7 +4,7 @@
     width: 100%;
     max-width: var(--eden-sys-layout-max-width);
     margin-inline-end: auto;
-    padding-inline: var(--eden-sys-page-gutter);
+    padding-inline: var(--eden-l-container-inset-inline-custom, var(--eden-sys-page-gutter));
 }
 
 body {
@@ -35,6 +35,11 @@ body {
     @include desktop {
         grid-area: sidebar;
     }
+}
+
+main {
+    flex: 1;
+    overflow: auto;
 }
 
 .eden-l-overlay {

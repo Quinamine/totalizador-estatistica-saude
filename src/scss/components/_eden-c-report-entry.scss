@@ -5,3 +5,13 @@
     overflow-x: auto;
     background-color: transparent;
 }
+
+.eden-c-report-entry__error-text {
+    margin-block-end: var(--eden-sys-p-flow-gap-block);
+}
+
+.eden-c-report-entry__error-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--eden-sys-space-sm);
+}

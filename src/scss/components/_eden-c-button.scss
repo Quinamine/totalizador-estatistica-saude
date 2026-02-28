@@ -38,11 +38,40 @@
     &--primary {
         --_btn-bg: var(--eden-sys-primary);
         --eden-c-button-text: var(--eden-sys-on-primary);
+
+        @include can-hover {
+            &:hover { --_btn-bg: oklch(from var(--eden-sys-primary) calc(l + 0.1) c h); }
+        }
+
+        &:active {
+            --_btn-bg: oklch(from var(--eden-sys-primary) calc(l - 0.05) c h);
+        }
+    }
+
+    &--secondary {
+        --_btn-bg: transparent;
+        --eden-c-button-text: var(--eden-sys-on-surface);
+
+        border: 1px solid var(--eden-sys-primary);
+
+        @include can-hover {
+            &:hover { 
+                --_btn-bg: oklch(from var(--eden-sys-surface-0) calc(l - 0.05) 0.04 h);
+            }
+        }
     }
 
     &--danger {
         --_btn-bg: var(--eden-sys-danger-subtle);
         --eden-c-button-text: var(--eden-sys-danger);
+
+        @include can-hover {
+            &:hover { --_btn-bg: oklch(from var(--eden-sys-danger-subtle) calc(l + 0.1) c h); }
+        }
+
+        &:active {
+            --_btn-bg: oklch(from var(--eden-sys-danger-subtle) calc(l - 0.05) c h);
+        }
     }
 
     &--stack {
