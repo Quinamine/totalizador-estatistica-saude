@@ -31,9 +31,10 @@
 
     @include desktop {
         --_pos-x: 0;
-        position: relative;
+        position: sticky;
+        top: 0;
 
-        .is-sidebar-closed & {
+        .is-eden-sidebar-closed & {
             @include desktop {
                 --_pos-x: var(--_pos-out);
             }

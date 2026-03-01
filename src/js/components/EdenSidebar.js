@@ -1,11 +1,11 @@
-import { SIDEBAR_MENU } from "../constants/sidebar-menu-config.js";
+import { EDEN_SIDEBAR_CONFIG } from "../constants/eden-sidebar.config.js";
 
-export const Sidebar = {
+export const EdenSidebar = {
     cacheElements() {
-        this.sidebar = document.querySelector('[data-js="sidebar"]');
-        this.sidebarOverlay = document.querySelector('[data-js="sidebar-overlay"]');
-        this.body = document.querySelector('[data-js="main-body"]');
-        this.sidebarTriggers = document.querySelectorAll('[data-group="sidebar-triggers"]');
+        this.sidebar = document.querySelector('[data-eden-js="sidebar"]');
+        this.sidebarOverlay = document.querySelector('[data-eden-js="sidebar-overlay"]');
+        this.body = document.querySelector('[data-eden-js="main-body"]');
+        this.sidebarTriggers = document.querySelectorAll('[data-eden-group="sidebar-triggers"]');
         this.sidebarNav = document.querySelector('.eden-c-sidebar__nav');
     },
 
@@ -13,15 +13,15 @@ export const Sidebar = {
         this.sidebar.classList.add('is-open');
         this.sidebarOverlay.classList.add('is-active', 'is-active-sidebar');
         if(window.matchMedia('(min-width: 1024px)').matches) {
-            this.body.classList.remove('is-sidebar-closed');
+            this.body.classList.remove('is-eden-sidebar-closed');
         }
     },
 
     close() {
         this.sidebar.classList.remove('is-open');
         this.sidebarOverlay.classList.remove('is-active', 'is-active-sidebar');
-         if(window.matchMedia('(min-width: 1024px').matches) {
-            this.body.classList.add('is-sidebar-closed');
+        if(window.matchMedia('(min-width: 1024px)').matches) {
+            this.body.classList.add('is-eden-sidebar-closed');
         }
     },
 
@@ -35,9 +35,9 @@ export const Sidebar = {
     },
 
     renderMenu() {
-        const htmlMenu = SIDEBAR_MENU.map(category => `
-        <div class="eden-c-sidebar__accordion" data-js="sidebar-accordion">
-            <button class="eden-c-button eden-c-sidebar__accordion-header" data-js="sidebar-accordion-toggles">
+        const htmlMenu = EDEN_SIDEBAR_CONFIG.map(category => `
+        <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
+            <button class="eden-c-button eden-c-sidebar__accordion-header" data-eden-js="sidebar-accordion-toggles">
             ${category.categoryTitle}
             <span class="eden-c-sidebar__chevron">❯</span>
             </button>
@@ -45,7 +45,7 @@ export const Sidebar = {
             <ul class="eden-c-sidebar__list">
                 ${category.itens.map(item => `
                 <li>
-                    <button class="eden-c-button eden-c-sidebar__item" data-template-id=${item.id}>
+                    <button class="eden-c-button eden-c-sidebar__item" data-eden-js="template-render" data-eden-template-id="${item.id}">
                     ${item.name}
                     </button>
                 </li>
@@ -60,14 +60,14 @@ export const Sidebar = {
 
     bindEvents() {
         this.sidebarTriggers.forEach( btn => {
-            const btnAction = btn.dataset.sidebarAction;
+            const btnAction = btn.dataset.edenSidebarAction;
             btn.addEventListener('click', () => {
                 this.handleAction(btnAction);
             });
         });
 
         this.sidebarNav.addEventListener('click', (event) => {
-            const accordionToggle = event.target.closest('[data-js="sidebar-accordion-toggles"]');
+            const accordionToggle = event.target.closest('[data-eden-js="sidebar-accordion-toggles"]');
             if(accordionToggle) {
                 const accordion = accordionToggle.parentElement;
                 this.toggleAccordion(accordion);

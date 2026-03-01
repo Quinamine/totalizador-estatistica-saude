@@ -1,4 +1,4 @@
-export const SIDEBAR_MENU = [
+export const EDEN_SIDEBAR_CONFIG = [
   {
     categoryTitle: "CONSULTAS",
     itens: [ 

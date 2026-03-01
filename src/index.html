@@ -5,20 +5,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TES - Totalizador de Estatística de Saúde</title>
-        <link rel="stylesheet" href="css/style.min.css">
-        <script src="js/bundle.min.js" defer></script>
+        <link rel="stylesheet" href="css/eden-style.min.css">
+        <script src="js/eden-app.min.js" defer></script>
     </head>
-    <body data-js="main-body">
+    <body data-eden-js="main-body">
         <header class="eden-c-header">
             <div class="eden-l-container eden-c-header__content">
-                <button class="eden-c-hamburger" data-group="sidebar-triggers"  data-sidebar-action="open" aria-label="Menu">
+                <button class="eden-c-hamburger" data-eden-group="sidebar-triggers"  data-eden-sidebar-action="open" aria-label="Menu">
                     <div class="eden-c-hamburger__icon">
                         <span class="eden-c-hamburger__bar"></span>
                         <span class="eden-c-hamburger__bar"></span>
                         <span class="eden-c-hamburger__bar"></span>
                     </div>
                 </button>
-                <button class="eden-c-button eden-c-header__sidebar-trigger" data-group="sidebar-triggers"  data-sidebar-action="open" title="Abrir menu lateral">
+                <button class="eden-c-button eden-c-header__sidebar-trigger" data-eden-group="sidebar-triggers"  data-eden-sidebar-action="open" title="Abrir menu lateral">
                     <svg class="eden-c-icon eden-c-icon--small" viewBox="0 0 24 24">
                         <path d="M9 18l6-6-6-6M20 6v12" />
                     </svg>
@@ -26,7 +26,7 @@
                 <div class="eden-c-brand eden-c-brand--compact">
                     <a href="index.html" class="eden-c-brand__title">TES</a>
                 </div>
-                <h1 class="eden-c-header__title" id="current-title">Painel Principal</h1>
+                <h1 class="eden-c-header__title" data-eden-js="current-title">Painel Principal</h1>
                 <div class="eden-c-toolbar">
                     <button class="eden-c-button eden-c-button--stack">
                         <svg class="eden-c-icon eden-u-hide-on-desktop" viewBox="0 0 24 24">
@@ -66,8 +66,8 @@
                 </div>
             </div>
         </header>
-        <aside class="eden-c-sidebar" data-js="sidebar">
-            <button class="eden-c-button eden-c-sidebar__action-close" data-group="sidebar-triggers"  data-sidebar-action="close" title="Ocultar menu">
+        <aside class="eden-c-sidebar" data-eden-js="sidebar">
+            <button class="eden-c-button eden-c-sidebar__action-close" data-eden-group="sidebar-triggers"  data-eden-sidebar-action="close" title="Ocultar menu">
                 <svg class="eden-c-icon eden-c-icon--small eden-u-hide-on-mobile" viewBox="0 0 24 24">
                     <path d="M15 18l-6-6 6-6M4 6v12" />
                 </svg>
@@ -88,6 +88,13 @@
             </div>
             <nav class="eden-c-sidebar__nav"></nav>
         </aside>
-        <div class="eden-l-overlay" data-js="sidebar-overlay" data-group="sidebar-triggers"  data-sidebar-action="close"></div>
+        <div class="eden-l-overlay" data-eden-js="sidebar-overlay" data-eden-group="sidebar-triggers"  data-eden-sidebar-action="close"></div>
+        <main>
+            <section class="eden-l-container eden-c-report-entry" data-eden-js="report-entry">
+                <div class="eden-c-report-entry__welcome">
+                    <p>Selecione uma ficha no menu lateral para começar.</p>
+                </div>
+            </section>
+        </main>
     </body>
 </html>
