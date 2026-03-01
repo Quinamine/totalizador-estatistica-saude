@@ -1,6 +1,9 @@
 @use '../abstracts' as *;
 
 .eden-c-toolbar {
+    --eden-c-button-inset-block-custom: var(--eden-sys-space-xs);
+    --eden-c-button-inset-inline-custom: var(--eden-sys-space-xxs);
+
     display: flex;
     justify-content: center;
     background-color: var(--eden-sys-surface-1);
@@ -15,10 +18,15 @@
     padding-block: var(--eden-sys-space-xs) var(--eden-sys-space-sm);
 
     @include desktop {
+        --eden-c-button-inset-block-custom: var(--eden-sys-space-sm);
+        --eden-c-button-inset-inline-custom: var(--eden-sys-space-sm);
+        --_toolbar-offset-alignment: calc(var(--eden-c-button-inset-inline-custom) * -1);
+
         position: static;
         box-shadow: none;
         border: none;
         padding: 0;
+        margin-right: var(--_toolbar-offset-alignment);
         min-height: initial;
         width: auto;
         background-color: transparent;
@@ -27,15 +35,9 @@
     }
 
     .eden-c-button {
-        --eden-c-button-inset-block: var(--eden-sys-space-xs);
-        --eden-c-button-inset-inline: var(--eden-sys-space-xxs);
-
         flex: 1;
 
         @include desktop {
-            --eden-c-button-inset-block: var(--eden-sys-space-sm);
-            --eden-c-button-inset-inline: var(--eden-sys-space-sm);
-
             flex: 0;
         }
 

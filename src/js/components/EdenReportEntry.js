@@ -1,5 +1,6 @@
+import { EDEN_REPORT_ENTRY_CONFIG } from "../constants/eden-report-entry.config.js";
+import { EdenSidebar } from "./EdenSidebar.js";
 import { EdenSpinner } from "./EdenSpinner.js";
-import { EDEN_REPORT_ENTRY_CONFIG } from "../constants/eden-report-entry.config.js"; 
 
 export const EdenReportEntry = {
     cacheElements() {
@@ -82,6 +83,8 @@ export const EdenReportEntry = {
         this.sidebarNav.addEventListener('click', event => {
             const templateRender= event.target.closest('[data-eden-js="template-render"]');
             if(templateRender) {
+                (window.matchMedia('(max-width: 1023px)').matches) && EdenSidebar.close();
+
                 const templateId = templateRender.dataset.edenTemplateId;
                 let templateName;
                 for (const item of EDEN_REPORT_ENTRY_CONFIG) {

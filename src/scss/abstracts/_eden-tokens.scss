@@ -144,7 +144,7 @@ $chromatic-g-60: oklch(60% 0.15 150);
     --eden-sys-zi-toast: calc(var(--_zi-step) * 6);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     :root {
         --eden-sys-page-gutter: var(--eden-sys-space-md);
     }

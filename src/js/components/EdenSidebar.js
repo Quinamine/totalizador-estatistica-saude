@@ -20,7 +20,7 @@ export const EdenSidebar = {
     close() {
         this.sidebar.classList.remove('is-open');
         this.sidebarOverlay.classList.remove('is-active', 'is-active-sidebar');
-         if(window.matchMedia('(min-width: 1024px').matches) {
+        if(window.matchMedia('(min-width: 1024px)').matches) {
             this.body.classList.add('is-eden-sidebar-closed');
         }
     },

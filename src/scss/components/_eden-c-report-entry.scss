@@ -1,7 +1,14 @@
 @use '../abstracts' as *;
 
 .eden-c-report-entry {
-    padding: var(--eden-sys-page-gutter);
+    --eden-l-container-inset-inline-custom: 0;
+
+    --_parent-padding: var(--eden-sys-page-gutter);
+    --_header-inner-padding: var(--eden-sys-page-gutter);
+    --_layout-grid-compensation: calc(var(--_parent-padding) + var(--_header-inner-padding));
+
+    --eden-l-container-max-width-custom: calc(var(--eden-sys-layout-max-width) - var(--_layout-grid-compensation));
+
     overflow-x: auto;
     background-color: transparent;
 }
