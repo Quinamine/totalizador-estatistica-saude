@@ -13,7 +13,7 @@ export const EdenSidebar = {
         this.sidebar.classList.add('is-open');
         this.sidebarOverlay.classList.add('is-active', 'is-active-sidebar');
         if(window.matchMedia('(min-width: 1024px)').matches) {
-            this.body.classList.remove('is-eden-sidebar-closed');
+            this.body.classList.remove('has-eden-sidebar-closed');
         }
     },
 
@@ -21,7 +21,7 @@ export const EdenSidebar = {
         this.sidebar.classList.remove('is-open');
         this.sidebarOverlay.classList.remove('is-active', 'is-active-sidebar');
         if(window.matchMedia('(min-width: 1024px)').matches) {
-            this.body.classList.add('is-eden-sidebar-closed');
+            this.body.classList.add('has-eden-sidebar-closed');
         }
     },
 

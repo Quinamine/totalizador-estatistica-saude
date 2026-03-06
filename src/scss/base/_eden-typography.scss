@@ -1,41 +1,45 @@
 @use '../abstracts' as *;
 
 h1, h2, h3, h4 {
-    line-height: var(--eden-sys-lh-sm);
+    line-height: var(--eden-sys-line-height-sm);
     margin-block: var(--eden-sys-flow-gap-start) var(--eden-sys-flow-gap-end);
-    font-weight: var(--eden-sys-fw-bold);
+    font-weight: var(--eden-sys-text-bold);
 }
 
 h1 {
-    --eden-sys-heading-flow-gap-start: 0;
-    font-size: var(--h1-fs, var(--eden-sys-fs-2xl));
+    --eden-sys-heading-spacing-y-start: 0;
+    font-size: var(--_h1-font-size, var(--eden-sys-text-2xl));
 }
 
 h2 {
-  font-size: var(--h2-fs, var(--eden-sys-fs-xl));
+  font-size: var(--_h2-font-size, var(--eden-sys-text-xl));
 }
 
 h3 {
-  font-size: var(--h3-fs, var(--eden-sys-fs-lg));
+  font-size: var(--_h3-font-size, var(--eden-sys-text-lg));
 }
 
 h4 {
-  font-size: var(--h1-fs, var(--eden-sys-fs-md));
+  font-size: var(--_h4-font-size, var(--eden-sys-text-md));
+}
+
+p {
+    margin-block-end: var(--eden-sys-paragraph-spacing-y);
 }
 
 article ul, 
 article ol {
-    margin-block-end: var(--eden-sys-list-flow-gap-block);
-    margin-inline-start: var(--eden-sys-page-gutter);
+    margin-block-end: var(--eden-sys-list-spacing-y);
+    margin-inline-start: var(--eden-sys-page-margin);
 
     li:not(li:last-of-type) {
-        margin-block-end: var(--eden-sys-list-item-flow-gap-block);
+        margin-block-end: var(--eden-sys-list-item-spacing-y);
     }
 
     li {
         ul, ol {
-            margin-block-start: var(--eden-sys-list-item-flow-gap-block);
-            margin-inline-start: calc(var(--eden-sys-page-gutter) + var(--eden-sys-space-xxs));
+            margin-block-start: var(--eden-sys-list-item-spacing-y);
+            margin-inline-start: calc(var(--eden-sys-page-margin) + var(--eden-sys-spacing-xxs));
         }
     }
 }
@@ -49,5 +53,5 @@ article ol {
 }
 
 strong, b {
-    font-weight: var(--eden-sys-fw-bold);
+    font-weight: var(--eden-sys-text-bold);
 }

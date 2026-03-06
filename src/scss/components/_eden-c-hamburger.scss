@@ -1,32 +1,33 @@
 @use '../abstracts' as *;
 
 .eden-c-hamburger {
-    --_hbg-bg: transparent;
+    --_bg: transparent;
+    --_bar-height: var(--eden-sys-spacing-micro);
 
-    min-height: var(--eden-sys-space-xl);
+    min-height: var(--eden-sys-spacing-xl);
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: var(--eden-sys-space-xl);
-    height: var(--eden-sys-space-xl);
+    width: var(--eden-sys-spacing-xl);
+    height: var(--eden-sys-spacing-xl);
     border-radius: var(--eden-sys-radius-full);
-    background-color: var(--_hbg-bg);
+    background-color: var(--_bg);
     
     @include apply-motion-standard(background-color);
 
     @include can-hover {
         &:hover {
-            --_hbg-bg: var(--eden-sys-color-interactive-hover);
+            --_bg: var(--eden-sys-action-color-hover);
         }
     }
 
     &:active {
-        --_hbg-bg: var(--eden-sys-color-interactive-active);
+        --_bg: var(--eden-sys-action-color-active);
         opacity: 0.7;
     }
 
     &__icon {
-        width: var(--eden-sys-space-md);
+        width: var(--eden-sys-spacing-md);
         height: 0.875rem;
         display: flex;
         flex-direction: column;
@@ -35,7 +36,7 @@
 
     &__bar {
         width: 100%;
-        height: var(--eden-sys-space-micro);
+        height: var(--_bar-height);
         background: var(--eden-sys-primary);
         border-radius: var(--eden-sys-radius-sm);
     }
