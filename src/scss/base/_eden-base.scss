@@ -39,7 +39,7 @@ body {
     cursor: default;
     font: {
         size: var(--eden-sys-text-md);
-        family: Arial, Helvetica, sans-serif;
+        family: system-ui, sans-serif;
     }
 
     @media print {
