@@ -1,24 +1,24 @@
 @use '../abstracts' as *;
 
 .eden-c-report-entry {
-    --eden-l-container-inset-inline-custom: 0;
+    --eden-l-container-padding-x: 0;
 
-    --_parent-padding: var(--eden-sys-page-gutter);
-    --_header-inner-padding: var(--eden-sys-page-gutter);
-    --_layout-grid-compensation: calc(var(--_parent-padding) + var(--_header-inner-padding));
+    --_parent-padding: var(--eden-sys-page-margin);
+    --_header-padding: var(--eden-sys-page-margin);
+    --_layout-grid-compensation: calc(var(--_parent-padding) + var(--_header-padding));
 
-    --eden-l-container-max-width-custom: calc(var(--eden-sys-layout-max-width) - var(--_layout-grid-compensation));
+    --eden-l-container-max-width: calc(var(--eden-sys-layout-max-width) - var(--_layout-grid-compensation));
 
     overflow-x: auto;
     background-color: transparent;
 }
 
 .eden-c-report-entry__error-text {
-    margin-block-end: var(--eden-sys-p-flow-gap-block);
+    margin-block-end: var(--eden-sys-paragraph-spacing-y);
 }
 
 .eden-c-report-entry__error-actions {
     display: inline-flex;
     align-items: center;
-    gap: var(--eden-sys-space-sm);
+    gap: var(--eden-sys-spacing-sm);
 }

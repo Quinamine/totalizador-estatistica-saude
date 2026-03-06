@@ -1,5 +1,5 @@
 .eden-c-icon {
-    --_size: 1.5rem; // 24px;
+    --_size: var(--eden-sys-spacing-md);
 
     width: var(--_size);
     height: var(--_size);

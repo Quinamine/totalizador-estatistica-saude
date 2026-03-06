@@ -35,10 +35,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--eden-sys-surface-0);
     color: var(--eden-sys-on-surface);
-    line-height: var(--eden-sys-lh-md);
+    line-height: var(--eden-sys-line-height-md);
     cursor: default;
     font: {
-        size: var(--eden-sys-fs-md);
+        size: var(--eden-sys-text-md);
         family: Arial, Helvetica, sans-serif;
     }
 
@@ -56,29 +56,29 @@ img, picture, video, canvas, svg {
 }
 
 picture, figure, img {
-    margin-block: var(--eden-sys-figure-flow-gap-start) var(--eden-sys-figure-flow-gap-end);
+    margin-block: var(--eden-sys-figure-spacing-y-start) var(--eden-sys-figure-spacing-y-end);
 }
 
 picture, figure {
     img {
-      --eden-sys-figure-flow-gap-start: 0;
-      --eden-sys-figure-flow-gap-end: 0;
+      --eden-sys-figure-spacing-y-start: 0;
+      --eden-sys-figure-spacing-y-end: 0;
       margin-inline: 0;
     }
 }
 
 table {
     width: 100%;
-    margin-block-start: var(--eden-sys-space-sm);
+    margin-block-start: var(--eden-sys-spacing-sm);
 
     td, th {
-        padding: var(--eden-sys-space-xs);
-        border: 1px solid var(--eden-sys-border-main);
+        padding: var(--eden-sys-spacing-xs);
+        border: 1px solid var(--eden-sys-border-color-default);
     }
 }
 
 figcaption {
-    margin-block-start: var(--eden-sys-figure-caption-gap);
+    margin-block-start: var(--eden-sys-figure-caption-spacing-y);
 }
 
 input, button, textarea, select {
@@ -101,7 +101,7 @@ input, textarea {
 
 input {
     &[readonly] {
-        font-weight: var(--eden-sys-fw-bold);
+        font-weight: var(--eden-sys-text-bold);
         cursor: default;
         transition: background-color .4s ease-out
     }
@@ -127,22 +127,22 @@ textarea {
 }
 
 a {
-    --_text-color: var(--eden-sys-link-main);
+    --_color: var(--eden-sys-link-color);
 
-    color: var(--_text-color);
+    color: var(--_color);
     -webkit-tap-highlight-color: transparent;
     text-decoration: none;
     cursor: pointer;
-    transition: all var(--eden-sys-duration-standard) var(--eden-sys-motion-main);
+    transition: all var(--eden-sys-duration-standard) var(--eden-sys-motion-default);
 
     @include can-hover {
         &:hover {
-            --_text-color: oklch(from var(--link-main) calc(l + 0.10) c h);
+            --_color: var(--eden-sys-link-color-hover);
         }
     }
 
     &:active {
-        --_text-color: oklch(from var(--link-main) calc(l - 0.2) c h);
+        --_color: var(--eden-sys-link-color-active);
         opacity: 0.7;
         transition: all var(--eden-sys-duration-instant) var(--eden-sys-motion-interaction);
     }

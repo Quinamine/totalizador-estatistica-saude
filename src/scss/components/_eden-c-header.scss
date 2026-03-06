@@ -1,11 +1,11 @@
 @use '../abstracts' as *;;
 
 .eden-c-header {
-    --_hamburger-size: var(--eden-sys-space-xl);
-    --_hamburger-icon-size: var(--eden-sys-space-md);
+    --_hamburger-size: var(--eden-sys-spacing-xl);
+    --_hamburger-icon-size: var(--eden-sys-spacing-md);
     --_hamburger-alignment-offset: calc((var(--_hamburger-size) - var(--_hamburger-icon-size)) / 2 * -1);
 
-    --_sidebar-trigger-size: var(--eden-sys-space-xl);
+    --_sidebar-trigger-size: var(--eden-sys-spacing-xl);
     --_sidebar-trigger-icon-size: 1.25rem; // 20px;
     --_sidebar-trigger-alignment-offset: calc((var(--_sidebar-trigger-size) - var(--_sidebar-trigger-icon-size)) / 2 * -1);
 
@@ -13,14 +13,14 @@
     position: sticky;
     top: 0;
     z-index: var(--eden-sys-zi-sticky);
-    box-shadow: 0 2px 5px var(--eden-sys-shadow-main);
+    box-shadow: 0 2px 5px var(--eden-sys-shadow);
 
     &__content {
         min-height: 64px;
         display: flex;
         align-items: center;
-        gap: var(--eden-sys-space-sm);
-        padding-block: var(--eden-sys-space-xs);
+        gap: var(--eden-sys-spacing-sm);
+        padding-block: var(--eden-sys-spacing-xs);
     }
 
     .eden-c-hamburger {
@@ -43,8 +43,8 @@
     }
 
     &__title {
-        --eden-sys-heading-flow-gap-end: 0;
-        --h1-fs: var(--eden-sys-fs-md);
+        --eden-sys-heading-spacing-y-end: 0;
+        --_h1-font-size: var(--eden-sys-text-md);
      
         color: var(--eden-sys-primary);
 
@@ -63,12 +63,12 @@
         display: none;
 
         @include desktop {
-            --eden-c-button-inset-block-custom: 0;
-            --eden-c-button-inset-inline-custom: 0;
-            --eden-c-button-radius-custom: var(--eden-sys-radius-full);
+            --eden-comp-button-padding-y: 0;
+            --eden-comp-button-padding-x: 0;
+            --eden-comp-button-border-radius: var(--eden-sys-radius-full);
 
             display: inline-flex;
-            width: var(--eden-sys-space-xl);
+            width: var(--eden-sys-spacing-xl);
             margin-inline-start: var(--_sidebar-trigger-alignment-offset);
             opacity: 0;
 

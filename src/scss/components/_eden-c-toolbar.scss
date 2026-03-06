@@ -1,8 +1,8 @@
 @use '../abstracts' as *;
 
 .eden-c-toolbar {
-    --eden-c-button-inset-block-custom: var(--eden-sys-space-xs);
-    --eden-c-button-inset-inline-custom: var(--eden-sys-space-xxs);
+    --eden-comp-button-padding-y: var(--eden-sys-spacing-xs);
+    --eden-comp-button-padding-x: var(--eden-sys-spacing-xxs);
 
     display: flex;
     justify-content: center;
@@ -13,14 +13,14 @@
     bottom: 0;
     width: 100%;
     z-index: var(--eden-sys-zi-sticky);
-    box-shadow: 0 -2px 4px var(--eden-sys-shadow-main);
-    border-block-start: thin solid var(--eden-sys-border-subtle);
-    padding-block: var(--eden-sys-space-xs) var(--eden-sys-space-sm);
+    box-shadow: 0 -2px 4px var(--eden-sys-shadow);
+    border-block-start: thin solid var(--eden-sys-border-color-subtle);
+    padding-block: var(--eden-sys-spacing-xs) var(--eden-sys-spacing-sm);
 
     @include desktop {
-        --eden-c-button-inset-block-custom: var(--eden-sys-space-sm);
-        --eden-c-button-inset-inline-custom: var(--eden-sys-space-sm);
-        --_toolbar-offset-alignment: calc(var(--eden-c-button-inset-inline-custom) * -1);
+        --eden-comp-button-padding-y: var(--eden-sys-spacing-sm);
+        --eden-comp-button-padding-x: var(--eden-sys-spacing-sm);
+        --_toolbar-offset-alignment: calc(var(--eden-comp-button-padding-x) * -1);
 
         position: static;
         box-shadow: none;

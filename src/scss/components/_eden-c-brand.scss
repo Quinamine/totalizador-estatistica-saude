@@ -1,17 +1,16 @@
 @use '../abstracts' as *;
 
 .eden-c-brand {
-    --eden-c-brand-inset: var(--eden-sys-space-md);
+    --_padding: var(--eden-sys-spacing-md);
 
     display: flex;
     align-items: center;
-    gap: var(--eden-sys-space-sm);
-    padding: var(--eden-c-brand-inset);
+    gap: var(--eden-sys-spacing-sm);
+    padding: var(--_padding);
 
     &--compact {
-        --eden-c-brand-inset: 0.25rem;
+        --_padding: var(--eden-sys-spacing-micro-plus);
 
-        padding: var(--eden-c-brand-inset);
         background-color: var(--eden-sys-brand);
         color: var(--eden-sys-on-brand);
     }
@@ -22,14 +21,14 @@
 
     &__title {
         margin: 0;
-        font-size: var(--eden-sys-fs-2xl);
+        font-size: var(--eden-sys-text-2xl);
         line-height: 1;
         color: currentColor;
-        font-weight: var(--eden-sys-fw-bold);
+        font-weight: var(--eden-sys-text-bold);
     }
 
     &__description {
-        font-size: var(--eden-sys-fs-xxs);
+        font-size: var(--eden-sys-text-xxs);
         opacity: 0.7;
     }
 }

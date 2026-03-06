@@ -2,9 +2,9 @@
 
 .eden-l-container {
     width: 100%;
-    max-width: var(--eden-l-container-max-width-custom, var(--eden-sys-layout-max-width));
+    max-width: var(--eden-l-container-max-width, var(--eden-sys-layout-max-width));
     margin-inline-end: auto;
-    padding-inline: var(--eden-l-container-inset-inline-custom, var(--eden-sys-page-gutter));
+    padding-inline: var(--eden-l-container-padding-x, var(--eden-sys-page-margin));
 }
 
 body {
@@ -40,12 +40,12 @@ body {
 main {
     --_toolbar-height: 88px;
     flex: 1;
-    padding-inline: var(--eden-sys-page-gutter);
-    padding-block: var(--eden-sys-page-gutter) calc(var(--_toolbar-height) + var(--eden-sys-page-gutter));
+    padding-inline: var(--eden-sys-page-margin);
+    padding-block: var(--eden-sys-page-margin) calc(var(--_toolbar-height) + var(--eden-sys-page-margin));
     overflow: hidden;
 
     @include desktop {
-        padding-block-end: var(--eden-sys-page-gutter);
+        padding-block-end: var(--eden-sys-page-margin);
     }
 }
 

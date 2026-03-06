@@ -1,82 +1,66 @@
 @use "../abstracts" as *;
+
 .eden-c-button {
     // Button API
-    --eden-c-button-fs: var(--eden-c-button-fs-custom, var(--eden-sys-fs-sm));
-    --eden-c-button-fw: var(--eden-c-button-fw-custom, var(--eden-sys-fw-semibold));
-    --eden-c-button-radius: var(--eden-c-button-radius-custom, var(--eden-sys-radius-sm));
-    --eden-c-button-inset-block: var(--eden-c-button-inset-block-custom, var(--eden-sys-space-sm));
-    --eden-c-button-inset-inline: var(--eden-c-button-inset-inline-custom, var(--eden-sys-space-md));
-    --eden-c-button-text: var(--eden-c-button-text-custom, var(--eden-sys-on-surface));
-    --eden-c-button-bg-hover: var(--eden-c-button-bg-hover-custom, var(--eden-sys-color-interactive-hover));
-    --eden-c-button-bg-active: var(--eden-c-button-bg-active-custom, var(--eden-sys-color-interactive-active));
-    // Private tokens
-    --_btn-bg: transparent;
+    --_font-size: var(--eden-comp-button-font-size, var(--eden-sys-text-sm));
+    --_font-weight: var(--eden-comp-button-font-weight, var(--eden-sys-text-semibold));
+    --_padding-block: var(--eden-comp-button-padding-y, var(--eden-sys-spacing-sm));
+    --_padding-inline: var(--eden-comp-button-padding-x, var(--eden-sys-spacing-md));
+    --_justify-content: var(--eden-comp-button-justify-content, center);
+    --_border-radius: var(--eden-comp-button-border-radius, var(--eden-sys-action-border-radius));
+    --_color: var(--eden-comp-button-color, var(--eden-sys-on-surface));
+    --_bg-hover: var(--eden-comp-button-bg-hover, var(--eden-sys-action-color-hover));
+    --_bg-active: var(--eden-comp-button-bg-active, var(--eden-sys-action-color-active));
+    --_bg: transparent;
 
     display: inline-flex;
     align-items: center;
-    justify-content: var(--eden-c-button-justify-custom, center);
-    min-height: var(--eden-sys-space-xl);
-    font-size: var(--eden-c-button-fs);
-    font-weight: var(--eden-c-button-fw);
-    border-radius: var(--eden-c-button-radius);
-    padding: var(--eden-c-button-inset-block) var(--eden-c-button-inset-inline);
-    background-color: var(--_btn-bg);
-    color: var(--eden-c-button-text);
-    @include apply-motion-standard(background-color, transform, opacity);
+    justify-content: var(--_justify-content);
+    min-height: var(--eden-sys-spacing-xl);
+    font-size: var(--_font-size);
+    font-weight: var(--_font-weight);
+    border-radius: var(--_border-radius);
+    padding: var(--_padding-block) var(--_padding-inline);
+    background-color: var(--_bg);
+    color: var(--_color);
+    @include apply-motion-standard(background-color, color, transform, opacity);
 
     @include can-hover {
-        &:hover { --_btn-bg: var(--eden-c-button-bg-hover); }
+        &:hover { --_bg: var(--_bg-hover); }
     }
 
     &:active {
-        --_btn-bg: var(--eden-c-button-bg-active);
-
+        --_bg: var(--_bg-active);
         opacity: 0.7;
-        @include cannot-hover { transform: scale(0.96); }
+        @include cannot-hover { 
+            transform: scale(0.96); 
+        }
     }
 
     &--primary {
-        --_btn-bg: var(--eden-sys-primary);
-        --eden-c-button-text: var(--eden-sys-on-primary);
-
-        @include can-hover {
-            &:hover { --_btn-bg: oklch(from var(--eden-sys-primary) calc(l + 0.1) c h); }
-        }
-
-        &:active {
-            --_btn-bg: oklch(from var(--eden-sys-primary) calc(l - 0.05) c h);
-        }
+        --_bg: var(--eden-sys-primary);
+        --_color: var(--eden-sys-on-primary);
+        --_bg-hover: oklch(from var(--eden-sys-primary) calc(l + 0.1) c h);
+        --_bg-active: oklch(from var(--eden-sys-primary) calc(l - 0.05) c h);
     }
 
     &--secondary {
-        --_btn-bg: transparent;
-        --eden-c-button-text: var(--eden-sys-on-surface);
-
+        --_bg: transparent;
+        --_color: var(--eden-sys-on-surface);
+        --_bg-hover: oklch(from var(--eden-sys-surface-0) calc(l - 0.05) 0.04 h);
         border: 1px solid var(--eden-sys-primary);
-
-        @include can-hover {
-            &:hover { 
-                --_btn-bg: oklch(from var(--eden-sys-surface-0) calc(l - 0.05) 0.04 h);
-            }
-        }
     }
 
     &--danger {
-        --_btn-bg: var(--eden-sys-danger-subtle);
-        --eden-c-button-text: var(--eden-sys-danger);
-
-        @include can-hover {
-            &:hover { --_btn-bg: oklch(from var(--eden-sys-danger-subtle) calc(l + 0.1) c h); }
-        }
-
-        &:active {
-            --_btn-bg: oklch(from var(--eden-sys-danger-subtle) calc(l - 0.05) c h);
-        }
+        --_bg: var(--eden-sys-danger);
+        --_color: var(--eden-sys-on-danger);
+        --_bg-hover: oklch(from var(--eden-sys-danger) calc(l + 0.1) c h); 
+        --_bg-active: oklch(from var(--eden-sys-danger) calc(l - 0.05) c h);
     }
 
     &--stack {
         flex-direction: column;
-        gap: var(--eden-sys-space-xxs);
+        gap: var(--eden-sys-spacing-xxs);
 
         .eden-c-button__label {
             white-space: nowrap;
