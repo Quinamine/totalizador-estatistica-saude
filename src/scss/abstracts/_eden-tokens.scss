@@ -31,28 +31,28 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     // > Font size scale
     --eden-ref-font-size-base: 1rem;
     --eden-ref-font-size-unit: 0.125rem; // 2px;
-    --eden-ref-fs-100: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit) * 3); // 10px;
-    --eden-ref-fs-200: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit) * 2); // 12px;
-    --eden-ref-fs-300: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit)); // 14px;
-    --eden-ref-fs-400: var(--eden-ref-font-size-base); // 16px;
-    --eden-ref-fs-500: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 1); // 18px;
-    --eden-ref-fs-600: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 2); // 20px;
-    --eden-ref-fs-700: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 3); // 22px;
-    --eden-ref-fs-800: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 4); // 24px;
-    // > Space scale
+    --eden-ref-font-size-100: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit) * 3); // 10px;
+    --eden-ref-font-size-200: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit) * 2); // 12px;
+    --eden-ref-font-size-300: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit)); // 14px;
+    --eden-ref-font-size-400: var(--eden-ref-font-size-base); // 16px;
+    --eden-ref-font-size-500: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 1); // 18px;
+    --eden-ref-font-size-600: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 2); // 20px;
+    --eden-ref-font-size-700: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 3); // 22px;
+    --eden-ref-font-size-800: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 4); // 24px;
+    // > Spacing scale
     --eden-ref-line-height-base: 1.5;
-    --eden-ref-space-unit: calc(var(--eden-ref-font-size-base) * var(--eden-ref-line-height-base));
-    // >> Micro scale
-    --eden-ref-space-25: 0.125rem; // Fine tuning step
-    --eden-ref-space-50: 0.25rem;
-    // >> Base scale
-    --eden-ref-space-100: calc(var(--eden-ref-space-unit) / 4); // 6px;
-    --eden-ref-space-200: calc(var(--eden-ref-space-unit) / 3); // 8px;
-    --eden-ref-space-300: calc(var(--eden-ref-space-unit) / 2); // 12px;
-    --eden-ref-space-400: var(--eden-ref-space-unit); // 24px;
-    --eden-ref-space-500: calc(var(--eden-ref-space-unit) * 1.5); // 36px
-    --eden-ref-space-600: calc(var(--eden-ref-space-unit) * 2); // 48px;
+    --eden-ref-spacing-unit: calc(var(--eden-ref-font-size-base) * var(--eden-ref-line-height-base));
 
+    --eden-ref-spacing-02: calc(var(--eden-ref-spacing-unit) / 12); // 2px Fine tuning step
+    --eden-ref-spacing-04: calc(var(--eden-ref-spacing-unit) / 6); // 4px
+    --eden-ref-spacing-06: calc(var(--eden-ref-spacing-unit) / 4); // 6px;
+    --eden-ref-spacing-08: calc(var(--eden-ref-spacing-unit) / 3); // 8px;
+    --eden-ref-spacing-12: calc(var(--eden-ref-spacing-unit) / 2); // 12px;
+    --eden-ref-spacing-16: calc(var(--eden-ref-spacing-unit) / 1.5); // 16px;
+    --eden-ref-spacing-24: var(--eden-ref-spacing-unit); // 24px;
+    --eden-ref-spacing-36: calc(var(--eden-ref-spacing-unit) * 1.5); // 36px
+    --eden-ref-spacing-48: calc(var(--eden-ref-spacing-unit) * 2); // 48px;
+    --eden-ref-spacing-60: calc(var(--eden-ref-spacing-unit) * 2.5); // 60px;
     // --- 2.2 SYSTEM TOKENS (Semantic Intent) ---
     // > Brand 
     --eden-sys-brand: oklch(35% 0.08 var(--eden-ref-brand-hue));
@@ -76,28 +76,30 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-sys-on-warning-container: oklch(25% 0.08 84);
     --eden-sys-warning-outline: oklch(83% 0.19 84);
     // > Typography 
-    --eden-sys-text-xxs: var(--eden-ref-fs-100);
-    --eden-sys-text-xs: var(--eden-ref-fs-200);
-    --eden-sys-text-sm: var(--eden-ref-fs-300);
-    --eden-sys-text-md: var(--eden-ref-fs-400);
-    --eden-sys-text-lg: var(--eden-ref-fs-500);
-    --eden-sys-text-xl: var(--eden-ref-fs-600);
-    --eden-sys-text-2xl: var(--eden-ref-fs-700);
-    --eden-sys-text-3xl: var(--eden-ref-fs-800);
+    --eden-sys-text-2xs: var(--eden-ref-font-size-100);
+    --eden-sys-text-xs: var(--eden-ref-font-size-200);
+    --eden-sys-text-sm: var(--eden-ref-font-size-300);
+    --eden-sys-text-md: var(--eden-ref-font-size-400);
+    --eden-sys-text-lg: var(--eden-ref-font-size-500);
+    --eden-sys-text-xl: var(--eden-ref-font-size-600);
+    --eden-sys-text-2xl: var(--eden-ref-font-size-700);
+    --eden-sys-text-3xl: var(--eden-ref-font-size-800);
     --eden-sys-text-regular: 400;
     --eden-sys-text-semibold: 600;
     --eden-sys-text-bold: 700;
     --eden-sys-line-height-sm: 1.25;
     --eden-sys-line-height-md: var(--eden-ref-line-height-base);
     // > Spacing scale
-    --eden-sys-spacing-micro: var(--eden-ref-space-25);
-    --eden-sys-spacing-micro-plus: var(--eden-ref-space-50);
-    --eden-sys-spacing-xxs: var(--eden-ref-space-100);
-    --eden-sys-spacing-xs: var(--eden-ref-space-200);
-    --eden-sys-spacing-sm: var(--eden-ref-space-300);
-    --eden-sys-spacing-md: var(--eden-ref-space-400);
-    --eden-sys-spacing-lg: var(--eden-ref-space-500);
-    --eden-sys-spacing-xl: var(--eden-ref-space-600);
+    --eden-sys-spacing-4xs: var(--eden-ref-spacing-02);
+    --eden-sys-spacing-3xs: var(--eden-ref-spacing-04);
+    --eden-sys-spacing-2xs: var(--eden-ref-spacing-06);
+    --eden-sys-spacing-xs: var(--eden-ref-spacing-08);
+    --eden-sys-spacing-sm: var(--eden-ref-spacing-12);
+    --eden-sys-spacing-ms: var(--eden-ref-spacing-16); //  Medium Small
+    --eden-sys-spacing-md: var(--eden-ref-spacing-24);
+    --eden-sys-spacing-lg: var(--eden-ref-spacing-36);
+    --eden-sys-spacing-xl: var(--eden-ref-spacing-48);
+    --eden-sys-spacing-2xl: var(--eden-ref-spacing-60);
     // > Border-radius
     --eden-ref-radius-unit: 4px;
     --eden-sys-radius-sm: var(--eden-ref-radius-unit);
@@ -126,7 +128,7 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-sys-zi-toast: calc(var(--eden-ref-zi-unit) * 6);
     // > Layout and UI
     --eden-sys-layout-max-width: 1440px;
-    --eden-sys-page-margin: 1rem;
+    --eden-sys-page-margin: var(--eden-ref-spacing-16);
     --eden-sys-border-color-default: #{$eden-ref-neutral-88-02};
     --eden-sys-border-color-subtle: #{$eden-ref-neutral-95-01};
     --eden-sys-link-color-hover: oklch(from var(--eden-sys-link-color) calc(l - 0.10) calc(c + 0.02) h);

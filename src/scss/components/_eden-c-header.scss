@@ -1,13 +1,13 @@
 @use '../abstracts' as *;;
 
 .eden-c-header {
-    --_hamburger-size: var(--eden-sys-spacing-xl);
-    --_hamburger-icon-size: var(--eden-sys-spacing-md);
-    --_hamburger-alignment-offset: calc((var(--_hamburger-size) - var(--_hamburger-icon-size)) / 2 * -1);
+    --_hamburger-width: var(--eden-sys-spacing-xl);
+    --_hamburger-icon-width: var(--eden-sys-spacing-md);
+    --_hamburger-alignment-offset: calc((var(--_hamburger-width) - var(--_hamburger-icon-width)) / 2 * -1);
 
-    --_sidebar-trigger-size: var(--eden-sys-spacing-xl);
-    --_sidebar-trigger-icon-size: 1.25rem; // 20px;
-    --_sidebar-trigger-alignment-offset: calc((var(--_sidebar-trigger-size) - var(--_sidebar-trigger-icon-size)) / 2 * -1);
+    --_sidebar-trigger-width: var(--eden-sys-spacing-xl);
+    --_sidebar-trigger-icon-width: 1.25rem; // 20px;
+    --_sidebar-trigger-alignment-offset: calc((var(--_sidebar-trigger-width) - var(--_sidebar-trigger-icon-width)) / 2 * -1);
 
     background: var(--eden-sys-surface-1);
     position: sticky;
@@ -16,7 +16,7 @@
     box-shadow: 0 2px 5px var(--eden-sys-shadow);
 
     &__content {
-        min-height: 64px;
+        min-height: var(--eden-sys-spacing-2xl);
         display: flex;
         align-items: center;
         gap: var(--eden-sys-spacing-sm);

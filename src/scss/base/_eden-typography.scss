@@ -39,7 +39,7 @@ article ol {
     li {
         ul, ol {
             margin-block-start: var(--eden-sys-list-item-spacing-y);
-            margin-inline-start: calc(var(--eden-sys-page-margin) + var(--eden-sys-spacing-xxs));
+            margin-inline-start: calc(var(--eden-sys-page-margin) + var(--eden-sys-spacing-2xs));
         }
     }
 }
