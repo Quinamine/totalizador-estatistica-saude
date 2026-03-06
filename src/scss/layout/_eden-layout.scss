@@ -19,7 +19,7 @@ body {
         grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
         transition: grid-template-columns var(--eden-sys-duration-slow) var(--eden-sys-motion-fluid);
 
-        &.is-eden-sidebar-closed {
+        &.has-eden-sidebar-closed {
             grid-template-columns: 0 1fr;
         }
     }

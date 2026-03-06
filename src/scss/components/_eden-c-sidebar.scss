@@ -33,7 +33,7 @@
         position: sticky;
         top: 0;
 
-        .is-eden-sidebar-closed & {
+        .has-eden-sidebar-closed & {
             @include desktop {
                 --_pos-x: var(--_pos-offscreen);
             }
