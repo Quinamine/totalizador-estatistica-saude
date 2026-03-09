@@ -9,8 +9,9 @@
     padding: var(--_padding);
 
     &--compact {
-        --_padding: var(--eden-sys-spacing-micro-plus);
+        --_padding: var(--eden-sys-spacing-3xs);
 
+        padding-inline: var(--eden-sys-spacing-2xs);
         background-color: var(--eden-sys-brand);
         color: var(--eden-sys-on-brand);
     }
@@ -28,7 +29,7 @@
     }
 
     &__description {
-        font-size: var(--eden-sys-text-xxs);
+        font-size: var(--eden-sys-text-2xs);
         opacity: 0.7;
     }
 }

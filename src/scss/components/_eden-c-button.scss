@@ -16,7 +16,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: var(--_justify-content);
-    min-height: var(--eden-sys-spacing-xl);
+    min-height: var(--eden-sys-action-size-base);
     font-size: var(--_font-size);
     font-weight: var(--_font-weight);
     border-radius: var(--_border-radius);
@@ -60,7 +60,7 @@
 
     &--stack {
         flex-direction: column;
-        gap: var(--eden-sys-spacing-xxs);
+        gap: var(--eden-sys-spacing-2xs);
 
         .eden-c-button__label {
             white-space: nowrap;

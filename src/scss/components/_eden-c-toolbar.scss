@@ -2,7 +2,7 @@
 
 .eden-c-toolbar {
     --eden-comp-button-padding-y: var(--eden-sys-spacing-xs);
-    --eden-comp-button-padding-x: var(--eden-sys-spacing-xxs);
+    --eden-comp-button-padding-x: var(--eden-sys-spacing-2xs);
 
     display: flex;
     justify-content: center;
@@ -20,13 +20,13 @@
     @include desktop {
         --eden-comp-button-padding-y: var(--eden-sys-spacing-sm);
         --eden-comp-button-padding-x: var(--eden-sys-spacing-sm);
-        --_toolbar-offset-alignment: calc(var(--eden-comp-button-padding-x) * -1);
+        --_toolbar-offset-alignment: var(--eden-comp-button-padding-x);
 
         position: static;
         box-shadow: none;
         border: none;
         padding: 0;
-        margin-right: var(--_toolbar-offset-alignment);
+        margin-right: calc(var(--_toolbar-offset-alignment) * -1);
         min-height: initial;
         width: auto;
         background-color: transparent;
