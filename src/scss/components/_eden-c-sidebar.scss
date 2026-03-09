@@ -1,20 +1,27 @@
 @use "../abstracts/" as *;
 
 .eden-c-sidebar {
+    --eden-comp-button-color: var(--eden-sys-on-primary-variant);
+    --eden-comp-button-bg-hover: oklch(from currentColor l c h / 10%);
+    --eden-comp-button-bg-active: oklch(from currentColor l c h / 6%);
+
     // Private tokens
     --_width: 280px;
     --_bg-default: var(--eden-sys-primary);
     --_bg-sunken: oklch(from var(--_bg-default) calc(l - .03) c h);
     --_pos-offscreen: calc(var(--_width) * -1);
     --_pos-x: var(--_pos-offscreen);
-    --_scrollbar-track: oklch(from var(--_bg-default) 0.25 0.05 h);
-    --_scrollbar-thumb: oklch(from var(--_bg-default) 0.55 0.12 h);
-    --_scrollbar-thumb-hover: oklch(from var(--_bg-default) 0.60 0.15 h);
+
+    --_scrollbar-track-color: oklch(from var(--_bg-default) 0.25 0.05 h);
+    --_scrollbar-thumb-color: oklch(from var(--_bg-default) 0.55 0.12 h);
+    --_scrollbar-thumb-color-hover: oklch(from var(--_bg-default) 0.60 0.15 h);
+
+    --_action-close-alignment-offset-y: 11px;
+    --_action-close-alignment-offset-x: 7.5px;
     
-    // Other component tokens
-    --eden-comp-button-color: var(--eden-sys-on-primary-variant);
-    --eden-comp-button-bg-hover: oklch(from currentColor l c h / 10%);
-    --eden-comp-button-bg-active: oklch(from currentColor l c h / 6%);
+    @include desktop {
+        --_action-close-alignment-offset-x: 2.5px;
+    }
 
     display: flex;
     flex-direction: column;
@@ -58,8 +65,8 @@
         --eden-comp-button-border-radius: var(--eden-sys-radius-full);
 
         position: absolute;
-        right: 0;
-        top: 0;
+        right: var(--_action-close-alignment-offset-x);
+        top: var(--_action-close-alignment-offset-y);
         width: var(--eden-sys-spacing-xl);
     }
 
@@ -73,18 +80,18 @@
             }
 
             &::-webkit-scrollbar-track {
-                background-color: var(--_scrollbar-track);
+                background-color: var(--_scrollbar-track-color);
                 border-radius: var(--eden-sys-radius-lg);
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: var(--_scrollbar-thumb);
+                background-color: var(--_scrollbar-thumb-color);
                 border-radius: var(--eden-sys-radius-xl);
-                border: 2px solid var(--_scrollbar-track);
+                border: 2px solid var(--_scrollbar-track-color);
             }
 
             &::-webkit-scrollbar-thumb:hover {
-                background-color: var(--_scrollbar-thumb-hover);
+                background-color: var(--_scrollbar-thumb-color-hover);
             }
         }
     }

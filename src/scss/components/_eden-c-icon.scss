@@ -1,5 +1,5 @@
 .eden-c-icon {
-    --_size: var(--eden-sys-spacing-md);
+    --_size: var(--eden-sys-action-icon-size-base);
 
     width: var(--_size);
     height: var(--_size);
@@ -10,7 +10,7 @@
     stroke-linejoin: round;
 
     &--small {
-        --_size: 1.25rem; // 20px;
+        --_size: var(--eden-sys-action-icon-size-sm); // 20px;
     }
 
     &--large {

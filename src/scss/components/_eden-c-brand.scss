@@ -11,6 +11,7 @@
     &--compact {
         --_padding: var(--eden-sys-spacing-3xs);
 
+        padding-inline: var(--eden-sys-spacing-2xs);
         background-color: var(--eden-sys-brand);
         color: var(--eden-sys-on-brand);
     }

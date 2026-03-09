@@ -137,6 +137,9 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-sys-action-border-radius: var(--eden-sys-radius-sm);
     --eden-sys-action-color-hover: oklch(from currentColor l c h / 6%);
     --eden-sys-action-color-active: oklch(from currentColor l c h / 15%);
+    --eden-sys-action-size-base: var(--eden-sys-spacing-xl);
+    --eden-sys-action-icon-size-base: var(--eden-sys-spacing-md);
+    --eden-sys-action-icon-size-sm: 1.25rem; // 20px
     
     // --- 2.3 COMPONENT TOKENS ---
     --eden-sys-heading-spacing-y-start: var(--eden-sys-spacing-lg);

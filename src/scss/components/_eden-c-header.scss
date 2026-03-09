@@ -1,13 +1,11 @@
 @use '../abstracts' as *;;
 
 .eden-c-header {
-    --_hamburger-width: var(--eden-sys-spacing-xl);
-    --_hamburger-icon-width: var(--eden-sys-spacing-md);
-    --_hamburger-alignment-offset: calc((var(--_hamburger-width) - var(--_hamburger-icon-width)) / 2 * -1);
+    --_action-nav-trigger-width: var(--eden-sys-action-size-base);
+    --_action-nav-trigger-icon-width: var(--eden-sys-action-icon-size-base);
+    --_action-nav-trigger-offset: calc((var(--_action-nav-trigger-width) - var(--_action-nav-trigger-icon-width)) / 2);
 
-    --_sidebar-trigger-width: var(--eden-sys-spacing-xl);
-    --_sidebar-trigger-icon-width: 1.25rem; // 20px;
-    --_sidebar-trigger-alignment-offset: calc((var(--_sidebar-trigger-width) - var(--_sidebar-trigger-icon-width)) / 2 * -1);
+    --_title-alignment-offset: 115px;
 
     background: var(--eden-sys-surface-1);
     position: sticky;
@@ -24,7 +22,7 @@
     }
 
     .eden-c-hamburger {
-        margin-inline-start: var(--_hamburger-alignment-offset);
+        margin-inline-start: calc(var(--_action-nav-trigger-offset) * -1);
 
         @include desktop {
             display: none;
@@ -50,11 +48,11 @@
 
         @include desktop {
             position: relative;
-            left: -110px;
+            left: calc(var(--_title-alignment-offset) * -1);
             transition: left var(--eden-sys-duration-fast) var(--eden-sys-motion-entrance);
 
             .has-eden-sidebar-closed & {
-                left: 0;
+                --_title-alignment-offset: 0;
             }
         }
     }
@@ -67,9 +65,11 @@
             --eden-comp-button-padding-x: 0;
             --eden-comp-button-border-radius: var(--eden-sys-radius-full);
 
+            --_action-nav-trigger-icon-width: var(--eden-sys-action-icon-size-sm);
+
             display: inline-flex;
             width: var(--eden-sys-spacing-xl);
-            margin-inline-start: var(--_sidebar-trigger-alignment-offset);
+            margin-inline-start: calc(var(--_action-nav-trigger-offset) * -1);
             opacity: 0;
 
             .has-eden-sidebar-closed & {
