@@ -1,0 +1,77 @@
+@use '../abstracts/' as *;
+
+.eden-c-footer {
+    --eden-comp-button-color: var(--eden-sys-on-surface-subtle);
+    --eden-comp-button-font-size: 0.8;
+    --eden-comp-button-padding-y: var(--eden-sys-spacing-xs);
+    --eden-comp-button-padding-x: var(--eden-sys-spacing-xs);
+    --eden-comp-button-bg-hover: oklch(from var(--eden-sys-on-surface) l c h / 6%);
+    --eden-comp-button-bg-active: oklch(from var(--eden-sys-on-surface) l c h / 15%);
+    --eden-sys-paragraph-spacing-y: 0;
+
+    --_copyright-font-size: 0.6875rem; // 11px;
+    --_footer-safe-clearance: var(--eden-sys-spacing-md); // 24px;
+
+    @include tablet {
+        --_footer-safe-clearance: var(--eden-sys-spacing-xs);
+    }
+    
+    .has-eden-toolbar & {
+        --_footer-safe-clearance: 7.75rem; // 124px
+
+         @include tablet {
+            --_footer-safe-clearance: 6.3125rem; // 101px
+        
+        }
+
+        @include desktop {
+            --_footer-safe-clearance: var(--eden-sys-spacing-xs);
+        }
+    }
+
+    background-color: var(--eden-sys-surface-1);
+    font-size: var(--eden-sys-text-xs);
+    border-block-start: 1px solid oklch(from var(--eden-sys-surface-0) calc(l - 0.02) c l);
+    padding-block-start: var(--eden-sys-spacing-xs);
+    padding-block-end: var(--_footer-safe-clearance);
+
+    &__content {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--eden-sys-spacing-xs);
+
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__legal-nav {
+        display: inline-flex;
+        gap: var(--eden-sys-spacing-md);
+    }
+
+    .eden-c-footer__legal-button {
+        min-width: var(--eden-sys-action-size-base);
+
+        @include can-hover {
+            &:hover {
+                color: var(--eden-sys-on-surface);
+            }
+        }
+    }
+
+    &__copyright-text {
+        color: var(--eden-sys-on-surface-variant);
+        font-size: var(--_copyright-font-size);
+        font-weight: var(--eden-sys-text-regular);
+    }
+
+    &__copyright {
+       @include tablet {
+            --_copyright-font-size: var(--eden-sys-text-xs); // 12px;
+            order: -1;
+        }
+    }
+}
