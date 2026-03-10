@@ -4,6 +4,8 @@
     --eden-comp-button-padding-y: var(--eden-sys-spacing-xs);
     --eden-comp-button-padding-x: var(--eden-sys-spacing-2xs);
 
+    --_offset-y: 100%;
+
     display: flex;
     justify-content: center;
     background-color: var(--eden-sys-surface-1);
@@ -16,17 +18,25 @@
     box-shadow: 0 -2px 4px var(--eden-sys-shadow);
     border-block-start: thin solid var(--eden-sys-border-color-subtle);
     padding-block: var(--eden-sys-spacing-xs) var(--eden-sys-spacing-sm);
+    transform: translateY(var(--_offset-y));
+    transition: transform var(--eden-sys-duration-standard) var(--eden-sys-motion-entrance);
+
+    .has-eden-toolbar & {
+        --_offset-y: 0;
+    }
 
     @include desktop {
         --eden-comp-button-padding-y: var(--eden-sys-spacing-sm);
         --eden-comp-button-padding-x: var(--eden-sys-spacing-sm);
-        --_toolbar-offset-alignment: var(--eden-comp-button-padding-x);
+        
+        --_offset-alignment-x: var(--eden-comp-button-padding-x);
+        --_offset-y: 0;
 
         position: static;
         box-shadow: none;
         border: none;
         padding: 0;
-        margin-right: calc(var(--_toolbar-offset-alignment) * -1);
+        margin-right: calc(var(--_offset-alignment-x) * -1);
         min-height: initial;
         width: auto;
         background-color: transparent;
