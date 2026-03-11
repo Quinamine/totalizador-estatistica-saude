@@ -9,3 +9,12 @@ const EdenApp = {
 }
 
 EdenApp.init();
+
+
+window.addEventListener('report-inject', () => {
+    document.body.classList.add('has-eden-toolbar');
+});
+
+window.addEventListener('report-clear', () => {
+    document.body.classList.remove('has-eden-toolbar');
+})

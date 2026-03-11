@@ -30,9 +30,13 @@ export const EdenReportEntry = {
             this.reportEntry.innerHTML = templateData;
             this.headerTitle.innerHTML = templateName;
 
+            window.dispatchEvent(new CustomEvent('report-inject'));
+
         } catch (error) {
             console.log(error.message);
             this.renderError(error, templateId);
+
+            window.dispatchEvent(new CustomEvent('report-clear'));
         }
     },
 
