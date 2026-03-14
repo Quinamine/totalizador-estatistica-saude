@@ -1,5 +1,4 @@
 import { EDEN_REPORT_ENTRY_CONFIG } from "../constants/eden-report-entry.config.js";
-import { EdenSidebar } from "./EdenSidebar.js";
 import { EdenSpinner } from "./EdenSpinner.js";
 
 export const EdenReportEntry = {
@@ -30,13 +29,12 @@ export const EdenReportEntry = {
             this.reportEntry.innerHTML = templateData;
             this.headerTitle.innerHTML = templateName;
 
-            window.dispatchEvent(new CustomEvent('report-inject'));
-
+            document.body.classList.add('has-eden-toolbar');
         } catch (error) {
             console.log(error.message);
             this.renderError(error, templateId);
 
-            window.dispatchEvent(new CustomEvent('report-clear'));
+            document.body.classList.remove('has-eden-toolbar');
         }
     },
 
@@ -98,7 +96,10 @@ export const EdenReportEntry = {
         this.sidebarNav.addEventListener('click', event => {
             const templateRender= event.target.closest('[data-eden-js="template-render"]');
             if(templateRender) {
-                (window.matchMedia('(max-width: 1023px)').matches) && EdenSidebar.close();
+                if(window.matchMedia('(max-width: 1023px)').matches){
+                    document.querySelector('[data-eden-js~="overlay"').classList.remove('is-active');
+                    document.querySelector('[data-eden-js~="sidebar"').classList.remove('is-active');
+                }
 
                 const templateId = templateRender.dataset.edenTemplateId;
                 let templateName = this.getTemplateName(templateId);

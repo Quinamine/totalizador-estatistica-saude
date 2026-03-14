@@ -1,43 +1,19 @@
 import { EDEN_SIDEBAR_CONFIG } from "../constants/eden-sidebar.config.js";
 
 export const EdenSidebar = {
+    init() {
+        this.cacheElements();
+        this.renderMenu();
+    },
+
     cacheElements() {
-        this.sidebar = document.querySelector('[data-eden-js="sidebar"]');
-        this.sidebarOverlay = document.querySelector('[data-eden-js="sidebar-overlay"]');
-        this.body = document.querySelector('[data-eden-js="main-body"]');
-        this.sidebarTriggers = document.querySelectorAll('[data-eden-group="sidebar-triggers"]');
-        this.sidebarNav = document.querySelector('.eden-c-sidebar__nav');
+        this.sidebarNav = document.querySelector('[data-eden-js~="sidebar-nav"]');
     },
-
-    open() {
-        this.sidebar.classList.add('is-open');
-        this.sidebarOverlay.classList.add('is-active', 'is-active-sidebar');
-        if(window.matchMedia('(min-width: 1024px)').matches) {
-            this.body.classList.remove('has-eden-sidebar-closed');
-        }
-    },
-
-    close() {
-        this.sidebar.classList.remove('is-open');
-        this.sidebarOverlay.classList.remove('is-active', 'is-active-sidebar');
-        if(window.matchMedia('(min-width: 1024px)').matches) {
-            this.body.classList.add('has-eden-sidebar-closed');
-        }
-    },
-
-    toggleAccordion(accordion) {
-        accordion.classList.toggle('is-open');
-    },
-
-    handleAction(action) {
-        if(action == 'open')  return this.open();
-        if(action == 'close')  return this.close();
-    },
-
+    
     renderMenu() {
         const htmlMenu = EDEN_SIDEBAR_CONFIG.map(category => `
         <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
-            <button class="eden-c-button eden-c-sidebar__accordion-header" data-eden-js="sidebar-accordion-toggles">
+            <button class="eden-c-button eden-c-sidebar__accordion-header" data-eden-js="sidebar-accordion-toggler">
             ${category.categoryTitle}
             <span class="eden-c-sidebar__chevron">❯</span>
             </button>
@@ -58,26 +34,11 @@ export const EdenSidebar = {
         this.sidebarNav.innerHTML = htmlMenu;
     },
 
-    bindEvents() {
-        this.sidebarTriggers.forEach( btn => {
-            const btnAction = btn.dataset.edenSidebarAction;
-            btn.addEventListener('click', () => {
-                this.handleAction(btnAction);
-            });
-        });
+    setState(action) {
+        const validActions = ['open', 'close'];
+        if(!validActions.includes(action)) return;
 
-        this.sidebarNav.addEventListener('click', (event) => {
-            const accordionToggle = event.target.closest('[data-eden-js="sidebar-accordion-toggles"]');
-            if(accordionToggle) {
-                const accordion = accordionToggle.parentElement;
-                this.toggleAccordion(accordion);
-            }
-        });
-    },
-
-    init() {
-        this.cacheElements();
-        this.bindEvents();
-        this.renderMenu();
+        const shouldOpen = (action === 'open');
+        document.body.classList.toggle('has-eden-sidebar-open', shouldOpen);
     }
 }

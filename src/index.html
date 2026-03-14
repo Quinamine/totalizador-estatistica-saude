@@ -8,17 +8,17 @@
         <link rel="stylesheet" href="css/eden-style.min.css">
         <script src="js/eden-app.min.js" defer></script>
     </head>
-    <body data-eden-js="main-body">
+    <body>
         <header class="eden-c-header">
             <div class="eden-l-container eden-c-header__content">
-                <button class="eden-c-hamburger" data-eden-group="sidebar-triggers"  data-eden-sidebar-action="open" aria-label="Menu">
+                <button class="eden-c-hamburger" data-eden-js="sidebar-opener" aria-label="Menu">
                     <div class="eden-c-hamburger__icon">
                         <span class="eden-c-hamburger__bar"></span>
                         <span class="eden-c-hamburger__bar"></span>
                         <span class="eden-c-hamburger__bar"></span>
                     </div>
                 </button>
-                <button class="eden-c-button eden-c-header__sidebar-trigger" data-eden-group="sidebar-triggers"  data-eden-sidebar-action="open" title="Abrir menu lateral">
+                <button class="eden-c-button eden-c-header__sidebar-trigger" data-eden-js="sidebar-opener" title="Abrir menu lateral">
                     <svg class="eden-c-icon eden-c-icon--small" viewBox="0 0 24 24">
                         <path d="M9 18l6-6-6-6M20 6v12" />
                     </svg>
@@ -67,7 +67,7 @@
             </div>
         </header>
         <aside class="eden-c-sidebar" data-eden-js="sidebar">
-            <button class="eden-c-button eden-c-sidebar__action-close" data-eden-group="sidebar-triggers"  data-eden-sidebar-action="close" title="Ocultar menu">
+            <button class="eden-c-button eden-c-sidebar__action-close" data-eden-js="sidebar-closer" title="Ocultar menu">
                 <svg class="eden-c-icon eden-c-icon--small eden-u-hide-on-mobile" viewBox="0 0 24 24">
                     <path d="M15 18l-6-6 6-6M4 6v12" />
                 </svg>
@@ -86,9 +86,9 @@
                     <small class="eden-c-brand__description">Totalizador de Estatística de Saúde</small>
                 </div>
             </div>
-            <nav class="eden-c-sidebar__nav"></nav>
+            <nav class="eden-c-sidebar__nav" data-eden-js="sidebar-nav"></nav>
         </aside>
-        <div class="eden-l-overlay" data-eden-js="sidebar-overlay" data-eden-group="sidebar-triggers"  data-eden-sidebar-action="close"></div>
+        <div class="eden-l-overlay" data-eden-js="overlay sidebar-closer"></div>
         <main>
             <section class="eden-l-container eden-c-report-entry" data-eden-js="report-entry">
                 <div class="eden-c-report-entry__welcome">
