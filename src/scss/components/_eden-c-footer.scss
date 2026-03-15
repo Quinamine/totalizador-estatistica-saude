@@ -52,7 +52,7 @@
         gap: var(--eden-sys-spacing-md);
     }
 
-    .eden-c-footer__legal-button {
+    &__legal-button {
         min-width: var(--eden-sys-action-size-base);
 
         @include can-hover {
