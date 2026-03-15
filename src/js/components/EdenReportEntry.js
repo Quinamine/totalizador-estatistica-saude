@@ -1,18 +1,18 @@
-import { EDEN_REPORT_ENTRY_CONFIG } from "../constants/eden-report-entry.config.js";
 import { EdenSpinner } from "./EdenSpinner.js";
 
 export const EdenReportEntry = {
-    cacheElements() {
-        this.sidebarNav = document.querySelector('.eden-c-sidebar__nav');
-        this.reportEntry = document.querySelector('[data-eden-js="report-entry"]');
-        this.headerTitle = document.querySelector('[data-eden-js="current-title"]');
+    init() {
+        this.cacheElements();
     },
     
-    async renderTemplate(templateId, templateName) {
+    cacheElements() {
+        this.reportEntry = document.querySelector('[data-eden-js="report-entry"]');
+    },
+    
+    async renderTemplate(templateId) {
         const minimumDelay = new Promise(resolve => setTimeout(resolve, 600));
-
         this.reportEntry.innerHTML = EdenSpinner('A carregar ficha...');
-        this.headerTitle.innerHTML = templateName;
+        
         try {
             const [response] = await Promise.all([
                 fetch(`./templates/${templateId}.html`),
@@ -27,14 +27,13 @@ export const EdenReportEntry = {
 
             const templateData = await response.text();
             this.reportEntry.innerHTML = templateData;
-            this.headerTitle.innerHTML = templateName;
 
-            document.body.classList.add('has-eden-toolbar');
+            return true;
         } catch (error) {
             console.log(error.message);
             this.renderError(error, templateId);
 
-            document.body.classList.remove('has-eden-toolbar');
+            return false;
         }
     },
 
@@ -62,7 +61,7 @@ export const EdenReportEntry = {
         let buttons = '';
 
         if (error.status !== 404) {
-            buttons += `<button class="eden-c-button eden-c-button--primary" data-eden-js="btn-retry" data-eden-template-id="${templateId}">Tentar novamente</button>`;
+            buttons += `<button class="eden-c-button eden-c-button--primary" data-eden-js="template-retryer" data-eden-template-id="${templateId}">Tentar novamente</button>`;
         }
         
         if (error.status !== 404 && error.status !== 500 && error.name !== 'TypeError') {
@@ -81,45 +80,4 @@ export const EdenReportEntry = {
         return buttons;
     },
 
-    getTemplateName(templateId) {
-        let templateName;
-        for (const item of EDEN_REPORT_ENTRY_CONFIG) {
-            if(item.id === templateId) {
-                templateName = item.name;
-            }
-        }
-
-        return templateName;
-    },
-
-    bindEvents() {
-        this.sidebarNav.addEventListener('click', event => {
-            const templateRender= event.target.closest('[data-eden-js="template-render"]');
-            if(templateRender) {
-                if(window.matchMedia('(max-width: 1023px)').matches){
-                    document.querySelector('[data-eden-js~="overlay"').classList.remove('is-active');
-                    document.querySelector('[data-eden-js~="sidebar"').classList.remove('is-active');
-                }
-
-                const templateId = templateRender.dataset.edenTemplateId;
-                let templateName = this.getTemplateName(templateId);
-                
-                this.renderTemplate(templateId, templateName);
-            }
-        });
-
-        this.reportEntry.addEventListener('click', event => {
-            const retryBtn = event.target.closest('[data-eden-js="btn-retry"]');
-            if(retryBtn) {
-                const templateId = retryBtn.dataset.edenTemplateId;
-                let templateName = this.getTemplateName(templateId);
-                this.renderTemplate(templateId, templateName);
-            }
-        });
-    },
-
-    init() {
-        this.cacheElements();
-        this.bindEvents();
-    }
 }

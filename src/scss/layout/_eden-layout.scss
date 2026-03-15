@@ -54,6 +54,7 @@ body {
 main {
     flex: 1;
     padding: var(--eden-sys-page-margin);
+    overflow: hidden;
 }
 
 .eden-l-overlay {
