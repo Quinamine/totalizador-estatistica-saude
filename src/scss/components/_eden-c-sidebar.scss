@@ -7,10 +7,9 @@
 
     // Private tokens
     --_width: 280px;
+    --_translate-x: -100%;
     --_bg-default: var(--eden-sys-primary);
     --_bg-sunken: oklch(from var(--_bg-default) calc(l - .03) c h);
-    --_pos-offscreen: calc(var(--_width) * -1);
-    --_pos-x: var(--_pos-offscreen);
 
     --_scrollbar-track-color: oklch(from var(--_bg-default) 0.25 0.05 h);
     --_scrollbar-thumb-color: oklch(from var(--_bg-default) 0.55 0.12 h);
@@ -32,23 +31,23 @@
     height: 100vh;
     background-color: var(--_bg-default);
     color: var(--eden-sys-on-primary);
-    transform: translateX(var(--_pos-x));
+    transform: translateX(var(--_translate-x));
     transition: transform var(--eden-sys-duration-slow) var(--eden-sys-motion-fluid);
 
     @include desktop {
-        --_pos-x: 0;
+        --_translate-x: 0;
         position: sticky;
         top: 0;
-
-        .has-eden-sidebar-closed & {
-            @include desktop {
-                --_pos-x: var(--_pos-offscreen);
-            }
-        }
     }
 
-    &.is-open {
-        --_pos-x: 0;
+    .has-eden-sidebar-open & {
+        --_translate-x: 0;
+    }
+
+    .has-eden-sidebar-closed & { 
+        @include desktop {
+            --_translate-x: -100%;
+        }
     }
 
     .eden-c-button {
@@ -68,6 +67,13 @@
         right: var(--_action-close-alignment-offset-x);
         top: var(--_action-close-alignment-offset-y);
         width: var(--eden-sys-spacing-xl);
+        opacity: 0.7;
+
+        @include can-hover {
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 
     &__nav {

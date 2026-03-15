@@ -23,6 +23,14 @@ body {
             grid-template-columns: 0 1fr;
         }
     }
+
+    &.has-eden-sidebar-open {
+        overflow: hidden;
+
+        @include desktop {
+            overflow: initial;
+        }
+    }
 }
 
 .eden-c-header {
@@ -37,16 +45,16 @@ body {
     }
 }
 
-main {
-    --_toolbar-height: 88px;
-    flex: 1;
-    padding-inline: var(--eden-sys-page-margin);
-    padding-block: var(--eden-sys-page-margin) calc(var(--_toolbar-height) + var(--eden-sys-page-margin));
-    overflow: hidden;
-
+.eden-c-footer {
     @include desktop {
-        padding-block-end: var(--eden-sys-page-margin);
+        grid-area: footer;
     }
+}
+
+main {
+    flex: 1;
+    padding: var(--eden-sys-page-margin);
+    overflow: hidden;
 }
 
 .eden-l-overlay {
@@ -60,9 +68,11 @@ main {
         display: block;  
     }
 
-    &.is-active-sidebar {
+    .has-eden-sidebar-open & {
+        display: block;
+
         @include desktop {
-            display: none !important;
+            display: none;
         }
     }
 }

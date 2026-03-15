@@ -1,4 +1,4 @@
-export const EDEN_REPORT_ENTRY_CONFIG = [
+export const EDEN_REPORT_TEMPLATES = [
     { id: 'consultas-monthly-template', name: 'RM Consultas Externas'}, 
     { id: 'ccd-monthly-template', name: 'RM CCD'}, 
     { id: 'malaria-monthly-template', name: 'RM Malária'}, 
