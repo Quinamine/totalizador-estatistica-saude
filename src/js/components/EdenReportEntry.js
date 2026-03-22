@@ -9,13 +9,13 @@ export const EdenReportEntry = {
         this.reportEntry = document.querySelector('[data-eden-js="report-entry"]');
     },
     
-    async renderTemplate(templateId) {
+    async renderReport(reportId) {
         const minimumDelay = new Promise(resolve => setTimeout(resolve, 600));
         this.reportEntry.innerHTML = EdenSpinner('A carregar ficha...');
         
         try {
             const [response] = await Promise.all([
-                fetch(`./templates/${templateId}.html`),
+                fetch(`./reports/${reportId}.html`),
                 minimumDelay
             ]);
 
@@ -25,19 +25,19 @@ export const EdenReportEntry = {
                 throw error;
             }
 
-            const templateData = await response.text();
-            this.reportEntry.innerHTML = templateData;
+            const report = await response.text();
+            this.reportEntry.innerHTML = report;
 
             return true;
         } catch (error) {
             console.log(error.message);
-            this.renderError(error, templateId);
+            this.renderError(error, reportId);
 
             return false;
         }
     },
 
-    renderError(error, templateId) {
+    renderError(error, reportId) {
         const messages = {
             '404': 'Esta ficha ainda não está disponível no novo portal.',
             '500': 'O servidor de dados está instável no momento.',
@@ -47,7 +47,7 @@ export const EdenReportEntry = {
 
         const msgKey = error.status?.toString() || error.name;
         const msg = messages[msgKey] || messages.default;
-        const buttons = this.getErrorButtons(error, templateId);
+        const buttons = this.getErrorButtons(error, reportId);
 
         this.reportEntry.innerHTML = `
             <div class="eden-c-report-entry__error">
@@ -57,11 +57,11 @@ export const EdenReportEntry = {
         `;
     },
 
-    getErrorButtons(error, templateId) {
+    getErrorButtons(error, reportId) {
         let buttons = '';
 
         if (error.status !== 404) {
-            buttons += `<button class="eden-c-button eden-c-button--primary" data-eden-js="template-retryer" data-eden-template-id="${templateId}">Tentar novamente</button>`;
+            buttons += `<button class="eden-c-button eden-c-button--primary" data-eden-js="report-retryer" data-eden-report-id="${reportId}">Tentar novamente</button>`;
         }
         
         if (error.status !== 404 && error.status !== 500 && error.name !== 'TypeError') {
@@ -69,7 +69,7 @@ export const EdenReportEntry = {
             const subject = encodeURIComponent('Relatório de Erro - TES')
             const body = encodeURIComponent(
                 `Olá, Quinamine!\n\n` + 
-                `Ocorreu um erro ao tentar ascarregar a ficha ${templateId}.\n\n` + 
+                `Ocorreu um erro ao tentar ascarregar a ficha ${reportId}.\n\n` + 
                 `Detalhes do Erro: ${error.name} (${error.message}).\n` +
                 `Data: ${new Date().toLocaleString('pt-PT')}`
             );
