@@ -1,4 +1,4 @@
-import { EDEN_SIDEBAR_CONFIG } from "../constants/eden-sidebar.config.js";
+import { EDEN_SIDEBAR } from "../constants/eden-sidebar.config.js";
 
 export const EdenSidebar = {
     init() {
@@ -11,7 +11,7 @@ export const EdenSidebar = {
     },
     
     renderMenu() {
-        const htmlMenu = EDEN_SIDEBAR_CONFIG.map(category => `
+        const htmlMenu = EDEN_SIDEBAR.map(category => `
         <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
             <button class="eden-c-button eden-c-sidebar__accordion-header" data-eden-js="sidebar-accordion-toggler">
             ${category.categoryTitle}
@@ -21,7 +21,7 @@ export const EdenSidebar = {
             <ul class="eden-c-sidebar__list">
                 ${category.itens.map(item => `
                 <li>
-                    <button class="eden-c-button eden-c-sidebar__item" data-eden-js="template-render" data-eden-template-id="${item.id}">
+                    <button class="eden-c-button eden-c-sidebar__item" data-eden-js="report-renderer" data-eden-report-id="${item.id}">
                     ${item.name}
                     </button>
                 </li>
