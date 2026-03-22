@@ -1,4 +1,4 @@
-@use "../abstracts/" as *;
+@use '../../abstracts' as *;
 
 .eden-c-sidebar {
     --eden-comp-button-color: var(--eden-sys-on-primary-variant);
@@ -20,6 +20,10 @@
     
     @include desktop {
         --_action-close-alignment-offset-x: 2.5px;
+    }
+
+      @media print {
+        display: none !important;
     }
 
     display: flex;

@@ -19,3 +19,37 @@
 .eden-u-border-bottom-subtle {
     border-bottom: 1px solid oklch(from currentColor l c h / 20%)
 }
+
+.eden-u-border-bottom {
+    border-bottom: 1px solid var(--eden-sys-border-color-default) !important;
+}
+
+.eden-u-text-upper {
+    text-transform: uppercase;
+}
+
+.eden-u-text-vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: inline-block;
+    text-align: center;
+    font-weight: var(--eden-sys-text-bold);
+    letter-spacing: .5px;
+    line-height: var(--eden-sys-line-height-sm);
+}
+
+.eden-u-text-nowrap {
+    white-space: nowrap;
+}
+
+@for $index from 1 through 24 {
+    .eden-u-grid-colspan-#{$index} {
+        grid-column: span #{$index};
+    }
+}
+
+@for $index from 1 through 35 {
+    .eden-u-grid-rowspan-#{$index} {
+        grid-row: span #{$index};
+    }
+}

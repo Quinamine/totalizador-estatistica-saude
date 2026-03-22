@@ -1,6 +1,6 @@
 import { EdenSidebar } from "./components/EdenSidebar.js";
 import { EdenReportEntry } from "./components/EdenReportEntry.js";
-import { EDEN_REPORT_TEMPLATES } from "./constants/eden-report-templates.config.js";
+import { EDEN_REPORTS } from "./constants/eden-reports.config.js";
 
 const EdenApp = {
     init() {
@@ -56,17 +56,17 @@ const EdenApp = {
             }
 
             // REPORT ENTRY 
-            const templateRender = event.target.closest('[data-eden-js~="template-render"');
-            const templateRetryer = event.target.closest('[data-eden-js~="template-retryer"');
+            const reportRenderer = event.target.closest('[data-eden-js~="report-renderer"');
+            const reportRetryer = event.target.closest('[data-eden-js~="report-retryer"');
 
-            if(templateRender) {
-                const templateId = templateRender.dataset.edenTemplateId;
-                this.handleTemplateRendering(templateId)
+            if(reportRenderer) {
+                const reportId = reportRenderer.dataset.edenReportId;
+                this.handleReportRendering(reportId)
             }
 
-            if(templateRetryer) {
-                const templateId = templateRetryer.dataset.edenTemplateId;
-                this.handleTemplateRendering(templateId);
+            if(reportRetryer) {
+                const reportId = reportRetryer.dataset.edenReportId;
+                this.handleReportRendering(reportId);
             }
         });
     },
@@ -89,27 +89,27 @@ const EdenApp = {
         container.classList.toggle('is-open');
     },
 
-    async handleTemplateRendering(id) {
-        const templateName = this.getTemplateName(id);
+    async handleReportRendering(id) {
+        const reportName = this.getReportName(id);
         const isMobile = window.matchMedia('(max-width: 1023px)').matches;
 
-        this.headerTitle.innerHTML = templateName;
+        this.headerTitle.innerHTML = reportName;
         if(isMobile) {
             this.handleSidebarClose();
         }
 
-        const isRendered = await EdenReportEntry.renderTemplate(id);
+        const isRendered = await EdenReportEntry.renderReport(id);
         this.updateToolbarVisibility(isRendered);
     },
 
-    getTemplateName(templateId) {
-        let templateName;
-        for (const item of EDEN_REPORT_TEMPLATES) {
-            if(item.id === templateId) {
-                templateName = item.name;
+    getReportName(reportId) {
+        let reportName;
+        for (const item of EDEN_REPORTS) {
+            if(item.id === reportId) {
+                reportName = item.name;
             }
         }
-        return templateName;
+        return reportName;
     },
 
     updateToolbarVisibility(isVisible) {

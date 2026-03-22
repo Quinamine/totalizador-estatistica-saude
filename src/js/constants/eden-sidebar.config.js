@@ -1,58 +1,59 @@
-export const EDEN_SIDEBAR_CONFIG = [
+export const EDEN_SIDEBAR = [
   {
     categoryTitle: "CONSULTAS",
-    itens: [ 
-      { id: "consultas-monthly-template", name: "RM Consultas Externas"}, 
-      { id: "ccd-monthly-template", name: "RM CCD"}, 
-      { id: "malaria-monthly-template", name: "RM Malária"}, 
-      { id: "saaj-monthly-template", name: "RM SAAJ"}
-    ]
+    itens: [
+      { id: "consultas", name: "RM Consultas Externas" },
+      { id: "ccd", name: "RM CCD" },
+      { id: "malaria", name: "RM Malária" },
+      { id: "saaj", name: "RM SAAJ" },
+    ],
   },
 
   {
     categoryTitle: "FARMÁCIA",
-    itens: [ 
-      { id: "balancete-monthly-template", name: "Requisição/Balancete"}, 
-      { id: "pharmacy-cash-monthly-template", name: "Mapa de Caixa"}
-    ]
+    itens: [
+      { id: "balancete", name: "Requisição/Balancete" },
+      { id: "pharmacy-cash", name: "Mapa de Caixa" },
+    ],
   },
 
   {
     categoryTitle: "NUTRIÇÃO",
-    itens: [ 
-      { id: "nutrition-monthly-template", name: "RM Nutrição"},
-      { id: "tda-1-monthly-template", name: "RM TDA 1"}, 
-      { id: "tda-2-monthly-template", name: "RM TDA 2"}, 
-      { id: "tdi-monthly-template", name: "RM TDI"}
-    ]
+    itens: [
+      { id: "nutrition", name: "RM Nutrição" },
+      { id: "tda-1", name: "RM TDA 1" },
+      { id: "tda-2", name: "RM TDA 2" },
+      { id: "tdi", name: "RM TDI" },
+    ],
   },
 
   {
     categoryTitle: "ITS/HIV e SIDA",
-    itens: [ 
-      { id: "ats-monthly-template", name: "RM ATS"}, 
-      { id: "hiv-sida-monthly-template", name: "RM HIV/SIDA"}, 
-      { id: "prep-monthly-template", name: "RM PrEP"}, 
-      { id: "dah-monthly-template", name: "RM DAH"}, 
-      { id: "its-monthly-template", name: "RM ITS"}, 
-      { id: "apss-pp-quartely-template", name: "RT APSS/PP"}
-    ]
+    itens: [
+      { id: "ats", name: "RM ATS" },
+      { id: "hiv-sida", name: "RM HIV/SIDA" },
+      { id: "prep", name: "RM PrEP" },
+      { id: "dah", name: "RM DAH" },
+      { id: "its", name: "RM ITS" },
+      { id: "apss-pp", name: "RT APSS/PP" },
+    ],
   },
 
   {
     categoryTitle: "TUBERCULOSE",
-    itens: [ 
-      { id: "pnct-provisorio-template", name: "PNCT Provisório"}, 
-      { id: "pctc-01a-template", name: "PNCT 01A"}, 
-      { id: "pnct-07-template", name: "PNCT 07"}, 
-      { id: "pnct-ic-10a-template", name: "PNCT IC-10A"}, 
-      { id: "pnct-r05-template", name: "PNCT R05"}, 
-      { id: "pnct-r06-template", name: "PNCT R06"}, 
-      { id: "pnct-r07-template", name: "PNCT R07"}, 
-      { id: "pnct-08-template", name: "PNCT 08"}, 
-      { id: "pnct-09-template", name: "PNCT 09"}, 
-      { id: "pnct-11a-template", name: "PNCT APSS 11A"}, 
-      { id: "pnct-12-template", name: "PNCT 12"}, 
-      { id: "pnct-14d-template", name: "PNCT 14D"}]
+    itens: [
+      { id: "pnct-provisorio", name: "PNCT Provisório" },
+      { id: "pctc-01a", name: "PNCT 01A" },
+      { id: "pnct-07", name: "PNCT 07" },
+      { id: "pnct-ic-10a", name: "PNCT IC-10A" },
+      { id: "pnct-r05", name: "PNCT R05" },
+      { id: "pnct-r06", name: "PNCT R06" },
+      { id: "pnct-r07", name: "PNCT R07" },
+      { id: "pnct-08", name: "PNCT 08" },
+      { id: "pnct-09", name: "PNCT 09" },
+      { id: "pnct-11a", name: "PNCT APSS 11A" },
+      { id: "pnct-12", name: "PNCT 12" },
+      { id: "pnct-14d", name: "PNCT 14D" },
+    ],
   },
 ];

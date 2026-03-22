@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use '../../abstracts' as *;
 
 .eden-c-brand {
     --_padding: var(--eden-sys-spacing-md);
@@ -23,7 +23,7 @@
     &__title {
         margin: 0;
         font-size: var(--eden-sys-text-2xl);
-        line-height: 1;
+        line-height: var(--eden-sys-line-height-xs);
         color: currentColor;
         font-weight: var(--eden-sys-text-bold);
     }

@@ -1,0 +1,83 @@
+@use '../../abstracts' as *;
+
+.tes-consultas {
+    --tes-comp-sheet-width: 1352px;
+    --_cell-width: 50px;
+    --_cell-height: var(--eden-sys-spacing-md);
+    --_form-sidebar-width: 114px;
+    --_border-section-divider-color: #{$eden-ref-neutral-0};
+
+    &__header {
+        display: grid;
+        grid-template-columns: 254px 1fr 183px;
+        gap: var(--eden-sys-spacing-ms);
+    }
+
+    &__title {
+        justify-self: end;
+        display: flex;
+        align-items: flex-end;
+        gap: var(--eden-sys-spacing-2xs);
+    }
+
+    &__title-header {
+        font-size: var(--eden-sys-text-3xl);
+        white-space: nowrap;
+        line-height: var(--eden-sys-line-height-xs);
+    }
+
+    &__title-input {
+        --eden-comp-input-font-size: var(--eden-sys-text-lg);
+
+        width: 322px;
+        border-bottom: 1px solid var(--eden-sys-border-color-default);
+        line-height: var(--eden-sys-line-height-xs);
+    }
+
+    &__model-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__model {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding-block-start: var(--eden-sys-spacing-2xs);
+    }
+
+    &__model-code {
+        font-size: var(--eden-sys-text-sm);
+        font-weight: var(--eden-sys-text-bold);
+    }
+    
+    &__serial {
+        font-size: var(--eden-sys-text-xl);
+        font-weight: var(--eden-sys-text-bold);
+        font-family: 'Courier New', Courier, monospace;
+        color: var(--eden-sys-danger);
+        text-align: center;
+        border-bottom: thin dotted var(--eden-sys-border-color-default);
+    }
+
+    &__head {
+        display: grid;
+        grid-template-columns: 240px repeat(19, var(--_cell-width));
+        grid-template-rows: repeat(3, var(--_cell-height));
+        text-align: center;
+        margin-inline-start: var(--_form-sidebar-width);
+    }
+
+    &__body {
+        border-top: 12px solid var(--_border-section-divider-color);
+        display: grid;
+        grid-template-columns: 24px 90px 80px 160px repeat(19, var(--_cell-width));
+        grid-template-rows: repeat(53, var(--_cell-height));
+    }
+
+    td, th {
+        min-height: var(--_cell-height);
+    }
+}
+

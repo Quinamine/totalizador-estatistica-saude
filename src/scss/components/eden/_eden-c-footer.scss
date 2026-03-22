@@ -1,4 +1,4 @@
-@use '../abstracts/' as *;
+@use '../../abstracts' as *;
 
 .eden-c-footer {
     --eden-comp-button-color: var(--eden-sys-on-surface-subtle);
@@ -14,6 +14,10 @@
 
     @include tablet {
         --_footer-safe-clearance: var(--eden-sys-spacing-xs);
+    }
+
+    @media print {
+        display: none !important;
     }
     
     .has-eden-toolbar & {

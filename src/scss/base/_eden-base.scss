@@ -67,63 +67,14 @@ picture, figure {
     }
 }
 
-table {
-    width: 100%;
-    margin-block-start: var(--eden-sys-spacing-sm);
-
-    td, th {
-        padding: var(--eden-sys-spacing-xs);
-        border: 1px solid var(--eden-sys-border-color-default);
-    }
-}
-
 figcaption {
     margin-block-start: var(--eden-sys-figure-caption-spacing-y);
 }
 
-input, button, textarea, select {
+button, select {
   font: inherit;
   color: inherit;
   letter-spacing: inherit;
-}
-
-input, textarea {
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    border-radius: 0;
-    outline: 0;
-    color: inherit;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: inherit;
-    cursor: text;
-}
-
-input {
-    &[readonly] {
-        font-weight: var(--eden-sys-text-bold);
-        cursor: default;
-        transition: background-color .4s ease-out
-    }
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-        appearance: none;
-        margin: 0
-    }
-    &::-webkit-calendar-picker-indicator,
-    &::-webkit-outer-spin-button {
-        display: none !important;
-        -webkit-appearance: none;
-    }
-    &::-moz-list-bullet {
-        display: none !important;
-    }
-    -moz-appearance: none;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 3em;
 }
 
 a {
