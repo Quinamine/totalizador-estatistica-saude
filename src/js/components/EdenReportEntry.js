@@ -69,7 +69,7 @@ export const EdenReportEntry = {
             const subject = encodeURIComponent('Relatório de Erro - TES')
             const body = encodeURIComponent(
                 `Olá, Quinamine!\n\n` + 
-                `Ocorreu um erro ao tentar ascarregar a ficha ${reportId}.\n\n` + 
+                `Ocorreu um erro ao tentar carregar a ficha ${reportId}.\n\n` + 
                 `Detalhes do Erro: ${error.name} (${error.message}).\n` +
                 `Data: ${new Date().toLocaleString('pt-PT')}`
             );
