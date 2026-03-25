@@ -11,10 +11,15 @@
 
     overflow-x: auto;
     background-color: transparent;
-}
 
-.eden-c-report-entry__error-actions {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--eden-sys-spacing-sm);
+    @media print {
+        position: static !important;
+        overflow: visible !important;
+    }
+
+    &__error-actions {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--eden-sys-spacing-sm);
+    }
 }

@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+.tes-consultas {
+    --tes-comp-sheet-width: 1352px;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 254px 1fr 183px;
+    }
+
+    &__title {
+        justify-self: center;
+        display: flex;
+        align-items: flex-end;
+        gap: var(--eden-sys-spacing-xs);
+    }
+
+    &__title-header {
+        font-size: var(--eden-sys-text-3xl);
+        white-space: nowrap;
+    }
+
+    &__title-input {
+        font-size: var(--eden-sys-text-xl);
+        border-bottom: 1px solid var(--eden-sys-border-color-default);
+
+        &:focus {
+            border-bottom: 2px solid var(--eden-sys-link-color);
+        }
+    }
+
+    &__model-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__model-code {
+        font-size: var(--eden-sys-text-sm);
+        font-weight: var(--eden-sys-text-bold);
+    }
+    
+    &__serial {
+        font-size: var(--eden-sys-text-xl);
+        font-weight: var(--eden-sys-text-bold);
+        font-family: 'Courier New', Courier, monospace;
+        color: var(--eden-sys-danger);
+        text-align: center;
+        border-bottom: thin dotted var(--eden-sys-border-color-default);
+    }
+}

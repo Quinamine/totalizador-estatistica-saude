@@ -76,14 +76,14 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-sys-on-warning-container: oklch(25% 0.08 84);
     --eden-sys-warning-outline: oklch(83% 0.19 84);
     // > Typography 
-    --eden-sys-text-2xs: var(--eden-ref-font-size-100);
-    --eden-sys-text-xs: var(--eden-ref-font-size-200);
-    --eden-sys-text-sm: var(--eden-ref-font-size-300);
-    --eden-sys-text-md: var(--eden-ref-font-size-400);
-    --eden-sys-text-lg: var(--eden-ref-font-size-500);
-    --eden-sys-text-xl: var(--eden-ref-font-size-600);
-    --eden-sys-text-2xl: var(--eden-ref-font-size-700);
-    --eden-sys-text-3xl: var(--eden-ref-font-size-800);
+    --eden-sys-text-2xs: var(--eden-ref-font-size-100); // 10px
+    --eden-sys-text-xs: var(--eden-ref-font-size-200); // 12px
+    --eden-sys-text-sm: var(--eden-ref-font-size-300); // 14px
+    --eden-sys-text-md: var(--eden-ref-font-size-400); // 16px
+    --eden-sys-text-lg: var(--eden-ref-font-size-500); // 18px
+    --eden-sys-text-xl: var(--eden-ref-font-size-600); // 20px
+    --eden-sys-text-2xl: var(--eden-ref-font-size-700); // 22px
+    --eden-sys-text-3xl: var(--eden-ref-font-size-800); // 24px
     --eden-sys-text-regular: 400;
     --eden-sys-text-semibold: 600;
     --eden-sys-text-bold: 700;
@@ -131,8 +131,6 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-sys-page-margin: var(--eden-ref-spacing-16);
     --eden-sys-border-color-default: #{$eden-ref-neutral-88-02};
     --eden-sys-border-color-subtle: #{$eden-ref-neutral-95-01};
-    --eden-sys-link-color-hover: oklch(from var(--eden-sys-link-color) calc(l - 0.10) calc(c + 0.02) h);
-    --eden-sys-link-color-active: oklch(from var(--eden-sys-link-color) calc(l - 0.20) calc(c + 0.04) h);
     --eden-sys-shadow: oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.1);
     --eden-sys-action-border-radius: var(--eden-sys-radius-sm);
     --eden-sys-action-color-hover: oklch(from currentColor l c h / 6%);
@@ -151,6 +149,8 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-sys-figure-spacing-y-end: var(--eden-sys-spacing-xl);
     --eden-sys-figure-caption-spacing-y: var(--eden-sys-spacing-xs);
     --eden-sys-link-color: oklch(60% 0.18 var(--eden-ref-primary-hue));
+    --eden-sys-link-color-hover: oklch(from var(--eden-sys-link-color) calc(l - 0.10) calc(c + 0.02) h);
+    --eden-sys-link-color-active: oklch(from var(--eden-sys-link-color) calc(l - 0.20) calc(c + 0.04) h);
 }
 
 @media screen and (min-width: 768px) {

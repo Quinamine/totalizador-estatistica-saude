@@ -13,6 +13,10 @@
     z-index: var(--eden-sys-zi-sticky);
     box-shadow: 0 2px 5px var(--eden-sys-shadow);
 
+    @media print {
+        display: none !important;
+    }
+
     &__content {
         min-height: var(--eden-sys-spacing-2xl);
         display: flex;

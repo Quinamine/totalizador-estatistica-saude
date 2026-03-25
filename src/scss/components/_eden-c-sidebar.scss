@@ -22,6 +22,10 @@
         --_action-close-alignment-offset-x: 2.5px;
     }
 
+      @media print {
+        display: none !important;
+    }
+
     display: flex;
     flex-direction: column;
     position: fixed;
