@@ -1,0 +1,33 @@
+
+.tes-c-identity {
+    --eden-sys-figure-spacing-y-start: 0;
+    --eden-sys-figure-spacing-y-end: 0;
+
+    --_direction: column;
+    --_text-align: center;
+
+    display: flex;
+    flex-direction: var(--_direction);
+    align-items: center;
+    justify-content: center;
+    text-align: var(--_text-align);
+
+    &--horizontal {
+        --_direction: row;
+        gap: var(--eden-sys-spacing-sm);
+    }
+
+    &--text-left {
+        --_text-align: center;
+    }
+
+    &--text-uppercase {
+        text-transform: uppercase;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+}
+

@@ -55,6 +55,10 @@ main {
     flex: 1;
     padding: var(--eden-sys-page-margin);
     overflow: hidden;
+
+    @media print {
+        padding: 0 !important;
+    }
 }
 
 .eden-l-overlay {
