@@ -7,7 +7,7 @@
     "build:html": "html-minifier-terser --input-dir ./src --output-dir ./dist --collapse-whitespace --remove-comments --minify-js --file-ext html",
     "build:css": "sass src/scss/eden-main.scss dist/css/eden-style.min.css --style compressed && postcss dist/css/eden-style.min.css -o dist/css/eden-style.min.css",
     "build:js": "esbuild src/js/EdenApp.js --bundle --minify --target=es2015 --outfile=dist/js/eden-app.min.js",
-    "copy:assets": "cp -r src/assets dist/assets",
+    "copy:assets": "rm -rf dist/assets && cp -r src/assets dist",
     "build": "npm run build:css && npm run build:html && npm run build:js && npm run copy:assets",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
