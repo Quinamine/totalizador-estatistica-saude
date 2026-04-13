@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+.tes-c-table {
+    --_cell-accent-bg: var(--eden-comp-table-cell-bg, #{ $eden-ref-neutral-0 });
+    --_cell-accent-text: var(--eden-comp-table-cell-text, var(--eden-sys-on-primary));
+    --_cell-justify: center;
+
+    margin-block-start: var(--eden-sys-spacing-xs);
+
+    th, td {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: var(--_cell-justify);
+        border: 1px solid var(--eden-sys-border-color-default);
+    }
+
+    .tes-c-table__cell--borderless {
+        border: none !important;
+    }
+
+    &__cell--align-left {
+        --_cell-justify: flex-start;
+    }
+
+    &__cell--dark {
+        background-color: var(--_cell-accent-bg);
+        color: var(--_cell-accent-text);
+        font-weight: var(--eden-sys-text-bold);
+    }
+}

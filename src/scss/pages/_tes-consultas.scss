@@ -2,17 +2,21 @@
 
 .tes-consultas {
     --tes-comp-sheet-width: 1352px;
+    --_cell-width: 50px;
+    --_cell-height: 24px;
+    --_form-sidebar-width: 114px;
 
     &__header {
         display: grid;
         grid-template-columns: 254px 1fr 183px;
+        gap: var(--eden-sys-spacing-ms);
     }
 
     &__title {
-        justify-self: center;
+        justify-self: end;
         display: flex;
         align-items: flex-end;
-        gap: var(--eden-sys-spacing-xs);
+        gap: var(--eden-sys-spacing-2xs);
     }
 
     &__title-header {
@@ -21,6 +25,7 @@
     }
 
     &__title-input {
+        width: 322px;
         font-size: var(--eden-sys-text-xl);
         border-bottom: 1px solid var(--eden-sys-border-color-default);
 
@@ -47,5 +52,25 @@
         color: var(--eden-sys-danger);
         text-align: center;
         border-bottom: thin dotted var(--eden-sys-border-color-default);
+    }
+
+    &__head {
+        display: grid;
+        grid-template-columns: 240px repeat(19, var(--_cell-width));
+        grid-template-rows: repeat(3, var(--_cell-height));
+        text-align: center;
+        margin-inline-start: var(--_form-sidebar-width);
+    }
+
+    &__head-row {
+        display: contents;
+    }
+
+    &__cell--colspan-2 {
+        grid-column: span 2;
+    }
+
+    &__cell--rowspan-2 {
+        grid-row: span 2;
     }
 }
