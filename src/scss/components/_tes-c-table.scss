@@ -13,19 +13,40 @@
         align-items: center;
         justify-content: var(--_cell-justify);
         border: 1px solid var(--eden-sys-border-color-default);
+        overflow: hidden;
+    }
+
+    &__cell {
+        &--colspan-2 { grid-column: span 2; }
+
+        &--rowspan-2 { grid-row: span 2; }
+        &--rowspan-3 { grid-row: span 3; }
+        &--rowspan-4 { grid-row: span 4; }
+
+        &--align-left {
+            --_cell-justify: flex-start;
+        }
+
+        &--dark {
+            background-color: var(--_cell-accent-bg);
+            color: var(--_cell-accent-text);
+            font-weight: var(--eden-sys-text-bold);
+        }
     }
 
     .tes-c-table__cell--borderless {
-        border: none !important;
+        border: none;
     }
 
-    &__cell--align-left {
-        --_cell-justify: flex-start;
-    }
+    input {
+        width: 100%;
+        height: 100%;
+        padding: 0 var(--eden-sys-spacing-2xs);
+        border: none;
+        text-align: center;
 
-    &__cell--dark {
-        background-color: var(--_cell-accent-bg);
-        color: var(--_cell-accent-text);
-        font-weight: var(--eden-sys-text-bold);
+        &:focus {
+            outline: 2px solid var(--eden-sys-link-color);
+        }
     }
 }

@@ -54,6 +54,10 @@
         border-bottom: thin dotted var(--eden-sys-border-color-default);
     }
 
+    &__row {
+        display: contents;
+    }
+
     &__head {
         display: grid;
         grid-template-columns: 240px repeat(19, var(--_cell-width));
@@ -62,15 +66,14 @@
         margin-inline-start: var(--_form-sidebar-width);
     }
 
-    &__head-row {
-        display: contents;
+    &__body {
+        display: grid;
+        grid-template-columns: 24px 90px 240px repeat(19, var(--_cell-width));
+        grid-template-rows: repeat(53, var(--_cell-height));
     }
 
-    &__cell--colspan-2 {
-        grid-column: span 2;
+    .tes-consultas__row-label {
+        padding-inline-start: var(--eden-sys-spacing-2xs);
     }
-
-    &__cell--rowspan-2 {
-        grid-row: span 2;
-    }
+    
 }

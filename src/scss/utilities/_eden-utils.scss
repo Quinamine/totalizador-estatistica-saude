@@ -23,3 +23,13 @@
 .eden-u-text-upper {
     text-transform: uppercase;
 }
+
+.eden-u-text-vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: inline-block;
+    text-align: center;
+    font-weight: var(--eden-sys-text-bold);
+    letter-spacing: .5px;
+    line-height: 1.2;
+}
