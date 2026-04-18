@@ -5,6 +5,7 @@
     --_cell-width: 50px;
     --_cell-height: 24px;
     --_form-sidebar-width: 114px;
+    --_border-section-divider-color: #{$eden-ref-neutral-0};
 
     &__header {
         display: grid;
@@ -67,8 +68,9 @@
     }
 
     &__body {
+        border-top: 12px solid var(--_border-section-divider-color);
         display: grid;
-        grid-template-columns: 24px 90px 240px repeat(19, var(--_cell-width));
+        grid-template-columns: 24px 90px 60px 180px repeat(19, var(--_cell-width));
         grid-template-rows: repeat(53, var(--_cell-height));
     }
 }

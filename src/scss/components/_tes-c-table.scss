@@ -18,6 +18,7 @@
         &.--row-label {
             --_cell-justify: flex-start;
             padding-inline-start: var(--eden-sys-spacing-3xs);
+            line-height: var(--eden-sys-line-height-sm);
         }
 
         &.--align-left {
