@@ -1,41 +1,38 @@
 @use '../abstracts' as *;
 
 .tes-c-table {
-    --_cell-accent-bg: var(--eden-comp-table-cell-bg, #{ $eden-ref-neutral-0 });
-    --_cell-accent-text: var(--eden-comp-table-cell-text, var(--eden-sys-on-primary));
-    --_cell-justify: center;
-
     margin-block-start: var(--eden-sys-spacing-xs);
 
     th, td {
+        --_cell-accent-bg: var(--eden-comp-table-cell-bg, #{ $eden-ref-neutral-0 });
+        --_cell-accent-text: var(--eden-comp-table-cell-text, var(--eden-sys-on-primary));
+        --_cell-justify: center;;
+
         padding: 0;
         display: flex;
         align-items: center;
         justify-content: var(--_cell-justify);
         border: 1px solid var(--eden-sys-border-color-default);
         overflow: hidden;
-    }
 
-    &__cell {
-        &--colspan-2 { grid-column: span 2; }
+        &.--row-label {
+            --_cell-justify: flex-start;
+            padding-inline-start: var(--eden-sys-spacing-3xs);
+        }
 
-        &--rowspan-2 { grid-row: span 2; }
-        &--rowspan-3 { grid-row: span 3; }
-        &--rowspan-4 { grid-row: span 4; }
-
-        &--align-left {
+        &.--align-left {
             --_cell-justify: flex-start;
         }
 
-        &--dark {
+        &.--borderless {
+            border: none;
+        }
+
+        &.--dark {
             background-color: var(--_cell-accent-bg);
             color: var(--_cell-accent-text);
             font-weight: var(--eden-sys-text-bold);
         }
-    }
-
-    .tes-c-table__cell--borderless {
-        border: none;
     }
 
     input {

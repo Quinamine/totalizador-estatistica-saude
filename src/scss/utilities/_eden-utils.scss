@@ -33,3 +33,13 @@
     letter-spacing: .5px;
     line-height: 1.2;
 }
+
+@for $index from 1 through 24 {
+    .eden-u-grid-colspan-#{$index} {
+        grid-column: span #{$index};
+    }
+
+    .eden-u-grid-rowspan-#{$index} {
+        grid-row: span #{$index};
+    }
+}
