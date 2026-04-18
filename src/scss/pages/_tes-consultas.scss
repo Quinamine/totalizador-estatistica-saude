@@ -70,7 +70,7 @@
     &__body {
         border-top: 12px solid var(--_border-section-divider-color);
         display: grid;
-        grid-template-columns: 24px 90px 60px 180px repeat(19, var(--_cell-width));
+        grid-template-columns: 24px 90px 80px 160px repeat(19, var(--_cell-width));
         grid-template-rows: repeat(53, var(--_cell-height));
     }
 }
