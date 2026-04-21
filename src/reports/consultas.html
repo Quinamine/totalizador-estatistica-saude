@@ -1360,4 +1360,26 @@
             </tr>
         </tbody>
     </table>
+    <footer class="tes-c-footer tes-c-footer--vertical">
+        <div class="tes-c-footer__area tes-c-footer__area--left">
+            <label for="signature-input">Nome legível do responsável pelo preenchimento:</label>
+            <input type="text" id="signature-input" class="tes-c-footer__input">
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--center">
+                <label for="category-input">Categoria:</label>
+                <input type="text" id="category-input" class="tes-c-footer__input" list="categories">
+
+                <datalist id="categories">
+                <option value="Médico de Clínica Geral"></option>
+                <option value="Técnico de Medicina Geral"></option>
+                <option value="Agente de Medicina Geral"></option>
+                <option value="Enfermeiro Geral"></option>
+                <option value="Técnico de Estatística Sanitária"></option>
+            </datalist>
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--right">
+            <label for="date-input">Data:</label>
+            <input type="date" id="date-input" class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+    </footer>
 </div>
