@@ -55,10 +55,6 @@
         border-bottom: thin dotted var(--eden-sys-border-color-default);
     }
 
-    &__row {
-        display: contents;
-    }
-
     &__head {
         display: grid;
         grid-template-columns: 240px repeat(19, var(--_cell-width));
@@ -72,6 +68,10 @@
         display: grid;
         grid-template-columns: 24px 90px 80px 160px repeat(19, var(--_cell-width));
         grid-template-rows: repeat(53, var(--_cell-height));
+    }
+
+    td, th {
+        min-height: var(--_cell-height);
     }
 }
 

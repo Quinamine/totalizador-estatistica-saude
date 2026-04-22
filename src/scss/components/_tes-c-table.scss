@@ -2,18 +2,25 @@
 
 .tes-c-table {
     margin-block-start: var(--eden-sys-spacing-xs);
+    --_input-color-focus: greenyellow;
 
     th, td {
         --_cell-accent-bg: var(--eden-comp-table-cell-bg, #{ $eden-ref-neutral-0 });
         --_cell-accent-text: var(--eden-comp-table-cell-text, var(--eden-sys-on-primary));
         --_cell-justify: center;;
 
+        border: none;
         padding: 0;
         display: flex;
         align-items: center;
         justify-content: var(--_cell-justify);
-        border: 1px solid var(--eden-sys-border-color-default);
+        border-top: 1px solid var(--eden-sys-border-color-default);
+        border-right: 1px solid var(--eden-sys-border-color-default);
         overflow: hidden;
+
+        &:first-child {
+            border-left: 1px solid var(--eden-sys-border-color-default);
+        }
 
         &.--row-label {
             --_cell-justify: flex-start;
@@ -36,6 +43,14 @@
         }
     }
 
+    &__row {
+        display: contents;
+
+        &--last {
+            td { border-bottom: 1px solid var(--eden-sys-border-color-default); }
+        }
+    }
+
     input {
         width: 100%;
         height: 100%;
@@ -44,7 +59,8 @@
         text-align: center;
 
         &:focus {
-            outline: 2px solid var(--eden-sys-link-color);
+            border-bottom: 2px solid var(--eden-sys-primary);
+            background-color: var(--_input-color-focus)
         }
     }
 }

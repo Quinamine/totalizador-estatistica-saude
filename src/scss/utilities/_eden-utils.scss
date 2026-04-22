@@ -20,6 +20,10 @@
     border-bottom: 1px solid oklch(from currentColor l c h / 20%)
 }
 
+.eden-u-border-bottom {
+    border-bottom: 1px solid var(--eden-sys-border-color-default) !important;
+}
+
 .eden-u-text-upper {
     text-transform: uppercase;
 }
