@@ -67,16 +67,6 @@ picture, figure {
     }
 }
 
-table {
-    width: 100%;
-    margin-block-start: var(--eden-sys-spacing-sm);
-
-    td, th {
-        padding: var(--eden-sys-spacing-xs);
-        border: 1px solid var(--eden-sys-border-color-default);
-    }
-}
-
 figcaption {
     margin-block-start: var(--eden-sys-figure-caption-spacing-y);
 }

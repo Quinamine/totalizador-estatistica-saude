@@ -15,7 +15,7 @@ export const EdenReportEntry = {
         
         try {
             const [response] = await Promise.all([
-                fetch(`./reports/${reportId}.html`),
+                fetch(`./pages/tes/${reportId}.html`),
                 minimumDelay
             ]);
 

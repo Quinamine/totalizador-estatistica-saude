@@ -1,7 +1,10 @@
-@use '../abstracts' as *;
+@use '../../abstracts' as *;
 
-.tes-c-table {
+.eden-c-table {
+    width: 100%;
+    margin-block-start: var(--eden-sys-spacing-sm);
     margin-block-start: var(--eden-sys-spacing-xs);
+    padding: var(--eden-sys-spacing-xs);
     --_input-color-focus: greenyellow;
 
     th, td {
