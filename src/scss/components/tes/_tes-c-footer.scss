@@ -17,6 +17,7 @@
 
     &__area {
         display: flex;
+        align-items: center;
     }
 
     &__area--left   { grid-area: left; }

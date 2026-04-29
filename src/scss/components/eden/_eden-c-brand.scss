@@ -23,7 +23,7 @@
     &__title {
         margin: 0;
         font-size: var(--eden-sys-text-2xl);
-        line-height: 1;
+        line-height: var(--eden-sys-line-height-xs);
         color: currentColor;
         font-weight: var(--eden-sys-text-bold);
     }

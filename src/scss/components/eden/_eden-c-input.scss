@@ -1,0 +1,73 @@
+@use '../../abstracts' as *;
+
+input,
+textarea {
+    --_input-font-size: var(--eden-comp-input-font-size, var(--eden-sys-text-sm));
+
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    color: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: inherit;
+    cursor: text;
+}
+
+input {
+    --_input-height: 24px;
+    --_input-color-focus: greenyellow;
+
+    width: 100%;
+    height: var(--_input-height);
+    background-color: var(--eden-sys-surface-1);
+    border-bottom: 1px solid var(--eden-sys-border-color-default);
+    color: var(--eden-sys-on-surface);
+    font-size: var(--_input-font-size);
+
+    &:focus {
+        border-bottom: 2px solid var(--eden-sys-primary);
+        background-color: var(--_input-color-focus);
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0
+    }
+
+    &::-moz-list-bullet {
+        display: none !important;
+    }
+
+    &[type=number]::-webkit-calendar-picker-indicator,
+    &[type=number]::-webkit-outer-spin-button {
+        display: none !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    &[type=number] {
+        text-align: center;
+    }
+
+    &[type=text] {
+        font-weight: var(--eden-sys-text-bold);
+    }
+
+    &[readonly] {
+        font-weight: var(--eden-sys-text-bold);
+        cursor: default;
+        transition: background-color var(--eden-sys-duraction-slow) var(--eden-sys-motion-entrance);
+    }
+}
+
+textarea {
+    resize: vertical;
+    min-height: 3em;
+    font-size: var(--_input-font-size);;
+}

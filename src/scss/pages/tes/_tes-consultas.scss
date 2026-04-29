@@ -23,16 +23,15 @@
     &__title-header {
         font-size: var(--eden-sys-text-3xl);
         white-space: nowrap;
+        line-height: var(--eden-sys-line-height-xs);
     }
 
     &__title-input {
-        width: 322px;
-        font-size: var(--eden-sys-text-xl);
-        border-bottom: 1px solid var(--eden-sys-border-color-default);
+        --eden-comp-input-font-size: var(--eden-sys-text-lg);
 
-        &:focus {
-            border-bottom: 2px solid var(--eden-sys-link-color);
-        }
+        width: 322px;
+        border-bottom: 1px solid var(--eden-sys-border-color-default);
+        line-height: var(--eden-sys-line-height-xs);
     }
 
     &__model-info {
