@@ -3,7 +3,7 @@
 .tes-consultas {
     --tes-comp-sheet-width: 1352px;
     --_cell-width: 50px;
-    --_cell-height: 24px;
+    --_cell-height: var(--eden-sys-spacing-md);
     --_form-sidebar-width: 114px;
     --_border-section-divider-color: #{$eden-ref-neutral-0};
 
@@ -38,6 +38,13 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+    }
+
+    &__model {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding-block-start: var(--eden-sys-spacing-2xs);
     }
 
     &__model-code {

@@ -19,8 +19,9 @@ textarea {
 }
 
 input {
-    --_input-height: 24px;
-    --_input-color-focus: greenyellow;
+    --_input-bg-focus: greenyellow;
+    --_input-readonly-bg: var(--eden-sys-surface-0);
+    --_input-height: var(--eden-sys-spacing-md);
 
     width: 100%;
     height: var(--_input-height);
@@ -29,9 +30,9 @@ input {
     color: var(--eden-sys-on-surface);
     font-size: var(--_input-font-size);
 
-    &:focus {
+    &:not([readonly]):focus {
         border-bottom: 2px solid var(--eden-sys-primary);
-        background-color: var(--_input-color-focus);
+        background-color: var(--_input-bg-focus);
     }
 
     &::-webkit-inner-spin-button,
@@ -44,25 +45,26 @@ input {
         display: none !important;
     }
 
-    &[type=number]::-webkit-calendar-picker-indicator,
-    &[type=number]::-webkit-outer-spin-button {
+    &:not([type=date])::-webkit-calendar-picker-indicator {
         display: none !important;
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
     }
 
     &[type=number] {
         text-align: center;
+        border-block: 2px solid transparent;
     }
 
-    &[type=text] {
+    &[type=text],
+    &[type=date] {
         font-weight: var(--eden-sys-text-bold);
     }
 
     &[readonly] {
         font-weight: var(--eden-sys-text-bold);
+        background-color: var(--_input-readonly-bg);
         cursor: default;
-        transition: background-color var(--eden-sys-duraction-slow) var(--eden-sys-motion-entrance);
     }
 }
 
