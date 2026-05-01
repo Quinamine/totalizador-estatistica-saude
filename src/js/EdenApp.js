@@ -1,5 +1,5 @@
-import { EdenSidebar } from "./components/EdenSidebar.js";
-import { EdenReportEntry } from "./components/EdenReportEntry.js";
+import { EdenSidebar } from "./components/eden/EdenSidebar.js";
+import { EdenReportEntry } from "./components/eden/EdenReportEntry.js";
 import { EDEN_REPORTS } from "./constants/eden-reports.config.js";
 
 const EdenApp = {
