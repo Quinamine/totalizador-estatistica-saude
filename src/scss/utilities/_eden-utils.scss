@@ -28,6 +28,10 @@
     text-transform: uppercase;
 }
 
+.eden-u-text-bold {
+    font-weight: var(--eden-sys-text-bold) !important;
+}
+
 .eden-u-text-vertical {
     writing-mode: vertical-rl;
     transform: rotate(180deg);

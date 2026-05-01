@@ -1,4 +1,4 @@
-import { EDEN_SIDEBAR } from "../constants/eden-sidebar.config.js";
+import { EDEN_SIDEBAR } from "../../constants/eden-sidebar.config.js";
 
 export const EdenSidebar = {
     init() {
