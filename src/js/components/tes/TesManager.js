@@ -1,6 +1,11 @@
 export const TesManager = {
     init() {
+        this.cacheElements();
         this.bindEvents();
+    },
+
+    cacheElements() {
+        this.reportEntry = document.querySelector('.eden-c-report-entry')
     },
 
     updateRelatedTotals(input) {
@@ -56,7 +61,7 @@ export const TesManager = {
     },
 
     bindEvents() {
-        document.body.addEventListener('input', (event) => {
+        this.reportEntry.addEventListener('input', (event) => {
             const input = event.target.closest('[data-to-subtotal-x], [data-to-total-x]');
             if (!input) return;
 
