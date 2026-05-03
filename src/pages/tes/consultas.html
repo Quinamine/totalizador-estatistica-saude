@@ -11,13 +11,13 @@
         </div>
         <div class="tes-consultas__title">
             <h1 class="tes-consultas__title-header">Resumo Mensal da US - Consultas <sup class="tes-consultas__title-index">(1)</sup></label> </h1>
-            <input type="text" placeholder="Nome da Unidade Sanitária" class="tes-consultas__title-input">
+            <input type="text" name="health-unit" id="health-unit" placeholder="Nome da Unidade Sanitária" class="tes-consultas__title-input">
         </div>
         <div class="tes-consultas__model-info">
             <div class="tes-consultas__model">
                 <span class="tes-consultas__model-code">Mod. SIS - C04-B (Act 2019)</span>
             </div>
-            <input type="text" class="tes-consultas__serial" list="datalist-serial">
+            <input type="text" name="serial" id="serial" class="tes-consultas__serial" list="datalist-serial">
             <datalist id="datalist-serial">
                 <option value="0069709"></option>
             </datalist>
@@ -27,8 +27,8 @@
         <thead class="tes-consultas__head">
             <tr class="eden-c-table__row">
                 <th class="--borderless --align-left">
-                    <label for="month-input">Mês:</label>
-                    <input id="month-input" list="datalist-months">
+                    <label for="month">Mês:</label>
+                    <input type="text" name="month" id="month" list="datalist-months">
                     <datalist id="datalist-months"></datalist>
                 </th>
                 <th class="--dark">1</th>
@@ -10494,12 +10494,12 @@
     </table>
     <footer class="tes-c-footer tes-c-footer--vertical">
         <div class="tes-c-footer__area tes-c-footer__area--left">
-            <label for="signature-input">Nome legível do responsável pelo preenchimento:</label>
-            <input type="text" id="signature-input" class="tes-c-footer__input">
+            <label for="signature">Nome legível do responsável pelo preenchimento:</label>
+            <input type="text" name="signature" id="signature" class="tes-c-footer__input">
         </div>
         <div class="tes-c-footer__area tes-c-footer__area--center">
-            <label for="category-input">Categoria:</label>
-            <input type="text" id="category-input" class="tes-c-footer__input" list="categories">
+            <label for="category">Categoria:</label>
+            <input type="text" name="category" id="category" class="tes-c-footer__input" list="categories">
 
             <datalist id="categories">
                 <option value="Médico de Clínica Geral"></option>
@@ -10510,8 +10510,8 @@
             </datalist>
         </div>
         <div class="tes-c-footer__area tes-c-footer__area--right">
-            <label for="date-input">Data:</label>
-            <input type="date" id="date-input" class="tes-c-footer__input tes-c-footer__input--date">
+            <label for="date">Data:</label>
+            <input type="date" name="date" id="date" class="tes-c-footer__input tes-c-footer__input--date">
         </div>
     </footer>
 </div>

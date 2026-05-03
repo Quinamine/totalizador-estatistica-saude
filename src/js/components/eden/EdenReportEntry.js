@@ -28,7 +28,13 @@ export const EdenReportEntry = {
             const report = await response.text();
             this.reportEntry.innerHTML = report;
 
-            return true;
+            const event = new CustomEvent('reportInjected', {
+                detail: { id: reportId } // To 'loadFromStorage()'
+            });
+            document.dispatchEvent(event);
+            
+            return true; // To 'updateToolbarVisibility()' on mobile
+
         } catch (error) {
             console.log(error.message);
             this.renderError(error, reportId);

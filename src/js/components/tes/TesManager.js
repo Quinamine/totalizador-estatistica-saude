@@ -1,11 +1,19 @@
 export const TesManager = {
+    activeReportId: '',
+    saveTimeout: null,
+
     init() {
         this.cacheElements();
         this.bindEvents();
+
+        document.addEventListener('reportInjected', (event) => {
+            this.activeReportId = event.detail.id;
+            this.loadFromStorage();
+        });
     },
 
     cacheElements() {
-        this.reportEntry = document.querySelector('.eden-c-report-entry')
+        this.reportEntry = document.querySelector('.eden-c-report-entry');
     },
 
     updateRelatedTotals(input) {
@@ -60,12 +68,58 @@ export const TesManager = {
         return total;
     },
 
+    saveToLocalStorage() {
+        if (!this.activeReportId) return;
+
+        const storageKey = `report_${this.activeReportId}`;
+
+        const previousBackup = JSON.parse(localStorage.getItem(storageKey)) || {};
+        const currentData = {};
+
+        const inputs = this.reportEntry.querySelectorAll('input');
+        inputs.forEach(input => {
+            if (input.name) {
+                currentData[input.name] = input.value;
+            }
+        });
+
+        const updatedBackup = { ...previousBackup, ...currentData };
+        localStorage.setItem(storageKey, JSON.stringify(updatedBackup));
+        console.log(`[Backup] Dados guardados para: ${this.activeReportId}`);
+    },
+
+    loadFromStorage() {
+        if (!this.activeReportId) return;
+
+        const storageKey = `report_${this.activeReportId}`;
+        const savedData = JSON.parse(localStorage.getItem(storageKey));
+        if (savedData) {
+            Object.entries(savedData).forEach(([name, value]) => {
+                const input = this.reportEntry.querySelector(`[name="${name}"]`);
+                if (input) {
+                    input.value = value;
+                }
+            });
+            
+            console.log(`[Storage] Dados recuperados com sucesso para: ${this.activeReportId}`);
+        } else {
+            console.log(`[Storage] Nenhum dado anterior encontrado para: ${this.activeReportId}`);
+        }
+    },
+
     bindEvents() {
         this.reportEntry.addEventListener('input', (event) => {
-            const input = event.target.closest('[data-to-subtotal-x], [data-to-total-x]');
-            if (!input) return;
 
-            this.updateRelatedTotals(input);
+            clearTimeout(this.saveTimeout);
+            this.saveTimeout = setTimeout(() => {
+                this.saveToLocalStorage();
+            }, 500);
+
+
+            const tableInput = event.target.closest('[data-to-subtotal-x], [data-to-total-x]');
+            if (!tableInput) return;
+
+            this.updateRelatedTotals(tableInput);
         });
     }
 };
