@@ -9,7 +9,7 @@
 
     &__header {
         display: grid;
-        grid-template-columns: 254px 1fr 183px;
+        grid-template-columns: 254px 835px 183px;
         gap: var(--eden-sys-spacing-ms);
     }
 
@@ -67,6 +67,10 @@
         grid-template-rows: repeat(3, var(--_cell-height));
         text-align: center;
         margin-inline-start: var(--_form-sidebar-width);
+
+        tr th:nth-child(n+2) {
+            font-weight: var(--eden-sys-text-bold);
+        }
     }
 
     &__body {
@@ -76,8 +80,16 @@
         grid-template-rows: repeat(53, var(--_cell-height));
     }
 
-    td, th {
-        min-height: var(--_cell-height);
+    th, td {
+        @include tablet {
+            &.--row-label {
+                position: sticky;
+                left: 0;
+                background-color: var(--eden-sys-surface-1);
+                z-index: calc(var(--eden-sys-zi-sticky) - 1);
+                border-inline-start: 1px solid var(--eden-sys-border-color-default);
+            }
+        }
     }
 }
 
