@@ -32,6 +32,10 @@
     font-weight: var(--eden-sys-text-bold) !important;
 }
 
+.eden-u-text-center {
+    text-align: center !important;
+}
+
 .eden-u-text-vertical {
     writing-mode: vertical-rl;
     transform: rotate(180deg);

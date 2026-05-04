@@ -8,7 +8,7 @@
     th, td {
         --_cell-accent-bg: var(--eden-comp-table-cell-bg, #{ $eden-ref-neutral-0 });
         --_cell-accent-text: var(--eden-comp-table-cell-text, var(--eden-sys-on-primary));
-        --_cell-justify: center;
+        --_cell-justify: flex-start;
 
         padding: 0;
         display: flex;
@@ -23,17 +23,20 @@
         }
 
         &.--row-label {
-            --_cell-justify: flex-start;
             padding-inline-start: var(--eden-sys-spacing-3xs);
             line-height: var(--eden-sys-line-height-sm);
         }
 
-        &.--align-left {
-            --_cell-justify: flex-start;
+        &.--justify-center {
+            --_cell-justify: center;
         }
 
         &.--borderless {
             border: none;
+        }
+
+        &.--border-r-none {
+            border-right: none;
         }
 
         &.--dark {
