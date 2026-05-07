@@ -2,12 +2,14 @@ import { EdenSidebar } from "./components/eden/EdenSidebar.js";
 import { EdenReportEntry } from "./components/eden/EdenReportEntry.js";
 import { EDEN_REPORTS } from "./constants/eden-reports.config.js";
 import { TesManager } from "./components/tes/TesManager.js";
+import { TesNotesEditor } from "./components/tes/TesNotesEditor.js";
 
 const EdenApp = {
     init() {
         EdenSidebar.init();
         EdenReportEntry.init();
         TesManager.init()
+        TesNotesEditor.init();
 
         this.cacheElements();
         this.setupObservers();
