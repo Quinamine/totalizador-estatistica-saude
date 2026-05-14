@@ -4,9 +4,9 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-areas: "left center right";
-    grid-column-gap: var(--eden-sys-spacing-md);
-    grid-row-gap: var(--eden-sys-spacing-ms);
-    padding-block: var(--eden-sys-spacing-ms);
+    grid-column-gap: var(--eden-sys-space-500);
+    grid-row-gap: var(--eden-sys-space-400);
+    padding-block: var(--eden-sys-space-400);
 
     &--vertical {
         grid-template-rows: auto auto;

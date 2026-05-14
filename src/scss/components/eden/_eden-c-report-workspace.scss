@@ -1,6 +1,6 @@
 @use '../../abstracts' as *;
 
-.eden-c-report-entry {
+.eden-c-report-workspace {
     --eden-l-container-padding-x: 0;
 
     --_parent-padding: var(--eden-sys-page-margin);
@@ -20,6 +20,6 @@
     &__error-actions {
         display: inline-flex;
         align-items: center;
-        gap: var(--eden-sys-spacing-sm);
+        gap: var(--eden-sys-space-300);
     }
 }

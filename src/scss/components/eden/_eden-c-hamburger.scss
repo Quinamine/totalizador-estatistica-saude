@@ -2,7 +2,7 @@
 
 .eden-c-hamburger {
     --_bg: transparent;
-    --_bar-height: var(--eden-sys-spacing-4xs);
+    --_bar-height: var(--eden-sys-space-050);
 
     display: inline-flex;
     justify-content: center;
@@ -37,6 +37,6 @@
         width: 100%;
         height: var(--_bar-height);
         background: var(--eden-sys-primary);
-        border-radius: var(--eden-sys-radius-sm);
+        border-radius: var(--eden-sys-radius-100);
     }
 }

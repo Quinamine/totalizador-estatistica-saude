@@ -2,15 +2,16 @@
 
 .eden-c-button {
     // Button API
-    --_font-size: var(--eden-comp-button-font-size, var(--eden-sys-text-sm));
-    --_font-weight: var(--eden-comp-button-font-weight, var(--eden-sys-text-semibold));
-    --_padding-block: var(--eden-comp-button-padding-y, var(--eden-sys-spacing-sm));
-    --_padding-inline: var(--eden-comp-button-padding-x, var(--eden-sys-spacing-md));
+    --_font-size: var(--eden-comp-button-font-size, var(--eden-sys-font-size-200));
+    --_font-weight: var(--eden-comp-button-font-weight, var(--eden-sys-font-weight-semibold));
+    --_padding-block: var(--eden-comp-button-padding-y, var(--eden-sys-space-300));
+    --_padding-inline: var(--eden-comp-button-padding-x, var(--eden-sys-space-500));
     --_justify-content: var(--eden-comp-button-justify-content, center);
     --_border-radius: var(--eden-comp-button-border-radius, var(--eden-sys-action-border-radius));
-    --_color: var(--eden-comp-button-color, var(--eden-sys-on-surface));
+    --_color: var(--eden-comp-button-color, var(--eden-sys-surface-content));
     --_bg-hover: var(--eden-comp-button-bg-hover, var(--eden-sys-action-color-hover));
     --_bg-active: var(--eden-comp-button-bg-active, var(--eden-sys-action-color-active));
+    --_bg-disabled: transparent;
     --_bg: transparent;
 
     display: inline-flex;
@@ -39,31 +40,47 @@
 
     &--primary {
         --_bg: var(--eden-sys-primary);
-        --_color: var(--eden-sys-on-primary);
+        --_color: var(--eden-sys-primary-content);
         --_bg-hover: oklch(from var(--eden-sys-primary) calc(l + 0.1) c h);
         --_bg-active: oklch(from var(--eden-sys-primary) calc(l - 0.05) c h);
     }
 
     &--secondary {
         --_bg: transparent;
-        --_color: var(--eden-sys-on-surface);
-        --_bg-hover: oklch(from var(--eden-sys-surface-0) calc(l - 0.05) 0.04 h);
+        --_color: var(--eden-sys-surface-content);
+        --_bg-hover: oklch(from var(--eden-sys-surface) calc(l - 0.05) 0.04 h);
         border: 1px solid var(--eden-sys-primary);
     }
 
     &--danger {
         --_bg: var(--eden-sys-danger);
-        --_color: var(--eden-sys-on-danger);
+        --_color: var(--eden-sys-danger-content);
         --_bg-hover: oklch(from var(--eden-sys-danger) calc(l + 0.1) c h); 
         --_bg-active: oklch(from var(--eden-sys-danger) calc(l - 0.05) c h);
     }
 
     &--stack {
         flex-direction: column;
-        gap: var(--eden-sys-spacing-2xs);
+        gap: var(--eden-sys-space-150);
 
         .eden-c-button__label {
             white-space: nowrap;
+        }
+    }
+
+    &[disabled] {
+        --_bg: var(--_bg-disabled);
+        --_color: var(--eden-sys-on-surface-subtle);
+        --_bg-hover: var(--_bg-disabled);
+        --_bg-active: var(--_bg-disabled);
+
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        &.eden-c-button--primary,
+        &.eden-c-button--secondary,
+        &.eden-c-button--danger {
+            --_bg-disabled: oklch(from var(--eden-sys-surface-0) 0.85 c h);
         }
     }
 }

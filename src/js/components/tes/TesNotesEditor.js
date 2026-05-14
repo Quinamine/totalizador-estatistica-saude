@@ -1,6 +1,6 @@
 export const TesNotesEditor = {
     init() {
-        document.addEventListener('reportInjected', (event) => {
+        document.addEventListener('eden:report:rendered', () => {
             this.cacheElements();
             this.bindEvents();
         });

@@ -21,7 +21,7 @@
 }
 
 .eden-u-border-bottom {
-    border-bottom: 1px solid var(--eden-sys-border-color-default) !important;
+    border-bottom: 1px solid var(--eden-sys-border-color) !important;
 }
 
 .eden-u-text-upper {
@@ -29,7 +29,7 @@
 }
 
 .eden-u-text-bold {
-    font-weight: var(--eden-sys-text-bold) !important;
+    font-weight: var(--eden-sys-font-weight-bold) !important;
 }
 
 .eden-u-text-center {
@@ -41,9 +41,9 @@
     transform: rotate(180deg);
     display: inline-block;
     text-align: center;
-    font-weight: var(--eden-sys-text-bold);
+    font-weight: var(--eden-sys-font-weight-bold);
     letter-spacing: .5px;
-    line-height: var(--eden-sys-line-height-sm);
+    line-height: var(--eden-sys-line-height-heading);
 }
 
 .eden-u-text-nowrap {

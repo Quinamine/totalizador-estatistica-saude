@@ -1,17 +1,28 @@
 import { EdenSpinner } from "./EdenSpinner.js";
+import { EdenMessenger } from "../../utils/EdenMessenger.js";
 
-export const EdenReportEntry = {
+export const EdenReportWorkspace = {
+    ...EdenMessenger,
+    
     init() {
         this.cacheElements();
+        this.bindEvents();
     },
     
     cacheElements() {
-        this.reportEntry = document.querySelector('[data-eden-js="report-entry"]');
+        this.container = document.querySelector('[data-eden-js="report-workspace"]');
+    },
+
+    bindEvents() {
+        document.addEventListener('eden:trigger:report-render-request', ({ detail }) => {
+            const { id } = detail;
+            this.renderReport(id);
+        });
     },
     
     async renderReport(reportId) {
         const minimumDelay = new Promise(resolve => setTimeout(resolve, 600));
-        this.reportEntry.innerHTML = EdenSpinner('A carregar ficha...');
+        this.container.innerHTML = EdenSpinner('A carregar ficha...');
         
         try {
             const [response] = await Promise.all([
@@ -26,14 +37,9 @@ export const EdenReportEntry = {
             }
 
             const report = await response.text();
-            this.reportEntry.innerHTML = report;
+            this.container.innerHTML = report;
 
-            const event = new CustomEvent('reportInjected', {
-                detail: { id: reportId } // To 'loadFromStorage()'
-            });
-            document.dispatchEvent(event);
-            
-            return true; // To 'updateToolbarVisibility()' on mobile
+            this.notify('report','rendered', { id: reportId });
 
         } catch (error) {
             console.log(error.message);
@@ -55,10 +61,10 @@ export const EdenReportEntry = {
         const msg = messages[msgKey] || messages.default;
         const buttons = this.getErrorButtons(error, reportId);
 
-        this.reportEntry.innerHTML = `
-            <div class="eden-c-report-entry__error">
-                <p class="eden-c-report-entry__error-text">${msg}</p>
-                <div class="eden-c-report-entry__error-actions">${buttons}</div>
+        this.container.innerHTML = `
+            <div class="eden-c-report-workspace__error">
+                <p class="eden-c-report-workspace__error-text">${msg}</p>
+                <div class="eden-c-report-workspace__error-actions">${buttons}</div>
             </div>
         `;
     },
@@ -67,7 +73,7 @@ export const EdenReportEntry = {
         let buttons = '';
 
         if (error.status !== 404) {
-            buttons += `<button class="eden-c-button eden-c-button--primary" data-eden-js="report-retryer" data-eden-report-id="${reportId}">Tentar novamente</button>`;
+            buttons += `<button class="eden-c-button eden-c-button--primary" data-eden-action="report:render" data-eden-report-id="${reportId}">Tentar novamente</button>`;
         }
         
         if (error.status !== 404 && error.status !== 500 && error.name !== 'TypeError') {

@@ -2,7 +2,7 @@
 
 input,
 textarea {
-    --_input-font-size: var(--eden-comp-input-font-size, var(--eden-sys-text-sm));
+    --_input-font-size: var(--eden-comp-input-font-size, var(--eden-sys-font-size-200));
 
     font: inherit;
     color: inherit;
@@ -20,14 +20,14 @@ textarea {
 
 input {
     --_input-bg-focus: greenyellow;
-    --_input-readonly-bg: var(--eden-sys-surface-0);
-    --_input-height: var(--eden-sys-spacing-md);
+    --_input-readonly-bg: var(--eden-sys-surface);
+    --_input-height: var(--eden-sys-space-500);
 
     width: 100%;
     height: var(--_input-height);
-    background-color: var(--eden-sys-surface-1);
-    border-bottom: 1px solid var(--eden-sys-border-color-default);
-    color: var(--eden-sys-on-surface);
+    background-color: var(--eden-sys-surface-100);
+    border-bottom: 1px solid var(--eden-sys-border-color);
+    color: var(--eden-sys-surface-content);
     font-size: var(--_input-font-size);
 
     &:not([readonly]):focus {
@@ -58,11 +58,11 @@ input {
 
     &[type=text],
     &[type=date] {
-        font-weight: var(--eden-sys-text-bold);
+        font-weight: var(--eden-sys-font-weight-bold);
     }
 
     &[readonly] {
-        font-weight: var(--eden-sys-text-bold);
+        font-weight: var(--eden-sys-font-weight-bold);
         background-color: var(--_input-readonly-bg);
         cursor: default;
     }

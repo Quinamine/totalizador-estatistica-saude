@@ -1,5 +1,7 @@
 import { EdenSidebar } from "./components/eden/EdenSidebar.js";
-import { EdenReportEntry } from "./components/eden/EdenReportEntry.js";
+import { EdenReportWorkspace } from "./components/eden/EdenReportWorkspace.js";
+import { EdenHeader } from "./components/eden/EdenHeader.js";
+import { TesToolbar } from "./components/tes/TesToolbar.js";
 import { EDEN_REPORTS } from "./constants/eden-reports.config.js";
 import { TesManager } from "./components/tes/TesManager.js";
 import { TesNotesEditor } from "./components/tes/TesNotesEditor.js";
@@ -7,118 +9,76 @@ import { TesNotesEditor } from "./components/tes/TesNotesEditor.js";
 const EdenApp = {
     init() {
         EdenSidebar.init();
-        EdenReportEntry.init();
+        EdenReportWorkspace.init();
+        EdenHeader.init();
+        TesToolbar.init();
         TesManager.init()
         TesNotesEditor.init();
 
-        this.cacheElements();
-        this.setupObservers();
         this.bindEvents();
     },
 
-    cacheElements() {
-        this.headerTitle = document.querySelector('[data-eden-js="header-title"');
-    },
-
-    setupObservers() {
-        const mobileView = window.matchMedia('(max-width: 1023px)');
-        const desktopView = window.matchMedia('(min-width: 1024px)');
-
-        mobileView.addEventListener('change', ({matches: isMobile}) => {
-            if(isMobile) {
-                this.handleSidebarReset();
-            }
-        });
-
-        desktopView.addEventListener('change', ({matches: isDesktop}) => {
-            if(isDesktop) {
-                this.handleSidebarReset();
-            }
-        });
-    },
-
     bindEvents() {
-        document.body.addEventListener('click', (event) => {
-            // SIDEBAR
-            const sidebarOpener = event.target.closest('[data-eden-js~="sidebar-opener"]');
-            const sidebarCloser = event.target.closest('[data-eden-js~="sidebar-closer"]');
-            const accordionToggler = event.target.closest('[data-eden-js~="sidebar-accordion-toggler"]');
+        document.addEventListener('click', (e) => {
+            const trigger = e.target.closest('[data-eden-action]');
+            if(!trigger) return;
 
-            if (sidebarOpener) {
-                this.handleSidebarOpen();
-                return;
+            const action = trigger.dataset.edenAction;
+            const detail = {};
+
+            if(trigger.matches('[data-eden-action="report:render"]')) {
+                detail.id = trigger.dataset.edenReportId;
             }
 
-            if (sidebarCloser) {
-                this.handleSidebarClose();
-                return;
-            }
-
-            if (accordionToggler) {
-                const accordion = accordionToggler.parentElement;
-                this.toggleAccordion(accordion);
-            }
-
-            // REPORT ENTRY 
-            const reportRenderer = event.target.closest('[data-eden-js~="report-renderer"');
-            const reportRetryer = event.target.closest('[data-eden-js~="report-retryer"');
-
-            if(reportRenderer) {
-                const reportId = reportRenderer.dataset.edenReportId;
-                this.handleReportRendering(reportId)
-            }
-
-            if(reportRetryer) {
-                const reportId = reportRetryer.dataset.edenReportId;
-                this.handleReportRendering(reportId);
-            }
+            this.dispatchTriggerRequest(action, detail);
         });
+
+        document.addEventListener('eden:sidebar:visibility-request', (e) => this.handleVisibilityRequest(e));
+
+        document.addEventListener('eden:toolbar:visibility-request', (e) => this.handleVisibilityRequest(e));
     },
 
-    handleSidebarOpen() {
-        EdenSidebar.setState('open');
-        document.body.classList.remove('has-eden-sidebar-closed');
+    dispatchTriggerRequest(rawAction, detail = {}) {
+        const [subject, action] = rawAction.split(':');
+        
+        const isVisibility = ['open', 'close', 'toggle'].includes(action);
+        const nature = isVisibility ? 'visibility' : action;
+
+        const eventName = `eden:trigger:${subject}-${nature}-request`;
+
+        const event = new CustomEvent(eventName, {
+            detail: { action, ...detail }
+        });
+
+        document.dispatchEvent(event);
     },
 
-    handleSidebarClose() {
-        EdenSidebar.setState('close');
-        document.body.classList.add('has-eden-sidebar-closed');
-    },
+    handleVisibilityRequest({ detail, type }) {
+        const { action } = detail;
+        const isVisible = (action === 'open');
+        
+        const subject = type.split(':')[1]; 
 
-    handleSidebarReset() {
-        document.body.classList.remove('has-eden-sidebar-open', 'has-eden-sidebar-closed');
-    },
-
-    toggleAccordion(container) {
-        container.classList.toggle('is-open');
-    },
-
-    async handleReportRendering(id) {
-        const reportName = this.getReportName(id);
-        const isMobile = window.matchMedia('(max-width: 1023px)').matches;
-
-        this.headerTitle.innerHTML = reportName;
-        if(isMobile) {
-            this.handleSidebarClose();
-        }
-
-        const isRendered = await EdenReportEntry.renderReport(id);
-        this.updateToolbarVisibility(isRendered);
-    },
-
-    getReportName(reportId) {
-        let reportName;
-        for (const item of EDEN_REPORTS) {
-            if(item.id === reportId) {
-                reportName = item.name;
+        const strategies = {
+            sidebar: () => {
+                const isDesktop = window.innerWidth >= 1024;
+                if (isDesktop) {
+                    document.body.classList.toggle('has-eden-sidebar-closed', !isVisible);
+                    document.body.classList.remove('has-eden-sidebar-open');
+                    return;
+                }
+                document.body.classList.toggle('has-eden-sidebar-open', isVisible);
+                document.body.classList.remove('has-eden-sidebar-closed');
+            },
+            toolbar: () => {
+                document.body.classList.toggle('has-eden-toolbar', isVisible);
             }
-        }
-        return reportName;
-    },
+        };
 
-    updateToolbarVisibility(isVisible) {
-        document.body.classList.toggle('has-eden-toolbar', isVisible);
-    }
+        if (strategies[subject]) {
+            strategies[subject]();
+        }
+    },
 }
 
 EdenApp.init();

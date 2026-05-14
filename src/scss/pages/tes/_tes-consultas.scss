@@ -3,35 +3,35 @@
 .tes-consultas {
     --tes-comp-sheet-width: 1352px;
     --_cell-width: 50px;
-    --_cell-height: var(--eden-sys-spacing-md);
+    --_cell-height: var(--eden-sys-space-500);
     --_form-sidebar-width: 114px;
     --_border-section-divider-color: #{$eden-ref-neutral-0};
 
     &__header {
         display: grid;
         grid-template-columns: 254px 835px 183px;
-        gap: var(--eden-sys-spacing-ms);
+        gap: var(--eden-sys-space-400);
     }
 
     &__title {
         justify-self: end;
         display: flex;
         align-items: flex-end;
-        gap: var(--eden-sys-spacing-2xs);
+        gap: var(--eden-sys-space-150);
     }
 
     &__title-header {
-        font-size: var(--eden-sys-text-3xl);
+        font-size: var(--eden-sys-font-size-600);
         white-space: nowrap;
-        line-height: var(--eden-sys-line-height-xs);
+        line-height: var(--eden-sys-line-height-flat);
     }
 
     &__title-input {
-        --eden-comp-input-font-size: var(--eden-sys-text-lg);
+        --eden-comp-input-font-size: var(--eden-sys-font-size-400);
 
         width: 322px;
-        border-bottom: 1px solid var(--eden-sys-border-color-default);
-        line-height: var(--eden-sys-line-height-xs);
+        border-bottom: 1px solid var(--eden-sys-border-color);
+        line-height: var(--eden-sys-line-height-flat);
     }
 
     &__model-info {
@@ -44,21 +44,21 @@
         flex: 1;
         display: flex;
         align-items: center;
-        padding-block-start: var(--eden-sys-spacing-2xs);
+        padding-block-start: var(--eden-sys-space-150);
     }
 
     &__model-code {
-        font-size: var(--eden-sys-text-sm);
-        font-weight: var(--eden-sys-text-bold);
+        font-size: var(--eden-sys-font-size-200);
+        font-weight: var(--eden-sys-font-weight-bold);
     }
     
     &__serial {
-        font-size: var(--eden-sys-text-xl);
-        font-weight: var(--eden-sys-text-bold);
+        font-size: var(--eden-sys-font-size-500);
+        font-weight: var(--eden-sys-font-weight-bold);
         font-family: 'Courier New', Courier, monospace;
         color: var(--eden-sys-danger);
         text-align: center;
-        border-bottom: thin dotted var(--eden-sys-border-color-default);
+        border-bottom: thin dotted var(--eden-sys-border-color);
     }
 
     &__head {
@@ -69,7 +69,7 @@
         margin-inline-start: var(--_form-sidebar-width);
 
         tr th:nth-child(n+2) {
-            font-weight: var(--eden-sys-text-bold);
+            font-weight: var(--eden-sys-font-weight-bold);
         }
     }
 
@@ -85,9 +85,9 @@
             &.--row-label {
                 position: sticky;
                 left: 0;
-                background-color: var(--eden-sys-surface-1);
+                background-color: var(--eden-sys-surface-100);
                 z-index: calc(var(--eden-sys-zi-sticky) - 1);
-                border-inline-start: 1px solid var(--eden-sys-border-color-default);
+                border-inline-start: 1px solid var(--eden-sys-border-color);
             }
         }
     }

@@ -2,18 +2,37 @@ export const TesManager = {
     activeReportId: '',
     saveTimeout: null,
 
+    get isReportRendered () {
+        return Boolean(this.activeReportId?.trim());
+    },
+
     init() {
         this.cacheElements();
         this.bindEvents();
-
-        document.addEventListener('reportInjected', (event) => {
-            this.activeReportId = event.detail.id;
-            this.loadFromStorage();
-        });
     },
 
     cacheElements() {
-        this.reportEntry = document.querySelector('.eden-c-report-entry');
+        this.reportWorkspace = document.querySelector('.eden-c-report-workspace');
+        this.totalTriggerSelector = '[data-to-subtotal-x], [data-to-total-x]';
+    },
+
+    bindEvents() {
+        document.addEventListener('eden:report:rendered', ({ detail }) => {
+            this.activeReportId = detail.id;
+            this.loadFromStorage();
+        });
+
+        this.reportWorkspace.addEventListener('input', (e) => {
+            clearTimeout(this.saveTimeout);
+            this.saveTimeout = setTimeout(() => {
+                this.saveToLocalStorage();
+            }, 500);
+
+            const totalTrigger = e.target.closest(this.totalTriggerSelector);
+            if (!totalTrigger) return;
+
+            this.updateRelatedTotals(totalTrigger);
+        });
     },
 
     updateRelatedTotals(input) {
@@ -69,14 +88,14 @@ export const TesManager = {
     },
 
     saveToLocalStorage() {
-        if (!this.activeReportId) return;
+        if (!this.isReportRendered) return;
 
         const storageKey = `report_${this.activeReportId}`;
 
         const previousBackup = JSON.parse(localStorage.getItem(storageKey)) || {};
         const currentData = {};
 
-        const inputs = this.reportEntry.querySelectorAll('input');
+        const inputs = this.reportWorkspace.querySelectorAll('input:read-write');
         inputs.forEach(input => {
             if (input.name) {
                 currentData[input.name] = input.value;
@@ -89,15 +108,19 @@ export const TesManager = {
     },
 
     loadFromStorage() {
-        if (!this.activeReportId) return;
+        if (!this.isReportRendered) return;
 
         const storageKey = `report_${this.activeReportId}`;
         const savedData = JSON.parse(localStorage.getItem(storageKey));
         if (savedData) {
             Object.entries(savedData).forEach(([name, value]) => {
-                const input = this.reportEntry.querySelector(`[name="${name}"]`);
+                const input = this.reportWorkspace.querySelector(`[name="${name}"]`);
                 if (input) {
                     input.value = value;
+
+                    if(input.matches(this.totalTriggerSelector)) {
+                        this.updateRelatedTotals(input);
+                    }
                 }
             });
             
@@ -106,20 +129,4 @@ export const TesManager = {
             console.log(`[Storage] Nenhum dado anterior encontrado para: ${this.activeReportId}`);
         }
     },
-
-    bindEvents() {
-        this.reportEntry.addEventListener('input', (event) => {
-
-            clearTimeout(this.saveTimeout);
-            this.saveTimeout = setTimeout(() => {
-                this.saveToLocalStorage();
-            }, 500);
-
-
-            const tableInput = event.target.closest('[data-to-subtotal-x], [data-to-total-x]');
-            if (!tableInput) return;
-
-            this.updateRelatedTotals(tableInput);
-        });
-    }
 };

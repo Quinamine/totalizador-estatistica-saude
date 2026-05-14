@@ -8,11 +8,11 @@
 
     &__content {
         min-height: 100px;
-        padding: var(--eden-sys-spacing-sm);
-        margin-block: var(--eden-sys-spacing-sm);
-        border: 1px solid var(--eden-sys-border-color-default);
-        border-radius: var(--eden-sys-radius-sm);
-        font-size: var(--eden-sys-text-sm);
+        padding: var(--eden-sys-space-300);
+        margin-block: var(--eden-sys-space-300);
+        border: 1px solid var(--eden-sys-border-color);
+        border-radius: var(--eden-sys-radius-100);
+        font-size: var(--eden-sys-font-size-200);
         cursor: text;
 
         @media print {
@@ -31,7 +31,7 @@
 
         &:empty::before {
             content: attr(data-placeholder);
-            color: var(--eden-sys-on-surface-subtle);
+            color: var(--eden-sys-surface-content-200);
             pointer-events: none;
 
             @media print {
