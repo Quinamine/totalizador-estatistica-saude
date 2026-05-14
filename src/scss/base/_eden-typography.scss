@@ -1,26 +1,26 @@
 @use '../abstracts' as *;
 
 h1, h2, h3, h4 {
-    line-height: var(--eden-sys-line-height-sm);
+    line-height: var(--eden-sys-line-height-heading);
     margin-block: var(--eden-sys-flow-gap-start) var(--eden-sys-flow-gap-end);
-    font-weight: var(--eden-sys-text-bold);
+    font-weight: var(--eden-sys-font-weight-bold);
 }
 
 h1 {
     --eden-sys-heading-spacing-y-start: 0;
-    font-size: var(--_h1-font-size, var(--eden-sys-text-2xl));
+    font-size: var(--_h1-font-size, var(--eden-sys-font-size-600));
 }
 
 h2 {
-  font-size: var(--_h2-font-size, var(--eden-sys-text-xl));
+  font-size: var(--_h2-font-size, var(--eden-sys-font-size-500));
 }
 
 h3 {
-  font-size: var(--_h3-font-size, var(--eden-sys-text-lg));
+  font-size: var(--_h3-font-size, var(--eden-sys-font-size-400));
 }
 
 h4 {
-  font-size: var(--_h4-font-size, var(--eden-sys-text-md));
+  font-size: var(--_h4-font-size, var(--eden-sys-font-size-300));
 }
 
 p {
@@ -53,7 +53,7 @@ article ol {
 }
 
 strong, b {
-    font-weight: var(--eden-sys-text-bold);
+    font-weight: var(--eden-sys-font-weight-bold);
 }
 
 sup, sub {

@@ -40,17 +40,6 @@ $eden-ref-space-48: 3rem;
     // --- 2.1. PRIMITIVES (Raw Values) ---
     --eden-ref-brand-hue: 243;
     --eden-ref-primary-hue: var(--eden-ref-brand-hue);
-    // > Font size scale
-    --eden-ref-font-size-base: 1rem;
-    --eden-ref-font-size-unit: 0.125rem; // 2px;
-    --eden-ref-font-size-100: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit) * 3); // 10px;
-    --eden-ref-font-size-200: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit) * 2); // 12px;
-    --eden-ref-font-size-300: calc(var(--eden-ref-font-size-base) - var(--eden-ref-font-size-unit)); // 14px;
-    --eden-ref-font-size-400: var(--eden-ref-font-size-base); // 16px;
-    --eden-ref-font-size-500: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 1); // 18px;
-    --eden-ref-font-size-600: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 2); // 20px;
-    --eden-ref-font-size-700: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 3); // 22px;
-    --eden-ref-font-size-800: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 4); // 24px;
 
     // --- 2.2 SYSTEM TOKENS (Semantic Intent) ---
     // > Brand 
@@ -75,22 +64,29 @@ $eden-ref-space-48: 3rem;
     --eden-sys-on-warning-container: oklch(25% 0.08 84);
     --eden-sys-warning-outline: oklch(83% 0.19 84);
     // > Typography 
-    --eden-sys-text-2xs: var(--eden-ref-font-size-100); // 10px
-    --eden-sys-text-xs: var(--eden-ref-font-size-200); // 12px
-    --eden-sys-text-sm: var(--eden-ref-font-size-300); // 14px
-    --eden-sys-text-md: var(--eden-ref-font-size-400); // 16px
-    --eden-sys-text-lg: var(--eden-ref-font-size-500); // 18px
-    --eden-sys-text-xl: var(--eden-ref-font-size-600); // 20px
-    --eden-sys-text-2xl: var(--eden-ref-font-size-700); // 22px
-    --eden-sys-text-3xl: var(--eden-ref-font-size-800); // 24px
-    --eden-sys-text-regular: 400;
-    --eden-sys-text-semibold: 600;
-    --eden-sys-text-bold: 700;
 
-    --eden-ref-line-height-base: 1.5;
-    --eden-sys-line-height-xs: 1;
-    --eden-sys-line-height-sm: 1.25;
-    --eden-sys-line-height-md: var(--eden-ref-line-height-base);
+    // Font Sizes 
+    --eden-sys-font-size-050: 0.625rem;  /* 10px */
+    --eden-sys-font-size-100: 0.75rem;   /* 12px - */
+    --eden-sys-font-size-200: 0.875rem;  /* 14px - */
+    --eden-sys-font-size-300: 1rem;      /* 16px - */
+    --eden-sys-font-size-400: 1.125rem;  /* 18px - */
+    --eden-sys-font-size-500: 1.25rem;   /* 20px - */
+    --eden-sys-font-size-600: 1.5rem;    /* 24px - */
+    --eden-sys-font-size-700: 2rem;      /* 32px - */
+    --eden-sys-font-size-800: 2.5rem;   /* 40px - */
+    --eden-sys-font-size-900: 3rem;      /* 48px - */
+
+    // Font weight
+    --eden-sys-font-weight-regular: 400;
+    --eden-sys-font-weight-medium: 400;
+    --eden-sys-font-weight-semibold: 700;
+    --eden-sys-font-weight-bold: 700;
+
+    /* Line Heights */
+    --eden-sys-line-height-flat: 1; 
+    --eden-sys-line-height-heading: 1.25; 
+    --eden-sys-line-height-body: 1.5; 
 
     // Spacing scale
     --eden-sys-space-050: #{$eden-ref-space-02};

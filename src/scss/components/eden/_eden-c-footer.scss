@@ -34,7 +34,7 @@
     }
 
     background-color: var(--eden-sys-surface-1);
-    font-size: var(--eden-sys-text-xs);
+    font-size: var(--eden-sys-font-size-100);
     border-block-start: 1px solid oklch(from var(--eden-sys-surface-0) calc(l - 0.02) c l);
     padding-block-start: var(--eden-sys-space-200);
     padding-block-end: var(--_footer-safe-clearance);
@@ -69,12 +69,12 @@
     &__copyright-text {
         color: var(--eden-sys-on-surface-variant);
         font-size: var(--_copyright-font-size);
-        font-weight: var(--eden-sys-text-regular);
+        font-weight: var(--eden-sys-font-weight-regular);
     }
 
     &__copyright {
        @include tablet {
-            --_copyright-font-size: var(--eden-sys-text-xs); // 12px;
+            --_copyright-font-size: var(--eden-sys-font-size-100); // 12px;
             order: -1;
         }
     }

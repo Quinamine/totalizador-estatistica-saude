@@ -35,10 +35,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--eden-sys-surface-0);
     color: var(--eden-sys-on-surface);
-    line-height: var(--eden-sys-line-height-md);
+    line-height: var(--eden-sys-line-height-body);
     cursor: default;
     font: {
-        size: var(--eden-sys-text-md);
+        size: var(--eden-sys-font-size-300);
         family: Arial, Helvetica, sans-serif;
     }
 

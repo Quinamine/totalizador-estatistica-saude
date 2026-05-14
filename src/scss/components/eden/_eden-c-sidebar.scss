@@ -122,8 +122,8 @@
     }
 
     &__item {
-        --eden-comp-button-font-size: var(--eden-sys-text-xs);
-        --eden-comp-button-font-weight: var(--eden-sys-text-regular);
+        --eden-comp-button-font-size: var(--eden-sys-font-size-100);
+        --eden-comp-button-font-weight: var(--eden-sys-font-weight-regular);
         --eden-comp-button-color: oklch(from var(--eden-sys-on-primary-variant) 0.75 c h);
         --eden-comp-button-justify-content: flex-start;
         --eden-comp-button-padding-x: var(--eden-sys-space-600);

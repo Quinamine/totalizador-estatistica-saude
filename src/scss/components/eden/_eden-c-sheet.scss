@@ -12,7 +12,7 @@
 
 .tes-c-sheet {
     --_width: var(--tes-comp-sheet-width, 100%);
-    --_font-size: var(--tes-comp-sheet-font-size, var(--eden-sys-text-xs));
+    --_font-size: var(--tes-comp-sheet-font-size, var(--eden-sys-font-size-100));
 
     width: var(--_width);
     min-height: 100vh;

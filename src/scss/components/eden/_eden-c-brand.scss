@@ -22,14 +22,14 @@
 
     &__title {
         margin: 0;
-        font-size: var(--eden-sys-text-2xl);
-        line-height: var(--eden-sys-line-height-xs);
+        font-size: var(--eden-sys-font-size-600);
+        line-height: var(--eden-sys-line-height-flat);
         color: currentColor;
-        font-weight: var(--eden-sys-text-bold);
+        font-weight: var(--eden-sys-font-weight-bold);
     }
 
     &__description {
-        font-size: var(--eden-sys-text-2xs);
+        font-size: var(--eden-sys-font-size-050);
         opacity: 0.7;
     }
 }

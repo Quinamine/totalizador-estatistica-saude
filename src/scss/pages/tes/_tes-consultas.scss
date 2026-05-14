@@ -21,17 +21,17 @@
     }
 
     &__title-header {
-        font-size: var(--eden-sys-text-3xl);
+        font-size: var(--eden-sys-font-size-600);
         white-space: nowrap;
-        line-height: var(--eden-sys-line-height-xs);
+        line-height: var(--eden-sys-line-height-flat);
     }
 
     &__title-input {
-        --eden-comp-input-font-size: var(--eden-sys-text-lg);
+        --eden-comp-input-font-size: var(--eden-sys-font-size-400);
 
         width: 322px;
         border-bottom: 1px solid var(--eden-sys-border-color-default);
-        line-height: var(--eden-sys-line-height-xs);
+        line-height: var(--eden-sys-line-height-flat);
     }
 
     &__model-info {
@@ -48,13 +48,13 @@
     }
 
     &__model-code {
-        font-size: var(--eden-sys-text-sm);
-        font-weight: var(--eden-sys-text-bold);
+        font-size: var(--eden-sys-font-size-200);
+        font-weight: var(--eden-sys-font-weight-bold);
     }
     
     &__serial {
-        font-size: var(--eden-sys-text-xl);
-        font-weight: var(--eden-sys-text-bold);
+        font-size: var(--eden-sys-font-size-500);
+        font-weight: var(--eden-sys-font-weight-bold);
         font-family: 'Courier New', Courier, monospace;
         color: var(--eden-sys-danger);
         text-align: center;
@@ -69,7 +69,7 @@
         margin-inline-start: var(--_form-sidebar-width);
 
         tr th:nth-child(n+2) {
-            font-weight: var(--eden-sys-text-bold);
+            font-weight: var(--eden-sys-font-weight-bold);
         }
     }
 

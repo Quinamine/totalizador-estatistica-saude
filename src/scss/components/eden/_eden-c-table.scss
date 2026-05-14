@@ -24,7 +24,7 @@
 
         &.--row-label {
             padding-inline-start: var(--eden-sys-space-100);
-            line-height: var(--eden-sys-line-height-sm);
+            line-height: var(--eden-sys-line-height-heading);
         }
 
         &.--justify-center {
@@ -42,7 +42,7 @@
         &.--dark {
             background-color: var(--_cell-accent-bg);
             color: var(--_cell-accent-text);
-            font-weight: var(--eden-sys-text-bold);
+            font-weight: var(--eden-sys-font-weight-bold);
         }
     }
 

@@ -2,8 +2,8 @@
 
 .eden-c-button {
     // Button API
-    --_font-size: var(--eden-comp-button-font-size, var(--eden-sys-text-sm));
-    --_font-weight: var(--eden-comp-button-font-weight, var(--eden-sys-text-semibold));
+    --_font-size: var(--eden-comp-button-font-size, var(--eden-sys-font-size-200));
+    --_font-weight: var(--eden-comp-button-font-weight, var(--eden-sys-font-weight-semibold));
     --_padding-block: var(--eden-comp-button-padding-y, var(--eden-sys-space-300));
     --_padding-inline: var(--eden-comp-button-padding-x, var(--eden-sys-space-500));
     --_justify-content: var(--eden-comp-button-justify-content, center);

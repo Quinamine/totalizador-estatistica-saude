@@ -2,7 +2,7 @@
 
 input,
 textarea {
-    --_input-font-size: var(--eden-comp-input-font-size, var(--eden-sys-text-sm));
+    --_input-font-size: var(--eden-comp-input-font-size, var(--eden-sys-font-size-200));
 
     font: inherit;
     color: inherit;
@@ -58,11 +58,11 @@ input {
 
     &[type=text],
     &[type=date] {
-        font-weight: var(--eden-sys-text-bold);
+        font-weight: var(--eden-sys-font-weight-bold);
     }
 
     &[readonly] {
-        font-weight: var(--eden-sys-text-bold);
+        font-weight: var(--eden-sys-font-weight-bold);
         background-color: var(--_input-readonly-bg);
         cursor: default;
     }
