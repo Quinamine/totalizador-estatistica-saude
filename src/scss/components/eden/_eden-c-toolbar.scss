@@ -1,8 +1,8 @@
 @use '../../abstracts' as *;
 
 .eden-c-toolbar {
-    --eden-comp-button-padding-y: var(--eden-sys-spacing-xs);
-    --eden-comp-button-padding-x: var(--eden-sys-spacing-2xs);
+    --eden-comp-button-padding-y: var(--eden-sys-space-200);
+    --eden-comp-button-padding-x: var(--eden-sys-space-150);
 
     --_offset-y: 100%;
 
@@ -17,7 +17,7 @@
     z-index: var(--eden-sys-zi-sticky);
     box-shadow: 0 -2px 4px var(--eden-sys-shadow);
     border-block-start: thin solid var(--eden-sys-border-color-subtle);
-    padding-block: var(--eden-sys-spacing-xs) var(--eden-sys-spacing-sm);
+    padding-block: var(--eden-sys-space-200) var(--eden-sys-space-300);
     transform: translateY(var(--_offset-y));
     transition: transform var(--eden-sys-duration-standard) var(--eden-sys-motion-entrance);
 
@@ -26,8 +26,8 @@
     }
 
     @include desktop {
-        --eden-comp-button-padding-y: var(--eden-sys-spacing-sm);
-        --eden-comp-button-padding-x: var(--eden-sys-spacing-sm);
+        --eden-comp-button-padding-y: var(--eden-sys-space-300);
+        --eden-comp-button-padding-x: var(--eden-sys-space-300);
         
         --_offset-alignment-x: var(--eden-comp-button-padding-x);
         --_offset-y: 0;

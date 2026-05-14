@@ -4,8 +4,8 @@
     // Button API
     --_font-size: var(--eden-comp-button-font-size, var(--eden-sys-text-sm));
     --_font-weight: var(--eden-comp-button-font-weight, var(--eden-sys-text-semibold));
-    --_padding-block: var(--eden-comp-button-padding-y, var(--eden-sys-spacing-sm));
-    --_padding-inline: var(--eden-comp-button-padding-x, var(--eden-sys-spacing-md));
+    --_padding-block: var(--eden-comp-button-padding-y, var(--eden-sys-space-300));
+    --_padding-inline: var(--eden-comp-button-padding-x, var(--eden-sys-space-500));
     --_justify-content: var(--eden-comp-button-justify-content, center);
     --_border-radius: var(--eden-comp-button-border-radius, var(--eden-sys-action-border-radius));
     --_color: var(--eden-comp-button-color, var(--eden-sys-on-surface));
@@ -60,7 +60,7 @@
 
     &--stack {
         flex-direction: column;
-        gap: var(--eden-sys-spacing-2xs);
+        gap: var(--eden-sys-space-150);
 
         .eden-c-button__label {
             white-space: nowrap;

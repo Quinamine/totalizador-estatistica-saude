@@ -1,17 +1,17 @@
 @use '../../abstracts' as *;
 
 .eden-c-brand {
-    --_padding: var(--eden-sys-spacing-md);
+    --_padding: var(--eden-sys-space-500);
 
     display: flex;
     align-items: center;
-    gap: var(--eden-sys-spacing-sm);
+    gap: var(--eden-sys-space-300);
     padding: var(--_padding);
 
     &--compact {
-        --_padding: var(--eden-sys-spacing-3xs);
+        --_padding: var(--eden-sys-space-100);
 
-        padding-inline: var(--eden-sys-spacing-2xs);
+        padding-inline: var(--eden-sys-space-150);
         background-color: var(--eden-sys-brand);
         color: var(--eden-sys-on-brand);
     }

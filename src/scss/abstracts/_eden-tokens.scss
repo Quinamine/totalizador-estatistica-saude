@@ -21,6 +21,18 @@ $eden-ref-neutral-30-03: #{oklch(30% 0.03 $eden-ref-primary-hue)};
 // 1.4 Chromatic colors (g = green, 60 = lightness)
 $eden-ref-chromatic: oklch(60% 0.15 150);
 
+// Space scale
+$eden-ref-space-02: 0.125rem;
+$eden-ref-space-04: 0.25rem;
+$eden-ref-space-06: 0.375rem;
+$eden-ref-space-08: 0.5rem;
+$eden-ref-space-12: 0.75rem;
+$eden-ref-space-16: 1rem;
+$eden-ref-space-24: 1.5rem;
+$eden-ref-space-32: 2rem;
+$eden-ref-space-40: 2.5rem;
+$eden-ref-space-48: 3rem;
+
 //  ------------------------------------------------------------
 //  2. CSS TOKENS
 //  ------------------------------------------------------------
@@ -39,20 +51,7 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-ref-font-size-600: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 2); // 20px;
     --eden-ref-font-size-700: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 3); // 22px;
     --eden-ref-font-size-800: calc(var(--eden-ref-font-size-base) + var(--eden-ref-font-size-unit) * 4); // 24px;
-    // > Spacing scale
-    --eden-ref-line-height-base: 1.5;
-    --eden-ref-spacing-unit: calc(var(--eden-ref-font-size-base) * var(--eden-ref-line-height-base));
 
-    --eden-ref-spacing-02: calc(var(--eden-ref-spacing-unit) / 12); // 2px Fine tuning step
-    --eden-ref-spacing-04: calc(var(--eden-ref-spacing-unit) / 6); // 4px
-    --eden-ref-spacing-06: calc(var(--eden-ref-spacing-unit) / 4); // 6px;
-    --eden-ref-spacing-08: calc(var(--eden-ref-spacing-unit) / 3); // 8px;
-    --eden-ref-spacing-12: calc(var(--eden-ref-spacing-unit) / 2); // 12px;
-    --eden-ref-spacing-16: calc(var(--eden-ref-spacing-unit) / 1.5); // 16px;
-    --eden-ref-spacing-24: var(--eden-ref-spacing-unit); // 24px;
-    --eden-ref-spacing-36: calc(var(--eden-ref-spacing-unit) * 1.5); // 36px
-    --eden-ref-spacing-48: calc(var(--eden-ref-spacing-unit) * 2); // 48px;
-    --eden-ref-spacing-60: calc(var(--eden-ref-spacing-unit) * 2.5); // 60px;
     // --- 2.2 SYSTEM TOKENS (Semantic Intent) ---
     // > Brand 
     --eden-sys-brand: oklch(35% 0.08 var(--eden-ref-brand-hue));
@@ -87,20 +86,23 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-sys-text-regular: 400;
     --eden-sys-text-semibold: 600;
     --eden-sys-text-bold: 700;
+
+    --eden-ref-line-height-base: 1.5;
     --eden-sys-line-height-xs: 1;
     --eden-sys-line-height-sm: 1.25;
     --eden-sys-line-height-md: var(--eden-ref-line-height-base);
-    // > Spacing scale
-    --eden-sys-spacing-4xs: var(--eden-ref-spacing-02);
-    --eden-sys-spacing-3xs: var(--eden-ref-spacing-04);
-    --eden-sys-spacing-2xs: var(--eden-ref-spacing-06);
-    --eden-sys-spacing-xs: var(--eden-ref-spacing-08);
-    --eden-sys-spacing-sm: var(--eden-ref-spacing-12);
-    --eden-sys-spacing-ms: var(--eden-ref-spacing-16); //  Medium Small
-    --eden-sys-spacing-md: var(--eden-ref-spacing-24);
-    --eden-sys-spacing-lg: var(--eden-ref-spacing-36);
-    --eden-sys-spacing-xl: var(--eden-ref-spacing-48);
-    --eden-sys-spacing-2xl: var(--eden-ref-spacing-60);
+
+    // Spacing scale
+    --eden-sys-space-050: #{$eden-ref-space-02};
+    --eden-sys-space-100: #{$eden-ref-space-04};
+    --eden-sys-space-150: #{$eden-ref-space-06};
+    --eden-sys-space-200: #{$eden-ref-space-08};
+    --eden-sys-space-300: #{$eden-ref-space-12};
+    --eden-sys-space-400: #{$eden-ref-space-16};
+    --eden-sys-space-500: #{$eden-ref-space-24};
+    --eden-sys-space-600: #{$eden-ref-space-32};
+    --eden-sys-space-700: #{$eden-ref-space-48};
+    
     // > Border-radius
     --eden-ref-radius-unit: 4px;
     --eden-sys-radius-sm: var(--eden-ref-radius-unit);
@@ -136,19 +138,19 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
     --eden-sys-action-border-radius: var(--eden-sys-radius-sm);
     --eden-sys-action-color-hover: oklch(from currentColor l c h / 6%);
     --eden-sys-action-color-active: oklch(from currentColor l c h / 15%);
-    --eden-sys-action-size-base: var(--eden-sys-spacing-xl);
-    --eden-sys-action-icon-size-base: var(--eden-sys-spacing-md);
+    --eden-sys-action-size-base: var(--eden-sys-space-700);
+    --eden-sys-action-icon-size-base: var(--eden-sys-space-500);
     --eden-sys-action-icon-size-sm: 1.25rem; // 20px
     
     // --- 2.3 COMPONENT TOKENS ---
-    --eden-sys-heading-spacing-y-start: var(--eden-sys-spacing-lg);
-    --eden-sys-heading-spacing-y-end: var(--eden-sys-spacing-sm);
-    --eden-sys-paragraph-spacing-y: var(--eden-sys-spacing-md);
-    --eden-sys-list-spacing-y: var(--eden-sys-spacing-md);
-    --eden-sys-list-item-spacing-y: var(--eden-sys-spacing-sm);
-    --eden-sys-figure-spacing-y-start: var(--eden-sys-spacing-xl);
-    --eden-sys-figure-spacing-y-end: var(--eden-sys-spacing-xl);
-    --eden-sys-figure-caption-spacing-y: var(--eden-sys-spacing-xs);
+    --eden-sys-heading-spacing-y-start: var(--eden-sys-space-600);
+    --eden-sys-heading-spacing-y-end: var(--eden-sys-space-300);
+    --eden-sys-paragraph-spacing-y: var(--eden-sys-space-500);
+    --eden-sys-list-spacing-y: var(--eden-sys-space-500);
+    --eden-sys-list-item-spacing-y: var(--eden-sys-space-300);
+    --eden-sys-figure-spacing-y-start: var(--eden-sys-space-700);
+    --eden-sys-figure-spacing-y-end: var(--eden-sys-space-700);
+    --eden-sys-figure-caption-spacing-y: var(--eden-sys-space-200);
     --eden-sys-link-color: oklch(60% 0.18 var(--eden-ref-primary-hue));
     --eden-sys-link-color-hover: oklch(from var(--eden-sys-link-color) calc(l - 0.10) calc(c + 0.02) h);
     --eden-sys-link-color-active: oklch(from var(--eden-sys-link-color) calc(l - 0.20) calc(c + 0.04) h);
@@ -156,7 +158,7 @@ $eden-ref-chromatic: oklch(60% 0.15 150);
 
 @media screen and (min-width: 768px) {
     :root {
-        --eden-sys-page-margin: var(--eden-sys-spacing-md);
+        --eden-sys-page-margin: var(--eden-sys-space-500);
     }
 }
  

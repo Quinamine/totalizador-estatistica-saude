@@ -1,9 +1,9 @@
 @use '../../abstracts' as *;
 
 .eden-c-table {
-    margin-block-start: var(--eden-sys-spacing-sm);
-    margin-block-start: var(--eden-sys-spacing-xs);
-    padding: var(--eden-sys-spacing-xs);
+    margin-block-start: var(--eden-sys-space-300);
+    margin-block-start: var(--eden-sys-space-200);
+    padding: var(--eden-sys-space-200);
 
     th, td {
         --_cell-accent-bg: var(--eden-comp-table-cell-bg, #{ $eden-ref-neutral-0 });
@@ -23,7 +23,7 @@
         }
 
         &.--row-label {
-            padding-inline-start: var(--eden-sys-spacing-3xs);
+            padding-inline-start: var(--eden-sys-space-100);
             line-height: var(--eden-sys-line-height-sm);
         }
 

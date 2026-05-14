@@ -18,11 +18,10 @@
     }
 
     &__content {
-        min-height: var(--eden-sys-spacing-2xl);
         display: flex;
         align-items: center;
-        gap: var(--eden-sys-spacing-sm);
-        padding-block: var(--eden-sys-spacing-xs);
+        gap: var(--eden-sys-space-300);
+        padding-block: var(--eden-sys-space-200);
     }
 
     .eden-c-hamburger {
@@ -72,7 +71,7 @@
             --_action-nav-trigger-icon-width: var(--eden-sys-action-icon-size-sm);
 
             display: inline-flex;
-            width: var(--eden-sys-spacing-xl);
+            width: var(--eden-sys-space-700);
             margin-inline-start: calc(var(--_action-nav-trigger-offset) * -1);
             opacity: 0;
 
