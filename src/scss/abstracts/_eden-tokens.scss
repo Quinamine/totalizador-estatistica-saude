@@ -103,13 +103,13 @@ $eden-ref-space-48: 3rem;
     --eden-sys-space-600: #{$eden-ref-space-32};
     --eden-sys-space-700: #{$eden-ref-space-48};
     
-    // > Border-radius
-    --eden-ref-radius-unit: 4px;
-    --eden-sys-radius-sm: var(--eden-ref-radius-unit);
-    --eden-sys-radius-md: calc(var(--eden-ref-radius-unit) * 2);
-    --eden-sys-radius-lg: calc(var(--eden-ref-radius-unit) * 3);
-    --eden-sys-radius-xl: calc(var(--eden-ref-radius-unit) * 4);
+    // Border-radius
+    --eden-sys-radius-100: 4px;
+    --eden-sys-radius-200: 8px;
+    --eden-sys-radius-300: 12px;
+    --eden-sys-radius-400: 16px;
     --eden-sys-radius-full: 99999px;
+
     // > Easings and Timing
     --eden-sys-motion-default: ease;
     --eden-sys-motion-interaction: ease-out;
@@ -135,7 +135,7 @@ $eden-ref-space-48: 3rem;
     --eden-sys-border-color-default: #{$eden-ref-neutral-60-02};
     --eden-sys-border-color-subtle: #{$eden-ref-neutral-95-01};
     --eden-sys-shadow: oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.1);
-    --eden-sys-action-border-radius: var(--eden-sys-radius-sm);
+    --eden-sys-action-border-radius: var(--eden-sys-radius-100);
     --eden-sys-action-color-hover: oklch(from currentColor l c h / 6%);
     --eden-sys-action-color-active: oklch(from currentColor l c h / 15%);
     --eden-sys-action-size-base: var(--eden-sys-space-700);
