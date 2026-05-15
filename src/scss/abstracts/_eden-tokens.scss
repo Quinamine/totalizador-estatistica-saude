@@ -129,7 +129,7 @@ $eden-ref-space-48: 3rem;
     --eden-sys-zi-toast: calc(var(--eden-ref-zi-unit) * 6);
     // > Layout and UI
     --eden-sys-layout-max-width: 1440px;
-    --eden-sys-page-margin: var(--eden-ref-spacing-16);
+    --eden-sys-page-margin: var(--eden-sys-space-400);
     --eden-sys-border-color-default: #{$eden-ref-neutral-60-02};
     --eden-sys-border-color-subtle: #{$eden-ref-neutral-95-01};
     --eden-sys-shadow: oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.1);
