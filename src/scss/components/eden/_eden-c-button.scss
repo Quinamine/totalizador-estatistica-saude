@@ -8,7 +8,7 @@
     --_padding-inline: var(--eden-comp-button-padding-x, var(--eden-sys-space-500));
     --_justify-content: var(--eden-comp-button-justify-content, center);
     --_border-radius: var(--eden-comp-button-border-radius, var(--eden-sys-action-border-radius));
-    --_color: var(--eden-comp-button-color, var(--eden-sys-on-surface));
+    --_color: var(--eden-comp-button-color, var(--eden-sys-surface-content));
     --_bg-hover: var(--eden-comp-button-bg-hover, var(--eden-sys-action-color-hover));
     --_bg-active: var(--eden-comp-button-bg-active, var(--eden-sys-action-color-active));
     --_bg: transparent;
@@ -39,15 +39,15 @@
 
     &--primary {
         --_bg: var(--eden-sys-primary);
-        --_color: var(--eden-sys-on-primary);
+        --_color: var(--eden-sys-primary-content);
         --_bg-hover: oklch(from var(--eden-sys-primary) calc(l + 0.1) c h);
         --_bg-active: oklch(from var(--eden-sys-primary) calc(l - 0.05) c h);
     }
 
     &--secondary {
         --_bg: transparent;
-        --_color: var(--eden-sys-on-surface);
-        --_bg-hover: oklch(from var(--eden-sys-surface-0) calc(l - 0.05) 0.04 h);
+        --_color: var(--eden-sys-surface-content);
+        --_bg-hover: oklch(from var(--eden-sys-surface) calc(l - 0.05) 0.04 h);
         border: 1px solid var(--eden-sys-primary);
     }
 

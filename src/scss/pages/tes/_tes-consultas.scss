@@ -85,7 +85,7 @@
             &.--row-label {
                 position: sticky;
                 left: 0;
-                background-color: var(--eden-sys-surface-1);
+                background-color: var(--eden-sys-surface-100);
                 z-index: calc(var(--eden-sys-zi-sticky) - 1);
                 border-inline-start: 1px solid var(--eden-sys-border-color-default);
             }

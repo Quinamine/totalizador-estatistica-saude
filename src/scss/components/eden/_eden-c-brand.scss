@@ -7,13 +7,14 @@
     align-items: center;
     gap: var(--eden-sys-space-300);
     padding: var(--_padding);
+    border-bottom: 1px solid var(--eden-sys-brand-surface-border-color);
 
     &--compact {
         --_padding: var(--eden-sys-space-100);
 
         padding-inline: var(--eden-sys-space-150);
         background-color: var(--eden-sys-brand);
-        color: var(--eden-sys-on-brand);
+        color: var(--eden-sys-brand-content);
     }
 
     &__icon {

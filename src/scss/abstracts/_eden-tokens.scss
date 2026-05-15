@@ -18,9 +18,6 @@ $eden-ref-neutral-60-02: #{oklch(60% 0.02 $eden-ref-primary-hue)};
 $eden-ref-neutral-45-02: #{oklch(45% 0.02 $eden-ref-primary-hue)};
 $eden-ref-neutral-30-03: #{oklch(30% 0.03 $eden-ref-primary-hue)};
 
-// 1.4 Chromatic colors (g = green, 60 = lightness)
-$eden-ref-chromatic: oklch(60% 0.15 150);
-
 // Space scale
 $eden-ref-space-02: 0.125rem;
 $eden-ref-space-04: 0.25rem;
@@ -40,30 +37,35 @@ $eden-ref-space-48: 3rem;
     // --- 2.1. PRIMITIVES (Raw Values) ---
     --eden-ref-brand-hue: 243;
     --eden-ref-primary-hue: var(--eden-ref-brand-hue);
+    --eden-ref-warning-hue: 84;
 
     // --- 2.2 SYSTEM TOKENS (Semantic Intent) ---
-    // > Brand 
+    // Brand 
     --eden-sys-brand: oklch(35% 0.08 var(--eden-ref-brand-hue));
-    --eden-sys-on-brand: #{$eden-ref-neutral-98-01};
-    --eden-sys-brand-icon-bg: #{$eden-ref-chromatic};
-    // > Primary tokens
+    --eden-sys-brand-content: #{$eden-ref-neutral-98-01};
+    --eden-sys-brand-icon-bg: oklch(60% 0.15 150);
+    --eden-sys-brand-surface-border-color: oklch(from var(--eden-sys-brand-content) l c h / 20%);
+
+    // Primary tokens
     --eden-sys-primary: oklch(35% 0.08 var(--eden-ref-primary-hue));
-    --eden-sys-on-primary: #{$eden-ref-neutral-98-01};
-    --eden-sys-on-primary-variant: #{$eden-ref-neutral-88-02};
-    // > Surfaces
-    --eden-sys-surface-0: #{$eden-ref-neutral-95-01};
-    --eden-sys-surface-1: #{$eden-ref-neutral-100};
-    --eden-sys-on-surface: #{$eden-ref-neutral-30-03};
-    --eden-sys-on-surface-variant: #{$eden-ref-neutral-45-02};
-    --eden-sys-on-surface-subtle: #{$eden-ref-neutral-60-02};
-    --eden-sys-overlay: oklch(10% 0.08 var(--eden-ref-primary-hue) / 40%);
-    // > Status and Feedback
+    --eden-sys-primary-content: #{$eden-ref-neutral-98-01};
+    --eden-sys-primary-content-100: #{$eden-ref-neutral-88-02};
+
+    // Surfaces
+    --eden-sys-surface: #{$eden-ref-neutral-95-01};
+    --eden-sys-surface-100: #{$eden-ref-neutral-100};
+    
+    --eden-sys-surface-content: #{$eden-ref-neutral-30-03};
+    --eden-sys-surface-content-100: #{$eden-ref-neutral-45-02};
+    --eden-sys-surface-content-200: #{$eden-ref-neutral-60-02};
+
+    // Status and Feedback
     --eden-sys-danger: oklch(60% 0.18 27);
-    --eden-sys-on-danger: #{$eden-ref-neutral-98-01};
-    --eden-sys-warning-container: oklch(94% 0.05 84);
-    --eden-sys-on-warning-container: oklch(25% 0.08 84);
-    --eden-sys-warning-outline: oklch(83% 0.19 84);
-    // > Typography 
+    --eden-sys-danger-content: #{$eden-ref-neutral-98-01};
+
+    --eden-sys-warning: oklch(83% 0.19 var(--eden-ref-warning-hue));
+    --eden-sys-warning-surface: oklch(94% 0.05 var(--eden-ref-warning-hue));
+    --eden-sys-warning-content: oklch(25% 0.08 var(--eden-ref-warning-hue));
 
     // Font Sizes 
     --eden-sys-font-size-050: 0.625rem;  /* 10px */
@@ -132,6 +134,7 @@ $eden-ref-space-48: 3rem;
     --eden-sys-border-color-subtle: #{$eden-ref-neutral-95-01};
     --eden-sys-shadow: oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.1);
     --eden-sys-action-border-radius: var(--eden-sys-radius-100);
+    --eden-sys-overlay: oklch(10% 0.08 var(--eden-ref-primary-hue) / 40%);
     --eden-sys-action-color-hover: oklch(from currentColor l c h / 6%);
     --eden-sys-action-color-active: oklch(from currentColor l c h / 15%);
     --eden-sys-action-size-base: var(--eden-sys-space-700);
@@ -174,9 +177,9 @@ $eden-ref-space-48: 3rem;
 @supports not (color: oklch(0% 0 0)) {
     :root {
         --eden-sys-primary: #073e61;
-        --eden-sys-on-primary: #f3f9ff;
-        --eden-sys-surface-0: #e9eff5;
-        --eden-sys-on-surface: #21303c;
+        --eden-sys-primary-content: #f3f9ff;
+        --eden-sys-surface: #e9eff5;
+        --eden-sys-surface-content: #21303c;
         --eden-sys-on-danger: #ea0000;
         --eden-sys-success: #40963e;
         --eden-sys-warning-outline: #ffba00;

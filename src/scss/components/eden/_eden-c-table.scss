@@ -7,7 +7,7 @@
 
     th, td {
         --_cell-accent-bg: var(--eden-comp-table-cell-bg, #{ $eden-ref-neutral-0 });
-        --_cell-accent-text: var(--eden-comp-table-cell-text, var(--eden-sys-on-primary));
+        --_cell-accent-text: var(--eden-comp-table-cell-text, var(--eden-sys-primary-content));
         --_cell-justify: flex-start;
 
         padding: 0;

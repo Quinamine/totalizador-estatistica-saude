@@ -20,14 +20,14 @@ textarea {
 
 input {
     --_input-bg-focus: greenyellow;
-    --_input-readonly-bg: var(--eden-sys-surface-0);
+    --_input-readonly-bg: var(--eden-sys-surface);
     --_input-height: var(--eden-sys-space-500);
 
     width: 100%;
     height: var(--_input-height);
-    background-color: var(--eden-sys-surface-1);
+    background-color: var(--eden-sys-surface-100);
     border-bottom: 1px solid var(--eden-sys-border-color-default);
-    color: var(--eden-sys-on-surface);
+    color: var(--eden-sys-surface-content);
     font-size: var(--_input-font-size);
 
     &:not([readonly]):focus {

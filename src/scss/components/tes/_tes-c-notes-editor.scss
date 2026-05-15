@@ -31,7 +31,7 @@
 
         &:empty::before {
             content: attr(data-placeholder);
-            color: var(--eden-sys-on-surface-subtle);
+            color: var(--eden-sys-surface-content-200);
             pointer-events: none;
 
             @media print {
