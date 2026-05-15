@@ -118,15 +118,16 @@ $eden-ref-space-48: 3rem;
     --eden-sys-duration-fast: 100ms;
     --eden-sys-duration-standard: 200ms;
     --eden-sys-duration-slow: 300ms;
-    // > Z-index
-    --eden-ref-zi-unit: 100;
-    --eden-sys-zi-base: calc(var(--eden-ref-font-size-unit) * 0);
-    --eden-sys-zi-sticky: calc(var(--eden-ref-zi-unit) * 1);
-    --eden-sys-zi-dropdown: calc(var(--eden-ref-zi-unit) * 2);
-    --eden-sys-zi-overlay: calc(var(--eden-ref-zi-unit) * 3);
-    --eden-sys-zi-modal: calc(var(--eden-ref-zi-unit) * 4);
-    --eden-sys-zi-popover: calc(var(--eden-ref-zi-unit) * 5);
-    --eden-sys-zi-toast: calc(var(--eden-ref-zi-unit) * 6);
+
+    // Z-index
+    --eden-sys-zi-base: 0;
+    --eden-sys-zi-sticky: 100;
+    --eden-sys-zi-dropdown: 200;
+    --eden-sys-zi-overlay: 300;
+    --eden-sys-zi-modal: 400;
+    --eden-sys-zi-popover: 500;
+    --eden-sys-zi-toast: 600;
+
     // > Layout and UI
     --eden-sys-layout-max-width: 1440px;
     --eden-sys-page-margin: var(--eden-sys-space-400);
