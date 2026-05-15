@@ -188,16 +188,29 @@ $eden-ref-space-48: 3rem;
 // Fallback
 @supports not (color: oklch(0% 0 0)) {
     :root {
+        --eden-sys-brand: #073e61;
+        --eden-sys-brand-icon-bg: #40963e;
+
         --eden-sys-primary: #073e61;
         --eden-sys-primary-content: #f3f9ff;
+        --eden-sys-primary-content-100: #cdd9e4;
+
         --eden-sys-surface: #e9eff5;
+        --eden-sys-surface-100: #ffffff;
         --eden-sys-surface-content: #21303c;
-        --eden-sys-on-danger: #ea0000;
-        --eden-sys-success: #40963e;
-        --eden-sys-warning-outline: #ffba00;
-        --eden-sys-shadow: rgb(0 4 8 / 10%);
+
+        --eden-sys-danger: #d74840;
+        --eden-sys-danger-content: #f3f9ff;
+
+        --eden-sys-warning: #ffba00;
+        --eden-sys-warning-surface: #fbe9c6;
+        --eden-sys-warning-content: #331c00;
+
+        --eden-sys-shadow-100: 0 2px 4px rgba(0, 0, 0, 0.1);
+        --eden-sys-shadow-100-inverted: 0 -2px 4px rgba(0, 0, 0, 0.1);
+     
         --eden-sys-border-color: #cdd9e4;
-        --eden-sys-brand-icon-bg: var(--success);
+        
         --eden-sys-overlay: rgba(0, 0, 0, 0.4);
     }
 }
