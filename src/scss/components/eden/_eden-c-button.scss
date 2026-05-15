@@ -53,7 +53,7 @@
 
     &--danger {
         --_bg: var(--eden-sys-danger);
-        --_color: var(--eden-sys-on-danger);
+        --_color: var(--eden-sys-danger-content);
         --_bg-hover: oklch(from var(--eden-sys-danger) calc(l + 0.1) c h); 
         --_bg-active: oklch(from var(--eden-sys-danger) calc(l - 0.05) c h);
     }
