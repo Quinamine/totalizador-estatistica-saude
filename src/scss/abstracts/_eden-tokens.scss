@@ -128,12 +128,18 @@ $eden-ref-space-48: 3rem;
     --eden-sys-zi-popover: 500;
     --eden-sys-zi-toast: 600;
 
+    // Shadow
+    --eden-sys-shadow-100: 0 2px 4px oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.1);
+    --eden-sys-shadow-200: 0 8px 16px oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.15);
+    --eden-sys-shadow-300: 0 16px 32px oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.25);
+    --eden-sys-shadow-100-inverted: 0 -2px 4px oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.1);
+
     // > Layout and UI
     --eden-sys-layout-max-width: 1440px;
     --eden-sys-page-margin: var(--eden-sys-space-400);
     --eden-sys-border-color-default: #{$eden-ref-neutral-60-02};
     --eden-sys-border-color-subtle: #{$eden-ref-neutral-95-01};
-    --eden-sys-shadow: oklch(10% 0.02 var(--eden-ref-primary-hue) / 0.1);
+    
     --eden-sys-action-border-radius: var(--eden-sys-radius-100);
     --eden-sys-overlay: oklch(10% 0.08 var(--eden-ref-primary-hue) / 40%);
     --eden-sys-action-color-hover: oklch(from currentColor l c h / 6%);

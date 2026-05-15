@@ -11,7 +11,7 @@
     position: sticky;
     top: 0;
     z-index: var(--eden-sys-zi-sticky);
-    box-shadow: 0 2px 5px var(--eden-sys-shadow);
+    box-shadow: var(--eden-sys-shadow-100);
 
     @media print {
         display: none !important;

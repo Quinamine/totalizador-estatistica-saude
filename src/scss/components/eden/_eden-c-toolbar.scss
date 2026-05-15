@@ -15,7 +15,7 @@
     bottom: 0;
     width: 100%;
     z-index: var(--eden-sys-zi-sticky);
-    box-shadow: 0 -2px 4px var(--eden-sys-shadow);
+    box-shadow: var(--eden-sys-shadow-100-inverted);
     border-block-start: thin solid var(--eden-sys-border-color-subtle);
     padding-block: var(--eden-sys-space-200) var(--eden-sys-space-300);
     transform: translateY(var(--_offset-y));
