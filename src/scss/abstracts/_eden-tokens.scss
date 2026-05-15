@@ -137,7 +137,8 @@ $eden-ref-space-48: 3rem;
     // > Layout and UI
     --eden-sys-layout-max-width: 1440px;
     --eden-sys-page-margin: var(--eden-sys-space-400);
-    --eden-sys-border-color-default: #{$eden-ref-neutral-60-02};
+
+    --eden-sys-border-color: #{$eden-ref-neutral-60-02};
     --eden-sys-border-color-subtle: #{$eden-ref-neutral-95-01};
     
     --eden-sys-action-border-radius: var(--eden-sys-radius-100);
@@ -191,7 +192,7 @@ $eden-ref-space-48: 3rem;
         --eden-sys-success: #40963e;
         --eden-sys-warning-outline: #ffba00;
         --eden-sys-shadow: rgb(0 4 8 / 10%);
-        --eden-sys-border-color-default: #cdd9e4;
+        --eden-sys-border-color: #cdd9e4;
         --eden-sys-brand-icon-bg: var(--success);
         --eden-sys-overlay: rgba(0, 0, 0, 0.4);
     }

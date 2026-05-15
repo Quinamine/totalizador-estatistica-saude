@@ -30,7 +30,7 @@
         --eden-comp-input-font-size: var(--eden-sys-font-size-400);
 
         width: 322px;
-        border-bottom: 1px solid var(--eden-sys-border-color-default);
+        border-bottom: 1px solid var(--eden-sys-border-color);
         line-height: var(--eden-sys-line-height-flat);
     }
 
@@ -58,7 +58,7 @@
         font-family: 'Courier New', Courier, monospace;
         color: var(--eden-sys-danger);
         text-align: center;
-        border-bottom: thin dotted var(--eden-sys-border-color-default);
+        border-bottom: thin dotted var(--eden-sys-border-color);
     }
 
     &__head {
@@ -87,7 +87,7 @@
                 left: 0;
                 background-color: var(--eden-sys-surface-100);
                 z-index: calc(var(--eden-sys-zi-sticky) - 1);
-                border-inline-start: 1px solid var(--eden-sys-border-color-default);
+                border-inline-start: 1px solid var(--eden-sys-border-color);
             }
         }
     }

@@ -14,12 +14,12 @@
         display: flex;
         align-items: center;
         justify-content: var(--_cell-justify);
-        border-top: 1px solid var(--eden-sys-border-color-default);
-        border-right: 1px solid var(--eden-sys-border-color-default);
+        border-top: 1px solid var(--eden-sys-border-color);
+        border-right: 1px solid var(--eden-sys-border-color);
         overflow: hidden;
 
         &:first-child {
-            border-left: 1px solid var(--eden-sys-border-color-default);
+            border-left: 1px solid var(--eden-sys-border-color);
         }
 
         &.--row-label {
@@ -50,7 +50,7 @@
         display: contents;
 
         &--last {
-            td { border-bottom: 1px solid var(--eden-sys-border-color-default); }
+            td { border-bottom: 1px solid var(--eden-sys-border-color); }
         }
     }
 
