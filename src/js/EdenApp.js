@@ -12,7 +12,6 @@ const EdenApp = {
         TesNotesEditor.init();
 
         this.cacheElements();
-        this.setupObservers();
         this.bindEvents();
     },
 
@@ -20,43 +19,18 @@ const EdenApp = {
         this.headerTitle = document.querySelector('[data-eden-js="header-title"');
     },
 
-    setupObservers() {
-        const mobileView = window.matchMedia('(max-width: 1023px)');
-        const desktopView = window.matchMedia('(min-width: 1024px)');
-
-        mobileView.addEventListener('change', ({matches: isMobile}) => {
-            if(isMobile) {
-                this.handleSidebarReset();
-            }
-        });
-
-        desktopView.addEventListener('change', ({matches: isDesktop}) => {
-            if(isDesktop) {
-                this.handleSidebarReset();
-            }
-        });
-    },
-
     bindEvents() {
         document.body.addEventListener('click', (event) => {
             // SIDEBAR
-            const sidebarOpener = event.target.closest('[data-eden-js~="sidebar-opener"]');
-            const sidebarCloser = event.target.closest('[data-eden-js~="sidebar-closer"]');
-            const accordionToggler = event.target.closest('[data-eden-js~="sidebar-accordion-toggler"]');
+            const sidebarTrigger = event.target.closest('[data-eden-sidebar-action="open"]') || 
+                                    event.target.closest('[data-eden-sidebar-action="close"]');
 
-            if (sidebarOpener) {
-                this.handleSidebarOpen();
-                return;
-            }
+            if (sidebarTrigger) {
+                const { edenSidebarAction } = sidebarTrigger.dataset;
 
-            if (sidebarCloser) {
-                this.handleSidebarClose();
-                return;
-            }
-
-            if (accordionToggler) {
-                const accordion = accordionToggler.parentElement;
-                this.toggleAccordion(accordion);
+                window.dispatchEvent(new CustomEvent('eden:sidebar:action-triggered', {
+                    detail: { action: edenSidebarAction }
+                }));
             }
 
             // REPORT ENTRY 
@@ -73,24 +47,21 @@ const EdenApp = {
                 this.handleReportRendering(reportId);
             }
         });
-    },
 
-    handleSidebarOpen() {
-        EdenSidebar.setState('open');
-        document.body.classList.remove('has-eden-sidebar-closed');
-    },
+        window.addEventListener('eden:sidebar:visibility-changed', ({ detail }) => {
+            const { visible } = detail;
 
-    handleSidebarClose() {
-        EdenSidebar.setState('close');
-        document.body.classList.add('has-eden-sidebar-closed');
-    },
+            const isDesktop = window.innerWidth >= 1024;
+            if(isDesktop) {
+                document.body.classList.toggle('has-eden-sidebar-closed', !visible);
+                document.body.classList.remove('has-eden-sidebar-open'); // Remoção preventiva da classe mobile
+                return;
+                /* No desktop, a sidebar é 'open' por padrão e o elemento que a fecha, passa o valor 'close' no CustomEvent('eden:sidebar:action-triggered) para EdenSidebar.js, o componente sidebar por sua vez retorna 'false' no atributo 'visible' atraves do CustomEvent 'eden:sidebar:visibility-changed' e aqui eu mudo para 'true'(!visible) de modo a coagir a adição da classe 'has-eden-sidebar-closed' no clique do elemento que a fecha a sidebar.*/
+            }
 
-    handleSidebarReset() {
-        document.body.classList.remove('has-eden-sidebar-open', 'has-eden-sidebar-closed');
-    },
-
-    toggleAccordion(container) {
-        container.classList.toggle('is-open');
+            document.body.classList.toggle('has-eden-sidebar-open', visible);
+            document.body.classList.remove('has-eden-sidebar-closed');
+        });
     },
 
     async handleReportRendering(id) {
@@ -98,9 +69,6 @@ const EdenApp = {
         const isMobile = window.matchMedia('(max-width: 1023px)').matches;
 
         this.headerTitle.innerHTML = reportName;
-        if(isMobile) {
-            this.handleSidebarClose();
-        }
 
         const isRendered = await EdenReportEntry.renderReport(id);
         this.updateToolbarVisibility(isRendered);

@@ -4,10 +4,35 @@ export const EdenSidebar = {
     init() {
         this.cacheElements();
         this.renderMenu();
+        this.bindEvents();
     },
 
     cacheElements() {
-        this.sidebarNav = document.querySelector('[data-eden-js~="sidebar-nav"]');
+        this.sidebar = document.querySelector('[data-eden-js="sidebar"]');
+        this.sidebarNav = document.querySelector('[data-eden-js="sidebar-nav"]');
+    },
+
+    bindEvents() {
+        window.addEventListener('eden:sidebar:action-triggered', ({ detail }) => {
+            const { action } = detail;
+            this.setState(action);
+        });
+
+        this.sidebar.addEventListener('click', (event) => {
+            const accordionToggler = event.target.closest('[data-eden-js="sidebar-accordion-toggler"]');
+            if (accordionToggler) {
+                const accordion = accordionToggler.parentElement;
+                this.toggleAccordion(accordion);
+            }
+
+            const isMobile = window.innerWidth < 1024;
+            if(isMobile) {
+                const reportRenderer = event.target.closest('[data-eden-js="report-renderer"]');
+                if (reportRenderer) {
+                    this.setState('close');
+                }
+            }
+        });
     },
     
     renderMenu() {
@@ -36,9 +61,18 @@ export const EdenSidebar = {
 
     setState(action) {
         const validActions = ['open', 'close'];
-        if(!validActions.includes(action)) return;
+        if(!validActions.includes(action)) {
+            console.warn(`[Sidebar]: Accção inválida recebida "${action}". Use apenas "open" ou "close"`);
+            return;
+        }
 
-        const shouldOpen = (action === 'open');
-        document.body.classList.toggle('has-eden-sidebar-open', shouldOpen);
+        window.dispatchEvent(new CustomEvent('eden:sidebar:visibility-changed', {
+            detail: { visible: (action === 'open') }
+        }));
+    },
+    
+    toggleAccordion(accordion) {
+        const shouldOpen = !accordion.matches('.is-open');
+        accordion.classList.toggle('is-open', shouldOpen);
     }
 }
