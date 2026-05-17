@@ -5,15 +5,29 @@ export const TesManager = {
     init() {
         this.cacheElements();
         this.bindEvents();
-
-        document.addEventListener('reportInjected', (event) => {
-            this.activeReportId = event.detail.id;
-            this.loadFromStorage();
-        });
     },
 
     cacheElements() {
         this.reportEntry = document.querySelector('.eden-c-report-entry');
+    },
+
+    bindEvents() {
+        window.addEventListener('eden:report-entry:report-injected', ({detail}) => {
+            this.activeReportId = detail.id;
+            this.loadFromStorage();
+        });
+
+        this.reportEntry.addEventListener('input', (event) => {
+            clearTimeout(this.saveTimeout);
+            this.saveTimeout = setTimeout(() => {
+                this.saveToLocalStorage();
+            }, 500);
+
+            const tableInput = event.target.closest('[data-to-subtotal-x], [data-to-total-x]');
+            if (!tableInput) return;
+
+            this.updateRelatedTotals(tableInput);
+        });
     },
 
     updateRelatedTotals(input) {
@@ -107,19 +121,4 @@ export const TesManager = {
         }
     },
 
-    bindEvents() {
-        this.reportEntry.addEventListener('input', (event) => {
-
-            clearTimeout(this.saveTimeout);
-            this.saveTimeout = setTimeout(() => {
-                this.saveToLocalStorage();
-            }, 500);
-
-
-            const tableInput = event.target.closest('[data-to-subtotal-x], [data-to-total-x]');
-            if (!tableInput) return;
-
-            this.updateRelatedTotals(tableInput);
-        });
-    }
 };

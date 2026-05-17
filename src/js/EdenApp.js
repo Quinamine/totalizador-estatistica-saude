@@ -1,5 +1,7 @@
 import { EdenSidebar } from "./components/eden/EdenSidebar.js";
 import { EdenReportEntry } from "./components/eden/EdenReportEntry.js";
+import { EdenHeader } from "./components/eden/EdenHeader.js";
+import { TesToolbar } from "./components/tes/TesToolbar.js";
 import { EDEN_REPORTS } from "./constants/eden-reports.config.js";
 import { TesManager } from "./components/tes/TesManager.js";
 import { TesNotesEditor } from "./components/tes/TesNotesEditor.js";
@@ -8,15 +10,12 @@ const EdenApp = {
     init() {
         EdenSidebar.init();
         EdenReportEntry.init();
+        EdenHeader.init();
+        TesToolbar.init();
         TesManager.init()
         TesNotesEditor.init();
 
-        this.cacheElements();
         this.bindEvents();
-    },
-
-    cacheElements() {
-        this.headerTitle = document.querySelector('[data-eden-js="header-title"');
     },
 
     bindEvents() {
@@ -34,17 +33,16 @@ const EdenApp = {
             }
 
             // REPORT ENTRY 
-            const reportRenderer = event.target.closest('[data-eden-js~="report-renderer"');
-            const reportRetryer = event.target.closest('[data-eden-js~="report-retryer"');
-
+            const reportRenderer = event.target.closest('[data-eden-js="report-renderer"]') || 
+                                    event.target.closest('[data-eden-js="report-retryer"]');
             if(reportRenderer) {
-                const reportId = reportRenderer.dataset.edenReportId;
-                this.handleReportRendering(reportId)
-            }
+                const { edenReportId } = reportRenderer.dataset;
 
-            if(reportRetryer) {
-                const reportId = reportRetryer.dataset.edenReportId;
-                this.handleReportRendering(reportId);
+                const event = new CustomEvent('eden:sidebar:report-selected', {
+                    detail: { id: edenReportId }
+                });
+
+                window.dispatchEvent(event);
             }
         });
 
@@ -62,30 +60,10 @@ const EdenApp = {
             document.body.classList.toggle('has-eden-sidebar-open', visible);
             document.body.classList.remove('has-eden-sidebar-closed');
         });
-    },
 
-    async handleReportRendering(id) {
-        const reportName = this.getReportName(id);
-        const isMobile = window.matchMedia('(max-width: 1023px)').matches;
-
-        this.headerTitle.innerHTML = reportName;
-
-        const isRendered = await EdenReportEntry.renderReport(id);
-        this.updateToolbarVisibility(isRendered);
-    },
-
-    getReportName(reportId) {
-        let reportName;
-        for (const item of EDEN_REPORTS) {
-            if(item.id === reportId) {
-                reportName = item.name;
-            }
-        }
-        return reportName;
-    },
-
-    updateToolbarVisibility(isVisible) {
-        document.body.classList.toggle('has-eden-toolbar', isVisible);
+        window.addEventListener('eden:toolbar:visibility-changed', ({ detail }) => {
+            document.body.classList.toggle('has-eden-toolbar', detail.visible );
+        });
     }
 }
 

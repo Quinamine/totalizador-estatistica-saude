@@ -3,10 +3,18 @@ import { EdenSpinner } from "./EdenSpinner.js";
 export const EdenReportEntry = {
     init() {
         this.cacheElements();
+        this.bindEvents();
     },
     
     cacheElements() {
         this.reportEntry = document.querySelector('[data-eden-js="report-entry"]');
+    },
+
+    bindEvents() {
+        window.addEventListener('eden:sidebar:report-selected', (event) => {
+            const { id } = event.detail;
+            this.renderReport(id);
+        });
     },
     
     async renderReport(reportId) {
@@ -28,12 +36,9 @@ export const EdenReportEntry = {
             const report = await response.text();
             this.reportEntry.innerHTML = report;
 
-            const event = new CustomEvent('reportInjected', {
-                detail: { id: reportId } // To 'loadFromStorage()'
-            });
-            document.dispatchEvent(event);
-            
-            return true; // To 'updateToolbarVisibility()' on mobile
+            window.dispatchEvent(new CustomEvent('eden:report-entry:report-injected', {
+                detail: { id: reportId }
+            }));
 
         } catch (error) {
             console.log(error.message);
