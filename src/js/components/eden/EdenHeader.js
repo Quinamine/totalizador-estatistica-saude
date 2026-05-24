@@ -4,10 +4,12 @@ export const EdenHeader = {
     init() {
         this.cacheElements();
         this.bindEvents();
+        this.setupObserver();
     },
 
     cacheElements() {
-        this.title = document.querySelector('[data-eden-js="header-title"]');
+        this.container = document.querySelector('[data-eden-js="header"]'); 
+        this.title = this.container.querySelector('[data-eden-js="header-title"]');
     },
 
     bindEvents() {
@@ -15,6 +17,15 @@ export const EdenHeader = {
             const { id } = detail;
             this.updateTitle(id);
         });
+    },
+
+    setupObserver() {
+        this.observer = new ResizeObserver(entries => {
+            const height = entries[0].target.offsetHeight;
+            document.documentElement.style.setProperty('--eden-sys-layout-header-height', `${height}px`);
+        });
+
+        this.observer.observe(this.container);
     },
 
     updateTitle(id) {

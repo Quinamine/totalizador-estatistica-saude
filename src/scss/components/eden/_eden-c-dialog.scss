@@ -1,0 +1,49 @@
+@use '../../abstracts/' as *;
+
+.eden-c-dialog {
+    --eden-sys-paragraph-spacing-y: 0;
+    --_max-width: 385px;
+    
+    border: none;
+    width: min(var(--_max-width), 100% - var(--eden-sys-page-margin));
+    padding: var(--eden-sys-space-500);
+    box-shadow: var(--eden-sys-shadow-300);
+    border-radius: var(--eden-sys-radius-300);
+    transition: opacity 0.2s ease-out, display 0.2s allow-discrete;
+    opacity: 1;
+
+    @starting-style {
+        dialog[open]::backdrop {
+            opacity: 0;
+        }
+    }
+
+    @include screen-above-layout-width {
+        right: calc(100vw - var(--eden-sys-layout-max-width));
+    }
+
+    &::backdrop {
+        background-color: var(--eden-sys-overlay);
+    }
+
+    &__header {
+        margin-bottom: var(--eden-sys-space-200);
+    }
+
+    &__content {
+        p + p {
+            margin-block-start: var(--eden-sys-space-300);
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--eden-sys-space-400);
+        margin-block-start: var(--eden-sys-space-600);
+    }
+
+    &__action {
+        min-width: 100px;
+    }
+}

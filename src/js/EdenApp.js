@@ -5,12 +5,14 @@ import { TesToolbar } from "./components/tes/TesToolbar.js";
 import { EDEN_REPORTS } from "./constants/eden-reports.config.js";
 import { TesManager } from "./components/tes/TesManager.js";
 import { TesNotesEditor } from "./components/tes/TesNotesEditor.js";
+import { EdenToast } from "./components/eden/EdenToast.js";
 
 const EdenApp = {
     init() {
         EdenSidebar.init();
         EdenReportWorkspace.init();
         EdenHeader.init();
+        EdenToast.init();
         TesToolbar.init();
         TesManager.init()
         TesNotesEditor.init();

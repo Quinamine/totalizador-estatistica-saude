@@ -1,0 +1,27 @@
+@use '../../abstracts' as *;
+
+@media print {
+    html,
+    body,
+    main,
+    .eden-c-report-workspace {
+        overflow: visible !important;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    main {
+        padding: 0 !important;
+    }
+
+    input[readonly] {
+        background-color: #fff !important;
+    }
+    
+    .eden-u-hide-on-print {
+        display: none !important;
+    }
+}

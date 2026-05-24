@@ -48,13 +48,13 @@
     &--secondary {
         --_bg: transparent;
         --_color: var(--eden-sys-surface-content);
-        --_bg-hover: oklch(from var(--eden-sys-surface) calc(l - 0.05) 0.04 h);
-        border: 1px solid var(--eden-sys-primary);
+        --_bg-hover: oklch(from var(--eden-sys-surface) 0.98 c h);
+        border: 1px solid var(--eden-sys-border-color-muted);
     }
 
     &--danger {
         --_bg: var(--eden-sys-danger);
-        --_color: var(--eden-sys-danger-content);
+        --_color: oklch(98% 0.02 var(--eden-ref-danger-hue));
         --_bg-hover: oklch(from var(--eden-sys-danger) calc(l + 0.1) c h); 
         --_bg-active: oklch(from var(--eden-sys-danger) calc(l - 0.05) c h);
     }

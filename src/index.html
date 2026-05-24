@@ -9,7 +9,7 @@
         <script src="js/eden-app.min.js" defer></script>
     </head>
     <body>
-        <header class="eden-c-header">
+        <header class="eden-c-header eden-u-hide-on-print" data-eden-js="header">
             <div class="eden-l-container eden-c-header__content">
                 <button class="eden-c-hamburger" data-eden-action="sidebar:open" aria-label="Menu">
                     <div class="eden-c-hamburger__icon">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </header>
-        <aside class="eden-c-sidebar" data-eden-js="sidebar">
+        <aside class="eden-c-sidebar eden-u-hide-on-print" data-eden-js="sidebar">
             <button class="eden-c-button eden-c-sidebar__action-close" data-eden-action="sidebar:close" title="Ocultar menu lateral">
                 <svg class="eden-c-icon eden-c-icon--small eden-u-hide-on-mobile" viewBox="0 0 24 24">
                     <path d="M15 18l-6-6 6-6M4 6v12" />
@@ -88,7 +88,7 @@
             </div>
             <nav class="eden-c-sidebar__nav" data-eden-js="sidebar-nav"></nav>
         </aside>
-        <div class="eden-l-overlay" data-eden-js="overlay" data-eden-action="sidebar:close"></div>
+        <div class="eden-l-overlay eden-u-hide-on-print" data-eden-js="overlay" data-eden-action="sidebar:close"></div>
         <main>
             <section class="eden-l-container eden-c-report-workspace" data-eden-js="report-workspace">
                 <div class="eden-c-report-workspace__welcome">
@@ -96,7 +96,7 @@
                 </div>
             </section>
         </main>
-        <footer class="eden-c-footer">
+        <footer class="eden-c-footer eden-u-hide-on-print">
             <div class="eden-l-container eden-c-footer__content">
                 <nav class="eden-c-footer__legal-nav">
                     <button class="eden-c-button eden-c-footer__legal-button">Termos</button>

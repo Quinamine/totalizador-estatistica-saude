@@ -13,10 +13,6 @@
     z-index: var(--eden-sys-zi-sticky);
     box-shadow: var(--eden-sys-shadow-100);
 
-    @media print {
-        display: none !important;
-    }
-
     &__content {
         display: flex;
         align-items: center;

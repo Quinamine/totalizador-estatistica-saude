@@ -5,14 +5,16 @@
 @use 'components/eden/eden-c-brand';
 @use 'components/eden/eden-c-button';
 @use 'components/eden/eden-c-hamburger';
-@use 'layout/eden-layout';
+@use 'layout/eden/eden-layout';
 @use 'components/eden/eden-c-header';
 @use 'components/eden/eden-c-toolbar';
 @use 'components/eden/eden-c-sidebar';
 @use 'components/eden/eden-c-report-workspace';
 @use 'components/eden/eden-c-footer';
 @use 'components/eden/eden-c-spinner';
-@use 'components/eden/eden-c-sheet';
+@use 'components/eden/eden-c-dialog';
+@use 'components/eden/eden-c-toast';
+@use 'components/tes/tes-c-sheet';
 @use 'components/eden/eden-c-table';
 @use 'components/eden/eden-c-input';
 @use 'components/tes/tes-c-identity';
@@ -20,3 +22,5 @@
 @use 'components/tes/tes-c-notes-editor';
 @use 'pages/tes/tes-consultas';
 @use 'utilities/eden-utils';
+@use 'layout/eden/eden-print';
+@use 'layout/tes/tes-print';

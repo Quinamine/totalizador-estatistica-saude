@@ -20,6 +20,12 @@
     }
 }
 
+@mixin screen-above-layout-width {
+    @media screen and (min-width: $eden-ref-layout-max-width) {
+        @content;
+    }
+}
+
 @mixin can-hover {
     @media (hover: hover) {
         @content;

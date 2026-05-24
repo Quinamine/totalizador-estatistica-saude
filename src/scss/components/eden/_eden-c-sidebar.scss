@@ -6,7 +6,7 @@
     --eden-comp-button-bg-active: oklch(from currentColor l c h / 6%);
 
     // Private tokens
-    --_width: 280px;
+    --_width: var(--eden-sys-sidebar-width);
     --_translate-x: -100%;
     --_bg-default: var(--eden-sys-primary);
     --_bg-sunken: oklch(from var(--_bg-default) calc(l - .03) c h);
@@ -20,10 +20,6 @@
     
     @include desktop {
         --_action-close-alignment-offset-x: 2.5px;
-    }
-
-      @media print {
-        display: none !important;
     }
 
     display: flex;

@@ -15,10 +15,6 @@
     @include tablet {
         --_footer-safe-clearance: var(--eden-sys-space-200);
     }
-
-    @media print {
-        display: none !important;
-    }
     
     .has-eden-toolbar & {
         --_footer-safe-clearance: 7.75rem; // 124px

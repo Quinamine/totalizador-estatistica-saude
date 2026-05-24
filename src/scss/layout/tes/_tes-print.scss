@@ -11,18 +11,10 @@
 }
 
 .tes-c-sheet {
-    --_width: var(--tes-comp-sheet-width, 100%);
-    --_font-size: var(--tes-comp-sheet-font-size, var(--eden-sys-font-size-100));
-
-    width: var(--_width);
-    min-height: 100vh;
-    font-size: var(--_font-size);
-    background-color: var(--eden-sys-surface-100);
-    padding: var(--eden-sys-page-margin);
-
     @media print {
         width: 100% !important;
         padding: 0 !important;
+        background-color: #fff !important;
     }
 
     &--portrait {
