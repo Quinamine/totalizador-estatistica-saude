@@ -11,22 +11,25 @@
     <body>
         <header class="eden-c-header eden-u-hide-on-print" data-eden-js="header">
             <div class="eden-l-container eden-c-header__content">
-                <button class="eden-c-hamburger" data-eden-action="sidebar:open" aria-label="Menu">
-                    <div class="eden-c-hamburger__icon">
-                        <span class="eden-c-hamburger__bar"></span>
-                        <span class="eden-c-hamburger__bar"></span>
-                        <span class="eden-c-hamburger__bar"></span>
+                <div class="eden-c-header__brand-group">
+                    <button class="eden-c-button eden-c-hamburger eden-c-header__menu-toggle" data-eden-action="sidebar:open" aria-label="Menu">
+                        <div class="eden-c-hamburger__icon eden-c-header__toggle-icon eden-c-header__toggle-icon--bars">
+                            <span class="eden-c-hamburger__bar"></span>
+                            <span class="eden-c-hamburger__bar"></span>
+                            <span class="eden-c-hamburger__bar"></span>
+                        </div>
+                        <svg class="eden-c-icon eden-c-icon--small  eden-c-header__toggle-icon  eden-c-header__toggle-icon--show" viewBox="0 0 24 24">
+                            <path d="M6.5 18l6-6-6-6M17.5 6v12" />
+                        </svg>
+                    </button>
+                    <div class="eden-c-brand eden-c-brand--compact eden-c-header__brand">
+                        <a href="index.html" class="eden-c-brand__title">TES</a>
                     </div>
-                </button>
-                <button class="eden-c-button  eden-c-header__sidebar-trigger" data-eden-action="sidebar:open" title="Abrir menu lateral">
-                    <svg class="eden-c-icon eden-c-icon--small" viewBox="0 0 24 24">
-                        <path d="M9 18l6-6-6-6M20 6v12" />
-                    </svg>
-                </button>
-                <div class="eden-c-brand eden-c-brand--compact">
-                    <a href="index.html" class="eden-c-brand__title">TES</a>
+                    
+                    <h1 class="eden-c-header__title" data-eden-js="header-title">Painel Principal</h1>
                 </div>
-                <h1 class="eden-c-header__title" data-eden-js="header-title">Painel Principal</h1>
+                <div class="tes-c-table-locator" data-eden-js="table-locator">
+                </div>
                 <div class="eden-c-toolbar" data-eden-js="tes-toolbar">
                     <button class="eden-c-button eden-c-button--stack" disabled data-eden-action="report:clear">
                         <svg class="eden-c-icon eden-u-hide-on-desktop" viewBox="0 0 24 24">
@@ -69,7 +72,7 @@
         <aside class="eden-c-sidebar eden-u-hide-on-print" data-eden-js="sidebar">
             <button class="eden-c-button eden-c-sidebar__action-close" data-eden-action="sidebar:close" title="Ocultar menu lateral">
                 <svg class="eden-c-icon eden-c-icon--small eden-u-hide-on-mobile" viewBox="0 0 24 24">
-                    <path d="M15 18l-6-6 6-6M4 6v12" />
+                    <path d="M17.5 18l-6-6 6-6M6.5 6v12" />
                 </svg>
                 <svg class="eden-c-icon eden-c-icon--small eden-u-hide-on-desktop" viewBox="0 0 24 24">
                     <line x1="10%" x2="90%" y1="17.5%" y2="82.5%"></line>

@@ -4,7 +4,7 @@
     --eden-comp-button-padding-y: var(--eden-sys-space-200);
     --eden-comp-button-padding-x: var(--eden-sys-space-150);
 
-    --_offset-y: 100%;
+    --_translate-y: 100%;
 
     display: flex;
     justify-content: center;
@@ -15,22 +15,16 @@
     bottom: 0;
     width: 100%;
     z-index: var(--eden-sys-zi-sticky);
-    box-shadow: var(--eden-sys-shadow-100-inverted);
-    border-block-start: thin solid var(--eden-sys-border-color-subtle);
     padding-block: var(--eden-sys-space-200) var(--eden-sys-space-300);
-    transform: translateY(var(--_offset-y));
+    transform: translateY(var(--_translate-y));
     transition: transform var(--eden-sys-duration-standard) var(--eden-sys-motion-entrance);
-
-    .has-eden-toolbar & {
-        --_offset-y: 0;
-    }
 
     @include desktop {
         --eden-comp-button-padding-y: var(--eden-sys-space-300);
         --eden-comp-button-padding-x: var(--eden-sys-space-300);
         
         --_offset-alignment-x: var(--eden-comp-button-padding-x);
-        --_offset-y: 0;
+        --_translate-y: 0;
 
         position: static;
         box-shadow: none;
@@ -40,8 +34,21 @@
         min-height: initial;
         width: auto;
         background-color: transparent;
-        flex: 1;
         justify-content: flex-end;
+    }
+
+    .has-eden-toolbar & {
+        --_translate-y: calc(var(--eden-sys-keyboard-height) * -1);
+
+        @include desktop {
+           --_translate-y: 0;
+        }
+    }
+
+    .has-eden-toolbar.has-keyboard-open & {
+        @include mobile-landscape {
+            --_translate-y: 100%;
+        }
     }
 
     .eden-c-button {
@@ -50,6 +57,5 @@
         @include desktop {
             flex: 0;
         }
-
     }
 }

@@ -59,6 +59,8 @@
     }
 
     &__action-close {
+        --eden-comp-button-bg-hover: transparent;
+        --eden-comp-button-bg-active: transparent;
         --eden-comp-button-padding-y: 0;
         --eden-comp-button-padding-x: 0;
         --eden-comp-button-border-radius: var(--eden-sys-radius-full);
@@ -70,9 +72,15 @@
         opacity: 0.7;
 
         @include can-hover {
-            &:hover {
+            &:hover .eden-c-icon {
                 opacity: 1;
+                background-color: var(--eden-sys-brand-icon-bg);
+                border-radius: 50%;
             }
+        }
+
+        &:active .eden-c-icon {
+            opacity: 0.7;
         }
     }
 

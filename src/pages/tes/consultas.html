@@ -23,7 +23,7 @@
             </datalist>
         </div>
     </header>
-    <table class="eden-c-table">
+    <table class="eden-c-table" data-eden-row-label-col-index="1">
         <thead class="tes-consultas__head">
             <tr class="eden-c-table__row">
                 <th class="--borderless">
@@ -53,33 +53,33 @@
             </tr>
             <tr class="eden-c-table__row">
                 <th class="--row-label --justify-center">Faixas Etárias</th>
-                <th class="--justify-center eden-u-grid-colspan-2">0 - 11 meses</th>
-                <th class="--justify-center eden-u-grid-colspan-2">1 - 4 anos</th>
-                <th class="--justify-center eden-u-grid-colspan-2">5 - 14 anos</th>
+                <th class="--justify-center eden-u-grid-colspan-2" data-eden-col-label="c1 c2">0 - 11 meses</th>
+                <th class="--justify-center eden-u-grid-colspan-2" data-eden-col-label="c3 c4">1 - 4 anos</th>
+                <th class="--justify-center eden-u-grid-colspan-2" data-eden-col-label="c5 c6">5 - 14 anos</th>
                 <th class="--justify-center eden-u-grid-colspan-2 eden-u-text-upper">Subtotal</th>
-                <th class="--justify-center eden-u-grid-colspan-2">15 - 24 anos</th>
-                <th class="--justify-center eden-u-grid-colspan-2">25 - 59 anos</th>
-                <th class="--justify-center eden-u-grid-colspan-2">≥ 60 anos</th>
+                <th class="--justify-center eden-u-grid-colspan-2" data-eden-col-label="c9 c10">15 - 24 anos</th>
+                <th class="--justify-center eden-u-grid-colspan-2" data-eden-col-label="c11 c12">25 - 59 anos</th>
+                <th class="--justify-center eden-u-grid-colspan-2" data-eden-col-label="c13 c14">≥ 60 anos</th>
                 <th class="--justify-center eden-u-grid-colspan-2 eden-u-text-upper">Subtotal</th>
                 <th class="--justify-center eden-u-grid-colspan-2">Total</th>
                 <th class="--justify-center eden-u-grid-rowspan-2 eden-u-text-upper">Total Geral</th>
             </tr>
             <tr class="eden-c-table__row">
                 <th class="--row-label --justify-center">Sexo</th>
+                <th class="--justify-center" data-eden-complementary-label="c1">F</th>
+                <th class="--justify-center" data-eden-complementary-label="c2">M</th>
+                <th class="--justify-center" data-eden-complementary-label="c3">F</th>
+                <th class="--justify-center" data-eden-complementary-label="c4">M</th>
+                <th class="--justify-center" data-eden-complementary-label="c5">F</th>
+                <th class="--justify-center" data-eden-complementary-label="c6">M</th>
                 <th class="--justify-center">F</th>
                 <th class="--justify-center">M</th>
-                <th class="--justify-center">F</th>
-                <th class="--justify-center">M</th>
-                <th class="--justify-center">F</th>
-                <th class="--justify-center">M</th>
-                <th class="--justify-center">F</th>
-                <th class="--justify-center">M</th>
-                <th class="--justify-center">F</th>
-                <th class="--justify-center">M</th>
-                <th class="--justify-center">F</th>
-                <th class="--justify-center">M</th>
-                <th class="--justify-center">F</th>
-                <th class="--justify-center">M</th>
+                <th class="--justify-center" data-eden-complementary-label="c9">F</th>
+                <th class="--justify-center" data-eden-complementary-label="c10">M</th>
+                <th class="--justify-center" data-eden-complementary-label="c11">F</th>
+                <th class="--justify-center" data-eden-complementary-label="c12">M</th>
+                <th class="--justify-center" data-eden-complementary-label="c13">F</th>
+                <th class="--justify-center" data-eden-complementary-label="c14">M</th>
                 <th class="--justify-center">F</th>
                 <th class="--justify-center">M</th>
                 <th class="--justify-center">F</th>
@@ -87,9 +87,9 @@
             </tr>
         </thead>
         <tbody class="tes-consultas__body">
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-label-col-index="2">
                 <td class="--dark --justify-center">1</td>
-                <td class="--justify-center --border-r-none eden-u-grid-rowspan-3">
+                <td class="--row-category --justify-center eden-u-grid-rowspan-3">
                     <span class="eden-u-text-vertical">Total de<br> Consultas</span>
                 </td>
                 <td class="--row-label eden-u-grid-colspan-2">1ªˢ Consultas</td>
@@ -766,10 +766,10 @@
                 </td>
             </tr>
             <!-- Referências -->
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-label-col-index="2" data-eden-row-category-id="referencias">
                 <td class="--dark --justify-center">4</td>
-                <td class="--justify-center --border-r-none eden-u-grid-rowspan-4">
-                    <span class="eden-u-text-vertical">Referências</span>
+                <td class="--row-category --justify-center eden-u-grid-rowspan-4">
+                    <span class="eden-u-text-vertical" data-eden-row-category-label="referencias">Referências</span>
                 </td>
                 <td class="--row-label eden-u-grid-colspan-2">Parteira Tradicional (PT)</td>
                 <!-- 0 - 14 years -->
@@ -961,7 +961,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="referencias">
                 <td class="--dark --justify-center">5</td>
                 <td class="--row-label eden-u-grid-colspan-2">APE's</td>
                 <!-- 0 - 14 years -->
@@ -1153,7 +1153,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="referencias">
                 <td class="--dark --justify-center">6</td>
                 <td class="--row-label eden-u-grid-colspan-2">Praticante de Medicina Tradicional (PMT)</td>
                 <!-- 0 - 14 years -->
@@ -1345,7 +1345,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="referencias">
                 <td class="--dark --justify-center">7</td>
                 <td class="--row-label eden-u-grid-colspan-2">Outras US's</td>
                 <!-- 0 - 14 years -->
@@ -1538,9 +1538,9 @@
                 </td>
             </tr>
             <!-- Diagnósticos -->
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-label-col-index="2">
                 <td class="--dark --justify-center">8</td>
-                <td class="--justify-center --border-r-none eden-u-grid-rowspan-34">
+                <td class="--row-category --justify-center eden-u-grid-rowspan-34">
                     <span class="eden-u-text-vertical">Diagnósticos</span>
                 </td>
                 <td class="--row-label eden-u-grid-colspan-2">Anemia</td>
@@ -7493,9 +7493,9 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-label-col-index="2" data-eden-row-category-id="its">
                 <td class="--dark --justify-center">39</td>
-                <td class="--row-label eden-u-grid-rowspan-2">ITS (d)</td>
+                <td class="--row-category --row-label eden-u-grid-rowspan-2" data-eden-row-category-label="its">ITS (d)</td>
                 <td class="--row-label">Casos de ITS</td>
                 <!-- 0 - 14 years -->
                 <td>
@@ -7686,7 +7686,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="its">
                 <td class="--dark --justify-center">40</td>
                 <td class="--row-label">Contactos e)</td>
                 <!-- 0 - 14 years -->
@@ -8071,12 +8071,12 @@
                 </td>
             </tr>
             <!-- Malária -->
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-label-col-index="3" data-eden-row-category-id="tdr">
                 <td class="--dark --justify-center">42</td>
-                <td class="--justify-center --border-r-none eden-u-grid-rowspan-6">
+                <td class="--row-category --justify-center eden-u-grid-rowspan-6">
                     <span class="eden-u-text-vertical">Malária</span>
                 </td>
-                <td class="--row-label eden-u-grid-rowspan-2">TDR</td>
+                <td class="--row-category --row-label eden-u-grid-rowspan-2" data-eden-row-category-label="tdr">TDR</td>
                 <td class="--row-label">Doentes Testados</td>
                 <!-- 0 - 14 years -->
                 <td>
@@ -8267,7 +8267,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="tdr">
                 <td class="--dark --justify-center">43</td>
                 <td class="--row-label">Confirmados</td>
                 <!-- 0 - 14 years -->
@@ -8460,9 +8460,9 @@
                 </td>
             </tr>
 
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-label-col-index="2" data-eden-row-category-id="htz">
                 <td class="--dark --justify-center">44</td>
-                <td class="--row-label  eden-u-grid-rowspan-2">HTZ</td>
+                <td class="--row-category --row-label  eden-u-grid-rowspan-2" data-eden-row-category-label="htz">HTZ</td>
                 <td class="--row-label">Doentes Testados</td>
                 <!-- 0 - 14 years -->
                 <td>
@@ -8653,7 +8653,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="htz">
                 <td class="--dark --justify-center">45</td>
                 <td class="--row-label">Confirmados</td>
                 <!-- 0 - 14 years -->
@@ -8846,9 +8846,9 @@
                 </td>
             </tr>
 
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-label-col-index="2" data-eden-row-category-id="malaria-tto">
                 <td class="--dark --justify-center">46</td>
-                <td class="--row-label  eden-u-grid-rowspan-2">Tratamento</td>
+                <td class="--row-category --row-label  eden-u-grid-rowspan-2" data-eden-row-category-label="malaria-tto">Tratamento</td>
                 <td class="--row-label">AL</td>
                 <!-- 0 - 14 years -->
                 <td>
@@ -9039,7 +9039,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="malaria-tto">
                 <td class="--dark --justify-center">47</td>
                 <td class="--row-label">ASAQ</td>
                 <!-- 0 - 14 years -->
@@ -9232,10 +9232,10 @@
                 </td>
             </tr>
             <!-- Sarampo -->
-             <tr class="eden-c-table__row">
+             <tr class="eden-c-table__row" data-eden-row-label-col-index="2" data-eden-row-category-id="sarampo">
                 <td class="--dark --justify-center">48</td>
-                <td class="--justify-center --border-r-none eden-u-grid-rowspan-3">
-                    <span class="eden-u-text-vertical">Sarampo <br>(9 - 23 M)</span>
+                <td class="--row-category --justify-center eden-u-grid-rowspan-3">
+                    <span class="eden-u-text-vertical" data-eden-row-category-label="sarampo">Sarampo <br>(9 - 23 M)</span>
                 </td>
                 <td class="--row-label eden-u-grid-colspan-2">Vacinada (Vac.)</td>
                 <!-- 0 - 14 years -->
@@ -9475,7 +9475,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="sarampo">
                 <td class="--dark --justify-center">49</td>
                 <td class="--row-label eden-u-grid-colspan-2">Não Vacinada (Não Vac.)</td>
                 <!-- 0 - 14 years -->
@@ -9911,10 +9911,10 @@
                 </td>
             </tr>
             <!-- Referência -->
-             <tr class="eden-c-table__row">
+             <tr class="eden-c-table__row" data-eden-row-label-col-index="2" data-eden-row-category-id="transferencia">
                 <td class="--dark --justify-center">51</td>
-                <td class="--justify-center --border-r-none eden-u-grid-rowspan-3 eden-u-border-bottom">
-                    <span class="eden-u-text-vertical">Referência<br> / Trans‐<br> ferência</span>
+                <td class="--row-category --justify-center eden-u-grid-rowspan-3 eden-u-border-bottom">
+                    <span class="eden-u-text-vertical" data-eden-row-category-label="transferencia">Referência<br> / Trans‐<br> ferência</span>
                 </td>
                 <td class="--row-label eden-u-grid-colspan-2">Outra Consulta</td>
                 <!-- 0 - 14 years -->
@@ -10106,7 +10106,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row">
+            <tr class="eden-c-table__row" data-eden-row-category-id="transferencia">
                 <td class="--dark --justify-center">52</td>
                 <td class="--row-label  eden-u-grid-colspan-2">Internamento</td>
                 <!-- 0 - 14 years -->
@@ -10298,7 +10298,7 @@
                         readonly>
                 </td>
             </tr>
-            <tr class="eden-c-table__row eden-c-table__row--last">
+            <tr class="eden-c-table__row eden-c-table__row--last" data-eden-row-category-id="transferencia">
                 <td class="--dark --justify-center">53</td>
                 <td class="--row-label  eden-u-grid-colspan-2">US</td>
                 <!-- 0 - 14 years -->

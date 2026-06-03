@@ -181,6 +181,8 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
 
     // Defined dynamically via JS
     --eden-sys-layout-header-height: 64px;
+    --eden-sys-toolbar-height: 87px;
+    --eden-sys-keyboard-height: 0px;
 }
 
 @media screen and (min-width: 768px) {

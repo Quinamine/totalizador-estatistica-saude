@@ -20,6 +20,12 @@
     }
 }
 
+@mixin mobile-landscape {
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+        @content;
+    }
+}
+
 @mixin screen-above-layout-width {
     @media screen and (min-width: $eden-ref-layout-max-width) {
         @content;

@@ -17,6 +17,11 @@ export const EdenHeader = {
             const { id } = detail;
             this.updateTitle(id);
         });
+
+        document.addEventListener('eden:viewport:scroll-direction', ({ detail }) => {
+            const { isScrollingDown } = detail;
+            this.toggleStaticMode(isScrollingDown);
+        });
     },
 
     setupObserver() {
@@ -34,6 +39,10 @@ export const EdenHeader = {
         if (report) {
             this.title.textContent = report.name;
         }
+    },
+
+    toggleStaticMode(isScrollingDown) {
+        this.container.classList.toggle('eden-c-header--static', isScrollingDown);
     }
 };
 

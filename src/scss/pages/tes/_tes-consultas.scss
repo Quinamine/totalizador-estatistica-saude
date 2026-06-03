@@ -89,6 +89,10 @@
                 z-index: calc(var(--eden-sys-zi-sticky) - 1);
                 border-inline-start: 1px solid var(--eden-sys-border-color);
             }
+
+            &.--row-category {
+                border-inline-end: none;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ h1, h2, h3, h4 {
 
 h1 {
     --eden-sys-heading-spacing-y-start: 0;
-    font-size: var(--_h1-font-size, var(--eden-sys-font-size-600));
+    font-size: var(--eden-h1-font-size, var(--eden-sys-font-size-600));
 }
 
 h2 {

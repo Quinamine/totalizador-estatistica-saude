@@ -17,10 +17,10 @@
     }
     
     .has-eden-toolbar & {
-        --_footer-safe-clearance: 7.75rem; // 124px
+        --_footer-safe-clearance: 9.75rem; // 156px
 
          @include tablet {
-            --_footer-safe-clearance: 6.3125rem; // 101px
+            --_footer-safe-clearance: 8.3125rem; // 133px
         
         }
 

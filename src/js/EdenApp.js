@@ -6,6 +6,8 @@ import { EDEN_REPORTS } from "./constants/eden-reports.config.js";
 import { TesManager } from "./components/tes/TesManager.js";
 import { TesNotesEditor } from "./components/tes/TesNotesEditor.js";
 import { EdenToast } from "./components/eden/EdenToast.js";
+import { TesTableLocator } from "./components/tes/TesTableLocator.js";
+import { EdenViewportHandler } from "./components/eden/EdenViewportHandler.js";
 
 const EdenApp = {
     init() {
@@ -16,6 +18,8 @@ const EdenApp = {
         TesToolbar.init();
         TesManager.init()
         TesNotesEditor.init();
+        TesTableLocator.init();
+        EdenViewportHandler.init();
 
         this.bindEvents();
     },
