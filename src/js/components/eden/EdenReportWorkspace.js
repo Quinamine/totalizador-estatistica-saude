@@ -1,5 +1,6 @@
 import { EdenSpinner } from "./EdenSpinner.js";
 import { EdenMessenger } from "../../utils/EdenMessenger.js";
+import { EDEN_REPORTS } from "../../constants/eden-reports.config.js";
 
 export const EdenReportWorkspace = {
     ...EdenMessenger,
@@ -17,6 +18,18 @@ export const EdenReportWorkspace = {
         document.addEventListener('eden:trigger:report-render-request', ({ detail }) => {
             const { id } = detail;
             this.renderReport(id);
+        });
+
+        window.addEventListener('load', () => {
+            const url = new URL(window.location.href);
+            const reportId = url.searchParams.get("page");
+            if(!reportId) return;         
+
+            const report = EDEN_REPORTS.find(item => item.id === reportId);;
+            if(report) {
+                document.title = `${report.name} | TES - Totalizador de Estatística de Saúde`;
+                this.renderReport(reportId);
+            }
         });
     },
     

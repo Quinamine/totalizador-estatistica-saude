@@ -89,7 +89,297 @@
                     <small class="eden-c-brand__description">Totalizador de Estatística de Saúde</small>
                 </div>
             </div>
-            <nav class="eden-c-sidebar__nav" data-eden-js="sidebar-nav"></nav>
+            <nav class="eden-c-sidebar__nav" data-eden-js="sidebar-nav">
+                <!-- Consultas -->
+                <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
+                    <button 
+                        class="eden-c-button eden-c-sidebar__accordion-header" 
+                        data-eden-internal-action="sidebar-accordion:toggle">
+                            CONSULTAS
+                            <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <a href="?page=consultas"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="consultas">
+                                    RM Consultas Externas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=ccd"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="ccd">
+                                    RM CCD
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=malaria"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="malaria">
+                                    RM Malária
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=saaj"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="saaj">
+                                    RM SAAJ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Farmácia -->
+                <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
+                    <button 
+                        class="eden-c-button eden-c-sidebar__accordion-header" 
+                        data-eden-internal-action="sidebar-accordion:toggle">
+                            FARMÁCIA
+                            <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <a href="?page=balancete"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="balancete">
+                                    Requisição/Balancete
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pharmacy-cash"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pharmacy-cash">
+                                    Mapa de Caixa
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Nutrição -->
+                <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
+                    <button 
+                        class="eden-c-button eden-c-sidebar__accordion-header" 
+                        data-eden-internal-action="sidebar-accordion:toggle">
+                            NUTRIÇÃO
+                            <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <a href="?page=nutrition"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="nutrition">
+                                    RM Nutrição
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=tda-1"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="tda-1">
+                                    RM TDA 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=tda-2"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="tda-2">
+                                    RM TDA 2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=tdi"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="tdi">
+                                    RM TDI
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- ITS/HIV e SIDA -->
+                <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
+                    <button 
+                        class="eden-c-button eden-c-sidebar__accordion-header" 
+                        data-eden-internal-action="sidebar-accordion:toggle">
+                            ITS/HIV e SIDA
+                            <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <a href="?page=ats"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="ats">
+                                    RM ATS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=hiv-sida"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="hiv-sida">
+                                    RM HIV/SIDA
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=prep"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="prep">
+                                    RM PrEP
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=dah"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="dah">
+                                    RM DAH
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=its"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="its">
+                                    RM ITS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=apss-pp"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="apss-pp">
+                                    RT APSS/PP
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tuberculose -->
+                 <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
+                    <button 
+                        class="eden-c-button eden-c-sidebar__accordion-header" 
+                        data-eden-internal-action="sidebar-accordion:toggle">
+                            ITS/HIV e SIDA
+                            <span class="eden-c-sidebar__chevron">❯</span>
+                    </button>
+                    <div class="eden-c-sidebar__accordion-body">
+                        <ul class="eden-c-sidebar__list">
+                            <li>
+                                <a href="?page=pnct-provisorio"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-provisorio">
+                                    PNCT Provisório
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pctc-01a"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pctc-01a">
+                                    PNCT 01A
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pctc-07"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pctc-07">
+                                    PNCT 07
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-ic-10a"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-ic-10a">
+                                    PNCT IC-10A
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-r05"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-r05">
+                                    PNCT R05
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-r06"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-r06">
+                                    PNCT R06
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-r07"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-r07">
+                                    PNCT R07
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-08"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-08">
+                                    PNCT 08
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-09"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-09">
+                                    PNCT 09
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-11a"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-11a">
+                                    PNCT APSS 11A
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-12"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-12">
+                                    PNCT 12
+                                </a>
+                            </li>
+                            <li>
+                                <a href="?page=pnct-14d"
+                                    class="eden-c-button eden-c-sidebar__item" 
+                                    data-eden-action="report:render" 
+                                    data-eden-report-id="pnct-14d">
+                                    PNCT 14D
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </aside>
         <div class="eden-l-overlay eden-u-hide-on-print" data-eden-js="overlay" data-eden-action="sidebar:close"></div>
         <main>

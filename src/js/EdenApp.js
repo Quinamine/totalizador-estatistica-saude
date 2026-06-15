@@ -33,7 +33,13 @@ const EdenApp = {
             const detail = {};
 
             if(trigger.matches('[data-eden-action="report:render"]')) {
-                detail.id = trigger.dataset.edenReportId;
+                e.preventDefault();
+                const reportId = trigger.dataset.edenReportId;
+                const reportTitle = trigger.textContent;
+                detail.id = reportId;
+
+                this.updateRoute(reportId, reportTitle);
+                
             }
 
             this.dispatchTriggerRequest(action, detail);
@@ -85,6 +91,16 @@ const EdenApp = {
             strategies[subject]();
         }
     },
+
+    updateRoute(pageId, title) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("page", pageId);
+        window.history.pushState({}, '', url.toString());
+        
+        document.title = `${title} | TES - Totalizador de Estatística de Saúde`;
+    }
+
+
 }
 
 EdenApp.init();

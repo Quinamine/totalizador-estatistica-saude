@@ -131,6 +131,7 @@
         --eden-comp-button-color: oklch(from var(--eden-sys-primary-content-100) 0.75 c h);
         --eden-comp-button-justify-content: flex-start;
         --eden-comp-button-padding-x: var(--eden-sys-space-600);
+        --eden-link-color-hover: var(--eden-comp-button-color);
 
         width: 100%;
     }

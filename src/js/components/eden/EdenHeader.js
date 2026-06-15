@@ -22,6 +22,14 @@ export const EdenHeader = {
             const { isScrollingDown } = detail;
             this.toggleStaticMode(isScrollingDown);
         });
+
+        window.addEventListener('load', () => {
+            const url = new URL(window.location.href);
+            const reportId = url.searchParams.get("page");
+            if(!reportId) return;        
+            
+            this.updateTitle(reportId);
+        });
     },
 
     setupObserver() {

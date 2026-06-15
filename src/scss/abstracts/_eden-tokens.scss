@@ -170,7 +170,6 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
 
     --eden-sys-link-color: oklch(60% 0.18 var(--eden-ref-primary-hue));
     --eden-sys-link-color-hover: oklch(from var(--eden-sys-link-color) calc(l - 0.10) calc(c + 0.02) h);
-    --eden-sys-link-color-active: oklch(from var(--eden-sys-link-color) calc(l - 0.20) calc(c + 0.04) h);
 
     --eden-sys-action-size-base: var(--eden-sys-space-700);
     --eden-sys-action-icon-size-base: var(--eden-sys-space-500);

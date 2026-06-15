@@ -1,4 +1,3 @@
-import { EDEN_SIDEBAR } from "../../constants/eden-sidebar.config.js";
 import { EdenMessenger } from "../../utils/EdenMessenger.js";
 
 export const EdenSidebar = {
@@ -6,7 +5,6 @@ export const EdenSidebar = {
 
     init() {
         this.cacheElements();
-        this.renderMenu();
         this.bindEvents();
     },
 
@@ -37,30 +35,6 @@ export const EdenSidebar = {
             }
         });
     },
-    
-    renderMenu() {
-        const htmlMenu = EDEN_SIDEBAR.map(category => `
-        <div class="eden-c-sidebar__accordion" data-eden-js="sidebar-accordion">
-            <button class="eden-c-button eden-c-sidebar__accordion-header" data-eden-internal-action="sidebar-accordion:toggle">
-            ${category.categoryTitle}
-            <span class="eden-c-sidebar__chevron">❯</span>
-            </button>
-            <div class="eden-c-sidebar__accordion-body">
-            <ul class="eden-c-sidebar__list">
-                ${category.itens.map(item => `
-                <li>
-                    <button class="eden-c-button eden-c-sidebar__item" data-eden-action="report:render" data-eden-report-id="${item.id}">
-                    ${item.name}
-                    </button>
-                </li>
-                `).join('')}
-            </ul>
-            </div>
-        </div>
-        `).join('');
-
-        this.nav.innerHTML = htmlMenu;
-    },
 
     requestVisibility(action) {
         this.notify('sidebar', 'visibility-request', { action });
@@ -69,5 +43,7 @@ export const EdenSidebar = {
     toggleAccordion(accordion) {
         const shouldOpen = !accordion.matches('.is-open');
         accordion.classList.toggle('is-open', shouldOpen);
-    }
+    },
+
+    
 }
