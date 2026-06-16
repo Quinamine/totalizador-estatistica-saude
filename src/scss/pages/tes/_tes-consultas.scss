@@ -2,19 +2,26 @@
 
 .tes-consultas {
     --tes-comp-sheet-width: 1352px;
-    --_cell-width: 50px;
-    --_cell-height: var(--eden-sys-space-500);
-    --_form-sidebar-width: 114px;
-    --_border-section-divider-color: #{$eden-ref-neutral-0};
+
+    --_thead-separator-size: 4px;
+    --_thead-separator-color: var(--eden-sys-primary);
+
+    @media print {
+        --tes-cell-height: var(--eden-sys-space-500);
+        --_thead-separator-size: 8px;
+    }
 
     &__header {
         display: grid;
-        grid-template-columns: 254px 835px 183px;
-        gap: var(--eden-sys-space-400);
+        grid-template-columns: 338px 750px 1fr;
+        grid-column-gap: var(--eden-sys-space-400);
+
+        @media print {
+            margin-bottom: calc(var(--eden-sys-thead-spacer-height) * -1);
+        }
     }
 
     &__title {
-        justify-self: end;
         display: flex;
         align-items: flex-end;
         gap: var(--eden-sys-space-150);
@@ -29,9 +36,8 @@
     &__title-input {
         --eden-comp-input-font-size: var(--eden-sys-font-size-400);
 
-        width: 322px;
-        border-bottom: 1px solid var(--eden-sys-border-color);
         line-height: var(--eden-sys-line-height-flat);
+        flex-grow: 1;
     }
 
     &__model-info {
@@ -44,14 +50,16 @@
         flex: 1;
         display: flex;
         align-items: center;
+        justify-content: center;
         padding-block-start: var(--eden-sys-space-150);
     }
 
     &__model-code {
         font-size: var(--eden-sys-font-size-200);
         font-weight: var(--eden-sys-font-weight-bold);
+        white-space: nowrap;
     }
-    
+
     &__serial {
         font-size: var(--eden-sys-font-size-500);
         font-weight: var(--eden-sys-font-weight-bold);
@@ -61,39 +69,60 @@
         border-bottom: thin dotted var(--eden-sys-border-color);
     }
 
+    &__month-container {
+        display: flex;
+        padding-inline-end: var(--eden-sys-space-100);
+    }
+
     &__head {
-        display: grid;
-        grid-template-columns: 240px repeat(19, var(--_cell-width));
-        grid-template-rows: repeat(3, var(--_cell-height));
+        border-block-end: var(--_thead-separator-size) solid var(--_thead-separator-color);
+
+        @media print {
+            border-block-end: none;
+
+            tr:last-child {
+                --tes-cell-height: calc(var(--eden-sys-space-500) + var(--_thead-separator-size));
+
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: var(--_thead-separator-size);
+                    background-color: var(--_thead-separator-color);
+                }
+            }
+        }
+    }
+
+    &__body td:first-child,
+    .--row-category {
         text-align: center;
-        margin-inline-start: var(--_form-sidebar-width);
-
-        tr th:nth-child(n+2) {
-            font-weight: var(--eden-sys-font-weight-bold);
-        }
     }
 
-    &__body {
-        border-top: 12px solid var(--_border-section-divider-color);
-        display: grid;
-        grid-template-columns: 24px 90px 80px 160px repeat(19, var(--_cell-width));
-        grid-template-rows: repeat(53, var(--_cell-height));
+    &__body td:first-child,
+    &__col-numbers th:nth-child(n + 3) {
+        background-color: var(--eden-sys-primary);
+        color: var(--eden-sys-primary-content);
+        font-weight: var(--eden-sys-font-weight-bold);
     }
 
-    th, td {
-        @include tablet {
-            &.--row-label {
-                position: sticky;
-                left: 0;
-                background-color: var(--eden-sys-surface-100);
-                z-index: calc(var(--eden-sys-zi-sticky) - 1);
-                border-inline-start: 1px solid var(--eden-sys-border-color);
-            }
+    &__body td:first-child {
+        border-block-color: var(--eden-sys-border-color-muted);
+    }
 
-            &.--row-category {
-                border-inline-end: none;
-            }
-        }
+    &__body tr:last-child td:first-child {
+        border-block-end-color: var(--eden-sys-border-color);
+    }
+
+    &__col-numbers th:nth-child(n + 4):not(:last-child) {
+        border-inline-color: var(--eden-sys-border-color-muted);
+    }
+
+    &__col-numbers th:nth-child(3) {
+        border-inline-end-color: var(--eden-sys-border-color-muted);
     }
 }
-

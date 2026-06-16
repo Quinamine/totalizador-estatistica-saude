@@ -1,4 +1,4 @@
-@use '../../abstracts' as *;
+@use '../abstracts' as *;
 
 @media print {
     html,
@@ -11,14 +11,11 @@
     body {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        color: #000000;
     }
 
     main {
         padding: 0 !important;
-    }
-
-    input[readonly] {
-        background-color: #fff !important;
     }
     
     .eden-u-hide-on-print {

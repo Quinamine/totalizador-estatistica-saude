@@ -24,10 +24,6 @@
     @include desktop {
         --_translate-y: 0;
 
-        .has-eden-toolbar & {
-            --_translate-y: 0;
-        }
-
         border: none;
         box-shadow: none;
         padding: 0;
@@ -44,6 +40,10 @@
         --_bottom-offset: calc(var(--eden-sys-toolbar-height) + var(--eden-sys-keyboard-height));
         
         --_translate-y: calc(var(--_bottom-offset) * -1);
+
+        @include desktop {
+            --_translate-y: 0;
+        }
     }
 
     .has-eden-toolbar.has-keyboard-open & {

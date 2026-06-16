@@ -6,11 +6,10 @@
 
     --_direction: column;
     --_text-align: center;
-
+    
     display: flex;
     flex-direction: var(--_direction);
     align-items: center;
-    justify-content: center;
     text-align: var(--_text-align);
 
     &--horizontal {
@@ -31,4 +30,3 @@
         flex-direction: column;
     }
 }
-

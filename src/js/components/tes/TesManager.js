@@ -91,6 +91,22 @@ export const TesManager = {
         document.addEventListener('eden:trigger:report-share-request', () => {
             this.share();
         });
+
+        window.addEventListener("keydown", (e) => {
+            if((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'p')) {
+                e.preventDefault();
+
+                const isReportRendered = this.reportWorkspace.querySelector('[data-eden-js="tes-report"]'); 
+                if(isReportRendered) {
+                    this.print();
+                } else {
+                    EdenToast.render({ 
+                        message: `Nenhuma ficha aberta. Selecione uma ficha para imprimir.`, 
+                        type: 'warning' 
+                    });
+                }
+            }
+        })
     },
 
     updateRelatedTotals(field) {
@@ -235,6 +251,33 @@ export const TesManager = {
     },
 
     print() {
+        // Update print date
+        const now = new Date();
+
+        const date = now.toLocaleDateString('pt-MZ', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+        const hour = now.toLocaleTimeString('pt-MZ', {
+            hour: '2-digit',
+            minute: '2-digit',
+        });
+
+        const existingPageFooter = document.querySelector('.tes-c-page-footer');
+        if(existingPageFooter) {
+            existingPageFooter.remove();
+        }
+
+        const pageFooter = document.createElement('div');
+        pageFooter.classList.add('tes-c-page-footer');
+        pageFooter.innerHTML = `<span class="tes-c-page-footer__date">${date} ${hour}</span>
+                                <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`
+
+        this.reportWorkspace.appendChild(pageFooter);
+        const footerHeight = pageFooter.offsetHeight;
+        document.documentElement.style.setProperty('--eden-sys-page-footer-height', `${footerHeight}px`);
+
         const isMobile = window.innerWidth < 1024;
         if(isMobile) {
             const spinnerHTML = EdenSpinner('Gerando PDF...');
@@ -252,6 +295,7 @@ export const TesManager = {
         }
 
         window.print();
+        pageFooter.remove();
     },
 
     async share() {

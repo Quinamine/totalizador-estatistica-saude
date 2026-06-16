@@ -64,7 +64,7 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
     // Surfaces
     --eden-sys-surface: #{$eden-ref-neutral-95-01};
     --eden-sys-surface-100: #{$eden-ref-neutral-100};
-    
+
     --eden-sys-surface-content: #{$eden-ref-neutral-30-03};
     --eden-sys-surface-content-100: #{$eden-ref-neutral-45-02};
     --eden-sys-surface-content-200: #{$eden-ref-neutral-60-02};
@@ -76,16 +76,26 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
     --eden-sys-info: oklch(60% 0.12 var(--eden-ref-info-hue));
 
     // Font Sizes 
-    --eden-sys-font-size-050: 0.625rem;  /* 10px */
-    --eden-sys-font-size-100: 0.75rem;   /* 12px - */
-    --eden-sys-font-size-200: 0.875rem;  /* 14px - */
-    --eden-sys-font-size-300: 1rem;      /* 16px - */
-    --eden-sys-font-size-400: 1.125rem;  /* 18px - */
-    --eden-sys-font-size-500: 1.25rem;   /* 20px - */
-    --eden-sys-font-size-600: 1.5rem;    /* 24px - */
-    --eden-sys-font-size-700: 2rem;      /* 32px - */
-    --eden-sys-font-size-800: 2.5rem;   /* 40px - */
-    --eden-sys-font-size-900: 3rem;      /* 48px - */
+    --eden-sys-font-size-050: 0.625rem;
+    /* 10px */
+    --eden-sys-font-size-100: 0.75rem;
+    /* 12px - */
+    --eden-sys-font-size-200: 0.875rem;
+    /* 14px - */
+    --eden-sys-font-size-300: 1rem;
+    /* 16px - */
+    --eden-sys-font-size-400: 1.125rem;
+    /* 18px - */
+    --eden-sys-font-size-500: 1.25rem;
+    /* 20px - */
+    --eden-sys-font-size-600: 1.5rem;
+    /* 24px - */
+    --eden-sys-font-size-700: 2rem;
+    /* 32px - */
+    --eden-sys-font-size-800: 2.5rem;
+    /* 40px - */
+    --eden-sys-font-size-900: 3rem;
+    /* 48px - */
 
     // Font weight
     --eden-sys-font-weight-regular: 400;
@@ -94,9 +104,9 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
     --eden-sys-font-weight-bold: 700;
 
     // Line Height
-    --eden-sys-line-height-flat: 1; 
-    --eden-sys-line-height-heading: 1.25; 
-    --eden-sys-line-height-body: 1.5; 
+    --eden-sys-line-height-flat: 1;
+    --eden-sys-line-height-heading: 1.25;
+    --eden-sys-line-height-body: 1.5;
 
     // Spacing scale
     --eden-sys-space-050: #{$eden-ref-space-02};
@@ -108,7 +118,7 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
     --eden-sys-space-500: #{$eden-ref-space-24};
     --eden-sys-space-600: #{$eden-ref-space-32};
     --eden-sys-space-700: #{$eden-ref-space-48};
-    
+
     // Border-radius
     --eden-sys-radius-100: 4px;
     --eden-sys-radius-200: 8px;
@@ -155,7 +165,7 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
 
     --eden-sys-overlay: oklch(10% 0.08 var(--eden-ref-primary-hue) / 0.5);
     --eden-sys-overlay-deep: oklch(10% 0.08 var(--eden-ref-primary-hue) / 0.7);
-    
+
     --eden-sys-heading-spacing-y-start: var(--eden-sys-space-600);
     --eden-sys-heading-spacing-y-end: var(--eden-sys-space-300);
 
@@ -189,7 +199,33 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
         --eden-sys-page-margin: var(--eden-sys-space-500);
     }
 }
- 
+
+@media print {
+    :root {
+        --eden-sys-primary: #000000;
+        --eden-sys-primary-content: #ffffff;
+        --eden-sys-primary-content-100: #ffffff;
+        --eden-sys-surface: #ffffff;
+        --eden-sys-surface-100: #ffffff;
+        --eden-sys-surface-content: #000000;
+        --eden-sys-surface-content-100: #333333;
+        --eden-sys-surface-content-200: #333333;
+        --eden-sys-content-max-width: 100%;
+        --eden-sys-border-color: #000000;
+        --eden-sys-link-color: #333333;
+
+        --eden-sys-page-margin-top: 0.5cm;
+        --eden-sys-page-margin-right: 0.8cm;
+        --eden-sys-page-margin-bottom: 0.8cm;
+        --eden-sys-page-margin-portrait-left: 1.5cm;
+        --eden-sys-page-margin-landscape-left: 0.8cm;
+        --eden-sys-page-content-offset-top: 1cm;
+        --eden-sys-page-footer-height: 20px;
+        --eden-sys-thead-spacer-height: 1cm;
+        --eden-sys-tfoot-spacer-height: calc(var(--eden-sys-page-margin-bottom) + var(--eden-sys-page-footer-height));
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     :root {
         --eden-sys-motion-default: linear;
@@ -225,9 +261,9 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
 
         --eden-sys-shadow-100: 0 2px 4px rgba(0, 0, 0, 0.1);
         --eden-sys-shadow-100-inverted: 0 -2px 4px rgba(0, 0, 0, 0.1);
-     
+
         --eden-sys-border-color: #cdd9e4;
-        
+
         --eden-sys-overlay: rgba(0, 0, 0, 0.5);
         --eden-sys-overlay-deep: rgba(0, 0, 0, 0.7);
     }

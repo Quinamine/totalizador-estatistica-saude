@@ -16,12 +16,12 @@
     }
 }
 
-.eden-u-border-bottom-subtle {
-    border-bottom: 1px solid oklch(from currentColor l c h / 20%)
-}
-
 .eden-u-border-bottom {
     border-bottom: 1px solid var(--eden-sys-border-color) !important;
+}
+
+.eden-u-border-none {
+    border: none !important;
 }
 
 .eden-u-text-upper {
@@ -30,6 +30,10 @@
 
 .eden-u-text-bold {
     font-weight: var(--eden-sys-font-weight-bold) !important;
+}
+
+.eden-u-text-regular {
+    font-weight: var(--eden-sys-font-weight-regular) !important;
 }
 
 .eden-u-text-center {
@@ -50,14 +54,3 @@
     white-space: nowrap;
 }
 
-@for $index from 1 through 24 {
-    .eden-u-grid-colspan-#{$index} {
-        grid-column: span #{$index};
-    }
-}
-
-@for $index from 1 through 35 {
-    .eden-u-grid-rowspan-#{$index} {
-        grid-row: span #{$index};
-    }
-}
