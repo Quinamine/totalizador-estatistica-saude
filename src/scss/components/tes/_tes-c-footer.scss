@@ -1,0 +1,48 @@
+@use '../../abstracts' as *;
+
+.tes-c-footer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas: "left center right";
+    grid-column-gap: var(--eden-sys-space-500);
+    grid-row-gap: var(--eden-sys-space-400);
+    padding-block: var(--eden-sys-space-400);
+
+    @media print {
+        margin-top: calc(var(--eden-sys-tfoot-spacer-height) * -1);
+    }
+
+    &--vertical {
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "left . ."
+            "center right ."
+    }
+
+    &__area {
+        display: flex;
+        align-items: center;
+    }
+
+    &__area--left {
+        grid-area: left;
+    }
+
+    &__area--center {
+        grid-area: center;
+    }
+
+    &__area--right {
+        grid-area: right;
+    }
+
+    &__input {
+        flex: 1;
+        max-width: 385px;
+    }
+
+    &__input--date {
+        max-width: 150px;
+    }
+}
+

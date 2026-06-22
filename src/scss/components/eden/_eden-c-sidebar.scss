@@ -1,12 +1,12 @@
-@use "../abstracts/" as *;
+@use '../../abstracts' as *;
 
 .eden-c-sidebar {
-    --eden-comp-button-color: var(--eden-sys-on-primary-variant);
+    --eden-comp-button-color: var(--eden-sys-primary-content-100);
     --eden-comp-button-bg-hover: oklch(from currentColor l c h / 10%);
     --eden-comp-button-bg-active: oklch(from currentColor l c h / 6%);
 
     // Private tokens
-    --_width: 280px;
+    --_width: var(--eden-sys-sidebar-width);
     --_translate-x: -100%;
     --_bg-default: var(--eden-sys-primary);
     --_bg-sunken: oklch(from var(--_bg-default) calc(l - .03) c h);
@@ -30,7 +30,7 @@
     width: var(--_width);
     height: 100vh;
     background-color: var(--_bg-default);
-    color: var(--eden-sys-on-primary);
+    color: var(--eden-sys-primary-content);
     transform: translateX(var(--_translate-x));
     transition: transform var(--eden-sys-duration-slow) var(--eden-sys-motion-fluid);
 
@@ -53,12 +53,14 @@
     .eden-c-button {
         @include can-hover {
             &:hover {
-                --eden-comp-button-color: var(--eden-sys-on-primary);
+                --eden-comp-button-color: var(--eden-sys-primary-content);
             }
         }
     }
 
     &__action-close {
+        --eden-comp-button-bg-hover: transparent;
+        --eden-comp-button-bg-active: transparent;
         --eden-comp-button-padding-y: 0;
         --eden-comp-button-padding-x: 0;
         --eden-comp-button-border-radius: var(--eden-sys-radius-full);
@@ -66,13 +68,19 @@
         position: absolute;
         right: var(--_action-close-alignment-offset-x);
         top: var(--_action-close-alignment-offset-y);
-        width: var(--eden-sys-spacing-xl);
+        width: var(--eden-sys-space-700);
         opacity: 0.7;
 
         @include can-hover {
-            &:hover {
+            &:hover .eden-c-icon {
                 opacity: 1;
+                background-color: var(--eden-sys-brand-icon-bg);
+                border-radius: 50%;
             }
+        }
+
+        &:active .eden-c-icon {
+            opacity: 0.7;
         }
     }
 
@@ -82,17 +90,17 @@
 
         @include desktop {
             &::-webkit-scrollbar {
-                width: var(--eden-sys-spacing-sm);
+                width: var(--eden-sys-space-300);
             }
 
             &::-webkit-scrollbar-track {
                 background-color: var(--_scrollbar-track-color);
-                border-radius: var(--eden-sys-radius-lg);
+                border-radius: var(--eden-sys-radius-300);
             }
 
             &::-webkit-scrollbar-thumb {
                 background-color: var(--_scrollbar-thumb-color);
-                border-radius: var(--eden-sys-radius-xl);
+                border-radius: var(--eden-sys-radius-400);
                 border: 2px solid var(--_scrollbar-track-color);
             }
 
@@ -118,11 +126,12 @@
     }
 
     &__item {
-        --eden-comp-button-font-size: var(--eden-sys-text-xs);
-        --eden-comp-button-font-weight: var(--eden-sys-text-regular);
-        --eden-comp-button-color: oklch(from var(--eden-sys-on-primary-variant) 0.75 c h);
+        --eden-comp-button-font-size: var(--eden-sys-font-size-100);
+        --eden-comp-button-font-weight: var(--eden-sys-font-weight-regular);
+        --eden-comp-button-color: oklch(from var(--eden-sys-primary-content-100) 0.75 c h);
         --eden-comp-button-justify-content: flex-start;
-        --eden-comp-button-padding-x: var(--eden-sys-spacing-lg);
+        --eden-comp-button-padding-x: var(--eden-sys-space-600);
+        --eden-link-color-hover: var(--eden-comp-button-color);
 
         width: 100%;
     }
@@ -133,7 +142,7 @@
 
             &.is-open {
                 .eden-c-sidebar__accordion-body {
-                    padding-bottom: var(--eden-sys-spacing-xl);
+                    padding-bottom: var(--eden-sys-space-700);
                 }
             }
         }
@@ -144,7 +153,7 @@
             }
 
             .eden-c-sidebar__accordion-header {
-                --eden-comp-button-color: var(--eden-sys-on-primary);
+                --eden-comp-button-color: var(--eden-sys-primary-content);
             }
 
             .eden-c-sidebar__chevron {

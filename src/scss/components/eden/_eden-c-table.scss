@@ -1,0 +1,18 @@
+@use '../../abstracts' as *;
+
+.eden-c-table {
+    margin-block-start: var(--eden-sys-space-300);
+    margin-block-end: var(--eden-sys-space-400);
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    th, td {
+        padding: var(--eden-sys-space-100);
+        vertical-align: middle;
+        border: 1px solid var(--eden-sys-border-color);
+    }
+
+    th {
+        font-weight: var(--eden-sys-font-weight-bold);
+    }
+}

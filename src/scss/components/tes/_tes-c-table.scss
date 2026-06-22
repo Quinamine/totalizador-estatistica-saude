@@ -1,0 +1,56 @@
+@use '../../abstracts' as *;
+
+.tes-c-table {
+    width: 100%;
+    margin-block: var(--eden-sys-space-200);
+
+    th,
+    td {
+        padding: 0;
+        height: var(--tes-cell-height, var(--eden-sys-space-600));
+
+        &.--row-label {
+            padding-inline-start: var(--eden-sys-space-100);
+            line-height: var(--eden-sys-line-height-heading);
+
+            @include tablet {
+                position: sticky;
+                left: 0;
+                background-color: var(--eden-sys-surface-100);
+                z-index: calc(var(--eden-sys-zi-sticky) - 1);
+                border-inline: 1px solid var(--eden-sys-border-color);
+            }
+        }
+    }
+
+    input {
+        height: 100%;
+    }
+
+    &__thead-spacer {
+        display: none;
+
+        @media print {
+            display: table-row;
+            height: var(--eden-sys-thead-spacer-height);
+
+            th {
+                border: none;
+            }
+        }
+    }
+
+
+    &__tfoot-spacer {
+        display: none;
+
+        @media print {
+            display: table-footer-group;
+            height: var(--eden-sys-tfoot-spacer-height);
+
+            td {
+                border: none;
+            }
+        }
+    }
+}

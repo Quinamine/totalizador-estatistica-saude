@@ -1,0 +1,24 @@
+@use '../../abstracts' as *;
+
+.eden-c-hamburger {
+    --eden-comp-button-border-radius: var(--eden-sys-radius-full);
+    --eden-comp-button-padding-x: 0;
+    --eden-comp-button-padding-y: 0;
+    
+    width: var(--eden-sys-action-size-base);
+
+    &__icon {
+        width: var(--eden-sys-action-icon-size-base);
+        height: 0.875rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__bar {
+        width: 100%;
+        height: 2px;
+        background: var(--eden-sys-primary);
+        border-radius: var(--eden-sys-radius-100);
+    }
+}

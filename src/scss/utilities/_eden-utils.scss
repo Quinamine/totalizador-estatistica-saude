@@ -16,6 +16,41 @@
     }
 }
 
-.eden-u-border-bottom-subtle {
-    border-bottom: 1px solid oklch(from currentColor l c h / 20%)
+.eden-u-border-bottom {
+    border-bottom: 1px solid var(--eden-sys-border-color) !important;
 }
+
+.eden-u-border-none {
+    border: none !important;
+}
+
+.eden-u-text-upper {
+    text-transform: uppercase;
+}
+
+.eden-u-text-bold {
+    font-weight: var(--eden-sys-font-weight-bold) !important;
+}
+
+.eden-u-text-regular {
+    font-weight: var(--eden-sys-font-weight-regular) !important;
+}
+
+.eden-u-text-center {
+    text-align: center !important;
+}
+
+.eden-u-text-vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: inline-block;
+    text-align: center;
+    font-weight: var(--eden-sys-font-weight-bold);
+    letter-spacing: .5px;
+    line-height: var(--eden-sys-line-height-heading);
+}
+
+.eden-u-text-nowrap {
+    white-space: nowrap;
+}
+

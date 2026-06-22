@@ -1,0 +1,133 @@
+@use '../../abstracts' as *;
+
+.eden-toast-container {
+    --_spacing-top: var(--eden-sys-page-margin);
+    --_spacing-right: var(--eden-sys-page-margin);
+
+    @include screen-above-layout-width {
+        --_spacing-right: calc(100vw - var(--eden-sys-layout-max-width))
+    }
+
+    position: fixed;
+    top: calc(var(--eden-sys-layout-header-height) + var(--_spacing-top));
+    right: var(--_spacing-right);
+    width: min(100% - var(--eden-sys-page-margin) * 2, 350px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--eden-sys-space-300);
+    z-index: var(--eden-sys-zi-toast);
+    pointer-events: none;
+}
+
+.eden-c-toast {
+    --eden-comp-button-font-size: var(--eden-sys-font-size-500);
+    --eden-comp-button-color: inherit;
+    --eden-comp-button-padding-x: var(--eden-sys-space-400);
+    --eden-comp-button-padding-y: 0;
+
+    --_border-left-color: var(--eden-sys-border-color-subtle);
+    --_bg: var(--eden-sys-surface-100);
+    --_transition-motion: cubic-bezier(0.4, 0, 0.2, 1);
+    --_transition-duration: var(--eden-sys-duration-slow);
+
+    min-height: 48px;
+    width: 100%;
+    border-radius: var(--eden-sys-radius-200);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--eden-sys-space-100);
+    background-color: var(--_bg);
+    border: 1px solid var(--eden-sys-border-color-subtle);
+    border-inline-start: 4px solid var(--_border-left-color);
+    box-shadow: var(--eden-sys-shadow-200);
+    pointer-events: auto;
+    
+    animation: edenToastIn var(--_transition-duration) var(--_transition-motion) forwards;
+
+    &--exit {
+        animation: edenToastOut var(--_transition-duration) var(--_transition-motion) forwards;
+    }
+
+    &--pulse {
+        animation: edenToastPulse var(--_transition-duration) var(--eden-sys-motion-fluid);
+    }
+
+    &--success {
+        --_bg: oklch(0.98 0.02 var(--eden-ref-success-hue));
+        --_border-left-color: var(--eden-sys-success);
+    }
+
+    &--error {
+        --_bg: oklch(0.98 0.02 var(--eden-ref-danger-hue));
+        --_border-left-color: var(--eden-sys-danger);
+    }
+
+    &--warning {
+        --_bg: oklch(0.98 0.03 var(--eden-ref-warning-hue));
+        --_border-left-color: var(--eden-sys-warning);
+    }
+
+    &--info {
+        --_bg: oklch(0.98 0.02 var(--eden-ref-info-hue));
+        --_border-left-color: var(--eden-sys-info);
+    }
+
+    &__content {
+        font-family: inherit;
+        font-size: var(--eden-sys-font-size-200);
+        color: var(--eden-sys-surface-content);
+        padding: var(--eden-sys-space-400) 0 
+                var(--eden-sys-space-300) var(--eden-sys-space-300);
+        line-height: var(--eden-sys-line-height-heading);
+    }
+
+    &__close {
+        align-self: flex-start;
+        opacity: 0.5;
+
+        @include can-hover {
+            &:hover { opacity: 1; }
+        }
+    }
+}
+
+@keyframes edenToastIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes edenToastOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+@keyframes edenToastPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+        filter: brightness(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+

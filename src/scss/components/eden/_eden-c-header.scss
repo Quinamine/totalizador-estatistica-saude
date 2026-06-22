@@ -1,0 +1,103 @@
+@use '../../abstracts' as *;
+
+.eden-c-header {
+    --_brand-group-gap: var(--eden-sys-space-300);
+
+    background: var(--eden-sys-surface-100);
+    position: sticky;
+    top: 0;
+    z-index: var(--eden-sys-zi-sticky);
+    box-shadow: var(--eden-sys-shadow-100);
+    padding-block: var(--eden-sys-space-200);
+
+    @include mobile-landscape {
+        position: static;
+    }
+
+    &--static {
+        @include mobile {
+            position: static;
+        }
+        
+        .eden-c-header__brand-group {
+            @include mobile {
+                transform: translateY(-100%);
+                transition: transform var(--eden-sys-duration-standard) var(--eden-sys-motion-exit);
+            }
+
+            @include mobile-landscape {
+                transform: none;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--eden-sys-space-300);
+    }
+
+    &__brand-group {
+        display: flex;
+        align-items: center;
+        gap: var(--_brand-group-gap);
+        transition: transform var(--eden-sys-duration-standard) var(--eden-sys-motion-entrance);
+    }
+
+    &__menu-toggle {
+        --eden-comp-button-bg-hover: transparent;
+        --eden-comp-button-bg-active: transparent;
+        --eden-comp-button-justify-content: flex-start;
+
+        flex-shrink: 0;
+        margin-inline-end: calc(var(--_brand-group-gap) * -1);
+
+        &:hover .eden-c-header__toggle-icon {
+            background-color: rgba(0, 0, 0, 0.08);
+            border-radius: 50%;
+        }
+
+        &:active .eden-c-header__toggle-icon {
+            opacity: 0.7;
+        }
+    }
+    
+    &__toggle-icon--show {
+        display: none;
+        @include desktop {
+            display: block;
+        }
+    }
+
+    &__toggle-icon--bars {
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__menu-toggle,
+    &__brand {
+        @include desktop {
+            display: none;
+            transition: opacity var(--eden-sys-duration-standard) var(--eden-sys-motion-entrance), 
+                        display var(--eden-sys-duration-standard) allow-discrete;
+
+            .has-eden-sidebar-closed & {
+                opacity: 1;
+                display: flex;
+
+                 @starting-style {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &__title {
+        --eden-sys-heading-spacing-y-end: 0;
+        --eden-h1-font-size: var(--eden-sys-font-size-300);
+     
+        color: var(--eden-sys-primary);
+    }
+}

@@ -1,0 +1,48 @@
+@use '../../abstracts' as *;
+
+.eden-c-spinner {
+    --_spinner-color: var(--eden-sys-primary);
+    --_track-color: oklch(from var(--_spinner-color) l c h / 10%);
+    --_text-color: var(--eden-sys-surface-content);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--eden-sys-space-300);
+    padding: var(--eden-sys-space-600);
+
+    &--fixed {
+        --_spinner-color: #{$eden-ref-neutral-95-01};
+        --_track-color: oklch(from var(--_spinner-color) l c h / 20%);
+        --_text-color: #{$eden-ref-neutral-95-01};
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--eden-sys-overlay-deep);
+        z-index: var(--eden-sys-zi-blocking);
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+        border: 4px solid var(--_track-color);
+        border-top: 4px solid var(--_spinner-color);
+        border-radius: 50%;
+        animation: spin 1000ms linear infinite;
+    }
+
+    &__text {
+        color: var(--_text-color);
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
