@@ -1,9 +1,9 @@
 @use '../../abstracts' as *;
 
 .eden-c-hamburger {
-    --eden-comp-button-border-radius: var(--eden-sys-radius-full);
-    --eden-comp-button-padding-x: 0;
-    --eden-comp-button-padding-y: 0;
+    --eden-button-border-radius: var(--eden-sys-radius-full);
+    --eden-button-padding-x: 0;
+    --eden-button-padding-y: 0;
     
     width: var(--eden-sys-action-size-base);
 

@@ -1,7 +1,7 @@
 
-export const TesTableLocator = {
+export const EdenCellPositionBar = {
     displayElClasses: {
-        base: 'tes-c-table-locator__label',
+        base: 'eden-c-cell-position-bar__label',
         rowCategoryLabel: '--row-category',
         rowLabel: '--row',
         colLabel: '--col',
@@ -14,16 +14,18 @@ export const TesTableLocator = {
     },
 
     cacheElements() {
-        this.container = document.querySelector('[data-eden-js="table-locator"]')
+        this.container = document.querySelector('[data-eden-js="cell-position-bar"]')
         this.workspace = document.querySelector('[data-eden-js="report-workspace"]');
     },
 
     bindEvents() {
         this.workspace.addEventListener('focusin', (e) => {
-            const tableField = e.target.closest('[data-to-subtotal-x], [data-to-total-x]');
-            if(!tableField) return;
+            const isInput = e.target.closest('input:not([readonly])');
+            const tableCell = e.target.closest('td');
 
-            this.updateTableLocator(tableField);
+            if (!isInput || !tableCell) return;
+
+            this.updateTableLocator(e.target);
         });
 
         this.workspace.addEventListener('focusout', (e) => this.clearLabels());
@@ -50,8 +52,8 @@ export const TesTableLocator = {
 
     updateTableLocator(field) {
         const labels = this.getCellCoordinates(field);
-        const existingLabels = Object.entries(labels).filter( ([, label ]) => {
-            return label !== null && label.textContent.trim() !== '' 
+        const existingLabels = Object.entries(labels).filter(([, label]) => {
+            return label !== null && label.textContent.trim() !== ''
         });
 
         this.clearLabels();
@@ -61,7 +63,7 @@ export const TesTableLocator = {
             span.className = baseClass;
 
             const modifierSuffix = this.displayElClasses[key];
-            if(modifierSuffix) {
+            if (modifierSuffix) {
                 span.classList.add(`${baseClass}${modifierSuffix}`);
                 span.textContent = label.textContent.replace(/\s+/g, ' ').trim();
                 span.title = span.textContent;

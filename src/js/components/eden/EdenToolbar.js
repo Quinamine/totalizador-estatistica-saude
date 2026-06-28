@@ -1,6 +1,6 @@
 import { EdenMessenger } from "../../utils/EdenMessenger.js";
 
-export const TesToolbar = {
+export const EdenToolbar = {
     ...EdenMessenger,
 
     init() {

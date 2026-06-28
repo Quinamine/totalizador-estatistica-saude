@@ -1,4 +1,4 @@
-<div class="tes-c-sheet tes-c-sheet--landscape tes-consultas" data-eden-js="tes-report">
+<div class="eden-c-sheet eden-c-sheet--landscape tes-consultas" data-eden-js="tes-report">
     <header class="tes-consultas__header">
         <div class="tes-c-identity tes-c-identity--horizontal tes-c-identity--text-uppercase">
             <figure class="tes-c-identity__emblem-frame">
@@ -10,8 +10,8 @@
             </div>
         </div>
         <div class="tes-consultas__title">
-            <h1 class="tes-consultas__title-header">Resumo Mensal da US - Consultas <sup class="tes-consultas__title-index">(1)</sup></label> </h1>
-            <input type="text" name="health-unit" id="health-unit" placeholder="Nome da Unidade Sanitária" class="tes-consultas__title-input">
+            <h1>Resumo Mensal da US - Consultas <sup class="tes-consultas__title-index">(1)</sup></label> </h1>
+            <input type="text" name="health-unit" id="health-unit" placeholder="Nome da Unidade Sanitária">
         </div>
         <div class="tes-consultas__model-info">
             <div class="tes-consultas__model">
@@ -23,7 +23,7 @@
             </datalist>
         </div>
     </header>
-    <table class="eden-c-table tes-c-table" data-eden-row-label-col-index="1">
+    <table class="eden-c-table" data-eden-row-label-col-index="1">
         <colgroup>
             <col style="width: 24px">
             <col style="width: 90px">
@@ -32,80 +32,80 @@
             <col span="19" style="width: 50px">
         </colgroup>
         <thead class="tes-consultas__head">
-            <tr class="tes-c-table__thead-spacer">
-                <th colspan="23"></th>
+            <tr class="eden-c-table__thead-spacer">
+                <td colspan="23"></td>
             </tr>
             <tr class="tes-consultas__col-numbers">
-                <th colspan="2" rowspan="3" class="eden-u-border-none"></th>
-                <th colspan="2" class="eden-u-border-none eden-u-text-regular">
+                <td colspan="2" rowspan="3" class="eden-u-border-none"></td>
+                <td colspan="2" class="eden-u-border-none eden-u-text-regular eden-u-padding-none">
                     <div class="tes-consultas__month-container">
                         <label for="month">Mês:</label>
                         <input type="text" name="month" id="month" list="datalist-months">
                         <datalist id="datalist-months"></datalist>
                     </div>
-                </th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th>8</th>
-                <th>9</th>
-                <th>10</th>
-                <th>11</th>
-                <th>12</th>
-                <th>13</th>
-                <th>14</th>
-                <th>15</th>
-                <th>16</th>
-                <th>17</th>
-                <th>18</th>
-                <th>19</th>
+                </td>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+                <th scope="col">6</th>
+                <th scope="col">7</th>
+                <th scope="col">8</th>
+                <th scope="col">9</th>
+                <th scope="col">10</th>
+                <th scope="col">11</th>
+                <th scope="col">12</th>
+                <th scope="col">13</th>
+                <th scope="col">14</th>
+                <th scope="col">15</th>
+                <th scope="col">16</th>
+                <th scope="col">17</th>
+                <th scope="col">18</th>
+                <th scope="col">19</th>
             </tr>
             <tr>
-                <th colspan="2" class="--row-label">Faixas Etárias</th>
-                <th colspan="2" data-eden-col-label="c1 c2">0 - 11 meses</th>
-                <th colspan="2" data-eden-col-label="c3 c4">1 - 4 anos</th>
-                <th colspan="2" data-eden-col-label="c5 c6">5 - 14 anos</th>
-                <th colspan="2" class="eden-u-text-upper" >Subtotal</th>
-                <th colspan="2" data-eden-col-label="c9 c10">15 - 24 anos</th>
-                <th colspan="2" data-eden-col-label="c11 c12">25 - 59 anos</th>
-                <th colspan="2" data-eden-col-label="c13 c14">≥ 60 anos</th>
-                <th colspan="2" class="eden-u-text-upper">Subtotal</th>
-                <th colspan="2" class="eden-u-text-upper">Total</th>
-                <th rowspan="2" class="eden-u-text-upper">Total Geral</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Faixas Etárias</th>
+                <th scope="colgroup" colspan="2" data-eden-col-label="c1 c2">0 - 11 meses</th>
+                <th scope="colgroup" colspan="2" data-eden-col-label="c3 c4">1 - 4 anos</th>
+                <th scope="colgroup" colspan="2" data-eden-col-label="c5 c6">5 - 14 anos</th>
+                <th scope="colgroup" colspan="2" class="eden-u-text-upper" >Subtotal</th>
+                <th scope="colgroup" colspan="2" data-eden-col-label="c9 c10">15 - 24 anos</th>
+                <th scope="colgroup" colspan="2" data-eden-col-label="c11 c12">25 - 59 anos</th>
+                <th scope="colgroup" colspan="2" data-eden-col-label="c13 c14">≥ 60 anos</th>
+                <th scope="colgroup" colspan="2" class="eden-u-text-upper">Subtotal</th>
+                <th scope="colgroup" colspan="2" class="eden-u-text-upper">Total</th>
+                <th scope="col" rowspan="2" class="eden-u-text-upper">Total Geral</th>
             </tr>
-            <tr>
-                <th colspan="2" class="--row-label">Sexo</th>
-                <th data-eden-complementary-label="c1">F</th>
-                <th data-eden-complementary-label="c2">M</th>
-                <th data-eden-complementary-label="c3">F</th>
-                <th data-eden-complementary-label="c4">M</th>
-                <th data-eden-complementary-label="c5">F</th>
-                <th data-eden-complementary-label="c6">M</th>
-                <th>F</th>
-                <th>M</th>
-                <th data-eden-complementary-label="c9">F</th>
-                <th data-eden-complementary-label="c10">M</th>
-                <th data-eden-complementary-label="c11">F</th>
-                <th data-eden-complementary-label="c12">M</th>
-                <th data-eden-complementary-label="c13">F</th>
-                <th data-eden-complementary-label="c14">M</th>
-                <th>F</th>
-                <th>M</th>
-                <th>F</th>
-                <th>M</th>
+            <tr class="tes-consultas__row--border-bottom-none">
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Sexo</th>
+                <th scope="col" data-eden-complementary-label="c1">F</th>
+                <th scope="col" data-eden-complementary-label="c2">M</th>
+                <th scope="col" data-eden-complementary-label="c3">F</th>
+                <th scope="col" data-eden-complementary-label="c4">M</th>
+                <th scope="col" data-eden-complementary-label="c5">F</th>
+                <th scope="col" data-eden-complementary-label="c6">M</th>
+                <th scope="col">F</th>
+                <th scope="col">M</th>
+                <th scope="col" data-eden-complementary-label="c9">F</th>
+                <th scope="col" data-eden-complementary-label="c10">M</th>
+                <th scope="col" data-eden-complementary-label="c11">F</th>
+                <th scope="col" data-eden-complementary-label="c12">M</th>
+                <th scope="col" data-eden-complementary-label="c13">F</th>
+                <th scope="col" data-eden-complementary-label="c14">M</th>
+                <th scope="col">F</th>
+                <th scope="col">M</th>
+                <th scope="col">F</th>
+                <th scope="col">M</th>
             </tr>
         </thead>
         <tbody class="tes-consultas__body">
             <tr data-eden-row-label-col-index="2">
-                <td>1</td>
-                <td rowspan="3" class="--row-category">
+                <th scope="row">1</th>
+                <th scope="rowgroup" rowspan="3">
                     <span class="eden-u-text-vertical">Total de<br> Consultas</span>
-                </td>
-                <td colspan="2"  class="--row-label">1ªˢ Consultas</td>
+                </th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">1ªˢ Consultas</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -344,8 +344,8 @@
                 </td>
             </tr>
             <tr>
-                <td>2</td>
-                <td colspan="2"  class="--row-label">Consultas de Seguimento</td>
+                <th scope="row">2</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Consultas de Seguimento</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -584,8 +584,8 @@
                 </td>
             </tr>
             <tr>
-                <td>3</td>
-                <td colspan="2"  class="--row-label eden-u-text-upper eden-u-text-bold">Total Consultas</td>
+                <th scope="row">3</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left eden-u-text-upper eden-u-text-bold">Total Consultas</th>
                 <td>
                     <input 
                         type="number" 
@@ -780,11 +780,11 @@
             </tr>
             <!-- Referências -->
             <tr data-eden-row-label-col-index="2" data-eden-row-category-id="referencias">
-                <td>4</td>
-                <td rowspan="4" class="--row-category">
+                <th scope="row">4</th>
+                <th scope="rowgroup" rowspan="4">
                     <span class="eden-u-text-vertical" data-eden-row-category-label="referencias">Referências</span>
-                </td>
-                <td colspan="2"  class="--row-label">Parteira Tradicional (PT)</td>
+                </th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Parteira Tradicional (PT)</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -975,8 +975,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="referencias">
-                <td>5</td>
-                <td colspan="2"  class="--row-label">APE's</td>
+                <th scope="row">5</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">APE's</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -1167,8 +1167,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="referencias">
-                <td>6</td>
-                <td colspan="2"  class="--row-label">Praticante de Medicina Tradicional (PMT)</td>
+                <th scope="row">6</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Praticante de Medicina Tradicional (PMT)</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -1359,8 +1359,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="referencias">
-                <td>7</td>
-                <td colspan="2"  class="--row-label">Outras US's</td>
+                <th scope="row">7</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Outras US's</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -1552,11 +1552,11 @@
             </tr>
             <!-- Diagnósticos -->
             <tr data-eden-row-label-col-index="2">
-                <td>8</td>
-                <td rowspan="34" class="--row-category">
+                <th scope="row">8</th>
+                <th scope="rowgroup" rowspan="34">
                     <span class="eden-u-text-vertical">Diagnósticos</span>
-                </td>
-                <td colspan="2"  class="--row-label">Anemia</td>
+                </th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Anemia</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -1747,8 +1747,8 @@
                 </td>
             </tr>
             <tr>
-                <td>9</td>
-                <td colspan="2"  class="--row-label">Deficiência Nutricional</td>
+                <th scope="row">9</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Deficiência Nutricional</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -1939,8 +1939,8 @@
                 </td>
             </tr>
             <tr>
-                <td>10</td>
-                <td colspan="2"  class="--row-label">Malária</td>
+                <th scope="row">10</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Malária</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -2131,8 +2131,8 @@
                 </td>
             </tr>
             <tr>
-                <td>11</td>
-                <td colspan="2" class="--row-label">Febre (causa desconhecida)</td>
+                <th scope="row">11</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Febre (causa desconhecida)</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -2323,8 +2323,8 @@
                 </td>
             </tr>
             <tr>
-                <td>12</td>
-                <td colspan="2"  class="--row-label">Diarreia Aguda</td>
+                <th scope="row">12</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Diarreia Aguda</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -2515,8 +2515,8 @@
                 </td>
             </tr>
             <tr>
-                <td>13</td>
-                <td colspan="2"  class="--row-label">Disenteria</td>
+                <th scope="row">13</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Disenteria</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -2707,8 +2707,8 @@
                 </td>
             </tr>
             <tr>
-                <td>14</td>
-                <td colspan="2"  class="--row-label">Distúrbios Gastrointestinais</td>
+                <th scope="row">14</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Distúrbios Gastrointestinais</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -2899,8 +2899,8 @@
                 </td>
             </tr>
             <tr>
-                <td>15</td>
-                <td colspan="2"  class="--row-label">Doenças Infecciosas / Parasitárias</td>
+                <th scope="row">15</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Doenças Infecciosas / Parasitárias</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -3091,8 +3091,8 @@
                 </td>
             </tr>
             <tr>
-                <td>16</td>
-                <td colspan="2"  class="--row-label">Infecção Respiratória Aguda</td>
+                <th scope="row">16</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Infecção Respiratória Aguda</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -3283,8 +3283,8 @@
                 </td>
             </tr>
             <tr>
-                <td>17</td>
-                <td colspan="2"  class="--row-label">Asma Bronquial</td>
+                <th scope="row">17</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Asma Bronquial</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -3475,8 +3475,8 @@
                 </td>
             </tr>
             <tr>
-                <td>18</td>
-                <td colspan="2"  class="--row-label">Epilepsia</td>
+                <th scope="row">18</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Epilepsia</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -3667,8 +3667,8 @@
                 </td>
             </tr>
             <tr>
-                <td>19</td>
-                <td colspan="2"  class="--row-label">Hipertensão Arterial</td>
+                <th scope="row">19</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Hipertensão Arterial</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -3859,8 +3859,8 @@
                 </td>
             </tr>
             <tr>
-                <td>20</td>
-                <td colspan="2"  class="--row-label">Diabetes</td>
+                <th scope="row">20</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Diabetes</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -4051,8 +4051,8 @@
                 </td>
             </tr>
             <tr>
-                <td>21</td>
-                <td colspan="2"  class="--row-label">Suspeita de Câncro</td>
+                <th scope="row">21</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Suspeita de Câncro</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -4243,8 +4243,8 @@
                 </td>
             </tr>
             <tr>
-                <td>22</td>
-                <td colspan="2"  class="--row-label">Violência Baseada no Gênero</td>
+                <th scope="row">22</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Violência Baseada no Gênero</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -4435,8 +4435,8 @@
                 </td>
             </tr>
             <tr>
-                <td>23</td>
-                <td colspan="2"  class="--row-label">Outro Tipo de Violência</td>
+                <th scope="row">23</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Outro Tipo de Violência</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -4627,8 +4627,8 @@
                 </td>
             </tr>
             <tr>
-                <td>24</td>
-                <td colspan="2"  class="--row-label">Queda</td>
+                <th scope="row">24</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Queda</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -4819,8 +4819,8 @@
                 </td>
             </tr>
             <tr>
-                <td>25</td>
-                <td colspan="2"  class="--row-label">Traumatismo / Envenenamento</td>
+                <th scope="row">25</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Traumatismo / Envenenamento</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -5011,8 +5011,8 @@
                 </td>
             </tr>
             <tr>
-                <td>26</td>
-                <td colspan="2"  class="--row-label">Queimadura</td>
+                <th scope="row">26</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Queimadura</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -5203,8 +5203,8 @@
                 </td>
             </tr>
             <tr>
-                <td>27</td>
-                <td colspan="2"  class="--row-label">Acidente de Viação</td>
+                <th scope="row">27</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Acidente de Viação</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -5395,8 +5395,8 @@
                 </td>
             </tr>
             <tr>
-                <td>28</td>
-                <td colspan="2"  class="--row-label eden-u-text-nowrap">Perturb. Mentais e Alter. do Comportamento</td>
+                <th scope="row">28</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left eden-u-text-nowrap">Perturb. Mentais e Alter. do Comportamento</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -5587,8 +5587,8 @@
                 </td>
             </tr>
             <tr>
-                <td>29</td>
-                <td colspan="2"  class="--row-label">Tentativa de Suicídio</td>
+                <th scope="row">29</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Tentativa de Suicídio</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -5779,8 +5779,8 @@
                 </td>
             </tr>
             <tr>
-                <td>30</td>
-                <td colspan="2"  class="--row-label">Toxicodependência</td>
+                <th scope="row">30</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Toxicodependência</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -5971,8 +5971,8 @@
                 </td>
             </tr>
             <tr>
-                <td>31</td>
-                <td colspan="2"  class="--row-label">Doenças do Olho</td>
+                <th scope="row">31</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Doenças do Olho</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -6163,8 +6163,8 @@
                 </td>
             </tr>
             <tr>
-                <td>32</td>
-                <td colspan="2"  class="--row-label">Doenças do Ouvido</td>
+                <th scope="row">32</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Doenças do Ouvido</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -6355,8 +6355,8 @@
                 </td>
             </tr>
             <tr>
-                <td>33</td>
-                <td colspan="2"  class="--row-label">Doenças da Pele</td>
+                <th scope="row">33</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Doenças da Pele</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -6547,8 +6547,8 @@
                 </td>
             </tr>
             <tr>
-                <td>34</td>
-                <td colspan="2"  class="--row-label">Problemas Alérgicos</td>
+                <th scope="row">34</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Problemas Alérgicos</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -6739,8 +6739,8 @@
                 </td>
             </tr>
             <tr>
-                <td>35</td>
-                <td colspan="2"  class="--row-label">Doenças do Aparelho Genitourinário</td>
+                <th scope="row">35</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Doenças do Aparelho Genitourinário</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -6931,8 +6931,8 @@
                 </td>
             </tr>
             <tr>
-                <td>36</td>
-                <td colspan="2"  class="--row-label">Doenças do Sistema Osteomuscular</td>
+                <th scope="row">36</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Doenças do Sistema Osteomuscular</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -7123,8 +7123,8 @@
                 </td>
             </tr>
             <tr>
-                <td>37</td>
-                <td colspan="2"  class="--row-label">Mordedura / Picada</td>
+                <th scope="row">37</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Mordedura / Picada</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -7315,8 +7315,8 @@
                 </td>
             </tr>
             <tr>
-                <td>38</td>
-                <td colspan="2"  class="--row-label">Sarampo (d)</td>
+                <th scope="row">38</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Sarampo (d)</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -7507,9 +7507,9 @@
                 </td>
             </tr>
             <tr data-eden-row-label-col-index="2" data-eden-row-category-id="its">
-                <td>39</td>
-                <td rowspan="2" class="--row-category" data-eden-row-category-label="its">ITS (d)</td>
-                <td class="--row-label">Casos de ITS</td>
+                <th scope="row">39</th>
+                <th scope="rowgroup" rowspan="2" data-eden-row-category-label="its">ITS (d)</th>
+                <th scope="row" class="eden-c-table__cell--sticky-left">Casos de ITS</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -7700,8 +7700,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="its">
-                <td>40</td>
-                <td class="--row-label">Contactos e)</td>
+                <th scope="row">40</th>
+                <th scope="row" class="eden-c-table__cell--sticky-left">Contactos e)</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -7892,8 +7892,8 @@
                 </td>
             </tr>
             <tr>
-                <td>41</td>
-                <td colspan="2"  class="--row-label">Outro Diagnóstico</td>
+                <th scope="row">41</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Outro Diagnóstico</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -8085,12 +8085,12 @@
             </tr>
             <!-- Malária -->
             <tr data-eden-row-label-col-index="3" data-eden-row-category-id="tdr">
-                <td>42</td>
-                <td rowspan="6" class="--row-category">
+                <th scope="row">42</th>
+                <th scope="rowgroup" rowspan="6">
                     <span class="eden-u-text-vertical">Malária</span>
-                </td>
-                <td rowspan="2" class="--row-category --row-label" data-eden-row-category-label="tdr">TDR</td>
-                <td class="--row-label">Doentes Testados</td>
+                </th>
+                <th scope="rowgroup" rowspan="2" class="eden-c-table__cell--sticky-left" data-eden-row-category-label="tdr">TDR</th>
+                <th scope="row" class="eden-c-table__cell--sticky-left">Doentes Testados</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -8281,8 +8281,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="tdr">
-                <td>43</td>
-                <td class="--row-label">Confirmados</td>
+                <th scope="row">43</th>
+                <th scope="row" class="eden-c-table__cell--sticky-left">Confirmados</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -8474,9 +8474,9 @@
             </tr>
 
             <tr data-eden-row-label-col-index="2" data-eden-row-category-id="htz">
-                <td>44</td>
-                <td rowspan="2" class="--row-category --row-label" data-eden-row-category-label="htz">HTZ</td>
-                <td class="--row-label">Doentes Testados</td>
+                <th scope="row">44</th>
+                <th scope="rowgroup" rowspan="2" class="eden-c-table__cell--sticky-left" data-eden-row-category-label="htz">HTZ</th>
+                <th scope="row" class="eden-c-table__cell--sticky-left">Doentes Testados</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -8667,8 +8667,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="htz">
-                <td>45</td>
-                <td class="--row-label">Confirmados</td>
+                <th scope="row">45</th>
+                <th scope="row" class="eden-c-table__cell--sticky-left">Confirmados</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -8860,9 +8860,9 @@
             </tr>
 
             <tr data-eden-row-label-col-index="2" data-eden-row-category-id="malaria-tto">
-                <td>46</td>
-                <td rowspan="2" class="--row-category --row-label" data-eden-row-category-label="malaria-tto">Tratamento</td>
-                <td class="--row-label">AL</td>
+                <th scope="row">46</th>
+                <th scope="rowgroup" rowspan="2" class="eden-c-table__cell--sticky-left" data-eden-row-category-label="malaria-tto">Tratamento</th>
+                <th scope="row" class="eden-c-table__cell--sticky-left">AL</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -9053,8 +9053,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="malaria-tto">
-                <td>47</td>
-                <td class="--row-label">ASAQ</td>
+                <th scope="row">47</th>
+                <th scope="row" class="eden-c-table__cell--sticky-left">ASAQ</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -9246,11 +9246,11 @@
             </tr>
             <!-- Sarampo -->
              <tr data-eden-row-label-col-index="2" data-eden-row-category-id="sarampo">
-                <td>48</td>
-                <td rowspan="3" class="--row-category">
+                <th scope="row">48</th>
+                <th scope="rowgroup" rowspan="3">
                     <span class="eden-u-text-vertical" data-eden-row-category-label="sarampo">Sarampo <br>(9 - 23 M)</span>
-                </td>
-                <td colspan="2"  class="--row-label">Vacinada (Vac.)</td>
+                </th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Vacinada (Vac.)</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -9489,8 +9489,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="sarampo">
-                <td>49</td>
-                <td colspan="2"  class="--row-label">Não Vacinada (Não Vac.)</td>
+                <th scope="row">49</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Não Vacinada (Não Vac.)</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -9729,8 +9729,8 @@
                 </td>
             </tr>
             <tr>
-                <td>50</td>
-                <td colspan="2"  class="--row-label eden-u-text-upper eden-u-text-bold">Total Sarampo (9 - 23 M.)</td>
+                <th scope="row">50</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left eden-u-text-upper eden-u-text-bold">Total Sarampo (9 - 23 M.)</th>
                 <td>
                     <input 
                         type="number" 
@@ -9925,11 +9925,11 @@
             </tr>
             <!-- Referência -->
              <tr data-eden-row-label-col-index="2" data-eden-row-category-id="transferencia">
-                <td>51</td>
-                <td rowspan="3" class="--row-category">
+                <th scope="row">51</th>
+                <th scope="rowgroup" rowspan="3">
                     <span class="eden-u-text-vertical" data-eden-row-category-label="transferencia">Referência<br> / Trans‐<br> ferência</span>
-                </td>
-                <td colspan="2"  class="--row-label">Outra Consulta</td>
+                </th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left">Outra Consulta</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -10120,8 +10120,8 @@
                 </td>
             </tr>
             <tr data-eden-row-category-id="transferencia">
-                <td>52</td>
-                <td colspan="2"  class="--row-label ">Internamento</td>
+                <th scope="row">52</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left ">Internamento</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -10312,8 +10312,8 @@
                 </td>
             </tr>
             <tr class="eden-c-table__row eden-c-table__row--last" data-eden-row-category-id="transferencia">
-                <td>53</td>
-                <td colspan="2"  class="--row-label ">US</td>
+                <th scope="row">53</th>
+                <th scope="row" colspan="2" class="eden-c-table__cell--sticky-left ">US</th>
                 <!-- 0 - 14 years -->
                 <td>
                     <input 
@@ -10504,13 +10504,13 @@
                 </td>
             </tr>
         </tbody>
-        <tfoot class="tes-c-table__tfoot-spacer">
-            <tr>
+        <tfoot>
+            <tr class="eden-c-table__tfoot-spacer">
                 <td colspan="23"></td>
             </tr>
         </tfoot>
     </table>
-    <footer class="tes-c-footer tes-c-footer--vertical tes-c-table__footer">
+    <footer class="tes-c-footer tes-c-footer--vertical">
         <div class="tes-c-footer__area tes-c-footer__area--left">
             <label for="signature">Nome legível do responsável pelo preenchimento:</label>
             <input type="text" name="signature" id="signature" class="tes-c-footer__input">
@@ -10532,18 +10532,18 @@
             <input type="date" name="date" id="date" class="tes-c-footer__input tes-c-footer__input--date">
         </div>
     </footer>
-    <div class="tes-c-notes-editor">
+    <div class="eden-c-notes-editor">
         <p 
             id="tes-notes"
-            class="tes-c-notes-editor__content" 
+            class="eden-c-notes-editor__content" 
             contenteditable="true" 
-            data-placeholder="Adicionar uma nota..." 
+            data-eden-placeholder="Adicionar uma nota..." 
             data-eden-js="report-notes">
         </p>
     </div>
 </div>
 
-<div class="tes-c-page-footer">
-    <span class="tes-c-page-footer__date"></span>
+<div class="eden-c-page-footer">
+    <span class="eden-c-page-footer__date"></span>
     <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>
 </div>

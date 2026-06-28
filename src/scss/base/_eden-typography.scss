@@ -12,15 +12,15 @@ h1 {
 }
 
 h2 {
-  font-size: var(--_h2-font-size, var(--eden-sys-font-size-500));
+  font-size: var(--eden-h2-font-size, var(--eden-sys-font-size-500));
 }
 
 h3 {
-  font-size: var(--_h3-font-size, var(--eden-sys-font-size-400));
+  font-size: var(--eden-h3-font-size, var(--eden-sys-font-size-400));
 }
 
 h4 {
-  font-size: var(--_h4-font-size, var(--eden-sys-font-size-300));
+  font-size: var(--eden-h4-font-size, var(--eden-sys-font-size-300));
 }
 
 p {

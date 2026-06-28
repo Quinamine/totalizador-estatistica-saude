@@ -1,6 +1,6 @@
 import { EdenSpinner } from "./EdenSpinner.js";
 import { EdenMessenger } from "../../utils/EdenMessenger.js";
-import { EDEN_REPORTS } from "../../constants/eden-reports.config.js";
+import { TES_REPORTS} from "../../constants/tes-reports.config.js";
 
 export const EdenReportWorkspace = {
     ...EdenMessenger,
@@ -25,7 +25,7 @@ export const EdenReportWorkspace = {
             const reportId = url.searchParams.get("page");
             if(!reportId) return;         
 
-            const report = EDEN_REPORTS.find(item => item.id === reportId);;
+            const report = TES_REPORTS.find(item => item.id === reportId);;
             if(report) {
                 document.title = `${report.name} | TES - Totalizador de Estatística de Saúde`;
                 this.renderReport(reportId);

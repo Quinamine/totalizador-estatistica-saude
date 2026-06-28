@@ -20,10 +20,10 @@
 }
 
 .eden-c-toast {
-    --eden-comp-button-font-size: var(--eden-sys-font-size-500);
-    --eden-comp-button-color: inherit;
-    --eden-comp-button-padding-x: var(--eden-sys-space-400);
-    --eden-comp-button-padding-y: 0;
+    --eden-button-font-size: var(--eden-sys-font-size-500);
+    --eden-button-color: inherit;
+    --eden-button-padding-x: var(--eden-sys-space-400);
+    --eden-button-padding-y: 0;
 
     --_border-left-color: var(--eden-sys-border-color-subtle);
     --_bg: var(--eden-sys-surface-100);

@@ -1,4 +1,4 @@
-export const TesNotesEditor = {
+export const EdenNotesEditor = {
     init() {
         this.cacheElements();
         this.bindEvents();

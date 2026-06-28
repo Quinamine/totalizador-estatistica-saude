@@ -3,13 +3,15 @@
 // MODERN BASE REFINEMENTS (Complement of Eric Meyer's Reset)
 
 html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%; 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 ::selection {
@@ -18,16 +20,18 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 body {
@@ -37,38 +41,40 @@ body {
     color: var(--eden-sys-surface-content);
     line-height: var(--eden-sys-line-height-body);
     cursor: default;
+
     font: {
         size: var(--eden-sys-font-size-300);
         family: Arial, Helvetica, sans-serif;
     }
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
     display: block;
     max-width: 100%;
     height: auto;
 }
 
-picture, figure, img {
+picture,
+figure,
+img {
     margin-block: var(--eden-sys-figure-spacing-y-start) var(--eden-sys-figure-spacing-y-end);
 }
 
-picture, figure {
+picture,
+figure {
     img {
-      --eden-sys-figure-spacing-y-start: 0;
-      --eden-sys-figure-spacing-y-end: 0;
-      margin-inline: 0;
+        --eden-sys-figure-spacing-y-start: 0;
+        --eden-sys-figure-spacing-y-end: 0;
+        margin-inline: 0;
     }
 }
 
 figcaption {
     margin-block-start: var(--eden-sys-figure-caption-spacing-y);
-}
-
-button, select {
-  font: inherit;
-  color: inherit;
-  letter-spacing: inherit;
 }
 
 a {
@@ -92,15 +98,68 @@ a {
     }
 }
 
-p {
-    a {
-        @include can-hover {
-            &:hover {
-                text-decoration: underline;
-                text-underline-offset: 4px;
-            }
-        }
+select,
+input,
+textarea,
+button {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+}
+
+input,
+textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    color: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: inherit;
+    cursor: text;
+}
+
+input {
+    --_bg-focus-bg: greenyellow;
+    --_font-size: var(--eden-input-font-size, var(--eden-sys-font-size-100));
+
+    width: 100%;
+    min-height: var(--eden-sys-space-500);
+    background-color: transparent;
+    border-bottom: 1px solid var(--eden-sys-border-color);
+    font-size: var(--_font-size);
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0
     }
+
+    &::-moz-list-bullet {
+        display: none !important;
+    }
+
+    &:not([type=date])::-webkit-calendar-picker-indicator {
+        display: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+    }
+
+    &[readonly] {
+        background-color: var(--eden-sys-surface);
+        cursor: default;
+    }
+
+    &:not([readonly]):focus {
+        background-color: var(--_bg-focus-bg)
+    }
+}
+
+textarea {
+    resize: vertical;
+    min-height: 3em;
+    font-size: var(--_input-font-size);
 }
 
 button {
@@ -111,4 +170,44 @@ button {
     padding: 0;
     font-family: inherit;
     cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block-start: var(--eden-table-margin-top, var(--eden-sys-space-300));
+    margin-block-end: var(--eden-table-margin-bottom, var(--eden-sys-space-400));
+    table-layout: fixed;
+}
+
+th, td {
+    height: var(--eden-table-cell-height, auto);
+    padding-inline: var(--eden-table-cell-padding-x, var(--eden-sys-space-200));
+    padding-block: var(--eden-table-cell-padding-y, var(--eden-sys-space-100));
+    vertical-align: middle;
+    border: 1px solid var(--eden-sys-border-color);
+    line-height: var(--eden-sys-line-height-flat);
+}
+
+thead th,
+th[rowspan] {
+    font-weight: var(--eden-sys-font-weight-bold);
+    text-align: center;
+}
+
+tbody th {
+    font-weight: var(--eden-sys-font-weight-regular);
+}
+
+tbody td {
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"] {
+        height: 100%;
+        border: none;
+        text-align: center;
+    }
 }

@@ -1,8 +1,8 @@
 @use '../../abstracts' as *;
 
 .eden-c-toolbar {
-    --eden-comp-button-padding-y: var(--eden-sys-space-200);
-    --eden-comp-button-padding-x: var(--eden-sys-space-150);
+    --eden-button-padding-y: var(--eden-sys-space-200);
+    --eden-button-padding-x: var(--eden-sys-space-150);
 
     --_translate-y: 100%;
 
@@ -20,10 +20,10 @@
     transition: transform var(--eden-sys-duration-standard) var(--eden-sys-motion-entrance);
 
     @include desktop {
-        --eden-comp-button-padding-y: var(--eden-sys-space-300);
-        --eden-comp-button-padding-x: var(--eden-sys-space-300);
+        --eden-button-padding-y: var(--eden-sys-space-300);
+        --eden-button-padding-x: var(--eden-sys-space-300);
         
-        --_offset-alignment-x: var(--eden-comp-button-padding-x);
+        --_offset-alignment-x: var(--eden-button-padding-x);
         --_translate-y: 0;
 
         position: static;

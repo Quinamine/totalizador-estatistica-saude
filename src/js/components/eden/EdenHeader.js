@@ -1,4 +1,4 @@
-import { EDEN_REPORTS } from "../../constants/eden-reports.config";
+import { TES_REPORTS} from "../../constants/tes-reports.config";
 
 export const EdenHeader = {
     init() {
@@ -42,7 +42,7 @@ export const EdenHeader = {
     },
 
     updateTitle(id) {
-        const report = EDEN_REPORTS.find(item => item.id === id);
+        const report = TES_REPORTS.find(item => item.id === id);
 
         if (report) {
             this.title.textContent = report.name;

@@ -1,18 +1,51 @@
 @use '../../abstracts' as *;
 
 .eden-c-table {
-    margin-block-start: var(--eden-sys-space-300);
-    margin-block-end: var(--eden-sys-space-400);
-    table-layout: fixed;
-    border-collapse: collapse;
+    --eden-table-cell-height: var(--eden-sys-space-600);
+    --eden-table-cell-padding-y: 0;
+    --eden-table-margin-top: var(--eden-sys-space-200);
+    --eden-table-margin-bottom: var(--eden-sys-space-300);
 
-    th, td {
-        padding: var(--eden-sys-space-100);
-        vertical-align: middle;
-        border: 1px solid var(--eden-sys-border-color);
+    tbody td {
+        --eden-table-cell-padding-x: 0;
     }
 
-    th {
-        font-weight: var(--eden-sys-font-weight-bold);
+    tbody th[scope="row"]:not(:first-child) {
+        text-align: left;
     }
+
+    input[readonly] {
+        font-weight: var(--eden-sys-font-weight-bold);;
+    }
+
+    &__thead-spacer,
+    &__tfoot-spacer {
+        display: none;
+
+        @media print {
+            display: table-row;
+            th, td {
+                border: none;
+            }
+        }
+    }
+
+    &__thead-spacer {
+        height: var(--eden-sys-thead-spacer-height);
+    }
+
+    &__tfoot-spacer {
+        height: var(--eden-sys-tfoot-spacer-height); 
+    }
+
+    &__cell--sticky-left {
+        @include tablet {
+            position: sticky;
+            left: 0;
+            background-color: var(--eden-sys-surface-100);
+            z-index: calc(var(--eden-sys-zi-sticky) - 1);
+            border-inline: 1px solid var(--eden-sys-border-color);
+        }
+    }
+
 }
