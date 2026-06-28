@@ -1,0 +1,81 @@
+@use '../../abstracts' as *;
+
+.eden-c-cell-position-bar {
+    --_translate-y: 100%;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    box-shadow: var(--eden-sys-shadow-100-inverted);
+    border-block-end: thin solid var(--eden-sys-border-color-subtle);
+    z-index: var(--eden-sys-zi-sticky);
+    min-height: var(--eden-sys-space-600);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    background-color: var(--eden-sys-surface-100);
+    color: var(--eden-sys-surface-content-100);
+    font-size: var(--eden-sys-font-size-100);
+    padding-inline: var(--eden-sys-page-margin);
+    transform: translateY(var(--_translate-y));
+    transition: transform var(--eden-sys-duration-standard) var(--eden-sys-motion-entrance);
+
+    @include desktop {
+        --_translate-y: 0;
+
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        width: 0;
+        min-height: auto;
+        background-color: transparent;
+        position: static;
+        font-size: var(--eden-sys-font-size-200);
+        font-style: italic;
+        flex: 1;
+    }
+
+    .has-eden-toolbar & {
+        --_bottom-offset: calc(var(--eden-sys-toolbar-height) + var(--eden-sys-keyboard-height));
+        
+        --_translate-y: calc(var(--_bottom-offset) * -1);
+
+        @include desktop {
+            --_translate-y: 0;
+        }
+    }
+
+    .has-eden-toolbar.has-keyboard-open & {
+        @include mobile-landscape {
+            --_translate-y: calc(var(--eden-sys-keyboard-height) * -1);
+        }
+    }
+
+    &__label {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__label:not(:empty):not(:last-child)::after {
+        content: ",";
+    }
+
+    &__label--row-category {
+        min-width: 4ch;
+        flex-shrink: 2;
+
+        &:not(:empty):not(:last-child)::after {
+            content: ":";
+        }
+    }
+
+    &__label--col {
+        min-width: 6ch;
+    }
+
+    &__label--complementary {
+        min-width: 4ch;
+    }
+}

@@ -1,12 +1,11 @@
 import { EdenSidebar } from "./components/eden/EdenSidebar.js";
 import { EdenReportWorkspace } from "./components/eden/EdenReportWorkspace.js";
 import { EdenHeader } from "./components/eden/EdenHeader.js";
-import { TesToolbar } from "./components/tes/TesToolbar.js";
-import { EDEN_REPORTS } from "./constants/eden-reports.config.js";
+import { EdenToolbar } from "./components/eden/EdenToolbar.js";
 import { TesManager } from "./components/tes/TesManager.js";
-import { TesNotesEditor } from "./components/tes/TesNotesEditor.js";
+import { EdenNotesEditor } from "./components/eden/EdenNotesEditor.js";
 import { EdenToast } from "./components/eden/EdenToast.js";
-import { TesTableLocator } from "./components/tes/TesTableLocator.js";
+import { EdenCellPositionBar } from "./components/eden/EdenCellPositionBar.js";
 import { EdenViewportHandler } from "./components/eden/EdenViewportHandler.js";
 
 const EdenApp = {
@@ -15,10 +14,10 @@ const EdenApp = {
         EdenReportWorkspace.init();
         EdenHeader.init();
         EdenToast.init();
-        TesToolbar.init();
+        EdenToolbar.init();
         TesManager.init()
-        TesNotesEditor.init();
-        TesTableLocator.init();
+        EdenNotesEditor.init();
+        EdenCellPositionBar.init();
         EdenViewportHandler.init();
 
         this.bindEvents();

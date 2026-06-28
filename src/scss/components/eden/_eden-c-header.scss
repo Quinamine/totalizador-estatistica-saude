@@ -46,9 +46,9 @@
     }
 
     &__menu-toggle {
-        --eden-comp-button-bg-hover: transparent;
-        --eden-comp-button-bg-active: transparent;
-        --eden-comp-button-justify-content: flex-start;
+        --eden-button-bg-hover: transparent;
+        --eden-button-bg-active: transparent;
+        --eden-button-justify-content: flex-start;
 
         flex-shrink: 0;
         margin-inline-end: calc(var(--_brand-group-gap) * -1);

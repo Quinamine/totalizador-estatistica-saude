@@ -2,18 +2,19 @@
 
 .eden-c-button {
     // Button API
-    --_font-size: var(--eden-comp-button-font-size, var(--eden-sys-font-size-200));
-    --_font-weight: var(--eden-comp-button-font-weight, var(--eden-sys-font-weight-semibold));
-    --_padding-block: var(--eden-comp-button-padding-y, var(--eden-sys-space-300));
-    --_padding-inline: var(--eden-comp-button-padding-x, var(--eden-sys-space-500));
-    --_justify-content: var(--eden-comp-button-justify-content, center);
-    --_border-radius: var(--eden-comp-button-border-radius, var(--eden-sys-action-border-radius));
-    --_color: var(--eden-comp-button-color, var(--eden-sys-surface-content));
-    --_bg-hover: var(--eden-comp-button-bg-hover, var(--eden-sys-action-color-hover));
-    --_bg-active: var(--eden-comp-button-bg-active, var(--eden-sys-action-color-active));
+    --_font-size: var(--eden-button-font-size, var(--eden-sys-font-size-200));
+    --_font-weight: var(--eden-button-font-weight, var(--eden-sys-font-weight-semibold));
+    --_padding-block: var(--eden-button-padding-y, var(--eden-sys-space-300));
+    --_padding-inline: var(--eden-button-padding-x, var(--eden-sys-space-500));
+    --_justify-content: var(--eden-button-justify-content, center);
+    --_border-radius: var(--eden-button-border-radius, var(--eden-sys-action-border-radius));
+    --_color: var(--eden-button-color, var(--eden-sys-surface-content));
+    --_bg-hover: var(--eden-button-bg-hover, var(--eden-sys-action-color-hover));
+    --_bg-active: var(--eden-button-bg-active, var(--eden-sys-action-color-active));
     --_bg-disabled: transparent;
     --_bg: transparent;
 
+    
     display: inline-flex;
     align-items: center;
     justify-content: var(--_justify-content);

@@ -264,14 +264,14 @@ export const TesManager = {
             minute: '2-digit',
         });
 
-        const existingPageFooter = document.querySelector('.tes-c-page-footer');
+        const existingPageFooter = document.querySelector('.eden-c-page-footer');
         if(existingPageFooter) {
             existingPageFooter.remove();
         }
 
         const pageFooter = document.createElement('div');
-        pageFooter.classList.add('tes-c-page-footer');
-        pageFooter.innerHTML = `<span class="tes-c-page-footer__date">${date} ${hour}</span>
+        pageFooter.classList.add('eden-c-page-footer');
+        pageFooter.innerHTML = `<span class="eden-c-page-footer__date">${date} ${hour}</span>
                                 <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`
 
         this.reportWorkspace.appendChild(pageFooter);

@@ -1,0 +1,52 @@
+@use '../../abstracts' as *;
+
+@page page-portrait {
+    size: A4 portrait;
+    margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) 
+            var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-portrait-left);
+}
+
+@page page-landscape {
+    size: A4 landscape;
+    margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) 
+            var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-landscape-left);
+
+    @bottom-center {
+        content: "Página " counter(page) " de " counter(pages);
+        font-family: Arial, sans-serif;
+        font-size: var(--eden-sys-font-size-050);
+        color: var(--eden-sys-surface-content);
+        vertical-align: top;
+    }
+}
+
+.eden-c-sheet {
+    --_width: var(--tes-comp-sheet-width, 100%);
+    --_font-size: var(--tes-comp-sheet-font-size, var(--eden-sys-font-size-100));
+    --_padding: var(--eden-sys-space-500);
+
+
+    width: var(--_width);
+    min-height: 100vh;
+    font-size: var(--_font-size);
+    background-color: var(--eden-sys-surface-100);
+    padding: var(--_padding);
+
+    
+    @media print {
+        --_width: 100% !important;
+        --_padding: 0 !important;
+        
+        padding-top: var(--eden-sys-page-content-offset-top) !important;
+
+        &--portrait {
+            page: page-portrait;
+        }
+
+        &--landscape {
+            page: page-landscape;
+        }
+    }
+}
+
+

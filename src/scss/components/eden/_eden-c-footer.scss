@@ -1,12 +1,12 @@
 @use '../../abstracts' as *;
 
 .eden-c-footer {
-    --eden-comp-button-color: var(--eden-sys-surface-content-200);
-    --eden-comp-button-font-size: 0.8;
-    --eden-comp-button-padding-y: var(--eden-sys-space-200);
-    --eden-comp-button-padding-x: var(--eden-sys-space-200);
-    --eden-comp-button-bg-hover: oklch(from var(--eden-sys-surface-content) l c h / 6%);
-    --eden-comp-button-bg-active: oklch(from var(--eden-sys-surface-content) l c h / 15%);
+    --eden-button-color: var(--eden-sys-surface-content-200);
+    --eden-button-font-size: 0.8;
+    --eden-button-padding-y: var(--eden-sys-space-200);
+    --eden-button-padding-x: var(--eden-sys-space-200);
+    --eden-button-bg-hover: oklch(from var(--eden-sys-surface-content) l c h / 6%);
+    --eden-button-bg-active: oklch(from var(--eden-sys-surface-content) l c h / 15%);
     --eden-sys-paragraph-spacing-y: 0;
 
     --_copyright-font-size: 0.6875rem; // 11px;

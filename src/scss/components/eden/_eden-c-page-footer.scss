@@ -1,0 +1,25 @@
+@use '../../abstracts' as *;
+
+.eden-c-page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    visibility: hidden;
+
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.5pt solid var(--eden-sys-surface-content-100);
+    padding-top: 4px;
+
+    font-family: Arial, sans-serif;
+    font-size: var(--eden-sys-font-size-050);
+    color: var(--eden-sys-surface-content-100);
+    white-space: nowrap;
+
+    @media print {
+        visibility: visible;
+        white-space: normal;
+    }
+}
