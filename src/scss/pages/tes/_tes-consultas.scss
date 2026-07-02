@@ -1,7 +1,7 @@
 @use '../../abstracts' as *;
 
 .tes-consultas {
-    --tes-comp-sheet-width: 1352px;
+    --eden-sheet-width: 1352px;
 
     --_thead-separator-size: 4px;
     --_thead-separator-color: var(--eden-sys-primary);
@@ -10,9 +10,8 @@
         --_thead-separator-size: 8px;
     }
 
-    table {
+    .eden-c-table {
         --eden-table-cell-padding-x: var(--eden-sys-space-100);
-        --eden-table-margin-bottom: 0;
 
         @media print {
             --eden-table-cell-height: var(--eden-sys-space-500);
@@ -37,13 +36,12 @@
 
         h1 {
             font-size: var(--eden-sys-font-size-600);
-            white-space: nowrap;
             line-height: var(--eden-sys-line-height-flat);
+            white-space: nowrap;
         }
 
         input {
-            font-size: var(--eden-sys-font-size-500);
-            line-height: var(--eden-sys-line-height-flat);
+            font-size: var(--eden-sys-font-size-600);
             flex-grow: 1;
         }
     }

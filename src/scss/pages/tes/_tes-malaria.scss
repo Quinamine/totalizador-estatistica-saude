@@ -1,0 +1,125 @@
+@use '../../abstracts' as *;
+
+.tes-malaria {
+    --eden-sheet-width: 1074px;
+    --eden-sys-figure-spacing-y-start: 0;
+    --eden-sys-figure-spacing-y-end: 0;
+    --eden-sys-figure-caption-spacing-y: var(--eden-sys-space-100);
+
+    --_header-indent-start: 0;
+    --_header-indent-end: 0;
+    --_title-font-size: var(--eden-sys-font-size-200);
+    --_title-margin-top: 0;
+    --_text-sec-font-size: inherit;
+
+    @media print {
+        --eden-sheet-font-size: var(--eden-sys-font-size-400);
+        --eden-input-font-size: var(--eden-sheet-font-size);
+        --eden-sys-page-content-offset-top: 0.3cm;
+
+        --_header-indent-start: 70px;
+        --_header-indent-end: 35px;
+        --_title-font-size: var(--eden-sys-font-size-400);
+        --_title-margin-top: var(--eden-sys-space-200);
+        --_text-sec-font-size: var(--eden-sys-font-size-200);
+    }
+
+    @include desktop {
+        padding-inline: var(--eden-sys-space-600);
+    }
+
+    .eden-c-table {
+        @media print {
+            --eden-table-cell-height: 30px;
+        }
+    }
+
+    .tes-c-gov__info {
+        @media print {
+            font-family: serif, Georgia,'Times New Roman', Times;
+        }
+    }
+
+    .tes-c-gov__country {
+        @media print {
+            font-size: var(--eden-sys-font-size-200);
+        }
+    }
+
+    .tes-c-gov__ministry {
+        @media print {
+            font-size: var(--eden-sys-font-size-400);
+        }
+    }
+
+    &__header {
+        padding-inline: var(--_header-indent-start) var(--_header-indent-end);
+    }
+
+    &__header-row {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--eden-sys-space-600);
+        margin-block-end: var(--eden-sys-space-400);
+
+        &--spaced-lg {
+            margin-block-end: var(--eden-sys-space-500);
+        }
+
+        &--no-space-print {
+            @media print {
+                margin: 0 !important;
+            }
+        }
+
+        label {
+            white-space: nowrap;
+        }
+    }
+
+    &__model {
+        align-self: center;
+
+        &-code {
+            font-size: var(--_text-sec-font-size);
+            color: var(--eden-sys-surface-content-200);
+        }
+    }
+
+    &__title {
+        font-size: var(--_title-font-size);
+        line-height: var(--eden-sys-line-height-heading);
+        font-weight: var(--eden-sys-font-weight-bold);
+        color: var(--eden-sys-primary);
+        margin-block-start: var(--_title-margin-top);
+    }
+
+    &__meta-group {
+        display: flex;
+        gap: var(--eden-sys-space-100);
+        align-items: center;
+        flex: 1;
+
+        &--large {
+            flex: 0 0 475px;
+        }
+
+        &--medium {
+            flex: 2;
+        }
+    }
+
+    &__year {
+        text-align: left;
+    }
+
+    &__tbody td:first-child {
+        text-align: center;
+        padding-inline-start: var(--eden-sys-space-200);
+    }
+
+    &__table-caption {
+        font-size: var(--_text-sec-font-size);
+        font-style: italic;
+    }
+}

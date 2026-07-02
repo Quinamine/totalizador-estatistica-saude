@@ -1,6 +1,8 @@
 @use '../../abstracts' as *;
 
 .eden-c-notes-editor {
+    --eden-sys-paragraph-spacing-y: 0;
+
     --_input-bg-focus: greenyellow;
     --_content-padding: var(--eden-sys-space-300);
 
@@ -10,16 +12,18 @@
     &__content {
         min-height: 100px;
         padding: var(--_content-padding);
-        margin-block: var(--eden-sys-space-300);
+        margin-block-start: var(--eden-sys-space-500);
         border: 1px solid var(--eden-sys-border-color);
         border-radius: var(--eden-sys-radius-100);
-        font-size: var(--eden-sys-font-size-200);
+        font-size: inherit;
         cursor: text;
         position: relative;
+        line-height: var(--eden-sys-line-height-body);
 
         @media print {
             min-height: auto;
             padding: 0;
+            margin-block-end: var(--eden-sys-space-100);
             border: none;
         }
 

@@ -2,15 +2,15 @@
 
 @page page-portrait {
     size: A4 portrait;
-    margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) 
-            var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-portrait-left);
+    margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-portrait-left);
 }
 
 @page page-landscape {
     size: A4 landscape;
-    margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) 
-            var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-landscape-left);
+    margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-landscape-left);
+}
 
+@page pagination {
     @bottom-center {
         content: "Página " counter(page) " de " counter(pages);
         font-family: Arial, sans-serif;
@@ -21,8 +21,8 @@
 }
 
 .eden-c-sheet {
-    --_width: var(--tes-comp-sheet-width, 100%);
-    --_font-size: var(--tes-comp-sheet-font-size, var(--eden-sys-font-size-100));
+    --_width: var(--eden-sheet-width, 100%);
+    --_font-size: var(--eden-sheet-font-size, var(--eden-sys-font-size-100));
     --_padding: var(--eden-sys-space-500);
 
 
@@ -32,11 +32,11 @@
     background-color: var(--eden-sys-surface-100);
     padding: var(--_padding);
 
-    
+
     @media print {
         --_width: 100% !important;
         --_padding: 0 !important;
-        
+
         padding-top: var(--eden-sys-page-content-offset-top) !important;
 
         &--portrait {
@@ -46,7 +46,9 @@
         &--landscape {
             page: page-landscape;
         }
+
+        &--has-pagination {
+            page: pagination;
+        }
     }
 }
-
-

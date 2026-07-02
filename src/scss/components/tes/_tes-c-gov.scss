@@ -1,15 +1,22 @@
 @use '../../abstracts' as *;
 
-.tes-c-identity {
+.tes-c-gov {
     --eden-sys-figure-spacing-y-start: 0;
     --eden-sys-figure-spacing-y-end: 0;
+    --eden-sys-figure-caption-spacing-y: 0;
 
     --_direction: column;
     --_text-align: center;
+    --_text-font-size: 0.6875rem;
+
+    @media print {
+        --_text-font-size: var(--eden-sys-font-size-100);
+    }
     
     display: flex;
     flex-direction: var(--_direction);
     align-items: center;
+    gap: var(--eden-sys-space-200);
     text-align: var(--_text-align);
 
     &--horizontal {
@@ -18,7 +25,7 @@
     }
 
     &--text-left {
-        --_text-align: center;
+        --_text-align: left;
     }
 
     &--text-uppercase {
@@ -28,5 +35,7 @@
     &__info {
         display: flex;
         flex-direction: column;
+        font-size: var(--_text-font-size);
+        line-height: var(--eden-sys-line-height-body);
     }
 }

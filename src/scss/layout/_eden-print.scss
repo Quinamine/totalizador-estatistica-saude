@@ -6,16 +6,21 @@
     main,
     .eden-c-report-workspace {
         overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     body {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
         color: #000000;
+        line-height: var(--eden-sys-line-height-flat);
     }
 
-    main {
-        padding: 0 !important;
+    main,
+    .eden-c-report-workspace {
+        display: flex;
+        justify-content: center;
     }
     
     .eden-u-hide-on-print {

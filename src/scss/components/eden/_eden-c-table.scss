@@ -3,8 +3,14 @@
 .eden-c-table {
     --eden-table-cell-height: var(--eden-sys-space-600);
     --eden-table-cell-padding-y: 0;
-    --eden-table-margin-top: var(--eden-sys-space-200);
-    --eden-table-margin-bottom: var(--eden-sys-space-300);
+    --eden-table-margin-top: var(--eden-sys-space-100);
+    --eden-table-margin-bottom: 0;
+    --_cell-na-bg: #b8bfc4;
+    --_cell-accent-bg: #e5e7eb;
+
+    @media print {
+        --_cell-na-bg: var(--eden-sys-primary);
+    }
 
     tbody td {
         --eden-table-cell-padding-x: 0;
@@ -15,7 +21,28 @@
     }
 
     input[readonly] {
-        font-weight: var(--eden-sys-font-weight-bold);;
+        font-weight: var(--eden-sys-font-weight-bold);
+    }
+
+    &__cell--sticky-left {
+        @include tablet {
+            position: sticky;
+            left: 0;
+            background-color: var(--eden-sys-surface-100);
+            z-index: calc(var(--eden-sys-zi-sticky) - 1);
+            border-inline: 1px solid var(--eden-sys-border-color);
+        }
+    }
+
+    &__cell--na {
+        background-color: var(--_cell-na-bg);
+    }
+
+    &__head--accented,
+    &__cell--accented {
+        @media print {
+            background-color: var(--_cell-accent-bg);
+        }
     }
 
     &__thead-spacer,
@@ -31,20 +58,14 @@
     }
 
     &__thead-spacer {
-        height: var(--eden-sys-thead-spacer-height);
+         @media print {
+            height: var(--eden-sys-thead-spacer-height);
+        }
     }
 
     &__tfoot-spacer {
-        height: var(--eden-sys-tfoot-spacer-height); 
-    }
-
-    &__cell--sticky-left {
-        @include tablet {
-            position: sticky;
-            left: 0;
-            background-color: var(--eden-sys-surface-100);
-            z-index: calc(var(--eden-sys-zi-sticky) - 1);
-            border-inline: 1px solid var(--eden-sys-border-color);
+         @media print {
+            height: var(--eden-sys-tfoot-spacer-height); 
         }
     }
 

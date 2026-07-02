@@ -19,8 +19,9 @@
 @use 'components/eden/eden-c-notes-editor';
 @use 'components/eden/eden-c-cell-position-bar';
 @use 'utilities/eden-utils';
-@use 'components/tes/tes-c-identity';
+@use 'components/tes/tes-c-gov';
 @use 'pages/tes/tes-consultas';
+@use 'pages/tes/tes-malaria';
 @use 'components/tes/tes-c-footer';
 @use 'layout/eden-print';
 @use 'components/eden/_eden-c-page-footer.scss'

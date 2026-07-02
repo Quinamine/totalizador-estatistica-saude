@@ -31,7 +31,7 @@ Este repositório está em desenvolvimento activo.
 #### Consultas
 - [x] RM Consultas Externas
 - [ ] RM CCD
-- [ ] RM Malária
+- [x] RM Malária
 - [ ] RM SAAJ
 
 #### Farmácia
