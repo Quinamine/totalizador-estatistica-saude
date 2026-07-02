@@ -2,7 +2,7 @@
 
 h1, h2, h3, h4 {
     line-height: var(--eden-sys-line-height-heading);
-    margin-block: var(--eden-sys-flow-gap-start) var(--eden-sys-flow-gap-end);
+    margin-block: var(--eden-sys-heading-spacing-y-start) var(--eden-sys-heading-spacing-y-end);
     font-weight: var(--eden-sys-font-weight-bold);
 }
 

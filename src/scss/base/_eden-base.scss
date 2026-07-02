@@ -121,7 +121,7 @@ textarea {
 }
 
 input {
-    --_bg-focus-bg: greenyellow;
+    --_focus-bg: greenyellow;
     --_font-size: var(--eden-input-font-size, var(--eden-sys-font-size-100));
 
     width: 100%;
@@ -152,7 +152,7 @@ input {
     }
 
     &:not([readonly]):focus {
-        background-color: var(--_bg-focus-bg)
+        background-color: var(--_focus-bg)
     }
 }
 
@@ -186,7 +186,6 @@ th, td {
     padding-block: var(--eden-table-cell-padding-y, var(--eden-sys-space-100));
     vertical-align: middle;
     border: 1px solid var(--eden-sys-border-color);
-    line-height: var(--eden-sys-line-height-flat);
 }
 
 thead th,
@@ -206,6 +205,7 @@ tbody td {
     input[type="password"],
     input[type="tel"],
     input[type="url"] {
+        min-height: auto;
         height: 100%;
         border: none;
         text-align: center;

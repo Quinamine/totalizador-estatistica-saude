@@ -37,7 +37,7 @@ export const TesManager = {
             this.activeReportId = detail.id;
             this.loadFromStorage();
         });
-        
+
         this.reportWorkspace.addEventListener('input', (e) => {
             clearTimeout(this.saveTimeout);
             this.saveTimeout = setTimeout(() => {
@@ -45,16 +45,16 @@ export const TesManager = {
             }, 500);
 
             const totalTrigger = e.target.closest(this.totalTriggerSelector);
-            if(!totalTrigger) return;
+            if (!totalTrigger) return;
 
             this.updateRelatedTotals(totalTrigger);
         });
-        
+
         document.addEventListener('eden:trigger:report-clear-request', () => {
-            if(this.isReportEmpty) {
-                EdenToast.render({ 
-                    message: `Não há alterações para limpar na ficha actual.`, 
-                    type: 'info' 
+            if (this.isReportEmpty) {
+                EdenToast.render({
+                    message: `Não há alterações para limpar na ficha actual.`,
+                    type: 'info'
                 });
 
                 return;
@@ -71,12 +71,12 @@ export const TesManager = {
                 }
             });
         });
-        
+
         document.addEventListener('eden:report:clear-confirmed', () => {
             this.clear();
-            EdenToast.render({ 
-                message: `Campos de inserção limpos com sucesso.`, 
-                type: 'success' 
+            EdenToast.render({
+                message: `Campos de inserção limpos com sucesso.`,
+                type: 'success'
             });
         });
 
@@ -93,16 +93,16 @@ export const TesManager = {
         });
 
         window.addEventListener("keydown", (e) => {
-            if((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'p')) {
+            if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'p')) {
                 e.preventDefault();
 
-                const isReportRendered = this.reportWorkspace.querySelector('[data-eden-js="tes-report"]'); 
-                if(isReportRendered) {
+                const isReportRendered = this.reportWorkspace.querySelector('[data-eden-js="tes-report"]');
+                if (isReportRendered) {
                     this.print();
                 } else {
-                    EdenToast.render({ 
-                        message: `Nenhuma ficha aberta. Selecione uma ficha para imprimir.`, 
-                        type: 'warning' 
+                    EdenToast.render({
+                        message: `Nenhuma ficha aberta. Selecione uma ficha para imprimir.`,
+                        type: 'warning'
                     });
                 }
             }
@@ -110,47 +110,26 @@ export const TesManager = {
     },
 
     updateRelatedTotals(field) {
-        const subtotalXId = field.dataset.toSubtotalX;
-        const subtotalXSources = document.querySelectorAll(`[data-to-subtotal-x="${subtotalXId}"]`);
-        const subtotalXField = document.getElementById(subtotalXId);
-        subtotalXField.value = this.calculateTotal(subtotalXSources);
+        const targets = [
+            { key: 'toSubtotalX', selector: 'data-to-subtotal-x' },
+            { key: 'toTotalX', selector: 'data-to-total-x' },
+            { key: 'toGrandTotalX', selector: 'data-to-grand-total-x' },
+            { key: 'toCol', selector: 'data-to-col' },
+            { key: 'toSubtotalY', selector: 'data-to-subtotal-y' },
+            { key: 'toTotalY', selector: 'data-to-total-y' },
+            { key: 'toGrandTotalY', selector: 'data-to-grand-total-y' },
+        ];
 
-        const totalXId = field.dataset.toTotalX;
-        const totalXSources = document.querySelectorAll(`[data-to-total-x="${totalXId}"]`);
-        const totalXField = document.getElementById(totalXId);
-        totalXField.value = this.calculateTotal(totalXSources);
-
-        const grandTotalXId = field.dataset.toGrandTotalX;
-        const grandTotalXSources = document.querySelectorAll(`[data-to-grand-total-x="${grandTotalXId}"]`);
-        const grandTotalXField = document.getElementById(grandTotalXId);
-        grandTotalXField.value = this.calculateTotal(grandTotalXSources);
-
-        if(field.dataset.toCol) {
-            const targetId = field.dataset.toCol;
-            const sources = document.querySelectorAll(`[data-to-col="${targetId}"]`);
-            const targetField = document.getElementById(targetId);
-            targetField.value = this.calculateTotal(sources);
-        }
-        if(field.dataset.toSubtotalY) {
-            const targetId = field.dataset.toSubtotalY;
-            const sources = document.querySelectorAll(`[data-to-subtotal-y="${targetId}"]`);
-            const targetField = document.getElementById(targetId);
-            targetField.value = this.calculateTotal(sources);
-        }
-
-        if(field.dataset.toTotalY) {
-            const targetId = field.dataset.toTotalY;
-            const sources = document.querySelectorAll(`[data-to-total-y="${targetId}"]`);
-            const targetField = document.getElementById(targetId);
-            targetField.value = this.calculateTotal(sources);
-        }
-
-        if(field.dataset.toGrandTotalY) {
-            const targetId = field.dataset.toGrandTotalY;
-            const sources = document.querySelectorAll(`[data-to-grand-total-y="${targetId}"]`);
-            const targetField = document.getElementById(targetId);
-            targetField.value = this.calculateTotal(sources);
-        }
+        targets.forEach(({ key, selector }) => {
+            const targetId = field.dataset[key];
+            if (targetId) {
+                const sources = document.querySelectorAll(`[${selector}="${targetId}"]`);
+                const targetField = document.getElementById(targetId);
+                if (targetField) {
+                    targetField.value = this.calculateTotal(sources);
+                }
+            }
+        });
     },
 
     calculateTotal(fields) {
@@ -165,7 +144,7 @@ export const TesManager = {
         const data = {};
 
         this.readWriteFields.forEach(field => {
-            if(field.value.trim() !== '' && field.name) {
+            if (field.value.trim() !== '' && field.name) {
                 data[field.name] = field.value;
             }
         });
@@ -189,18 +168,18 @@ export const TesManager = {
     loadFromStorage() {
         const storageKey = `report_${this.activeReportId}`;
         const savedData = JSON.parse(localStorage.getItem(storageKey));
-        if(savedData) {
+        if (savedData) {
             Object.entries(savedData).forEach(([name, value]) => {
                 const field = this.reportWorkspace.querySelector(`[name="${name}"]`);
-                if(field) {
+                if (field) {
                     field.value = value;
 
-                    if(field.matches(this.totalTriggerSelector)) {
+                    if (field.matches(this.totalTriggerSelector)) {
                         this.updateRelatedTotals(field);
                     }
-                } 
+                }
 
-                if(name === this.pNotes.id) {
+                if (name === this.pNotes.id) {
                     this.pNotes.innerText = value;
                 }
             });
@@ -213,7 +192,7 @@ export const TesManager = {
 
     clear() {
         this.reportFields.forEach(field => {
-            if(field.readOnly) {
+            if (field.readOnly) {
                 field.value = 0;
                 return;
             }
@@ -229,23 +208,23 @@ export const TesManager = {
     fillEmptyWithZeros() {
         let count = 0;
         this.triggerFields.forEach(field => {
-            if(field.value.trim() === "") {
+            if (field.value.trim() === "") {
                 field.value = "0";
                 count++;
             }
         });
 
-        if(count > 0) {
+        if (count > 0) {
             this.saveToLocalStorage();
 
-            EdenToast.render({ 
-                message: `${count} células vazias preenchidas com 0.`, 
-                type: 'success' 
+            EdenToast.render({
+                message: `${count} células vazias preenchidas com 0.`,
+                type: 'success'
             });
         } else {
-            EdenToast.render({ 
-                message: `Nenhuma célula vazia encontrada.`, 
-                type: 'info' 
+            EdenToast.render({
+                message: `Nenhuma célula vazia encontrada.`,
+                type: 'info'
             });
         }
     },
@@ -265,7 +244,7 @@ export const TesManager = {
         });
 
         const existingPageFooter = document.querySelector('.eden-c-page-footer');
-        if(existingPageFooter) {
+        if (existingPageFooter) {
             existingPageFooter.remove();
         }
 
@@ -279,7 +258,7 @@ export const TesManager = {
         document.documentElement.style.setProperty('--eden-sys-page-footer-height', `${footerHeight}px`);
 
         const isMobile = window.innerWidth < 1024;
-        if(isMobile) {
+        if (isMobile) {
             const spinnerHTML = EdenSpinner('Gerando PDF...');
             document.body.insertAdjacentHTML('beforeEnd', spinnerHTML);
 
@@ -287,19 +266,21 @@ export const TesManager = {
             spinnerElement.classList.add('eden-c-spinner--fixed');
 
             setTimeout(() => {
-                try { window.print(); } 
+                try { window.print(); }
                 finally { spinnerElement.remove(); }
             }, 250);
 
             return;
         }
 
-        window.print();
-        pageFooter.remove();
+        setTimeout(() => {
+            window.print();
+            pageFooter.remove();
+        }, 150);
     },
 
     async share() {
-     
+
         const shareData = {
             title: 'TES - Totalizador de Estatística de Saúde',
             text: 'Olá, colega(s)! Encontrei este sistema que ajuda a totalizar os resumos mensais/trimestrais das US. É muito útil para as Consultas, PNCT, ITS/HIV, Nutrição e Farmácia. Vale a pena conferir:',
@@ -308,7 +289,7 @@ export const TesManager = {
 
         const fullText = `${shareData.text} ${shareData.url}`;
 
-        if(navigator.share) {
+        if (navigator.share) {
             try {
                 await navigator.share(shareData);
                 return;
@@ -319,10 +300,10 @@ export const TesManager = {
 
         try {
             await navigator.clipboard.writeText(fullText);
-            
-            EdenToast.render({ 
-                message: `Link copiado. Partilhe com os colegas.`, 
-                type: 'success' 
+
+            EdenToast.render({
+                message: `Link copiado. Partilhe com os colegas.`,
+                type: 'success'
             });
         } catch (clipboardErr) {
             console.error("Erro ao copiar:", clipboardErr);
