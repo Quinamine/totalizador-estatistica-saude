@@ -1,6 +1,7 @@
 @use '../../abstracts/' as *;
 
 .eden-c-dialog {
+    --eden-sys-heading-spacing-y-start: 0;
     --eden-sys-paragraph-spacing-y: 0;
     --_max-width: 480px;
     

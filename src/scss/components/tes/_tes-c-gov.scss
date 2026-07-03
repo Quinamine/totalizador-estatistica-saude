@@ -37,5 +37,6 @@
         flex-direction: column;
         font-size: var(--_text-font-size);
         line-height: var(--eden-sys-line-height-body);
+        white-space: nowrap;
     }
 }

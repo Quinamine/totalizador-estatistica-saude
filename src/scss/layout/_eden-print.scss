@@ -17,10 +17,9 @@
         line-height: var(--eden-sys-line-height-flat);
     }
 
-    main,
     .eden-c-report-workspace {
-        display: flex;
-        justify-content: center;
+        margin-right: auto !important;
+        margin-left: auto !important;
     }
     
     .eden-u-hide-on-print {

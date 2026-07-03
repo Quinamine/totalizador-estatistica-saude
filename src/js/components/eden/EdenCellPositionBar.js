@@ -39,7 +39,7 @@ export const EdenCellPositionBar = {
         const rowLabel = tr.children[rowLabelColIndex] || null;
 
         const [_row, colId] = field.name.split('-');
-        const colLabel = document.querySelector(`[data-eden-col-label~="${colId}"]`);
+        const colLabel = table.querySelector(`[data-eden-col-label~="${colId}"]`);
 
         const complementaryId = colId;
         const complementaryLabel = document.querySelector(`[data-eden-complementary-label~="${complementaryId}"]`);
@@ -65,7 +65,7 @@ export const EdenCellPositionBar = {
             const modifierSuffix = this.displayElClasses[key];
             if (modifierSuffix) {
                 span.classList.add(`${baseClass}${modifierSuffix}`);
-                span.textContent = label.textContent.replace(/\s+/g, ' ').trim();
+                span.textContent = label.innerText.replace(/\s+/g, ' ').trim();
                 span.title = span.textContent;
             }
 

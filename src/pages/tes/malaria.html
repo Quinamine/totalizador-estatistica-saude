@@ -1,4 +1,4 @@
-<div class="eden-c-sheet eden-c-sheet--landscape tes-malaria" data-eden-js="tes-report">
+<div class="eden-c-page eden-c-page--landscape tes-malaria" data-eden-js="tes-report">
     <header class="tes-malaria__header">
         <div class="tes-malaria__header-row tes-malaria__header-row--spaced-lg tes-malaria__header-row--no-space-print">
             <figure class="tes-c-gov tes-c-gov--text-uppercase tes-c-gov--text-left">
@@ -47,7 +47,7 @@
         </div>
     </header>
     <figure>
-        <table class="eden-c-table" data-eden-row-label-col-index="1">
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="1">
             <colgroup>
                 <col style="width: 60px">
                 <col style="width: 400px">
@@ -73,63 +73,136 @@
                 <tr>
                     <th scope="row">A</th>
                     <th scope="row">Total de consultas externas</th>
-
                     <td>
-                        <input type="number" name="l1-c1" id="l1-c1" data-to-total-x="l1-c3">
+                        <input 
+                            type="number" 
+                            name="l1-c1" 
+                            id="l1-c1" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l1-c2" id="l1-c2" data-to-total-x="l1-c3">
+                        <input 
+                            type="number" 
+                            name="l1-c2" 
+                            id="l1-c2" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l1-c3" id="l1-c3" class="l1-c3" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l1-c3" 
+                            id="l1-c3" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly 
+                            data-eden-total="total-us">
                     </td>
                     <!-- APS -->
                     <td>
-                        <input type="number" name="l1-c4" id="l1-c4" data-to-total-x="l1-c6">
+                        <input 
+                            type="number" 
+                            name="l1-c4" 
+                            id="l1-c4" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l1-c5" id="l1-c5" data-to-total-x="l1-c6">
+                        <input 
+                            type="number" 
+                            name="l1-c5" 
+                            id="l1-c5" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l1-c6" id="l1-c6" class="l1-c6" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l1-c6" 
+                            id="l1-c6" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly  
+                            data-eden-total="total-aps">
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">B</th>
                     <th scope="row">Doentes testados para malária por TDR</th>
-
                     <td>
-                        <input type="number" name="l2-c1" id="l2-c1" data-to-total-x="l2-c3">
+                        <input 
+                            type="number" 
+                            name="l2-c1" 
+                            id="l2-c1" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l2-c2" id="l2-c2" data-to-total-x="l2-c3">
+                        <input 
+                            type="number" 
+                            name="l2-c2" 
+                            id="l2-c2" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l2-c3" id="l2-c3" class="l2-c3" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l2-c3" 
+                            id="l2-c3" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly 
+                            data-eden-total="total-us">
                     </td>
                     <!-- APS -->
                     <td>
-                        <input type="number" name="l2-c4" id="l2-c4" data-to-total-x="l2-c6">
+                        <input 
+                            type="number" 
+                            name="l2-c4" 
+                            id="l2-c4" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l2-c5" id="l2-c5" data-to-total-x="l2-c6">
+                        <input 
+                            type="number" 
+                            name="l2-c5" 
+                            id="l2-c5" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l2-c6" id="l2-c6" class="l2-c6" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l2-c6" 
+                            id="l2-c6" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly  
+                            data-eden-total="total-aps">
+                    </td>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">C</th>
                     <th scope="row">Doentes testados para malária por HTZ</th>
-
                     <td>
-                        <input type="number" name="l3-c1" id="l3-c1" data-to-total-x="l3-c3">
+                        <input 
+                            type="number" 
+                            name="l3-c1" 
+                            id="l3-c1" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l3-c2" id="l3-c2" data-to-total-x="l3-c3">
+                        <input 
+                            type="number" 
+                            name="l3-c2" 
+                            id="l3-c2" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l3-c3" id="l3-c3" class="l3-c3" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l3-c3" 
+                            id="l3-c3" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly 
+                            data-eden-total="total-us">
                     </td>
                     <!-- APS -->
                     <td class="eden-c-table__cell--na"></td>
@@ -139,39 +212,82 @@
                 <tr>
                     <th scope="row">D</th>
                     <th scope="row">Casos de malária confirmada (TDR¹ positivos)</th>
-
                     <td>
-                        <input type="number" name="l4-c1" id="l4-c1" data-to-total-x="l4-c3">
+                        <input 
+                            type="number" 
+                            name="l4-c1" 
+                            id="l4-c1" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l4-c2" id="l4-c2" data-to-total-x="l4-c3">
+                        <input 
+                            type="number" 
+                            name="l4-c2" 
+                            id="l4-c2" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l4-c3" id="l4-c3" class="l4-c3" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l4-c3" 
+                            id="l4-c3" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly 
+                            data-eden-total="total-us">
                     </td>
                     <!-- APS -->
                     <td>
-                        <input type="number" name="l4-c4" id="l4-c4" data-to-total-x="l4-c6">
+                        <input 
+                            type="number" 
+                            name="l4-c4" 
+                            id="l4-c4" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l4-c5" id="l4-c5" data-to-total-x="l4-c6">
+                        <input 
+                            type="number" 
+                            name="l4-c5" 
+                            id="l4-c5" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l4-c6" id="l4-c6" class="l4-c6" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l4-c6" 
+                            id="l4-c6" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly  
+                            data-eden-total="total-aps">
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">E</th>
                     <th scope="row">Casos de malária confirmada (HTZ² positivos)</th>
-
                     <td>
-                        <input type="number" name="l5-c1" id="l5-c1" data-to-total-x="l5-c3">
+                        <input 
+                            type="number" 
+                            name="l5-c1" 
+                            id="l5-c1" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l5-c2" id="l5-c2" data-to-total-x="l5-c3">
+                        <input 
+                            type="number" 
+                            name="l5-c2" 
+                            id="l5-c2" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l5-c3" id="l5-c3" class="l5-c3" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l5-c3" 
+                            id="l5-c3" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly 
+                            data-eden-total="total-us">
                     </td>
                     <!-- APS -->
                     <td class="eden-c-table__cell--na"></td>
@@ -181,63 +297,135 @@
                 <tr>
                     <th scope="row">F</th>
                     <th scope="row">Casos de malária clínica (não testados)</th>
-
                     <td>
-                        <input type="number" name="l6-c1" id="l6-c1" data-to-total-x="l6-c3">
+                        <input 
+                            type="number" 
+                            name="l6-c1" 
+                            id="l6-c1" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l6-c2" id="l6-c2" data-to-total-x="l6-c3">
+                        <input 
+                            type="number" 
+                            name="l6-c2" 
+                            id="l6-c2" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l6-c3" id="l6-c3" class="l6-c3" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l6-c3" 
+                            id="l6-c3" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly 
+                            data-eden-total="total-us">
                     </td>
                     <!-- APS -->
                     <td>
-                        <input type="number" name="l6-c4" id="l6-c4" data-to-total-x="l6-c6">
+                        <input 
+                            type="number" 
+                            name="l6-c4" 
+                            id="l6-c4" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l6-c5" id="l6-c5" data-to-total-x="l6-c6">
+                        <input 
+                            type="number" 
+                            name="l6-c5" 
+                            id="l6-c5" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l6-c6" id="l6-c6" class="l6-c6" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l6-c6" 
+                            id="l6-c6" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly  
+                            data-eden-total="total-aps">
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">G</th>
                     <th scope="row">Casos de malária tratados com AL³</th>
-
                     <td>
-                        <input type="number" name="l7-c1" id="l7-c1" data-to-total-x="l7-c3">
+                        <input 
+                            type="number" 
+                            name="l7-c1" 
+                            id="l7-c1" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l7-c2" id="l7-c2" data-to-total-x="l7-c3">
+                        <input 
+                            type="number" 
+                            name="l7-c2" 
+                            id="l7-c2" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l7-c3" id="l7-c3" class="l7-c3" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l7-c3" 
+                            id="l7-c3" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly 
+                            data-eden-total="total-us">
                     </td>
                     <!-- APS -->
                     <td>
-                        <input type="number" name="l7-c4" id="l7-c4" data-to-total-x="l7-c6">
+                        <input 
+                            type="number" 
+                            name="l7-c4" 
+                            id="l7-c4" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l7-c5" id="l7-c5" data-to-total-x="l7-c6">
+                        <input 
+                            type="number" 
+                            name="l7-c5" 
+                            id="l7-c5" 
+                            data-eden-group="total-aps">
                     </td>
                     <td>
-                        <input type="number" name="l7-c6" id="l7-c6" class="l7-c6" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="l7-c6" 
+                            id="l7-c6" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly  
+                            data-eden-total="total-aps">
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">H</th>
                     <th scope="row">Casos de malária tratados com ASAQ⁴</th>
-
                     <td>
-                        <input type="number" name="l8-c1" id="l8-c1" data-to-total-x="l8-c3">
+                        <input 
+                            type="number" 
+                            name="l8-c1" 
+                            id="l8-c1" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l8-c2" id="l8-c2" data-to-total-x="l8-c3">
+                        <input 
+                            type="number" 
+                            name="l8-c2" 
+                            id="l8-c2" 
+                            data-eden-group="total-us">
                     </td>
                     <td>
-                        <input type="number" name="l8-c3" id="l8-c3" class="l8-c3" value="0" tabindex="-1" readonly>
+                        <input 
+                            type="number" 
+                            name="total-us" 
+                            id="total-us" 
+                            value="0" 
+                            tabindex="-1" 
+                            readonly 
+                            data-eden-total="total-us">
                     </td>
                     <!-- APS -->
                     <td class="eden-c-table__cell--na"></td>
@@ -260,7 +448,7 @@
             <input type="date" name="date" id="date" class="tes-c-footer__input tes-c-footer__input--date">
         </div>
     </footer>
-    <div class="eden-c-notes-editor">
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
         <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true"
             data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes">
         </p>

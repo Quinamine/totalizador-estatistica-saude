@@ -14,7 +14,7 @@ export const EdenNotesEditor = {
             if(!field) return;
 
             if (field.innerHTML === '<br>' || field.innerText.trim() === '') {
-                field.target.innerHTML = '';
+                field.innerHTML = '';
             }
         });
     }

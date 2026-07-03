@@ -5,7 +5,7 @@ import { EdenSpinner } from "./../eden/EdenSpinner.js";
 export const TesManager = {
     activeReportId: '',
     saveTimeout: null,
-    totalTriggerSelector: '[data-to-subtotal-x], [data-to-total-x]',
+    totalTriggerSelector: '[data-eden-group]',
 
     get readWriteFields() {
         return Array.from(this.reportFields || []).filter(field => !field.readOnly);
@@ -110,23 +110,33 @@ export const TesManager = {
     },
 
     updateRelatedTotals(field) {
-        const targets = [
-            { key: 'toSubtotalX', selector: 'data-to-subtotal-x' },
-            { key: 'toTotalX', selector: 'data-to-total-x' },
-            { key: 'toGrandTotalX', selector: 'data-to-grand-total-x' },
-            { key: 'toCol', selector: 'data-to-col' },
-            { key: 'toSubtotalY', selector: 'data-to-subtotal-y' },
-            { key: 'toTotalY', selector: 'data-to-total-y' },
-            { key: 'toGrandTotalY', selector: 'data-to-grand-total-y' },
-        ];
+        const sourceIds = field.dataset.edenGroup.split(' ').map(id => id.trim());
+        const currentRow = field.closest('tr');
+        let verticalFormat = /^(sec|s)\d+-c\d+$/i;
 
-        targets.forEach(({ key, selector }) => {
-            const targetId = field.dataset[key];
-            if (targetId) {
-                const sources = document.querySelectorAll(`[${selector}="${targetId}"]`);
-                const targetField = document.getElementById(targetId);
-                if (targetField) {
-                    targetField.value = this.calculateTotal(sources);
+        sourceIds.forEach( id => {
+            let context = verticalFormat.test(id) 
+                ? document
+                : currentRow;
+
+            const sources = context.querySelectorAll(`[data-eden-group~="${id}"]`);
+            const totalField = context.querySelector(`[data-eden-total="${id}"]`);
+
+            if(totalField) {
+                totalField.value = this.calculateTotal(sources);
+
+                if(totalField.dataset.edenActivePatients) {
+                    const [startingId, admissionsId, outComesId ] = totalField.dataset.edenActivePatients.split(' ');
+
+                    const startingField = document.getElementById(`${startingId}`);
+                    const admissionsField = document.getElementById(`${admissionsId}`);
+                    const outComesField = document.getElementById(`${outComesId}`);
+
+                    totalField.value = this.calculateActivePatients(
+                        startingField?.value, 
+                        admissionsField?.value, 
+                        outComesField?.value
+                    )
                 }
             }
         });
@@ -138,6 +148,10 @@ export const TesManager = {
             total += Number(field.value) || 0;
         }
         return total;
+    },
+
+    calculateActivePatients(starting, admissions, outcomes) {
+        return Number(starting) + Number(admissions) - Number(outcomes);
     },
 
     getReportData() {
@@ -206,8 +220,10 @@ export const TesManager = {
     },
 
     fillEmptyWithZeros() {
+        const emptyCells = this.reportWorkspace.querySelectorAll('tbody input:not([readonly])');
+        
         let count = 0;
-        this.triggerFields.forEach(field => {
+        emptyCells.forEach(field => {
             if (field.value.trim() === "") {
                 field.value = "0";
                 count++;
@@ -250,12 +266,17 @@ export const TesManager = {
 
         const pageFooter = document.createElement('div');
         pageFooter.classList.add('eden-c-page-footer');
+        const isMultiPage = document.querySelector('[data-eden-js="tes-report"]').classList.contains('eden-c-page--has-pagination');
+        
+        if(isMultiPage) {
+            pageFooter.classList.add('eden-c-page-footer--fixed');
+        }
+
         pageFooter.innerHTML = `<span class="eden-c-page-footer__date">${date} ${hour}</span>
                                 <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`
 
         this.reportWorkspace.appendChild(pageFooter);
-        const footerHeight = pageFooter.offsetHeight;
-        document.documentElement.style.setProperty('--eden-sys-page-footer-height', `${footerHeight}px`);
+
 
         const isMobile = window.innerWidth < 1024;
         if (isMobile) {
