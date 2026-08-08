@@ -14,12 +14,12 @@ export const EdenToolbar = {
     },
 
     bindEvents() {
-        document.addEventListener('eden:trigger:report-render-request', () => {
+        document.addEventListener('eden:trigger:page-render-request', () => {
             this.requestVisibility('close'); // Mobile
             this.disableButtons(); // Desktop
         });
 
-        document.addEventListener('eden:report:rendered', () => {
+        document.addEventListener('eden:page:rendered', () => {
             this.requestVisibility('open')
             this.enableButtons();
         });

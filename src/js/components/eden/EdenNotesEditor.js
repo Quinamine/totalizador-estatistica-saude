@@ -5,11 +5,11 @@ export const EdenNotesEditor = {
     },
 
     cacheElements() {
-        this.reportWorkspace = document.querySelector('.eden-c-report-workspace');
+        this.contentArea = document.querySelector('.eden-c-content-area');
     },
 
     bindEvents() {
-        this.reportWorkspace.addEventListener('input', (e) => {
+        this.contentArea.addEventListener('input', (e) => {
             const field = e.target.closest('[data-eden-js="report-notes"]');
             if(!field) return;
 

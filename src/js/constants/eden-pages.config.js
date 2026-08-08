@@ -1,4 +1,4 @@
-export const TES_REPORTS = [
+export const EDEN_PAGES = [
     { id: 'consultas', name: 'RM Consultas Externas'}, 
     { id: 'ccd', name: 'RM CCD'}, 
     { id: 'malaria', name: 'RM Malária'}, 

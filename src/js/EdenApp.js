@@ -1,5 +1,5 @@
 import { EdenSidebar } from "./components/eden/EdenSidebar.js";
-import { EdenReportWorkspace } from "./components/eden/EdenReportWorkspace.js";
+import { EdenContentArea } from "./components/eden/EdenContentArea.js";
 import { EdenHeader } from "./components/eden/EdenHeader.js";
 import { EdenToolbar } from "./components/eden/EdenToolbar.js";
 import { TesManager } from "./components/tes/TesManager.js";
@@ -11,7 +11,7 @@ import { EdenViewportHandler } from "./components/eden/EdenViewportHandler.js";
 const EdenApp = {
     init() {
         EdenSidebar.init();
-        EdenReportWorkspace.init();
+        EdenContentArea.init();
         EdenHeader.init();
         EdenToast.init();
         EdenToolbar.init();
@@ -31,13 +31,13 @@ const EdenApp = {
             const action = trigger.dataset.edenAction;
             const detail = {};
 
-            if(trigger.matches('[data-eden-action="report:render"]')) {
+            if(trigger.matches('[data-eden-action="page:render"]')) {
                 e.preventDefault();
-                const reportId = trigger.dataset.edenReportId;
-                const reportTitle = trigger.textContent;
-                detail.id = reportId;
+                const pageId = trigger.dataset.edenPageId;
+                const pageTitle = trigger.textContent;
+                detail.id = pageId;
 
-                this.updateRoute(reportId, reportTitle);
+                this.updateRoute(pageId, pageTitle);
                 
             }
 

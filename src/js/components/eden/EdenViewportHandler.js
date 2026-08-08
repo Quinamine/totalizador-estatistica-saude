@@ -23,7 +23,7 @@ export const EdenViewportHandler = {
             this.requestFrame(() => this.notifyScrollDirection());
         });
 
-        document.addEventListener('eden:report:rendered', () => {
+        document.addEventListener('eden:page:rendered', () => {
             this.updatePageContentMaxWidth();
         });
     },
