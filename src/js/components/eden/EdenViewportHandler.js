@@ -18,7 +18,7 @@ export const EdenViewportHandler = {
         window.visualViewport?.addEventListener('scroll', () => {
             this.requestFrame(() => this.updateKeyboardHeight());
         });
-       
+
         window.addEventListener('scroll', () => {
             this.requestFrame(() => this.notifyScrollDirection());
         });
@@ -29,7 +29,7 @@ export const EdenViewportHandler = {
     },
 
     requestFrame(callback) {
-        if(!this.isUpdatingFrame) {
+        if (!this.isUpdatingFrame) {
             this.isUpdatingFrame = true;
 
             window.requestAnimationFrame(() => {
@@ -47,15 +47,17 @@ export const EdenViewportHandler = {
 
         document.documentElement.style.setProperty('--eden-sys-keyboard-height', `${keyboardHeight}px`);
         document.documentElement.style.setProperty('--eden-sys-toolbar-height', `${toolbarHeight}px`);
-       
+
         this.toggleBodyClass('has-keyboard-open', hasKeyboardOpen);
     },
 
     updatePageContentMaxWidth() {
         const currentTable = document.querySelector('[data-eden-js="tes-report"] table');
-        const tableWidth = currentTable.offsetWidth;
 
-        document.documentElement.style.setProperty('--eden-sys-page-content-max-width', `${tableWidth}px`);
+        if (currentTable) {
+            const tableWidth = currentTable.offsetWidth;
+            document.documentElement.style.setProperty('--eden-sys-page-content-max-width', `${tableWidth}px`);
+        }
     },
 
     toggleBodyClass(className, shouldAdd) {
@@ -64,10 +66,10 @@ export const EdenViewportHandler = {
 
     notifyScrollDirection() {
         const isDesktop = window.innerWidth >= 1024;
-        if(isDesktop) return;
+        if (isDesktop) return;
 
         const currentScrollY = window.scrollY;
-            
+
         const isScrollingDown = currentScrollY > 64 && window.scrollY > this.lastScrollY;
 
         EdenViewportHandler.notify('viewport', 'scroll-direction', { isScrollingDown });

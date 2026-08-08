@@ -26,5 +26,8 @@ export const EDEN_PAGES = [
     { id: 'pnct-09', name: 'PNCT 09'}, 
     { id: 'pnct-11a', name: 'PNCT APSS 11A'}, 
     { id: 'pnct-12', name: 'PNCT 12'}, 
-    { id: 'pnct-14d', name: 'PNCT 14D'}
+    { id: 'pnct-14d', name: 'PNCT 14D'},
+    { id: 'termos', name: 'Termos de Utilização'},
+    { id: 'privacidade', name: 'Política de Privacidade'},
+    { id: 'suporte', name: 'Ajuda e Suporte'}
 ];

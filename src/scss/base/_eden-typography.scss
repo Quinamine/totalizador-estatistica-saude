@@ -4,6 +4,7 @@ h1, h2, h3, h4 {
     line-height: var(--eden-sys-line-height-heading);
     margin-block: var(--eden-sys-heading-spacing-y-start) var(--eden-sys-heading-spacing-y-end);
     font-weight: var(--eden-sys-font-weight-bold);
+    color: var(--eden-sys-primary);
 }
 
 h1 {
@@ -30,7 +31,7 @@ p {
 article ul, 
 article ol {
     margin-block-end: var(--eden-sys-list-spacing-y);
-    margin-inline-start: var(--eden-sys-page-margin);
+    padding-inline-start: var(--eden-sys-page-margin);
 
     li:not(li:last-of-type) {
         margin-block-end: var(--eden-sys-list-item-spacing-y);
@@ -39,7 +40,7 @@ article ol {
     li {
         ul, ol {
             margin-block-start: var(--eden-sys-list-item-spacing-y);
-            margin-inline-start: calc(var(--eden-sys-page-margin) + var(--eden-sys-space-150));
+            padding-inline-start: calc(var(--eden-sys-page-margin) + var(--eden-sys-space-150));
         }
     }
 }

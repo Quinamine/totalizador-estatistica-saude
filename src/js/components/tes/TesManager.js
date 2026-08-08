@@ -1,6 +1,7 @@
 import { EdenDialog } from './../eden/EdenDialog';
 import { EdenToast } from "./../eden/EdenToast.js";
 import { EdenSpinner } from "./../eden/EdenSpinner.js";
+import { EDEN_PAGES_WITHOUT_TOOLBAR } from '../../constants/eden-pages-without-toolbar.config.js';
 
 export const TesManager = {
     activeReportId: '',
@@ -32,9 +33,12 @@ export const TesManager = {
 
     bindEvents() {
         document.addEventListener('eden:page:rendered', ({ detail }) => {
+            this.activeReportId = detail.id;
+
+            if(EDEN_PAGES_WITHOUT_TOOLBAR.includes(this.activeReportId)) return;
+
             this.reportFields = this.contentArea.querySelectorAll('input');
             this.pNotes = this.contentArea.querySelector('[data-eden-js="report-notes"]');
-            this.activeReportId = detail.id;
             this.loadFromStorage();
         });
 

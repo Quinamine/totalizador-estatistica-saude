@@ -50,6 +50,14 @@ export const EdenHeader = {
     },
 
     toggleStaticMode(isScrollingDown) {
+        const currentPage = document.querySelector('.eden-c-page');
+        if(!currentPage) return;
+
+        if(currentPage?.dataset.edenIgnoreHeaderScroll) {
+            this.container.classList.remove('eden-c-header--static');
+            return;
+        }
+
         this.container.classList.toggle('eden-c-header--static', isScrollingDown);
     }
 };

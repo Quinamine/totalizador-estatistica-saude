@@ -1,4 +1,5 @@
 import { EdenMessenger } from "../../utils/EdenMessenger.js";
+import { EDEN_PAGES_WITHOUT_TOOLBAR } from "../../constants/eden-pages-without-toolbar.config.js";
 
 export const EdenToolbar = {
     ...EdenMessenger,
@@ -19,7 +20,11 @@ export const EdenToolbar = {
             this.disableButtons(); // Desktop
         });
 
-        document.addEventListener('eden:page:rendered', () => {
+        document.addEventListener('eden:page:rendered', (e) => {
+            const pageId = e.detail.id;
+         
+            if(EDEN_PAGES_WITHOUT_TOOLBAR.includes(pageId)) return;
+
             this.requestVisibility('open')
             this.enableButtons();
         });
