@@ -1,0 +1,143 @@
+@use '../../abstracts' as *;
+
+.tes-hiv {
+    @include desktop {
+        --eden-page-padding-x: var(--eden-sys-space-600);
+        --eden-page-padding-y: var(--eden-sys-space-600);
+    }
+
+    @media print {
+        font-size: var(--eden-sys-font-size-200);
+
+        label {
+            font-weight: var(--eden-sys-font-weight-bold);
+        }
+    }
+
+    --_section-indentation: 20px;
+
+    .eden-c-table {
+        --eden-table-margin-top: var(--eden-sys-space-200);
+
+        font-size: var(--eden-sys-font-size-100);
+        margin-inline-start: 20px;
+
+        &:nth-of-type(2) {
+            margin-inline-start: 0;
+        }
+
+        thead {
+            --eden-table-cell-padding-x: 0;
+            --eden-table-cell-padding-y: 0;
+
+            font-weight: var(--eden-sys-font-weight-bold);
+        }
+
+        th[scope="row"] {
+            --eden-table-cell-padding-y: var(--eden-sys-space-100);
+            
+            @include mobile {
+                font-weight: var(--eden-sys-font-weight-bold);
+            }
+            
+            @media print {
+                line-height: 1.15;
+                font-weight: var(--eden-sys-font-weight-bold);
+            }
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--eden-sys-space-700);
+        margin-inline-start: var(--_section-indentation);
+    }
+
+    &__header-gov {
+        flex-basis: 238px;
+    }
+
+    .tes-c-gov__info {
+        font-size: 0.625rem; // 10px;
+        line-height: var(--eden-sys-line-height-heading);
+
+        @media print {
+            font-size: 10.5px;
+        }
+    }
+
+    &__model-code {
+        margin-block-start: var(--eden-sys-space-100);
+        text-transform: none;
+    }
+
+    &__title {
+        font-size: var(--eden-sys-font-size-500);
+        margin-block-end: var(--eden-sys-space-400);
+        text-align: right;
+    }
+
+    &__meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--eden-sys-space-600);
+
+        &--spaced {
+            margin-block-end: var(--eden-sys-space-400);
+        }
+
+        &--indented {
+            margin-inline-start: 85px;
+        }
+    }
+
+    &__meta-group {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        &--large {
+            flex: 4;
+        }
+
+        &--medium {
+            flex: 2;
+        }
+
+        label {
+            white-space: nowrap;
+        }
+    }
+
+    &__nid-group {
+        display: flex;
+        align-items: center;
+        padding-inline-end: var(--eden-sys-space-300);
+
+        label {
+            white-space: nowrap;
+        }
+    }
+
+    &__footer {
+        margin-inline-start: var(--_section-indentation);
+
+        input {
+            width: 200px;
+            text-align: center;
+        }
+    }
+
+    .tes-c-footer__area--left {
+        justify-self: flex-start;
+    }
+
+    .tes-c-footer__area--right {
+        justify-self: flex-end;
+    }
+
+    &__notes {
+        margin-inline-start: var(--_section-indentation);
+    }
+}

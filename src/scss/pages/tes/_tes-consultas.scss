@@ -1,27 +1,28 @@
 @use '../../abstracts' as *;
 
 .tes-consultas {
-    --eden-sheet-width: 1352px;
-
     --_thead-separator-size: 4px;
     --_thead-separator-color: var(--eden-sys-primary);
 
     @media print {
         --_thead-separator-size: 8px;
     }
-
+    
     .eden-c-table {
         --eden-table-cell-padding-x: var(--eden-sys-space-100);
 
         @media print {
             --eden-table-cell-height: var(--eden-sys-space-500);
         }
+    }
 
+    h1 {
+        --eden-sys-heading-spacing-y-end: 0;
     }
 
     &__header {
         display: grid;
-        grid-template-columns: 338px 750px 1fr;
+        grid-template-columns: 340px 750px 1fr;
         grid-column-gap: var(--eden-sys-space-400);
 
         @media print {
@@ -34,14 +35,13 @@
         align-items: flex-end;
         gap: var(--eden-sys-space-150);
 
-        h1 {
+        h1, input {
             font-size: var(--eden-sys-font-size-600);
             line-height: var(--eden-sys-line-height-flat);
             white-space: nowrap;
         }
 
         input {
-            font-size: var(--eden-sys-font-size-600);
             flex-grow: 1;
         }
     }
@@ -50,23 +50,24 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        align-items: flex-end;
     }
 
     &__model {
         flex: 1;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         padding-block-start: var(--eden-sys-space-150);
     }
 
     &__model-code {
-        font-size: var(--eden-sys-font-size-200);
-        font-weight: var(--eden-sys-font-weight-bold);
+        font-size: var(--eden-sys-font-size-100);
         white-space: nowrap;
     }
 
     &__serial {
+        max-width: 153px;
         font-size: var(--eden-sys-font-size-300);
         font-weight: var(--eden-sys-font-weight-bold);
         font-family: 'Courier New', Courier, monospace;
@@ -83,6 +84,7 @@
         display: flex;
         align-items: center;
         padding-inline-end: var(--eden-sys-space-200);
+        padding-block-end: var(--eden-sys-space-200);
     }
 
     &__head {
@@ -119,6 +121,10 @@
     &__body tr {
         th:first-child {
             border-block-color: var(--eden-sys-border-color-muted);
+        }
+
+        &:first-child th:first-child {
+            border-block-start-color: var(--eden-sys-primary);
         }
 
         &:last-child th:first-child {

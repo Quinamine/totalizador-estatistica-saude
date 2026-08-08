@@ -22,6 +22,10 @@ export const EdenViewportHandler = {
         window.addEventListener('scroll', () => {
             this.requestFrame(() => this.notifyScrollDirection());
         });
+
+        document.addEventListener('eden:report:rendered', () => {
+            this.updatePageContentMaxWidth();
+        });
     },
 
     requestFrame(callback) {
@@ -45,6 +49,13 @@ export const EdenViewportHandler = {
         document.documentElement.style.setProperty('--eden-sys-toolbar-height', `${toolbarHeight}px`);
        
         this.toggleBodyClass('has-keyboard-open', hasKeyboardOpen);
+    },
+
+    updatePageContentMaxWidth() {
+        const currentTable = document.querySelector('[data-eden-js="tes-report"] table');
+        const tableWidth = currentTable.offsetWidth;
+
+        document.documentElement.style.setProperty('--eden-sys-page-content-max-width', `${tableWidth}px`);
     },
 
     toggleBodyClass(className, shouldAdd) {

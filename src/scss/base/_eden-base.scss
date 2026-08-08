@@ -122,13 +122,16 @@ textarea {
 
 input {
     --_focus-bg: greenyellow;
-    --_font-size: var(--eden-input-font-size, var(--eden-sys-font-size-100));
+    --_readonly-bg: var(--eden-sys-surface);
 
+    @media print {
+        --_readonly-bg: inherit;
+    }
+    
     width: 100%;
     min-height: var(--eden-sys-space-500);
     background-color: transparent;
     border-bottom: 1px solid var(--eden-sys-border-color);
-    font-size: var(--_font-size);
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
@@ -147,7 +150,7 @@ input {
     }
 
     &[readonly] {
-        background-color: var(--eden-sys-surface);
+        background-color: var(--_readonly-bg);
         cursor: default;
     }
 

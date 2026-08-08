@@ -3,15 +3,18 @@
 .eden-c-table {
     --eden-table-cell-height: var(--eden-sys-space-600);
     --eden-table-cell-padding-y: 0;
-    --eden-table-margin-top: var(--eden-sys-space-100);
+    --eden-table-margin-top: var(--eden-sys-space-200);
     --eden-table-margin-bottom: 0;
     --_cell-na-bg: #b8bfc4;
     --_cell-accent-bg: #e5e7eb;
+
+    width: max-content;
 
     @media print {
         --_cell-na-bg: var(--eden-sys-primary);
     }
 
+    thead,
     tbody td {
         --eden-table-cell-padding-x: 0;
     }
@@ -36,9 +39,14 @@
 
     &__cell--na {
         background-color: var(--_cell-na-bg);
+        border-inline-start-color: var(--_cell-na-bg);
+
+        &:not(:last-of-type) {
+            border-inline-end-color: var(--_cell-na-bg);
+        }
     }
 
-    &__head--accented,
+    &__row--accented,
     &__cell--accented {
         @media print {
             background-color: var(--_cell-accent-bg);

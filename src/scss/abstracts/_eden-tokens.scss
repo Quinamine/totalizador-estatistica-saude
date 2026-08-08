@@ -192,6 +192,8 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
     --eden-sys-layout-header-height: 64px;
     --eden-sys-toolbar-height: 87px;
     --eden-sys-keyboard-height: 0px;
+    --eden-sys-page-width: max-content;
+    --eden-sys-page-content-max-width: initial;
 }
 
 @media screen and (min-width: 768px) {
@@ -217,7 +219,7 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
         --eden-sys-page-margin-top: 0.5cm;
         --eden-sys-page-margin-right: 0.8cm;
         --eden-sys-page-margin-bottom: 0.8cm;
-        --eden-sys-page-margin-portrait-left: 1.5cm;
+        --eden-sys-page-margin-portrait-left: 1cm;
         --eden-sys-page-margin-landscape-left: 0.8cm;
         --eden-sys-page-content-offset-top: 1cm;
         --eden-sys-page-footer-height: 20px;

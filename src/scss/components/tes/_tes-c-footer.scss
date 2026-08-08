@@ -1,12 +1,14 @@
 @use '../../abstracts' as *;
 
 .tes-c-footer {
+    --_margin-y-start: var(--eden-sys-space-500);
+
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-areas: "left center right";
     grid-column-gap: var(--eden-sys-space-500);
     grid-row-gap: var(--eden-sys-space-400);
-    margin-block-start: var(--eden-sys-space-500);
+    margin-block-start: var(--_margin-y-start);
 
     &--vertical {
         grid-template-rows: auto auto;
@@ -17,13 +19,17 @@
 
     &--overlap {
         @media print {
-            margin-top: calc(var(--eden-sys-tfoot-spacer-height) * -1);
+            margin-top: calc(var(--eden-sys-tfoot-spacer-height) * -1 + var(--_margin-y-start));
         }
     }
 
     &__area {
         display: flex;
         align-items: center;
+    }
+    
+    &__area--stack {
+        flex-direction: column;
     }
 
     &__area--left {

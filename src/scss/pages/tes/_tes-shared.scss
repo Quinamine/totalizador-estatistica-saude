@@ -1,0 +1,11 @@
+@use '../../abstracts' as *;
+
+[data-eden-js="tes-report"] > header,
+.tes-c-footer,
+.eden-c-notes-editor {
+    max-width: var(--eden-sys-page-content-max-width);
+
+    @media print {
+        width: 99.9%;
+    }
+}
