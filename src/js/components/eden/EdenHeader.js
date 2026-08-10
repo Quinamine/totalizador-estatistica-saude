@@ -1,4 +1,4 @@
-import { TES_REPORTS} from "../../constants/tes-reports.config";
+import { EDEN_PAGES} from "../../constants/eden-pages.config.js";
 
 export const EdenHeader = {
     init() {
@@ -13,7 +13,7 @@ export const EdenHeader = {
     },
 
     bindEvents() {
-        document.addEventListener('eden:trigger:report-render-request', ({ detail }) => {
+        document.addEventListener('eden:trigger:page-render-request', ({ detail }) => {
             const { id } = detail;
             this.updateTitle(id);
         });
@@ -25,10 +25,10 @@ export const EdenHeader = {
 
         window.addEventListener('load', () => {
             const url = new URL(window.location.href);
-            const reportId = url.searchParams.get("page");
-            if(!reportId) return;        
+            const pageId = url.searchParams.get("page");
+            if(!pageId) return;        
             
-            this.updateTitle(reportId);
+            this.updateTitle(pageId);
         });
     },
 
@@ -42,14 +42,22 @@ export const EdenHeader = {
     },
 
     updateTitle(id) {
-        const report = TES_REPORTS.find(item => item.id === id);
+        const page = EDEN_PAGES.find(item => item.id === id);
 
-        if (report) {
-            this.title.textContent = report.name;
+        if (page) {
+            this.title.textContent = page.name;
         }
     },
 
     toggleStaticMode(isScrollingDown) {
+        const currentPage = document.querySelector('.eden-c-page');
+        if(!currentPage) return;
+
+        if(currentPage?.dataset.edenIgnoreHeaderScroll) {
+            this.container.classList.remove('eden-c-header--static');
+            return;
+        }
+
         this.container.classList.toggle('eden-c-header--static', isScrollingDown);
     }
 };

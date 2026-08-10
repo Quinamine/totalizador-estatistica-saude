@@ -1,6 +1,7 @@
 import { EdenDialog } from './../eden/EdenDialog';
 import { EdenToast } from "./../eden/EdenToast.js";
 import { EdenSpinner } from "./../eden/EdenSpinner.js";
+import { EDEN_PAGES_WITHOUT_TOOLBAR } from '../../constants/eden-pages-without-toolbar.config.js';
 
 export const TesManager = {
     activeReportId: '',
@@ -27,18 +28,21 @@ export const TesManager = {
     },
 
     cacheElements() {
-        this.reportWorkspace = document.querySelector('.eden-c-report-workspace');
+        this.contentArea = document.querySelector('[data-eden-js="content-area"]');
     },
 
     bindEvents() {
-        document.addEventListener('eden:report:rendered', ({ detail }) => {
-            this.reportFields = this.reportWorkspace.querySelectorAll('input');
-            this.pNotes = this.reportWorkspace.querySelector('[data-eden-js="report-notes"]');
+        document.addEventListener('eden:page:rendered', ({ detail }) => {
             this.activeReportId = detail.id;
+
+            if(EDEN_PAGES_WITHOUT_TOOLBAR.includes(this.activeReportId)) return;
+
+            this.reportFields = this.contentArea.querySelectorAll('input');
+            this.pNotes = this.contentArea.querySelector('[data-eden-js="report-notes"]');
             this.loadFromStorage();
         });
 
-        this.reportWorkspace.addEventListener('input', (e) => {
+        this.contentArea.addEventListener('input', (e) => {
             clearTimeout(this.saveTimeout);
             this.saveTimeout = setTimeout(() => {
                 this.saveToLocalStorage();
@@ -96,7 +100,7 @@ export const TesManager = {
             if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'p')) {
                 e.preventDefault();
 
-                const isReportRendered = this.reportWorkspace.querySelector('[data-eden-js="tes-report"]');
+                const isReportRendered = this.contentArea.querySelector('[data-eden-js="tes-report"]');
                 if (isReportRendered) {
                     this.print();
                 } else {
@@ -184,7 +188,7 @@ export const TesManager = {
         const savedData = JSON.parse(localStorage.getItem(storageKey));
         if (savedData) {
             Object.entries(savedData).forEach(([name, value]) => {
-                const field = this.reportWorkspace.querySelector(`[name="${name}"]`);
+                const field = this.contentArea.querySelector(`[name="${name}"]`);
                 if (field) {
                     field.value = value;
 
@@ -220,7 +224,7 @@ export const TesManager = {
     },
 
     fillEmptyWithZeros() {
-        const emptyCells = this.reportWorkspace.querySelectorAll('tbody input:not([readonly])');
+        const emptyCells = this.contentArea.querySelectorAll('tbody input:not([readonly])');
         
         let count = 0;
         emptyCells.forEach(field => {
@@ -275,7 +279,7 @@ export const TesManager = {
         pageFooter.innerHTML = `<span class="eden-c-page-footer__date">${date} ${hour}</span>
                                 <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`
 
-        this.reportWorkspace.appendChild(pageFooter);
+        this.contentArea.appendChild(pageFooter);
 
 
         const isMobile = window.innerWidth < 1024;

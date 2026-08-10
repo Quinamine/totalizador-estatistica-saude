@@ -1,4 +1,5 @@
 import { EdenMessenger } from "../../utils/EdenMessenger.js";
+import { EDEN_PAGES_WITHOUT_TOOLBAR } from "../../constants/eden-pages-without-toolbar.config.js";
 
 export const EdenToolbar = {
     ...EdenMessenger,
@@ -14,12 +15,16 @@ export const EdenToolbar = {
     },
 
     bindEvents() {
-        document.addEventListener('eden:trigger:report-render-request', () => {
+        document.addEventListener('eden:trigger:page-render-request', () => {
             this.requestVisibility('close'); // Mobile
             this.disableButtons(); // Desktop
         });
 
-        document.addEventListener('eden:report:rendered', () => {
+        document.addEventListener('eden:page:rendered', (e) => {
+            const pageId = e.detail.id;
+         
+            if(EDEN_PAGES_WITHOUT_TOOLBAR.includes(pageId)) return;
+
             this.requestVisibility('open')
             this.enableButtons();
         });

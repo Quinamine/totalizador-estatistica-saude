@@ -1,8 +1,8 @@
 import { EdenSpinner } from "./EdenSpinner.js";
 import { EdenMessenger } from "../../utils/EdenMessenger.js";
-import { TES_REPORTS} from "../../constants/tes-reports.config.js";
+import { EDEN_PAGES} from "../../constants/eden-pages.config.js";
 
-export const EdenReportWorkspace = {
+export const EdenContentArea = {
     ...EdenMessenger,
     
     init() {
@@ -11,35 +11,35 @@ export const EdenReportWorkspace = {
     },
     
     cacheElements() {
-        this.container = document.querySelector('[data-eden-js="report-workspace"]');
+        this.container = document.querySelector('[data-eden-js="content-area"]');
     },
 
     bindEvents() {
-        document.addEventListener('eden:trigger:report-render-request', ({ detail }) => {
+        document.addEventListener('eden:trigger:page-render-request', ({ detail }) => {
             const { id } = detail;
-            this.renderReport(id);
+            this.renderPage(id);
         });
 
         window.addEventListener('load', () => {
             const url = new URL(window.location.href);
-            const reportId = url.searchParams.get("page");
-            if(!reportId) return;         
+            const pageId = url.searchParams.get("page");
+            if(!pageId) return;         
 
-            const report = TES_REPORTS.find(item => item.id === reportId);;
-            if(report) {
-                document.title = `${report.name} | TES - Totalizador de Estatística de Saúde`;
-                this.renderReport(reportId);
+            const page = EDEN_PAGES.find(item => item.id === pageId);;
+            if(page) {
+                document.title = `${page.name} | TES - Totalizador de Estatística de Saúde`;
+                this.renderPage(pageId);
             }
         });
     },
     
-    async renderReport(reportId) {
+    async renderPage(pageId) {
         const minimumDelay = new Promise(resolve => setTimeout(resolve, 600));
         this.container.innerHTML = EdenSpinner('A carregar ficha...');
         
         try {
             const [response] = await Promise.all([
-                fetch(`./pages/tes/${reportId}.html`),
+                fetch(`./pages/tes/${pageId}.html`),
                 minimumDelay
             ]);
 
@@ -49,20 +49,20 @@ export const EdenReportWorkspace = {
                 throw error;
             }
 
-            const report = await response.text();
-            this.container.innerHTML = report;
+            const page = await response.text();
+            this.container.innerHTML = page;
 
-            this.notify('report','rendered', { id: reportId });
+            this.notify('page','rendered', { id: pageId });
 
         } catch (error) {
             console.log(error.message);
-            this.renderError(error, reportId);
+            this.renderError(error, pageId);
 
             return false;
         }
     },
 
-    renderError(error, reportId) {
+    renderError(error, pageId) {
         const messages = {
             '404': 'Esta ficha ainda não está disponível no novo portal.',
             '500': 'O servidor de dados está instável no momento.',
@@ -72,21 +72,21 @@ export const EdenReportWorkspace = {
 
         const msgKey = error.status?.toString() || error.name;
         const msg = messages[msgKey] || messages.default;
-        const buttons = this.getErrorButtons(error, reportId);
+        const buttons = this.getErrorButtons(error, pageId);
 
         this.container.innerHTML = `
-            <div class="eden-c-report-workspace__error">
-                <p class="eden-c-report-workspace__error-text">${msg}</p>
-                <div class="eden-c-report-workspace__error-actions">${buttons}</div>
+            <div class="eden-c-content-area__error">
+                <p class="eden-c-content-area__error-text">${msg}</p>
+                <div class="eden-c-content-area__error-actions">${buttons}</div>
             </div>
         `;
     },
 
-    getErrorButtons(error, reportId) {
+    getErrorButtons(error, pageId) {
         let buttons = '';
 
         if (error.status !== 404) {
-            buttons += `<button class="eden-c-button eden-c-button--primary" data-eden-action="report:render" data-eden-report-id="${reportId}">Tentar novamente</button>`;
+            buttons += `<button class="eden-c-button eden-c-button--primary" data-eden-action="page:render" data-eden-page-id="${pageId}">Tentar novamente</button>`;
         }
         
         if (error.status !== 404 && error.status !== 500 && error.name !== 'TypeError') {
@@ -94,7 +94,7 @@ export const EdenReportWorkspace = {
             const subject = encodeURIComponent('Relatório de Erro - TES')
             const body = encodeURIComponent(
                 `Olá, Quinamine!\n\n` + 
-                `Ocorreu um erro ao tentar carregar a ficha ${reportId}.\n\n` + 
+                `Ocorreu um erro ao tentar carregar a ficha ${pageId}.\n\n` + 
                 `Detalhes do Erro: ${error.name} (${error.message}).\n` +
                 `Data: ${new Date().toLocaleString('pt-PT')}`
             );

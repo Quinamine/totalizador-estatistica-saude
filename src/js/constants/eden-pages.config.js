@@ -1,4 +1,4 @@
-export const TES_REPORTS = [
+export const EDEN_PAGES = [
     { id: 'consultas', name: 'RM Consultas Externas'}, 
     { id: 'ccd', name: 'RM CCD'}, 
     { id: 'malaria', name: 'RM Malária'}, 
@@ -26,5 +26,8 @@ export const TES_REPORTS = [
     { id: 'pnct-09', name: 'PNCT 09'}, 
     { id: 'pnct-11a', name: 'PNCT APSS 11A'}, 
     { id: 'pnct-12', name: 'PNCT 12'}, 
-    { id: 'pnct-14d', name: 'PNCT 14D'}
+    { id: 'pnct-14d', name: 'PNCT 14D'},
+    { id: 'termos', name: 'Termos de Utilização'},
+    { id: 'privacidade', name: 'Política de Privacidade'},
+    { id: 'suporte', name: 'Ajuda e Suporte'}
 ];

@@ -15,11 +15,11 @@ export const EdenCellPositionBar = {
 
     cacheElements() {
         this.container = document.querySelector('[data-eden-js="cell-position-bar"]')
-        this.workspace = document.querySelector('[data-eden-js="report-workspace"]');
+        this.contentArea = document.querySelector('[data-eden-js="content-area"]');
     },
 
     bindEvents() {
-        this.workspace.addEventListener('focusin', (e) => {
+        this.contentArea.addEventListener('focusin', (e) => {
             const isInput = e.target.closest('input:not([readonly])');
             const tableCell = e.target.closest('td');
 
@@ -28,7 +28,7 @@ export const EdenCellPositionBar = {
             this.updateTableLocator(e.target);
         });
 
-        this.workspace.addEventListener('focusout', (e) => this.clearLabels());
+        this.contentArea.addEventListener('focusout', (e) => this.clearLabels());
     },
 
     getCellCoordinates(field) {

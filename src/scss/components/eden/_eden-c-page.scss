@@ -26,7 +26,8 @@
     font-size: var(--eden-page-font-size, var(--eden-sys-font-size-100));
     background-color: var(--eden-sys-surface-100);
     padding-inline: var(--eden-page-padding-x, var(--eden-sys-space-500));
-    padding-block: var(--eden-page-padding-y, var(--eden-sys-space-500));;
+    padding-block: var(--eden-page-padding-y, var(--eden-sys-space-500));
+    ;
 
     @media print {
         width: 100% !important;
@@ -47,6 +48,26 @@
         &--has-pagination {
             page: pagination;
         }
+    }
+
+    &--article {
+        width: 100%;
+        max-width: 800px;
+        font-size: var(--eden-sys-font-size-300) !important;
+    }
+
+    &__last-update {
+        font-size: var(--eden-sys-font-size-100);
+        font-style: italic;
+        color: var(--eden-sys-surface-content-100);
+    }
+
+    &__disclaimer {
+        background-color: oklch(98% 0.02 var(--eden-ref-warning-hue));
+        border: 1px solid var(--eden-sys-warning);
+        padding: var(--eden-sys-space-500);
+        padding-inline-start: calc(var(--eden-sys-space-600) + var(--eden-sys-space-100));
+        border-radius: var(--eden-sys-radius-200);
     }
 }
 

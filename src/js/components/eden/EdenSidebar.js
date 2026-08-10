@@ -28,7 +28,7 @@ export const EdenSidebar = {
 
             const isMobile = window.innerWidth < 1024;
             if(isMobile) {
-                const closeTrigger = e.target.closest('[data-eden-action="report:render"]');
+                const closeTrigger = e.target.closest('[data-eden-action="page:render"]');
                 if (closeTrigger) {
                     this.requestVisibility('close');
                 }
