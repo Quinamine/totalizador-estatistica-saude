@@ -7,6 +7,7 @@ import { EdenNotesEditor } from "./components/eden/EdenNotesEditor.js";
 import { EdenToast } from "./components/eden/EdenToast.js";
 import { EdenCellPositionBar } from "./components/eden/EdenCellPositionBar.js";
 import { EdenViewportHandler } from "./components/eden/EdenViewportHandler.js";
+import { EdenGeoDatalist } from "./components/eden/EdenGeoDatalist.js";
 
 const EdenApp = {
     init() {
@@ -19,6 +20,7 @@ const EdenApp = {
         EdenNotesEditor.init();
         EdenCellPositionBar.init();
         EdenViewportHandler.init();
+        EdenGeoDatalist.init();
 
         this.bindEvents();
     },
