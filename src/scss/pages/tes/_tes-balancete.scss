@@ -1,0 +1,104 @@
+@use '../../abstracts' as *;
+
+.tes-balancete {
+    --_model-bg: #{ $eden-ref-neutral-0 };
+    --_model-bg: var(--eden-sys-primary);
+    --_model-text-color: #{ $eden-ref-neutral-100 };
+
+    &__header {
+        padding-inline-start: var(--eden-sys-space-200);
+        display: grid;
+        grid-template-columns: 30px 1062px 226px;
+    }
+
+    &__header-row {
+        display: grid;
+        grid-template-columns: 390px 242px 100px 155px 44px 1fr;
+        border-bottom: 1px solid var(--eden-sys-border-color);
+        min-height: var(--eden-sys-space-600);
+    }
+
+    &__model {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--_model-bg);
+        color: var(--_model-text-color);
+    }
+
+    .tes-c-gov {
+        padding: var(--eden-sys-space-100);
+    }
+
+    &__title-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__number-group {
+        display: flex;
+    }
+
+    &__title,
+    &__label {
+        font-size: var(--eden-sys-font-size-500);
+        font-weight: var(--eden-sys-font-weight-bold);
+        margin: 0 var(--eden-sys-space-150) 0 0;
+    }
+
+    &__number {
+        border: 1px solid var(--eden-sys-border-color);
+        text-align: center;
+        font-weight: var(--eden-sys-font-weight-bold);
+        font-size: var(--eden-sys-font-size-500);
+        font-family: 'Courier New', Courier, monospace;
+        color: var(--eden-sys-danger);
+    }
+
+    &__req-type {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: var(--eden-sys-space-100);
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--eden-sys-border-color);
+            border-radius: var(--eden-sys-radius-100);
+            cursor: pointer;
+        }
+    }
+
+    &__req-type-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--eden-sys-space-200);
+    }
+
+    &__meta-group {
+        display: flex;
+        align-items: center;
+        gap: var(--eden-sys-space-100);
+        border-inline-end: 1px solid var(--eden-sys-border-color);
+        padding-inline-start: var(--eden-sys-space-100);
+
+        label {
+            white-space: nowrap;
+        }
+
+        input {
+            border: none;
+            height: 100%;
+        }
+    }
+
+    &__meta-group--border-none {
+        border: none;
+    }
+
+}

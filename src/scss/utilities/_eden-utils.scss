@@ -20,8 +20,19 @@
     display: none !important;
 }
 
+.eden-u-border-top {
+    border-top: 1px solid var(--eden-sys-border-color) !important;
+}
+
+.eden-u-border-right {
+    border-right: 1px solid var(--eden-sys-border-color) !important;
+}
 .eden-u-border-bottom {
     border-bottom: 1px solid var(--eden-sys-border-color) !important;
+}
+
+.eden-u-border-left {
+    border-left: 1px solid var(--eden-sys-border-color) !important;
 }
 
 .eden-u-border-none {
@@ -70,4 +81,10 @@
     .eden-u-print-font-serif {
         font-family: "Times New Roman", Times, Georgia, serif !important;
     }
+}
+
+@for $i from 1 through 5 {
+  .eden-u-grid-colspan-#{$i} {
+    grid-column: span #{$i};
+  }
 }
