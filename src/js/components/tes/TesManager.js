@@ -1,7 +1,8 @@
-import { EdenDialog } from './../eden/EdenDialog';
+import { EdenDialog } from './../eden/EdenDialog.js';
 import { EdenToast } from "./../eden/EdenToast.js";
 import { EdenSpinner } from "./../eden/EdenSpinner.js";
 import { EDEN_PAGES_WITHOUT_TOOLBAR } from '../../constants/eden-pages-without-toolbar.config.js';
+import { EdenStringFormatter } from "./../eden/EdenStringFormatter.js";
 
 export const TesManager = {
     activeReportId: '',
@@ -19,7 +20,7 @@ export const TesManager = {
     },
 
     get isReportEmpty() {
-        return this.readWriteFields.every(field => field.value.trim() === '' && this.pNotes.innerText === '');
+        return this.readWriteFields.every(field => field.value.trim() === '' && this.pNotes?.innerText === '');
     },
 
     init() {
@@ -31,27 +32,29 @@ export const TesManager = {
         this.contentArea = document.querySelector('[data-eden-js="content-area"]');
     },
 
+    refreshFields() {
+        if (!this.contentArea) return;
+        this.reportFields = this.contentArea.querySelectorAll('input');
+        this.pNotes = this.contentArea.querySelector('[data-eden-js="report-notes"]');
+    },
+
     bindEvents() {
         document.addEventListener('eden:page:rendered', ({ detail }) => {
             this.activeReportId = detail.id;
 
-            if(EDEN_PAGES_WITHOUT_TOOLBAR.includes(this.activeReportId)) return;
+            document.body.classList.remove('has-eden-balancete-active');
 
-            this.reportFields = this.contentArea.querySelectorAll('input');
-            this.pNotes = this.contentArea.querySelector('[data-eden-js="report-notes"]');
+            if (EDEN_PAGES_WITHOUT_TOOLBAR.includes(this.activeReportId)) return;
+
+            this.refreshFields();
             this.loadFromStorage();
         });
 
-        this.contentArea.addEventListener('input', (e) => {
-            clearTimeout(this.saveTimeout);
-            this.saveTimeout = setTimeout(() => {
-                this.saveToLocalStorage();
-            }, 500);
+        document.addEventListener('eden:balancete:rendered', () => {
+            this.refreshFields();
+            this.loadFromStorage();
 
-            const totalTrigger = e.target.closest(this.totalTriggerSelector);
-            if (!totalTrigger) return;
-
-            this.updateRelatedTotals(totalTrigger);
+            document.body.classList.add('has-eden-balancete-active');
         });
 
         document.addEventListener('eden:trigger:report-clear-request', () => {
@@ -110,37 +113,97 @@ export const TesManager = {
                     });
                 }
             }
+        });
+
+        document.addEventListener('eden:trigger:report-filter-request', () => {
+            this.showFilterBox();
         })
+
+        this.contentArea.addEventListener('change', (e) => {
+            if (e.target.name === 'requisition-type') {
+                this.radioCheckboxes(e.target, 'input[name="requisition-type"]');
+            }
+
+            if (e.target.name === 'document-copy') {
+                this.radioCheckboxes(e.target, 'input[name="document-copy"]');
+
+                const reportPage = this.contentArea.querySelector('[data-eden-js="tes-report"]');
+                if (!reportPage) return;
+
+                reportPage.classList.remove('tes-balancete--duplicate', 'tes-balancete--triplicate');
+
+                if (e.target.dataset?.edenCopy === 'duplicate') {
+                    reportPage.classList.add('tes-balancete--duplicate');
+                } else if (e.target.dataset?.edenCopy === 'triplicate') {
+                    reportPage.classList.add('tes-balancete--triplicate');
+                }
+            }
+
+            this.saveToLocalStorage();
+        });
+
+        this.contentArea.addEventListener('input', (e) => {
+            clearTimeout(this.saveTimeout);
+            this.saveTimeout = setTimeout(() => {
+                this.saveToLocalStorage();
+            }, 500);
+
+            const totalTrigger = e.target.closest(this.totalTriggerSelector);
+            if (!totalTrigger) return;
+
+            this.updateRelatedTotals(totalTrigger);
+        });
     },
 
     updateRelatedTotals(field) {
-        const sourceIds = field.dataset.edenGroup.split(' ').map(id => id.trim());
+        const sourceIds = field.dataset?.edenGroup.split(' ').map(id => id.trim());
         const currentRow = field.closest('tr');
         let verticalFormat = /^(sec|s)\d+-c\d+$/i;
 
-        sourceIds.forEach( id => {
-            let context = verticalFormat.test(id) 
+        sourceIds.forEach(id => {
+            let context = verticalFormat.test(id)
                 ? document
-                : currentRow;
+                : currentRow || document;
 
             const sources = context.querySelectorAll(`[data-eden-group~="${id}"]`);
             const totalField = context.querySelector(`[data-eden-total="${id}"]`);
 
-            if(totalField) {
+            if (totalField) {
                 totalField.value = this.calculateTotal(sources);
 
-                if(totalField.dataset.edenActivePatients) {
-                    const [startingId, admissionsId, outComesId ] = totalField.dataset.edenActivePatients.split(' ');
+                if (totalField.dataset.edenEndingBalance) {
+                    const [initialId, additionsId, deductionsId] = totalField.dataset.edenEndingBalance.split(' ');
 
-                    const startingField = document.getElementById(`${startingId}`);
-                    const admissionsField = document.getElementById(`${admissionsId}`);
-                    const outComesField = document.getElementById(`${outComesId}`);
+                    const initialField = document.getElementById(initialId);
+                    const additionsField = document.getElementById(additionsId);
+                    const deductionsField = document.getElementById(deductionsId);
 
-                    totalField.value = this.calculateActivePatients(
-                        startingField?.value, 
-                        admissionsField?.value, 
-                        outComesField?.value
-                    )
+                    totalField.value = this.calculateEndingBalance(
+                        initialField?.value || 0,
+                        additionsField?.value || 0,
+                        deductionsField?.value || 0
+                    );
+                }
+
+                if (totalField.dataset.edenDifference) {
+                    const [actualId, theoreticalId] = totalField.dataset.edenDifference.split(' ');
+
+                    const actualField = document.getElementById(actualId);
+                    const theoreticalField = document.getElementById(theoreticalId);
+
+                    totalField.value = this.calculateDifference(
+                        actualField?.value || 0,
+                        theoreticalField?.value || 0
+                    );
+                }
+
+                if (totalField.dataset.edenQuantityToRequisition) {
+                    const [totalIssuesId, physicalStockId] = totalField.dataset.edenQuantityToRequisition.split(' ');
+                    const totalIssuesField = document.getElementById(totalIssuesId);
+                    const physicalStockField = document.getElementById(physicalStockId);
+
+                    const quantityToRequisition = (Number(totalIssuesField?.value || 0) * 2) - Number(physicalStockField?.value || 0);
+                    totalField.value = quantityToRequisition < 0 ? 0 : quantityToRequisition;
                 }
             }
         });
@@ -154,8 +217,21 @@ export const TesManager = {
         return total;
     },
 
-    calculateActivePatients(starting, admissions, outcomes) {
-        return Number(starting) + Number(admissions) - Number(outcomes);
+    calculateEndingBalance(initial, additions, deductions) {
+        return Number(initial) + Number(additions) - Number(deductions);
+    },
+
+    calculateDifference(actual, theoretical) {
+        return Number(actual) - Number(theoretical);
+    },
+
+    radioCheckboxes(currentCheckbox, checkboxesSelector) {
+        if (!currentCheckbox.checked) return;
+
+        const checkboxes = this.contentArea.querySelectorAll(checkboxesSelector);
+        checkboxes.forEach(cb => {
+            if (cb !== currentCheckbox) cb.checked = false;
+        });
     },
 
     getReportData() {
@@ -167,7 +243,9 @@ export const TesManager = {
             }
         });
 
-        data[this.pNotes.id] = this.pNotes.innerText;
+        if (this.pNotes) {
+            data[this.pNotes.id] = this.pNotes.innerText;
+        }
         return data;
     },
 
@@ -179,8 +257,6 @@ export const TesManager = {
         const updatedBackup = { ...previousBackup, ...currentData };
 
         localStorage.setItem(storageKey, JSON.stringify(updatedBackup));
-
-        console.log(`[Backup] Dados guardados para: ${this.activeReportId}`);
     },
 
     loadFromStorage() {
@@ -197,14 +273,10 @@ export const TesManager = {
                     }
                 }
 
-                if (name === this.pNotes.id) {
+                if (this.pNotes && name === this.pNotes.id) {
                     this.pNotes.innerText = value;
                 }
             });
-
-            console.log(`[Storage] Dados recuperados com sucesso para: ${this.activeReportId}`);
-        } else {
-            console.log(`[Storage] Nenhum dado anterior encontrado para: ${this.activeReportId}`);
         }
     },
 
@@ -218,14 +290,14 @@ export const TesManager = {
             field.value = '';
         });
 
-        this.pNotes.innerText = '';
+        this.pNotes && (this.pNotes.innerText = '');
 
         localStorage.removeItem(`report_${this.activeReportId}`);
     },
 
     fillEmptyWithZeros() {
         const emptyCells = this.contentArea.querySelectorAll('tbody input:not([readonly])');
-        
+
         let count = 0;
         emptyCells.forEach(field => {
             if (field.value.trim() === "") {
@@ -249,8 +321,35 @@ export const TesManager = {
         }
     },
 
+    hideEmptyRowsForPrint() {
+        const rows = this.contentArea.querySelectorAll('[data-eden-js="balancete-tbody"] tr');
+
+        rows.forEach(row => {
+            const medicineInput = row.querySelector('input[name$="-c2"]');
+            const hasMedicineName = medicineInput && medicineInput.value.trim() !== "";
+
+            const movementInputs = row.querySelectorAll(`input:not([readonly], input[name$="-c1"])`);
+
+            let hasActivityOrBalance = false;
+            movementInputs.forEach(input => {
+                const rawValue = input.value.trim();
+                const parsedNumber = parseFloat(rawValue);
+                if (rawValue !== "" && !isNaN(parsedNumber) && parsedNumber !== 0) {
+                    hasActivityOrBalance = true;
+                }
+            });
+
+            if (!hasMedicineName && !hasActivityOrBalance) {
+                row.classList.add('eden-u-print-none');
+            } else {
+                row.classList.remove('eden-u-print-none');
+            }
+        });
+    },
+
     print() {
-        // Update print date
+        this.hideEmptyRowsForPrint();
+
         const now = new Date();
 
         const date = now.toLocaleDateString('pt-MZ', {
@@ -270,17 +369,16 @@ export const TesManager = {
 
         const pageFooter = document.createElement('div');
         pageFooter.classList.add('eden-c-page-footer');
-        const isMultiPage = document.querySelector('[data-eden-js="tes-report"]').classList.contains('eden-c-page--has-pagination');
-        
-        if(isMultiPage) {
+        const isMultiPage = document.querySelector('[data-eden-js="tes-report"]')?.classList.contains('eden-c-page--has-pagination');
+
+        if (isMultiPage) {
             pageFooter.classList.add('eden-c-page-footer--fixed');
         }
 
         pageFooter.innerHTML = `<span class="eden-c-page-footer__date">${date} ${hour}</span>
-                                <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`
+                                <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`;
 
         this.contentArea.appendChild(pageFooter);
-
 
         const isMobile = window.innerWidth < 1024;
         if (isMobile) {
@@ -305,7 +403,6 @@ export const TesManager = {
     },
 
     async share() {
-
         const shareData = {
             title: 'TES - Totalizador de Estatística de Saúde',
             text: 'Olá, colega(s)! Encontrei este sistema que ajuda a totalizar os resumos mensais/trimestrais das US. É muito útil para as Consultas, PNCT, ITS/HIV, Nutrição e Farmácia. Vale a pena conferir:',
@@ -333,5 +430,100 @@ export const TesManager = {
         } catch (clipboardErr) {
             console.error("Erro ao copiar:", clipboardErr);
         }
+    },
+
+    showFilterBox() {
+        let filterContainer = document.body.querySelector('.eden-c-filter');
+
+        if (filterContainer) {
+            filterContainer.classList.add('eden-c-filter--pulse');
+            const searchInput = document.getElementById('input-medicine-search');
+            searchInput?.focus();
+
+            setTimeout(() => {
+                filterContainer.classList.remove('eden-c-filter--pulse');
+            }, 400);
+
+            return;
+        }
+
+        filterContainer = document.createElement('div');
+        filterContainer.classList.add('eden-c-filter', 'eden-u-print-none');
+
+        filterContainer.innerHTML = `
+            <div class="eden-c-filter__header">
+                <span class="eden-c-filter__title">Filtrar medicamento</span>
+                <button id="btn-close-filter" 
+                        class="eden-c-button eden-c-filter__close" 
+                        title="Fechar filtro">
+                            &times;
+                </button>
+            </div>
+            <div class="eden-c-filter-body">
+                <input type="text" 
+                        id="input-medicine-search" 
+                        class="eden-c-filter__field" 
+                        placeholder="Digite o nome do medicamento..."
+                        autocomplete="off">
+            </div>`;
+
+
+        document.body.append(filterContainer);
+
+        const searchInput = document.getElementById('input-medicine-search');
+        if (!searchInput) return;
+
+        searchInput.focus();
+
+        const closeBtn = document.getElementById('btn-close-filter');
+        closeBtn?.addEventListener('click', () => {
+            filterContainer.remove();
+            this.filterMedicine('');
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            this.filterMedicine(e.target.value);
+        });
+    },
+
+    filterMedicine(query) {
+        if (!this.contentArea) return;
+        const tbody = this.contentArea.querySelector('[data-eden-js="balancete-tbody"]');
+        if (!tbody) return;
+
+        const rows = tbody.querySelectorAll('tr:not(.tes-balancete__no-results)');
+        const cleanQuery = EdenStringFormatter.clean(query);
+
+        tbody.querySelector('.tes-balancete__no-results')?.remove();
+
+        let totalMatches = 0;
+
+        rows.forEach(row => {
+            const medicineField = row.querySelector('[data-eden-js="balancete-medicine"]');
+            if (!medicineField) return;
+
+            const medicineName = EdenStringFormatter.clean(medicineField.value);
+
+            if (medicineName.includes(cleanQuery)) {
+                row.classList.remove('tes-balancete__row--hidden');
+                totalMatches++;
+            } else {
+                row.classList.add('tes-balancete__row--hidden');
+            }
+        });
+
+        if (totalMatches === 0 && cleanQuery !== '') {
+            const noResultsRow = document.createElement('tr');
+            noResultsRow.classList.add('tes-balancete__no-results');
+
+            noResultsRow.innerHTML = `
+                <td colspan="100%" style="text-align: center; padding: var(--eden-sys-space-400); color: var(--eden-sys-surface-content-200); font-style: italic;">
+                    Nenhum medicamento encontrado para "${query}".
+                </td>
+            `;
+            tbody.appendChild(noResultsRow);
+        }
     }
-}
+
+};
+

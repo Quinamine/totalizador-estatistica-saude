@@ -20,8 +20,24 @@
     display: none !important;
 }
 
+.eden-u-border {
+    border: 1px solid var(--eden-sys-border-color) !important;
+}
+
+.eden-u-border-top {
+    border-top: 1px solid var(--eden-sys-border-color) !important;
+}
+
+.eden-u-border-right {
+    border-right: 1px solid var(--eden-sys-border-color) !important;
+}
+
 .eden-u-border-bottom {
     border-bottom: 1px solid var(--eden-sys-border-color) !important;
+}
+
+.eden-u-border-left {
+    border-left: 1px solid var(--eden-sys-border-color) !important;
 }
 
 .eden-u-border-none {
@@ -48,6 +64,10 @@
     text-align: center !important;
 }
 
+.eden-u-text-left {
+    text-align: left !important;
+}
+
 .eden-u-text-underline {
     text-decoration: underline !important;
 }
@@ -69,5 +89,72 @@
 @media print {
     .eden-u-print-font-serif {
         font-family: "Times New Roman", Times, Georgia, serif !important;
+    }
+}
+
+@for $i from 1 through 10 {
+    .eden-u-grid-colspan-#{$i} {
+        grid-column: span #{$i};
+    }
+}
+
+
+.eden-u-justify-center {
+    justify-content: center;
+}
+
+col.eden-u-col-spacer-sm {
+    width: var(--eden-sys-space-100);
+}
+
+col.eden-u-col-spacer-md {
+    width: var(--eden-sys-space-200);
+}
+
+col.eden-u-col-spacer-lg {
+    width: var(--eden-sys-space-400);
+}
+
+tr.eden-u-row-spacer-sm {
+    height: var(--eden-sys-space-100);
+
+    td,
+    th {
+        height: var(--eden-sys-space-100) !important;
+        padding: 0 !important;
+    }
+}
+
+tr.eden-u-row-spacer-md {
+    height: var(--eden-sys-space-200);
+
+    td,
+    th {
+        height: var(--eden-sys-space-200) !important;
+        padding: 0 !important;
+    }
+}
+
+tr.eden-u-row-spacer-lg {
+    height: var(--eden-sys-space-400);
+
+    td,
+    th {
+        height: var(--eden-sys-space-400) !important;
+        padding: 0 !important;
+    }
+}
+
+th.eden-u-cell-spacer,
+td.eden-u-cell-spacer {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    pointer-events: none;
+}
+
+@media print {
+    .eden-u-print-none {
+        display: none !important;
     }
 }
