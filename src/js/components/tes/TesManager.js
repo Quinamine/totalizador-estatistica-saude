@@ -114,7 +114,7 @@ export const TesManager = {
     },
 
     updateRelatedTotals(field) {
-        const sourceIds = field.dataset.edenGroup.split(' ').map(id => id.trim());
+        const sourceIds = field.dataset?.edenGroup.split(' ').map(id => id.trim());
         const currentRow = field.closest('tr');
         let verticalFormat = /^(sec|s)\d+-c\d+$/i;
 
@@ -129,8 +129,9 @@ export const TesManager = {
             if(totalField) {
                 totalField.value = this.calculateTotal(sources);
 
-                if(totalField.dataset.edenActivePatients) {
-                    const [startingId, admissionsId, outComesId ] = totalField.dataset.edenActivePatients.split(' ');
+                if(totalField.dataset.edenActivePatients || totalField.dataset.edenMonthlyBalance) {
+                    const [startingId, admissionsId, outComesId ] = totalField.dataset?.edenActivePatients?.split(' ') 
+                                                                    || totalField.dataset?.edenMonthlyBalance?.split(' ');
 
                     const startingField = document.getElementById(`${startingId}`);
                     const admissionsField = document.getElementById(`${admissionsId}`);
@@ -141,6 +142,16 @@ export const TesManager = {
                         admissionsField?.value, 
                         outComesField?.value
                     )
+                }
+
+                if(totalField.dataset.edenReqQty) {
+                    const [stockOut, balanceId] = totalField.dataset.edenReqQty.split(' ');
+                    const stockOutField = document.getElementById(`${outComesId}`);
+                    const balanceField = document.getElementById(`${balanceId}`);
+
+                    const reqQty = (stockOutField?.value * 2) - balanceField?.value;
+
+                    totalField.value = reqQty;
                 }
             }
         });

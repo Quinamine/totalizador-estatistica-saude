@@ -9,7 +9,6 @@
         padding-inline-start: var(--eden-sys-space-200);
         display: grid;
         grid-template-columns: 30px 1062px 226px;
-        font-weight: ;
     }
 
     &__header-row {
@@ -99,6 +98,17 @@
     }
 
     &__meta-group--border-none {
+        border: none;
+    }
+
+    thead th {
+        font-weight: var(--eden-sys-font-weight-regular);
+        line-height: var(--eden-sys-line-height-heading);
+        padding-block: var(--eden-sys-space-100);
+    }
+
+    &__row-spacer {
+        height: var(--eden-sys-space-100);
         border: none;
     }
 
