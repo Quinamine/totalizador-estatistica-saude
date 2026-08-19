@@ -1,4 +1,4 @@
-import { EdenDialog } from './../eden/EdenDialog';
+import { EdenDialog } from './../eden/EdenDialog.js';
 import { EdenToast } from "./../eden/EdenToast.js";
 import { EdenSpinner } from "./../eden/EdenSpinner.js";
 import { EDEN_PAGES_WITHOUT_TOOLBAR } from '../../constants/eden-pages-without-toolbar.config.js';
@@ -19,7 +19,7 @@ export const TesManager = {
     },
 
     get isReportEmpty() {
-        return this.readWriteFields.every(field => field.value.trim() === '' && this.pNotes.innerText === '');
+        return this.readWriteFields.every(field => field.value.trim() === '' && this.pNotes?.innerText === '');
     },
 
     init() {
@@ -31,14 +31,24 @@ export const TesManager = {
         this.contentArea = document.querySelector('[data-eden-js="content-area"]');
     },
 
+    refreshFields() {
+        if (!this.contentArea) return;
+        this.reportFields = this.contentArea.querySelectorAll('input');
+        this.pNotes = this.contentArea.querySelector('[data-eden-js="report-notes"]');
+    },
+
     bindEvents() {
         document.addEventListener('eden:page:rendered', ({ detail }) => {
             this.activeReportId = detail.id;
 
-            if(EDEN_PAGES_WITHOUT_TOOLBAR.includes(this.activeReportId)) return;
+            if (EDEN_PAGES_WITHOUT_TOOLBAR.includes(this.activeReportId)) return;
 
-            this.reportFields = this.contentArea.querySelectorAll('input');
-            this.pNotes = this.contentArea.querySelector('[data-eden-js="report-notes"]');
+            this.refreshFields();
+            this.loadFromStorage();
+        });
+
+        document.addEventListener('eden:cmam:rendered', () => {
+            this.refreshFields();
             this.loadFromStorage();
         });
 
@@ -110,7 +120,7 @@ export const TesManager = {
                     });
                 }
             }
-        })
+        });
     },
 
     updateRelatedTotals(field) {
@@ -118,40 +128,50 @@ export const TesManager = {
         const currentRow = field.closest('tr');
         let verticalFormat = /^(sec|s)\d+-c\d+$/i;
 
-        sourceIds.forEach( id => {
-            let context = verticalFormat.test(id) 
+        sourceIds.forEach(id => {
+            let context = verticalFormat.test(id)
                 ? document
-                : currentRow;
+                : currentRow || document;
 
             const sources = context.querySelectorAll(`[data-eden-group~="${id}"]`);
             const totalField = context.querySelector(`[data-eden-total="${id}"]`);
 
-            if(totalField) {
+            if (totalField) {
                 totalField.value = this.calculateTotal(sources);
 
-                if(totalField.dataset.edenActivePatients || totalField.dataset.edenMonthlyBalance) {
-                    const [startingId, admissionsId, outComesId ] = totalField.dataset?.edenActivePatients?.split(' ') 
-                                                                    || totalField.dataset?.edenMonthlyBalance?.split(' ');
+                if (totalField.dataset.edenEndingBalance) {
+                    const [initialId, additionsId, deductionsId] = totalField.dataset.edenEndingBalance.split(' ');
 
-                    const startingField = document.getElementById(`${startingId}`);
-                    const admissionsField = document.getElementById(`${admissionsId}`);
-                    const outComesField = document.getElementById(`${outComesId}`);
+                    const initialField = document.getElementById(initialId);
+                    const additionsField = document.getElementById(additionsId);
+                    const deductionsField = document.getElementById(deductionsId);
 
-                    totalField.value = this.calculateActivePatients(
-                        startingField?.value, 
-                        admissionsField?.value, 
-                        outComesField?.value
-                    )
+                    totalField.value = this.calculateEndingBalance(
+                        initialField?.value || 0,
+                        additionsField?.value || 0,
+                        deductionsField?.value || 0
+                    );
                 }
 
-                if(totalField.dataset.edenReqQty) {
-                    const [stockOut, balanceId] = totalField.dataset.edenReqQty.split(' ');
-                    const stockOutField = document.getElementById(`${outComesId}`);
-                    const balanceField = document.getElementById(`${balanceId}`);
+                if (totalField.dataset.edenDifference) {
+                    const [actualId, theoreticalId] = totalField.dataset.edenDifference.split(' ');
 
-                    const reqQty = (stockOutField?.value * 2) - balanceField?.value;
+                    const actualField = document.getElementById(actualId);
+                    const theoreticalField = document.getElementById(theoreticalId);
 
-                    totalField.value = reqQty;
+                    totalField.value = this.calculateDifference(
+                        actualField?.value || 0,
+                        theoreticalField?.value || 0
+                    );
+                }
+
+                if (totalField.dataset.edenQuantityToRequisition) {
+                    const [totalIssuesId, physicalStockId] = totalField.dataset.edenQuantityToRequisition.split(' ');
+                    const totalIssuesField = document.getElementById(totalIssuesId);
+                    const physicalStockField = document.getElementById(physicalStockId);
+
+                    const quantityToRequisition = (Number(totalIssuesField?.value || 0) * 2) - Number(physicalStockField?.value || 0);
+                    totalField.value = quantityToRequisition < 0 ? 0 : quantityToRequisition;
                 }
             }
         });
@@ -165,8 +185,12 @@ export const TesManager = {
         return total;
     },
 
-    calculateActivePatients(starting, admissions, outcomes) {
-        return Number(starting) + Number(admissions) - Number(outcomes);
+    calculateEndingBalance(initial, additions, deductions) {
+        return Number(initial) + Number(additions) - Number(deductions);
+    },
+
+    calculateDifference(actual, theoretical) {
+        return Number(actual) - Number(theoretical);
     },
 
     getReportData() {
@@ -178,7 +202,9 @@ export const TesManager = {
             }
         });
 
-        data[this.pNotes.id] = this.pNotes.innerText;
+        if (this.pNotes) {
+            data[this.pNotes.id] = this.pNotes.innerText;
+        }
         return data;
     },
 
@@ -208,7 +234,7 @@ export const TesManager = {
                     }
                 }
 
-                if (name === this.pNotes.id) {
+                if (this.pNotes && name === this.pNotes.id) {
                     this.pNotes.innerText = value;
                 }
             });
@@ -229,14 +255,14 @@ export const TesManager = {
             field.value = '';
         });
 
-        this.pNotes.innerText = '';
+        this.pNotes && (this.pNotes.innerText = '');
 
         localStorage.removeItem(`report_${this.activeReportId}`);
     },
 
     fillEmptyWithZeros() {
         const emptyCells = this.contentArea.querySelectorAll('tbody input:not([readonly])');
-        
+
         let count = 0;
         emptyCells.forEach(field => {
             if (field.value.trim() === "") {
@@ -261,7 +287,6 @@ export const TesManager = {
     },
 
     print() {
-        // Update print date
         const now = new Date();
 
         const date = now.toLocaleDateString('pt-MZ', {
@@ -281,17 +306,16 @@ export const TesManager = {
 
         const pageFooter = document.createElement('div');
         pageFooter.classList.add('eden-c-page-footer');
-        const isMultiPage = document.querySelector('[data-eden-js="tes-report"]').classList.contains('eden-c-page--has-pagination');
-        
-        if(isMultiPage) {
+        const isMultiPage = document.querySelector('[data-eden-js="tes-report"]')?.classList.contains('eden-c-page--has-pagination');
+
+        if (isMultiPage) {
             pageFooter.classList.add('eden-c-page-footer--fixed');
         }
 
         pageFooter.innerHTML = `<span class="eden-c-page-footer__date">${date} ${hour}</span>
-                                <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`
+                                <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`;
 
         this.contentArea.appendChild(pageFooter);
-
 
         const isMobile = window.innerWidth < 1024;
         if (isMobile) {
@@ -316,7 +340,6 @@ export const TesManager = {
     },
 
     async share() {
-
         const shareData = {
             title: 'TES - Totalizador de Estatística de Saúde',
             text: 'Olá, colega(s)! Encontrei este sistema que ajuda a totalizar os resumos mensais/trimestrais das US. É muito útil para as Consultas, PNCT, ITS/HIV, Nutrição e Farmácia. Vale a pena conferir:',
@@ -345,4 +368,4 @@ export const TesManager = {
             console.error("Erro ao copiar:", clipboardErr);
         }
     }
-}
+};

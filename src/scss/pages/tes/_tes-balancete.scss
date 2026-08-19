@@ -1,8 +1,7 @@
 @use '../../abstracts' as *;
 
 .tes-balancete {
-    --_model-bg: #{ $eden-ref-neutral-0 };
-    --_model-bg: var(--eden-sys-primary);
+    --_model-bg: #{$eden-ref-neutral-0};
     --_model-text-color: #{ $eden-ref-neutral-100 };
 
     &__header {
