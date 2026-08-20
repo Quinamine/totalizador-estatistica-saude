@@ -8,7 +8,7 @@ import { EdenToast } from "./components/eden/EdenToast.js";
 import { EdenCellPositionBar } from "./components/eden/EdenCellPositionBar.js";
 import { EdenViewportHandler } from "./components/eden/EdenViewportHandler.js";
 import { EdenGeoDatalist } from "./components/eden/EdenGeoDatalist.js";
-import { EdenCmamPopulator } from "./components/eden/EdenCmamPopulator.js";
+import { EdenBalancetePopulator } from "./components/eden/EdenBalancetePopulator.js";
 
 const EdenApp = {
     init() {
@@ -22,7 +22,7 @@ const EdenApp = {
         EdenCellPositionBar.init();
         EdenViewportHandler.init();
         EdenGeoDatalist.init();
-        EdenCmamPopulator.init();
+        EdenBalancetePopulator.init();
 
         this.bindEvents();
     },

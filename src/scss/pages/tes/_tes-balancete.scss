@@ -5,14 +5,13 @@
     --_model-text-color: #{ $eden-ref-neutral-100 };
 
     &__header {
-        padding-inline-start: var(--eden-sys-space-200);
         display: grid;
-        grid-template-columns: 30px 1062px 226px;
+        grid-template-columns: 30px 1086px 226px;
     }
 
     &__header-row {
         display: grid;
-        grid-template-columns: 390px 242px 100px 155px 44px 1fr;
+        grid-template-columns: 390px 254px 100px 173px 44px 1fr;
         border-bottom: 1px solid var(--eden-sys-border-color);
         min-height: var(--eden-sys-space-600);
     }
@@ -39,6 +38,7 @@
 
     &__number-group {
         display: flex;
+        align-items: center;
     }
 
     &__title,
@@ -109,6 +109,37 @@
     &__row-spacer {
         height: var(--eden-sys-space-100);
         border: none;
+    }
+
+    &__fnm,
+    &__row-label {
+        font-weight: var(--eden-sys-font-weight-bold);
+    }
+
+    &__row-label input {
+        padding-inline: var(--eden-sys-space-200);
+    }
+
+    &__footer {
+        padding-inline: var(--eden-sys-space-100);
+        padding-block: var(--eden-sys-space-200);
+        min-height: 60px;
+        display: grid;
+        grid-template-columns: 761px 1fr;
+
+        .tes-balancete__meta-group {
+            align-items: flex-start;
+        }
+
+        label {
+            margin-top: var(--eden-sys-space-050);
+        }
+    }
+
+    &__signature {
+        width: 200px;
+        height: var(--eden-sys-space-500) !important;
+        border-bottom: 1px solid var(--eden-sys-border-color) !important;
     }
 
 }

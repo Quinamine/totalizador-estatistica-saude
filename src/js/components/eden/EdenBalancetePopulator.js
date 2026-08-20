@@ -1,6 +1,6 @@
-import { TES_CMAM_MEDICATIONS } from "../../constants/tes-cmam-medications.config";
+import { TES_BALANCETE_MEDICATIONS } from "../../constants/tes-balancete-medications.config";
 
-export const EdenCmamPopulator = {
+export const EdenBalancetePopulator = {
   init() {
     this.bindEvents();
   },
@@ -15,28 +15,24 @@ export const EdenCmamPopulator = {
     console.log(id)
 
     if (id === "balancete") {
-      const tbody = document.querySelector('#tes-bal');
+      const tbody = document.querySelector('[data-eden-js="balancete-tbody"]');
 
       if (tbody) {
-        console.log("true")
         this.populateTable(tbody);
       }
     }
   },
 
   populateTable(tbody) {
-    const rowsHtml = TES_CMAM_MEDICATIONS.map((item, index) => {
+    const rowsHtml = TES_BALANCETE_MEDICATIONS.map((item, index) => {
       const line = index + 1;
       return `
-        <tr class="eden-u-row-spacer-sm">
-                <td colspan="100%" class="eden-u-cell-spacer"></td>
-        </tr>
         <tr>
-          <td>
-            <input type="text" name="l${line}-c1" id="l${line}-c1" value="${item.fnm}" placeholder="FNM">
+          <td class="tes-balancete__fnm">
+            <input type="text" name="l${line}-c1" id="l${line}-c1" value="${item.fnm}" placeholder="FNM" tabindex="-1">
           </td>
-          <td>
-            <input type="text" name="l${line}-c2" id="l${line}-c2" value="${item.name}" placeholder="Medicamento/Artigo">
+          <td class="tes-balancete__row-label">
+            <input type="text" name="l${line}-c2" id="l${line}-c2" value="${item.name}" placeholder="Medicamento/Artigo" tabindex="-1" class="eden-u-text-left">
           </td>
           <td>
             <input type="number" name="l${line}-c3" id="l${line}-c3" data-eden-group="theoretical-ending-stock difference">
@@ -73,6 +69,6 @@ export const EdenCmamPopulator = {
 
     tbody.innerHTML = rowsHtml;
 
-    document.dispatchEvent(new CustomEvent("eden:cmam:rendered", { detail: { count: TES_CMAM_MEDICATIONS.length } }));
+    document.dispatchEvent(new CustomEvent("eden:balancete:rendered", { detail: { count: TES_BALANCETE_MEDICATIONS.length } }));
   }
 };

@@ -47,7 +47,7 @@ export const TesManager = {
             this.loadFromStorage();
         });
 
-        document.addEventListener('eden:cmam:rendered', () => {
+        document.addEventListener('eden:balancete:rendered', () => {
             this.refreshFields();
             this.loadFromStorage();
         });
