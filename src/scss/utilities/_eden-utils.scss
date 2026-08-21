@@ -95,6 +95,10 @@
 }
 
 
+.eden-u-justify-center {
+    justify-content: center;
+}
+
 col.eden-u-col-spacer-sm {
     width: var(--eden-sys-space-100);
 }
@@ -143,4 +147,10 @@ td.eden-u-cell-spacer {
     background: transparent !important;
     padding: 0 !important;
     pointer-events: none;
+}
+
+@media print {
+    .eden-u-print-none {
+        display: none !important;
+    }
 }

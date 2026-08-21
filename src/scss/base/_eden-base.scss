@@ -107,7 +107,7 @@ button {
     letter-spacing: inherit;
 }
 
-input,
+input:not([type=checkbox]),
 textarea {
     appearance: none;
     -webkit-appearance: none;

@@ -38,7 +38,6 @@
 
     .has-eden-toolbar & {
         --_bottom-offset: calc(var(--eden-sys-toolbar-height) + var(--eden-sys-keyboard-height));
-        
         --_translate-y: calc(var(--_bottom-offset) * -1);
 
         @include desktop {

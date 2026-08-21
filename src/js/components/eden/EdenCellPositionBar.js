@@ -1,4 +1,3 @@
-
 export const EdenCellPositionBar = {
     displayElClasses: {
         base: 'eden-c-cell-position-bar__label',
@@ -14,11 +13,13 @@ export const EdenCellPositionBar = {
     },
 
     cacheElements() {
-        this.container = document.querySelector('[data-eden-js="cell-position-bar"]')
+        this.container = document.querySelector('[data-eden-js="cell-position-bar"]');
         this.contentArea = document.querySelector('[data-eden-js="content-area"]');
     },
 
     bindEvents() {
+        if (!this.contentArea) return;
+
         this.contentArea.addEventListener('focusin', (e) => {
             const isInput = e.target.closest('input:not([readonly])');
             const tableCell = e.target.closest('td');
@@ -28,15 +29,23 @@ export const EdenCellPositionBar = {
             this.updateTableLocator(e.target);
         });
 
-        this.contentArea.addEventListener('focusout', (e) => this.clearLabels());
+        this.contentArea.addEventListener('focusout', () => this.clearLabels());
     },
 
     getCellCoordinates(field) {
         const tr = field.closest('tr');
         const table = field.closest('table');
 
+        if (!tr || !table) return { rowCategoryLabel: null, rowLabel: null, colLabel: null, complementaryLabel: null };
+
+        const isBalanceteRequisition = table.dataset.edenIsRequisition === 'true';
+
         const rowLabelColIndex = tr.dataset.edenRowLabelColIndex ?? table.dataset.edenRowLabelColIndex;
-        const rowLabel = tr.children[rowLabelColIndex] || null;
+        let rowLabel = tr.children[rowLabelColIndex] || null;
+
+        if (isBalanceteRequisition && rowLabel) {
+            rowLabel = rowLabel.querySelector('input');
+        }
 
         const [_row, colId] = field.name.split('-');
         const colLabel = table.querySelector(`[data-eden-col-label~="${colId}"]`);
@@ -52,11 +61,15 @@ export const EdenCellPositionBar = {
 
     updateTableLocator(field) {
         const labels = this.getCellCoordinates(field);
+        
         const existingLabels = Object.entries(labels).filter(([, label]) => {
-            return label !== null && label.textContent.trim() !== ''
+            if (!label) return false;
+            const text = label.value !== undefined ? label.value : label.textContent;
+            return text && text.trim() !== '';
         });
 
         this.clearLabels();
+
         existingLabels.forEach(([key, label]) => {
             const span = document.createElement('span');
             const baseClass = this.displayElClasses.base;
@@ -65,7 +78,9 @@ export const EdenCellPositionBar = {
             const modifierSuffix = this.displayElClasses[key];
             if (modifierSuffix) {
                 span.classList.add(`${baseClass}${modifierSuffix}`);
-                span.textContent = label.innerText.replace(/\s+/g, ' ').trim();
+                
+                const rawText = label.value !== undefined ? label.value : label.innerText;
+                span.textContent = rawText.replace(/\s+/g, ' ').trim();
                 span.title = span.textContent;
             }
 
@@ -74,6 +89,8 @@ export const EdenCellPositionBar = {
     },
 
     clearLabels() {
-        this.container.textContent = '';
+        if (this.container) {
+            this.container.textContent = '';
+        }
     }
-}
+};

@@ -3,15 +3,37 @@
 .tes-balancete {
     --_model-bg: #{$eden-ref-neutral-0};
     --_model-text-color: #{ $eden-ref-neutral-100 };
+    --_fnm-cell-width: 60px;
+    --_medicine-cell-width: 390px;
+    --_default-cell-width: 85px;
+    --_sf-cell-width: 100px;
+    --_qty-authorized-cell-width: 112px;
+
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-template-areas: "sidebar header"
+        "sidebar table";
 
     &__header {
+        grid-area: header;
         display: grid;
-        grid-template-columns: 30px 1086px 226px;
+        grid-template-columns: 30px calc(30px + var(--_medicine-cell-width) + var(--_default-cell-width) * 7 + var(--_sf-cell-width)) calc(var(--_qty-authorized-cell-width) * 2);
+
+
+        label {
+            white-space: nowrap;
+        }
+
+        input {
+            border: none;
+            height: 100%;
+        }
     }
 
     &__header-row {
         display: grid;
-        grid-template-columns: 390px 254px 100px 173px 44px 1fr;
+        grid-template-columns: calc(30px + var(--_medicine-cell-width)) calc(var(--_default-cell-width) * 3) var(--_sf-cell-width) repeat(2, var(--_default-cell-width)) 30px 22px 33px var(--_default-cell-width);
+
         border-bottom: 1px solid var(--eden-sys-border-color);
         min-height: var(--eden-sys-space-600);
     }
@@ -25,7 +47,7 @@
     }
 
     .tes-c-gov {
-        padding: var(--eden-sys-space-100);
+        padding: var(--eden-sys-space-100) var(--eden-sys-space-200);
     }
 
     &__title-group {
@@ -62,6 +84,8 @@
         flex-direction: column;
         justify-content: space-between;
         padding: var(--eden-sys-space-100);
+        border: 1px solid var(--eden-sys-border-color);
+        border-inline-start: 0;
 
         input[type="checkbox"] {
             width: 20px;
@@ -83,21 +107,28 @@
         display: flex;
         align-items: center;
         gap: var(--eden-sys-space-100);
-        border-inline-end: 1px solid var(--eden-sys-border-color);
-        padding-inline-start: var(--eden-sys-space-100);
+        border-inline-start: 1px solid var(--eden-sys-border-color);
+        padding-inline-start: var(--eden-sys-space-200);
+    }
 
-        label {
-            white-space: nowrap;
-        }
+    &__label-box,
+    &__input-box {
+        display: flex;
+        align-items: center;
+        padding-inline-start: var(--eden-sys-space-200);
+        border-inline-start: 1px solid var(--eden-sys-border-color);
+    }
+
+    &__input-box {
+        padding: 0;
 
         input {
-            border: none;
-            height: 100%;
+            text-align: center;
         }
     }
 
-    &__meta-group--border-none {
-        border: none;
+    table {
+        grid-area: table;
     }
 
     thead th {
@@ -122,24 +153,46 @@
 
     &__footer {
         padding-inline: var(--eden-sys-space-100);
-        padding-block: var(--eden-sys-space-200);
+        padding-block: var(--eden-sys-space-200) var(--eden-sys-space-400);
         min-height: 60px;
         display: grid;
         grid-template-columns: 761px 1fr;
-
-        .tes-balancete__meta-group {
-            align-items: flex-start;
-        }
-
-        label {
-            margin-top: var(--eden-sys-space-050);
-        }
     }
 
     &__signature {
         width: 200px;
         height: var(--eden-sys-space-500) !important;
         border-bottom: 1px solid var(--eden-sys-border-color) !important;
+    }
+
+    &__sidebar {
+        grid-area: sidebar;
+        border: 1px solid var(--eden-sys-border-color);
+        border-right: none;
+
+        padding-block-start: 365px;
+    }
+
+    &__sidebar-group {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    &__sidebar-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--eden-sys-space-200);
+
+        label {
+            font-weight: var(--eden-sys-font-weight-regular);
+        }
+
+        input {
+            transform: rotate(-90deg);
+            width: var(--eden-sys-space-400);
+        }
     }
 
 }

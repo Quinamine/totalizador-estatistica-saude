@@ -216,8 +216,6 @@ export const TesManager = {
         const updatedBackup = { ...previousBackup, ...currentData };
 
         localStorage.setItem(storageKey, JSON.stringify(updatedBackup));
-
-        console.log(`[Backup] Dados guardados para: ${this.activeReportId}`);
     },
 
     loadFromStorage() {
@@ -238,10 +236,6 @@ export const TesManager = {
                     this.pNotes.innerText = value;
                 }
             });
-
-            console.log(`[Storage] Dados recuperados com sucesso para: ${this.activeReportId}`);
-        } else {
-            console.log(`[Storage] Nenhum dado anterior encontrado para: ${this.activeReportId}`);
         }
     },
 
@@ -286,7 +280,35 @@ export const TesManager = {
         }
     },
 
+    hideEmptyRowsForPrint() {
+        const rows = this.contentArea.querySelectorAll('[data-eden-js="balancete-tbody"] tr');
+
+        rows.forEach(row => {
+            const medicineInput = row.querySelector('input[name$="-c2"]');
+            const hasMedicineName = medicineInput && medicineInput.value.trim() !== "";
+
+            const movementInputs = row.querySelectorAll(`input:not([readonly], input[name$="-c1"])`);
+            
+            let hasActivityOrBalance = false;
+            movementInputs.forEach(input => {
+                const rawValue = input.value.trim();
+                const parsedNumber = parseFloat(rawValue);
+                if (rawValue !== "" && !isNaN(parsedNumber) && parsedNumber !== 0) {
+                    hasActivityOrBalance = true;
+                }
+            });
+
+            if (!hasMedicineName && !hasActivityOrBalance) {
+                row.classList.add('eden-u-print-none');
+            } else {
+                row.classList.remove('eden-u-print-none');
+            }
+        });
+    },
+
     print() {
+        this.hideEmptyRowsForPrint();
+
         const now = new Date();
 
         const date = now.toLocaleDateString('pt-MZ', {
