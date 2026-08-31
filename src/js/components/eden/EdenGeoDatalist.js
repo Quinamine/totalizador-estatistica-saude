@@ -1,5 +1,8 @@
 import { EDEN_MOZ_LOCATIONS } from "../../constants/eden-moz-locations.config.js";
 import { EDEN_MONTHS } from "../../constants/eden-months.config.js";
+import { EdenStringFormatter } from "./EdenStringFormatter.js";
+
+const cleanStr = EdenStringFormatter.clean;
 
 export const EdenGeoDatalist = {
     init() {
@@ -24,7 +27,7 @@ export const EdenGeoDatalist = {
             }
 
             if (input.matches('#district')) {
-                const selectedProvince = this.formatString(this.getInputValue('#province'));
+                const selectedProvince = cleanStr(this.getInputValue('#province'));
                 const districts = EDEN_MOZ_LOCATIONS[selectedProvince]?.districts || [];
                 this.populateDatalist('district', districts);
                 return;
@@ -73,8 +76,8 @@ export const EdenGeoDatalist = {
     },
 
     getHealthUnitsList() {
-        const selectedProvince = this.formatString(this.getInputValue('#province'));
-        const selectedDistrict = this.formatString(this.getInputValue('#district'));
+        const selectedProvince = cleanStr(this.getInputValue('#province'));
+        const selectedDistrict = cleanStr(this.getInputValue('#district'));
         return EDEN_MOZ_LOCATIONS[selectedProvince]?.[selectedDistrict] || [];
     },
 
@@ -83,9 +86,9 @@ export const EdenGeoDatalist = {
         if (!healthUnitCodeField) return;
 
         const healthUnits = this.getHealthUnitsList();
-        const formattedName = this.formatString(selectedHuName);
+        const formattedName = cleanStr(selectedHuName);
 
-        const match = healthUnits.find(hu => this.formatString(hu.us) === formattedName);
+        const match = healthUnits.find(hu => cleanStr(hu.us) === formattedName);
         healthUnitCodeField.value = match ? match.code : '';
     },
 

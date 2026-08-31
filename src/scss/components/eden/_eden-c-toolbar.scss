@@ -23,7 +23,7 @@
     @include desktop {
         --eden-button-padding-y: var(--eden-sys-space-300);
         --eden-button-padding-x: var(--eden-sys-space-300);
-        
+
         --_offset-alignment-x: var(--eden-button-padding-x);
         --_translate-y: 0;
 
@@ -38,25 +38,45 @@
         justify-content: flex-end;
     }
 
-    .has-eden-toolbar & {
-        --_translate-y: calc(var(--eden-sys-keyboard-height) * -1);
-
-        @include desktop {
-           --_translate-y: 0;
-        }
-    }
-
-    .has-eden-toolbar.has-keyboard-open & {
-        @include mobile-landscape {
-            --_translate-y: 100%;
-        }
-    }
-
-    .eden-c-button {
+    &__action {
         flex: 1;
 
         @include desktop {
             flex: 0;
+        }
+
+        &--filter {
+            display: none;
+        }
+    }
+}
+
+.has-eden-toolbar {
+    .eden-c-toolbar {
+        --_translate-y: calc(var(--eden-sys-keyboard-height) * -1);
+
+        @include desktop {
+            --_translate-y: 0;
+        }
+    }
+}
+
+.has-eden-toolbar.has-keyboard-open {
+    .eden-c-toolbar {
+        @include mobile-landscape {
+            --_translate-y: 100%;
+        }
+    }
+}
+
+.has-eden-balancete-active {
+    .eden-c-toolbar__action--filter {
+        display: inline-flex;
+    }
+
+    .eden-c-toolbar__action--share {
+        @media screen and (max-width: 767px) {
+            display: none !important;
         }
     }
 }

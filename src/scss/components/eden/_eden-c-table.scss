@@ -10,10 +10,6 @@
 
     width: max-content;
 
-    @media print {
-        --_cell-na-bg: var(--eden-sys-primary);
-    }
-
     thead,
     tbody td {
         --eden-table-cell-padding-x: 0;
@@ -31,8 +27,8 @@
         @include tablet {
             position: sticky;
             left: 0;
-            background-color: var(--eden-sys-surface-100);
             z-index: calc(var(--eden-sys-zi-sticky) - 1);
+            background-color: var(--eden-sys-surface-100);
             border-inline: 1px solid var(--eden-sys-border-color);
         }
     }
@@ -46,35 +42,42 @@
         }
     }
 
-    &__row--accented,
-    &__cell--accented {
-        @media print {
-            background-color: var(--_cell-accent-bg);
-        }
-    }
-
     &__thead-spacer,
     &__tfoot-spacer {
         display: none;
+    }
 
-        @media print {
+
+    @media print {
+        --_cell-na-bg: var(--eden-sys-primary);
+        page-break-inside: auto;
+
+        th,
+        td {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        &__row--accented,
+        &__cell--accented {
+            background-color: var(--_cell-accent-bg);
+        }
+
+        &__thead-spacer,
+        &__tfoot-spacer {
             display: table-row;
+
             th, td {
                 border: none;
             }
         }
-    }
 
-    &__thead-spacer {
-         @media print {
+        &__thead-spacer {
             height: var(--eden-sys-thead-spacer-height);
         }
-    }
 
-    &__tfoot-spacer {
-         @media print {
+        &__tfoot-spacer {
             height: var(--eden-sys-tfoot-spacer-height); 
         }
     }
-
 }

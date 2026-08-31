@@ -1,0 +1,87 @@
+@use '../../abstracts' as *;
+@include pulse-animation('edenFilterPulse');
+
+.eden-c-filter {
+    --_filter-box-spacing-top: 88px;
+    --_filter-box-spacing-right: var(--eden-sys-page-margin);
+
+    @include screen-above-layout-width {
+        --_filter-box-spacing-right: calc(100vw - var(--eden-sys-layout-max-width))
+    }
+
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -125px);
+    width: 92%;
+    max-width: 420px;
+    background-color: #{$eden-ref-neutral-100};
+    border: 1px solid var(--eden-sys-border-color-subtle);
+    border-radius: var(--eden-sys-radius-200);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+    padding: 0 var(--eden-sys-space-400) var(--eden-sys-space-300);
+    z-index: var(--eden-sys-zi-popover);
+    transition: opacity var(--eden-sys-duration-standard) var(--eden-sys-motion-default),
+    transform var(--eden-sys-duration-standard) var(--eden-sys-motion-default);
+
+    @include desktop {
+        left: initial;
+        bottom: initial;
+        transform: initial;
+        right: var(--_filter-box-spacing-right);
+        top: var(--_filter-box-spacing-top);
+    }
+
+    &--pulse {
+        animation: edenFilterPulse var(--eden-sys-duration-slow) var(--eden-sys-motion-fluid);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: var(--eden-sys-font-size-200);
+        font-weight: var(--eden-sys-font-weight-semibold);
+        color: var(--eden-sys-surface-content);
+        font-family: inherit;
+    }
+
+    &__close {
+        --eden-button-color: var(--eden-sys-surface-content-200);
+        --eden-button-font-size: var(--eden-sys-font-size-600);
+        --eden-button-justify-content: flex-end;
+        --eden-button-padding-x: 0;
+        --eden-button-padding-y: 0;
+        --eden-button-bg-hover: transparent;
+        --eden-button-bg-active: transparent;
+        --eden-button-font-weight: var(--eden-sys-font-weight-regular);
+
+        line-height: 1;
+        min-width: var(--eden-sys-space-700);
+
+        &:hover {
+            --eden-button-color: var(--eden-sys-surface-content);
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+
+    &__field {
+        width: 100%;
+        padding: var(--eden-sys-space-300) var(--eden-sys-space-400);
+        border: 1px solid var(--eden-sys-border-color-muted);
+        border-radius: var(--eden-sys-radius-150);
+        font-size: var(--eden-sys-font-size-300);
+        transition: border-color var(--eden-sys-duration-standard) var(--eden-sys-motion-entrance);
+
+        &:focus {
+            border-color: oklch(60% 0.18 var(--eden-ref-primary-hue));
+        }
+    }
+}

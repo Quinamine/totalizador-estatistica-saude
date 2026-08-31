@@ -33,7 +33,7 @@ $eden-ref-space-40: 2.5rem;
 $eden-ref-space-48: 3rem;
 
 // 1.7 Layout
-$eden-ref-content-max-width: 1440px;
+$eden-ref-content-max-width: 1488px;
 $eden-ref-sidebar-width: 280px;
 $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-width;
 
@@ -121,6 +121,7 @@ $eden-ref-layout-max-width: $eden-ref-content-max-width + $eden-ref-sidebar-widt
 
     // Border-radius
     --eden-sys-radius-100: 4px;
+    --eden-sys-radius-150: 6px;
     --eden-sys-radius-200: 8px;
     --eden-sys-radius-300: 12px;
     --eden-sys-radius-400: 16px;

@@ -8,6 +8,7 @@ import { EdenToast } from "./components/eden/EdenToast.js";
 import { EdenCellPositionBar } from "./components/eden/EdenCellPositionBar.js";
 import { EdenViewportHandler } from "./components/eden/EdenViewportHandler.js";
 import { EdenGeoDatalist } from "./components/eden/EdenGeoDatalist.js";
+import { TesBalancetePopulator } from "./components/tes/TesBalancetePopulator.js";
 
 const EdenApp = {
     init() {
@@ -16,11 +17,12 @@ const EdenApp = {
         EdenHeader.init();
         EdenToast.init();
         EdenToolbar.init();
-        TesManager.init()
+        TesManager.init();
         EdenNotesEditor.init();
         EdenCellPositionBar.init();
         EdenViewportHandler.init();
         EdenGeoDatalist.init();
+        TesBalancetePopulator.init();
 
         this.bindEvents();
     },
@@ -40,14 +42,12 @@ const EdenApp = {
                 detail.id = pageId;
 
                 this.updateRoute(pageId, pageTitle);
-                
             }
 
             this.dispatchTriggerRequest(action, detail);
         });
 
         document.addEventListener('eden:sidebar:visibility-request', (e) => this.handleVisibilityRequest(e));
-
         document.addEventListener('eden:toolbar:visibility-request', (e) => this.handleVisibilityRequest(e));
     },
 
@@ -100,8 +100,6 @@ const EdenApp = {
         
         document.title = `${title} | TES - Totalizador de Estatística de Saúde`;
     }
-
-
 }
 
 EdenApp.init();
