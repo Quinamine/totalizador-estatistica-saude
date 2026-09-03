@@ -20,7 +20,11 @@ export const TesManager = {
     },
 
     get isReportEmpty() {
-        return this.readWriteFields.every(field => field.value.trim() === '' && this.pNotes?.innerText === '');
+        const areFieldsEmpty = this.readWriteFields.every(field => field.value.trim() === '');
+
+        const areNotesEmpty = this.pNotes ? this.pNotes.innerText.trim() === '' : true;
+        
+        return areFieldsEmpty && areNotesEmpty;
     },
 
     init() {

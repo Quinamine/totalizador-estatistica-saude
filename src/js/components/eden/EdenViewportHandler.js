@@ -5,6 +5,7 @@ export const EdenViewportHandler = {
 
     isUpdatingFrame: false,
     lastScrollY: 0,
+    rowObserver: null,
 
     init() {
         this.bindEvents();
@@ -25,6 +26,12 @@ export const EdenViewportHandler = {
 
         document.addEventListener('eden:page:rendered', () => {
             this.updatePageContentMaxWidth();
+        });
+
+        document.addEventListener('eden:balancete:rendered', () => {
+            this.rows = document.querySelectorAll('[data-eden-js="balancete-tbody"] tr');
+            console.log(this.rows)
+            this.initBalanceteRowObserver();
         });
     },
 
@@ -60,6 +67,25 @@ export const EdenViewportHandler = {
         }
     },
 
+    initBalanceteRowObserver() {
+        if (this.rowObserver) this.rowObserver.disconnect();
+        
+        
+        if (!this.rows.length) return;
+
+        this.rowObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('is-hidden', !entry.isIntersecting);
+            });
+        }, {
+            root: null,
+            rootMargin: "400px 0px",
+            threshold: 0.01
+        });
+
+        this.rows.forEach(row => this.rowObserver.observe(row));
+    },
+
     toggleBodyClass(className, shouldAdd) {
         document.body.classList.toggle(className, shouldAdd);
     },
@@ -69,7 +95,6 @@ export const EdenViewportHandler = {
         if (isDesktop) return;
 
         const currentScrollY = window.scrollY;
-
         const isScrollingDown = currentScrollY > 64 && window.scrollY > this.lastScrollY;
 
         EdenViewportHandler.notify('viewport', 'scroll-direction', { isScrollingDown });
