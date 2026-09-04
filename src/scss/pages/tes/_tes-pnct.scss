@@ -1,0 +1,182 @@
+@use '../../abstracts/' as *;
+
+.tes-pnct {
+    --eden-sys-figure-spacing-y-start: 0;
+    --eden-sys-figure-spacing-y-end: 0;
+    --_accent-bg: #e5e7eb;
+    --_default-cell-width: 65px;
+    --_model-font-weight: var(--eden-sys-font-weight-regular);
+    --_content-font-size: var(--eden-sys-font-size-100);
+
+    font-size: var(--_content-font-size);
+
+    @media print {
+        --_model-font-weight: var(--eden-sys-font-weight-bold);
+    }
+
+    &--1a {
+        @media print {
+            --_content-font-size: var(--eden-sys-font-size-200);
+        }
+
+        tbody th[scope="row"] {
+            text-align: left;
+            --eden-table-cell-padding-y: var(--eden-sys-space-100);
+        }
+    }
+
+    th,
+    td,
+    input,
+    select,
+    label,
+    span,
+    p {
+        font-size: inherit;
+    }
+
+    table {
+        --eden-table-margin-top: 0;
+    }
+
+    &__header-row {
+        display: grid;
+        grid-template-columns: 1fr 350px 1fr;
+        align-items: center;
+        border: 1px solid var(--eden-sys-border-color);
+        border-bottom: none;
+
+        &--no-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__program-info {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-weight: var(--eden-sys-font-weight-bold);
+        font-size: var(--eden-sys-font-size-200);
+        padding: var(--eden-sys-space-400);
+        border-inline: 1px solid var(--eden-sys-border-color);
+
+        p {
+            --eden-sys-paragraph-spacing-y: 0;
+        }
+    }
+
+    &__logo {
+        --eden-sys-figure-spacing-y-start: var(--eden-sys-space-200);
+        --eden-sys-figure-spacing-y-end: 0;
+        margin-inline: auto;
+    }
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        background-color: #{$eden-ref-neutral-0};
+        color: #{$eden-ref-neutral-100};
+        padding: var(--eden-sys-space-150);
+        font-size: var(--eden-sys-font-size-300);
+        font-weight: var(--eden-sys-font-weight-bold);
+        text-transform: uppercase;
+        margin: 0;
+
+        &--spaced {
+            margin-block-end: var(--eden-sys-space-150);
+        }
+    }
+
+    &__meta-grid {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--eden-sys-space-200);
+    }
+
+    &__model {
+        text-align: center;
+        background-color: var(--_accent-bg);
+        font-weight: var(--_model-font-weight);
+        padding: var(--eden-sys-space-150);
+    }
+
+    &__meta-group {
+        display: flex;
+        align-items: center;
+        gap: var(--eden-sys-space-200);
+        padding-inline: var(--eden-sys-space-200);
+
+        label {
+            white-space: nowrap;
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid var(--eden-sys-border-color);
+            border-radius: 0;
+        }
+    }
+
+    &__section-header {
+        background-color: #{$eden-ref-neutral-0};
+        color: #{$eden-ref-neutral-100};
+        font-weight: var(--eden-sys-font-weight-bold);
+        text-align: center;
+        padding: var(--eden-sys-space-100);
+        font-size: var(--eden-sys-font-size-200);
+        text-transform: uppercase;
+        margin-block-start: var(--eden-sys-space-150);
+    }
+
+    &__subsection-header {
+        background-color: var(--_accent-bg);
+        font-weight: var(--eden-sys-font-weight-bold);
+        text-align: center;
+        padding: var(--eden-sys-space-100);
+        text-transform: uppercase;
+        border-inline: 1px solid var(--eden-sys-border-color);
+    }
+
+    thead {
+        background-color: var(--eden-table-accent-bg);
+    }
+
+    br {
+        display: none;
+
+        &::after {
+            content: " ";
+        }
+
+        @media print {
+            display: inline;
+
+            &::after {
+                content: none;
+            }
+        }
+    }
+
+    &__cell--hide-print {
+        @media print {
+            color: transparent !important;
+
+            * {
+                visibility: hidden !important;
+            }
+        }
+    }
+
+    &__cell--bg-white-print {
+        @media print {
+            background-color: #{$eden-ref-neutral-100} !important;
+        }
+    }
+
+}

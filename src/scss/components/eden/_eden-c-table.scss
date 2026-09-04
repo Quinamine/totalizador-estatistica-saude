@@ -5,9 +5,9 @@
     --eden-table-cell-padding-y: 0;
     --eden-table-margin-top: var(--eden-sys-space-200);
     --eden-table-margin-bottom: 0;
+    --eden-table-accent-bg: #e5e7eb;
     --_cell-na-bg: #b8bfc4;
-    --_cell-accent-bg: #e5e7eb;
-
+    
     width: max-content;
 
     thead,
@@ -60,7 +60,7 @@
 
         &__row--accented,
         &__cell--accented {
-            background-color: var(--_cell-accent-bg);
+            background-color: var(--eden-table-accent-bg);
         }
 
         &__thead-spacer,
