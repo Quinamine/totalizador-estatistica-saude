@@ -23,7 +23,7 @@ export const TesManager = {
         const areFieldsEmpty = this.readWriteFields.every(field => field.value.trim() === '');
 
         const areNotesEmpty = this.pNotes ? this.pNotes.innerText.trim() === '' : true;
-        
+
         return areFieldsEmpty && areNotesEmpty;
     },
 
@@ -355,7 +355,6 @@ export const TesManager = {
         this.hideEmptyRowsForPrint();
 
         const now = new Date();
-
         const date = now.toLocaleDateString('pt-MZ', {
             day: '2-digit',
             month: '2-digit',
@@ -373,14 +372,21 @@ export const TesManager = {
 
         const pageFooter = document.createElement('div');
         pageFooter.classList.add('eden-c-page-footer');
-        const isMultiPage = document.querySelector('[data-eden-js="tes-report"]')?.classList.contains('eden-c-page--has-pagination');
 
+        const isMultiPage = document.querySelector('[data-eden-js="tes-report"]')?.classList.contains('eden-c-page--has-pagination');
         if (isMultiPage) {
             pageFooter.classList.add('eden-c-page-footer--fixed');
         }
 
+        const notTotalizableForms = ['pnct-01a'];
+        const isNotTotalizable = notTotalizableForms.includes(this.activeReportId);
+
+        const systemSignature = isNotTotalizable
+            ? 'Impresso via Totalizador de Estatística de Saúde'
+            : 'Totalizado via';
+
         pageFooter.innerHTML = `<span class="eden-c-page-footer__date">${date} ${hour}</span>
-                                <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`;
+                            <span>${systemSignature}: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>`;
 
         this.contentArea.appendChild(pageFooter);
 
@@ -393,8 +399,12 @@ export const TesManager = {
             spinnerElement.classList.add('eden-c-spinner--fixed');
 
             setTimeout(() => {
-                try { window.print(); }
-                finally { spinnerElement.remove(); }
+                try {
+                    window.print();
+                } finally {
+                    spinnerElement.remove();
+                    pageFooter.remove();
+                }
             }, 250);
 
             return;

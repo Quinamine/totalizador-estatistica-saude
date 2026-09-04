@@ -16,7 +16,7 @@ export const EDEN_PAGES = [
     { id: 'its', name: 'RM ITS'}, 
     { id: 'apss-pp', name: 'RT APSS/PP'},
     { id: 'pnct-provisorio', name: 'PNCT Provisório'}, 
-    { id: 'pctc-01a', name: 'PNCT 01A'}, 
+    { id: 'pnct-01a', name: 'PNCT 01A'}, 
     { id: 'pnct-07', name: 'PNCT 07'}, 
     { id: 'pnct-ic-10a', name: 'PNCT IC-10A'}, 
     { id: 'pnct-r05', name: 'PNCT R05'}, 

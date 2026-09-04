@@ -1,0 +1,419 @@
+<div class="eden-c-page eden-c-page--portrait tes-pnct tes-pnct--1a" data-eden-js="tes-report">
+    <header class="tes-pnct__header">
+        <div class="tes-pnct__header-row">
+            <div class="tes-pnct__gov">
+                <figure class="tes-c-gov tes-c-gov--text-uppercase">
+                    <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                    <figcaption class="tes-c-gov__info">
+                        <span class="tes-c-gov__country">República de Moçambique</span>
+                        <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="tes-pnct__program-info">
+                <p class="tes-pnct__dept">DIRECÇÃO NACIONAL DE SAÚDE PÚBLICA</p>
+                <p class="tes-pnct__program">PROGRAMA NACIONAL DE CONTROLO <br> DA TUBERCULOSE</p>
+                <img src="assets/images/pnct-logo.png" alt="Logótipo PNCT" class="tes-pnct__logo">
+            </div>
+
+            <div class="tes-pnct__meta-grid">
+                <div class="tes-pnct__model">
+                    <span class="tes-pnct__model-code">MOD. SIS - PNCT 01 A</span>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="health-unit">US:</label>
+                    <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist">
+                    <datalist id="health-unit-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="district">Distrito:</label>
+                    <input type="text" name="district" id="district" list="district-datalist">
+                    <datalist id="district-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="province">Província:</label>
+                    <input type="text" name="province" id="province" list="province-datalist">
+                    <datalist id="province-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="month">Mês de Reporte:</label>
+                    <input type="text" name="month" id="month" list="month-datalist">
+                    <datalist id="month-datalist"></datalist>
+                </div>
+            </div>
+        </div>
+
+        <div class="tes-pnct__header-row tes-pnct__header-row--no-grid eden-u-border-none">
+            <h1 class="tes-pnct__title">RESUMO MENSAL DO LABORATÓRIO</h1>
+        </div>
+    </header>
+
+    <figure>
+        <!-- SECÇÃO 1 -->
+        <div class="tes-pnct__section-header">SECÇÃO 1: RASTREIO DE TB POR FAIXA ETÁRIA</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="1">
+            <colgroup>
+                <col style="width: 350px">
+                <col span="10" style="width: var(--_default-cell-width, 65px)">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" rowspan="2" class="tes-pnct__cell--hide-print">Variável</th>
+                    <th scope="colgroup" colspan="10" class="eden-c-table__cell--accented">Faixa Etária</th>
+                </tr>
+                <tr>
+                    <th scope="col">0 - 4</th>
+                    <th scope="col">5 - 9</th>
+                    <th scope="col">10 - 14</th>
+                    <th scope="col">15 - 19</th>
+                    <th scope="col">20 - 24</th>
+                    <th scope="col">25 - 34</th>
+                    <th scope="col">35 - 44</th>
+                    <th scope="col">45 - 54</th>
+                    <th scope="col">55 - 64</th>
+                    <th scope="col">&ge; 65</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--accented">a) Pacientes presuntivos submetidos ao exame <br> Bacteriológico (para Diagnóstico)</th>
+                    <td><input type="number" name="s1_l1-c1" id="s1_l1-c1" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c2" id="s1_l1-c2" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c3" id="s1_l1-c3" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c4" id="s1_l1-c4" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c5" id="s1_l1-c5" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c6" id="s1_l1-c6" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c7" id="s1_l1-c7" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c8" id="s1_l1-c8" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c9" id="s1_l1-c9" data-eden-group="s1_l1"></td>
+                    <td><input type="number" name="s1_l1-c10" id="s1_l1-c10" data-eden-group="s1_l1"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--accented">b) Pacientes presuntivos com Bacteriologia <br> Positiva</th>
+                    <td><input type="number" name="s1_l2-c1" id="s1_l2-c1" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c2" id="s1_l2-c2" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c3" id="s1_l2-c3" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c4" id="s1_l2-c4" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c5" id="s1_l2-c5" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c6" id="s1_l2-c6" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c7" id="s1_l2-c7" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c8" id="s1_l2-c8" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c9" id="s1_l2-c9" data-eden-group="s1_l2"></td>
+                    <td><input type="number" name="s1_l2-c10" id="s1_l2-c10" data-eden-group="s1_l2"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 2 -->
+        <div class="tes-pnct__section-header">SECÇÃO 2: RASTREIO DE TB POR TIPO DE TESTE</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="1">
+            <colgroup>
+                <col style="width: 540px">
+                <col span="4" style="width: 115px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" class="tes-pnct__cell--hide-print tes-pnct__cell--bg-white-print">Variável</th>
+                    <th scope="col">Microscopia</th>
+                    <th scope="col">GeneXpert <br> MTB/RIF</th>
+                    <th scope="col">Truenat</th>
+                    <th scope="col">LAM</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--accented">a) Pacientes presuntivos submetidos ao exame Bacteriológico (para diagnóstico)</th>
+                    <td><input type="number" name="s2_l1-c1" id="s2_l1-c1" data-eden-group="s2_l1"></td>
+                    <td><input type="number" name="s2_l1-c2" id="s2_l1-c2" data-eden-group="s2_l1"></td>
+                    <td><input type="number" name="s2_l1-c3" id="s2_l1-c3" data-eden-group="s2_l1"></td>
+                    <td><input type="number" name="s2_l1-c4" id="s2_l1-c4" data-eden-group="s2_l1"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--accented">b) Pacientes presuntivos com Bacteriologia Positiva</th>
+                    <td><input type="number" name="s2_l2-c1" id="s2_l2-c1" data-eden-group="s2_l2"></td>
+                    <td><input type="number" name="s2_l2-c2" id="s2_l2-c2" data-eden-group="s2_l2"></td>
+                    <td><input type="number" name="s2_l2-c3" id="s2_l2-c3" data-eden-group="s2_l2"></td>
+                    <td><input type="number" name="s2_l2-c4" id="s2_l2-c4" data-eden-group="s2_l2"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 3 -->
+        <div class="tes-pnct__section-header">SECÇÃO 3: RASTREIO DE TB POR FAIXA ETÁRIA</div>
+
+        <!-- SECÇÃO 3.1 -->
+        <div class="tes-pnct__subsection-header">3.1: CASO NOVO</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="1">
+            <colgroup>
+                <col style="width: 350px">
+                <col span="10" style="width: var(--_default-cell-width, 65px)">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" rowspan="2">Variável</th>
+                    <th scope="colgroup" colspan="10" class="eden-c-table__cell--accented">Faixa Etária</th>
+                </tr>
+                <tr>
+                    <th scope="col">0 - 4</th>
+                    <th scope="col">5 - 9</th>
+                    <th scope="col">10 - 14</th>
+                    <th scope="col">15 - 19</th>
+                    <th scope="col">20 - 24</th>
+                    <th scope="col">25 - 34</th>
+                    <th scope="col">35 - 44</th>
+                    <th scope="col">45 - 54</th>
+                    <th scope="col">55 - 64</th>
+                    <th scope="col">&ge; 65</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row">Pacientes submetidos ao exame de Xpert <br> MTB/XDR</th>
+                    <td><input type="number" name="s3_1_l1-c1" id="s3_1_l1-c1" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c2" id="s3_1_l1-c2" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c3" id="s3_1_l1-c3" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c4" id="s3_1_l1-c4" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c5" id="s3_1_l1-c5" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c6" id="s3_1_l1-c6" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c7" id="s3_1_l1-c7" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c8" id="s3_1_l1-c8" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c9" id="s3_1_l1-c9" data-eden-group="s3_1_l1"></td>
+                    <td><input type="number" name="s3_1_l1-c10" id="s3_1_l1-c10" data-eden-group="s3_1_l1"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Pacientes submetidos ao exame de Xpert <br> MTB/XDR com resistência a Isoniazida apenas
+                    </th>
+                    <td><input type="number" name="s3_1_l2-c1" id="s3_1_l2-c1" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c2" id="s3_1_l2-c2" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c3" id="s3_1_l2-c3" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c4" id="s3_1_l2-c4" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c5" id="s3_1_l2-c5" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c6" id="s3_1_l2-c6" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c7" id="s3_1_l2-c7" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c8" id="s3_1_l2-c8" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c9" id="s3_1_l2-c9" data-eden-group="s3_1_l2"></td>
+                    <td><input type="number" name="s3_1_l2-c10" id="s3_1_l2-c10" data-eden-group="s3_1_l2"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Pacientes submetidos ao exame de Xpert <br> MTB/XDR com resistência a Isoniazida e
+                        <br> Fluoroquinolonas</th>
+                    <td><input type="number" name="s3_1_l3-c1" id="s3_1_l3-c1" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c2" id="s3_1_l3-c2" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c3" id="s3_1_l3-c3" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c4" id="s3_1_l3-c4" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c5" id="s3_1_l3-c5" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c6" id="s3_1_l3-c6" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c7" id="s3_1_l3-c7" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c8" id="s3_1_l3-c8" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c9" id="s3_1_l3-c9" data-eden-group="s3_1_l3"></td>
+                    <td><input type="number" name="s3_1_l3-c10" id="s3_1_l3-c10" data-eden-group="s3_1_l3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Pacientes submetidos ao exame de Xpert <br> MTB/XDR com resistência a fluoroquinolonas
+                        <br> apenas</th>
+                    <td><input type="number" name="s3_1_l4-c1" id="s3_1_l4-c1" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c2" id="s3_1_l4-c2" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c3" id="s3_1_l4-c3" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c4" id="s3_1_l4-c4" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c5" id="s3_1_l4-c5" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c6" id="s3_1_l4-c6" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c7" id="s3_1_l4-c7" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c8" id="s3_1_l4-c8" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c9" id="s3_1_l4-c9" data-eden-group="s3_1_l4"></td>
+                    <td><input type="number" name="s3_1_l4-c10" id="s3_1_l4-c10" data-eden-group="s3_1_l4"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 3.2 -->
+        <div class="tes-pnct__subsection-header">SECÇÃO 3.2: PREVIAMENTE TRATADOS</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="1">
+            <colgroup>
+                <col style="width: 350px">
+                <col span="10" style="width: var(--_default-cell-width, 65px)">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" rowspan="2">Variável</th>
+                    <th scope="colgroup" colspan="10" class="eden-c-table__cell--accented">Faixa Etária</th>
+                </tr>
+                <tr>
+                    <th scope="col">0 - 4</th>
+                    <th scope="col">5 - 9</th>
+                    <th scope="col">10 - 14</th>
+                    <th scope="col">15 - 19</th>
+                    <th scope="col">20 - 24</th>
+                    <th scope="col">25 - 34</th>
+                    <th scope="col">35 - 44</th>
+                    <th scope="col">45 - 54</th>
+                    <th scope="col">55 - 64</th>
+                    <th scope="col">&ge; 65</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row">Pacientes submetidos ao exame de Xpert <br> MTB/XDR</th>
+                    <td><input type="number" name="s3_2_l1-c1" id="s3_2_l1-c1" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c2" id="s3_2_l1-c2" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c3" id="s3_2_l1-c3" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c4" id="s3_2_l1-c4" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c5" id="s3_2_l1-c5" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c6" id="s3_2_l1-c6" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c7" id="s3_2_l1-c7" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c8" id="s3_2_l1-c8" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c9" id="s3_2_l1-c9" data-eden-group="s3_2_l1"></td>
+                    <td><input type="number" name="s3_2_l1-c10" id="s3_2_l1-c10" data-eden-group="s3_2_l1"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Pacientes submetidos ao exame de Xpert <br> MTB/XDR com resistência a Isoniazida apenas
+                    </th>
+                    <td><input type="number" name="s3_2_l2-c1" id="s3_2_l2-c1" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c2" id="s3_2_l2-c2" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c3" id="s3_2_l2-c3" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c4" id="s3_2_l2-c4" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c5" id="s3_2_l2-c5" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c6" id="s3_2_l2-c6" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c7" id="s3_2_l2-c7" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c8" id="s3_2_l2-c8" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c9" id="s3_2_l2-c9" data-eden-group="s3_2_l2"></td>
+                    <td><input type="number" name="s3_2_l2-c10" id="s3_2_l2-c10" data-eden-group="s3_2_l2"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Pacientes submetidos ao exame de Xpert <br> MTB/XDR com resistência a Isoniazida e
+                        <br> Fluoroquinolonas</th>
+                    <td><input type="number" name="s3_2_l3-c1" id="s3_2_l3-c1" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c2" id="s3_2_l3-c2" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c3" id="s3_2_l3-c3" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c4" id="s3_2_l3-c4" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c5" id="s3_2_l3-c5" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c6" id="s3_2_l3-c6" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c7" id="s3_2_l3-c7" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c8" id="s3_2_l3-c8" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c9" id="s3_2_l3-c9" data-eden-group="s3_2_l3"></td>
+                    <td><input type="number" name="s3_2_l3-c10" id="s3_2_l3-c10" data-eden-group="s3_2_l3"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Pacientes submetidos ao exame de Xpert <br> MTB/XDR com resistência a fluoroquinolonas
+                       <br> apenas</th>
+                    <td><input type="number" name="s3_2_l4-c1" id="s3_2_l4-c1" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c2" id="s3_2_l4-c2" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c3" id="s3_2_l4-c3" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c4" id="s3_2_l4-c4" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c5" id="s3_2_l4-c5" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c6" id="s3_2_l4-c6" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c7" id="s3_2_l4-c7" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c8" id="s3_2_l4-c8" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c9" id="s3_2_l4-c9" data-eden-group="s3_2_l4"></td>
+                    <td><input type="number" name="s3_2_l4-c10" id="s3_2_l4-c10" data-eden-group="s3_2_l4"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 4 -->
+        <div class="tes-pnct__section-header">SECÇÃO 4: TIPOS DE AMOSTRAS</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="1">
+            <colgroup>
+                <col style="width: 480px">
+                <col span="3" style="width: calc(520px / 3)">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" class="tes-pnct__cell--hide-print">Variável</th>
+                    <th scope="col">Expectoração</th>
+                    <th scope="col">Fezes</th>
+                    <th scope="col">Outros</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-u-text-center">Amostras Recebidas</th>
+                    <td><input type="number" name="s4_l1-c1" id="s4_l1-c1" data-eden-group="s4_l1"></td>
+                    <td><input type="number" name="s4_l1-c2" id="s4_l1-c2" data-eden-group="s4_l1"></td>
+                    <td><input type="number" name="s4_l1-c3" id="s4_l1-c3" data-eden-group="s4_l1"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-u-text-center">Amostras Testadas</th>
+                    <td><input type="number" name="s4_l2-c1" id="s4_l2-c1" data-eden-group="s4_l2"></td>
+                    <td><input type="number" name="s4_l2-c2" id="s4_l2-c2" data-eden-group="s4_l2"></td>
+                    <td><input type="number" name="s4_l2-c3" id="s4_l2-c3" data-eden-group="s4_l2"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 5 -->
+        <div class="tes-pnct__section-header">SECÇÃO 5: QUALIDADE DE AMOSTRAS DE EXPECTORAÇÃO EM PACIENTES PRESUNTIVOS
+            DE TB</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="1">
+            <colgroup>
+                <col style="width: 480px">
+                <col span="4" style="width: calc(520px / 4)">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" class="tes-pnct__cell--hide-print">Variável</th>
+                    <th scope="col">Saliva</th>
+                    <th scope="col">Mucóide</th>
+                    <th scope="col">Mucopurulenta</th>
+                    <th scope="col">Hemoptóica</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-u-text-center">Casos Novos</th>
+                    <td><input type="number" name="s5_l1-c1" id="s5_l1-c1" data-eden-group="s5_l1"></td>
+                    <td><input type="number" name="s5_l1-c2" id="s5_l1-c2" data-eden-group="s5_l1"></td>
+                    <td><input type="number" name="s5_l1-c3" id="s5_l1-c3" data-eden-group="s5_l1"></td>
+                    <td><input type="number" name="s5_l1-c4" id="s5_l1-c4" data-eden-group="s5_l1"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-u-text-center">Retratamentos</th>
+                    <td><input type="number" name="s5_l2-c1" id="s5_l2-c1" data-eden-group="s5_l2"></td>
+                    <td><input type="number" name="s5_l2-c2" id="s5_l2-c2" data-eden-group="s5_l2"></td>
+                    <td><input type="number" name="s5_l2-c3" id="s5_l2-c3" data-eden-group="s5_l2"></td>
+                    <td><input type="number" name="s5_l2-c4" id="s5_l2-c4" data-eden-group="s5_l2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+    <footer class="tes-c-footer tes-c-footer--two-rows tes-c-footer--boxed">
+
+        <div class="tes-c-footer__area tes-c-footer__area--left">
+            <label for="reporter-name">Nome legível do técnico que reporta:</label>
+            <input type="text" name="reporter-name" id="reporter-name" class="tes-c-footer__input">
+        </div>
+
+        <div class="tes-c-footer__area tes-c-footer__area--center">
+            <label for="category">Categoria:</label>
+            <input type="text" name="category" id="category" class="tes-c-footer__input" list="categories">
+
+            <datalist id="categories">
+                <option value="Técnico de Laboratório"></option>
+                <option value="Médico de Clínica Geral"></option>
+                <option value="Técnico de Medicina Geral"></option>
+                <option value="Enfermeiro Geral"></option>
+                <option value="Agente de Medicina Geral"></option>
+                <option value="Técnico de Estatística Sanitária"></option>
+            </datalist>
+        </div>
+
+        <div class="tes-c-footer__area tes-c-footer__area--right">
+            <label for="report-date">Data:</label>
+            <input type="date" name="report-date" id="report-date"
+                class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+    </footer>
+
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true"
+            data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes">
+        </p>
+    </div>
+</div>
+
+<div class="eden-c-page-footer">
+    <span class="eden-c-page-footer__date"></span>
+    <span>Totalizado via: <a
+            href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a>
+        - v2.0</span>
+</div>

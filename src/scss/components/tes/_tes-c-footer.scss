@@ -14,13 +14,27 @@
         grid-template-rows: auto auto;
         grid-template-areas:
             "left . ."
-            "center right ."
+            "center right .";
+    }
+
+    &--two-rows {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "left center"
+            "right .";
     }
 
     &--overlap {
         @media print {
             margin-top: calc(var(--eden-sys-tfoot-spacer-height) * -1 + var(--_margin-y-start));
         }
+    }
+
+    &--boxed {
+        --_margin-y-start: 0;
+        border: 1px solid var(--eden-sys-border-color);
+        border-block-start: none;
+        padding: var(--eden-sys-space-200);
     }
 
     &__area {
