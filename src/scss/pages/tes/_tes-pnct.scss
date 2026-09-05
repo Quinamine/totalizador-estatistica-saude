@@ -66,6 +66,8 @@
 
         p {
             --eden-sys-paragraph-spacing-y: 0;
+
+            text-align: center;
         }
     }
 
@@ -147,36 +149,8 @@
         background-color: var(--eden-table-accent-bg);
     }
 
-    br {
-        display: none;
-
-        &::after {
-            content: " ";
-        }
-
-        @media print {
-            display: inline;
-
-            &::after {
-                content: none;
-            }
-        }
-    }
-
-    &__cell--hide-print {
-        @media print {
-            color: transparent !important;
-
-            * {
-                visibility: hidden !important;
-            }
-        }
-    }
-
-    &__cell--bg-white-print {
-        @media print {
-            background-color: #{$eden-ref-neutral-100} !important;
-        }
+    &__header-cell--white {
+        background-color: #{$eden-ref-neutral-100};
     }
 
 }
