@@ -15,6 +15,10 @@
         --eden-table-cell-padding-x: 0;
     }
 
+    thead th {
+        --eden-table-cell-height: 26px;
+    }
+
     tbody th[scope="row"]:not(:first-child) {
         text-align: left;
     }
