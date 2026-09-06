@@ -51,10 +51,12 @@ export const EdenCellPositionBar = {
         const colLabel = table.querySelector(`[data-eden-col-label~="${colId}"]`);
 
         const complementaryId = colId;
-        const complementaryLabel = document.querySelector(`[data-eden-complementary-label~="${complementaryId}"]`);
+      
+        const complementaryLabel = table.querySelector(`[data-eden-complementary-label~="${complementaryId}"]`);
 
         const rowCategoryId = tr.dataset.edenRowCategoryId;
-        const rowCategoryLabel = document.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`);
+        const rowCategoryLabel = table.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`) || 
+                                 document.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`);
 
         return { rowCategoryLabel, rowLabel, colLabel, complementaryLabel };
     },

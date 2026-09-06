@@ -1,0 +1,504 @@
+<div class="eden-c-page eden-c-page--portrait tes-pnct tes-pnct--provisorio" data-eden-js="tes-report">
+    <header class="tes-pnct__header">
+        <div class="tes-pnct__header-row eden-u-border-bottom">
+            <div class="tes-pnct__gov">
+                <figure class="tes-c-gov tes-c-gov--text-uppercase">
+                    <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                    <figcaption class="tes-c-gov__info">
+                        <span class="tes-c-gov__country">República de Moçambique</span>
+                        <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="tes-pnct__program-info">
+                <p class="tes-pnct__dept">DIRECÇÃO NACIONAL DE SAÚDE PÚBLICA</p>
+                <p class="tes-pnct__program">PROGRAMA NACIONAL DE CONTROLO <br> DA TUBERCULOSE</p>
+                <img src="assets/images/pnct-logo.png" alt="Logótipo PNCT" class="tes-pnct__logo">
+            </div>
+
+            <div class="tes-pnct__meta-grid">
+                <div class="tes-pnct__model">
+                    <span class="tes-pnct__model-code">MOD. SIS - PNCT Provisório</span>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="health-unit">US:</label>
+                    <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist">
+                    <datalist id="health-unit-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="district">Distrito:</label>
+                    <input type="text" name="district" id="district" list="district-datalist">
+                    <datalist id="district-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="province">Província:</label>
+                    <input type="text" name="province" id="province" list="province-datalist">
+                    <datalist id="province-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="month">Mês de Reporte:</label>
+                    <input type="text" name="month" id="month" list="month-datalist">
+                    <datalist id="month-datalist"></datalist>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <figure>
+        <!-- SECÇÃO 1 -->
+        <div class="tes-pnct__section-header">SECÇÃO 1: RESUMO MENSAL DE RASTREIO DE TB USANDO RX</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 220px">
+                <col style="width: 60px">
+                <col span="9" style="width: 30px">
+                <col span="3" style="width: 90px">
+                <col span="6" style="width: 30px">
+                <col style="width: 54px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="3" colspan="2" class="tes-pnct__header-cell--white"></th>
+                    <th scope="col" colspan="3">1</th>
+                    <th scope="col" colspan="3">2</th>
+                    <th scope="col" colspan="3">3</th>
+                    <th scope="col">4</th>
+                    <th scope="col">5</th>
+                    <th scope="col">6</th>
+                    <th scope="col" colspan="3">7</th>
+                    <th scope="col" colspan="3">8</th>
+                    <th scope="col">9</th>
+                </tr>
+                <tr>
+                    <th scope="col" colspan="3" data-eden-col-label="c1 c2 c3">PVHIV</th>
+                    <th scope="col" colspan="3" data-eden-col-label="c4 c5 c6">Contactos de <br> TB</th>
+                    <th scope="col" colspan="3" data-eden-col-label="c7 c8 c9">Diabetes</th>
+                    <th scope="col" data-eden-col-label="c10">Mineiros</th>
+                    <th scope="col" data-eden-col-label="c11">Prisioneiros</th>
+                    <th scope="col" data-eden-col-label="c12">Trabalhador <br> de Saúde</th>
+                    <th scope="col" colspan="3" data-eden-col-label="c13 c14 c15">Outros</th>
+                    <th scope="col" colspan="3" data-eden-col-label="c16 c17 c18">Total</th>
+                    <th scope="col" rowspan="2" data-eden-col-label="c19">Total <br> Geral</th>
+                </tr>
+                <tr class="tes-pnct__row--auto-height">
+                    <th scope="col" data-eden-complementary-label="c1"><span class="eden-u-text-vertical">0 - 4</span></th>
+                    <th scope="col" data-eden-complementary-label="c2"><span class="eden-u-text-vertical">5 - 14</span></th>
+                    <th scope="col" data-eden-complementary-label="c3"><span class="eden-u-text-vertical">&ge; 15</span></th>
+                    <th scope="col" data-eden-complementary-label="c4"><span class="eden-u-text-vertical">0 - 4</span></th>
+                    <th scope="col" data-eden-complementary-label="c5"><span class="eden-u-text-vertical">5 - 14</span></th>
+                    <th scope="col" data-eden-complementary-label="c6"><span class="eden-u-text-vertical">&ge; 15</span></th>
+                    <th scope="col" data-eden-complementary-label="c7"><span class="eden-u-text-vertical">0 - 4</span></th>
+                    <th scope="col" data-eden-complementary-label="c8"><span class="eden-u-text-vertical">5 - 14</span></th>
+                    <th scope="col" data-eden-complementary-label="c9"><span class="eden-u-text-vertical">&ge; 15</span></th>
+                    <th scope="col" data-eden-complementary-label="c10">&ge; 15</th>
+                    <th scope="col" data-eden-complementary-label="c11">&ge; 15</th>
+                    <th scope="col" data-eden-complementary-label="c12">&ge; 15</th>
+                    <th scope="col" data-eden-complementary-label="c13"><span class="eden-u-text-vertical">0 - 4</span></th>
+                    <th scope="col" data-eden-complementary-label="c14"><span class="eden-u-text-vertical">5 - 14</span></th>
+                    <th scope="col" data-eden-complementary-label="c15"><span class="eden-u-text-vertical">&ge; 15</span></th>
+                    <th scope="col" data-eden-complementary-label="c16"><span class="eden-u-text-vertical">0 - 4</span></th>
+                    <th scope="col" data-eden-complementary-label="c17"><span class="eden-u-text-vertical">5 - 14</span></th>
+                    <th scope="col" data-eden-complementary-label="c18"><span class="eden-u-text-vertical">&ge; 15</span></th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr data-eden-row-category-id="A" data-eden-row-label-col-index="1">
+                    <th scope="rowgroup" rowspan="2" class="eden-c-table__cell--toned eden-u-text-left" data-eden-row-category-label="A">a) Pacientes Rastreados usando <br> RX</th>
+                    <th scope="row" class="eden-c-table__cell--toned">Dentro <br> da US</th>
+                    <td><input type="number" name="s1_l1-c1" id="s1_l1-c1" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l1-c2" id="s1_l1-c2" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l1-c3" id="s1_l1-c3" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l1-c4" id="s1_l1-c4" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l1-c5" id="s1_l1-c5" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l1-c6" id="s1_l1-c6" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l1-c7" id="s1_l1-c7" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l1-c8" id="s1_l1-c8" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l1-c9" id="s1_l1-c9" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l1-c10" id="s1_l1-c10" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l1-c11" id="s1_l1-c11" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l1-c12" id="s1_l1-c12" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l1-c13" id="s1_l1-c13" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l1-c14" id="s1_l1-c14" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l1-c15" id="s1_l1-c15" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l1-c16" id="s1_l1-c16" value="0" tabindex="-1" readonly data-eden-total="subtotal-0-4"></td>
+                    <td><input type="number" name="s1_l1-c17" id="s1_l1-c17" value="0" tabindex="-1" readonly data-eden-total="subtotal-5-14"></td>
+                    <td><input type="number" name="s1_l1-c18" id="s1_l1-c18" value="0" tabindex="-1" readonly data-eden-total="subtotal-15-plus"></td>
+                    <td><input type="number" name="s1_l1-c19" id="s1_l1-c19" value="0" tabindex="-1" readonly data-eden-total="grand-total"></td>
+                </tr>
+                <tr data-eden-row-category-id="A">
+                    <th scope="row" class="eden-c-table__cell--toned">Brigada <br> Móvel</th>
+                    <td><input type="number" name="s1_l2-c1" id="s1_l2-c1" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l2-c2" id="s1_l2-c2" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l2-c3" id="s1_l2-c3" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l2-c4" id="s1_l2-c4" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l2-c5" id="s1_l2-c5" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l2-c6" id="s1_l2-c6" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l2-c7" id="s1_l2-c7" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l2-c8" id="s1_l2-c8" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l2-c9" id="s1_l2-c9" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l2-c10" id="s1_l2-c10" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l2-c11" id="s1_l2-c11" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l2-c12" id="s1_l2-c12" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l2-c13" id="s1_l2-c13" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l2-c14" id="s1_l2-c14" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l2-c15" id="s1_l2-c15" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l2-c16" id="s1_l2-c16" value="0" tabindex="-1" readonly data-eden-total="subtotal-0-4"></td>
+                    <td><input type="number" name="s1_l2-c17" id="s1_l2-c17" value="0" tabindex="-1" readonly data-eden-total="subtotal-5-14"></td>
+                    <td><input type="number" name="s1_l2-c18" id="s1_l2-c18" value="0" tabindex="-1" readonly data-eden-total="subtotal-15-plus"></td>
+                    <td><input type="number" name="s1_l2-c19" id="s1_l2-c19" value="0" tabindex="-1" readonly data-eden-total="grand-total"></td>
+                </tr>
+                <tr data-eden-row-category-id="B" data-eden-row-label-col-index="1">
+                    <th scope="rowgroup" rowspan="2" class="eden-c-table__cell--toned eden-u-text-left" data-eden-row-category-label="B">b) Pacientes com RX sugestivos</th>
+                    <th scope="row" class="eden-c-table__cell--toned">Dentro <br> da US</th>
+                    <td><input type="number" name="s1_l3-c1" id="s1_l3-c1" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c2" id="s1_l3-c2" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c3" id="s1_l3-c3" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c4" id="s1_l3-c4" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c5" id="s1_l3-c5" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c6" id="s1_l3-c6" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c7" id="s1_l3-c7" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c8" id="s1_l3-c8" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c9" id="s1_l3-c9" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c10" id="s1_l3-c10" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c11" id="s1_l3-c11" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c12" id="s1_l3-c12" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c13" id="s1_l3-c13" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c14" id="s1_l3-c14" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c15" id="s1_l3-c15" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c16" id="s1_l3-c16" value="0" tabindex="-1" readonly data-eden-total="subtotal-0-4"></td>
+                    <td><input type="number" name="s1_l3-c17" id="s1_l3-c17" value="0" tabindex="-1" readonly data-eden-total="subtotal-5-14"></td>
+                    <td><input type="number" name="s1_l3-c18" id="s1_l3-c18" value="0" tabindex="-1" readonly data-eden-total="subtotal-15-plus"></td>
+                    <td><input type="number" name="s1_l3-c19" id="s1_l3-c19" value="0" tabindex="-1" readonly data-eden-total="grand-total"></td>
+                </tr>
+                <tr data-eden-row-category-id="B">
+                    <th scope="row" class="eden-c-table__cell--toned">Brigada <br> Móvel</th>
+                    <td><input type="number" name="s1_l4-c1" id="s1_l4-c1" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c2" id="s1_l4-c2" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c3" id="s1_l4-c3" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c4" id="s1_l4-c4" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c5" id="s1_l4-c5" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c6" id="s1_l4-c6" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c7" id="s1_l4-c7" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c8" id="s1_l4-c8" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c9" id="s1_l4-c9" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c10" id="s1_l4-c10" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c11" id="s1_l4-c11" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c12" id="s1_l4-c12" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c13" id="s1_l4-c13" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c14" id="s1_l4-c14" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c15" id="s1_l4-c15" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c16" id="s1_l4-c16" value="0" tabindex="-1" readonly data-eden-total="subtotal-0-4"></td>
+                    <td><input type="number" name="s1_l4-c17" id="s1_l4-c17" value="0" tabindex="-1" readonly data-eden-total="subtotal-5-14"></td>
+                    <td><input type="number" name="s1_l4-c18" id="s1_l4-c18" value="0" tabindex="-1" readonly data-eden-total="subtotal-15-plus"></td>
+                    <td><input type="number" name="s1_l4-c19" id="s1_l4-c19" value="0" tabindex="-1" readonly data-eden-total="grand-total"></td>
+                </tr>
+                <tr data-eden-row-category-id="C" data-eden-row-label-col-index="1">
+                    <th scope="rowgroup" rowspan="2" class="eden-c-table__cell--toned eden-u-text-left" data-eden-row-category-label="C">c) Pacientes Submetidos ao Teste <br> Molecular (Xpert MTB/Rif/ Ultra / <br> Truenat MTB/Rif)</th>
+                    <th scope="row" class="eden-c-table__cell--toned">Dentro <br> da US</th>
+                    <td><input type="number" name="s1_l3-c1" id="s1_l3-c1" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c2" id="s1_l3-c2" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c3" id="s1_l3-c3" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c4" id="s1_l3-c4" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c5" id="s1_l3-c5" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c6" id="s1_l3-c6" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c7" id="s1_l3-c7" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c8" id="s1_l3-c8" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c9" id="s1_l3-c9" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c10" id="s1_l3-c10" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c11" id="s1_l3-c11" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c12" id="s1_l3-c12" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c13" id="s1_l3-c13" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c14" id="s1_l3-c14" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l3-c15" id="s1_l3-c15" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l3-c16" id="s1_l3-c16" value="0" tabindex="-1" readonly data-eden-total="subtotal-0-4"></td>
+                    <td><input type="number" name="s1_l3-c17" id="s1_l3-c17" value="0" tabindex="-1" readonly data-eden-total="subtotal-5-14"></td>
+                    <td><input type="number" name="s1_l3-c18" id="s1_l3-c18" value="0" tabindex="-1" readonly data-eden-total="subtotal-15-plus"></td>
+                    <td><input type="number" name="s1_l3-c19" id="s1_l3-c19" value="0" tabindex="-1" readonly data-eden-total="grand-total"></td>
+                </tr>
+                <tr data-eden-row-category-id="C">
+                    <th scope="row" class="eden-c-table__cell--toned">Brigada <br> Móvel</th>
+                    <td><input type="number" name="s1_l4-c1" id="s1_l4-c1" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c2" id="s1_l4-c2" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c3" id="s1_l4-c3" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c4" id="s1_l4-c4" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c5" id="s1_l4-c5" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c6" id="s1_l4-c6" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c7" id="s1_l4-c7" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c8" id="s1_l4-c8" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c9" id="s1_l4-c9" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c10" id="s1_l4-c10" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c11" id="s1_l4-c11" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c12" id="s1_l4-c12" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c13" id="s1_l4-c13" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c14" id="s1_l4-c14" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l4-c15" id="s1_l4-c15" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l4-c16" id="s1_l4-c16" value="0" tabindex="-1" readonly data-eden-total="subtotal-0-4"></td>
+                    <td><input type="number" name="s1_l4-c17" id="s1_l4-c17" value="0" tabindex="-1" readonly data-eden-total="subtotal-5-14"></td>
+                    <td><input type="number" name="s1_l4-c18" id="s1_l4-c18" value="0" tabindex="-1" readonly data-eden-total="subtotal-15-plus"></td>
+                    <td><input type="number" name="s1_l4-c19" id="s1_l4-c19" value="0" tabindex="-1" readonly data-eden-total="grand-total"></td>
+                </tr>
+                <tr data-eden-row-category-id="D" data-eden-row-label-col-index="1">
+                    <th scope="rowgroup" rowspan="2" class="eden-c-table__cell--toned eden-u-text-left" data-eden-row-category-label="D">d) Pacientes Diagnosticados TB</th>
+                    <th scope="row" class="eden-c-table__cell--toned">Dentro <br> da US</th>
+                    <td><input type="number" name="s1_l5-c1" id="s1_l5-c1" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l5-c2" id="s1_l5-c2" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l5-c3" id="s1_l5-c3" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l5-c4" id="s1_l5-c4" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l5-c5" id="s1_l5-c5" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l5-c6" id="s1_l5-c6" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l5-c7" id="s1_l5-c7" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l5-c8" id="s1_l5-c8" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l5-c9" id="s1_l5-c9" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l5-c10" id="s1_l5-c10" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l5-c11" id="s1_l5-c11" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l5-c12" id="s1_l5-c12" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l5-c13" id="s1_l5-c13" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l5-c14" id="s1_l5-c14" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l5-c15" id="s1_l5-c15" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l5-c16" id="s1_l5-c16" value="0" tabindex="-1" readonly data-eden-total="subtotal-0-4"></td>
+                    <td><input type="number" name="s1_l5-c17" id="s1_l5-c17" value="0" tabindex="-1" readonly data-eden-total="subtotal-5-14"></td>
+                    <td><input type="number" name="s1_l5-c18" id="s1_l5-c18" value="0" tabindex="-1" readonly data-eden-total="subtotal-15-plus"></td>
+                    <td><input type="number" name="s1_l5-c19" id="s1_l5-c19" value="0" tabindex="-1" readonly data-eden-total="grand-total"></td>
+                </tr>
+                <tr data-eden-row-category-id="D">
+                    <th scope="row" class="eden-c-table__cell--toned">Brigada <br> Móvel</th>
+                    <td><input type="number" name="s1_l6-c1" id="s1_l6-c1" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l6-c2" id="s1_l6-c2" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l6-c3" id="s1_l6-c3" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l6-c4" id="s1_l6-c4" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l6-c5" id="s1_l6-c5" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l6-c6" id="s1_l6-c6" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l6-c7" id="s1_l6-c7" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l6-c8" id="s1_l6-c8" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l6-c9" id="s1_l6-c9" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l6-c10" id="s1_l6-c10" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l6-c11" id="s1_l6-c11" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l6-c12" id="s1_l6-c12" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l6-c13" id="s1_l6-c13" data-eden-group="subtotal-0-4 grand-total"></td>
+                    <td><input type="number" name="s1_l6-c14" id="s1_l6-c14" data-eden-group="subtotal-5-14 grand-total"></td>
+                    <td><input type="number" name="s1_l6-c15" id="s1_l6-c15" data-eden-group="subtotal-15-plus grand-total"></td>
+                    <td><input type="number" name="s1_l6-c16" id="s1_l6-c16" value="0" tabindex="-1" readonly data-eden-total="subtotal-0-4"></td>
+                    <td><input type="number" name="s1_l6-c17" id="s1_l6-c17" value="0" tabindex="-1" readonly data-eden-total="subtotal-5-14"></td>
+                    <td><input type="number" name="s1_l6-c18" id="s1_l6-c18" value="0" tabindex="-1" readonly data-eden-total="subtotal-15-plus"></td>
+                    <td><input type="number" name="s1_l6-c19" id="s1_l6-c19" value="0" tabindex="-1" readonly data-eden-total="grand-total"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 2 -->
+        <div class="tes-pnct__section-header">SECÇÃO 2: REGIMES DE TRATAMENTO DE TUBERCULOSE SENSÍVEL</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 550px">
+                <col span="4" style="width: 126px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" rowspan="3">Variáveis</th>
+                    <th scope="colgroup" colspan="4">Faixa Etária</th>
+                </tr>
+                <tr>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                </tr>
+                <tr>
+                    <th scope="col" data-eden-col-label="c1">0 - 4</th>
+                    <th scope="col" data-eden-col-label="c2">5 - 14</th>
+                    <th scope="col" data-eden-col-label="c3">≥ 15</th>
+                    <th scope="col" data-eden-col-label="c4">Total</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Nº de pacientes TB Sensível que iniciaram tratamento regime Padrão durante o mês <br> em reporte</th>
+                    <td><input type="number" name="s2_l1-c1" id="s2_l1-c1" data-eden-group="total"></td>
+                    <td><input type="number" name="s2_l1-c2" id="s2_l1-c2" data-eden-group="total"></td>
+                    <td><input type="number" name="s2_l1-c3" id="s2_l1-c3" data-eden-group="total"></td>
+                    <td><input type="number" name="s2_l1-c4" id="s2_l1-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Nº de pacientes TB Sensível que iniciaram tratamento regime Curto durante o mês <br> em reporte</th>
+                    <td><input type="number" name="s2_l2-c1" id="s2_l2-c1" data-eden-group="total"></td>
+                    <td><input type="number" name="s2_l2-c2" id="s2_l2-c2" data-eden-group="total"></td>
+                    <td><input type="number" name="s2_l2-c3" id="s2_l2-c3" data-eden-group="total"></td>
+                    <td><input type="number" name="s2_l2-c4" id="s2_l2-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 3 -->
+        <div class="tes-pnct__section-header">SECÇÃO 3: REGIMES DE TRATAMENTO DE TUBERCULOSE MULTI RESISTENTE (TB MR)</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 460px">
+                <col span="6" style="width: 99px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" rowspan="3">Variáveis</th>
+                    <th scope="colgroup" colspan="6">Faixa Etária</th>
+                </tr>
+                <tr>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                    <th scope="col">5</th>
+                    <th scope="col">6</th>
+                </tr>
+                <tr>
+                    <th scope="col" data-eden-col-label="c1">0 - 4</th>
+                    <th scope="col" data-eden-col-label="c2">5 - 14</th>
+                    <th scope="col" data-eden-col-label="c3">≥ 15</th>
+                    <th scope="col" data-eden-col-label="c4">Total</th>
+                    <th scope="col" data-eden-col-label="c5">Grávidas</th>
+                    <th scope="col" data-eden-col-label="c6">Lactantes</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Nº de pacientes TB-MR que iniciaram tratamento regime Longo durante o <br> mês em reporte</th>
+                    <td><input type="number" name="s3_l1-c1" id="s3_l1-c1" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l1-c2" id="s3_l1-c2" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l1-c3" id="s3_l1-c3" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l1-c4" id="s3_l1-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                    <td><input type="number" name="s3_l1-c5" id="s3_l1-c5" data-eden-group="gravidas"></td>
+                    <td><input type="number" name="s3_l1-c6" id="s3_l1-c5" data-eden-group="lactantes"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Nº de pacientes TB-MR que iniciaram tratamento regime curto (6 meses) <br> durante o mês em reporte</th>
+                    <td><input type="number" name="s3_l2-c1" id="s3_l2-c1" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l2-c2" id="s3_l2-c2" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l2-c3" id="s3_l2-c3" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l2-c4" id="s3_l2-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                    <td><input type="number" name="s3_l2-c5" id="s3_l2-c5" data-eden-group="gravidas"></td>
+                    <td><input type="number" name="s3_l2-c6" id="s3_l2-c5" data-eden-group="lactantes"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Nº de pacientes Pré-XR que iniciaram tratamento regime Longo durante o <br> mês em reporte</th>
+                    <td><input type="number" name="s3_l3-c1" id="s3_l3-c1" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l3-c2" id="s3_l3-c2" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l3-c3" id="s3_l3-c3" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l3-c4" id="s3_l3-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                    <td><input type="number" name="s3_l3-c5" id="s3_l3-c5" data-eden-group="gravidas"></td>
+                    <td><input type="number" name="s3_l3-c6" id="s3_l3-c5" data-eden-group="lactantes"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Nº de pacientes Pré-XR que iniciaram tratamento regime curto (6 meses <br> durante o mês em reporte</th>
+                    <td><input type="number" name="s3_l4-c1" id="s3_l4-c1" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l4-c2" id="s3_l4-c2" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l4-c3" id="s3_l4-c3" data-eden-group="total"></td>
+                    <td><input type="number" name="s3_l4-c4" id="s3_l4-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                    <td><input type="number" name="s3_l4-c5" id="s3_l4-c5" data-eden-group="gravidas"></td>
+                    <td><input type="number" name="s3_l4-c6" id="s3_l4-c5" data-eden-group="lactantes"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 4 -->
+          <div class="tes-pnct__section-header">SECÇÃO 4: REGIMES DE TRATAMENTO PREVENTIVO DA TUBERCULOSE</div>
+         <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 550px">
+                <col span="4" style="width: 126px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="3" class="tes-pnct__header-cell--white"></th>
+                    <th scope="colgroup" colspan="4">Faixa Etária</th>
+                </tr>
+                <tr>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                </tr>
+                <tr>
+                    <th scope="col" data-eden-col-label="c1">0 - 4</th>
+                    <th scope="col" data-eden-col-label="c2">5 - 14</th>
+                    <th scope="col" data-eden-col-label="c3">≥ 15</th>
+                    <th scope="col" data-eden-col-label="c4">Total</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">a) Contactos que iniciaram TPT com Isoniazida</th>
+                    <td><input type="number" name="s4_l1-c1" id="s4_l1-c1" data-eden-group="total s4-c1 s4-c4"></td>
+                    <td><input type="number" name="s4_l1-c2" id="s4_l1-c2" data-eden-group="total s4-c2 s4-c4"></td>
+                    <td><input type="number" name="s4_l1-c3" id="s4_l1-c3" data-eden-group="total s4-c3 s4-c4"></td>
+                    <td><input type="number" name="s4_l1-c4" id="s4_l1-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">b) Contactos que iniciaram TPT com 3HP</th>
+                    <td><input type="number" name="s4_l2-c1" id="s4_l2-c1" data-eden-group="total s4-c1 s4-c4"></td>
+                    <td><input type="number" name="s4_l2-c2" id="s4_l2-c2" data-eden-group="total s4-c2 s4-c4"></td>
+                    <td><input type="number" name="s4_l2-c3" id="s4_l2-c3" data-eden-group="total s4-c3 s4-c4"></td>
+                    <td><input type="number" name="s4_l2-c4" id="s4_l2-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">c) Contactos que iniciaram TPT com 3HR</th>
+                    <td><input type="number" name="s4_l3-c1" id="s4_l3-c1" data-eden-group="total s4-c1 s4-c4"></td>
+                    <td><input type="number" name="s4_l3-c2" id="s4_l3-c2" data-eden-group="total s4-c2 s4-c4"></td>
+                    <td><input type="number" name="s4_l3-c3" id="s4_l3-c3" data-eden-group="total s4-c3 s4-c4"></td>
+                    <td><input type="number" name="s4_l3-c4" id="s4_l3-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">d) Contactos que iniciaram TPT com Levofloxacina</th>
+                    <td><input type="number" name="s4_l4-c1" id="s4_l4-c1" data-eden-group="total s4-c1 s4-c4"></td>
+                    <td><input type="number" name="s4_l4-c2" id="s4_l4-c2" data-eden-group="total s4-c2 s4-c4"></td>
+                    <td><input type="number" name="s4_l4-c3" id="s4_l4-c3" data-eden-group="total s4-c3 s4-c4"></td>
+                    <td><input type="number" name="s4_l4-c4" id="s4_l4-c4" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">e) Total pacientes que iniciaram TPT (Isoniazida, 3HP, 3HR, Levofloxacina)</th>
+                    <td><input type="number" name="s4_l5-c4" id="s4_l5-c4" value="0" tabindex="-1" readonly data-eden-total="s4-c1"></td>
+                    <td><input type="number" name="s4_l5-c4" id="s4_l5-c4" value="0" tabindex="-1" readonly data-eden-total="s4-c2"></td>
+                    <td><input type="number" name="s4_l5-c4" id="s4_l5-c4" value="0" tabindex="-1" readonly data-eden-total="s4-c3"></td>
+                    <td><input type="number" name="s4_l5-c4" id="s4_l5-c4" value="0" tabindex="-1" readonly data-eden-total="s4-c4"></td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+    <footer class="tes-c-footer tes-c-footer--two-rows tes-c-footer--boxed">
+
+        <div class="tes-c-footer__area tes-c-footer__area--left">
+            <label for="reporter-name">Nome legível do técnico que reporta:</label>
+            <input type="text" name="reporter-name" id="reporter-name" class="tes-c-footer__input">
+        </div>
+
+        <div class="tes-c-footer__area tes-c-footer__area--center">
+            <label for="category">Categoria:</label>
+            <input type="text" name="category" id="category" class="tes-c-footer__input" list="categories">
+
+            <datalist id="categories">
+                <option value="Médico de Clínica Geral"></option>
+                <option value="Técnico de Medicina Geral"></option>
+                <option value="Enfermeiro Geral"></option>
+                <option value="Agente de Medicina Geral"></option>
+                <option value="Técnico de Estatística Sanitária"></option>
+            </datalist>
+        </div>
+
+        <div class="tes-c-footer__area tes-c-footer__area--right">
+            <label for="report-date">Data:</label>
+            <input type="date" name="report-date" id="report-date"
+                class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+    </footer>
+
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true"
+            data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes">
+        </p>
+    </div>
+</div>
+
+<div class="eden-c-page-footer">
+    <span class="eden-c-page-footer__date"></span>
+    <span>Totalizado via: <a
+            href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a>
+        - v2.0</span>
+</div>
