@@ -3,7 +3,7 @@
 .tes-pnct {
     --eden-sys-figure-spacing-y-start: 0;
     --eden-sys-figure-spacing-y-end: 0;
-    --_accent-bg: #e5e7eb;
+    --_header-bg: #e5e7eb;
     --_default-cell-width: 65px;
     --_model-font-weight: var(--eden-sys-font-weight-regular);
     --_content-font-size: var(--eden-sys-font-size-100);
@@ -12,16 +12,35 @@
 
     @media print {
         --_model-font-weight: var(--eden-sys-font-weight-bold);
-    }
 
-    &--1a {
-        @media print {
+        &--1a {
             --_content-font-size: var(--eden-sys-font-size-200);
         }
 
+        &--provisorio {
+            --_content-font-size: 13px;
+
+            th,
+            td {
+                line-height: var(--eden-sys-line-height-heading);
+            }
+        }
+
+        table, footer {
+            width: 100%;
+        }
+    }
+
+    table {
+        --eden-table-margin-top: 0;
+
+        thead th {
+            --eden-table-cell-height: 26px;
+        }
+
         tbody th[scope="row"] {
-            text-align: left;
             --eden-table-cell-padding-y: var(--eden-sys-space-100);
+            text-align: left;
         }
     }
 
@@ -33,10 +52,6 @@
     span,
     p {
         font-size: inherit;
-    }
-
-    table {
-        --eden-table-margin-top: 0;
     }
 
     &__header-row {
@@ -68,6 +83,7 @@
             --eden-sys-paragraph-spacing-y: 0;
 
             text-align: center;
+            line-height: var(--eden-sys-line-height-heading);
         }
     }
 
@@ -102,7 +118,7 @@
 
     &__model {
         text-align: center;
-        background-color: var(--_accent-bg);
+        background-color: var(--_header-bg);
         font-weight: var(--_model-font-weight);
         padding: var(--eden-sys-space-150);
     }
@@ -137,7 +153,7 @@
     }
 
     &__subsection-header {
-        background-color: var(--_accent-bg);
+        background-color: var(--_header-bg);
         font-weight: var(--eden-sys-font-weight-bold);
         text-align: center;
         padding: var(--eden-sys-space-100);
@@ -146,11 +162,20 @@
     }
 
     thead {
-        background-color: var(--eden-table-accent-bg);
+        background-color: var(--_header-bg);
     }
 
     &__header-cell--white {
         background-color: #{$eden-ref-neutral-100};
+    }
+
+    &__row--auto-height {
+
+        th,
+        td {
+            height: auto;
+            padding-block: var(--eden-sys-space-100);
+        }
     }
 
 }
