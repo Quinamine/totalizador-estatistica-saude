@@ -44,12 +44,31 @@
     border: none !important;
 }
 
+.eden-u-border-top-none {
+    border-top: none !important;
+}
 .eden-u-padding-none {
     padding: 0 !important;
 }
 
+.eden-u-padding-x-sm {
+    padding-inline: var(--eden-sys-space-100) !important;
+}
+
+.eden-u-padding-x-md {
+    padding-inline: var(--eden-sys-space-200) !important;
+}
+
+.eden-u-padding-x-lg {
+    padding-inline: var(--eden-sys-space-400) !important;
+}
+
 .eden-u-text-upper {
     text-transform: uppercase;
+}
+
+.eden-u-case-reset {
+    text-transform: none !important;
 }
 
 .eden-u-text-bold {

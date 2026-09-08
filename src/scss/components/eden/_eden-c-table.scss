@@ -9,7 +9,8 @@
 
     width: max-content;
 
-    thead {
+    thead, 
+    th:not([scope=row], [scope=rowgroup]).eden-c-table__cell--toned {
         --_tone: #e5e7eb;
 
         th {
@@ -32,6 +33,15 @@
     &__row--toned,
     &__cell--toned {
         background-color: var(--_tone);
+    }
+
+    &__row--print-toned,
+    &__cell--print-toned {
+        background-color: transparent;
+
+        @media print {
+            background-color: var(--_tone);
+        }
     }
 
     &__cell--sticky-left {
