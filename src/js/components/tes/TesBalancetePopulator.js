@@ -27,40 +27,40 @@ export const TesBalancetePopulator = {
       return `
         <tr>
           <td class="tes-balancete__fnm">
-            <input type="text" name="l${line}-c1" id="l${line}-c1" value="${item.fnm}" placeholder="FNM" tabindex="-1">
+            <input type="text" name="l${line}_fnm" id="l${line}_fnm" value="${item.fnm}" placeholder="FNM" tabindex="-1">
           </td>
           <td class="tes-balancete__medicine">
-            <input type="text" name="l${line}-c2" id="l${line}-c2" value="${item.name}" placeholder="Medicamento/Artigo" tabindex="-1" class="eden-u-text-left" data-eden-js="balancete-medicine">
+            <input type="text" name="l${line}_medicine" id="l${line}_medicine" value="${item.name}" placeholder="Medicamento/Artigo" tabindex="-1" class="eden-u-text-left" data-eden-js="balancete-medicine">
           </td>
           <td>
-            <input type="number" name="l${line}-c3" id="l${line}-c3" data-eden-group="theoretical-ending-stock difference">
+            <input type="number" name="l${line}_begginning-stock" id="l${line}_beginning-stock" data-eden-group="theoretical-ending-stock difference">
           </td>
           <td>
-            <input type="number" name="l${line}-c4" id="l${line}-c4" data-eden-group="theoretical-ending-stock difference">
+            <input type="number" name="l${line}_receipts" id="l${line}_receipts" data-eden-group="theoretical-ending-stock difference">
           </td>
           <td>
-            <input type="number" name="l${line}-c5" id="l${line}-c5" data-eden-group="theoretical-ending-stock difference quantity-to-requisition">
+            <input type="number" name="l${line}_issues" id="l${line}_issues" data-eden-group="theoretical-ending-stock difference quantity-to-requisition">
           </td>
           <td>
-            <input type="number" name="l${line}-c6" id="l${line}-c6" value="0" readonly tabindex="-1" data-eden-total="theoretical-ending-stock" data-eden-ending-balance="l${line}-c3 l${line}-c4 l${line}-c5">
+            <input type="number" name="l${line}_theoretical-ending-stock" id="l${line}_theoretical-ending-stock" value="0" readonly tabindex="-1" data-eden-total="theoretical-ending-stock" data-eden-ending-balance="l${line}_beginning-stock l${line}_receipts l${line}_issues">
           </td>
           <td>
-            <input type="number" name="l${line}-c7" id="l${line}-c7">
+            <input type="number" name="l${line}_requested" id="l${line}_requested">
           </td>
           <td>
-            <input type="number" name="l${line}-c8" id="l${line}-c8" data-eden-group="quantity-to-requisition difference">
+            <input type="number" name="l${line}_physical-inventory" id="l${line}_physical-inventory" data-eden-group="quantity-to-requisition difference">
           </td>
           <td>
-            <input type="number" name="l${line}-c9" id="l${line}-c9" value="0" readonly tabindex="-1" data-eden-total="difference" data-eden-difference="l${line}-c8 l${line}-c6">
+            <input type="number" name="l${line}_difference" id="l${line}_difference" value="0" readonly tabindex="-1" data-eden-total="difference" data-eden-difference="l${line}_physical-inventory l${line}_theoretical-ending-stock">
           </td>
           <td>
-            <input type="number" name="l${line}-c10" id="l${line}-c10" value="0" readonly tabindex="-1" data-eden-total="quantity-to-requisition" data-eden-quantity-to-requisition="l${line}-c5 l${line}-c8">
+            <input type="number" name="l${line}_quantity-to-requisition" id="l${line}_quantity-to-requisition" value="0" readonly tabindex="-1" data-eden-total="quantity-to-requisition" data-eden-quantity-to-requisition="l${line}_issues l${line}_physical-inventory">
           </td>
           <td>
-            <input type="number" name="l${line}-c11" id="l${line}-c11" data-eden-group="quantity-to-requisition">
+            <input type="number" name="l${line}_quantity-requested" id="l${line}_quantity-requested" data-eden-group="">
           </td>
           <td>
-            <input type="number" name="l${line}-c12" id="l${line}-c12" data-eden-group="quantity-to-requisition">
+            <input type="number" name="l${line}_quantity-authorized" id="l${line}_quantity-authorized" data-eden-group="">
           </td>
         </tr>`;
     }).join('');

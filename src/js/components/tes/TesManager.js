@@ -162,7 +162,7 @@ export const TesManager = {
     updateRelatedTotals(field) {
         const sourceIds = field.dataset?.edenGroup.split(' ').map(id => id.trim());
         const currentRow = field.closest('tr');
-        let verticalFormat = /^(sec|s)\d+-c\d+$/i;
+        let verticalFormat = /^(sec|s)\d+-?_[a-z0-9\-]+(_(col)?.+)?$/i;
 
         sourceIds.forEach(id => {
             let context = verticalFormat.test(id)
