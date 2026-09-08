@@ -30,7 +30,6 @@ export const EdenViewportHandler = {
 
         document.addEventListener('eden:balancete:rendered', () => {
             this.rows = document.querySelectorAll('[data-eden-js="balancete-tbody"] tr');
-            console.log(this.rows)
             this.initBalanceteRowObserver();
         });
     },

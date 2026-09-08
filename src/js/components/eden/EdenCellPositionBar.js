@@ -47,16 +47,19 @@ export const EdenCellPositionBar = {
             rowLabel = rowLabel.querySelector('input');
         }
 
-        const [_row, colId] = field.name.split('-');
-        const colLabel = table.querySelector(`[data-eden-col-label~="${colId}"]`);
-
-        const complementaryId = colId;
-      
-        const complementaryLabel = table.querySelector(`[data-eden-complementary-label~="${complementaryId}"]`);
-
         const rowCategoryId = tr.dataset.edenRowCategoryId;
         const rowCategoryLabel = table.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`) || 
                                  document.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`);
+    
+        const td = field.closest('td');
+        const thOffset = tr.querySelectorAll('th').length;
+        const colId = (td.cellIndex - thOffset) + 1;
+        
+        const colLabel = table.querySelector(`[data-eden-col-label~="c${colId}"]`);
+
+        const complementaryId = colId;
+      
+        const complementaryLabel = table.querySelector(`[data-eden-complementary-label~="c${complementaryId}"]`);
 
         return { rowCategoryLabel, rowLabel, colLabel, complementaryLabel };
     },
