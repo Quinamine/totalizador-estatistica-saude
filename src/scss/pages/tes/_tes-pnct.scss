@@ -10,24 +10,11 @@
 
     font-size: var(--_content-font-size);
 
-    @media print {
-        --_model-font-weight: var(--eden-sys-font-weight-bold);
+    &--07 {
+        --_default-cell-width: 65px;
 
-        &--1a {
-            --_content-font-size: var(--eden-sys-font-size-200);
-        }
-
-        &--provisorio {
-            --_content-font-size: 13px;
-
-            th,
-            td {
-                line-height: var(--eden-sys-line-height-heading);
-            }
-        }
-
-        table, footer {
-            width: 100%;
+        table {
+            --eden-table-cell-height: 28px;
         }
     }
 
@@ -150,6 +137,10 @@
         font-size: var(--eden-sys-font-size-200);
         text-transform: uppercase;
         margin-block-start: var(--eden-sys-space-150);
+
+        &--small {
+            font-size: var(--eden-sys-font-size-100);
+        }
     }
 
     &__subsection-header {
@@ -177,5 +168,34 @@
             padding-block: var(--eden-sys-space-100);
         }
     }
+
+    @media print {
+        --_model-font-weight: var(--eden-sys-font-weight-bold);
+
+        &--1a {
+            --_content-font-size: var(--eden-sys-font-size-200);
+        }
+
+        &--provisorio {
+            --_content-font-size: 13px;
+
+            th,
+            td {
+                line-height: var(--eden-sys-line-height-heading);
+            }
+        }
+
+        &--07 {
+            .tes-c-footer input {
+                border: none !important
+            }
+        }
+
+        table,
+        footer {
+            width: 100%;
+        }
+    }
+
 
 }

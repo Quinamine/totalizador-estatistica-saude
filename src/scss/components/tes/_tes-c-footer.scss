@@ -58,6 +58,10 @@
         grid-area: right;
     }
 
+    &__area--self-end {
+        justify-self: end;
+    }
+
     &__input {
         flex: 1;
         max-width: 385px;
