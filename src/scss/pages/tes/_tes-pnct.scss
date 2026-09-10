@@ -3,7 +3,10 @@
 .tes-pnct {
     --eden-sys-figure-spacing-y-start: 0;
     --eden-sys-figure-spacing-y-end: 0;
-    --_header-bg: #e5e7eb;
+
+    --_header-bg: #cccccc;
+    --_header-bg: oklch(0.86 0.01 var(--eden-ref-primary-hue));
+
     --_default-cell-width: 65px;
     --_model-font-weight: var(--eden-sys-font-weight-regular);
     --_content-font-size: var(--eden-sys-font-size-100);
@@ -15,6 +18,14 @@
 
         table {
             --eden-table-cell-height: 28px;
+        }
+    }
+
+    &--ic-10a {
+        thead {
+            th {
+                font-weight: var(--eden-sys-font-weight-regular);
+            }
         }
     }
 
@@ -195,7 +206,10 @@
         footer {
             width: 100%;
         }
+
+        table {
+            --_cell-na-bg: #757b80 !important;
+            --_cell-na-bg: oklch(0.55 0.01 var(--eden-ref-primary-hue)) !important;
+        }
     }
-
-
 }
