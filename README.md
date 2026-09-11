@@ -53,10 +53,10 @@ Este repositório está em desenvolvimento activo.
 - [ ] RT APSS/PP
 
 #### Tuberculose
-- [ ] PNCT Provisório 
-- [ ] PNCT 01A 
-- [ ] PNCT 07 
-- [ ] PNCT IC-10A 
+- [x] PNCT Provisório 
+- [x] PNCT 01A 
+- [x] PNCT 07 
+- [x] PNCT IC-10A 
 - [ ] PNCT R05 
 - [ ] PNCT R06 
 - [ ] PNCT R07 
