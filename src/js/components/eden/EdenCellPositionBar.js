@@ -33,40 +33,39 @@ export const EdenCellPositionBar = {
     },
 
     getCellCoordinates(field) {
+        const td = field.closest('td');
         const tr = field.closest('tr');
         const table = field.closest('table');
 
-        if (!tr || !table) return { rowCategoryLabel: null, rowLabel: null, colLabel: null, complementaryLabel: null };
+        if (!td || !tr || !table) return { rowCategoryLabel: null, rowLabel: null, colLabel: null, complementaryLabel: null };
 
         const isBalanceteRequisition = table.dataset.edenIsRequisition === 'true';
 
-        const rowLabelColIndex = tr.dataset.edenRowLabelColIndex ?? table.dataset.edenRowLabelColIndex;
+        const rowLabelColIndex = td.dataset.edenRowLabelColIndex ?? tr.dataset.edenRowLabelColIndex ?? table.dataset.edenRowLabelColIndex;
         let rowLabel = tr.children[rowLabelColIndex] || null;
 
         if (isBalanceteRequisition && rowLabel) {
             rowLabel = rowLabel.querySelector('input');
         }
 
-        const rowCategoryId = tr.dataset.edenRowCategoryId;
-        const rowCategoryLabel = table.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`) || 
-                                 document.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`);
-    
-        const td = field.closest('td');
-        const thOffset = tr.querySelectorAll('th').length;
-        const colId = (td.cellIndex - thOffset) + 1;
-        
-        const colLabel = table.querySelector(`[data-eden-col-label~="c${colId}"]`);
+        const rowCategoryId = td.dataset.edenRowCategoryId ?? tr.dataset.edenRowCategoryId;
+        const rowCategoryLabel = table.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`) ||
+            document.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`);
 
+        const thOffset = tr.querySelectorAll('th').length;
+        const colId = td.dataset.edenColLabelIndex ?? (td.cellIndex - thOffset) + 1;
+
+        const colLabel = table.querySelector(`[data-eden-col-label~="c${colId}"]`);
         const complementaryId = colId;
-      
         const complementaryLabel = table.querySelector(`[data-eden-complementary-label~="c${complementaryId}"]`);
 
         return { rowCategoryLabel, rowLabel, colLabel, complementaryLabel };
     },
 
+
     updateTableLocator(field) {
         const labels = this.getCellCoordinates(field);
-        
+
         const existingLabels = Object.entries(labels).filter(([, label]) => {
             if (!label) return false;
             const text = label.value !== undefined ? label.value : label.textContent;
@@ -83,7 +82,7 @@ export const EdenCellPositionBar = {
             const modifierSuffix = this.displayElClasses[key];
             if (modifierSuffix) {
                 span.classList.add(`${baseClass}${modifierSuffix}`);
-                
+
                 const rawText = label.value !== undefined ? label.value : label.innerText;
                 span.textContent = rawText.replace(/\s+/g, ' ').trim();
                 span.title = span.textContent;

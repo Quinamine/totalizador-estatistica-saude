@@ -29,6 +29,17 @@
         }
     }
 
+    &--r05 {
+        thead {
+            --eden-table-cell-padding-x: 0;
+
+            th,
+            span {
+                font-weight: var(--eden-sys-font-weight-regular) !important;
+            }
+        }
+    }
+
     table {
         --eden-table-margin-top: 0;
 
@@ -119,6 +130,10 @@
         background-color: var(--_header-bg);
         font-weight: var(--_model-font-weight);
         padding: var(--eden-sys-space-150);
+
+        @media print {
+            font-size: var(--eden-sys-font-size-200);
+        }
     }
 
     &__meta-group {
@@ -129,6 +144,10 @@
 
         label {
             white-space: nowrap;
+
+            @media print {
+                font-size: var(--eden-sys-font-size-200);
+            }
         }
 
         input {
@@ -183,7 +202,14 @@
     @media print {
         --_model-font-weight: var(--eden-sys-font-weight-bold);
 
-        &--1a {
+        &__gov {
+            span {
+                font-weight: var(--eden-sys-font-weight-bold);
+            }
+        }
+
+        &--1a,
+        &--r05 {
             --_content-font-size: var(--eden-sys-font-size-200);
         }
 
@@ -200,6 +226,16 @@
             .tes-c-footer input {
                 border: none !important
             }
+        }
+
+        &--r05 {
+
+            th,
+            td {
+                --eden-table-cell-padding-y: var(--eden-sys-space-150);
+                line-height: 1.4;
+            }
+
         }
 
         table,
