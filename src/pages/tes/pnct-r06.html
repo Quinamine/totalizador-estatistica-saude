@@ -1,0 +1,182 @@
+<div class="eden-c-page eden-c-page--landscape tes-pnct tes-pnct--r06" data-eden-js="tes-report">
+    <header class="tes-pnct__header">
+        <div class="tes-pnct__header-row">
+            <div class="tes-pnct__gov">
+                <figure class="tes-c-gov tes-c-gov--text-uppercase">
+                    <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                    <figcaption class="tes-c-gov__info">
+                        <span class="tes-c-gov__country">República de Moçambique</span>
+                        <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="tes-pnct__program-info">
+                <p class="tes-pnct__dept">DIRECÇÃO NACIONAL DE SAÚDE PÚBLICA</p>
+                <p class="tes-pnct__program">PROGRAMA NACIONAL DE CONTROLO<br>DA TUBERCULOSE</p>
+                <img src="assets/images/pnct-logo.png" alt="Logótipo PNCT" class="tes-pnct__logo">
+            </div>
+
+            <div class="tes-pnct__meta-grid">
+                <div class="tes-pnct__model">
+                    <span class="tes-pnct__model-code">MOD. SIS - PNCT R06 (Revisto 2023)</span>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="health-unit">US:</label>
+                    <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist">
+                    <datalist id="health-unit-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="district">Distrito:</label>
+                    <input type="text" name="district" id="district" list="district-datalist">
+                    <datalist id="district-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="province">Província:</label>
+                    <input type="text" name="province" id="province" list="province-datalist">
+                    <datalist id="province-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="quarter">Trimestre em reporte:</label>
+                    <input type="text" name="quarter" id="quarter" list="quarter-datalist">
+                    <datalist id="quarter-datalist"></datalist>
+                </div>
+            </div>
+        </div>
+
+        <div class="tes-pnct__header-row tes-pnct__header-row--no-grid eden-u-border-none">
+            <h1 class="tes-pnct__title">RESUMO TRIMESTRAL DE AVALIAÇÃO DE TRATAMENTO DE TB RESISTENTE, TB/HIV</h1>
+        </div>
+    </header>
+
+    <figure>
+        <div class="tes-pnct__section-header">SECÇÃO 1: AVALIAÇÃO DE RESULTADOS INTERMEDIÁRIOS DE TRATAMENTO DE
+            TUBERCULOSE RESISTENTE ( AOS 6 MESES)</div>
+
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 400px">
+                <col span="6" style="width: 105px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2" class="tes-pnct__header-cell--white"></th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                    <th scope="col">5</th>
+                    <th scope="col">6</th>
+                </tr>
+                <tr>
+                    <th scope="colgroup" colspan="6"><strong>Resultados de Conversão** da Cultura ao 6º mês de
+                            Tratamento</strong></th>
+                </tr>
+                <tr>
+                    <th scope="col"><b>Número de Pacientes Registados</b></th>
+                    <th scope="col" data-eden-col-label="c1">Número de <br> Pacientes <br> Registados</th>
+                    <th scope="col" data-eden-col-label="c2">Cultura <br> Negativa</th>
+                    <th scope="col" data-eden-col-label="c3">Cultura <br> Positiva</th>
+                    <th scope="col" data-eden-col-label="c4">Óbito</th>
+                    <th scope="col" data-eden-col-label="c5">Perda de <br> Seguimento</th>
+                    <th scope="col" data-eden-col-label="c6">Sem <br> Resultado de <br> Cultura</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">a) TB Rif-Resistente/Multi-Resistente/ (TB RR/MR)
+                    </th>
+                    <td><input type="number" name="sec1_a_registados" id="sec1_a_registados" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_a_cultura_neg" id="sec1_a_cultura_neg" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_a_cultura_pos" id="sec1_a_cultura_pos" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_a_obito" id="sec1_a_obito" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_a_perda_seg" id="sec1_a_perda_seg" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_a_sem_resultado" id="sec1_a_sem_resultado" data-eden-group="">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">b) TB Pré/Extensivamente Resistente a Medicamentos
+                        <span class="eden-u-br-print">(Pre-XR/XR)</span></th>
+                    <td><input type="number" name="sec1_b_registados" id="sec1_b_registados" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_b_cultura_neg" id="sec1_b_cultura_neg" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_b_cultura_pos" id="sec1_b_cultura_pos" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_b_obito" id="sec1_b_obito" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_b_perda_seg" id="sec1_b_perda_seg" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_b_sem_resultado" id="sec1_b_sem_resultado" data-eden-group="">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">a) TB RR/MR - HIV positivo</th>
+                    <td><input type="number" name="sec1_a_hiv_registados" id="sec1_a_hiv_registados" data-eden-group="">
+                    </td>
+                    <td><input type="number" name="sec1_a_hiv_cultura_neg" id="sec1_a_hiv_cultura_neg"
+                            data-eden-group=""></td>
+                    <td><input type="number" name="sec1_a_hiv_cultura_pos" id="sec1_a_hiv_cultura_pos"
+                            data-eden-group=""></td>
+                    <td><input type="number" name="sec1_a_hiv_obito" id="sec1_a_hiv_obito" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_a_hiv_perda_seg" id="sec1_a_hiv_perda_seg" data-eden-group="">
+                    </td>
+                    <td><input type="number" name="sec1_a_hiv_sem_resultado" id="sec1_a_hiv_sem_resultado"
+                            data-eden-group=""></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">b) TB Pre-XR/XR - HIV positivo</th>
+                    <td><input type="number" name="sec1_b_hiv_registados" id="sec1_b_hiv_registados" data-eden-group="">
+                    </td>
+                    <td><input type="number" name="sec1_b_hiv_cultura_neg" id="sec1_b_hiv_cultura_neg"
+                            data-eden-group=""></td>
+                    <td><input type="number" name="sec1_b_hiv_cultura_pos" id="sec1_b_hiv_cultura_pos"
+                            data-eden-group=""></td>
+                    <td><input type="number" name="sec1_b_hiv_obito" id="sec1_b_hiv_obito" data-eden-group=""></td>
+                    <td><input type="number" name="sec1_b_hiv_perda_seg" id="sec1_b_hiv_perda_seg" data-eden-group="">
+                    </td>
+                    <td><input type="number" name="sec1_b_hiv_sem_resultado" id="sec1_b_hiv_sem_resultado"
+                            data-eden-group=""></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="eden-u-padding-x-md">
+                        * Pacientes avaliados em todas as secções são pacientes inscritos há <span class="eden-u-br-print">nove meses</span>
+                    </td>
+                    <td colspan="5" class="eden-u-padding-x-md">
+                        ** Conversão: duas culturas consecutivas negativas à data da avaliação (Aos <span class="eden-u-br-print">6 meses), sem posterior reversão para positivo</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+
+    <footer class="tes-c-footer tes-c-footer--two-rows tes-c-footer--boxed">
+        <div class="tes-c-footer__area tes-c-footer__area--left">
+            <label for="reporter-name">Nome legível do técnico que reporta:</label>
+            <input type="text" name="reporter-name" id="reporter-name" class="tes-c-footer__input">
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--center">
+            <label for="category">Categoria:</label>
+            <input type="text" name="category" id="category" class="tes-c-footer__input" list="categories">
+            <datalist id="categories">
+                <option value="Médico de Clínica Geral"></option>
+                <option value="Técnico de Medicina Geral"></option>
+                <option value="Enfermeiro Geral"></option>
+                <option value="Agente de Medicina Geral"></option>
+                <option value="Técnico de Estatística Sanitária"></option>
+            </datalist>
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--right">
+            <label for="report-date">Data:</label>
+            <input type="date" name="report-date" id="report-date"
+                class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+    </footer>
+
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true"
+            data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes"></p>
+    </div>
+</div>
+
+<div class="eden-c-page-footer">
+    <span class="eden-c-page-footer__date"></span>
+    <span>Totalizado via: <a
+            href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a>
+        - v2.0</span>
+</div>
