@@ -58,7 +58,7 @@ Este repositório está em desenvolvimento activo.
 - [x] PNCT 07 
 - [x] PNCT IC-10A 
 - [x] PNCT R05 
-- [ ] PNCT R06 
+- [x] PNCT R06 
 - [ ] PNCT R07 
 - [ ] PNCT 08 
 - [ ] PNCT 09 

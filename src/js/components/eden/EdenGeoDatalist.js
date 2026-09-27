@@ -46,13 +46,18 @@ export const EdenGeoDatalist = {
                 return;
             }
 
+            if (input.matches('#quarter')) {
+                const quarters = this.getQuarterList();
+                this.populateDatalist('quarter', quarters);
+                return;
+            }
+
             if (input.matches('#year')) {
                 const currentYear = new Date().getFullYear();
                 this.populateDatalist('year', [currentYear]);
                 return;
             }
         });
-
 
         this.contentArea.addEventListener('input', (e) => {
             const input = e.target.closest('input[list]');
@@ -73,6 +78,17 @@ export const EdenGeoDatalist = {
                 return;
             }
         });
+    },
+
+    getQuarterList() {
+        const currentYear = new Date().getFullYear();
+
+        return [
+            `Janeiro - Março ${currentYear}`,
+            `Abril - Junho ${currentYear}`,
+            `Julho - Setembro ${currentYear}`,
+            `Outubro - Dezembro ${currentYear}`
+        ];
     },
 
     getHealthUnitsList() {
