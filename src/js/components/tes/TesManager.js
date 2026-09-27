@@ -382,7 +382,7 @@ export const TesManager = {
         const isNotTotalizable = notTotalizableForms.includes(this.activeReportId);
 
         const systemSignature = isNotTotalizable
-            ? 'Impresso via Totalizador de Estatística de Saúde'
+            ? 'Impresso via'
             : 'Totalizado via';
 
         pageFooter.innerHTML = `<span class="eden-c-page-footer__date">${date} ${hour}</span>
