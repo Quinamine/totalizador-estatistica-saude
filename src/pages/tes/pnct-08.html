@@ -1,0 +1,626 @@
+<div class="eden-c-page eden-c-page--portrait tes-pnct tes-pnct--08" data-eden-js="tes-report">
+    <header class="tes-pnct__header">
+        <div class="tes-pnct__header-row eden-u-border-bottom">
+            <div class="tes-pnct__gov">
+                <figure class="tes-c-gov tes-c-gov--text-uppercase">
+                    <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                    <figcaption class="tes-c-gov__info">
+                        <span class="tes-c-gov__country">República de Moçambique</span>
+                        <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="tes-pnct__program-info">
+                <p class="tes-pnct__dept">DIRECÇÃO NACIONAL DE SAÚDE PÚBLICA</p>
+                <p class="tes-pnct__program">PROGRAMA NACIONAL DE CONTROLO<br>DA TUBERCULOSE</p>
+                <img src="assets/images/pnct-logo.png" alt="Logótipo PNCT" class="tes-pnct__logo">
+            </div>
+
+            <div class="tes-pnct__meta-grid">
+                <div class="tes-pnct__model">
+                    <span class="tes-pnct__model-code">MOD. SIS - PNCT R07 (Revisto 2023)</span>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="health-unit">US:</label>
+                    <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist">
+                    <datalist id="health-unit-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="district">Distrito:</label>
+                    <input type="text" name="district" id="district" list="district-datalist">
+                    <datalist id="district-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="province">Província:</label>
+                    <input type="text" name="province" id="province" list="province-datalist">
+                    <datalist id="province-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="quarter">Trimestre em reporte:</label>
+                    <input type="text" name="quarter" id="quarter" list="quarter-datalist">
+                    <datalist id="quarter-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="report-date">Data:</label>
+                    <input type="date" name="report-date" id="report-date">
+                </div>
+            </div>
+        </div>
+
+        <div class="tes-pnct__header-row tes-pnct__header-row--no-grid eden-u-border-none">
+            <h1 class="tes-pnct__title">RESUMO TRIMESTRAL DE AVALIAÇÃO DE TRATAMENTO DE TB RESISTENTE, TB/HIV</h1>
+        </div>
+    </header>
+
+    <figure>
+        <!-- SECÇÃO 1 -->
+        <div class="tes-pnct__section-header">SECÇÃO 1: AVALIAÇÃO DE TRATAMENTO DE TB SENSÍVEL A MEDICAMENTOS</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 310px">
+                <col span="9" style="width: var(--_default-cell-width, 70px)">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2" class="tes-pnct__header-cell--white"></th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                    <th scope="col">5</th>
+                    <th scope="col">6</th>
+                    <th scope="col">7</th>
+                    <th scope="col">8</th>
+                    <th scope="col">9</th>
+                </tr>
+                <tr class="tes-pnct__row--auto-height">
+                    <th scope="col" data-eden-col-label="c1"><span class="eden-u-text-vertical">Total de Pacientes <br> Notificados (Todas as <br> Formas)</span></th>
+                    <th scope="col" data-eden-col-label="c2"><span class="eden-u-text-vertical">Pacientes que passaram <br> para TTO de 2ª Linha</span></th>
+                    <th scope="col" data-eden-col-label="c3"><span class="eden-u-text-vertical">Pacientes avaliados <br> neste período</span></th>
+                    <th scope="col" data-eden-col-label="c4"><span class="eden-u-text-vertical">Curados</span></th>
+                    <th scope="col" data-eden-col-label="c5"><span class="eden-u-text-vertical">Tratamento Completo</span></th>
+                    <th scope="col" data-eden-col-label="c6"><span class="eden-u-text-vertical">Falência de Tratamento</span></th>
+                    <th scope="col" data-eden-col-label="c7"><span class="eden-u-text-vertical">Óbito</span></th>
+                    <th scope="col" data-eden-col-label="c8"><span class="eden-u-text-vertical">Perda de seguimento</span></th>
+                    <th scope="col" data-eden-col-label="c9"><span class="eden-u-text-vertical">Não Avaliado</span></th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">a) TB Pulmonar Bacteriologicamente confirmada (Novos e Recaídas)</th>
+                    <td><input type="number" name="sec1_a_c1" id="sec1_a_c1"></td>
+                    <td><input type="number" name="sec1_a_c2" id="sec1_a_c2"></td>
+                    <td><input type="number" name="sec1_a_c3" id="sec1_a_c3"></td>
+                    <td><input type="number" name="sec1_a_c4" id="sec1_a_c4"></td>
+                    <td><input type="number" name="sec1_a_c5" id="sec1_a_c5"></td>
+                    <td><input type="number" name="sec1_a_c6" id="sec1_a_c6"></td>
+                    <td><input type="number" name="sec1_a_c7" id="sec1_a_c7"></td>
+                    <td><input type="number" name="sec1_a_c8" id="sec1_a_c8"></td>
+                    <td><input type="number" name="sec1_a_c9" id="sec1_a_c9"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">b) Tuberculose Pulmonar Clinicamente Diagnosticada (Novos e Recaídas)</th>
+                    <td><input type="number" name="sec1_b_c1" id="sec1_b_c1"></td>
+                    <td><input type="number" name="sec1_b_c2" id="sec1_b_c2"></td>
+                    <td><input type="number" name="sec1_b_c3" id="sec1_b_c3"></td>
+                    <td class="eden-c-table__cell--blocked"></td>
+                    <td><input type="number" name="sec1_b_c5" id="sec1_b_c5"></td>
+                    <td><input type="number" name="sec1_b_c6" id="sec1_b_c6"></td>
+                    <td><input type="number" name="sec1_b_c7" id="sec1_b_c7"></td>
+                    <td><input type="number" name="sec1_b_c8" id="sec1_b_c8"></td>
+                    <td><input type="number" name="sec1_b_c9" id="sec1_b_c9"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">c) Retratamentos (excluir Recaídas) e Tratamento Prévio de TB desconhecido</th>
+                    <td><input type="number" name="sec1_c_c1" id="sec1_c_c1"></td>
+                    <td><input type="number" name="sec1_c_c2" id="sec1_c_c2"></td>
+                    <td><input type="number" name="sec1_c_c3" id="sec1_c_c3"></td>
+                    <td><input type="number" name="sec1_c_c4" id="sec1_c_c4"></td>
+                    <td><input type="number" name="sec1_c_c5" id="sec1_c_c5"></td>
+                    <td><input type="number" name="sec1_c_c6" id="sec1_c_c6"></td>
+                    <td><input type="number" name="sec1_c_c7" id="sec1_c_c7"></td>
+                    <td><input type="number" name="sec1_c_c8" id="sec1_c_c8"></td>
+                    <td><input type="number" name="sec1_c_c9" id="sec1_c_c9"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">d) Total TB Sensível</th>
+                    <td><input type="number" name="sec1_d_c1" id="sec1_d_c1"></td>
+                    <td><input type="number" name="sec1_d_c2" id="sec1_d_c2"></td>
+                    <td><input type="number" name="sec1_d_c3" id="sec1_d_c3"></td>
+                    <td><input type="number" name="sec1_d_c4" id="sec1_d_c4"></td>
+                    <td><input type="number" name="sec1_d_c5" id="sec1_d_c5"></td>
+                    <td><input type="number" name="sec1_d_c6" id="sec1_d_c6"></td>
+                    <td><input type="number" name="sec1_d_c7" id="sec1_d_c7"></td>
+                    <td><input type="number" name="sec1_d_c8" id="sec1_d_c8"></td>
+                    <td><input type="number" name="sec1_d_c9" id="sec1_d_c9"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">HIV Positivo</th>
+                    <td><input type="number" name="sec1_hiv_c1" id="sec1_hiv_c1"></td>
+                    <td><input type="number" name="sec1_hiv_c2" id="sec1_hiv_c2"></td>
+                    <td><input type="number" name="sec1_hiv_c3" id="sec1_hiv_c3"></td>
+                    <td><input type="number" name="sec1_hiv_c4" id="sec1_hiv_c4"></td>
+                    <td><input type="number" name="sec1_hiv_c5" id="sec1_hiv_c5"></td>
+                    <td><input type="number" name="sec1_hiv_c6" id="sec1_hiv_c6"></td>
+                    <td><input type="number" name="sec1_hiv_c7" id="sec1_hiv_c7"></td>
+                    <td><input type="number" name="sec1_hiv_c8" id="sec1_hiv_c8"></td>
+                    <td><input type="number" name="sec1_hiv_c9" id="sec1_hiv_c9"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Mineiro (inclui Ex-mineiro)</th>
+                    <td><input type="number" name="sec1_mineiro_c1" id="sec1_mineiro_c1"></td>
+                    <td><input type="number" name="sec1_mineiro_c2" id="sec1_mineiro_c2"></td>
+                    <td><input type="number" name="sec1_mineiro_c3" id="sec1_mineiro_c3"></td>
+                    <td><input type="number" name="sec1_mineiro_c4" id="sec1_mineiro_c4"></td>
+                    <td><input type="number" name="sec1_mineiro_c5" id="sec1_mineiro_c5"></td>
+                    <td><input type="number" name="sec1_mineiro_c6" id="sec1_mineiro_c6"></td>
+                    <td><input type="number" name="sec1_mineiro_c7" id="sec1_mineiro_c7"></td>
+                    <td><input type="number" name="sec1_mineiro_c8" id="sec1_mineiro_c8"></td>
+                    <td><input type="number" name="sec1_mineiro_c9" id="sec1_mineiro_c9"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Trabalhador de Saúde</th>
+                    <td><input type="number" name="sec1_ts_c1" id="sec1_ts_c1"></td>
+                    <td><input type="number" name="sec1_ts_c2" id="sec1_ts_c2"></td>
+                    <td><input type="number" name="sec1_ts_c3" id="sec1_ts_c3"></td>
+                    <td><input type="number" name="sec1_ts_c4" id="sec1_ts_c4"></td>
+                    <td><input type="number" name="sec1_ts_c5" id="sec1_ts_c5"></td>
+                    <td><input type="number" name="sec1_ts_c6" id="sec1_ts_c6"></td>
+                    <td><input type="number" name="sec1_ts_c7" id="sec1_ts_c7"></td>
+                    <td><input type="number" name="sec1_ts_c8" id="sec1_ts_c8"></td>
+                    <td><input type="number" name="sec1_ts_c9" id="sec1_ts_c9"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Recluso</th>
+                    <td><input type="number" name="sec1_recluso_c1" id="sec1_recluso_c1"></td>
+                    <td><input type="number" name="sec1_recluso_c2" id="sec1_recluso_c2"></td>
+                    <td><input type="number" name="sec1_recluso_c3" id="sec1_recluso_c3"></td>
+                    <td><input type="number" name="sec1_recluso_c4" id="sec1_recluso_c4"></td>
+                    <td><input type="number" name="sec1_recluso_c5" id="sec1_recluso_c5"></td>
+                    <td><input type="number" name="sec1_recluso_c6" id="sec1_recluso_c6"></td>
+                    <td><input type="number" name="sec1_recluso_c7" id="sec1_recluso_c7"></td>
+                    <td><input type="number" name="sec1_recluso_c8" id="sec1_recluso_c8"></td>
+                    <td><input type="number" name="sec1_recluso_c9" id="sec1_recluso_c9"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 2 -->
+        <div class="tes-pnct__section-header">SECÇÃO 2: TUBERCULOSE PULMONAR BACTERIOLOGICAMENTE CONFIRMADA (NOVOS E RECAÍDAS)</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 310px">
+                <col span="10" style="width: var(--_default-cell-width, 65px)">
+                <col style="width: 70px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tes-pnct__header-cell--white"></th>
+                    <th scope="col" data-eden-col-label="c1">0 - 4</th>
+                    <th scope="col" data-eden-col-label="c2">5 - 9</th>
+                    <th scope="col" data-eden-col-label="c3">10 - 14</th>
+                    <th scope="col" data-eden-col-label="c4">15 - 19</th>
+                    <th scope="col" data-eden-col-label="c5">20 - 24</th>
+                    <th scope="col" data-eden-col-label="c6">25 - 34</th>
+                    <th scope="col" data-eden-col-label="c7">35 - 44</th>
+                    <th scope="col" data-eden-col-label="c8">45 - 54</th>
+                    <th scope="col" data-eden-col-label="c9">55 - 64</th>
+                    <th scope="col" data-eden-col-label="c10">&ge; 65</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Total de Pacientes Notificados (Todas as Formas)</th>
+                    <td><input type="number" name="sec2_l1_0-4" id="sec2_l1_0-4" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_5-9" id="sec2_l1_5-9" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_10-14" id="sec2_l1_10-14" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_15-19" id="sec2_l1_15-19" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_20-24" id="sec2_l1_20-24" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_25-34" id="sec2_l1_25-34" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_35-44" id="sec2_l1_35-44" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_45-54" id="sec2_l1_45-54" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_55-64" id="sec2_l1_55-64" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_65-plus" id="sec2_l1_65-plus" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l1_total" id="sec2_l1_total" value="0" tabindex="-1" readonly data-eden-total="sec2_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Pacientes que passaram para TTO de 2ª linha</th>
+                    <td><input type="number" name="sec2_l2_0-4" id="sec2_l2_0-4" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_5-9" id="sec2_l2_5-9" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_10-14" id="sec2_l2_10-14" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_15-19" id="sec2_l2_15-19" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_20-24" id="sec2_l2_20-24" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_25-34" id="sec2_l2_25-34" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_35-44" id="sec2_l2_35-44" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_45-54" id="sec2_l2_45-54" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_55-64" id="sec2_l2_55-64" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_65-plus" id="sec2_l2_65-plus" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l2_total" id="sec2_l2_total" value="0" tabindex="-1" readonly data-eden-total="sec2_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Pacientes avaliados neste período</th>
+                    <td><input type="number" name="sec2_l3_0-4" id="sec2_l3_0-4" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_5-9" id="sec2_l3_5-9" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_10-14" id="sec2_l3_10-14" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_15-19" id="sec2_l3_15-19" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_20-24" id="sec2_l3_20-24" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_25-34" id="sec2_l3_25-34" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_35-44" id="sec2_l3_35-44" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_45-54" id="sec2_l3_45-54" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_55-64" id="sec2_l3_55-64" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_65-plus" id="sec2_l3_65-plus" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l3_total" id="sec2_l3_total" value="0" tabindex="-1" readonly data-eden-total="sec2_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Curados</th>
+                    <td><input type="number" name="sec2_l4_0-4" id="sec2_l4_0-4" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_5-9" id="sec2_l4_5-9" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_10-14" id="sec2_l4_10-14" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_15-19" id="sec2_l4_15-19" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_20-24" id="sec2_l4_20-24" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_25-34" id="sec2_l4_25-34" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_35-44" id="sec2_l4_35-44" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_45-54" id="sec2_l4_45-54" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_55-64" id="sec2_l4_55-64" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_65-plus" id="sec2_l4_65-plus" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l4_total" id="sec2_l4_total" value="0" tabindex="-1" readonly data-eden-total="sec2_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Tratamento Completo</th>
+                    <td><input type="number" name="sec2_l5_0-4" id="sec2_l5_0-4" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_5-9" id="sec2_l5_5-9" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_10-14" id="sec2_l5_10-14" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_15-19" id="sec2_l5_15-19" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_20-24" id="sec2_l5_20-24" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_25-34" id="sec2_l5_25-34" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_35-44" id="sec2_l5_35-44" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_45-54" id="sec2_l5_45-54" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_55-64" id="sec2_l5_55-64" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_65-plus" id="sec2_l5_65-plus" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l5_total" id="sec2_l5_total" value="0" tabindex="-1" readonly data-eden-total="sec2_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Falência de Tratamento</th>
+                    <td><input type="number" name="sec2_l6_0-4" id="sec2_l6_0-4" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_5-9" id="sec2_l6_5-9" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_10-14" id="sec2_l6_10-14" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_15-19" id="sec2_l6_15-19" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_20-24" id="sec2_l6_20-24" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_25-34" id="sec2_l6_25-34" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_35-44" id="sec2_l6_35-44" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_45-54" id="sec2_l6_45-54" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_55-64" id="sec2_l6_55-64" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_65-plus" id="sec2_l6_65-plus" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l6_total" id="sec2_l6_total" value="0" tabindex="-1" readonly data-eden-total="sec2_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Óbito</th>
+                    <td><input type="number" name="sec2_l7_0-4" id="sec2_l7_0-4" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_5-9" id="sec2_l7_5-9" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_10-14" id="sec2_l7_10-14" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_15-19" id="sec2_l7_15-19" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_20-24" id="sec2_l7_20-24" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_25-34" id="sec2_l7_25-34" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_35-44" id="sec2_l7_35-44" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_45-54" id="sec2_l7_45-54" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_55-64" id="sec2_l7_55-64" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_65-plus" id="sec2_l7_65-plus" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l7_total" id="sec2_l7_total" value="0" tabindex="-1" readonly data-eden-total="sec2_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Perda de Seguimento</th>
+                    <td><input type="number" name="sec2_l8_0-4" id="sec2_l8_0-4" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_5-9" id="sec2_l8_5-9" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_10-14" id="sec2_l8_10-14" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_15-19" id="sec2_l8_15-19" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_20-24" id="sec2_l8_20-24" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_25-34" id="sec2_l8_25-34" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_35-44" id="sec2_l8_35-44" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_45-54" id="sec2_l8_45-54" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_55-64" id="sec2_l8_55-64" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_65-plus" id="sec2_l8_65-plus" data-eden-group="sec2_total"></td>
+                    <td><input type="number" name="sec2_l8_total" id="sec2_l8_total" value="0" tabindex="-1" readonly data-eden-total="sec2_total"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 3 -->
+        <div class="tes-pnct__section-header">SECÇÃO 3: TUBERCULOSE CLINICAMENTE DIAGNOSTICADA (NOVOS E RECAÍDAS)</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 310px">
+                <col span="10" style="width: var(--_default-cell-width, 65px)">
+                <col style="width: 70px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tes-pnct__header-cell--white"></th>
+                    <th scope="col" data-eden-col-label="c1">0 - 4</th>
+                    <th scope="col" data-eden-col-label="c2">5 - 9</th>
+                    <th scope="col" data-eden-col-label="c3">10 - 14</th>
+                    <th scope="col" data-eden-col-label="c4">15 - 19</th>
+                    <th scope="col" data-eden-col-label="c5">20 - 24</th>
+                    <th scope="col" data-eden-col-label="c6">25 - 34</th>
+                    <th scope="col" data-eden-col-label="c7">35 - 44</th>
+                    <th scope="col" data-eden-col-label="c8">45 - 54</th>
+                    <th scope="col" data-eden-col-label="c9">55 - 64</th>
+                    <th scope="col" data-eden-col-label="c10">&ge; 65</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Total de Pacientes Notificados (Todas as Formas)</th>
+                    <td><input type="number" name="sec3_l1_0-4" id="sec3_l1_0-4" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_5-9" id="sec3_l1_5-9" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_10-14" id="sec3_l1_10-14" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_15-19" id="sec3_l1_15-19" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_20-24" id="sec3_l1_20-24" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_25-34" id="sec3_l1_25-34" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_35-44" id="sec3_l1_35-44" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_45-54" id="sec3_l1_45-54" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_55-64" id="sec3_l1_55-64" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_65-plus" id="sec3_l1_65-plus" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l1_total" id="sec3_l1_total" value="0" tabindex="-1" readonly data-eden-total="sec3_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Pacientes que passaram para TTO de 2ª linha</th>
+                    <td><input type="number" name="sec3_l2_0-4" id="sec3_l2_0-4" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_5-9" id="sec3_l2_5-9" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_10-14" id="sec3_l2_10-14" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_15-19" id="sec3_l2_15-19" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_20-24" id="sec3_l2_20-24" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_25-34" id="sec3_l2_25-34" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_35-44" id="sec3_l2_35-44" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_45-54" id="sec3_l2_45-54" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_55-64" id="sec3_l2_55-64" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_65-plus" id="sec3_l2_65-plus" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l2_total" id="sec3_l2_total" value="0" tabindex="-1" readonly data-eden-total="sec3_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Pacientes avaliados neste período</th>
+                    <td><input type="number" name="sec3_l3_0-4" id="sec3_l3_0-4" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_5-9" id="sec3_l3_5-9" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_10-14" id="sec3_l3_10-14" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_15-19" id="sec3_l3_15-19" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_20-24" id="sec3_l3_20-24" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_25-34" id="sec3_l3_25-34" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_35-44" id="sec3_l3_35-44" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_45-54" id="sec3_l3_45-54" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_55-64" id="sec3_l3_55-64" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_65-plus" id="sec3_l3_65-plus" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l3_total" id="sec3_l3_total" value="0" tabindex="-1" readonly data-eden-total="sec3_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Tratamento Completo</th>
+                    <td><input type="number" name="sec3_l4_0-4" id="sec3_l4_0-4" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_5-9" id="sec3_l4_5-9" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_10-14" id="sec3_l4_10-14" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_15-19" id="sec3_l4_15-19" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_20-24" id="sec3_l4_20-24" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_25-34" id="sec3_l4_25-34" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_35-44" id="sec3_l4_35-44" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_45-54" id="sec3_l4_45-54" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_55-64" id="sec3_l4_55-64" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_65-plus" id="sec3_l4_65-plus" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l4_total" id="sec3_l4_total" value="0" tabindex="-1" readonly data-eden-total="sec3_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Falência de Tratamento</th>
+                    <td><input type="number" name="sec3_l5_0-4" id="sec3_l5_0-4" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_5-9" id="sec3_l5_5-9" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_10-14" id="sec3_l5_10-14" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_15-19" id="sec3_l5_15-19" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_20-24" id="sec3_l5_20-24" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_25-34" id="sec3_l5_25-34" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_35-44" id="sec3_l5_35-44" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_45-54" id="sec3_l5_45-54" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_55-64" id="sec3_l5_55-64" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_65-plus" id="sec3_l5_65-plus" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l5_total" id="sec3_l5_total" value="0" tabindex="-1" readonly data-eden-total="sec3_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Óbito</th>
+                    <td><input type="number" name="sec3_l6_0-4" id="sec3_l6_0-4" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_5-9" id="sec3_l6_5-9" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_10-14" id="sec3_l6_10-14" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_15-19" id="sec3_l6_15-19" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_20-24" id="sec3_l6_20-24" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_25-34" id="sec3_l6_25-34" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_35-44" id="sec3_l6_35-44" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_45-54" id="sec3_l6_45-54" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_55-64" id="sec3_l6_55-64" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_65-plus" id="sec3_l6_65-plus" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l6_total" id="sec3_l6_total" value="0" tabindex="-1" readonly data-eden-total="sec3_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Perda de Seguimento</th>
+                    <td><input type="number" name="sec3_l7_0-4" id="sec3_l7_0-4" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_5-9" id="sec3_l7_5-9" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_10-14" id="sec3_l7_10-14" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_15-19" id="sec3_l7_15-19" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_20-24" id="sec3_l7_20-24" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_25-34" id="sec3_l7_25-34" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_35-44" id="sec3_l7_35-44" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_45-54" id="sec3_l7_45-54" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_55-64" id="sec3_l7_55-64" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_65-plus" id="sec3_l7_65-plus" data-eden-group="sec3_total"></td>
+                    <td><input type="number" name="sec3_l7_total" id="sec3_l7_total" value="0" tabindex="-1" readonly data-eden-total="sec3_total"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 4 -->
+        <div class="tes-pnct__section-header">SECÇÃO 4: RETRATAMENTOS (EXCLUIR RECAÍDAS) E TRATAMENTO PRÉVIO DE TB DESCONHECIDO</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 310px">
+                <col span="10" style="width: var(--_default-cell-width, 65px)">
+                <col style="width: 70px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th class="tes-pnct__header-cell--white"></th>
+                    <th scope="col" data-eden-col-label="c1">0 - 4</th>
+                    <th scope="col" data-eden-col-label="c2">5 - 9</th>
+                    <th scope="col" data-eden-col-label="c3">10 - 14</th>
+                    <th scope="col" data-eden-col-label="c4">15 - 19</th>
+                    <th scope="col" data-eden-col-label="c5">20 - 24</th>
+                    <th scope="col" data-eden-col-label="c6">25 - 34</th>
+                    <th scope="col" data-eden-col-label="c7">35 - 44</th>
+                    <th scope="col" data-eden-col-label="c8">45 - 54</th>
+                    <th scope="col" data-eden-col-label="c9">55 - 64</th>
+                    <th scope="col" data-eden-col-label="c10">&ge; 65</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Total de Pacientes Notificados (Todas as Formas)</th>
+                    <td><input type="number" name="sec4_l1_0-4" id="sec4_l1_0-4" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_5-9" id="sec4_l1_5-9" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_10-14" id="sec4_l1_10-14" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_15-19" id="sec4_l1_15-19" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_20-24" id="sec4_l1_20-24" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_25-34" id="sec4_l1_25-34" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_35-44" id="sec4_l1_35-44" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_45-54" id="sec4_l1_45-54" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_55-64" id="sec4_l1_55-64" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_65-plus" id="sec4_l1_65-plus" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l1_total" id="sec4_l1_total" value="0" tabindex="-1" readonly data-eden-total="sec4_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Pacientes que passaram para TTO de 2ª linha</th>
+                    <td><input type="number" name="sec4_l2_0-4" id="sec4_l2_0-4" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_5-9" id="sec4_l2_5-9" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_10-14" id="sec4_l2_10-14" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_15-19" id="sec4_l2_15-19" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_20-24" id="sec4_l2_20-24" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_25-34" id="sec4_l2_25-34" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_35-44" id="sec4_l2_35-44" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_45-54" id="sec4_l2_45-54" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_55-64" id="sec4_l2_55-64" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_65-plus" id="sec4_l2_65-plus" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l2_total" id="sec4_l2_total" value="0" tabindex="-1" readonly data-eden-total="sec4_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Pacientes avaliados neste período</th>
+                    <td><input type="number" name="sec4_l3_0-4" id="sec4_l3_0-4" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_5-9" id="sec4_l3_5-9" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_10-14" id="sec4_l3_10-14" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_15-19" id="sec4_l3_15-19" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_20-24" id="sec4_l3_20-24" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_25-34" id="sec4_l3_25-34" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_35-44" id="sec4_l3_35-44" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_45-54" id="sec4_l3_45-54" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_55-64" id="sec4_l3_55-64" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_65-plus" id="sec4_l3_65-plus" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l3_total" id="sec4_l3_total" value="0" tabindex="-1" readonly data-eden-total="sec4_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Curados</th>
+                    <td><input type="number" name="sec4_l4_0-4" id="sec4_l4_0-4" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_5-9" id="sec4_l4_5-9" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_10-14" id="sec4_l4_10-14" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_15-19" id="sec4_l4_15-19" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_20-24" id="sec4_l4_20-24" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_25-34" id="sec4_l4_25-34" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_35-44" id="sec4_l4_35-44" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_45-54" id="sec4_l4_45-54" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_55-64" id="sec4_l4_55-64" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_65-plus" id="sec4_l4_65-plus" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l4_total" id="sec4_l4_total" value="0" tabindex="-1" readonly data-eden-total="sec4_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Tratamento Completo</th>
+                    <td><input type="number" name="sec4_l5_0-4" id="sec4_l5_0-4" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_5-9" id="sec4_l5_5-9" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_10-14" id="sec4_l5_10-14" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_15-19" id="sec4_l5_15-19" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_20-24" id="sec4_l5_20-24" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_25-34" id="sec4_l5_25-34" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_35-44" id="sec4_label_35-44" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_45-54" id="sec4_l5_45-54" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_55-64" id="sec4_l5_55-64" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_65-plus" id="sec4_l5_65-plus" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l5_total" id="sec4_l5_total" value="0" tabindex="-1" readonly data-eden-total="sec4_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Falência de Tratamento</th>
+                    <td><input type="number" name="sec4_l6_0-4" id="sec4_l6_0-4" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_5-9" id="sec4_l6_5-9" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_10-14" id="sec4_l6_10-14" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_15-19" id="sec4_l6_15-19" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_20-24" id="sec4_l6_20-24" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_25-34" id="sec4_l6_25-34" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_35-44" id="sec4_l6_35-44" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_45-54" id="sec4_l6_45-54" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_55-64" id="sec4_l6_55-64" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_65-plus" id="sec4_l6_65-plus" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l6_total" id="sec4_l6_total" value="0" tabindex="-1" readonly data-eden-total="sec4_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Óbito</th>
+                    <td><input type="number" name="sec4_l7_0-4" id="sec4_l7_0-4" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_5-9" id="sec4_l7_5-9" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_10-14" id="sec4_l7_10-14" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_15-19" id="sec4_l7_15-19" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_20-24" id="sec4_l7_20-24" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_25-34" id="sec4_l7_25-34" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_35-44" id="sec4_l7_35-44" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_45-54" id="sec4_l7_45-54" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_55-64" id="sec4_l7_55-64" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_65-plus" id="sec4_l7_65-plus" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l7_total" id="sec4_l7_total" value="0" tabindex="-1" readonly data-eden-total="sec4_total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">Perda de Seguimento</th>
+                    <td><input type="number" name="sec4_l8_0-4" id="sec4_l8_0-4" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_5-9" id="sec4_l8_5-9" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_10-14" id="sec4_l8_10-14" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_15-19" id="sec4_l8_15-19" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_20-24" id="sec4_l8_20-24" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_25-34" id="sec4_l8_25-34" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_35-44" id="sec4_l8_35-44" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_45-54" id="sec4_l8_45-54" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_55-64" id="sec4_l8_55-64" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_65-plus" id="sec4_l8_65-plus" data-eden-group="sec4_total"></td>
+                    <td><input type="number" name="sec4_l8_total" id="sec4_l8_total" value="0" tabindex="-1" readonly data-eden-total="sec4_total"></td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+
+    <footer class="tes-c-footer tes-c-footer--boxed">
+        <div class="tes-c-footer__area tes-c-footer__area--left">
+            <label for="reporter-name">Nome legível do técnico que reporta:</label>
+            <input type="text" name="reporter-name" id="reporter-name" class="tes-c-footer__input">
+        </div>
+
+        <div class="tes-c-footer__area tes-c-footer__area--center">
+            <label for="category">Categoria:</label>
+            <input type="text" name="category" id="category" class="tes-c-footer__input" list="categories">
+
+            <datalist id="categories">
+                <option value="Médico de Clínica Geral"></option>
+                <option value="Técnico de Medicina Geral"></option>
+                <option value="Enfermeiro Geral"></option>
+                <option value="Agente de Medicina Geral"></option>
+                <option value="Técnico de Estatística Sanitária"></option>
+            </datalist>
+        </div>
+
+        <div class="tes-c-footer__area tes-c-footer__area--right tes-c-footer__area--self-end">
+            <label for="report-date">Data:</label>
+            <input type="date" name="report-date" id="report-date" class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+    </footer>
+
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true" data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes"></p>
+    </div>
+</div>
+
+

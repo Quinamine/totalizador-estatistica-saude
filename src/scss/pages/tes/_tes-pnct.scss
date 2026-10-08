@@ -59,6 +59,12 @@
         }
     }
 
+    &--08 {
+        thead th {
+            text-align: left !important;
+        }
+    }
+
     table {
         --eden-table-margin-top: 0;
 
