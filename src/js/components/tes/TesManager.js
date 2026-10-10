@@ -221,7 +221,7 @@ export const TesManager = {
                 return sum + (Number(outcomeElement?.value) || 0);
             }, 0);
 
-            fieldElement.value = Math.max(0, evaluationValue - outcomesSumValue);
+            fieldElement.value = evaluationValue - outcomesSumValue;
         }
     },
 

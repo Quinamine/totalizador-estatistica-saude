@@ -61,7 +61,7 @@
 
     &--08 {
         .tes-pnct__vertical-text {
-            min-height: 157.5px;
+            min-height: 142px;
             text-align: left;
 
             @media print {
@@ -341,7 +341,7 @@
             --eden-sys-page-content-offset-top: 0;
 
             table {
-                --eden-table-cell-height: 26.5px;
+                --eden-table-cell-height: 25px;
             }
 
         }
