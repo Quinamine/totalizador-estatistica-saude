@@ -160,57 +160,69 @@ export const TesManager = {
     },
 
     updateRelatedTotals(field) {
-        const sourceIds = field.dataset?.edenGroup.split(' ').map(id => id.trim());
-        const currentRow = field.closest('tr');
-        let verticalFormat = /^(sec|s)\d+-?_[a-z0-9\-]+(_(col)?.+)?$/i;
+        const sourceIds = field.dataset?.edenGroup?.split(' ').map(id => id.trim()) || [];
+        const currentRowElement = field.closest('tr');
+        const verticalFormatPattern = /^(sec|s)\d+-?_[a-z0-9\-]+(_(col)?.+)?$/i;
 
         sourceIds.forEach(id => {
-            let context = verticalFormat.test(id)
-                ? document
-                : currentRow || document;
+            const isGlobalContext = verticalFormatPattern.test(id );
+            const searchContext = isGlobalContext ? document : (currentRowElement || document);
 
-            const sources = context.querySelectorAll(`[data-eden-group~="${id}"]`);
-            const totalField = context.querySelector(`[data-eden-total="${id}"]`);
+            const sourceElements = searchContext.querySelectorAll(`[data-eden-group~="${id }"]`);
+            const totalFieldElement = searchContext.querySelector(`[data-eden-total="${id }"]`);
 
-            if (totalField) {
-                totalField.value = this.calculateTotal(sources);
+            if (!totalFieldElement) return;
+            totalFieldElement.value = this.calculateTotal(sourceElements);
 
-                if (totalField.dataset.edenEndingBalance) {
-                    const [initialId, additionsId, deductionsId] = totalField.dataset.edenEndingBalance.split(' ');
-
-                    const initialField = document.getElementById(initialId);
-                    const additionsField = document.getElementById(additionsId);
-                    const deductionsField = document.getElementById(deductionsId);
-
-                    totalField.value = this.calculateEndingBalance(
-                        initialField?.value || 0,
-                        additionsField?.value || 0,
-                        deductionsField?.value || 0
-                    );
-                }
-
-                if (totalField.dataset.edenDifference) {
-                    const [actualId, theoreticalId] = totalField.dataset.edenDifference.split(' ');
-
-                    const actualField = document.getElementById(actualId);
-                    const theoreticalField = document.getElementById(theoreticalId);
-
-                    totalField.value = this.calculateDifference(
-                        actualField?.value || 0,
-                        theoreticalField?.value || 0
-                    );
-                }
-
-                if (totalField.dataset.edenQuantityToRequisition) {
-                    const [totalIssuesId, physicalStockId] = totalField.dataset.edenQuantityToRequisition.split(' ');
-                    const totalIssuesField = document.getElementById(totalIssuesId);
-                    const physicalStockField = document.getElementById(physicalStockId);
-
-                    const quantityToRequisition = (Number(totalIssuesField?.value || 0) * 2) - Number(physicalStockField?.value || 0);
-                    totalField.value = quantityToRequisition < 0 ? 0 : quantityToRequisition;
-                }
-            }
+            this.applyCustomCalculations(totalFieldElement);
         });
+    },
+
+    applyCustomCalculations(fieldElement) {
+        const dataset = fieldElement.dataset;
+
+        // Módulos: Requisição Balancete e PNCT 8
+        if (dataset.edenDifference) {
+            const [actualId, theoreticalId] = dataset.edenDifference.split(' ');
+            const actualValue = Number(document.getElementById(actualId)?.value) || 0;
+            const theoreticalValue = Number(document.getElementById(theoreticalId)?.value) || 0;
+
+            fieldElement.value = this.calculateDifference(actualValue, theoreticalValue);
+        }
+
+        // Módulos: Requisição Balancete, HIV/SIDA
+        if (dataset.edenEndingBalance) {
+            const [initialId, additionsId, deductionsId] = dataset.edenEndingBalance.split(' ');
+
+            fieldElement.value = this.calculateEndingBalance(
+                document.getElementById(initialId)?.value || 0,
+                document.getElementById(additionsId)?.value || 0,
+                document.getElementById(deductionsId)?.value || 0
+            );
+        }
+
+        // Módulos: Requisição Balancete
+        if (dataset.edenQuantityToRequisition) {
+            const [totalIssuesId, physicalStockId] = dataset.edenQuantityToRequisition.split(' ');
+            const totalIssuesValue = Number(document.getElementById(totalIssuesId)?.value) || 0;
+            const physicalStockValue = Number(document.getElementById(physicalStockId)?.value) || 0;
+
+            const calculatedRequisition = (totalIssuesValue * 2) - physicalStockValue;
+            fieldElement.value = calculatedRequisition < 0 ? 0 : calculatedRequisition;
+        }
+
+        // Módulos: PNCT 8
+        if (dataset.edenUnevaluated) {
+            const [evaluationId, ...outcomeIds] = dataset.edenUnevaluated.split(' ');
+            const evaluationValue = Number(document.getElementById(evaluationId)?.value) || 0;
+
+            const outcomesSumValue = outcomeIds.reduce((sum, outcomeId) => {
+                const outcomeElement = document.getElementById(outcomeId);
+                return sum + (Number(outcomeElement?.value) || 0);
+            }, 0);
+
+            fieldElement.value = Math.max(0, evaluationValue - outcomesSumValue);
+        }
     },
 
     calculateTotal(fields) {

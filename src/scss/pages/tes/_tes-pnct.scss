@@ -40,7 +40,7 @@
     }
 
     &--r06 {
-        
+
         table {
             --eden-table-cell-height: 50px;
             max-width: var(--eden-sys-page-content-max-width);
@@ -60,8 +60,13 @@
     }
 
     &--08 {
-        thead th {
-            text-align: left !important;
+        .tes-pnct__vertical-text {
+            min-height: 157.5px;
+            text-align: left;
+
+            @media print {
+                font-weight: var(--eden-sys-font-weight-regular);
+            }
         }
     }
 
@@ -241,6 +246,7 @@
         }
 
         &--dark {
+
             th,
             td {
                 background-color: var(--_cell-na-bg);
@@ -278,6 +284,7 @@
         }
 
         &--1a {
+
             th,
             td {
                 line-height: 1.1 !important;
@@ -328,6 +335,15 @@
             th[scope="rowgroup"] {
                 line-height: var(--eden-sys-line-height-heading);
             }
+        }
+
+        &--08 {
+            --eden-sys-page-content-offset-top: 0;
+
+            table {
+                --eden-table-cell-height: 26.5px;
+            }
+
         }
 
         &__gov {
