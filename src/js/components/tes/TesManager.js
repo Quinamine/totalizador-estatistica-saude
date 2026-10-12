@@ -390,7 +390,7 @@ export const TesManager = {
             pageFooter.classList.add('eden-c-page-footer--fixed');
         }
 
-        const notTotalizableForms = ['pnct-01a'];
+        const notTotalizableForms = ['pnct-01a', 'pnct-r06', 'pnct-09'];
         const isNotTotalizable = notTotalizableForms.includes(this.activeReportId);
 
         const systemSignature = isNotTotalizable
