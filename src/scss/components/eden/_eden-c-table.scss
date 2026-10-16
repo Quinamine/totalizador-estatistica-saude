@@ -71,12 +71,6 @@
         --_cell-na-bg: var(--eden-sys-primary);
         page-break-inside: auto;
 
-        th,
-        td {
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
         &__thead-spacer,
         &__tfoot-spacer {
             display: table-row;

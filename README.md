@@ -62,7 +62,7 @@ Este repositório está em desenvolvimento activo.
 - [x] PNCT R07 
 - [x] PNCT 08 
 - [x] PNCT 09 
-- [ ] PNCT APSS 11A 
+- [x] PNCT APSS 11A 
 - [ ] PNCT 12 
 - [ ] PNCT 14D
 
