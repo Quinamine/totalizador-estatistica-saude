@@ -1,0 +1,311 @@
+<div class="eden-c-page eden-c-page--portrait tes-pnct tes-pnct--apss-11a" data-eden-js="tes-report">
+    <header class="tes-pnct__header">
+        <div class="tes-pnct__header-row eden-u-border-bottom">
+            <div class="tes-pnct__gov">
+                <figure class="tes-c-gov tes-c-gov--text-uppercase">
+                    <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                    <figcaption class="tes-c-gov__info">
+                        <span class="tes-c-gov__country">República de Moçambique</span>
+                        <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="tes-pnct__program-info">
+                <p class="tes-pnct__dept">DIRECÇÃO NACIONAL DE SAÚDE PÚBLICA</p>
+                <p class="tes-pnct__program">PROGRAMA NACIONAL DE CONTROLO<br>DA TUBERCULOSE</p>
+                <img src="assets/images/pnct-logo.png" alt="Logótipo PNCT" class="tes-pnct__logo">
+            </div>
+
+            <div class="tes-pnct__meta-grid">
+                <div class="tes-pnct__model">
+                    <span class="tes-pnct__model-code">MOD. SIS - PNCT APSS 11A</span>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="health-unit">US:</label>
+                    <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist">
+                    <datalist id="health-unit-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="district">Distrito:</label>
+                    <input type="text" name="district" id="district" list="district-datalist">
+                    <datalist id="district-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="province">Província:</label>
+                    <input type="text" name="province" id="province" list="province-datalist">
+                    <datalist id="province-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="quarter">Trimestre em reporte:</label>
+                    <input type="text" name="quarter" id="quarter" list="quarter-datalist">
+                    <datalist id="quarter-datalist"></datalist>
+                </div>
+                <div class="tes-pnct__meta-group">
+                    <label for="report-date">Data:</label>
+                    <input type="date" name="report-date" id="report-date">
+                </div>
+            </div>
+        </div>
+
+        <div class="tes-pnct__header-row tes-pnct__header-row--no-grid eden-u-border-none">
+            <h1 class="tes-pnct__title">RESUMO TRIMESTRAL DAS ACTIVIDADES DE APOIO PSICOSSOCIAL</h1>
+        </div>
+    </header>
+
+    <figure>
+        <!-- SECÇÃO 1 -->
+        <div class="tes-pnct__section-header">SECÇÃO 1: RESUMO DE PACIENTES REGISTADOS PARA O APOIO PSICOSSOCIAL</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 516px">
+                <col span="8" style="width: 58px">
+                <col style="width: 100px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="3"></th>
+                    <th scope="colgroup" colspan="4">1</th>
+                    <th scope="colgroup" colspan="4">2</th>
+                    <th rowspan="3" scope="col">Total <br>(Masculino <br>+ Feminino)</th>
+                </tr>
+                <tr>
+                    <th scope="colgroup" colspan="4">Masculino</th>
+                    <th scope="colgroup" colspan="4">Feminino</th>
+                </tr>
+                <tr>
+                    <!-- Masculino -->
+                    <th scope="col" data-eden-col-label="c1">0-4</th>
+                    <th scope="col" data-eden-col-label="c2">5-14</th>
+                    <th scope="col" data-eden-col-label="c3">&ge; 15</th>
+                    <th scope="col" data-eden-col-label="c4">Total</th>
+                    <!-- Feminino -->
+                    <th scope="col" data-eden-col-label="c5">0-4</th>
+                    <th scope="col" data-eden-col-label="c6">5-14</th>
+                    <th scope="col" data-eden-col-label="c7">&ge; 15</th>
+                    <th scope="col" data-eden-col-label="c8">Total</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        Inicio de tratamento (Só para formato electrónico)*<br>
+                        <small>(Esta informação será alimentada pelo PNCT 07 directamente no SISMA)</small>
+                    </th>
+                    <td colspan="9" class="eden-c-table__cell--na"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        a) Pacientes registados no livro de APSS durante o período em <br> reporte
+                    </th>
+                    <td><input type="number" name="registados_masc_0-4" id="registados_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="registados_masc_5-14" id="registados_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="registados_masc_15_plus" id="registados_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="registados_masc_total" id="registados_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="registados_fem_0-4" id="registados_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="registados_fem_5-14" id="registados_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="registados_fem_15_plus" id="registados_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="registados_fem_total" id="registados_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="registados_geral_total" id="registados_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        b) Pacientes que receberam aconselhamento para o inicio do <br> tratamento durante o período em reporte
+                    </th>
+                    <td><input type="number" name="acons-inicio_masc_0-4" id="acons-inicio_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="acons-inicio_masc_5-14" id="acons-inicio_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="acons-inicio_masc_15_plus" id="acons-inicio_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="acons-inicio_masc_total" id="acons-inicio_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="acons-inicio_fem_0-4" id="acons-inicio_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="acons-inicio_fem_5-14" id="acons-inicio_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="acons-inicio_fem_15_plus" id="acons-inicio_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="acons-inicio_fem_total" id="acons-inicio_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="acons-inicio_geral_total" id="acons-inicio_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        c) Pacientes que receberam sessão de seguimento de adesão <br> durante o período em reporte
+                    </th>
+                    <td><input type="number" name="seg-adesao_masc_0-4" id="seg-adesao_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="seg-adesao_masc_5-14" id="seg-adesao_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="seg-adesao_masc_15_plus" id="seg-adesao_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="seg-adesao_masc_total" id="seg-adesao_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="seg-adesao_fem_0-4" id="seg-adesao_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="seg-adesao_fem_5-14" id="seg-adesao_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="seg-adesao_fem_15_plus" id="seg-adesao_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="seg-adesao_fem_total" id="seg-adesao_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="seg-adesao_geral_total" id="seg-adesao_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        d) Pacientes novos que receberam incentivo durante o período <br> em reporte
+                    </th>
+                    <td><input type="number" name="incentivo-novos_masc_0-4" id="incentivo-novos_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="incentivo-novos_masc_5-14" id="incentivo-novos_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="incentivo-novos_masc_15_plus" id="incentivo-novos_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="incentivo-novos_masc_total" id="incentivo-novos_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="incentivo-novos_fem_0-4" id="incentivo-novos_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="incentivo-novos_fem_5-14" id="incentivo-novos_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="incentivo-novos_fem_15_plus" id="incentivo-novos_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="incentivo-novos_fem_total" id="incentivo-novos_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="incentivo-novos_geral_total" id="incentivo-novos_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        e) Total de Pacientes que receberam incentivo durante o período <br> em  reporte
+                    </th>
+                    <td><input type="number" name="incentivo-todos_masc_0-4" id="incentivo-todos_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="incentivo-todos_masc_5-14" id="incentivo-todos_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="incentivo-todos_masc_15_plus" id="incentivo-todos_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="incentivo-todos_masc_total" id="incentivo-todos_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="incentivo-todos_fem_0-4" id="incentivo-todos_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="incentivo-todos_fem_5-14" id="incentivo-todos_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="incentivo-todos_fem_15_plus" id="incentivo-todos_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="incentivo-todos_fem_total" id="incentivo-todos_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="incentivo-todos_geral_total" id="incentivo-todos_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECÇÃO 2 -->
+        <div class="tes-pnct__section-header">SECÇÃO 2: REINTEGRAÇÃO</div>
+        <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 516px">
+                <col span="8" style="width: 58px">
+                <col style="width: 100px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="3"></th>
+                    <th scope="colgroup" colspan="4">1</th>
+                    <th scope="colgroup" colspan="4">2</th>
+                    <th rowspan="3" scope="col">Total <br>(Masculino <br>+ Feminino)</th>
+                </tr>
+                <tr>
+                    <th scope="colgroup" colspan="4">Masculino</th>
+                    <th scope="colgroup" colspan="4">Feminino</th>
+                </tr>
+                <tr>
+                    <!-- Masculino -->
+                    <th scope="col" data-eden-col-label="c1">0-4</th>
+                    <th scope="col" data-eden-col-label="c2">5-14</th>
+                    <th scope="col" data-eden-col-label="c3">&ge; 15</th>
+                    <th scope="col" data-eden-col-label="c4">Total</th>
+                    <!-- Feminino -->
+                    <th scope="col" data-eden-col-label="c5">0-4</th>
+                    <th scope="col" data-eden-col-label="c6">5-14</th>
+                    <th scope="col" data-eden-col-label="c7">&ge; 15</th>
+                    <th scope="col" data-eden-col-label="c8">Total</th>
+                </tr>
+            </thead>
+            <tbody class="tes-pnct__tbody">
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        a) Pacientes identificados com falta ao tratamento durante o período em reporte*
+                    </th>
+                    <td><input type="number" name="faltosos_masc_0-4" id="faltosos_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="faltosos_masc_5-14" id="faltosos_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="faltosos_masc_15_plus" id="faltosos_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="faltosos_masc_total" id="faltosos_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="faltosos_fem_0-4" id="faltosos_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="faltosos_fem_5-14" id="faltosos_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="faltosos_fem_15_plus" id="faltosos_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="faltosos_fem_total" id="faltosos_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="faltosos_geral_total" id="faltosos_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        b) Pacientes identificados com perda de seguimento durante o período em reporte**
+                    </th>
+                    <td><input type="number" name="perda-seg_masc_0-4" id="perda-seg_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="perda-seg_masc_5-14" id="perda-seg_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="perda-seg_masc_15_plus" id="perda-seg_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="perda-seg_masc_total" id="perda-seg_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="perda-seg_fem_0-4" id="perda-seg_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="perda-seg_fem_5-14" id="perda-seg_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="perda-seg_fem_15_plus" id="perda-seg_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="perda-seg_fem_total" id="perda-seg_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="perda-seg_geral_total" id="perda-seg_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        c) Pacientes que receberam chamadas de reintegração durante o período em reporte
+                    </th>
+                    <td><input type="number" name="chamadas_masc_0-4" id="chamadas_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="chamadas_masc_5-14" id="chamadas_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="chamadas_masc_15_plus" id="chamadas_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="chamadas_masc_total" id="chamadas_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="chamadas_fem_0-4" id="chamadas_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="chamadas_fem_5-14" id="chamadas_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="chamadas_fem_15_plus" id="chamadas_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="chamadas_fem_total" id="chamadas_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="chamadas_geral_total" id="chamadas_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        d) Pacientes receberam visitas domiciliares durante o período em reporte
+                    </th>
+                    <td><input type="number" name="visitas_masc_0-4" id="visitas_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="visitas_masc_5-14" id="visitas_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="visitas_masc_15_plus" id="visitas_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="visitas_masc_total" id="visitas_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="visitas_fem_0-4" id="visitas_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="visitas_fem_5-14" id="visitas_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="visitas_fem_15_plus" id="visitas_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="visitas_fem_total" id="visitas_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="visitas_geral_total" id="visitas_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="eden-c-table__cell--toned">
+                        e) Pacientes que retornaram ao cuidados durante o período em reporte
+                    </th>
+                    <td><input type="number" name="retornados_masc_0-4" id="retornados_masc_0-4" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="retornados_masc_5-14" id="retornados_masc_5-14" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="retornados_masc_15_plus" id="retornados_masc_15_plus" data-eden-group="total-masc grand-total"></td>
+                    <td><input type="number" name="retornados_masc_total" id="retornados_masc_total" readonly tabindex="-1" data-eden-total="total-masc"></td>
+                    <td><input type="number" name="retornados_fem_0-4" id="retornados_fem_0-4" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="retornados_fem_5-14" id="retornados_fem_5-14" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="retornados_fem_15_plus" id="retornados_fem_15_plus" data-eden-group="total-fem grand-total"></td>
+                    <td><input type="number" name="retornados_fem_total" id="retornados_fem_total" readonly tabindex="-1" data-eden-total="total-fem"></td>
+                    <td class="eden-c-table__cell--toned"><input type="number" name="retornados_geral_total" id="retornados_geral_total" readonly tabindex="-1" data-eden-total="grand-total"></td>
+                </tr>
+                <tr>
+                    <td colspan="100%" class="tes-pnct__caption eden-u-padding-x-md">
+                        * todos os pacientes que estejam abaixo de 60 dias de falta<br>
+                        ** pacientes que tenham faltado 60 ou mais dias consecutivamente
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </figure>
+
+    <footer class="tes-c-footer tes-c-footer--two-rows tes-c-footer--boxed">
+        <div class="tes-c-footer__area tes-c-footer__area--left">
+            <label for="reporter-name">Nome legível do técnico que reporta:</label>
+            <input type="text" name="reporter-name" id="reporter-name" class="tes-c-footer__input">
+        </div>
+
+        <div class="tes-c-footer__area tes-c-footer__area--center">
+            <label for="category">Categoria:</label>
+            <input type="text" name="category" id="category" class="tes-c-footer__input" list="categories">
+
+            <datalist id="categories">
+                <option value="Médico de Clínica Geral"></option>
+                <option value="Técnico de Medicina Geral"></option>
+                <option value="Enfermeiro Geral"></option>
+                <option value="Agente de Medicina Geral"></option>
+                <option value="Técnico de Estatística Sanitária"></option>
+            </datalist>
+        </div>
+
+        <div class="tes-c-footer__area tes-c-footer__area--right">
+            <label for="report-date">Data:</label>
+            <input type="date" name="report-date" id="report-date" class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+    </footer>
+
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true" data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes"></p>
+    </div>
+</div>

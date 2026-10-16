@@ -59,6 +59,19 @@
         }
     }
 
+    &--apss-11a {
+        --_content-font-size: var(--eden-sys-font-size-200);
+
+        table {
+            --eden-table-cell-height: 50px;
+        }
+
+        .tes-pnct__caption,
+        th[scope="row"] small {
+            font-size: var(--eden-sys-font-size-100);
+        }
+    }
+
     table {
         --eden-table-margin-top: 0;
 
@@ -269,7 +282,8 @@
         --_model-font-weight: var(--eden-sys-font-weight-bold);
 
         &--provisorio,
-        &--r05 {
+        &--r05,
+        &--apss-11a {
 
             th,
             td {
@@ -349,11 +363,41 @@
 
         }
 
-         &--09 {
+        &--09 {
             --eden-sys-page-content-offset-top: 0;
 
             table {
                 --eden-table-cell-height: 28.8px;
+            }
+        }
+
+        &--apss-11a {
+            --_content-font-size: var(--eden-sys-font-size-300);
+
+            table {
+                --eden-table-cell-height: 83px;
+            }
+
+            thead th {
+                --eden-table-cell-padding-x: var(--eden-sys-space-050);
+            }
+
+            .tes-pnct__caption {
+                --eden-table-cell-height: 50px;
+                line-height: var(--eden-sys-line-height-heading);
+            }
+
+            .tes-pnct__title {
+                font-size: var(--eden-sys-font-size-400);
+            }
+
+            .tes-pnct__section-header {
+                font-size: var(--eden-sys-font-size-300);
+            }
+
+            th[scope="row"],
+            footer {
+                font-weight: var(--eden-sys-font-weight-bold);
             }
         }
 
