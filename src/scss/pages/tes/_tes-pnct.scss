@@ -59,7 +59,8 @@
         }
     }
 
-    &--apss-11a {
+    &--apss-11a,
+    &--12 {
         --_content-font-size: var(--eden-sys-font-size-200);
 
         table {
@@ -69,6 +70,12 @@
         .tes-pnct__caption,
         th[scope="row"] small {
             font-size: var(--eden-sys-font-size-100);
+        }
+    }
+
+    &--12 {
+        .tes-pnct__caption {
+            --eden-table-cell-height: var(--eden-sys-space-600);
         }
     }
 
@@ -171,8 +178,6 @@
     &__meta-group {
         display: flex;
         align-items: center;
-        gap: var(--eden-sys-space-200);
-        padding-inline: var(--eden-sys-space-200);
 
         label {
             white-space: nowrap;
@@ -181,6 +186,11 @@
                 font-size: var(--eden-sys-font-size-200);
             }
         }
+
+        gap: var(--eden-sys-space-200);
+        padding-inline: var(--eden-sys-space-200);
+
+
 
         input {
             width: 100%;
@@ -236,6 +246,28 @@
         }
     }
 
+    &__vertical-header {
+        th {
+            position: relative;
+            height: 340px;
+            padding: 0;
+            vertical-align: baseline;
+            font-weight: var(--eden-sys-font-weight-regular);
+        }
+
+        span {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            padding: var(--eden-sys-space-100);
+            text-align: left;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            letter-spacing: .2px;
+        }
+    }
+
     &__separator {
 
         th,
@@ -244,6 +276,18 @@
 
             @media print {
                 background-color: var(--_cell-na-bg);
+            }
+        }
+
+        &--sm {
+
+            th,
+            td {
+                height: var(--eden-sys-space-150);
+
+                @media print {
+                    background-color: var(--_cell-na-bg);
+                }
             }
         }
 
@@ -398,6 +442,23 @@
             th[scope="row"],
             footer {
                 font-weight: var(--eden-sys-font-weight-bold);
+            }
+        }
+
+        &--12 {
+            --_content-font-size: var(--eden-sys-font-size-300) !important;
+
+            table {
+                --eden-table-cell-height: 73px;
+            }
+
+            thead th {
+                line-height: 1.2;
+                padding: var(--eden-sys-space-100);
+            }
+
+            footer {
+                padding-block: var(--eden-sys-space-600) var(--eden-sys-space-300);
             }
         }
 
