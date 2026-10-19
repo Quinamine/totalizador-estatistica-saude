@@ -109,6 +109,8 @@ button {
 
 input,
 textarea {
+      --_focus-bg: greenyellow;
+
     border: none;
     border-radius: 0;
     outline: 0;
@@ -119,7 +121,6 @@ textarea {
 }
 
 input {
-    --_focus-bg: greenyellow;
     --_readonly-bg: var(--eden-sys-surface);
 
     @media print {
@@ -161,6 +162,10 @@ textarea {
     resize: vertical;
     min-height: 3em;
     font-size: var(--_input-font-size);
+
+    &:focus {
+        background-color: var(--_focus-bg);
+    }
 }
 
 button {
