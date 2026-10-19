@@ -79,6 +79,13 @@
         }
     }
 
+
+    &--14d {
+        .tes-pnct__caption {
+            --eden-table-cell-padding-y: var(--eden-sys-space-100);
+        }
+    }
+
     table {
         --eden-table-margin-top: 0;
 
@@ -266,6 +273,12 @@
             transform: rotate(180deg);
             letter-spacing: .2px;
         }
+
+        &--sm {
+            th {
+                height: 100px;
+            }
+        }
     }
 
     &__separator {
@@ -319,6 +332,28 @@
         &--full-area {
             height: 100%;
             max-height: 200px;
+        }
+    }
+
+    &__split-tables {
+        display: grid;
+        align-items: start;
+
+        &--2-cols {
+            grid-template-columns: repeat(2, auto);
+            gap: var(--eden-sys-space-400);
+        }
+    }
+
+    &__observations-box {
+        display: flex;
+        padding: var(--eden-sys-space-200);
+        gap: var(--eden-sys-space-100);
+        border-inline: 1px solid var(--eden-sys-border-color);
+
+        textarea {
+            flex: 1;
+            resize: none;
         }
     }
 
@@ -459,6 +494,28 @@
 
             footer {
                 padding-block: var(--eden-sys-space-600) var(--eden-sys-space-300);
+            }
+        }
+
+        &--14d {
+            font-size: var(--eden-sys-font-size-200);
+
+            .tes-pnct__table--compact-print {
+                --eden-table-cell-height: 28.5px;
+            }
+
+            th,
+            td {
+                line-height: 1.2;
+            }
+
+            .tes-pnct__row--fill-height {
+                height: 60px;
+            }
+
+            td:has(input[readonly]) {
+                background-color: #dbe3e6;
+                background-color: oklch(0.93 0.005 var(--eden-ref-primary-hue));
             }
         }
 
