@@ -57,6 +57,13 @@ export const EdenGeoDatalist = {
                 this.populateDatalist('year', [currentYear]);
                 return;
             }
+
+            if (input.matches('#month-year')) {
+                const month = EDEN_MONTHS[new Date().getMonth()];
+                const year = new Date().getFullYear();
+                const monthYear = `${month} / ${year}`;
+                this.populateDatalist('month-year', [monthYear]);
+            }
         });
 
         this.contentArea.addEventListener('input', (e) => {

@@ -55,11 +55,30 @@ export const EdenCellPositionBar = {
         const thOffset = tr.querySelectorAll('th').length;
         const colId = td.dataset.edenColLabelIndex ?? (td.cellIndex - thOffset) + 1;
 
-        const colLabel = table.querySelector(`[data-eden-col-label~="c${colId}"]`);
+        let colLabel = table.querySelector(`[data-eden-col-label~="c${colId}"]`);
         const complementaryId = colId;
-        const complementaryLabel = table.querySelector(`[data-eden-complementary-label~="c${complementaryId}"]`);
+        let complementaryLabel = table.querySelector(`[data-eden-complementary-label~="c${complementaryId}"]`);
 
-        return { rowCategoryLabel, rowLabel, colLabel, complementaryLabel };
+        // ATS MODULE
+        const isAtsModule = table.closest('div.tes-ats');
+        if (isAtsModule) {
+            const hasRowGroup = tr.dataset.edenRowGroupId;
+            if (hasRowGroup) {
+                const id = tr.dataset.edenRowGroupId;
+                const label = table.querySelector(`[data-eden-row-group-label="${id}"]`);
+
+                complementaryLabel = label;
+            }
+
+            colLabel = document.querySelector(`[data-eden-col-label~="c${colId}"]`)
+            
+        }
+
+        let labels = isAtsModule
+            ? { rowCategoryLabel, complementaryLabel, rowLabel, colLabel }
+            : { rowCategoryLabel, rowLabel, colLabel, complementaryLabel };
+
+        return labels;
     },
 
 

@@ -1,0 +1,184 @@
+@use '../../abstracts/' as *;
+
+.tes-ats {
+    --_label-font-size: 0.6875rem;
+    --_default-cell-width: 70px;
+    --_zebra-color: #f4f4f4;
+    --_zebra-color: oklch(0.98 0.005 var(--eden-ref-primary-hue));
+
+    @media print {
+        --_zebra-color: #e9eff5;
+        --_zebra-color: #{$eden-ref-neutral-95-01};
+    }
+
+
+    &__header {
+        display: flex;
+        margin-bottom: -35px;
+    }
+
+    .tes-c-gov__info {
+        font-size: 0.5rem;
+        line-height: var(--eden-sys-line-height-heading);
+        font-weight: var(--eden-sys-font-weight-bold);
+    }
+
+    &__title-group {
+        padding-top: 28px;
+    }
+
+    &__title {
+        --eden-sys-heading-spacing-y-end: 0;
+
+        font-size: var(--eden-sys-font-size-600);
+        font-weight: var(--eden-sys-font-weight-bold);
+        text-transform: uppercase;
+    }
+
+    &__model-code {
+        font-size: var(--eden-sys-font-size-050);
+        font-weight: var(--eden-sys-font-weight-bold);
+        line-height: var(--eden-sys-line-height-flat);
+        display: block;
+    }
+
+    &__meta-grid {
+        margin-top: var(--eden-sys-space-200);
+        margin-left: var(--eden-sys-space-700);
+        display: grid;
+        grid-template-columns: repeat(3, 160px) 105px;
+        max-height: 46px;
+    }
+
+    &__meta-group {
+        border: 1px solid var(--eden-sys-border-color);
+        text-align: center;
+        display: grid;
+        grid-template-rows: 18px 32px;
+        align-items: center;
+
+        &:not(:last-of-type) {
+            border-right: none;
+        }
+
+        input {
+            border-top: 1px solid var(--eden-sys-border-color);
+            border-bottom: none;
+            text-align: center;
+            height: 100%;
+        }
+    }
+
+    &__section-title {
+        --eden-sys-heading-spacing-y-start: var(--eden-sys-space-300);
+        --eden-sys-heading-spacing-y-end: var(--eden-sys-space-050);
+
+        font-size: var(--eden-sys-font-size-200);
+
+        small {
+            font-size: var(--eden-sys-font-size-100);
+            font-weight: var(--eden-sys-font-weight-regular);
+        }
+    }
+
+    table {
+        margin-block: 0;
+
+        thead {
+            th {
+                font-size: var(--_label-font-size);
+            }
+        }
+
+        th:last-child,
+        td:last-child {
+            border: none;
+            text-align: center;
+            font-size: var(--_label-font-size);
+        }
+
+        th[scope="row"] {
+            font-size: var(--_label-font-size);
+        }
+
+        th[scope="rowgroup"] {
+            --eden-table-cell-padding-x: var(--eden-sys-space-100);
+        }
+
+
+        tbody {
+            tr:nth-child(odd) {
+                background-color: var(--_zebra-color);
+            }
+
+            td:last-child,
+            th[scope="row"],
+            th[scope="rowgroup"] {
+                background-color: #{$eden-ref-neutral-100};
+            }
+        }
+    }
+
+    &__row-label {
+        --eden-table-cell-padding-x: var(--eden-sys-space-050);
+
+        font-size: var(--_label-font-size);
+        font-weight: var(--eden-sys-font-weight-regular) !important;
+        text-align: center !important;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        color: var(--eden-sys-surface-content-100);
+        margin-top: var(--eden-sys-space-100);
+    }
+
+    &__notes {
+        flex: 1;
+
+        p {
+            --eden-sys-paragraph-spacing-y: var(--eden-sys-space-100);
+
+            line-height: var(--eden-sys-line-height-heading);
+            font-size: 0.65625rem; // 10.5px;
+
+            @media print {
+                font-size: var(--eden-sys-font-size-050);
+            }
+        }
+    }
+
+    &__signature-block {
+        align-self: flex-end;
+        margin-right: 22px;
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        min-width: 200px;
+
+        padding-right: 22px;
+
+        label {
+            font-weight: var(--eden-sys-font-weight-bold);
+            margin-top: var(--eden-sys-space-100);
+        }
+
+        input {
+            text-align: center;
+        }
+    }
+
+    @media print {
+        --eden-sys-page-content-offset-top: 0;
+
+        table {
+            --eden-table-cell-height: 28px;
+
+            th {
+                line-height: var(--eden-sys-line-height-heading);
+            }
+        }
+    }
+}

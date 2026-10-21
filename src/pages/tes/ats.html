@@ -1,0 +1,1361 @@
+<div class="eden-c-page eden-c-page--portrait tes-ats" data-eden-js="tes-report">
+    <header class="tes-ats__header">
+        <figure class="tes-c-gov tes-c-gov--text-uppercase">
+            <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+            <figcaption class="tes-c-gov__info">
+                <span>República de Moçambique</span>
+                <span>Ministério da Saúde</span>
+                <span>Serviço Nacional de Saúde</span>
+            </figcaption>
+        </figure>
+        <div class="tes-ats__title-group">
+            <h1 class="tes-ats__title">RESUMO MENSAL ATS</h1>
+            <span class="tes-ats__model-code">Modelo SIS-H-26</span>
+        </div>
+        <div class="tes-ats__meta-grid">
+            <div class="tes-ats__meta-group">
+                <label for="province">Província:</label>
+                <input type="text" name="province" id="province" list="province-datalist">
+                <datalist id="province-datalist"></datalist>
+            </div>
+            <div class="tes-ats__meta-group">
+                <label for="district">Distrito:</label>
+                <input type="text" name="district" id="district" list="district-datalist">
+                <datalist id="district-datalist"></datalist>
+            </div>
+            <div class="tes-ats__meta-group">
+                <label for="health-unit">Unidade Sanitária:</label>
+                <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist">
+                <datalist id="health-unit-datalist"></datalist>
+            </div>
+            <div class="tes-ats__meta-group">
+                <label for="month-year">Mês / Ano</label>
+                <input type="text" name="month-year" id="month-year" list="month-year-datalist">
+                <datalist id="month-year-datalist"></datalist>
+            </div>
+        </div>
+    </header>
+
+    <!-- TABELA 1: RESULTADOS POR GRUPOS ETÁRIOS, SEXO E HISTORIAL -->
+    <section class="tes-ats__section">
+        <table class="eden-c-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 114px">
+                <col span="3" style="width: 38px">
+                <col span="12" style="width: var(--_default-cell-width, 70px)">
+                <col style="width: 22px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="4" class="eden-u-border-none"></th>
+                    <th scope="col" data-eden-col-label="c1">UATS</th>
+                    <th scope="col" data-eden-col-label="c2">SAAJ</th>
+                    <th scope="col" data-eden-col-label="c3">Consultas Externas<sup>1</sup></th>
+                    <th scope="col" data-eden-col-label="c4">Triagem</th>
+                    <th scope="col" data-eden-col-label="c5">Enfermaria</th>
+                    <th scope="col" data-eden-col-label="c6">Banco de Socorros</th>
+                    <th scope="col" data-eden-col-label="c7">Outro ATIP<sup>2</sup></th>
+                    <th scope="col" data-eden-col-label="c8">Banco de Sangue</th>
+                    <th scope="col" data-eden-col-label="c9">SMI<sup>3</sup></th>
+                    <th scope="col" data-eden-col-label="c10">TB<sup>3</sup></th>
+                    <th scope="col" data-eden-col-label="c11">ATS-C</th>
+                    <th scope="col">TOTAL</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- CONFIRMAÇÃO DE AUTO TESTE -->
+                <tr>
+                    <th scope="row" colspan="4"><b>Confirmação</b> (Autoteste HIV+)</th>
+                    <td><input type="number" name="confirm-autoteste_uats" id="confirm-autoteste_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_saaj" id="confirm-autoteste_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_cons-externas" id="confirm-autoteste_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_triagem" id="confirm-autoteste_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_enfermaria" id="confirm-autoteste_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_banco-socorros"
+                            id="confirm-autoteste_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_outro-atip" id="confirm-autoteste_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_banco-sangue" id="confirm-autoteste_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_smi" id="confirm-autoteste_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_tb" id="confirm-autoteste_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_ats-c" id="confirm-autoteste_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="confirm-autoteste_total" id="confirm-autoteste_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>a</td>
+                </tr>
+
+                <!-- NEGATIVOS (-) -->
+                <tr data-eden-row-category-id="res-neg" data-eden-row-label-col-index="3" data-eden-row-group-id="9-minus">
+                    <th rowspan="21" scope="rowgroup" class="eden-u-text-left eden-u-text-regular" data-eden-row-category-id="resultados-idade-sexo"><b>Resultados</b>
+                        <br>(por Grupos<br> Etários e Sexo)</th>
+                    <th rowspan="10" scope="rowgroup" data-eden-row-category-label="res-neg"><b>Neg.</b><br>(−)</th>
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="9-minus">1-9</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-neg_1-9_masc_uats" id="res-neg_1-9_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_saaj" id="res-neg_1-9_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_cons-externas" id="res-neg_1-9_masc_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_triagem" id="res-neg_1-9_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_enfermaria" id="res-neg_1-9_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_banco-socorros" id="res-neg_1-9_masc_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_outro-atip" id="res-neg_1-9_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_banco-sangue" id="res-neg_1-9_masc_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_smi" id="res-neg_1-9_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_tb" id="res-neg_1-9_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_ats-c" id="res-neg_1-9_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_masc_total" id="res-neg_1-9_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>b</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-group-id="9-minus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-neg_1-9_fem_uats" id="res-neg_1-9_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_saaj" id="res-neg_1-9_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_cons-externas" id="res-neg_1-9_fem_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_triagem" id="res-neg_1-9_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_enfermaria" id="res-neg_1-9_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_banco-socorros" id="res-neg_1-9_fem_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_outro-atip" id="res-neg_1-9_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_banco-sangue" id="res-neg_1-9_fem_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_smi" id="res-neg_1-9_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_tb" id="res-neg_1-9_fem_tb" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="res-neg_1-9_fem_ats-c" id="res-neg_1-9_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_1-9_fem_total" id="res-neg_1-9_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>c</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-label-col-index="1" data-eden-row-group-id="14-minus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="14-minus">10-14</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-neg_10-14_masc_uats" id="res-neg_10-14_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_saaj" id="res-neg_10-14_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_cons-externas"
+                            id="res-neg_10-14_masc_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_triagem" id="res-neg_10-14_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_enfermaria" id="res-neg_10-14_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_banco-socorros"
+                            id="res-neg_10-14_masc_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_outro-atip" id="res-neg_10-14_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_banco-sangue" id="res-neg_10-14_masc_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_smi" id="res-neg_10-14_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_tb" id="res-neg_10-14_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_ats-c" id="res-neg_10-14_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_masc_total" id="res-neg_10-14_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>d</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-group-id="14-minus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-neg_10-14_fem_uats" id="res-neg_10-14_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_saaj" id="res-neg_10-14_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_cons-externas" id="res-neg_10-14_fem_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_triagem" id="res-neg_10-14_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_enfermaria" id="res-neg_10-14_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_banco-socorros"
+                            id="res-neg_10-14_fem_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_outro-atip" id="res-neg_10-14_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_banco-sangue" id="res-neg_10-14_fem_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_smi" id="res-neg_10-14_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_tb" id="res-neg_10-14_fem_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_ats-c" id="res-neg_10-14_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_10-14_fem_total" id="res-neg_10-14_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>e</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-label-col-index="1" data-eden-row-group-id="19-minus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="19-minus">15-19</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-neg_15-19_masc_uats" id="res-neg_15-19_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_saaj" id="res-neg_15-19_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_cons-externas"
+                            id="res-neg_15-19_masc_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_triagem" id="res-neg_15-19_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_enfermaria" id="res-neg_15-19_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_banco-socorros"
+                            id="res-neg_15-19_masc_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_outro-atip" id="res-neg_15-19_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_banco-sangue" id="res-neg_15-19_masc_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_smi" id="res-neg_15-19_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_tb" id="res-neg_15-19_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_ats-c" id="res-neg_15-19_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_masc_total" id="res-neg_15-19_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>f</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-group-id="19-minus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-neg_15-19_fem_uats" id="res-neg_15-19_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_saaj" id="res-neg_15-19_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_cons-externas" id="res-neg_15-19_fem_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_triagem" id="res-neg_15-19_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_enfermaria" id="res-neg_15-19_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_banco-socorros"
+                            id="res-neg_15-19_fem_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_outro-atip" id="res-neg_15-19_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_banco-sangue" id="res-neg_15-19_fem_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_smi" id="res-neg_15-19_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_tb" id="res-neg_15-19_fem_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_ats-c" id="res-neg_15-19_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_15-19_fem_total" id="res-neg_15-19_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>g</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-label-col-index="1" data-eden-row-group-id="24-minus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="24-minus">20-24</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-neg_20-24_masc_uats" id="res-neg_20-24_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_saaj" id="res-neg_20-24_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_cons-externas"
+                            id="res-neg_20-24_masc_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_triagem" id="res-neg_20-24_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_enfermaria" id="res-neg_20-24_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_banco-socorros"
+                            id="res-neg_20-24_masc_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_outro-atip" id="res-neg_20-24_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_banco-sangue" id="res-neg_20-24_masc_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_smi" id="res-neg_20-24_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_tb" id="res-neg_20-24_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_ats-c" id="res-neg_20-24_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_masc_total" id="res-neg_20-24_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>h</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-group-id="24-minus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-neg_20-24_fem_uats" id="res-neg_20-24_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_saaj" id="res-neg_20-24_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_cons-externas" id="res-neg_20-24_fem_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_triagem" id="res-neg_20-24_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_enfermaria" id="res-neg_20-24_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_banco-socorros"
+                            id="res-neg_20-24_fem_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_outro-atip" id="res-neg_20-24_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_banco-sangue" id="res-neg_20-24_fem_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_smi" id="res-neg_20-24_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_tb" id="res-neg_20-24_fem_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_ats-c" id="res-neg_20-24_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_20-24_fem_total" id="res-neg_20-24_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>i</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-label-col-index="1" data-eden-row-group-id="25-plus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="25-plus">25+</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-neg_25-plus_masc_uats" id="res-neg_25-plus_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_saaj" id="res-neg_25-plus_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_cons-externas"
+                            id="res-neg_25-plus_masc_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_triagem" id="res-neg_25-plus_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_enfermaria" id="res-neg_25-plus_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_banco-socorros"
+                            id="res-neg_25-plus_masc_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_outro-atip" id="res-neg_25-plus_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_banco-sangue"
+                            id="res-neg_25-plus_masc_banco-sangue" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_smi" id="res-neg_25-plus_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_tb" id="res-neg_25-plus_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_ats-c" id="res-neg_25-plus_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_masc_total" id="res-neg_25-plus_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>j</td>
+                </tr>
+                <tr data-eden-row-category-id="res-neg" data-eden-row-group-id="25-plus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-neg_25-plus_fem_uats" id="res-neg_25-plus_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_saaj" id="res-neg_25-plus_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_cons-externas"
+                            id="res-neg_25-plus_fem_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_triagem" id="res-neg_25-plus_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_enfermaria" id="res-neg_25-plus_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_banco-socorros"
+                            id="res-neg_25-plus_fem_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_outro-atip" id="res-neg_25-plus_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_banco-sangue"
+                            id="res-neg_25-plus_fem_banco-sangue" data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_smi" id="res-neg_25-plus_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_tb" id="res-neg_25-plus_fem_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_ats-c" id="res-neg_25-plus_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-neg_25-plus_fem_total" id="res-neg_25-plus_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>k</td>
+                </tr>
+
+                <!-- POSITIVOS -->
+                <tr data-eden-row-category-id="res-pos" data-eden-row-label-col-index="2" data-eden-row-group-id="9-minus">
+                    <th rowspan="10" scope="rowgroup" data-eden-row-category-label="res-pos"><b>Pos.</b><br>(+)</th>
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label">1-9</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-pos_1-9_masc_uats" id="res-pos_1-9_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_saaj" id="res-pos_1-9_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_cons-externas" id="res-pos_1-9_masc_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_triagem" id="res-pos_1-9_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_enfermaria" id="res-pos_1-9_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_banco-socorros" id="res-pos_1-9_masc_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_outro-atip" id="res-pos_1-9_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_banco-sangue" id="res-pos_1-9_masc_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_smi" id="res-pos_1-9_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_tb" id="res-pos_1-9_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_ats-c" id="res-pos_1-9_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_masc_total" id="res-pos_1-9_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>l</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-group-id="9-minus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-pos_1-9_fem_uats" id="res-pos_1-9_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_saaj" id="res-pos_1-9_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_cons-externas" id="res-pos_1-9_fem_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_triagem" id="res-pos_1-9_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_enfermaria" id="res-pos_1-9_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_banco-socorros" id="res-pos_1-9_fem_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_outro-atip" id="res-pos_1-9_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_banco-sangue" id="res-pos_1-9_fem_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_smi" id="res-pos_1-9_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_tb" id="res-pos_1-9_fem_tb" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="res-pos_1-9_fem_ats-c" id="res-pos_1-9_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_1-9_fem_total" id="res-pos_1-9_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>m</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-label-col-index="1" data-eden-row-group-id="14-minus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label">10-14</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-pos_10-14_masc_uats" id="res-pos_10-14_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_saaj" id="res-pos_10-14_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_cons-externas"
+                            id="res-pos_10-14_masc_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_triagem" id="res-pos_10-14_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_enfermaria" id="res-pos_10-14_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_banco-socorros"
+                            id="res-pos_10-14_masc_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_outro-atip" id="res-pos_10-14_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_banco-sangue" id="res-pos_10-14_masc_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_smi" id="res-pos_10-14_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_tb" id="res-pos_10-14_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_ats-c" id="res-pos_10-14_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_masc_total" id="res-pos_10-14_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>n</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-group-id="14-minus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-pos_10-14_fem_uats" id="res-pos_10-14_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_saaj" id="res-pos_10-14_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_cons-externas" id="res-pos_10-14_fem_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_triagem" id="res-pos_10-14_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_enfermaria" id="res-pos_10-14_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_banco-socorros"
+                            id="res-pos_10-14_fem_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_outro-atip" id="res-pos_10-14_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_banco-sangue" id="res-pos_10-14_fem_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_smi" id="res-pos_10-14_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_tb" id="res-pos_10-14_fem_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_ats-c" id="res-pos_10-14_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_10-14_fem_total" id="res-pos_10-14_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>o</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-label-col-index="1" data-eden-row-group-id="19-minus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label">15-19</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-pos_15-19_masc_uats" id="res-pos_15-19_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_saaj" id="res-pos_15-19_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_cons-externas"
+                            id="res-pos_15-19_masc_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_triagem" id="res-pos_15-19_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_enfermaria" id="res-pos_15-19_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_banco-socorros"
+                            id="res-pos_15-19_masc_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_outro-atip" id="res-pos_15-19_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_banco-sangue" id="res-pos_15-19_masc_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_smi" id="res-pos_15-19_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_tb" id="res-pos_15-19_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_ats-c" id="res-pos_15-19_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_masc_total" id="res-pos_15-19_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>p</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-group-id="19-minus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-pos_15-19_fem_uats" id="res-pos_15-19_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_saaj" id="res-pos_15-19_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_cons-externas" id="res-pos_15-19_fem_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_triagem" id="res-pos_15-19_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_enfermaria" id="res-pos_15-19_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_banco-socorros"
+                            id="res-pos_15-19_fem_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_outro-atip" id="res-pos_15-19_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_banco-sangue" id="res-pos_15-19_fem_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_smi" id="res-pos_15-19_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_tb" id="res-pos_15-19_fem_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_ats-c" id="res-pos_15-19_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_15-19_fem_total" id="res-pos_15-19_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>q</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-label-col-index="1" data-eden-row-group-id="24-minus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label">20-24</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-pos_20-24_masc_uats" id="res-pos_20-24_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_saaj" id="res-pos_20-24_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_cons-externas"
+                            id="res-pos_20-24_masc_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_triagem" id="res-pos_20-24_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_enfermaria" id="res-pos_20-24_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_banco-socorros"
+                            id="res-pos_20-24_masc_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_outro-atip" id="res-pos_20-24_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_banco-sangue" id="res-pos_20-24_masc_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_smi" id="res-pos_20-24_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_tb" id="res-pos_20-24_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_ats-c" id="res-pos_20-24_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_masc_total" id="res-pos_20-24_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>r</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-group-id="24-minus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-pos_20-24_fem_uats" id="res-pos_20-24_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_saaj" id="res-pos_20-24_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_cons-externas" id="res-pos_20-24_fem_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_triagem" id="res-pos_20-24_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_enfermaria" id="res-pos_20-24_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_banco-socorros"
+                            id="res-pos_20-24_fem_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_outro-atip" id="res-pos_20-24_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_banco-sangue" id="res-pos_20-24_fem_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_smi" id="res-pos_20-24_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_tb" id="res-pos_20-24_fem_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_ats-c" id="res-pos_20-24_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_20-24_fem_total" id="res-pos_20-24_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>s</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-label-col-index="1" data-eden-row-group-id="25-plus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label">25+</th>
+                    <th scope="row" class="tes-ats__row-label">Masc.</th>
+                    <td><input type="number" name="res-pos_25-plus_masc_uats" id="res-pos_25-plus_masc_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_saaj" id="res-pos_25-plus_masc_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_cons-externas"
+                            id="res-pos_25-plus_masc_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_triagem" id="res-pos_25-plus_masc_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_enfermaria" id="res-pos_25-plus_masc_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_banco-socorros"
+                            id="res-pos_25-plus_masc_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_outro-atip" id="res-pos_25-plus_masc_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_banco-sangue"
+                            id="res-pos_25-plus_masc_banco-sangue" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_smi" id="res-pos_25-plus_masc_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_tb" id="res-pos_25-plus_masc_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_ats-c" id="res-pos_25-plus_masc_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_masc_total" id="res-pos_25-plus_masc_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>t</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pos" data-eden-row-group-id="25-plus">
+                    <th scope="row" class="tes-ats__row-label">Fem.</th>
+                    <td><input type="number" name="res-pos_25-plus_fem_uats" id="res-pos_25-plus_fem_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_saaj" id="res-pos_25-plus_fem_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_cons-externas"
+                            id="res-pos_25-plus_fem_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_triagem" id="res-pos_25-plus_fem_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_enfermaria" id="res-pos_25-plus_fem_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_banco-socorros"
+                            id="res-pos_25-plus_fem_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_outro-atip" id="res-pos_25-plus_fem_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_banco-sangue"
+                            id="res-pos_25-plus_fem_banco-sangue" data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_smi" id="res-pos_25-plus_fem_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_tb" id="res-pos_25-plus_fem_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_ats-c" id="res-pos_25-plus_fem_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="res-pos_25-plus_fem_total" id="res-pos_25-plus_fem_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>u</td>
+                </tr>
+
+                <!-- INDETERMINADO -->
+                <tr>
+                    <th scope="row" colspan="3" class="eden-u-text-right">Indet.</th>
+                    <td><input type="number" name="indet_uats" id="indet_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="indet_saaj" id="indet_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="indet_cons-externas" id="indet_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="indet_triagem" id="indet_triagem" data-eden-group="total"></td>
+                    <td><input type="number" name="indet_enfermaria" id="indet_enfermaria" data-eden-group="total"></td>
+                    <td><input type="number" name="indet_banco-socorros" id="indet_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="indet_outro-atip" id="indet_outro-atip" data-eden-group="total"></td>
+                    <td><input type="number" name="indet_banco-sangue" id="indet_banco-sangue" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="indet_smi" id="indet_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="indet_tb" id="indet_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="indet_ats-c" id="indet_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="indet_total" id="indet_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                    <td>v</td>
+                </tr>
+
+                <!-- HISTORIAL DE TESTAGEM -->
+                <tr data-eden-row-category-id="historial" data-eden-row-label-col-index="1">
+                    <th rowspan="2" scope="rowgroup" class="eden-u-text-left" data-eden-row-category-label="historial">Historial de <br>Testagem</th>
+                    <th scope="row" colspan="3" class="eden-u-text-right">1<sup>a</sup> vez testado</th>
+                    <td><input type="number" name="1a-vez-testado_uats" id="1a-vez-testado_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_saaj" id="1a-vez-testado_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_cons-externas" id="1a-vez-testado_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_triagem" id="1a-vez-testado_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_enfermaria" id="1a-vez-testado_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_banco-socorros" id="1a-vez-testado_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_outro-atip" id="1a-vez-testado_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_banco-sangue" id="1a-vez-testado_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_smi" id="1a-vez-testado_smi" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="1a-vez-testado_tb" id="1a-vez-testado_tb" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="1a-vez-testado_ats-c" id="1a-vez-testado_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="1a-vez-testado_total" id="1a-vez-testado_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>w</td>
+                </tr>
+                <tr data-eden-row-category-id="historial">
+                    <th colspan="3" scope="row" class="eden-u-text-right eden-u-padding-x-sm">Pos. (+) no passado</th>
+                    <td><input type="number" name="pos-passado_uats" id="pos-passado_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_saaj" id="pos-passado_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_cons-externas" id="pos-passado_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_triagem" id="pos-passado_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_enfermaria" id="pos-passado_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_banco-socorros" id="pos-passado_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_outro-atip" id="pos-passado_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_banco-sangue" id="pos-passado_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_smi" id="pos-passado_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_tb" id="pos-passado_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="pos-passado_ats-c" id="pos-passado_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="pos-passado_total" id="pos-passado_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>x</td>
+                </tr>
+
+                <!-- REFERÊNCIAS -->
+                <tr>
+                    <th colspan="4" scope="row" class="eden-u-text-right"><b>Referências para Serviços de <br>Prevenção
+                            Combinada</b></th>
+                    <td><input type="number" name="referencia-prevencao_uats" id="referencia-prevencao_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_saaj" id="referencia-prevencao_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_cons-externas"
+                            id="referencia-prevencao_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_triagem" id="referencia-prevencao_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_enfermaria" id="referencia-prevencao_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_banco-socorros"
+                            id="referencia-prevencao_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_outro-atip" id="referencia-prevencao_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_banco-sangue"
+                            id="referencia-prevencao_banco-sangue" data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_smi" id="referencia-prevencao_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_tb" id="referencia-prevencao_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_ats-c" id="referencia-prevencao_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="referencia-prevencao_total" id="referencia-prevencao_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>y</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="tes-ats__section">
+        <h2 class="tes-ats__section-title">TESTAGEM DE SUBGRUPOS</h2>
+        <table class="eden-c-table" data-eden-row-label-col-index="0">
+            <colgroup>
+                <col style="width: 114px">
+                <col style="width: calc(38px * 2)">
+                <col style="width: 38px">
+                <col span="12" style="width: var(--_default-cell-width, 70px)">
+                <col style="width: 22px">
+            </colgroup>
+            <tbody>
+                <!-- POPULAÇÃO CHAVE -->
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-label-col-index="2" data-eden-row-group-id="ts">
+                    <th rowspan="10" scope="rowgroup" class="eden-u-text-left eden-u-text-regular" data-eden-row-category-label="res-pop-chave"><b>Resultados</b>
+                        <br>(por Pop. Chave)</th>
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="ts">TS</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="ts_res-pos_uats" id="ts_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_saaj" id="ts_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_cons-externas" id="ts_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_triagem" id="ts_res-pos_triagem" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="ts_res-pos_enfermaria" id="ts_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_banco-socorros" id="ts_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_outro-atip" id="ts_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_banco-sangue" id="ts_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_smi" id="ts_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_tb" id="ts_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_ats-c" id="ts_res-pos_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-pos_total" id="ts_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>aa</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-group-id="ts">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="ts_res-neg_uats" id="ts_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_saaj" id="ts_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_cons-externas" id="ts_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_triagem" id="ts_res-neg_triagem" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="ts_res-neg_enfermaria" id="ts_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_banco-socorros" id="ts_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_outro-atip" id="ts_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_banco-sangue" id="ts_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_smi" id="ts_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_tb" id="ts_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_ats-c" id="ts_res-neg_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="ts_res-neg_total" id="ts_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>bb</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-label-col-index="1" data-eden-row-group-id="hsh">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="hsh">HSH</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="hsh_res-pos_uats" id="hsh_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_saaj" id="hsh_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_cons-externas" id="hsh_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_triagem" id="hsh_res-pos_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_enfermaria" id="hsh_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_banco-socorros" id="hsh_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_outro-atip" id="hsh_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_banco-sangue" id="hsh_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_smi" id="hsh_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_tb" id="hsh_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-pos_ats-c" id="hsh_res-pos_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="hsh_res-pos_total" id="hsh_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>cc</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-group-id="hsh">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="hsh_res-neg_uats" id="hsh_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_saaj" id="hsh_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_cons-externas" id="hsh_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_triagem" id="hsh_res-neg_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_enfermaria" id="hsh_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_banco-socorros" id="hsh_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_outro-atip" id="hsh_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_banco-sangue" id="hsh_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_smi" id="hsh_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_tb" id="hsh_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="hsh_res-neg_ats-c" id="hsh_res-neg_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="hsh_res-neg_total" id="hsh_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>dd</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-label-col-index="1" data-eden-row-group-id="pid">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="pid">PID</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="pid_res-pos_uats" id="pid_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_saaj" id="pid_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_cons-externas" id="pid_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_triagem" id="pid_res-pos_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_enfermaria" id="pid_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_banco-socorros" id="pid_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_outro-atip" id="pid_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_banco-sangue" id="pid_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_smi" id="pid_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_tb" id="pid_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-pos_ats-c" id="pid_res-pos_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="pid_res-pos_total" id="pid_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>ee</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-group-id="pid">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="pid_res-neg_uats" id="pid_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_saaj" id="pid_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_cons-externas" id="pid_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_triagem" id="pid_res-neg_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_enfermaria" id="pid_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_banco-socorros" id="pid_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_outro-atip" id="pid_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_banco-sangue" id="pid_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_smi" id="pid_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_tb" id="pid_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="pid_res-neg_ats-c" id="pid_res-neg_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="pid_res-neg_total" id="pid_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>ff</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-label-col-index="1" data-eden-row-group-id="rec">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="rec">REC</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="rec_res-pos_uats" id="rec_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_saaj" id="rec_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_cons-externas" id="rec_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_triagem" id="rec_res-pos_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_enfermaria" id="rec_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_banco-socorros" id="rec_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_outro-atip" id="rec_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_banco-sangue" id="rec_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_smi" id="rec_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_tb" id="rec_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-pos_ats-c" id="rec_res-pos_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="rec_res-pos_total" id="rec_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>gg</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-group-id="rec">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="rec_res-neg_uats" id="rec_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_saaj" id="rec_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_cons-externas" id="rec_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_triagem" id="rec_res-neg_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_enfermaria" id="rec_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_banco-socorros" id="rec_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_outro-atip" id="rec_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_banco-sangue" id="rec_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_smi" id="rec_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_tb" id="rec_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="rec_res-neg_ats-c" id="rec_res-neg_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="rec_res-neg_total" id="rec_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>hh</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-label-col-index="1" data-eden-row-group-id="tg">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="tg">TG</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="tg_res-pos_uats" id="tg_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_saaj" id="tg_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_cons-externas" id="tg_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_triagem" id="tg_res-pos_triagem" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="tg_res-pos_enfermaria" id="tg_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_banco-socorros" id="tg_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_outro-atip" id="tg_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_banco-sangue" id="tg_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_smi" id="tg_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_tb" id="tg_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_ats-c" id="tg_res-pos_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-pos_total" id="tg_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>ii</td>
+                </tr>
+                <tr data-eden-row-category-id="res-pop-chave" data-eden-row-group-id="tg">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="tg_res-neg_uats" id="tg_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_saaj" id="tg_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_cons-externas" id="tg_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_triagem" id="tg_res-neg_triagem" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="tg_res-neg_enfermaria" id="tg_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_banco-socorros" id="tg_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_outro-atip" id="tg_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_banco-sangue" id="tg_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_smi" id="tg_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_tb" id="tg_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_ats-c" id="tg_res-neg_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="tg_res-neg_total" id="tg_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>jj</td>
+                </tr>
+
+                <!-- MINEIROS -->
+                 <tr data-eden-row-category-id="res-mineiros" data-eden-row-label-col-index="2" data-eden-row-group-id="min">
+                    <th rowspan="2" scope="rowgroup" class="eden-u-text-left eden-u-text-regular" data-eden-row-category-label="res-mineiros"><b>Resultados</b>
+                        <br>(por Mineiros)</th>
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="min">MIN</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="min_res-pos_uats" id="min_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_saaj" id="min_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_cons-externas" id="min_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_triagem" id="min_res-pos_triagem" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="min_res-pos_enfermaria" id="min_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_banco-socorros" id="min_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_outro-atip" id="min_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_banco-sangue" id="min_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_smi" id="min_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_tb" id="min_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_ats-c" id="min_res-pos_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-pos_total" id="min_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>kk</td>
+                </tr>
+                <tr data-eden-row-category-id="res-mineiros" data-eden-row-group-id="min">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="min_res-neg_uats" id="min_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_saaj" id="min_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_cons-externas" id="min_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_triagem" id="min_res-neg_triagem" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="min_res-neg_enfermaria" id="min_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_banco-socorros" id="min_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_outro-atip" id="min_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_banco-sangue" id="min_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_smi" id="min_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_tb" id="min_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_ats-c" id="min_res-neg_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="min_res-neg_total" id="min_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>ll</td>
+                </tr>
+
+                <!-- CONTACTOS DOS CASOS ÍNDICES -->
+                 <tr data-eden-row-category-id="res-casos-indice" data-eden-row-label-col-index="2" data-eden-row-group-id="parc-sexuais">
+                    <th rowspan="8" scope="rowgroup" class="eden-u-text-left eden-u-text-regular" data-eden-row-category-label="res-casos-indice"><b>Resultados</b>
+                        <br>(por Contactos <br> dos Casos Índices)</th>
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="parc-sexuais">Parceiros <br>Sexuais</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="parc-sexuais_res-pos_uats" id="parc-sexuais_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_saaj" id="parc-sexuais_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_cons-externas" id="parc-sexuais_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_triagem" id="parc-sexuais_res-pos_triagem" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="parc-sexuais_res-pos_enfermaria" id="parc-sexuais_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_banco-socorros" id="parc-sexuais_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_outro-atip" id="parc-sexuais_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_banco-sangue" id="parc-sexuais_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_smi" id="parc-sexuais_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_tb" id="parc-sexuais_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_ats-c" id="parc-sexuais_res-pos_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-pos_total" id="parc-sexuais_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>mm</td>
+                </tr>
+                <tr data-eden-row-category-id="res-casos-indice" data-eden-row-group-id="parc-sexuais">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="parc-sexuais_res-neg_uats" id="parc-sexuais_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_saaj" id="parc-sexuais_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_cons-externas" id="parc-sexuais_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_triagem" id="parc-sexuais_res-neg_triagem" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="parc-sexuais_res-neg_enfermaria" id="parc-sexuais_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_banco-socorros" id="parc-sexuais_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_outro-atip" id="parc-sexuais_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_banco-sangue" id="parc-sexuais_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_smi" id="parc-sexuais_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_tb" id="parc-sexuais_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_ats-c" id="parc-sexuais_res-neg_ats-c" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-sexuais_res-neg_total" id="parc-sexuais_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>nn</td>
+                </tr>
+                <tr data-eden-row-category-id="res-casos-indice" data-eden-row-label-col-index="1" data-eden-row-group-id="filhos-15-minus">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="filhos-15-minus">Filhos &lt;15</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="filhos-menores-15_res-pos_uats" id="filhos-menores-15_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_saaj" id="filhos-menores-15_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_cons-externas" id="filhos-menores-15_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_triagem" id="filhos-menores-15_res-pos_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_enfermaria" id="filhos-menores-15_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_banco-socorros" id="filhos-menores-15_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_outro-atip" id="filhos-menores-15_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_banco-sangue" id="filhos-menores-15_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_smi" id="filhos-menores-15_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_tb" id="filhos-menores-15_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_ats-c" id="filhos-menores-15_res-pos_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="filhos-menores-15_res-pos_total" id="filhos-menores-15_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>oo</td>
+                </tr>
+                <tr data-eden-row-category-id="res-casos-indice" data-eden-row-group-id="filhos-15-minus">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="filhos-menores-15_res-neg_uats" id="filhos-menores-15_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_saaj" id="filhos-menores-15_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_cons-externas" id="filhos-menores-15_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_triagem" id="filhos-menores-15_res-neg_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_enfermaria" id="filhos-menores-15_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_banco-socorros" id="filhos-menores-15_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_outro-atip" id="filhos-menores-15_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_banco-sangue" id="filhos-menores-15_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_smi" id="filhos-menores-15_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_tb" id="filhos-menores-15_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_ats-c" id="filhos-menores-15_res-neg_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="filhos-menores-15_res-neg_total" id="filhos-menores-15_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>pp</td>
+                </tr>
+                <tr data-eden-row-category-id="res-casos-indice" data-eden-row-label-col-index="1" data-eden-row-group-id="mae-pai">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="mae-pai">Mãe / Pai (CI Ped. &lt;15)</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="mae-pai_res-pos_uats" id="mae-pai_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_saaj" id="mae-pai_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_cons-externas" id="mae-pai_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_triagem" id="mae-pai_res-pos_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_enfermaria" id="mae-pai_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_banco-socorros" id="mae-pai_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_outro-atip" id="mae-pai_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_banco-sangue" id="mae-pai_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_smi" id="mae-pai_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_tb" id="mae-pai_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-pos_ats-c" id="mae-pai_res-pos_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="mae-pai_res-pos_total" id="mae-pai_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>qq</td>
+                </tr>
+                <tr data-eden-row-category-id="res-casos-indice" data-eden-row-group-id="mae-pai">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="mae-pai_res-neg_uats" id="mae-pai_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_saaj" id="mae-pai_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_cons-externas" id="mae-pai_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_triagem" id="mae-pai_res-neg_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_enfermaria" id="mae-pai_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_banco-socorros" id="mae-pai_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_outro-atip" id="mae-pai_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_banco-sangue" id="mae-pai_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_smi" id="mae-pai_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_tb" id="mae-pai_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="mae-pai_res-neg_ats-c" id="mae-pai_res-neg_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="mae-pai_res-neg_total" id="mae-pai_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>rr</td>
+                </tr>
+                <tr data-eden-row-category-id="res-casos-indice" data-eden-row-label-col-index="1" data-eden-row-group-id="parc-pid">
+                    <th rowspan="2" scope="rowgroup" class="tes-ats__row-label" data-eden-row-group-label="parc-pid">Parc. PID</th>
+                    <th scope="row" class="tes-ats__row-label">P(+)</th>
+                    <td><input type="number" name="parc-pid_res-pos_uats" id="parc-pid_res-pos_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_saaj" id="parc-pid_res-pos_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_cons-externas" id="parc-pid_res-pos_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_triagem" id="parc-pid_res-pos_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_enfermaria" id="parc-pid_res-pos_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_banco-socorros" id="parc-pid_res-pos_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_outro-atip" id="parc-pid_res-pos_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_banco-sangue" id="parc-pid_res-pos_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_smi" id="parc-pid_res-pos_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_tb" id="parc-pid_res-pos_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-pos_ats-c" id="parc-pid_res-pos_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="parc-pid_res-pos_total" id="parc-pid_res-pos_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>ss</td>
+                </tr>
+                <tr data-eden-row-category-id="res-casos-indice" data-eden-row-group-id="parc-pid">
+                    <th scope="row" class="tes-ats__row-label">N(-)</th>
+                    <td><input type="number" name="parc-pid_res-neg_uats" id="parc-pid_res-neg_uats" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_saaj" id="parc-pid_res-neg_saaj" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_cons-externas" id="parc-pid_res-neg_cons-externas"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_triagem" id="parc-pid_res-neg_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_enfermaria" id="parc-pid_res-neg_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_banco-socorros" id="parc-pid_res-neg_banco-socorros"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_outro-atip" id="parc-pid_res-neg_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_banco-sangue" id="parc-pid_res-neg_banco-sangue"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_smi" id="parc-pid_res-neg_smi" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_tb" id="parc-pid_res-neg_tb" data-eden-group="total"></td>
+                    <td><input type="number" name="parc-pid_res-neg_ats-c" id="parc-pid_res-neg_ats-c" data-eden-group="total">
+                    </td>
+                    <td><input type="number" name="parc-pid_res-neg_total" id="parc-pid_res-neg_total" value="0" tabindex="-1"
+                            readonly data-eden-total="total"></td>
+                    <td>tt</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="tes-ats__section">
+        <h2 class="tes-ats__section-title">LIGAÇÃO CLÍNICA DOS UTENTES DIAGNOSTICADOS HIV  <small class="eden-u-text-underline">(resultados do mês passado)</small></h2>
+        <table class="eden-c-table" data-eden-row-label-col-index="0">
+             <colgroup>
+                <col style="width: calc(114px + 38px * 3)">
+                <col span="12" style="width: var(--_default-cell-width, 70px)">
+                <col style="width: 22px">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row" class="eden-u-text-right"><b>Nº HIV+ ligado aos serviços clínicos</b></th>
+                    <td><input type="number" name="hiv-pos-ligado_uats" id="hiv-pos-ligado_uats"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_saaj" id="hiv-pos-ligado_saaj"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_cons-externas"
+                            id="hiv-pos-ligado_cons-externas" data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_triagem" id="hiv-pos-ligado_triagem"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_enfermaria" id="hiv-pos-ligado_enfermaria"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_banco-socorros"
+                            id="hiv-pos-ligado_banco-socorros" data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_outro-atip" id="hiv-pos-ligado_outro-atip"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_banco-sangue"
+                            id="hiv-pos-ligado_banco-sangue" data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_smi" id="hiv-pos-ligado_smi"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_tb" id="hiv-pos-ligado_tb"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_ats-c" id="hiv-pos-ligado_ats-c"
+                            data-eden-group="total"></td>
+                    <td><input type="number" name="hiv-pos-ligado_total" id="hiv-pos-ligado_total" value="0"
+                            tabindex="-1" readonly data-eden-total="total"></td>
+                    <td>z</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+     <footer class="tes-ats__footer">
+        <div class="tes-ats__notes">
+            <p>1 <strong>Consultas Externas:</strong> Usar coluna para reportar estatística das consultas externas e a
+                estomatologia, cirurgia, medicina, pediatria, ORC, oftalmologia, doenças crônicas.</p>
+            <p>2 <strong>Outro ATIP:</strong> Usar coluna para reportar qualquer testagem iniciada pelo provedor (ATIP)
+                que não seja capturada nas outras colunas do resumo mensal.</p>
+            <p>3 <strong>SMI/TB:</strong> Usar para reportar testagem de "outros acompanhantes" da SMI (testagem da mulher grávida/lactante/parceiro <span class="eden-u-text-underline">NÃO</span> deve constar neste resumo) e dos familiares
+                e acompanhantes testados no TB.</p>
+        </div>
+        <div class="tes-ats__signature-block">
+            <input type="text" name="signature" id="signature">
+            <label for="signature">Assinatura do Responsável</label>
+        </div>
+    </footer>
+
+    <div class="eden-c-notes-editor tes-hiv__notes" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true"
+            data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes">
+        </p>
+    </div>
+</div>
+<div class="eden-c-page-footer">
+    <span class="eden-c-page-footer__date"></span>
+    <span>Totalizado via: <a
+            href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a>
+        - v2.0</span>
+</div>
