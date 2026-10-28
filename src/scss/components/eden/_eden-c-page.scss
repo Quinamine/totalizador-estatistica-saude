@@ -10,7 +10,23 @@
     margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-landscape-left);
 }
 
-@page pagination {
+@page portrait-paginated {
+    size: A4 portrait;
+    margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-portrait-left);
+
+    @bottom-center {
+        content: "Página " counter(page) " de " counter(pages);
+        font-family: Arial, sans-serif;
+        font-size: var(--eden-sys-font-size-050);
+        color: var(--eden-sys-surface-content);
+        vertical-align: top;
+    }
+}
+
+@page landscape-paginated {
+    size: A4 landscape;
+    margin: var(--eden-sys-page-margin-top) var(--eden-sys-page-margin-right) var(--eden-sys-page-margin-bottom) var(--eden-sys-page-margin-landscape-left);
+    
     @bottom-center {
         content: "Página " counter(page) " de " counter(pages);
         font-family: Arial, sans-serif;
@@ -27,7 +43,6 @@
     background-color: var(--eden-sys-surface-100);
     padding-inline: var(--eden-page-padding-x, var(--eden-sys-space-500));
     padding-block: var(--eden-page-padding-y, var(--eden-sys-space-500));
-    ;
 
     @media print {
         width: 100% !important;
@@ -45,8 +60,12 @@
             page: page-landscape;
         }
 
-        &--has-pagination {
-            page: pagination;
+        &--portrait-paginated {
+            page: portrait-paginated;
+        }
+
+        &--landscape-paginated {
+            page: landscape-paginated;
         }
     }
 

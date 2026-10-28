@@ -32,7 +32,7 @@ Este repositório está em desenvolvimento activo.
 - [x] RM Consultas Externas
 - [ ] RM CCD
 - [x] RM Malária
-- [ ] RM SAAJ
+- [x] RM SAAJ
 
 #### Farmácia
 - [x] Requisição/Balancete
@@ -64,7 +64,7 @@ Este repositório está em desenvolvimento activo.
 - [x] PNCT 09 
 - [x] PNCT APSS 11A 
 - [x] PNCT 12 
-- [ ] PNCT 14D
+- [x] PNCT 14D
 
 
 

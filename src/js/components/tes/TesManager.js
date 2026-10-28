@@ -385,7 +385,10 @@ export const TesManager = {
         const pageFooter = document.createElement('div');
         pageFooter.classList.add('eden-c-page-footer');
 
-        const isMultiPage = document.querySelector('[data-eden-js="tes-report"]')?.classList.contains('eden-c-page--has-pagination');
+        const reportElement = document.querySelector('[data-eden-js="tes-report"]');
+        const isMultiPage = reportElement
+            ? Array.from(reportElement.classList).some( cls => cls.endsWith('paginated'))
+            : false;
         if (isMultiPage) {
             pageFooter.classList.add('eden-c-page-footer--fixed');
         }
