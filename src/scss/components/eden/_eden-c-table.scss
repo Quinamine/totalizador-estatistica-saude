@@ -54,7 +54,7 @@
     }
 
     &__cell--na {
-        background-color: var(--_cell-na-bg);
+        background-color: var(--_cell-na-bg) !important;
         border-inline-start-color: var(--_cell-na-bg);
     }
 

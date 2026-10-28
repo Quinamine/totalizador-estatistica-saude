@@ -53,7 +53,11 @@ export const EdenCellPositionBar = {
             document.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`);
 
         const thOffset = tr.querySelectorAll('th').length;
-        const colId = td.dataset.edenColLabelIndex ?? (td.cellIndex - thOffset) + 1;
+        const tdOffset = Array.from(tr.children).filter( el =>
+            el.tagName === 'TD' && el.cellIndex < rowLabel.cellIndex && !el.querySelector('input')
+        ).length;
+        
+        const colId = td.dataset.edenColLabelIndex ?? (td.cellIndex - thOffset - tdOffset) + 1;
 
         let colLabel = table.querySelector(`[data-eden-col-label~="c${colId}"]`);
         const complementaryId = colId;

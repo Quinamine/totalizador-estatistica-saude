@@ -1,0 +1,96 @@
+.tes-saaj {
+    --_default-cell-width: 55px;
+    --_header-color: oklch(82.4% 0.038 var(--eden-ref-primary-hue));
+    --_title-indent: var(--_default-cell-width);
+
+
+     @media print {
+        --eden-sys-page-content-offset-top: 0;
+
+        table {
+            --_cell-na-bg: #9b9e9f !important;
+             --eden-table-cell-height: 26px;
+
+             th {
+                line-height: 1.2;
+             }
+        }
+    }
+
+
+    thead {
+        th {
+            --eden-table-cell-padding-x: var(--eden-sys-space-050);
+        }
+    }
+
+    .tes-c-gov {
+        gap: var(--eden-sys-space-150);
+        align-items: flex-start;
+        margin-top: 3px;
+        
+        span {
+            font-size: var(--eden-sys-font-size-100);
+        }
+    }
+
+    &__header-row--grid {
+        display: grid;
+        grid-template-columns: 257px 1fr 170px;
+        gap: var(--eden-sys-space-600);
+    }
+
+    &__meta-group {
+        display: flex;
+        align-items: center;
+        gap: var(--eden-sys-space-100);
+        margin-bottom: var(--eden-sys-space-150);
+        max-width: 410px;
+        font-size: var(--eden-sys-font-size-100);
+
+        &--stack {
+            flex-direction: column;
+            margin-top: var(--eden-sys-space-300);
+        }
+
+        &--uppercase {
+             text-transform: uppercase;
+        }
+
+        &--large {
+            width: 250px;
+        }
+
+        label {
+            white-space: nowrap;
+        }
+    }
+
+    &__title {
+        margin-block: var(--eden-sys-space-500) var(--eden-sys-space-200);
+        margin-left: var(--_title-indent);
+        text-transform: uppercase;
+        font-size: var(--eden-sys-font-size-300);
+    }
+
+    thead,
+    tr td:nth-child(2) {
+        background-color: var(--_header-color);
+        text-align: center;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        margin-top: var(--eden-sys-space-300);
+
+        label {
+            white-space: nowrap;
+        }
+    }
+
+    &__model-code {
+        font-weight: var(--eden-sys-font-weight-bold);
+    }
+}
