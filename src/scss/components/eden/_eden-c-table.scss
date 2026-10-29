@@ -43,6 +43,10 @@
         }
     }
 
+    &__cell--white {
+        background-color: #{$eden-ref-neutral-100};
+    }
+
     &__cell--sticky-left {
         @include tablet {
             position: sticky;
@@ -78,6 +82,8 @@
             th,
             td {
                 border: none;
+                height: 100%;
+                padding: 0 !important;
             }
         }
 
@@ -87,6 +93,10 @@
 
         &__tfoot-spacer {
             height: var(--eden-sys-tfoot-spacer-height);
+
+             &--sm {
+                --eden-sys-tfoot-spacer-height: 24px;
+            }
         }
     }
 }
