@@ -1,5 +1,5 @@
 .tes-saaj {
-    --_default-cell-width: 55px;
+    --_default-cell-width: 65px;
     --_header-color: oklch(82.4% 0.038 var(--eden-ref-primary-hue));
     --_title-indent: var(--_default-cell-width);
 
@@ -9,14 +9,17 @@
 
         table {
             --_cell-na-bg: #9b9e9f !important;
-             --eden-table-cell-height: 26px;
+             --eden-table-cell-height: 24.5px;
 
              th {
                 line-height: 1.2;
              }
         }
-    }
 
+        footer {
+            margin-top: -12px;
+        }
+    }
 
     thead {
         th {

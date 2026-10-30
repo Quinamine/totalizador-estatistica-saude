@@ -44,17 +44,17 @@
 	<section class="tes-saaj__section">
 		<table class="eden-c-table" data-eden-row-label-col-index="2">
 			<colgroup>
-				<col span="4" style="width: var(--_default-cell-width, 55px)">
+				<col span="2" style="width: var(--_default-cell-width, 65px)">
+				<col span="2" style="width: 55px">
 				<col style="width: 40px">
 				<col style="width: 448px">
-				<col span="13" style="width: var(--_default-cell-width, 55px)">
+				<col span="12" style="width: 55px">
 			</colgroup>
 			<thead>
 				<tr>
-					<th rowspan="3" scope="col">Linha do Resumo Mensal</th>
-					<th rowspan="3" scope="col">Coluna no livro de registo</th>
+					<th rowspan="3" scope="col" class="eden-c-table__cell--white">Linha do Resumo Mensal</th>
+					<th rowspan="3" scope="col">Colunas no livro de registo</th>
 					<th colspan="16" scope="col">Indicadores/Características</th>
-					<th rowspan="3" scope="col">TOTAL MF</th>
 				</tr>
 				<tr>
 					<th rowspan="2" colspan="4"></th>
@@ -104,12 +104,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="1as-consultas_fem_25_plus" id="1as-consultas_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="1as-consultas_tot_m" id="1as-consultas_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="1as-consultas_tot_masc" id="1as-consultas_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="1as-consultas_tot_f" id="1as-consultas_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="1as-consultas_tot_fem" id="1as-consultas_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="1as-consultas_tot_mf" id="1as-consultas_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 2: Total de Consultas Seguintes -->
 				<tr data-eden-row-category-id="consultas" data-eden-row-label-col-index="1">
@@ -136,12 +134,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="consultas-seg_fem_25_plus" id="consultas-seg_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="consultas-seg_tot_m" id="consultas-seg_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="consultas-seg_tot_masc" id="consultas-seg_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="consultas-seg_tot_f" id="consultas-seg_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="consultas-seg_tot_fem" id="consultas-seg_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="consultas-seg_tot_mf" id="consultas-seg_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 3: Espontâneas -->
 				<tr data-eden-row-label-col-index="3">
@@ -171,12 +167,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="espontaneas_fem_25_plus" id="espontaneas_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="espontaneas_tot_m" id="espontaneas_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="espontaneas_tot_masc" id="espontaneas_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="espontaneas_tot_f" id="espontaneas_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="espontaneas_tot_fem" id="espontaneas_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="espontaneas_tot_mf" id="espontaneas_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 4: Encaminhados por Activistas -->
 				<tr data-eden-row-label-col-index="1">
@@ -204,12 +198,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="enc-activistas_fem_25_plus" id="enc-activistas_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="enc-activistas_tot_m" id="enc-activistas_tot_m" value="0"
+					<td><input type="number" name="enc-activistas_tot_masc" id="enc-activistas_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="enc-activistas_tot_f" id="enc-activistas_tot_f" value="0"
+					<td><input type="number" name="enc-activistas_tot_fem" id="enc-activistas_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="enc-activistas_tot_mf" id="enc-activistas_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 5: Encaminhados por Profissional de Saúde -->
 				<tr data-eden-row-label-col-index="1">
@@ -237,12 +229,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="enc-prof-saude_fem_25_plus" id="enc-prof-saude_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="enc-prof-saude_tot_m" id="enc-prof-saude_tot_m" value="0"
+					<td><input type="number" name="enc-prof-saude_tot_masc" id="enc-prof-saude_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="enc-prof-saude_tot_f" id="enc-prof-saude_tot_f" value="0"
+					<td><input type="number" name="enc-prof-saude_tot_fem" id="enc-prof-saude_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="enc-prof-saude_tot_mf" id="enc-prof-saude_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 6: Encaminhados por Professor na Escola -->
 				<tr data-eden-row-label-col-index="1">
@@ -270,12 +260,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="enc-professor_fem_25_plus" id="enc-professor_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="enc-professor_tot_m" id="enc-professor_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="enc-professor_tot_masc" id="enc-professor_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="enc-professor_tot_f" id="enc-professor_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="enc-professor_tot_fem" id="enc-professor_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="enc-professor_tot_mf" id="enc-professor_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 7: Encaminhados por Outros -->
 				<tr data-eden-row-label-col-index="1">
@@ -302,12 +290,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="enc-outros_fem_25_plus" id="enc-outros_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="enc-outros_tot_m" id="enc-outros_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="enc-outros_tot_masc" id="enc-outros_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="enc-outros_tot_f" id="enc-outros_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="enc-outros_tot_fem" id="enc-outros_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="enc-outros_tot_mf" id="enc-outros_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 8: Situação Escolar - Dentro -->
 				<tr data-eden-row-category-id="situacao-escolar" data-eden-row-label-col-index="3">
@@ -338,12 +324,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="escolar-dentro_fem_25_plus" id="escolar-dentro_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="escolar-dentro_tot_m" id="escolar-dentro_tot_m" value="0"
+					<td><input type="number" name="escolar-dentro_tot_masc" id="escolar-dentro_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="escolar-dentro_tot_f" id="escolar-dentro_tot_f" value="0"
+					<td><input type="number" name="escolar-dentro_tot_fem" id="escolar-dentro_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="escolar-dentro_tot_mf" id="escolar-dentro_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 9: Situação Escolar - Fora -->
 				<tr data-eden-row-category-id="situacao-escolar">
@@ -371,30 +355,29 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="escolar-fora_fem_25_plus" id="escolar-fora_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="escolar-fora_tot_m" id="escolar-fora_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="escolar-fora_tot_masc" id="escolar-fora_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="escolar-fora_tot_f" id="escolar-fora_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="escolar-fora_tot_fem" id="escolar-fora_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="escolar-fora_tot_mf" id="escolar-fora_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 10: Nº de Parceiros presentes no SAAJ -->
 				<tr data-eden-row-category-id="parceiros">
 					<th scope="row">10</th>
 					<td>14</td>
-					<th colspan="4" scope="row" class="tes-saaj__row-label eden-u-text-center">Nº de Parceiros presentes no SAAJ</th>
-					<td><input type="number" name="parceiros-presentes_masc_10-minus" id="parceiros-presentes_masc_10-minus"
-							data-eden-group="total-masc grand-total"></td>
+					<th colspan="4" scope="row" class="tes-saaj__row-label eden-u-text-center">Nº de Parceiros presentes
+						no SAAJ</th>
+					<td><input type="number" name="parceiros-presentes_masc_10-minus"
+							id="parceiros-presentes_masc_10-minus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="parceiros-presentes_masc_10-14" id="parceiros-presentes_masc_10-14"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="parceiros-presentes_masc_15-19" id="parceiros-presentes_masc_15-19"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="parceiros-presentes_masc_20-24" id="parceiros-presentes_masc_20-24"
 							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="parceiros-presentes_masc_25_plus" id="parceiros-presentes_masc_25_plus"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="parceiros-presentes_fem_10-minus" id="parceiros-presentes_fem_10-minus"
-							data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="parceiros-presentes_masc_25_plus"
+							id="parceiros-presentes_masc_25_plus" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="parceiros-presentes_fem_10-minus"
+							id="parceiros-presentes_fem_10-minus" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="parceiros-presentes_fem_10-14" id="parceiros-presentes_fem_10-14"
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="parceiros-presentes_fem_15-19" id="parceiros-presentes_fem_15-19"
@@ -403,12 +386,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="parceiros-presentes_fem_25_plus" id="parceiros-presentes_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="parceiros-presentes_tot_m" id="parceiros-presentes_tot_m" value="0"
+					<td><input type="number" name="parceiros-presentes_tot_masc" id="parceiros-presentes_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="parceiros-presentes_tot_f" id="parceiros-presentes_tot_f" value="0"
+					<td><input type="number" name="parceiros-presentes_tot_fem" id="parceiros-presentes_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="parceiros-presentes_tot_mf" id="parceiros-presentes_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 11: Aconselhamento sobre Sexualidade -->
 				<tr data-eden-row-category-id="aconselhamento" data-eden-row-label-col-index="3">
@@ -440,12 +421,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="acons-sexualidade_fem_25_plus" id="acons-sexualidade_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="acons-sexualidade_tot_m" id="acons-sexualidade_tot_m" value="0"
+					<td><input type="number" name="acons-sexualidade_tot_masc" id="acons-sexualidade_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="acons-sexualidade_tot_f" id="acons-sexualidade_tot_f" value="0"
+					<td><input type="number" name="acons-sexualidade_tot_fem" id="acons-sexualidade_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="acons-sexualidade_tot_mf" id="acons-sexualidade_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 12: Aconselhamento ITS/HIV-SIDA -->
 				<tr data-eden-row-category-id="aconselhamento">
@@ -474,12 +453,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="acons-its-hiv_fem_25_plus" id="acons-its-hiv_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="acons-its-hiv_tot_m" id="acons-its-hiv_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="acons-its-hiv_tot_masc" id="acons-its-hiv_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="acons-its-hiv_tot_f" id="acons-its-hiv_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="acons-its-hiv_tot_fem" id="acons-its-hiv_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="acons-its-hiv_tot_mf" id="acons-its-hiv_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 13: Aconselhamento em VBG -->
 				<tr data-eden-row-category-id="aconselhamento">
@@ -508,12 +485,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="acons-vbg_fem_25_plus" id="acons-vbg_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="acons-vbg_tot_m" id="acons-vbg_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="acons-vbg_tot_masc" id="acons-vbg_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="acons-vbg_tot_f" id="acons-vbg_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="acons-vbg_tot_fem" id="acons-vbg_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="acons-vbg_tot_mf" id="acons-vbg_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 14: Aconselhamento Contracepção -->
 				<tr data-eden-row-category-id="aconselhamento">
@@ -522,8 +497,8 @@
 					<th scope="row" class="tes-saaj__row-label">Nº de
 						adolescentes
 						e jovens aconselhados sobre a Contracepção</th>
-					<td><input type="number" name="acons-contracepcao_masc_10-minus" id="acons-contracepcao_masc_10-minus"
-							data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="acons-contracepcao_masc_10-minus"
+							id="acons-contracepcao_masc_10-minus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="acons-contracepcao_masc_10-14" id="acons-contracepcao_masc_10-14"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="acons-contracepcao_masc_15-19" id="acons-contracepcao_masc_15-19"
@@ -542,12 +517,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="acons-contracepcao_fem_25_plus" id="acons-contracepcao_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="acons-contracepcao_tot_m" id="acons-contracepcao_tot_m" value="0"
+					<td><input type="number" name="acons-contracepcao_tot_masc" id="acons-contracepcao_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="acons-contracepcao_tot_f" id="acons-contracepcao_tot_f" value="0"
+					<td><input type="number" name="acons-contracepcao_tot_fem" id="acons-contracepcao_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="acons-contracepcao_tot_mf" id="acons-contracepcao_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 15: Aconselhamento Nutrição -->
 				<tr data-eden-row-category-id="aconselhamento">
@@ -576,12 +549,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="acons-nutricao_fem_25_plus" id="acons-nutricao_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="acons-nutricao_tot_m" id="acons-nutricao_tot_m" value="0"
+					<td><input type="number" name="acons-nutricao_tot_masc" id="acons-nutricao_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="acons-nutricao_tot_f" id="acons-nutricao_tot_f" value="0"
+					<td><input type="number" name="acons-nutricao_tot_fem" id="acons-nutricao_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="acons-nutricao_tot_mf" id="acons-nutricao_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 16: Aconselhamento Circuncisão -->
 				<tr data-eden-row-category-id="aconselhamento">
@@ -610,12 +581,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="acons-circuncisao_fem_25_plus" id="acons-circuncisao_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="acons-circuncisao_tot_m" id="acons-circuncisao_tot_m" value="0"
+					<td><input type="number" name="acons-circuncisao_tot_masc" id="acons-circuncisao_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="acons-circuncisao_tot_f" id="acons-circuncisao_tot_f" value="0"
+					<td><input type="number" name="acons-circuncisao_tot_fem" id="acons-circuncisao_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="acons-circuncisao_tot_mf" id="acons-circuncisao_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 17: Aconselhamento Saúde Mental -->
 				<tr data-eden-row-category-id="aconselhamento">
@@ -624,8 +593,8 @@
 					<th scope="row" class="tes-saaj__row-label">Nº de
 						adolescentes
 						e jovens aconselhados sobre a Saúde Mental</th>
-					<td><input type="number" name="acons-saude-mental_masc_10-minus" id="acons-saude-mental_masc_10-minus"
-							data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="acons-saude-mental_masc_10-minus"
+							id="acons-saude-mental_masc_10-minus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="acons-saude-mental_masc_10-14" id="acons-saude-mental_masc_10-14"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="acons-saude-mental_masc_15-19" id="acons-saude-mental_masc_15-19"
@@ -644,12 +613,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="acons-saude-mental_fem_25_plus" id="acons-saude-mental_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="acons-saude-mental_tot_m" id="acons-saude-mental_tot_m" value="0"
+					<td><input type="number" name="acons-saude-mental_tot_masc" id="acons-saude-mental_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="acons-saude-mental_tot_f" id="acons-saude-mental_tot_f" value="0"
+					<td><input type="number" name="acons-saude-mental_tot_fem" id="acons-saude-mental_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="acons-saude-mental_tot_mf" id="acons-saude-mental_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 18: Outros Aconselhamentos -->
 				<tr data-eden-row-category-id="aconselhamento">
@@ -678,12 +645,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="acons-outros_fem_25_plus" id="acons-outros_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="acons-outros_tot_m" id="acons-outros_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="acons-outros_tot_masc" id="acons-outros_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="acons-outros_tot_f" id="acons-outros_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="acons-outros_tot_fem" id="acons-outros_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="acons-outros_tot_mf" id="acons-outros_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 19: Rastreio para ITS -->
 				<tr data-eden-row-category-id="its" data-eden-row-label-col-index="3">
@@ -715,12 +680,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="rastreio-its_fem_25_plus" id="rastreio-its_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="rastreio-its_tot_m" id="rastreio-its_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="rastreio-its_tot_masc" id="rastreio-its_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="rastreio-its_tot_f" id="rastreio-its_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="rastreio-its_tot_fem" id="rastreio-its_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="rastreio-its_tot_mf" id="rastreio-its_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 20: Rastreio para Sífilis -->
 				<tr data-eden-row-category-id="its" data-eden-row-label-col-index="1">
@@ -748,12 +711,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="rastreio-sifilis_fem_25_plus" id="rastreio-sifilis_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="rastreio-sifilis_tot_m" id="rastreio-sifilis_tot_m" value="0"
+					<td><input type="number" name="rastreio-sifilis_tot_masc" id="rastreio-sifilis_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="rastreio-sifilis_tot_f" id="rastreio-sifilis_tot_f" value="0"
+					<td><input type="number" name="rastreio-sifilis_tot_fem" id="rastreio-sifilis_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="rastreio-sifilis_tot_mf" id="rastreio-sifilis_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 21: Tratados para ITS -->
 				<tr data-eden-row-category-id="its" data-eden-row-label-col-index="1">
@@ -781,12 +742,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="tratados-its_fem_25_plus" id="tratados-its_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="tratados-its_tot_m" id="tratados-its_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="tratados-its_tot_masc" id="tratados-its_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="tratados-its_tot_f" id="tratados-its_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="tratados-its_tot_fem" id="tratados-its_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="tratados-its_tot_mf" id="tratados-its_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 22: Tratados para Sífilis -->
 				<tr data-eden-row-category-id="its">
@@ -815,12 +774,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="tratados-sifilis_fem_25_plus" id="tratados-sifilis_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="tratados-sifilis_tot_m" id="tratados-sifilis_tot_m" value="0"
+					<td><input type="number" name="tratados-sifilis_tot_masc" id="tratados-sifilis_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="tratados-sifilis_tot_f" id="tratados-sifilis_tot_f" value="0"
+					<td><input type="number" name="tratados-sifilis_tot_fem" id="tratados-sifilis_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="tratados-sifilis_tot_mf" id="tratados-sifilis_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 23: Rastreio em VBG -->
 				<tr data-eden-row-category-id="vbg" data-eden-row-label-col-index="3">
@@ -852,12 +809,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="rastreio-vbg_fem_25_plus" id="rastreio-vbg_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="rastreio-vbg_tot_m" id="rastreio-vbg_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="rastreio-vbg_tot_masc" id="rastreio-vbg_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="rastreio-vbg_tot_f" id="rastreio-vbg_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="rastreio-vbg_tot_fem" id="rastreio-vbg_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="rastreio-vbg_tot_mf" id="rastreio-vbg_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 24: Seguimento de VBG -->
 				<tr data-eden-row-category-id="vbg">
@@ -886,12 +841,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="seguimento-vbg_fem_25_plus" id="seguimento-vbg_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="seguimento-vbg_tot_m" id="seguimento-vbg_tot_m" value="0"
+					<td><input type="number" name="seguimento-vbg_tot_masc" id="seguimento-vbg_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="seguimento-vbg_tot_f" id="seguimento-vbg_tot_f" value="0"
+					<td><input type="number" name="seguimento-vbg_tot_fem" id="seguimento-vbg_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="seguimento-vbg_tot_mf" id="seguimento-vbg_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 25: Vacina contra HPV -->
 				<tr data-eden-row-category-id="cancro-colo" data-eden-row-label-col-index="3">
@@ -919,12 +872,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="vacina-hpv_fem_25_plus" id="vacina-hpv_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="vacina-hpv_tot_m" id="vacina-hpv_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="vacina-hpv_tot_masc" id="vacina-hpv_tot_masc" value="0" tabindex="-1"
 							readonly="readonly"></td>
-					<td><input type="number" name="vacina-hpv_tot_f" id="vacina-hpv_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="vacina-hpv_tot_fem" id="vacina-hpv_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="vacina-hpv_tot_mf" id="vacina-hpv_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 26: Testadas com VIA -->
 				<tr data-eden-row-category-id="cancro-colo">
@@ -948,12 +899,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="testadas-via_fem_25_plus" id="testadas-via_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="testadas-via_tot_m" id="testadas-via_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="testadas-via_tot_masc" id="testadas-via_tot_masc" value="0" tabindex="-1"
 							readonly="readonly"></td>
-					<td><input type="number" name="testadas-via_tot_f" id="testadas-via_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="testadas-via_tot_fem" id="testadas-via_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="testadas-via_tot_mf" id="testadas-via_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 27: VIA Positivo -->
 				<tr data-eden-row-category-id="cancro-colo">
@@ -977,12 +926,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="via-positivo_fem_25_plus" id="via-positivo_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="via-positivo_tot_m" id="via-positivo_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="via-positivo_tot_masc" id="via-positivo_tot_masc" value="0" tabindex="-1"
 							readonly="readonly"></td>
-					<td><input type="number" name="via-positivo_tot_f" id="via-positivo_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="via-positivo_tot_fem" id="via-positivo_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="via-positivo_tot_mf" id="via-positivo_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 28: Lesão acima de 75% -->
 				<tr data-eden-row-category-id="transferida" data-eden-row-label-col-index="3">
@@ -1007,12 +954,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="lesao-75_fem_25_plus" id="lesao-75_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="lesao-75_tot_m" id="lesao-75_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="lesao-75_tot_masc" id="lesao-75_tot_masc" value="0" tabindex="-1"
 							readonly="readonly"></td>
-					<td><input type="number" name="lesao-75_tot_f" id="lesao-75_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="lesao-75_tot_fem" id="lesao-75_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="lesao-75_tot_mf" id="lesao-75_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 29: Suspeita de Cancro do colo do útero -->
 				<tr data-eden-row-category-id="transferida">
@@ -1036,20 +981,19 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="suspeita-cancro_fem_25_plus" id="suspeita-cancro_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="suspeita-cancro_tot_m" id="suspeita-cancro_tot_m" value="0"
+					<td><input type="number" name="suspeita-cancro_tot_masc" id="suspeita-cancro_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="suspeita-cancro_tot_f" id="suspeita-cancro_tot_f" value="0"
+					<td><input type="number" name="suspeita-cancro_tot_fem" id="suspeita-cancro_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="suspeita-cancro_tot_mf" id="suspeita-cancro_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 30: Seroestado desconhecido à entrada -->
 				<tr data-eden-row-category-id="estado-serologico" data-eden-row-label-col-index="3">
 					<th scope="row">30</th>
 					<td rowspan="3">59</td>
-					<th rowspan="4" colspan="3" scope="rowgroup" data-eden-row-category-label="estado-serologico">
+					<th rowspan="3" colspan="3" scope="rowgroup" data-eden-row-category-label="estado-serologico">
 						<b>Estado
-							Serológico</b></th>
+							Serológico</b>
+					</th>
 					<th scope="row" class="tes-saaj__row-label">Nº de
 						adolescentes e
 						jovens com seroestado desconhecido à entrada</th>
@@ -1073,12 +1017,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="sero-desconhecido_fem_25_plus" id="sero-desconhecido_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="sero-desconhecido_tot_m" id="sero-desconhecido_tot_m" value="0"
+					<td><input type="number" name="sero-desconhecido_tot_masc" id="sero-desconhecido_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="sero-desconhecido_tot_f" id="sero-desconhecido_tot_f" value="0"
+					<td><input type="number" name="sero-desconhecido_tot_fem" id="sero-desconhecido_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="sero-desconhecido_tot_mf" id="sero-desconhecido_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 31: Seroestado positivo à entrada -->
 				<tr data-eden-row-category-id="estado-serologico">
@@ -1106,12 +1048,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="sero-positivo_fem_25_plus" id="sero-positivo_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="sero-positivo_tot_m" id="sero-positivo_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="sero-positivo_tot_masc" id="sero-positivo_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="sero-positivo_tot_f" id="sero-positivo_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="sero-positivo_tot_fem" id="sero-positivo_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="sero-positivo_tot_mf" id="sero-positivo_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 32: Seroestado negativo à entrada -->
 				<tr data-eden-row-category-id="estado-serologico" data-eden-row-label-col-index="1">
@@ -1139,52 +1079,48 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="sero-negativo_fem_25_plus" id="sero-negativo_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="sero-negativo_tot_m" id="sero-negativo_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="sero-negativo_tot_masc" id="sero-negativo_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="sero-negativo_tot_f" id="sero-negativo_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="sero-negativo_tot_fem" id="sero-negativo_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="sero-negativo_tot_mf" id="sero-negativo_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 33: HIV positivo (HIV+) à entrada -->
 				<tr data-eden-row-category-id="estado-serologico">
 					<th scope="row">33</th>
 					<td rowspan="3">60</td>
+					<th rowspan="5" colspan="3" scope="rowgroup" data-eden-row-category-label="testagem-hiv"><b>Testagem
+							para
+							HIV</b></th>
 					<th scope="row" class="tes-saaj__row-label">Nº de
 						adolescentes e jovens com resultado de HIV positivo (HIV+) à entrada</th>
-					<td><input type="number" name="hiv-positivo-entrada_masc_10-minus" id="hiv-positivo-entrada_masc_10-minus"
-							data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="hiv-positivo-entrada_masc_10-minus"
+							id="hiv-positivo-entrada_masc_10-minus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="hiv-positivo-entrada_masc_10-14" id="hiv-positivo-entrada_masc_10-14"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="hiv-positivo-entrada_masc_15-19" id="hiv-positivo-entrada_masc_15-19"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="hiv-positivo-entrada_masc_20-24" id="hiv-positivo-entrada_masc_20-24"
 							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="hiv-positivo-entrada_masc_25_plus" id="hiv-positivo-entrada_masc_25_plus"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="hiv-positivo-entrada_fem_10-minus" id="hiv-positivo-entrada_fem_10-minus"
-							data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="hiv-positivo-entrada_masc_25_plus"
+							id="hiv-positivo-entrada_masc_25_plus" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="hiv-positivo-entrada_fem_10-minus"
+							id="hiv-positivo-entrada_fem_10-minus" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="hiv-positivo-entrada_fem_10-14" id="hiv-positivo-entrada_fem_10-14"
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="hiv-positivo-entrada_fem_15-19" id="hiv-positivo-entrada_fem_15-19"
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="hiv-positivo-entrada_fem_20-24" id="hiv-positivo-entrada_fem_20-24"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="hiv-positivo-entrada_fem_25_plus" id="hiv-positivo-entrada_fem_25_plus"
-							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="hiv-positivo-entrada_tot_m" id="hiv-positivo-entrada_tot_m" value="0"
+					<td><input type="number" name="hiv-positivo-entrada_fem_25_plus"
+							id="hiv-positivo-entrada_fem_25_plus" data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="hiv-positivo-entrada_tot_masc" id="hiv-positivo-entrada_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="hiv-positivo-entrada_tot_f" id="hiv-positivo-entrada_tot_f" value="0"
+					<td><input type="number" name="hiv-positivo-entrada_tot_fem" id="hiv-positivo-entrada_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="hiv-positivo-entrada_tot_mf" id="hiv-positivo-entrada_tot_mf"
-							value="0" tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 34: Testados para HIV -->
 				<tr data-eden-row-category-id="testagem-hiv">
 					<th scope="row">34</th>
-					<th rowspan="4" colspan="3" scope="rowgroup" data-eden-row-category-label="testagem-hiv"><b>Testagem
-							para
-							HIV</b></th>
 					<th scope="row" class="tes-saaj__row-label" data-eden-row-group-label="testados-hiv">Nº de
 						adolescentes e
 						jovens testados</th>
@@ -1208,12 +1144,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="testados-hiv_fem_25_plus" id="testados-hiv_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="testados-hiv_tot_m" id="testados-hiv_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="testados-hiv_tot_masc" id="testados-hiv_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="testados-hiv_tot_f" id="testados-hiv_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="testados-hiv_tot_fem" id="testados-hiv_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="testados-hiv_tot_mf" id="testados-hiv_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 35: Testados positivo -->
 				<tr data-eden-row-category-id="testagem-hiv" data-eden-row-label-col-index="1">
@@ -1241,12 +1175,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="testados-positivo_fem_25_plus" id="testados-positivo_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="testados-positivo_tot_m" id="testados-positivo_tot_m" value="0"
+					<td><input type="number" name="testados-positivo_tot_masc" id="testados-positivo_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="testados-positivo_tot_f" id="testados-positivo_tot_f" value="0"
+					<td><input type="number" name="testados-positivo_tot_fem" id="testados-positivo_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="testados-positivo_tot_mf" id="testados-positivo_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 36: Parceiros testados -->
 				<tr data-eden-row-category-id="testagem-hiv">
@@ -1255,8 +1187,8 @@
 					<th scope="row" class="tes-saaj__row-label">Nº de
 						parceiros
 						testados</th>
-					<td><input type="number" name="parceiros-testados_masc_10-minus" id="parceiros-testados_masc_10-minus"
-							data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="parceiros-testados_masc_10-minus"
+							id="parceiros-testados_masc_10-minus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="parceiros-testados_masc_10-14" id="parceiros-testados_masc_10-14"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="parceiros-testados_masc_15-19" id="parceiros-testados_masc_15-19"
@@ -1275,12 +1207,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="parceiros-testados_fem_25_plus" id="parceiros-testados_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="parceiros-testados_tot_m" id="parceiros-testados_tot_m" value="0"
+					<td><input type="number" name="parceiros-testados_tot_masc" id="parceiros-testados_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="parceiros-testados_tot_f" id="parceiros-testados_tot_f" value="0"
+					<td><input type="number" name="parceiros-testados_tot_fem" id="parceiros-testados_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="parceiros-testados_tot_mf" id="parceiros-testados_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 37: Parceiros testados positivo -->
 				<tr data-eden-row-category-id="testagem-hiv" data-eden-row-label-col-index="1">
@@ -1289,7 +1219,8 @@
 						Nº de
 						parceiros testados positivo</th>
 					<td><input type="number" name="parceiros-testados-positivo_masc_10-minus"
-							id="parceiros-testados-positivo_masc_10-minus" data-eden-group="total-masc grand-total"></td>
+							id="parceiros-testados-positivo_masc_10-minus" data-eden-group="total-masc grand-total">
+					</td>
 					<td><input type="number" name="parceiros-testados-positivo_masc_10-14"
 							id="parceiros-testados-positivo_masc_10-14" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="parceiros-testados-positivo_masc_15-19"
@@ -1308,15 +1239,12 @@
 							id="parceiros-testados-positivo_fem_20-24" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="parceiros-testados-positivo_fem_25_plus"
 							id="parceiros-testados-positivo_fem_25_plus" data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="parceiros-testados-positivo_tot_m"
-							id="parceiros-testados-positivo_tot_m" value="0" tabindex="-1" readonly="readonly"
+					<td><input type="number" name="parceiros-testados-positivo_tot_masc"
+							id="parceiros-testados-positivo_tot_masc" value="0" tabindex="-1" readonly="readonly"
 							data-eden-total="total-masc"></td>
-					<td><input type="number" name="parceiros-testados-positivo_tot_f"
-							id="parceiros-testados-positivo_tot_f" value="0" tabindex="-1" readonly="readonly"
+					<td><input type="number" name="parceiros-testados-positivo_tot_fem"
+							id="parceiros-testados-positivo_tot_fem" value="0" tabindex="-1" readonly="readonly"
 							data-eden-total="total-fem"></td>
-					<td><input type="number" name="parceiros-testados-positivo_tot_mf"
-							id="parceiros-testados-positivo_tot_mf" value="0" tabindex="-1" readonly="readonly"
-							data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 38: TARV à entrada -->
 				<tr data-eden-row-category-id="tarv" data-eden-row-label-col-index="3">
@@ -1346,12 +1274,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="tarv-entrada_fem_25_plus" id="tarv-entrada_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="tarv-entrada_tot_m" id="tarv-entrada_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="tarv-entrada_tot_masc" id="tarv-entrada_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="tarv-entrada_tot_f" id="tarv-entrada_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="tarv-entrada_tot_fem" id="tarv-entrada_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="tarv-entrada_tot_mf" id="tarv-entrada_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 39: Iniciaram TARV -->
 				<tr data-eden-row-category-id="tarv">
@@ -1380,12 +1306,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="iniciaram-tarv_fem_25_plus" id="iniciaram-tarv_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="iniciaram-tarv_tot_m" id="iniciaram-tarv_tot_m" value="0"
+					<td><input type="number" name="iniciaram-tarv_tot_masc" id="iniciaram-tarv_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="iniciaram-tarv_tot_f" id="iniciaram-tarv_tot_f" value="0"
+					<td><input type="number" name="iniciaram-tarv_tot_fem" id="iniciaram-tarv_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="iniciaram-tarv_tot_mf" id="iniciaram-tarv_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 40: Continuam o TARV -->
 				<tr data-eden-row-category-id="tarv">
@@ -1414,12 +1338,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="continuam-tarv_fem_25_plus" id="continuam-tarv_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="continuam-tarv_tot_m" id="continuam-tarv_tot_m" value="0"
+					<td><input type="number" name="continuam-tarv_tot_masc" id="continuam-tarv_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="continuam-tarv_tot_f" id="continuam-tarv_tot_f" value="0"
+					<td><input type="number" name="continuam-tarv_tot_fem" id="continuam-tarv_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="continuam-tarv_tot_mf" id="continuam-tarv_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 41: Inicia CTZ -->
 				<tr data-eden-row-category-id="profilaxias" data-eden-row-label-col-index="3">
@@ -1449,12 +1371,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="inicia-ctz_fem_25_plus" id="inicia-ctz_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="inicia-ctz_tot_m" id="inicia-ctz_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="inicia-ctz_tot_masc" id="inicia-ctz_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="inicia-ctz_tot_f" id="inicia-ctz_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="inicia-ctz_tot_fem" id="inicia-ctz_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="inicia-ctz_tot_mf" id="inicia-ctz_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 42: Continua CTZ -->
 				<tr data-eden-row-category-id="profilaxias">
@@ -1482,12 +1402,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="continua-ctz_fem_25_plus" id="continua-ctz_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="continua-ctz_tot_m" id="continua-ctz_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="continua-ctz_tot_masc" id="continua-ctz_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="continua-ctz_tot_f" id="continua-ctz_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="continua-ctz_tot_fem" id="continua-ctz_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="continua-ctz_tot_mf" id="continua-ctz_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 43: Novos Utentes (Contracepção) -->
 				<tr data-eden-row-category-id="contracepcao" data-eden-row-label-col-index="3">
@@ -1502,22 +1420,20 @@
 					<td class="eden-c-table__cell--na"></td>
 					<td class="eden-c-table__cell--na"></td>
 					<td class="eden-c-table__cell--na"></td>
-					<td><input type="number" name="novos-utentes-metodo_fem_10-minus" id="novos-utentes-metodo_fem_10-minus"
-							data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="novos-utentes-metodo_fem_10-minus"
+							id="novos-utentes-metodo_fem_10-minus" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="novos-utentes-metodo_fem_10-14" id="novos-utentes-metodo_fem_10-14"
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="novos-utentes-metodo_fem_15-19" id="novos-utentes-metodo_fem_15-19"
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="novos-utentes-metodo_fem_20-24" id="novos-utentes-metodo_fem_20-24"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="novos-utentes-metodo_fem_25_plus" id="novos-utentes-metodo_fem_25_plus"
-							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="novos-utentes-metodo_tot_m" id="novos-utentes-metodo_tot_m" value="0"
+					<td><input type="number" name="novos-utentes-metodo_fem_25_plus"
+							id="novos-utentes-metodo_fem_25_plus" data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="novos-utentes-metodo_tot_masc" id="novos-utentes-metodo_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="novos-utentes-metodo_tot_f" id="novos-utentes-metodo_tot_f" value="0"
+					<td><input type="number" name="novos-utentes-metodo_tot_fem" id="novos-utentes-metodo_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="novos-utentes-metodo_tot_mf" id="novos-utentes-metodo_tot_mf"
-							value="0" tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 44: Continuam no método -->
 				<tr data-eden-row-category-id="contracepcao">
@@ -1541,20 +1457,19 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="continuam-metodo_fem_25_plus" id="continuam-metodo_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="continuam-metodo_tot_m" id="continuam-metodo_tot_m" value="0"
+					<td><input type="number" name="continuam-metodo_tot_masc" id="continuam-metodo_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="continuam-metodo_tot_f" id="continuam-metodo_tot_f" value="0"
+					<td><input type="number" name="continuam-metodo_tot_fem" id="continuam-metodo_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="continuam-metodo_tot_mf" id="continuam-metodo_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 45: Pílula - Iniciam -->
-				<tr data-eden-row-category-id="pilula" data-eden-row-label-col-index="3">
+				<tr data-eden-row-category-id="pilula" data-eden-row-label-col-index="4">
 					<th scope="row">45</th>
 					<td>43</td>
-					<th rowspan="12" scope="rowgroup"><span
-							class="eden-u-text-vertical">Contracepção e<br>Proteção</span></th>
-					<th scope="rowgroup" rowspan="3" colspan="2" data-eden-row-category-label="pilula"><b>Pílula</b></th>
+					<th rowspan="12" scope="rowgroup"><span class="eden-u-text-vertical">Contracepção e Proteção</span>
+					</th>
+					<th scope="rowgroup" rowspan="3" colspan="2" data-eden-row-category-label="pilula"><b>Pílula</b>
+					</th>
 					<th scope="row" class="tes-saaj__row-label">Nº das
 						adolescentes/jovens que iniciam este método</th>
 					<td class="eden-c-table__cell--na"></td>
@@ -1572,12 +1487,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="pilula-iniciam_fem_25_plus" id="pilula-iniciam_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="pilula-iniciam_tot_m" id="pilula-iniciam_tot_m" value="0"
+					<td><input type="number" name="pilula-iniciam_tot_masc" id="pilula-iniciam_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="pilula-iniciam_tot_f" id="pilula-iniciam_tot_f" value="0"
+					<td><input type="number" name="pilula-iniciam_tot_fem" id="pilula-iniciam_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="pilula-iniciam_tot_mf" id="pilula-iniciam_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 46: Pílula - Continuam -->
 				<tr data-eden-row-category-id="pilula">
@@ -1600,12 +1513,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="pilula-continuam_fem_25_plus" id="pilula-continuam_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="pilula-continuam_tot_m" id="pilula-continuam_tot_m" value="0"
+					<td><input type="number" name="pilula-continuam_tot_masc" id="pilula-continuam_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="pilula-continuam_tot_f" id="pilula-continuam_tot_f" value="0"
+					<td><input type="number" name="pilula-continuam_tot_fem" id="pilula-continuam_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="pilula-continuam_tot_mf" id="pilula-continuam_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 47: Ciclos oferecidos -->
 				<tr data-eden-row-category-id="pilula">
@@ -1629,12 +1540,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ciclos-oferecidos_fem_25_plus" id="ciclos-oferecidos_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="ciclos-oferecidos_tot_m" id="ciclos-oferecidos_tot_m" value="0"
+					<td><input type="number" name="ciclos-oferecidos_tot_masc" id="ciclos-oferecidos_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="ciclos-oferecidos_tot_f" id="ciclos-oferecidos_tot_f" value="0"
+					<td><input type="number" name="ciclos-oferecidos_tot_fem" id="ciclos-oferecidos_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="ciclos-oferecidos_tot_mf" id="ciclos-oferecidos_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 48: DIU - Iniciou -->
 				<tr data-eden-row-category-id="diu" data-eden-row-label-col-index="3">
@@ -1659,12 +1568,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="diu-iniciou_fem_25_plus" id="diu-iniciou_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="diu-iniciou_tot_m" id="diu-iniciou_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="diu-iniciou_tot_masc" id="diu-iniciou_tot_masc" value="0" tabindex="-1"
 							readonly="readonly"></td>
-					<td><input type="number" name="diu-iniciou_tot_f" id="diu-iniciou_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="diu-iniciou_tot_fem" id="diu-iniciou_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="diu-iniciou_tot_mf" id="diu-iniciou_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 49: DIU - Continua -->
 				<tr data-eden-row-category-id="diu">
@@ -1687,18 +1594,17 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="diu-continua_fem_25_plus" id="diu-continua_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="diu-continua_tot_m" id="diu-continua_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="diu-continua_tot_masc" id="diu-continua_tot_masc" value="0" tabindex="-1"
 							readonly="readonly"></td>
-					<td><input type="number" name="diu-continua_tot_f" id="diu-continua_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="diu-continua_tot_fem" id="diu-continua_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="diu-continua_tot_mf" id="diu-continua_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 50: Injectável - Iniciou -->
 				<tr data-eden-row-category-id="injectavel">
 					<th scope="row">50</th>
 					<td>48</td>
-					<th scope="rowgroup" rowspan="2" colspan="2" data-eden-row-category-label="injectavel"><b>Injectável</b></th>
+					<th scope="rowgroup" rowspan="2" colspan="2" data-eden-row-category-label="injectavel">
+						<b>Injectável</b></th>
 					<th scope="row" class="tes-saaj__row-label">Nº das
 						adolescentes/jovens que iniciou este método</th>
 					<td class="eden-c-table__cell--na"></td>
@@ -1716,12 +1622,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="injectavel-iniciou_fem_25_plus" id="injectavel-iniciou_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="injectavel-iniciou_tot_m" id="injectavel-iniciou_tot_m" value="0"
+					<td><input type="number" name="injectavel-iniciou_tot_masc" id="injectavel-iniciou_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="injectavel-iniciou_tot_f" id="injectavel-iniciou_tot_f" value="0"
+					<td><input type="number" name="injectavel-iniciou_tot_fem" id="injectavel-iniciou_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="injectavel-iniciou_tot_mf" id="injectavel-iniciou_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 51: Injectável - Continua -->
 				<tr data-eden-row-category-id="injectavel">
@@ -1734,8 +1638,8 @@
 					<td class="eden-c-table__cell--na"></td>
 					<td class="eden-c-table__cell--na"></td>
 					<td class="eden-c-table__cell--na"></td>
-					<td><input type="number" name="injectavel-continua_fem_10-minus" id="injectavel-continua_fem_10-minus"
-							data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="injectavel-continua_fem_10-minus"
+							id="injectavel-continua_fem_10-minus" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="injectavel-continua_fem_10-14" id="injectavel-continua_fem_10-14"
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="injectavel-continua_fem_15-19" id="injectavel-continua_fem_15-19"
@@ -1744,18 +1648,17 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="injectavel-continua_fem_25_plus" id="injectavel-continua_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="injectavel-continua_tot_m" id="injectavel-continua_tot_m" value="0"
+					<td><input type="number" name="injectavel-continua_tot_masc" id="injectavel-continua_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="injectavel-continua_tot_f" id="injectavel-continua_tot_f" value="0"
+					<td><input type="number" name="injectavel-continua_tot_fem" id="injectavel-continua_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="injectavel-continua_tot_mf" id="injectavel-continua_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 52: Implante - Iniciou -->
 				<tr data-eden-row-category-id="implante" data-eden-row-label-col-index="3">
 					<th scope="row">52</th>
 					<td>50</td>
-					<th scope="rowgroup" rowspan="2" colspan="2" data-eden-row-category-label="implante"><b>Implante</b></th>
+					<th scope="rowgroup" rowspan="2" colspan="2" data-eden-row-category-label="implante"><b>Implante</b>
+					</th>
 					<th scope="row" class="tes-saaj__row-label">Nº das
 						adolescentes/jovens que iniciou este método</th>
 					<td class="eden-c-table__cell--na"></td>
@@ -1773,12 +1676,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="implante-iniciou_fem_25_plus" id="implante-iniciou_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="implante-iniciou_tot_m" id="implante-iniciou_tot_m" value="0"
+					<td><input type="number" name="implante-iniciou_tot_masc" id="implante-iniciou_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="implante-iniciou_tot_f" id="implante-iniciou_tot_f" value="0"
+					<td><input type="number" name="implante-iniciou_tot_fem" id="implante-iniciou_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="implante-iniciou_tot_mf" id="implante-iniciou_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 53: Implante - Continua -->
 				<tr data-eden-row-category-id="implante">
@@ -1801,21 +1702,20 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="implante-continua_fem_25_plus" id="implante-continua_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="implante-continua_tot_m" id="implante-continua_tot_m" value="0"
+					<td><input type="number" name="implante-continua_tot_masc" id="implante-continua_tot_masc" value="0"
 							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="implante-continua_tot_f" id="implante-continua_tot_f" value="0"
+					<td><input type="number" name="implante-continua_tot_fem" id="implante-continua_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="implante-continua_tot_mf" id="implante-continua_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 54: Contracepção de Emergência -->
 				<tr data-eden-row-category-id="contracepcao-emergencia" data-eden-row-label-col-index="3">
 					<th scope="row">54</th>
 					<td>52</td>
-					<th scope="row" colspan="2" class="eden-u-padding-none eden-u-text-center" data-eden-row-category-label="contracepcao-emergencia"><b>Contracepção
-							de<br>Emergência</b></th>
+					<th scope="row" colspan="2" class="eden-u-padding-none eden-u-text-center"
+						data-eden-row-category-label="contracepcao-emergencia"><b>Contracepção
+							de Emergência</b></th>
 					<th scope="row" class="tes-saaj__row-label">Nº
-						das
+						de
 						adolescentes/jovens que receberam contracepção de emergência</th>
 					<td class="eden-c-table__cell--na"></td>
 					<td class="eden-c-table__cell--na"></td>
@@ -1824,28 +1724,27 @@
 					<td class="eden-c-table__cell--na"></td>
 					<td><input type="number" name="contracepcao-emergencia_fem_10-minus"
 							id="contracepcao-emergencia_fem_10-minus" data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="contracepcao-emergencia_fem_10-14" id="contracepcao-emergencia_fem_10-14"
-							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="contracepcao-emergencia_fem_15-19" id="contracepcao-emergencia_fem_15-19"
-							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="contracepcao-emergencia_fem_20-24" id="contracepcao-emergencia_fem_20-24"
-							data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="contracepcao-emergencia_fem_10-14"
+							id="contracepcao-emergencia_fem_10-14" data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="contracepcao-emergencia_fem_15-19"
+							id="contracepcao-emergencia_fem_15-19" data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="contracepcao-emergencia_fem_20-24"
+							id="contracepcao-emergencia_fem_20-24" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="contracepcao-emergencia_fem_25_plus"
 							id="contracepcao-emergencia_fem_25_plus" data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="contracepcao-emergencia_tot_m" id="contracepcao-emergencia_tot_m"
+					<td><input type="number" name="contracepcao-emergencia_tot_masc" id="contracepcao-emergencia_tot_masc"
 							value="0" tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="contracepcao-emergencia_tot_f" id="contracepcao-emergencia_tot_f"
+					<td><input type="number" name="contracepcao-emergencia_tot_fem" id="contracepcao-emergencia_tot_fem"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="contracepcao-emergencia_tot_mf" id="contracepcao-emergencia_tot_mf"
-							value="0" tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 55: Preservativos Masculinos -->
 				<tr data-eden-row-category-id="preservativos" data-eden-row-label-col-index="3">
 					<th scope="row">55</th>
 					<td rowspan="2">53</td>
-					<th scope="rowgroup" rowspan="2" colspan="2" data-eden-row-category-label="preservativos">Preservativos</th>
+					<th scope="rowgroup" rowspan="2" colspan="2" data-eden-row-category-label="preservativos">
+						Preservativos</th>
 					<th scope="row" class="tes-saaj__row-label">Nº
-						das
+						de
 						adolescentes/jovens que receberam preservativos masculinos</th>
 					<td><input type="number" name="preservativos-masculinos_masc_10-minus"
 							id="preservativos-masculinos_masc_10-minus" data-eden-group="total-masc grand-total"></td>
@@ -1867,45 +1766,41 @@
 							id="preservativos-masculinos_fem_20-24" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="preservativos-masculinos_fem_25_plus"
 							id="preservativos-masculinos_fem_25_plus" data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="preservativos-masculinos_tot_m" id="preservativos-masculinos_tot_m"
+					<td><input type="number" name="preservativos-masculinos_tot_masc" id="preservativos-masculinos_tot_masc"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="preservativos-masculinos_tot_f" id="preservativos-masculinos_tot_f"
+					<td><input type="number" name="preservativos-masculinos_tot_fem" id="preservativos-masculinos_tot_fem"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="preservativos-masculinos_tot_mf" id="preservativos-masculinos_tot_mf"
-							value="0" tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 56: Preservativos Femininos -->
 				<tr data-eden-row-category-id="preservativos" data-eden-row-label-col-index="1">
 					<th scope="row">56</th>
 					<th scope="row" class="tes-saaj__row-label">Nº
-						das
+						de
 						adolescentes/jovens que receberam preservativos femininos</th>
 					<td><input type="number" name="preservativos-femininos_masc_10-minus"
 							id="preservativos-femininos_masc_10-minus" data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="preservativos-femininos_masc_10-14" id="preservativos-femininos_masc_10-14"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="preservativos-femininos_masc_15-19" id="preservativos-femininos_masc_15-19"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="preservativos-femininos_masc_20-24" id="preservativos-femininos_masc_20-24"
-							data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="preservativos-femininos_masc_10-14"
+							id="preservativos-femininos_masc_10-14" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="preservativos-femininos_masc_15-19"
+							id="preservativos-femininos_masc_15-19" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="preservativos-femininos_masc_20-24"
+							id="preservativos-femininos_masc_20-24" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="preservativos-femininos_masc_25_plus"
 							id="preservativos-femininos_masc_25_plus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="preservativos-femininos_fem_10-minus"
 							id="preservativos-femininos_fem_10-minus" data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="preservativos-femininos_fem_10-14" id="preservativos-femininos_fem_10-14"
-							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="preservativos-femininos_fem_15-19" id="preservativos-femininos_fem_15-19"
-							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="preservativos-femininos_fem_20-24" id="preservativos-femininos_fem_20-24"
-							data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="preservativos-femininos_fem_10-14"
+							id="preservativos-femininos_fem_10-14" data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="preservativos-femininos_fem_15-19"
+							id="preservativos-femininos_fem_15-19" data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="preservativos-femininos_fem_20-24"
+							id="preservativos-femininos_fem_20-24" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="preservativos-femininos_fem_25_plus"
 							id="preservativos-femininos_fem_25_plus" data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="preservativos-femininos_tot_m" id="preservativos-femininos_tot_m"
+					<td><input type="number" name="preservativos-femininos_tot_masc" id="preservativos-femininos_tot_masc"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="preservativos-femininos_tot_f" id="preservativos-femininos_tot_f"
+					<td><input type="number" name="preservativos-femininos_tot_fem" id="preservativos-femininos_tot_fem"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="preservativos-femininos_tot_mf" id="preservativos-femininos_tot_mf"
-							value="0" tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 57: Sal Ferroso -->
 				<tr>
@@ -1913,7 +1808,7 @@
 					<td>67</td>
 					<th scope="rowgroup" colspan="3"><b>Sal Ferroso</b></th>
 					<th scope="row" class="tes-saaj__row-label" data-eden-row-group-label="distribuidos-sal-ferroso">Nº
-						de
+						das
 						adolescentes distribuídos Sal Ferroso</th>
 					<td class="eden-c-table__cell--na"></td>
 					<td class="eden-c-table__cell--na"></td>
@@ -1930,12 +1825,10 @@
 							id="distribuidos-sal-ferroso_fem_20-24" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="distribuidos-sal-ferroso_fem_25_plus"
 							id="distribuidos-sal-ferroso_fem_25_plus" data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="distribuidos-sal-ferroso_tot_m" id="distribuidos-sal-ferroso_tot_m"
+					<td><input type="number" name="distribuidos-sal-ferroso_tot_masc" id="distribuidos-sal-ferroso_tot_masc"
 							value="0" tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="distribuidos-sal-ferroso_tot_f" id="distribuidos-sal-ferroso_tot_f"
+					<td><input type="number" name="distribuidos-sal-ferroso_tot_fem" id="distribuidos-sal-ferroso_tot_fem"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="distribuidos-sal-ferroso_tot_mf" id="distribuidos-sal-ferroso_tot_mf"
-							value="0" tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 58: Desparasitação -->
 				<tr data-eden-row-category-id="desparasitacao" data-eden-row-label-col-index="3">
@@ -1966,19 +1859,18 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="desparasitados_fem_25_plus" id="desparasitados_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="desparasitados_tot_m" id="desparasitados_tot_m" value="0"
+					<td><input type="number" name="desparasitados_tot_masc" id="desparasitados_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="desparasitados_tot_f" id="desparasitados_tot_f" value="0"
+					<td><input type="number" name="desparasitados_tot_fem" id="desparasitados_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="desparasitados_tot_mf" id="desparasitados_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 59: Referência para Circuncisão -->
 				<tr data-eden-row-category-id="referencia" data-eden-row-label-col-index="3">
 					<th scope="row">59</th>
 					<td rowspan="5">71</td>
 					<th rowspan="5" colspan="3" scope="rowgroup" data-eden-row-category-label="referencia">
-						<b>Referência</b></th>
+						<b>Referência</b>
+					</th>
 					<th scope="row" class="tes-saaj__row-label">Nº de
 						adolescentes e
 						jovens referidos para Circuncisão</th>
@@ -1997,12 +1889,10 @@
 					<td class="eden-c-table__cell--na"></td>
 					<td class="eden-c-table__cell--na"></td>
 					<td class="eden-c-table__cell--na"></td>
-					<td><input type="number" name="ref-circuncisao_tot_m" id="ref-circuncisao_tot_m" value="0"
+					<td><input type="number" name="ref-circuncisao_tot_masc" id="ref-circuncisao_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="ref-circuncisao_tot_f" id="ref-circuncisao_tot_f" value="0"
-							tabindex="-1" readonly="readonly"></td>
-					<td><input type="number" name="ref-circuncisao_tot_mf" id="ref-circuncisao_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
+					<td><input type="number" name="ref-circuncisao_tot_fem" id="ref-circuncisao_tot_fem" value="0"
+							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
 				</tr>
 				<!-- Linha 60: Referidos para Apoio Psicológico -->
 				<tr data-eden-row-category-id="referencia" data-eden-row-label-col-index="1">
@@ -2011,14 +1901,14 @@
 						adolescentes e jovens referidos para Apoio Psicológico</th>
 					<td><input type="number" name="ref-apoio-psicologico_masc_10-minus"
 							id="ref-apoio-psicologico_masc_10-minus" data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-apoio-psicologico_masc_10-14" id="ref-apoio-psicologico_masc_10-14"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-apoio-psicologico_masc_15-19" id="ref-apoio-psicologico_masc_15-19"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-apoio-psicologico_masc_20-24" id="ref-apoio-psicologico_masc_20-24"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-apoio-psicologico_masc_25_plus" id="ref-apoio-psicologico_masc_25_plus"
-							data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-apoio-psicologico_masc_10-14"
+							id="ref-apoio-psicologico_masc_10-14" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-apoio-psicologico_masc_15-19"
+							id="ref-apoio-psicologico_masc_15-19" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-apoio-psicologico_masc_20-24"
+							id="ref-apoio-psicologico_masc_20-24" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-apoio-psicologico_masc_25_plus"
+							id="ref-apoio-psicologico_masc_25_plus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="ref-apoio-psicologico_fem_10-minus"
 							id="ref-apoio-psicologico_fem_10-minus" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ref-apoio-psicologico_fem_10-14" id="ref-apoio-psicologico_fem_10-14"
@@ -2027,14 +1917,12 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ref-apoio-psicologico_fem_20-24" id="ref-apoio-psicologico_fem_20-24"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="ref-apoio-psicologico_fem_25_plus" id="ref-apoio-psicologico_fem_25_plus"
-							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="ref-apoio-psicologico_tot_m" id="ref-apoio-psicologico_tot_m"
+					<td><input type="number" name="ref-apoio-psicologico_fem_25_plus"
+							id="ref-apoio-psicologico_fem_25_plus" data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="ref-apoio-psicologico_tot_masc" id="ref-apoio-psicologico_tot_masc"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="ref-apoio-psicologico_tot_f" id="ref-apoio-psicologico_tot_f"
+					<td><input type="number" name="ref-apoio-psicologico_tot_fem" id="ref-apoio-psicologico_tot_fem"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="ref-apoio-psicologico_tot_mf" id="ref-apoio-psicologico_tot_mf"
-							value="0" tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 61: Referidos para SAAJ Diferenciado -->
 				<tr data-eden-row-category-id="referencia" data-eden-row-label-col-index="1">
@@ -2043,14 +1931,14 @@
 						adolescentes e jovens referidos para SAAJ Diferenciado</th>
 					<td><input type="number" name="ref-saaj-diferenciado_masc_10-minus"
 							id="ref-saaj-diferenciado_masc_10-minus" data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-saaj-diferenciado_masc_10-14" id="ref-saaj-diferenciado_masc_10-14"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-saaj-diferenciado_masc_15-19" id="ref-saaj-diferenciado_masc_15-19"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-saaj-diferenciado_masc_20-24" id="ref-saaj-diferenciado_masc_20-24"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-saaj-diferenciado_masc_25_plus" id="ref-saaj-diferenciado_masc_25_plus"
-							data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-saaj-diferenciado_masc_10-14"
+							id="ref-saaj-diferenciado_masc_10-14" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-saaj-diferenciado_masc_15-19"
+							id="ref-saaj-diferenciado_masc_15-19" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-saaj-diferenciado_masc_20-24"
+							id="ref-saaj-diferenciado_masc_20-24" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-saaj-diferenciado_masc_25_plus"
+							id="ref-saaj-diferenciado_masc_25_plus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="ref-saaj-diferenciado_fem_10-minus"
 							id="ref-saaj-diferenciado_fem_10-minus" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ref-saaj-diferenciado_fem_10-14" id="ref-saaj-diferenciado_fem_10-14"
@@ -2059,14 +1947,12 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ref-saaj-diferenciado_fem_20-24" id="ref-saaj-diferenciado_fem_20-24"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="ref-saaj-diferenciado_fem_25_plus" id="ref-saaj-diferenciado_fem_25_plus"
-							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="ref-saaj-diferenciado_tot_m" id="ref-saaj-diferenciado_tot_m"
+					<td><input type="number" name="ref-saaj-diferenciado_fem_25_plus"
+							id="ref-saaj-diferenciado_fem_25_plus" data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="ref-saaj-diferenciado_tot_masc" id="ref-saaj-diferenciado_tot_masc"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="ref-saaj-diferenciado_tot_f" id="ref-saaj-diferenciado_tot_f"
+					<td><input type="number" name="ref-saaj-diferenciado_tot_fem" id="ref-saaj-diferenciado_tot_fem"
 							value="0" tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="ref-saaj-diferenciado_tot_mf" id="ref-saaj-diferenciado_tot_mf"
-							value="0" tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 62: Referidos para TARV -->
 				<tr data-eden-row-category-id="referencia" data-eden-row-label-col-index="1">
@@ -2094,12 +1980,10 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ref-tarv_fem_25_plus" id="ref-tarv_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="ref-tarv_tot_m" id="ref-tarv_tot_m" value="0" tabindex="-1"
+					<td><input type="number" name="ref-tarv_tot_masc" id="ref-tarv_tot_masc" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="ref-tarv_tot_f" id="ref-tarv_tot_f" value="0" tabindex="-1"
+					<td><input type="number" name="ref-tarv_tot_fem" id="ref-tarv_tot_fem" value="0" tabindex="-1"
 							readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="ref-tarv_tot_mf" id="ref-tarv_tot_mf" value="0" tabindex="-1"
-							readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 				<!-- Linha 63: Referidos para Outros Serviços -->
 				<tr data-eden-row-category-id="referencia" data-eden-row-label-col-index="1">
@@ -2107,18 +1991,18 @@
 					<th scope="row" class="tes-saaj__row-label">Nº de
 						adolescentes
 						e jovens referidos para Outros Serviços</th>
-					<td><input type="number" name="ref-outros-servicos_masc_10-minus" id="ref-outros-servicos_masc_10-minus"
-							data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-outros-servicos_masc_10-minus"
+							id="ref-outros-servicos_masc_10-minus" data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="ref-outros-servicos_masc_10-14" id="ref-outros-servicos_masc_10-14"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="ref-outros-servicos_masc_15-19" id="ref-outros-servicos_masc_15-19"
 							data-eden-group="total-masc grand-total"></td>
 					<td><input type="number" name="ref-outros-servicos_masc_20-24" id="ref-outros-servicos_masc_20-24"
 							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-outros-servicos_masc_25_plus" id="ref-outros-servicos_masc_25_plus"
-							data-eden-group="total-masc grand-total"></td>
-					<td><input type="number" name="ref-outros-servicos_fem_10-minus" id="ref-outros-servicos_fem_10-minus"
-							data-eden-group="total-fem grand-total"></td>
+					<td><input type="number" name="ref-outros-servicos_masc_25_plus"
+							id="ref-outros-servicos_masc_25_plus" data-eden-group="total-masc grand-total"></td>
+					<td><input type="number" name="ref-outros-servicos_fem_10-minus"
+							id="ref-outros-servicos_fem_10-minus" data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ref-outros-servicos_fem_10-14" id="ref-outros-servicos_fem_10-14"
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ref-outros-servicos_fem_15-19" id="ref-outros-servicos_fem_15-19"
@@ -2127,14 +2011,17 @@
 							data-eden-group="total-fem grand-total"></td>
 					<td><input type="number" name="ref-outros-servicos_fem_25_plus" id="ref-outros-servicos_fem_25_plus"
 							data-eden-group="total-fem grand-total"></td>
-					<td><input type="number" name="ref-outros-servicos_tot_m" id="ref-outros-servicos_tot_m" value="0"
+					<td><input type="number" name="ref-outros-servicos_tot_masc" id="ref-outros-servicos_tot_masc" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-masc"></td>
-					<td><input type="number" name="ref-outros-servicos_tot_f" id="ref-outros-servicos_tot_f" value="0"
+					<td><input type="number" name="ref-outros-servicos_tot_fem" id="ref-outros-servicos_tot_fem" value="0"
 							tabindex="-1" readonly="readonly" data-eden-total="total-fem"></td>
-					<td><input type="number" name="ref-outros-servicos_tot_mf" id="ref-outros-servicos_tot_mf" value="0"
-							tabindex="-1" readonly="readonly" data-eden-total="grand-total"></td>
 				</tr>
 			</tbody>
+			<tfoot>
+            <tr class="eden-c-table__tfoot-spacer eden-c-table__tfoot-spacer--sm">
+                <td colspan="100%"></td>
+            </tr>
+        </tfoot>
 		</table>
 	</section>
 
