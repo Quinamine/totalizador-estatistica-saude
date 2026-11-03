@@ -193,3 +193,8 @@ td.eden-u-cell-spacer {
        display: block !important;
     }
 }
+
+.eden-u-break-before {
+    page-break-before: always;
+    break-before: page;
+}

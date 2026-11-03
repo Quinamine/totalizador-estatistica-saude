@@ -26,11 +26,11 @@ Este repositório está em desenvolvimento activo.
 - [x] **Fase 2:** Desenvolvimento da lógica de injecção de módulos.
 - [ ] **Fase 3:** Implementação individual dos 28 totalizadores.
 
-### 📊 Progresso dos Totalizadores (4/28):
+### 📊 Progresso dos Totalizadores (19/28):
 
 #### Consultas
 - [x] RM Consultas Externas
-- [ ] RM CCD
+- [x] RM CCD
 - [x] RM Malária
 - [x] RM SAAJ
 

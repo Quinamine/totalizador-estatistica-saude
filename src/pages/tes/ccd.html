@@ -1,0 +1,735 @@
+<div class="eden-c-page eden-c-page--portrait-paginated tes-ccd" data-eden-js="tes-report">
+    <header class="tes-ccd__header">
+        <div class="tes-ccd__header-row tes-ccd__header-row--spaced">
+            <figure class="tes-c-gov tes-c-gov--horizontal tes-c-gov--text-uppercase tes-c-gov--text-left">
+                <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                <figcaption class="tes-c-gov__info">
+                    <span class="tes-c-gov__country">República de Moçambique</span>
+                    <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                </figcaption>
+            </figure>
+            <div class="tes-ccd__meta-grid">
+                <div class="tes-ccd__meta-group">
+                    <label for="province">Província de</label>
+                    <input type="text" name="province" id="province" list="province-datalist">
+                    <datalist id="province-datalist"></datalist>
+                </div>
+                <div class="tes-ccd__meta-group">
+                    <label for="district">Distrito de</label>
+                    <input type="text" name="district" id="district" list="district-datalist">
+                    <datalist id="district-datalist"></datalist>
+                </div>
+                <div class="tes-ccd__meta-group">
+                <label for="health-unit">Unidade Sanitária:</label>
+                <input type="text" name="healthy-unit" id="health-unit" list="health-unit-datalist">
+                <datalist id="health-unit-datalist"></datalist>
+            </div>
+            <div class="tes-ccd__meta-group">
+                <label for="month">Mês:</label>
+                <input type="text" name="month" id="month" list="month-datalist">
+                <datalist id="month-datalist"></datalist>
+            </div>
+            </div>
+        </div>
+        <div class="tes-ccd__header-row">
+            <div class="tes-ccd__model">
+                <span class="tes-ccd__model-code">MOD-SIS B08-B</span>
+            </div>
+            <h1 class="tes-ccd__title">SMI - RESUMO MENSAL: CONSULTA DA CRIANÇA DOENTE NA US E NA BRIGADA MÓVEL</h1>
+        </div>
+    </header>
+    <table class="eden-c-table" data-eden-js="tes-table" data-eden-row-label-col-index="1">
+            <colgroup>
+                <col style="width: var(--_default-cell-width, 50px)">
+                <col style="width: 66px">
+                <col style="width: 96px">
+                <col style="width: 250px">
+                <col style="width: 305px">
+                <col span="3" style="width: var(--_default-cell-width, 50px)">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" rowspan="2" colspan="5"></th>
+                    <th scope="colgroup" colspan="3">Informação Dados</th>
+                </tr>
+                <tr>
+                    <th scope="col" data-eden-col-label="c1">PF</th>
+                    <th scope="col" data-eden-col-label="c2">BM</th>
+                    <th scope="col">TOTAL</th>
+                </tr>
+            </thead>
+            <tbody class="tes-ccd__tbody">
+                <tr data-eden-row-category-id="sexo" data-eden-row-label-col-index="3">
+                    <th scope="row">1</th>
+                    <th scope="rowgroup" rowspan="18"><span class="eden-u-text-vertical">Informação Geral sobre a Criança</span></th>
+                    <th scope="rowgroup" rowspan="3" data-eden-row-category-label="sexo">Sexo</th>
+                    <th scope="row" colspan="2">Total de Masculinos</th>
+                    <td><input type="number" name="total-masc_pf" id="total-masc_pf" data-eden-group="total sec1_total-consultas_pf sec1_total-consultas_total"></td>
+                    <td><input type="number" name="total-masc_bm" id="total-masc_bm" data-eden-group="total sec1_total-consultas_bm sec1_total-consultas_total"></td>
+                    <td><input type="number" name="total-masc_total" id="total-masc_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="sexo">
+                    <th scope="row">2</th>
+                    <th scope="row" colspan="2">Total de Femininos</th>
+                    <td><input type="number" name="total-fem_pf" id="total-fem_pf" data-eden-group="total sec1_total-consultas_pf sec1_total-consultas_total"></td>
+                    <td><input type="number" name="total-fem_bm" id="total-fem_bm" data-eden-group="total sec1_total-consultas_bm sec1_total-consultas_total"></td>
+                    <td><input type="number" name="total-fem_total" id="total-fem_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr class="eden-c-table__row--toned">
+                    <th scope="row" class="eden-c-table__cell--white">3</th>
+                    <th scope="row" colspan="2">Nº Total de Consultas</th>
+                    <td><input type="number" name="total-consultas_pf" id="total-consultas_pf" value="0" tabindex="-1" readonly
+                            data-eden-total="sec1_total-consultas_pf"></td>
+                    <td><input type="number" name="total-consultas_bm" id="total-consultas_bm" value="0" tabindex="-1" readonly
+                            data-eden-total="sec1_total-consultas_bm"></td>
+                    <td><input type="number" name="total-consultas_total" id="total-consultas_total" value="0" tabindex="-1" readonly
+                            data-eden-total="sec1_total-consultas_total"></td>
+                </tr>
+                <!-- Primeiras Consultas -->
+                 <tr>
+                    <th scope="row">4</th>
+                    <th scope="rowgroup" rowspan="15"><span class="eden-u-text-vertical">Faixa Etária e Tipo de Consulta</span></th>
+                    <th scope="colgroup" colspan="5" class="tes-ccd__section-title" data-eden-row-category-label="1as-consultas">Primeiras Consultas</th>
+                </tr>
+                <tr data-eden-row-category-id="1as-consultas">
+                    <th scope="row">5</th>
+                    <th scope="row" colspan="2">0-5 Meses</th>
+                    <td><input type="number" name="1as-consultas_0-5m_pf" id="1as-consultas_0-5m_pf" data-eden-group="total sec2_1as-consultas_pf sec2_1as-consultas_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_0-5m_bm" id="1as-consultas_0-5m_bm" data-eden-group="total sec2_1as-consultas_bm sec2_1as-consultas_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_0-5m_total" id="1as-consultas_0-5m_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="1as-consultas">
+                    <th scope="row">6</th>
+                    <th scope="row" colspan="2">6-11 Meses</th>
+                    <td><input type="number" name="1as-consultas_6-11m_pf" id="1as-consultas_6-11m_pf" data-eden-group="total sec2_1as-consultas_pf sec2_1as-consultas_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_6-11m_bm" id="1as-consultas_6-11m_bm" data-eden-group="total sec2_1as-consultas_bm sec2_1as-consultas_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_6-11m_total" id="1as-consultas_6-11m_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="1as-consultas">
+                    <th scope="row">7</th>
+                    <th scope="row" colspan="2">12-23 Meses</th>
+                    <td><input type="number" name="1as-consultas_12-23m_pf" id="1as-consultas_12-23m_pf" data-eden-group="total sec2_1as-consultas_pf sec2_1as-consultas_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_12-23m_bm" id="1as-consultas_12-23m_bm" data-eden-group="total sec2_1as-consultas_bm sec2_1as-consultas_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_12-23m_total" id="1as-consultas_12-23m_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="1as-consultas">
+                    <th scope="row">8</th>
+                    <th scope="row" colspan="2">24-59 Meses</th>
+                    <td><input type="number" name="1as-consultas_24-59m_pf" id="1as-consultas_24-59m_pf" data-eden-group="total sec2_1as-consultas_pf sec2_1as-consultas_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_24-59m_bm" id="1as-consultas_24-59m_bm" data-eden-group="total sec2_1as-consultas_bm sec2_1as-consultas_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_24-59m_total" id="1as-consultas_24-59m_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="1as-consultas">
+                    <th scope="row">9</th>
+                    <th scope="row" colspan="2">5-14 Anos</th>
+                    <td><input type="number" name="1as-consultas_5-14a_pf" id="1as-consultas_5-14a_pf" data-eden-group="total sec2_1as-consultas_pf sec2_1as-consultas_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_5-14a_bm" id="1as-consultas_5-14a_bm" data-eden-group="total sec2_1as-consultas_bm sec2_1as-consultas_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="1as-consultas_5-14a_total" id="1as-consultas_5-14a_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr class="eden-c-table__row--toned">
+                    <th scope="row" class="eden-c-table__cell--white">10</th>
+                    <th scope="row" colspan="2">Total de Primeiras Consultas</th>
+                    <td><input type="number" name="1as-consultas_pf" id="1as-consultas_pf" value="0" tabindex="-1" readonly
+                            data-eden-total="sec2_1as-consultas_pf"></td>
+                    <td><input type="number" name="1as-consultas_bm" id="1as-consultas_bm" value="0" tabindex="-1" readonly
+                            data-eden-total="sec2_1as-consultas_bm"></td>
+                    <td><input type="number" name="1as-consultas_total" id="1as-consultas_total" value="0" tabindex="-1" readonly
+                            data-eden-total="sec2_1as-consultas_total"></td>
+                </tr>
+                <!-- Consultas Seguintes -->
+                <tr>
+                    <th scope="row">11</th>
+                    <th scope="colgroup" colspan="5" class="tes-ccd__section-title" data-eden-row-category-label="consultas-seguintes">Consultas Seguintes</th>
+                </tr>
+                <tr data-eden-row-category-id="consultas-seguintes">
+                    <th scope="row">12</th>
+                    <th scope="row" colspan="2">0-5 Meses</th>
+                    <td><input type="number" name="consultas-seg_0-5m_pf" id="consultas-seg_0-5m_pf" data-eden-group="total sec2_consultas-seg_pf sec2_consultas-seg_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_0-5m_bm" id="consultas-seg_0-5m_bm" data-eden-group="total sec2_consultas-seg_bm sec2_consultas-seg_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_0-5m_total" id="consultas-seg_0-5m_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="consultas-seguintes">
+                    <th scope="row">13</th>
+                    <th scope="row" colspan="2">6-11 Meses</th>
+                    <td><input type="number" name="consultas-seg_6-11m_pf" id="consultas-seg_6-11m_pf" data-eden-group="total sec2_consultas-seg_pf sec2_consultas-seg_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_6-11m_bm" id="consultas-seg_6-11m_bm" data-eden-group="total sec2_consultas-seg_bm sec2_consultas-seg_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_6-11m_total" id="consultas-seg_6-11m_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="consultas-seguintes">
+                    <th scope="row">14</th>
+                    <th scope="row" colspan="2">12-23 Meses</th>
+                    <td><input type="number" name="consultas-seg_12-23m_pf" id="consultas-seg_12-23m_pf" data-eden-group="total sec2_consultas-seg_pf sec2_consultas-seg_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_12-23m_bm" id="consultas-seg_12-23m_bm" data-eden-group="total sec2_consultas-seg_bm sec2_consultas-seg_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_12-23m_total" id="consultas-seg_12-23m_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="consultas-seguintes">
+                    <th scope="row">15</th>
+                    <th scope="row" colspan="2">24-59 Meses</th>
+                    <td><input type="number" name="consultas-seg_24-59m_pf" id="consultas-seg_24-59m_pf" data-eden-group="total sec2_consultas-seg_pf sec2_consultas-seg_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_24-59m_bm" id="consultas-seg_24-59m_bm" data-eden-group="total sec2_consultas-seg_bm sec2_consultas-seg_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_24-59m_total" id="consultas-seg_24-59m_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr data-eden-row-category-id="consultas-seguintes">
+                    <th scope="row">16</th>
+                    <th scope="row" colspan="2">5-14 Anos</th>
+                    <td><input type="number" name="consultas-seg_5-14a_pf" id="consultas-seg_5-14a_pf" data-eden-group="total sec2_consultas-seg_pf sec2_consultas-seg_total sec4_consultas-0-14a_pf sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_5-14a_bm" id="consultas-seg_5-14a_bm" data-eden-group="total sec2_consultas-seg_bm sec2_consultas-seg_total sec4_consultas-0-14a_bm sec4_consultas-0-14a_total"></td>
+                    <td><input type="number" name="consultas-seg_5-14a_total" id="consultas-seg_5-14a_total" value="0" tabindex="-1" readonly
+                            data-eden-total="total"></td>
+                </tr>
+                <tr class="eden-c-table__row--toned">
+                    <th scope="row" class="eden-c-table__cell--white">17</th>
+                    <th scope="row" colspan="2">Total de Consultas Seguintes</th>
+                    <td><input type="number" name="consultas-seg_pf" id="consultas-seg_pf" value="0" tabindex="-1" readonly
+                            data-eden-total="sec2_consultas-seg_pf"></td>
+                    <td><input type="number" name="consultas-seg_bm" id="consultas-seg_bm" value="0" tabindex="-1" readonly
+                            data-eden-total="sec2_consultas-seg_bm"></td>
+                    <td><input type="number" name="consultas-seg_total" id="consultas-seg_total" value="0" tabindex="-1" readonly
+                            data-eden-total="sec2_consultas-seg_total"></td>
+                </tr>
+                <tr class="eden-c-table__row--toned">
+                    <th scope="row" class="eden-c-table__cell--white">18</th>
+                    <th scope="row" colspan="2">TOTAL DE CONSULTAS dos 0-14 anos (1ªs e Consultas Seguintes)</th>
+                    <td><input type="number" name="consultas-0-14a_pf" id="consultas-0-14a_pf" value="0" tabindex="-1" readonly
+                            data-eden-total="sec4_consultas-0-14a_pf"></td>
+                    <td><input type="number" name="consultas-0-14a_bm" id="consultas-0-14a_bm" value="0" tabindex="-1" readonly
+                            data-eden-total="sec4_consultas-0-14a_bm"></td>
+                    <td><input type="number" name="consultas-0-14a_total" id="consultas-0-14a_total" value="0" tabindex="-1" readonly
+                            data-eden-total="sec4_consultas-0-14a_total"></td>
+                </tr>
+                <!-- Estado Nutricional / Baixo peso/idade -->
+            <tr data-eden-row-category-id="baixo-peso" data-eden-row-label-col-index="4">
+                <th scope="row">19</th>
+                <th scope="rowgroup" rowspan="4"><span class="eden-u-text-vertical">Estado Nutricional</span></th>
+                <th scope="rowgroup" rowspan="2"><span class="eden-u-text-vertical" data-eden-row-category-label="baixo-peso">Baixo&nbsp;peso/ <br>idade</span></th>
+                <th scope="row">Baixo peso/idade moderado</th>
+                <th scope="row">Total de crianças observadas na CCD com baixo peso/idade moderado</th>
+                <td><input type="number" name="baixo-peso-mod_pf" id="baixo-peso-mod_pf" data-eden-group="total"></td>
+                <td><input type="number" name="baixo-peso-mod_bm" id="baixo-peso-mod_bm" data-eden-group="total"></td>
+                <td><input type="number" name="baixo-peso-mod_total" id="baixo-peso-mod_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="baixo-peso" data-eden-row-label-col-index="2">
+                <th scope="row">20</th>
+                <th scope="row">Baixo peso/idade grave</th>
+                <th scope="row">Total de crianças observadas na CCD com baixo peso/idade grave</th>
+                <td><input type="number" name="baixo-peso-grave_pf" id="baixo-peso-grave_pf" data-eden-group="total"></td>
+                <td><input type="number" name="baixo-peso-grave_bm" id="baixo-peso-grave_bm" data-eden-group="total"></td>
+                <td><input type="number" name="baixo-peso-grave_total" id="baixo-peso-grave_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <!-- Desnutrição Aguda -->
+            <tr data-eden-row-category-id="desnutricao" data-eden-row-label-col-index="3">
+                <th scope="row">21</th>
+                <th scope="rowgroup" rowspan="2"><span class="eden-u-text-vertical" data-eden-row-category-label="desnutricao">Desnutrição Aguda</span></th>
+                <th scope="row">Desnutrição Aguda moderada</th>
+                <th scope="row">Total de crianças observadas na CCD com desnutrição aguda moderada</th>
+                <td><input type="number" name="desn-aguda-mod_pf" id="desn-aguda-mod_pf" data-eden-group="total"></td>
+                <td><input type="number" name="desn-aguda-mod_bm" id="desn-aguda-mod_bm" data-eden-group="total"></td>
+                <td><input type="number" name="desn-aguda-mod_total" id="desn-aguda-mod_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="desnutricao" data-eden-row-label-col-index="2">
+                <th scope="row">22</th>
+                <th scope="row">Desnutrição Aguda grave</th>
+                <th scope="row">Total de crianças observadas na CCD com desnutrição aguda grave</th>
+                <td><input type="number" name="desn-aguda-grave_pf" id="desn-aguda-grave_pf" data-eden-group="total"></td>
+                <td><input type="number" name="desn-aguda-grave_bm" id="desn-aguda-grave_bm" data-eden-group="total"></td>
+                <td><input type="number" name="desn-aguda-grave_total" id="desn-aguda-grave_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <!-- Anemia -->
+            <tr data-eden-row-category-id="anemia" data-eden-row-label-col-index="4">
+                <th scope="row">23</th>
+                <th scope="rowgroup" rowspan="5"><span class="eden-u-text-vertical">Estado Nutricional</span></th>
+                <th scope="rowgroup" rowspan="5"><span class="eden-u-text-vertical" data-eden-row-category-label="anemia">Anemia</span></th>
+                <th scope="row">Anemia em crianças 0-5 meses por diagnóstico clínico</th>
+                <th scope="row">Nº de crianças 0-5 meses clinicamente diagnosticadas com anemia</th>
+                <td><input type="number" name="anemia-0-5m_pf" id="anemia-0-5m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="anemia-0-5m_bm" id="anemia-0-5m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="anemia-0-5m_total" id="anemia-0-5m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="anemia" data-eden-row-label-col-index="2">
+                <th scope="row">24</th>
+                <th scope="row">Anemia em crianças 6-23 meses por diagnóstico clínico</th>
+                <th scope="row">Nº de crianças 6-23 meses clinicamente diagnosticadas com anemia</th>
+                <td><input type="number" name="anemia-6-23m_pf" id="anemia-6-23m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="anemia-6-23m_bm" id="anemia-6-23m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="anemia-6-23m_total" id="anemia-6-23m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="anemia" data-eden-row-label-col-index="2">
+                <th scope="row">25</th>
+                <th scope="row">Anemia em crianças 24-59 meses por diagnóstico clínico</th>
+                <th scope="row">Nº de crianças 24-59 meses clinicamente diagnosticadas com anemia</th>
+                <td><input type="number" name="anemia-24-59m_pf" id="anemia-24-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="anemia-24-59m_bm" id="anemia-24-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="anemia-24-59m_total" id="anemia-24-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="anemia" data-eden-row-label-col-index="2">
+                <th scope="row">26</th>
+                <th scope="row">Anemia em crianças 5-14 anos por diagnóstico clínico</th>
+                <th scope="row">Nº de crianças 5-14 anos clinicamente diagnosticadas com anemia</th>
+                <td><input type="number" name="anemia-5-14a_pf" id="anemia-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="anemia-5-14a_bm" id="anemia-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="anemia-5-14a_total" id="anemia-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="anemia" data-eden-row-label-col-index="2">
+                <th scope="row">27</th>
+                <th scope="row">Tratamento com sal ferroso</th>
+                <th scope="row">Total de crianças com anemia que iniciaram tratamento com sal ferroso</th>
+                <td><input type="number" name="trat-sal-ferroso_pf" id="trat-sal-ferroso_pf" data-eden-group="total"></td>
+                <td><input type="number" name="trat-sal-ferroso_bm" id="trat-sal-ferroso_bm" data-eden-group="total"></td>
+                <td><input type="number" name="trat-sal-ferroso_total" id="trat-sal-ferroso_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <!-- Prevenção de Deficiências em Micronutrientes -->
+            <tr data-eden-row-category-id="vit-a" data-eden-row-label-col-index="3">
+                <th scope="row">28</th>
+                <th scope="rowgroup" rowspan="3"><span class="eden-u-text-vertical">Prevenção de <br> Deficiências&nbsp;em <br> Micronutrientes</span></th>
+                <th scope="rowgroup" rowspan="2" data-eden-row-category-label="vit-a">Suplemen‐<br>tação com <br>Vit. A</th>
+                <th scope="row" colspan="2">Número de crianças 6-11 meses suplementadas com vitamina A</th>
+                <td><input type="number" name="vit-a-6-11m_pf" id="vit-a-6-11m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="vit-a-6-11m_bm" id="vit-a-6-11m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="vit-a-6-11m_total" id="vit-a-6-11m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-label="vit-a">
+                <th scope="row">29</th>
+                <th scope="row" colspan="2">Número de crianças 12-59 meses suplementadas com vitamina A</th>
+                <td><input type="number" name="vit-a-12-59m_pf" id="vit-a-12-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="vit-a-12-59m_bm" id="vit-a-12-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="vit-a-12-59m_total" id="vit-a-12-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <!-- Desparasitação -->
+            <tr data-eden-row-category-id="desparasitacao" data-eden-row-label-col-index="2">
+                <th scope="row">30</th>
+                <th scope="rowgroup"><b data-eden-row-category-label="desparasitacao">Desparasita-<br>ção</b></th>
+                <th scope="row" colspan="2">Número de crianças 12-59 meses que receberam desparasitante</th>
+                <td><input type="number" name="desparasitacao-12-59m_pf" id="desparasitacao-12-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="desparasitacao-12-59m_bm" id="desparasitacao-12-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="desparasitacao-12-59m_total" id="desparasitacao-12-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <!-- Rastreio para HIV e Tuberculose -->
+            <tr data-eden-row-category-id="hiv" data-eden-row-label-col-index="3">
+                <th scope="row">31</th>
+                <th scope="rowgroup" rowspan="8"><span class="eden-u-text-vertical">Rastreio para HIV e <span class="eden-u-br-print">Tuberculose</span></th>
+                <th scope="rowgroup" rowspan="6" data-eden-row-category-label="hiv">HIV</th>
+                <th scope="row" colspan="2">Total de crianças elegíveis para testagem</th>
+                <td><input type="number" name="hiv-elegiveis_pf" id="hiv-elegiveis_pf" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-elegiveis_bm" id="hiv-elegiveis_bm" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-elegiveis_total" id="hiv-elegiveis_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="hiv">
+                <th scope="row">32</th>
+                <th scope="row" colspan="2">Total de crianças testadas</th>
+                <td><input type="number" name="hiv-testadas_pf" id="hiv-testadas_pf" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-testadas_bm" id="hiv-testadas_bm" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-testadas_total" id="hiv-testadas_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="hiv">
+                <th scope="row">33</th>
+                <th scope="row" colspan="2">Total de crianças com teste HIV positivo</th>
+                <td><input type="number" name="hiv-positivo_pf" id="hiv-positivo_pf" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-positivo_bm" id="hiv-positivo_bm" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-positivo_total" id="hiv-positivo_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="hiv">
+                <th scope="row">34</th>
+                <th scope="row" colspan="2">Total de crianças com teste HIV negativo</th>
+                <td><input type="number" name="hiv-negativo_pf" id="hiv-negativo_pf" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-negativo_bm" id="hiv-negativo_bm" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-negativo_total" id="hiv-negativo_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="hiv">
+                <th scope="row">35</th>
+                <th scope="row" colspan="2">Total de crianças com teste HIV indeterminado</th>
+                <td><input type="number" name="hiv-indeterminado_pf" id="hiv-indeterminado_pf" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-indeterminado_bm" id="hiv-indeterminado_bm" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-indeterminado_total" id="hiv-indeterminado_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="hiv">
+                <th scope="row">36</th>
+                <th scope="row" colspan="2">Total de crianças que iniciaram profilaxia com CTZ</th>
+                <td><input type="number" name="hiv-ctz_pf" id="hiv-ctz_pf" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-ctz_bm" id="hiv-ctz_bm" data-eden-group="total"></td>
+                <td><input type="number" name="hiv-ctz_total" id="hiv-ctz_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="tb" data-eden-row-label-col-index="2">
+                <th scope="row">37</th>
+                <th scope="rowgroup" rowspan="2" data-eden-row-category-label="tb">TB</span></th>
+                <th scope="row" colspan="2">Total de crianças que referem contacto com TB</th>
+                <td><input type="number" name="tb-contacto_pf" id="tb-contacto_pf" data-eden-group="total"></td>
+                <td><input type="number" name="tb-contacto_bm" id="tb-contacto_bm" data-eden-group="total"></td>
+                <td><input type="number" name="tb-contacto_total" id="tb-contacto_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="tb">
+                <th scope="row">38</th>
+                <th scope="row" colspan="2">Total de crianças com sinas e sintomas de tuberculose</th>
+                <td><input type="number" name="tb-sintomas_pf" id="tb-sintomas_pf" data-eden-group="total"></td>
+                <td><input type="number" name="tb-sintomas_bm" id="tb-sintomas_bm" data-eden-group="total"></td>
+                <td><input type="number" name="tb-sintomas_total" id="tb-sintomas_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <!-- Atraso de Desenvolvimento Psicomotor -->
+            <tr data-eden-row-category-id="atraso-psicomotor" data-eden-row-label-col-index="2">
+                <th scope="row">39</th>
+                <th scope="row" colspan="2" class="eden-u-text-center eden-u-font-weight-bold" data-eden-row-category-label="atraso-psicomotor"><b>Atraso de Desenvolvi-<br>mento Psicomotor</b></th>
+                <th scope="row" colspan="2">Total de crianças de 0-59 meses com atraso de desenvolvimento psicomotor identificado pela 1ª vez</th>
+                <td><input type="number" name="atraso-psicomotor_pf" id="atraso-psicomotor_pf" data-eden-group="total"></td>
+                <td><input type="number" name="atraso-psicomotor_bm" id="atraso-psicomotor_bm" data-eden-group="total"></td>
+                <td><input type="number" name="atraso-psicomotor_total" id="atraso-psicomotor_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            </tbody>
+    </table>
+
+    <header class="tes-ccd__header tes-ccd__header--print-only eden-u-break-before">
+        <div class="tes-ccd__header-row tes-ccd__header-row--spaced">
+            <figure class="tes-c-gov tes-c-gov--horizontal tes-c-gov--text-uppercase tes-c-gov--text-left">
+                <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                <figcaption class="tes-c-gov__info">
+                    <span class="tes-c-gov__country">República de Moçambique</span>
+                    <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                </figcaption>
+            </figure>
+            <div class="tes-ccd__meta-grid">
+                <div class="tes-ccd__meta-group">
+                    <label for="province-copy">Província de</label>
+                    <input type="text" name="province-copy" id="province-copy" list="province-datalist">
+                    <datalist id="province-datalist"></datalist>
+                </div>
+                <div class="tes-ccd__meta-group">
+                    <label for="district-copy">Distrito de</label>
+                    <input type="text" name="district-copy" id="district-copy" list="district-datalist">
+                    <datalist id="district-datalist"></datalist>
+                </div>
+                <div class="tes-ccd__meta-group">
+                <label for="health-unit-copy">Unidade Sanitária:</label>
+                <input type="text" name="healthy-unit-copy" id="health-unit-copy" list="health-unit-datalist">
+                <datalist id="health-unit-datalist"></datalist>
+            </div>
+            <div class="tes-ccd__meta-group">
+                <label for="month-copy">Mês:</label>
+                <input type="text" name="month-copy" id="month-copy" list="month-datalist">
+                <datalist id="month-datalist"></datalist>
+            </div>
+            </div>
+        </div>
+        <div class="tes-ccd__header-row">
+            <div class="tes-ccd__model">
+                <span class="tes-ccd__model-code">MOD-SIS B08-B</span>
+            </div>
+            <h1 class="tes-ccd__title">SMI - RESUMO MENSAL: CONSULTA DA CRIANÇA DOENTE NA US E NA BRIGADA MÓVEL</h1>
+        </div>
+    </header>
+    <table class="eden-c-table eden-c-table--back" data-eden-js="tes-table" data-eden-row-label-col-index="1">
+        <colgroup>
+            <col style="width: var(--_default-cell-width, 50px)">
+            <col style="width: 66px">
+            <col style="width: 96px">
+            <col style="width: 555px">
+            <col span="3" style="width: var(--_default-cell-width, 50px)">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col" rowspan="2" colspan="4"></th>
+                <th scope="colgroup" colspan="3">Informação Dados</th>
+            </tr>
+            <tr>
+                <th scope="col" data-eden-col-label="c1">PF</th>
+                <th scope="col" data-eden-col-label="c2">BM</th>
+                <th scope="col">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody class="tes-ccd__tbody">
+            <!-- Novos casos / Malária confirmada (TDR/HTZ) -->
+            <tr data-eden-row-category-id="malaria" data-eden-row-label-col-index="3">
+                <th scope="row">40</th>
+                <th scope="rowgroup" rowspan="30"><span class="eden-u-text-vertical">Novos casos</span></th>
+                <th scope="rowgroup" rowspan="4" data-eden-row-category-label="malaria">Malária confirmada (TDR/HTZ)</th>
+                <th scope="row">Total de crianças de 0-59M com resultado do Teste de Malária Positivo (TDR ou HTZ)</th>
+                <td><input type="number" name="malaria-pos-0-59m_pf" id="malaria-pos-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-pos-0-59m_bm" id="malaria-pos-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-pos-0-59m_total" id="malaria-pos-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria">
+                <th scope="row">41</th>
+                <th scope="row">Total de crianças de 0-59M com resultado do Teste de Malária Negativo (TDR ou HTZ)</th>
+                <td><input type="number" name="malaria-neg-0-59m_pf" id="malaria-neg-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-neg-0-59m_bm" id="malaria-neg-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-neg-0-59m_total" id="malaria-neg-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria">
+                <th scope="row">42</th>
+                <th scope="row">Total de crianças de 5-14A com resultado do Teste para Malária Positivo (TDR ou HTZ)</th>
+                <td><input type="number" name="malaria-pos-5-14a_pf" id="malaria-pos-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-pos-5-14a_bm" id="malaria-pos-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-pos-5-14a_total" id="malaria-pos-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria">
+                <th scope="row">43</th>
+                <th scope="row">Total de crianças de 5-14A com resultado do Teste para Malária Negativo (TDR ou HTZ)</th>
+                <td><input type="number" name="malaria-neg-5-14a_pf" id="malaria-neg-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-neg-5-14a_bm" id="malaria-neg-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-neg-5-14a_total" id="malaria-neg-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+
+            <!-- Malária confirmada e tratada -->
+            <tr data-eden-row-category-id="malaria-tratada" data-eden-row-label-col-index="2">
+                <th scope="row">44</th>
+                <th scope="rowgroup" rowspan="8"><span class="eden-u-text-vertical" data-eden-row-category-label="malaria-tratada">Malária confirmada e tratada</span></th>
+                <th scope="row">Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e tratadas com AL (Coartem)</th>
+                <td><input type="number" name="malaria-trat-al-0-59m_pf" id="malaria-trat-al-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-al-0-59m_bm" id="malaria-trat-al-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-al-0-59m_total" id="malaria-trat-al-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria-tratada">
+                <th scope="row">45</th>
+                <th scope="row">Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e tratadas com Artesunato+Amodiaquina (ASAQ)</th>
+                <td><input type="number" name="malaria-trat-asaq-0-59m_pf" id="malaria-trat-asaq-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-asaq-0-59m_bm" id="malaria-trat-asaq-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-asaq-0-59m_total" id="malaria-trat-asaq-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria-tratada">
+                <th scope="row">46</th>
+                <th scope="row">Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e tratadas com Artesunato (AS)</th>
+                <td><input type="number" name="malaria-trat-as-0-59m_pf" id="malaria-trat-as-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-as-0-59m_bm" id="malaria-trat-as-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-as-0-59m_total" id="malaria-trat-as-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria-tratada">
+                <th scope="row">47</th>
+                <th scope="row">Total de crianças de 0-59 meses com diagnóstico de novo caso de Malária confirmada e tratadas com Quinino</th>
+                <td><input type="number" name="malaria-trat-quinino-0-59m_pf" id="malaria-trat-quinino-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-quinino-0-59m_bm" id="malaria-trat-quinino-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-quinino-0-59m_total" id="malaria-trat-quinino-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria-tratada">
+                <th scope="row">48</th>
+                <th scope="row">Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e tratadas com AL (Coartem)</th>
+                <td><input type="number" name="malaria-trat-al-5-14a_pf" id="malaria-trat-al-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-al-5-14a_bm" id="malaria-trat-al-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-al-5-14a_total" id="malaria-trat-al-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria-tratada">
+                <th scope="row">49</th>
+                <th scope="row">Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e tratadas com Artesunato+Amodiaquina (ASAQ)</th>
+                <td><input type="number" name="malaria-trat-asaq-5-14a_pf" id="malaria-trat-asaq-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-asaq-5-14a_bm" id="malaria-trat-asaq-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-asaq-5-14a_total" id="malaria-trat-asaq-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria-tratada">
+                <th scope="row">50</th>
+                <th scope="row">Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e tratadas com Artesunato (AS)</th>
+                <td><input type="number" name="malaria-trat-as-5-14a_pf" id="malaria-trat-as-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-as-5-14a_bm" id="malaria-trat-as-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-as-5-14a_total" id="malaria-trat-as-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="malaria-tratada">
+                <th scope="row">51</th>
+                <th scope="row">Total de crianças de 5-14 anos com diagnóstico de novo caso de Malária confirmada e tratadas com Quinino</th>
+                <td><input type="number" name="malaria-trat-quinino-5-14a_pf" id="malaria-trat-quinino-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-quinino-5-14a_bm" id="malaria-trat-quinino-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="malaria-trat-quinino-5-14a_total" id="malaria-trat-quinino-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+
+            <!-- Diarreia -->
+            <tr data-eden-row-category-id="diarreia" data-eden-row-label-col-index="2">
+                <th scope="row">52</th>
+                <th scope="rowgroup" rowspan="8"><span class="eden-u-text-vertical" data-eden-row-category-label="diarreia">Diarreia</span></th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia</th>
+                <td><input type="number" name="diarreia-0-59m_pf" id="diarreia-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-0-59m_bm" id="diarreia-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-0-59m_total" id="diarreia-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="diarreia">
+                <th scope="row">53</th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas com SRO e ZINCO</th>
+                <td><input type="number" name="diarreia-sro-zinco-0-59m_pf" id="diarreia-sro-zinco-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-sro-zinco-0-59m_bm" id="diarreia-sro-zinco-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-sro-zinco-0-59m_total" id="diarreia-sro-zinco-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="diarreia">
+                <th scope="row">54</th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só com ZINCO</th>
+                <td><input type="number" name="diarreia-zinco-0-59m_pf" id="diarreia-zinco-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-zinco-0-59m_bm" id="diarreia-zinco-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-zinco-0-59m_total" id="diarreia-zinco-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="diarreia">
+                <th scope="row">55</th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de Diarreia e tratadas só com SRO</th>
+                <td><input type="number" name="diarreia-sro-0-59m_pf" id="diarreia-sro-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-sro-0-59m_bm" id="diarreia-sro-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-sro-0-59m_total" id="diarreia-sro-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="diarreia">
+                <th scope="row">56</th>
+                <th scope="row">Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia</th>
+                <td><input type="number" name="diarreia-5-14a_pf" id="diarreia-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-5-14a_bm" id="diarreia-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-5-14a_total" id="diarreia-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="diarreia">
+                <th scope="row">57</th>
+                <th scope="row">Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas com SRO e ZINCO</th>
+                <td><input type="number" name="diarreia-sro-zinco-5-14a_pf" id="diarreia-sro-zinco-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-sro-zinco-5-14a_bm" id="diarreia-sro-zinco-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-sro-zinco-5-14a_total" id="diarreia-sro-zinco-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="diarreia">
+                <th scope="row">58</th>
+                <th scope="row">Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com ZINCO</th>
+                <td><input type="number" name="diarreia-zinco-5-14a_pf" id="diarreia-zinco-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-zinco-5-14a_bm" id="diarreia-zinco-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-zinco-5-14a_total" id="diarreia-zinco-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="diarreia">
+                <th scope="row">59</th>
+                <th scope="row">Total de crianças de 5-14A diagnosticadas como novo caso de Diarreia e tratadas só com SRO</th>
+                <td><input type="number" name="diarreia-sro-5-14a_pf" id="diarreia-sro-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-sro-5-14a_bm" id="diarreia-sro-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="diarreia-sro-5-14a_total" id="diarreia-sro-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+
+            <!-- Disenteria -->
+            <tr data-eden-row-category-id="disenteria" data-eden-row-label-col-index="2">
+                <th scope="row">60</th>
+                <th scope="rowgroup" rowspan="4"><span class="eden-u-text-vertical" data-eden-row-category-label="disenteria">Disenteria</span></th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria</th>
+                <td><input type="number" name="disenteria-0-59m_pf" id="disenteria-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="disenteria-0-59m_bm" id="disenteria-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="disenteria-0-59m_total" id="disenteria-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="disenteria">
+                <th scope="row">61</th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de Disenteria e tratadas com Ciprofloxacina</th>
+                <td><input type="number" name="disenteria-trat-0-59m_pf" id="disenteria-trat-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="disenteria-trat-0-59m_bm" id="disenteria-trat-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="disenteria-trat-0-59m_total" id="disenteria-trat-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="disenteria">
+                <th scope="row">62</th>
+                <th scope="row">Total de crianças 5-14A diagnosticadas como novo caso de Disenteria</th>
+                <td><input type="number" name="disenteria-5-14a_pf" id="disenteria-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="disenteria-5-14a_bm" id="disenteria-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="disenteria-5-14a_total" id="disenteria-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="disenteria">
+                <th scope="row">63</th>
+                <th scope="row">Total de crianças 5-14A diagnosticadas como novo caso de Disenteria e tratadas com Ciprofloxacina</th>
+                <td><input type="number" name="disenteria-trat-5-14a_pf" id="disenteria-trat-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="disenteria-trat-5-14a_bm" id="disenteria-trat-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="disenteria-trat-5-14a_total" id="disenteria-trat-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+
+            <!-- Pneumonia -->
+            <tr data-eden-row-category-id="pneumonia" data-eden-row-label-col-index="2">
+                <th scope="row">64</th>
+                <th scope="rowgroup" rowspan="4"><span class="eden-u-text-vertical"  data-eden-row-category-label="pneumonia">Pneumonia</span></th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia</th>
+                <td><input type="number" name="pneumonia-0-59m_pf" id="pneumonia-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="pneumonia-0-59m_bm" id="pneumonia-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="pneumonia-0-59m_total" id="pneumonia-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="pneumonia">
+                <th scope="row">65</th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de Pneumonia e tratadas com Amoxicilina</th>
+                <td><input type="number" name="pneumonia-trat-0-59m_pf" id="pneumonia-trat-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="pneumonia-trat-0-59m_bm" id="pneumonia-trat-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="pneumonia-trat-0-59m_total" id="pneumonia-trat-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="pneumonia">
+                <th scope="row">66</th>
+                <th scope="row">Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia</th>
+                <td><input type="number" name="pneumonia-5-14a_pf" id="pneumonia-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="pneumonia-5-14a_bm" id="pneumonia-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="pneumonia-5-14a_total" id="pneumonia-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="pneumonia">
+                <th scope="row">67</th>
+                <th scope="row">Total de crianças 5-14A diagnosticadas como novo caso de Pneumonia e tratadas com Amoxicilina</th>
+                <td><input type="number" name="pneumonia-trat-5-14a_pf" id="pneumonia-trat-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="pneumonia-trat-5-14a_bm" id="pneumonia-trat-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="pneumonia-trat-5-14a_total" id="pneumonia-trat-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+
+            <!-- Outras doenças -->
+            <tr data-eden-row-category-id="outras-doencas" data-eden-row-label-col-index="2">
+                <th scope="row">68</th>
+                <th scope="rowgroup" rowspan="2" data-eden-row-category-label="outras-doencas">Outras <br> Doenças</th>
+                <th scope="row">Total de crianças de 0-59 meses diagnosticadas como novo caso de outras doenças</th>
+                <td><input type="number" name="outras-doencas-0-59m_pf" id="outras-doencas-0-59m_pf" data-eden-group="total"></td>
+                <td><input type="number" name="outras-doencas-0-59m_bm" id="outras-doencas-0-59m_bm" data-eden-group="total"></td>
+                <td><input type="number" name="outras-doencas-0-59m_total" id="outras-doencas-0-59m_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="outras-doencas">
+                <th scope="row">69</th>
+                <th scope="row">Total de crianças de 5-14A diagnosticadas como novo caso de outras doenças</th>
+                <td><input type="number" name="outras-doencas-5-14a_pf" id="outras-doencas-5-14a_pf" data-eden-group="total"></td>
+                <td><input type="number" name="outras-doencas-5-14a_bm" id="outras-doencas-5-14a_bm" data-eden-group="total"></td>
+                <td><input type="number" name="outras-doencas-5-14a_total" id="outras-doencas-5-14a_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+
+            <!-- Referência -->
+            <tr data-eden-row-category-id="referencia" data-eden-row-label-col-index="2">
+                <th scope="row">70</th>
+                <th scope="rowgroup" rowspan="4"><span class="eden-u-text-vertical" data-eden-row-category-label="referencia">Referência</span></th>
+                <th scope="row" colspan="2">Total de crianças referidas</th>
+                <td><input type="number" name="criancas-referidas_pf" id="criancas-referidas_pf" data-eden-group="total"></td>
+                <td><input type="number" name="criancas-referidas_bm" id="criancas-referidas_bm" data-eden-group="total"></td>
+                <td><input type="number" name="criancas-referidas_total" id="criancas-referidas_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="referencia">
+                <th scope="row">71</th>
+                <th scope="row" colspan="2">Total de crianças referidas para Consulta de criança em risco</th>
+                <td><input type="number" name="ref-crianca-risco_pf" id="ref-crianca-risco_pf" data-eden-group="total"></td>
+                <td><input type="number" name="ref-crianca-risco_bm" id="ref-crianca-risco_bm" data-eden-group="total"></td>
+                <td><input type="number" name="ref-crianca-risco_total" id="ref-crianca-risco_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="referencia">
+                <th scope="row">72</th>
+                <th scope="row" colspan="2">Total de crianças referidas para Urgência de Pediatria ou Banco de Socorros/Internamento</th>
+                <td><input type="number" name="ref-urgencia-ped_pf" id="ref-urgencia-ped_pf" data-eden-group="total"></td>
+                <td><input type="number" name="ref-urgencia-ped_bm" id="ref-urgencia-ped_bm" data-eden-group="total"></td>
+                <td><input type="number" name="ref-urgencia-ped_total" id="ref-urgencia-ped_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+            <tr data-eden-row-category-id="referencia">
+                <th scope="row">73</th>
+                <th scope="row" colspan="2">Total de crianças referidas para Consulta Médica/Especializada/Doença crónica</th>
+                <td><input type="number" name="ref-consulta-med_pf" id="ref-consulta-med_pf" data-eden-group="total"></td>
+                <td><input type="number" name="ref-consulta-med_bm" id="ref-consulta-med_bm" data-eden-group="total"></td>
+                <td><input type="number" name="ref-consulta-med_total" id="ref-consulta-med_total" value="0" tabindex="-1" readonly data-eden-total="total"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer class="tes-c-footer">
+        <div class="tes-c-footer__area tes-c-footer__area--left">
+            <label for="date">Data:</label>
+            <input type="date" name="date" id="date" class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--center">
+            <label for="signature">Compilado por:</label>
+            <input type="text" name="signature" id="signature" class="tes-c-footer__input">
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--right">
+            <label for="signature2">Assinatura:</label>
+            <input type="text" name="signature2" id="signature2" class="tes-c-footer__input">
+        </div>
+    </footer>
+
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true"
+            data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes">
+        </p>
+    </div>
+</div>
+
+<div class="eden-c-page-footer">
+    <span class="eden-c-page-footer__date"></span>
+    <span>Totalizado via: <a href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a> - v2.0</span>
+</div>

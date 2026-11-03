@@ -40,10 +40,12 @@
     &__area {
         display: flex;
         align-items: center;
+        gap: var(--eden-sys-space-100);
     }
     
     &__area--stack {
         flex-direction: column;
+        gap: initial;
     }
 
     &__area--left {
