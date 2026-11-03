@@ -165,11 +165,11 @@ export const TesManager = {
         const verticalFormatPattern = /^(sec|s)\d+-?_[a-z0-9\-]+(_(col)?.+)?$/i;
 
         sourceIds.forEach(id => {
-            const isGlobalContext = verticalFormatPattern.test(id );
+            const isGlobalContext = verticalFormatPattern.test(id);
             const searchContext = isGlobalContext ? document : (currentRowElement || document);
 
-            const sourceElements = searchContext.querySelectorAll(`[data-eden-group~="${id }"]`);
-            const totalFieldElement = searchContext.querySelector(`[data-eden-total="${id }"]`);
+            const sourceElements = searchContext.querySelectorAll(`[data-eden-group~="${id}"]`);
+            const totalFieldElement = searchContext.querySelector(`[data-eden-total="${id}"]`);
 
             if (!totalFieldElement) return;
             totalFieldElement.value = this.calculateTotal(sourceElements);
@@ -365,6 +365,7 @@ export const TesManager = {
 
     print() {
         this.hideEmptyRowsForPrint();
+        this.fillCopyFields();
 
         const now = new Date();
         const date = now.toLocaleDateString('pt-MZ', {
@@ -387,7 +388,7 @@ export const TesManager = {
 
         const reportElement = document.querySelector('[data-eden-js="tes-report"]');
         const isMultiPage = reportElement
-            ? Array.from(reportElement.classList).some( cls => cls.endsWith('paginated'))
+            ? Array.from(reportElement.classList).some(cls => cls.endsWith('paginated'))
             : false;
         if (isMultiPage) {
             pageFooter.classList.add('eden-c-page-footer--fixed');
@@ -552,6 +553,20 @@ export const TesManager = {
             `;
             tbody.appendChild(noResultsRow);
         }
+    },
+
+    fillCopyFields() {
+        if (!this.contentArea) return;
+        if(this.activeReportId !== 'ccd') return;
+        
+        const metaFields = this.contentArea.querySelectorAll('.tes-ccd__meta-grid input');
+
+        metaFields.forEach( field => {
+            const copyField = document.querySelector(`[name=${field.name}-copy]`);
+            if(copyField) {
+                copyField.value = field.value;
+            }
+        });
     }
 
 };

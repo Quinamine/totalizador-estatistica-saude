@@ -1,0 +1,93 @@
+@use '../../abstracts/' as *;
+
+.tes-ccd {
+    --eden-h1-font-size: var(--eden-sys-font-size-300);
+    --_default-cell-width: 50px;
+
+    font-size: 13px;
+
+    &__header--print-only {
+        display: none;
+
+        @media print {
+            display: block;
+        }
+    }
+
+    &__header-row {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+
+        &--spaced {
+            margin-bottom: var(--eden-sys-space-600);
+        }
+    }
+
+    &__meta-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: var(--eden-sys-space-200) var(--eden-sys-space-700);
+        padding-top: var(--eden-sys-space-400);
+    }
+
+    &__meta-group {
+        display: flex;
+        align-items: center;
+        gap: var(--eden-sys-space-100);
+
+        label {
+            white-space: nowrap;
+
+            @media print {
+                font-weight: var(--eden-sys-font-weight-bold);
+            }
+        }
+    }
+
+    &__model {
+        white-space: nowrap;
+    }
+
+    &__title {
+        --eden-sys-heading-spacing-y-start: 0;
+        --eden-sys-heading-spacing-y-end: 0;
+    }
+
+
+    &__section-title {
+        background-color: #686868;
+        background-color: oklch(51.7% 0.02 var(--eden-ref-primary-hue));
+        color: #{$eden-ref-neutral-100};
+        text-align: center;
+    }
+
+    th[rowspan] {
+        --eden-table-cell-padding-x: 0;
+    }
+
+    .tes-c-footer {
+        justify-content: space-between;
+
+        input {
+            max-width: 200px;
+        }
+    }
+
+    @media print {
+        --eden-sys-page-content-offset-top: 0;
+
+        .eden-c-table {
+            --eden-table-cell-height: 24px;
+        }
+
+        .tes-c-gov__info {
+            font-weight: var(--eden-sys-font-weight-bold);
+        }
+
+        th[scope="row"] {
+            line-height: 1.19;
+        }
+
+    }
+}
