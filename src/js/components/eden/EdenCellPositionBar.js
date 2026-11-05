@@ -63,6 +63,17 @@ export const EdenCellPositionBar = {
         const complementaryId = colId;
         let complementaryLabel = table.querySelector(`[data-eden-complementary-label~="c${complementaryId}"]`);
 
+        // NUTRITION MODULE 
+        const isNutritionModule = table.closest('div.tes-nutricao');
+        const isFormulaInput = field.closest('div.tes-nutricao__grid-formula');
+        if(isNutritionModule && isFormulaInput) {
+            rowLabel = field.previousElementSibling ? field.previousElementSibling : null;
+
+            if(tr?.dataset?.edenRowCategoryId === "desparasitacao") {
+                complementaryLabel = tr.children[0];
+            }
+        }
+
         // ATS MODULE
         const isAtsModule = table.closest('div.tes-ats');
         if (isAtsModule) {

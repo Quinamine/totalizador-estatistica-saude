@@ -5,7 +5,7 @@ export const EDEN_PAGES = [
     { id: 'saaj', name: 'RM SAAJ'},
     { id: 'balancete', name: 'Requisição/Balancete'}, 
     { id: 'pharmacy-cash', name: 'Mapa de Caixa'},
-    { id: 'nutrition', name: 'RM Nutrição'},
+    { id: 'nutricao', name: 'RM Nutrição'},
     { id: 'tda-1', name: 'RM TDA 1'}, 
     { id: 'tda-2', name: 'RM TDA 2'},
     { id: "tdi", name: "RM TDI"},
