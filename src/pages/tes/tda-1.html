@@ -1,0 +1,339 @@
+<div class="eden-c-page eden-c-page--landscape tes-tda tes-tda--1">
+    <header class="tes-tda__header" style="display: none">
+        <div class="tes-tda__header-row">
+            <figure class="tes-c-gov">
+                <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                <figcaption class="tes-c-gov__info">
+                    <span class="tes-c-gov__country">República de Moçambique</span>
+                    <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="tes-tda__header-row">
+            <h1 class="tes-tda__title">
+                RELATÓRIO MENSAL - TRATAMENTO DE DESNUTRIÇÃO EM AMBULATÓRIO PARA CRIANÇAS DOS 6 MESES
+                AOS 14 ANOS
+            </h1>
+        </div>
+        <div class="tes-tda__meta-grid">
+            <div class="tes-tda__meta-group">
+                <label for="health-unit">Nome da Unidade Sanitária:</label>
+                <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist" autocomplete="off">
+                <datalist id="health-unit-datalist"></datalist>
+            </div>
+            <div class="tes-tda__meta-group">
+                <label for="signature">Relatório preparado por:</label>
+                <input type="text" name="signature" id="signature" autocomplete="off">
+            </div>
+            <div class="tes-tda__nid-group">
+                <label for="health-unit-code">Código da Unidade Sanitária:</label>
+                <input type="number" name="health-unit-code" id="health-unit-code" autocomplete="off">
+            </div>
+            <div class="tes-tda__meta-group">
+                <label for="province">Província:</label>
+                <input type="text" name="province" id="province" list="province-datalist" autocomplete="off">
+                <datalist id="province-datalist"></datalist>
+            </div>
+            <div class="tes-tda__meta-group">
+                <label for="department">Nome do Sector da Unidade Sanitária:</label>
+                <input type="text" name="department" id="department" list="department" autocomplete="off">
+                <datalist id="province-datalist">
+                    <option value="CCR"></option>
+                    <option value="TARV"></option>
+                    <option value="TB"></option>
+                    <option value="Nutrição"></option>
+                </datalist>
+            </div>
+            <div class="tes-tda__meta-group">
+                <label for="district">Distrito:</label>
+                <input type="text" name="district" id="district" list="district-datalist" autocomplete="off">
+                <datalist id="district-datalist"></datalist>
+            </div>
+            <div class="tes-tda__meta-group">
+                <label for="date">Data do Relatório::</label>
+                <input type="date" name="date" id="date">
+            </div>
+            <div class="tes-tda__meta-group">
+                <label for="month-year">Mês/Ano:</label>
+                <input type="text" name="month-year" id="month-year" list="month-year-datalist" autocomplete="off">
+                <datalist id="month-year-datalist"></datalist>
+            </div>
+        </div>
+    </header>
+    <table class="eden-c-table">
+        <colgroup>
+            <col style="width: 16px">
+            <col style="width: 175px">
+            <col span="4" style="width: 75px">
+            <col style="width: 105px">
+            <col span="4" style="width: 75px">
+            <col style="width: 100px">
+            <col span="2" style="width: 140px">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="colgroup" rowspan="3" colspan="2">Grupos etários</th>
+                <th scope="col" rowspan="3">Doentes no Início do mês <br>(A)</th>
+                <th scope="colgroup" colspan="3">Admissões</th>
+                <th scope="col" rowspan="3">Total Admissões <br>B=(B1+B2+B3)</th>
+                <th scope="colgroup" colspan="5">Saídas do Programa (C)</th>
+                <th scope="col" rowspan="3">Total de Saídas do Programa <br>C=(C1+C2+C3+<br>C4+C5)</th>
+                <th scope="col" rowspan="3">Total de doentes que transitam para o mês seguinte <br>D=(A+B-C)
+                </th>
+            </tr>
+            <tr>
+                <th scope="col" rowspan="2">Casos Novos (B1)</th>
+                <th scope="colgroup" colspan="2">Readmissões</th>
+                <th scope="col" rowspan="2">Curados (C1)</th>
+                <th scope="col" rowspan="2">Abandonos (C2)</th>
+                <th scope="col" rowspan="2">Óbitos (C3)</th>
+                <th scope="col" rowspan="2">Referidos para TDI (C4)</th>
+                <th scope="col" rowspan="2">Transferidos para outro setor ou US (C5)</th>
+            </tr>
+            <tr>
+                <th scope="col">Referidos do TDI (B2)</th>
+                <th scope="col">Abandonos que Retornam (B3)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linha 1: 6-59 meses DAG -->
+            <tr>
+                <th scope="row" class="tes-tda__row-number">1</th>
+                <th scope="row">6-59 meses DAG</th>
+                <td><input type="number" min="0" name="6-59m-dag_doentes-inicio" id="6-59m-dag_doentes-inicio" data-eden-group="tot-transitam sec1_subtot-6-59m_tot-transitam sec1_subtot-6-59m_doentes-inicio sec1_tot_doentes-inicio"></td>
+
+                <td><input type="number" min="0" name="6-59m-dag_novos" id="6-59m-dag_novos" data-eden-group="tot-admissoes tot-transitam sec1_subtot-6-59m_tot-transitam sec1_subtot-6-59m_novos sec1_tot_novos sec1_subtot-6-59m_tot-admissoes sec1_tot_tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="6-59m-dag_ref-do-tdi" id="6-59m-dag_ref-do-tdi" data-eden-group="tot-admissoes tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_ref-do-tdi sec1_tot_ref-do-tdi sec1_subtot-6-59m_tot-admissoes sec1_tot_tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="6-59m-dag_reinicios" id="6-59m-dag_reinicios" data-eden-group="tot-admissoes tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_reinicios sec1_tot_reinicios sec1_subtot-6-59m_tot-admissoes sec1_tot_tot-admissoes"></td>
+                
+                <td><input type="number" name="6-59m-dag_tot-admissoes" id="6-59m-dag_tot-admissoes" value="0" tabindex="-1" readonly data-eden-total="tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="6-59m-dag_curados" id="6-59m-dag_curados" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_curados sec1_tot_curados sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="6-59m-dag_abandonos" id="6-59m-dag_abandonos" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_abandonos sec1_tot_abandonos sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="6-59m-dag_obitos" id="6-59m-dag_obitos" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_obitos sec1_tot_obitos sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="6-59m-dag_ref-para-tdi" id="6-59m-dag_ref-para-tdi" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_ref-para-tdi sec1_tot_ref-para-tdi sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="6-59m-dag_transf-para" id="6-59m-dag_transf-para" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_transf-para sec1_tot_transf-para sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" name="6-59m-dag_tot-saidas" id="6-59m-dag_tot-saidas" value="0" tabindex="-1" readonly data-eden-total="tot-saidas"></td>
+
+                <td><input type="number" name="6-59m-dag_tot-transitam" id="6-59m-dag_tot-transitam" value="0" tabindex="-1" readonly data-eden-total="tot-transitam" data-eden-ending-balance="6-59m-dag_doentes-inicio 6-59m-dag_tot-admissoes 6-59m-dag_tot-saidas"></td>
+            </tr>
+            <!-- Linha 2: 6-59 meses DAM -->
+            <tr>
+                <th scope="row" class="tes-tda__row-number">2</th>
+                <th scope="row">6-59 meses DAM</th>
+                <td><input type="number" min="0" name="6-59m-dam_doentes-inicio" id="6-59m-dam_doentes-inicio" data-eden-group="tot-transitam sec1_subtot-6-59m_tot-transitam sec1_subtot-6-59m_doentes-inicio sec1_tot_doentes-inicio"></td>
+
+                <td><input type="number" min="0" name="6-59m-dam_novos" id="6-59m-dam_novos" data-eden-group="tot-admissoes tot-transitam sec1_subtot-6-59m_tot-transitam sec1_subtot-6-59m_novos sec1_tot_novos sec1_subtot-6-59m_tot-admissoes sec1_tot_tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="6-59m-dam_ref-do-tdi" id="6-59m-dam_ref-do-tdi" data-eden-group="tot-admissoes tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_ref-do-tdi sec1_tot_ref-do-tdi sec1_subtot-6-59m_tot-admissoes sec1_tot_tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="6-59m-dam_reinicios" id="6-59m-dam_reinicios" data-eden-group="tot-admissoes tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_reinicios sec1_tot_reinicios sec1_subtot-6-59m_tot-admissoes sec1_tot_tot-admissoes"></td>
+                
+                <td><input type="number" name="6-59m-dam_tot-admissoes" id="6-59m-dam_tot-admissoes" value="0" tabindex="-1" readonly data-eden-total="tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="6-59m-dam_curados" id="6-59m-dam_curados" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_curados sec1_tot_curados sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="6-59m-dam_abandonos" id="6-59m-dam_abandonos" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_abandonos sec1_tot_abandonos sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="6-59m-dam_obitos" id="6-59m-dam_obitos" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_obitos sec1_tot_obitos sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="6-59m-dam_ref-para-tdi" id="6-59m-dam_ref-para-tdi" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_ref-para-tdi sec1_tot_ref-para-tdi sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="6-59m-dam_transf-para" id="6-59m-dam_transf-para" data-eden-group="tot-saidas tot-transitam sec1_subtot-6-59m_tot-transitam  sec1_subtot-6-59m_transf-para sec1_tot_transf-para sec1_subtot-6-59m_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" name="6-59m-dam_tot-saidas" id="6-59m-dam_tot-saidas" value="0" tabindex="-1" readonly data-eden-total="tot-saidas"></td>
+
+                <td><input type="number" name="6-59m-dam_tot-transitam" id="6-59m-dam_tot-transitam" value="0" tabindex="-1" readonly data-eden-total="tot-transitam" data-eden-ending-balance="6-59m-dam_doentes-inicio 6-59m-dam_tot-admissoes 6-59m-dam_tot-saidas"></td>
+            </tr>
+            <!-- Sub-total 6-59 meses -->
+            <tr>
+                <th scope="row" colspan="2">Sub-total 6-59 meses</th>
+                <td><input type="number" name="sec1_subtot-6-59m_doentes-inicio" id="sec1_subtot-6-59m_doentes-inicio" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_doentes-inicio"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_novos" id="sec1_subtot-6-59m_novos" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_novos"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_ref-do-tdi" id="sec1_subtot-6-59m_ref-do-tdi" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_ref-do-tdi"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_reinicios" id="sec1_subtot-6-59m_reinicios" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_reinicios"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_tot-admissoes" id="sec1_subtot-6-59m_tot-admissoes" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_tot-admissoes"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_curados" id="sec1_subtot-6-59m_curados" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_curados"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_abandonos" id="sec1_subtot-6-59m_abandonos" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_abandonos"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_obitos" id="sec1_subtot-6-59m_obitos" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_obitos"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_ref-para-tdi" id="sec1_subtot-6-59m_ref-para-tdi" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_ref-para-tdi"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_transf-para" id="sec1_subtot-6-59m_transf-para" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_transf-para"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_tot-saidas" id="sec1_subtot-6-59m_tot-saidas" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_tot-saidas"></td>
+                <td><input type="number" name="sec1_subtot-6-59m_tot-transitam" id="sec1_subtot-6-59m_tot-transitam" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-6-59m_tot-transitam" data-eden-ending-balance="sec1_subtot-6-59m_doentes-inicio sec1_subtot-6-59m_tot-admissoes sec1_subtot-6-59m_tot-saidas"></td>
+            </tr>
+            <!-- Linha 3: 5-14 anos DAG -->
+            <tr>
+                <th scope="row" class="tes-tda__row-number">3</th>
+                <th scope="row">5-14 anos DAG</th>
+                <td><input type="number" min="0" name="5-14a-dag_doentes-inicio" id="5-14a-dag_doentes-inicio" data-eden-group="tot-transitam sec1_subtot-5-14a_tot-transitamsec1_subtot-5-14a_doentes-inicio sec1_tot_doentes-inicio"></td>
+
+                <td><input type="number" min="0" name="5-14a-dag_novos" id="5-14a-dag_novos" data-eden-group="tot-admissoes tot-transitam sec1_subtot-5-14a_tot-transitamsec1_subtot-5-14a_novos sec1_tot_novos sec1_subtot-5-14a_tot-admissoes sec1_tot_tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="5-14a-dag_ref-do-tdi" id="5-14a-dag_ref-do-tdi" data-eden-group="tot-admissoes tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_ref-do-tdi sec1_tot_ref-do-tdi sec1_subtot-5-14a_tot-admissoes sec1_tot_tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="5-14a-dag_reinicios" id="5-14a-dag_reinicios" data-eden-group="tot-admissoes tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_reinicios sec1_tot_reinicios sec1_subtot-5-14a_tot-admissoes sec1_tot_tot-admissoes"></td>
+                
+                <td><input type="number" name="5-14a-dag_tot-admissoes" id="5-14a-dag_tot-admissoes" value="0" tabindex="-1" readonly data-eden-total="tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="5-14a-dag_curados" id="5-14a-dag_curados" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_curados sec1_tot_curados sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="5-14a-dag_abandonos" id="5-14a-dag_abandonos" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_abandonos sec1_tot_abandonos sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="5-14a-dag_obitos" id="5-14a-dag_obitos" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_obitos sec1_tot_obitos sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="5-14a-dag_ref-para-tdi" id="5-14a-dag_ref-para-tdi" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_ref-para-tdi sec1_tot_ref-para-tdi sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="5-14a-dag_transf-para" id="5-14a-dag_transf-para" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_transf-para sec1_tot_transf-para sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" name="5-14a-dag_tot-saidas" id="5-14a-dag_tot-saidas" value="0" tabindex="-1" readonly data-eden-total="tot-saidas"></td>
+
+                <td><input type="number" name="5-14a-dag_tot-transitam" id="5-14a-dag_tot-transitam" value="0" tabindex="-1" readonly data-eden-total="tot-transitam" data-eden-ending-balance="5-14a-dag_doentes-inicio 5-14a-dag_tot-admissoes 5-14a-dag_tot-saidas"></td>
+            </tr>
+            <!-- Linha 4: 5-14 anos DAM -->
+            <tr>
+                <th scope="row" class="tes-tda__row-number">4</th>
+                <th scope="row">5-14 anos DAM</th>
+                <td><input type="number" min="0" name="5-14a-dam_doentes-inicio" id="5-14a-dam_doentes-inicio" data-eden-group="tot-transitam sec1_subtot-5-14a_tot-transitamsec1_subtot-5-14a_doentes-inicio sec1_tot_doentes-inicio"></td>
+
+                <td><input type="number" min="0" name="5-14a-dam_novos" id="5-14a-dam_novos" data-eden-group="tot-admissoes tot-transitam sec1_subtot-5-14a_tot-transitamsec1_subtot-5-14a_novos sec1_tot_novos sec1_subtot-5-14a_tot-admissoes sec1_tot_tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="5-14a-dam_ref-do-tdi" id="5-14a-dam_ref-do-tdi" data-eden-group="tot-admissoes tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_ref-do-tdi sec1_tot_ref-do-tdi sec1_subtot-5-14a_tot-admissoes sec1_tot_tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="5-14a-dam_reinicios" id="5-14a-dam_reinicios" data-eden-group="tot-admissoes tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_reinicios sec1_tot_reinicios sec1_subtot-5-14a_tot-admissoes sec1_tot_tot-admissoes"></td>
+                
+                <td><input type="number" name="5-14a-dam_tot-admissoes" id="5-14a-dam_tot-admissoes" value="0" tabindex="-1" readonly data-eden-total="tot-admissoes"></td>
+
+                <td><input type="number" min="0" name="5-14a-dam_curados" id="5-14a-dam_curados" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_curados sec1_tot_curados sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="5-14a-dam_abandonos" id="5-14a-dam_abandonos" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_abandonos sec1_tot_abandonos sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="5-14a-dam_obitos" id="5-14a-dam_obitos" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_obitos sec1_tot_obitos sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="5-14a-dam_ref-para-tdi" id="5-14a-dam_ref-para-tdi" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_ref-para-tdi sec1_tot_ref-para-tdi sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" min="0" name="5-14a-dam_transf-para" id="5-14a-dam_transf-para" data-eden-group="tot-saidas tot-transitam sec1_subtot-5-14a_tot-transitam sec1_subtot-5-14a_transf-para sec1_tot_transf-para sec1_subtot-5-14a_tot-saidas sec1_tot_tot-saidas"></td>
+
+                <td><input type="number" name="5-14a-dam_tot-saidas" id="5-14a-dam_tot-saidas" value="0" tabindex="-1" readonly data-eden-total="tot-saidas"></td>
+
+                <td><input type="number" name="5-14a-dam_tot-transitam" id="5-14a-dam_tot-transitam" value="0" tabindex="-1" readonly data-eden-total="tot-transitam" data-eden-ending-balance="5-14a-dam_doentes-inicio 5-14a-dam_tot-admissoes 5-14a-dam_tot-saidas"></td>
+            </tr>
+            <!-- Sub-total 5-14 anos -->
+            <tr>
+                <th scope="row" colspan="2">Sub-total 5-14 anos</th>
+                <td><input type="number" name="sec1_subtot-5-14a_doentes-inicio" id="sec1_subtot-5-14a_doentes-inicio" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_doentes-inicio"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_novos" id="sec1_subtot-5-14a_novos" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_novos"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_ref-do-tdi" id="sec1_subtot-5-14a_ref-do-tdi" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_ref-do-tdi"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_reinicios" id="sec1_subtot-5-14a_reinicios" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_reinicios"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_tot-admissoes" id="sec1_subtot-5-14a_tot-admissoes" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_tot-admissoes"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_curados" id="sec1_subtot-5-14a_curados" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_curados"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_abandonos" id="sec1_subtot-5-14a_abandonos" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_abandonos"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_obitos" id="sec1_subtot-5-14a_obitos" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_obitos"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_ref-para-tdi" id="sec1_subtot-5-14a_ref-para-tdi" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_ref-para-tdi"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_transf-para" id="sec1_subtot-5-14a_transf-para" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_transf-para"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_tot-saidas" id="sec1_subtot-5-14a_tot-saidas" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_tot-saidas"></td>
+                <td><input type="number" name="sec1_subtot-5-14a_tot-transitam" id="sec1_subtot-5-14a_tot-transitam" value="0" tabindex="-1" readonly data-eden-total="sec1_subtot-5-14a_tot-transitam" data-eden-ending-balance="sec1_subtot-5-14a_doentes-inicio sec1_subtot-5-14a_tot-admissoes sec1_subtot-5-14a_tot-saidas"></td>
+            </tr>
+            <!-- Total Geral -->
+            <tr>
+                <th scope="row" colspan="2">TOTAL</th>
+                <td><input type="number" name="sec1_tot_doentes-inicio" id="sec1_tot_doentes-inicio" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_doentes-inicio"></td>
+                <td><input type="number" name="sec1_tot_novos" id="sec1_tot_novos" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_novos"></td>
+                <td><input type="number" name="sec1_tot_ref-do-tdi" id="sec1_tot_ref-do-tdi" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_ref-do-tdi"></td>
+                <td><input type="number" name="sec1_tot_reinicios" id="sec1_tot_reinicios" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_reinicios"></td>
+                <td><input type="number" name="sec1_tot_tot-admissoes" id="sec1_tot_tot-admissoes" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_tot-admissoes"></td>
+                <td><input type="number" name="sec1_tot_curados" id="sec1_tot_curados" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_curados"></td>
+                <td><input type="number" name="sec1_tot_abandonos" id="sec1_tot_abandonos" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_abandonos"></td>
+                <td><input type="number" name="sec1_tot_obitos" id="sec1_tot_obitos" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_obitos"></td>
+                <td><input type="number" name="sec1_tot_ref-para-tdi" id="sec1_tot_ref-para-tdi" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_ref-para-tdi"></td>
+                <td><input type="number" name="sec1_tot_transf-para" id="sec1_tot_transf-para" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_transf-para"></td>
+                <td><input type="number" name="sec1_tot_tot-saidas" id="sec1_tot_tot-saidas" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_tot-saidas"></td>
+                <td><input type="number" name="sec1_tot_tot-transitam" id="sec1_tot_tot-transitam" value="0" tabindex="-1" readonly data-eden-total="sec1_tot_tot-transitam"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Secção Inferior: Fórmulas e Stock de ATPU -->
+    <div class="tes-tda__bottom-grid">
+        <div class="tes-tda__formulas-container">
+            <table class="eden-c-table">
+                <thead>
+                    <tr>
+                        <th>Fórmula para cálculo de indicadores de desempenho</th>
+                        <th>C1/C*100</th>
+                        <th>C2/C*100</th>
+                        <th>C3/C*100</th>
+                        <th>C4/C*100</th>
+                        <th>C5/C*100</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Proporção de saídas 6-59 meses</td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c1-6m">
+                        </td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c2-6m">
+                        </td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c3-6m">
+                        </td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c4-6m">
+                        </td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c5-6m">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Proporção de saídas 5-14 anos</td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c1-5a">
+                        </td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c2-5a">
+                        </td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c3-5a">
+                        </td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c4-5a">
+                        </td>
+                        <td><input type="text" meta-groupreadonly data-eden-total="prop-c5-5a">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tes-tda__stock-container">
+            <table class="eden-c-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">STOCK DE ATPU</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inicial</td>
+                        <td><input type="number" class="eden-c-input tes-tda__grid-formula"
+                                data-eden-group="stock-inicial" data-label="Stock ATPU - Inicial"></td>
+                    </tr>
+                    <tr>
+                        <td>Recebido</td>
+                        <td><input type="number" class="eden-c-input tes-tda__grid-formula"
+                                data-eden-group="stock-recebido" data-label="Stock ATPU - Recebido"></td>
+                    </tr>
+                    <tr>
+                        <td>Gasto</td>
+                        <td><input type="number" class="eden-c-input tes-tda__grid-formula"
+                                data-eden-group="stock-gasto" data-label="Stock ATPU - Gasto"></td>
+                    </tr>
+                    <tr>
+                        <td>Disponível</td>
+                        <td><input type="number" meta-groupreadonly data-eden-total="stock-disponivel"
+                                data-label="Stock ATPU - Disponível"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </d>

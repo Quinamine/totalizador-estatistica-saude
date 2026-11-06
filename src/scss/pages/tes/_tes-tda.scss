@@ -1,0 +1,46 @@
+.tes-tda {
+    --_header-bg: #dbe3e6;
+
+    @supports (background-color: oklch(0% 0 0)) {
+        --_header-bg: oklch(0.93 0.005 var(--eden-ref-primary-hue));
+    }
+
+    &__header-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title {
+        font-size: var(--eden-sys-font-size-600);
+    }
+
+    thead {
+        background-color: var(--_header-bg);
+    }
+
+    &--1 {
+        .tes-tda__meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        thead {
+            th {
+                vertical-align: bottom;
+            }
+        }
+
+        .tes-tda__row-number {
+            --eden-table-cell-padding-x: 0;
+
+            vertical-align: top;
+            padding: 2px;
+            border-right: none !important;
+        }
+
+        th[scope="row"]:nth-child(2) {
+            border-left: none !important;
+        }
+    }
+
+}
