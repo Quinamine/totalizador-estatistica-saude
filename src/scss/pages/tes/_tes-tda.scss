@@ -1,0 +1,141 @@
+.tes-tda {
+    --eden-h1-font-size: var(--eden-sys-font-size-500);
+
+    --_content-font-size: 0.8125rem; // 13px;
+    --_body-cell-height: 2.375rem; // 32px;
+    --_default-cell-width: 75px;
+    --_header-bg: #dbe3e6;
+
+    @supports (background-color: oklch(0% 0 0)) {
+        --_header-bg: oklch(0.93 0.005 var(--eden-ref-primary-hue));
+    }
+
+    font-size: var(--_content-font-size);
+
+    .tes-c-gov__info {
+        font-size: var(--eden-sys-font-size-100);
+    }
+
+    &__header-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: var(--eden-sys-space-300);
+    }
+
+    &__title {
+        --eden-sys-heading-spacing-y-end: 0;
+    }
+
+    &__meta-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border: 1px solid var(--eden-sys-border-color);
+        margin-bottom: var(--eden-sys-space-200);
+    }
+
+    &__meta-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: var(--eden-sys-space-100);
+        border-bottom: 1px solid var(--eden-sys-border-color);
+
+        &--no-border {
+            border-bottom: none;
+        }
+
+        label {
+            white-space: nowrap;
+        }
+
+        input {
+            border-bottom: none;
+            flex-basis: 320px;
+            padding: 0 3px;
+            min-height: 28px;
+            text-align: left;
+        }
+    }
+
+    thead {
+        background-color: var(--_header-bg);
+    }
+
+    &--1 {
+        .tes-tda__meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        table {
+            margin-top: 0;
+
+            tbody {
+                --eden-table-cell-height: var(--_body-cell-height);
+            }
+        }
+
+        thead {
+            th {
+                --eden-table-cell-padding-x: 0;
+
+                vertical-align: bottom;
+                line-height: var(--eden-sys-line-height-heading);
+            }
+        }
+
+        .tes-tda__row-number {
+            --eden-table-cell-padding-x: 0;
+
+            vertical-align: top;
+            padding: var(--eden-sys-space-050) var(--eden-sys-space-100);
+            border-right: none !important;
+            font-size: 0.65625rem;
+        }
+
+        th[scope="row"]:nth-child(2) {
+            border-left: none !important;
+            padding-left: var(--eden-sys-space-400);
+        }
+
+        th[scope="row"] {
+            text-align: left;
+        }
+
+        th[scope="row"][colspan="2"] {
+            padding-left: 30px;
+        }
+
+        .tes-tda__row--total {
+            th,
+            td {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__bottom-grid {
+        display: grid;
+        grid-template-columns: 1006px 280px;
+        align-items: start;
+
+        table {
+            margin-top: 0 !important;
+
+            th[scope="col"],
+            th[scope="colgroup"] {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    @media print {
+        --eden-sys-page-content-offset-top: 0;
+        --_content-font-size: 13.5px;
+
+        th,
+        td {
+            line-height: var(--eden-sys-line-height-heading);
+        }
+    }
+}

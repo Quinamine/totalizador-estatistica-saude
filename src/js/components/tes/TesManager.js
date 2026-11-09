@@ -190,7 +190,7 @@ export const TesManager = {
             fieldElement.value = this.calculateDifference(actualValue, theoreticalValue);
         }
 
-        // Módulos: Requisição Balancete, HIV/SIDA
+        // Módulos: Requisição Balancete, HIV/SIDA, TDA 1
         if (dataset.edenEndingBalance) {
             const [initialId, additionsId, deductionsId] = dataset.edenEndingBalance.split(' ');
 
@@ -222,6 +222,17 @@ export const TesManager = {
             }, 0);
 
             fieldElement.value = evaluationValue - outcomesSumValue;
+        }
+
+        // Módulos: TDA 1
+        if(dataset.edenProportion) {
+            const [numId, denId] = dataset.edenProportion.split(' ');
+            const numerator = Number(document.getElementById(numId)?.value || 0);
+            const denominator = Number(document.getElementById(denId)?.value || 0);
+
+            fieldElement.value = denominator > 0
+                ? ((numerator / denominator) * 100).toFixed(1) + '%'
+                : '0.0%';
         }
     },
 

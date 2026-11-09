@@ -118,7 +118,10 @@ export const EdenCellPositionBar = {
                 span.classList.add(`${baseClass}${modifierSuffix}`);
 
                 const rawText = label.value !== undefined ? label.value : label.innerText;
-                span.textContent = rawText.replace(/\s+/g, ' ').trim();
+                span.textContent = rawText
+                    .replace(/\s+/g, ' ').trim()
+                    .replace(/(?<=[a-zA-Zá-úÁ-Ú])-(\s*)(?=[a-zA-Zá-úÁ-Ú])/g, '')
+
                 span.title = span.textContent;
             }
 
