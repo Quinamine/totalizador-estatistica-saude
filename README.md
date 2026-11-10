@@ -26,7 +26,7 @@ Este repositório está em desenvolvimento activo.
 - [x] **Fase 2:** Desenvolvimento da lógica de injecção de módulos.
 - [ ] **Fase 3:** Implementação individual dos 28 totalizadores.
 
-### 📊 Progresso dos Totalizadores (21/28):
+### 📊 Progresso dos Totalizadores (22/28):
 
 #### Consultas
 - [x] RM Consultas Externas
@@ -41,7 +41,7 @@ Este repositório está em desenvolvimento activo.
 #### Nutrição
 - [x] RM Nutrição
 - [x] RM TDA 1 
-- [ ] RM TDA 2
+- [x] RM TDA 2
 - [ ] RM TDI
 
 #### ITS/HIV
