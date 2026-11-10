@@ -1,0 +1,277 @@
+<div class="eden-c-page eden-c-page--portrait tes-tda tes-tda--2" data-eden-js="tes-report">
+    <header class="tes-tda__header">
+        <div class="tes-tda__header-row">
+            <figure class="tes-c-gov">
+                <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                <figcaption class="tes-c-gov__info">
+                    <span class="tes-c-gov__country">República de Moçambique</span>
+                    <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="tes-tda__header-row">
+            <h1 class="tes-tda__title">Resumo Mensal do PRN para Pacientes &ge; 15 Anos</h1>
+        </div>
+        <div class="tes-tda__meta-grid">
+            <div class="tes-tda__meta-group">
+                <label for="province">Província:</label>
+                <input type="text" name="province" id="province" list="province-datalist" autocomplete="off">
+                <datalist id="province-datalist"></datalist>
+            </div>
+            <div class="tes-tda__meta-group">
+                <label for="district">Distrito:</label>
+                <input type="text" name="district" id="district" list="district-datalist" autocomplete="off">
+                <datalist id="district-datalist"></datalist>
+            </div>
+            <div class="tes-tda__meta-group">
+                <label for="health-unit">US:</label>
+                <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist" autocomplete="off">
+                <datalist id="health-unit-datalist"></datalist>
+            </div>
+            <div class="tes-tda__meta-group tes-tda__meta-group--no-border">
+                <label for="month">Mês:</label>
+                <input type="text" name="month" id="month" list="month-datalist" autocomplete="off">
+                <datalist id="month-datalist"></datalist>
+            </div>
+        </div>
+    </header>
+
+    <table class="eden-c-table" data-eden-row-label-col-index="1">
+        <colgroup>
+            <col style="width: 40px">
+            <col style="width: 225px">
+            <col span="6" style="width: var(--_default-cell-width, 75px)">
+            <col class="eden-u-col-spacer-lg">
+            <col style="width: 110px">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="colgroup" colspan="2 ">Indicadores</th>
+                <th scope="col" data-eden-col-label="c1">TRIAGEM</th>
+                <th scope="col" data-eden-col-label="c2">TB</th>
+                <th scope="col" data-eden-col-label="c3">CPN</th>
+                <th scope="col" data-eden-col-label="c4">CPP</th>
+                <th scope="col" data-eden-col-label="c5">TARV</th>
+                <th scope="col">TOTAL</th>
+                <th rowspan="100%" class="eden-u-cell-spacer" style="background-color: #fff !important;"></th>
+                <th scope="col" rowspan="2">Coluna <br>correspondente <br>no livro de <br>registo</th>
+            </tr>
+            <tr>
+                <th scope="colgroup" colspan="8" class="eden-u-text-left">PACIENTES NO INÍCIO DO MÊS (A)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Secção A -->
+            <tr>
+                <th scope="row" class="tes-tda__row-number">A</th>
+                <th scope="row">Nº de pacientes que transitaram do mês anterior para este mês</th>
+                <td><input type="number" min="0" name="pacientes-mes-anterior_triagem" id="pacientes-mes-anterior_triagem" data-eden-group="total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="pacientes-mes-anterior_tb" id="pacientes-mes-anterior_tb" data-eden-group="total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="pacientes-mes-anterior_cpn" id="pacientes-mes-anterior_cpn" data-eden-group="total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="pacientes-mes-anterior_cpp" id="pacientes-mes-anterior_cpp" data-eden-group="total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="pacientes-mes-anterior_tarv" id="pacientes-mes-anterior_tarv" data-eden-group="total sec4_pac-transitam_tarv sec4_pac-transitam_total"></td>
+                <td><input type="number" name="pacientes-mes-anterior_total" id="pacientes-mes-anterior_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <th class="eden-u-cell-spacer" rowspan="100%"></th>
+                <td></td>
+            </tr>
+
+            <!-- Secção B - Admissões -->
+            <tr class="tes-tda__row--height--md">
+                <th scope="row" colspan="8" class="tes-tda__section-title">ADMISSÕES (B)</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">B1</th>
+                <th scope="row">Nº de pacientes admitidos com desnutrição aguda moderada (DAM) com HIV+ e/ou TB</th>
+                <td><input type="number" min="0" name="admitidos-dam-hiv-tb_triagem" id="admitidos-dam-hiv-tb_triagem" data-eden-group="total sec2_tot-admissoes_triagem sec2_tot-admissoes_total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="admitidos-dam-hiv-tb_tb" id="admitidos-dam-hiv-tb_tb" data-eden-group="total  sec2_tot-admissoes_tb sec2_tot-admissoes_total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dam-hiv-tb_cpn" id="admitidos-dam-hiv-tb_cpn" data-eden-group="total sec2_tot-admissoes_cpn sec2_tot-admissoes_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dam-hiv-tb_cpp" id="admitidos-dam-hiv-tb_cpp" data-eden-group="total sec2_tot-admissoes_cpp sec2_tot-admissoes_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dam-hiv-tb_tarv" id="admitidos-dam-hiv-tb_tarv" data-eden-group="total sec2_tot-admissoes_tarv sec2_tot-admissoes_total sec4_pac-transitam_tarv sec4_pac-transitam_total"></td>
+                <td><input type="number" name="admitidos-dam-hiv-tb_total" id="admitidos-dam-hiv-tb_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">B2</th>
+                <th scope="row">Nº de pacientes admitidos com desnutrição aguda moderada (DAM) com HIV- ou desconhecido
+                </th>
+                <td class="eden-c-table__cell--na"></td>
+                <td class="eden-c-table__cell--na"></td>
+                <td><input type="number" min="0" name="admitidos-dam-hiv-neg_cpn" id="admitidos-dam-hiv-neg_cpn" data-eden-group="total sec2_tot-admissoes_cpn sec2_tot-admissoes_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dam-hiv-neg_cpp" id="admitidos-dam-hiv-neg_cpp" data-eden-group="total sec2_tot-admissoes_cpp sec2_tot-admissoes_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td class="eden-c-table__cell--na"></td>
+                <td><input type="number" name="admitidos-dam-hiv-neg_total" id="admitidos-dam-hiv-neg_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">B3</th>
+                <th scope="row">Nº de pacientes admitidos com desnutrição aguda grave (DAG) com HIV+</th>
+                <td><input type="number" min="0" name="admitidos-dag-hiv-pos_triagem" id="admitidos-dag-hiv_triagem" data-eden-group="total sec2_tot-admissoes_triagem sec2_tot-admissoes_total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="admitidos-dag-hiv_tb" id="admitidos-dag-hiv_tb" data-eden-group="total  sec2_tot-admissoes_tb sec2_tot-admissoes_total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dag-hiv_cpn" id="admitidos-dag-hiv_cpn" data-eden-group="total sec2_tot-admissoes_cpn sec2_tot-admissoes_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dag-hiv_cpp" id="admitidos-dag-hiv_cpp" data-eden-group="total sec2_tot-admissoes_cpp sec2_tot-admissoes_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dag-hiv_tarv" id="admitidos-dag-hiv_tarv" data-eden-group="total sec2_tot-admissoes_tarv sec2_tot-admissoes_total sec4_pac-transitam_tarv sec4_pac-transitam_total"></td>
+                <td><input type="number" name="admitidos-dag-hiv_total" id="admitidos-dag-hiv_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">B4</th>
+                <th scope="row">Nº de pacientes admitidos com desnutrição aguda grave (DAG) com HIV- ou desconhecido
+                </th>
+                <td><input type="number" min="0" name="admitidos-dag-hiv-pos_triagem" id="admitidos-dag-hiv-neg_triagem" data-eden-group="total sec2_tot-admissoes_triagem sec2_tot-admissoes_total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="admitidos-dag-hiv-neg_tb" id="admitidos-dag-hiv-neg_tb" data-eden-group="total  sec2_tot-admissoes_tb sec2_tot-admissoes_total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dag-hiv-neg_cpn" id="admitidos-dag-hiv-neg_cpn" data-eden-group="total sec2_tot-admissoes_cpn sec2_tot-admissoes_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="admitidos-dag-hiv-neg_cpp" id="admitidos-dag-hiv-neg_cpp" data-eden-group="total sec2_tot-admissoes_cpp sec2_tot-admissoes_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td class="eden-c-table__cell--na"></td>
+                <td><input type="number" name="admitidos-dag-hiv-neg_total" id="admitidos-dag-hiv-neg_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>20</td>
+            </tr>
+            <tr class="eden-c-table__row--toned">
+                <th scope="row" colspan="2" class="eden-u-text-right"><b>Total Admissões (B1+B2+B3+B4)</b></th>
+                <td><input type="number" name="sec2_tot-admissoes_triagem" id="sec2_tot-admissoes_triagem" value="0" tabindex="-1"
+                        readonly data-eden-total="sec2_tot-admissoes_triagem"></td>
+                <td><input type="number" name="sec2_tot-admissoes_tb" id="sec2_tot-admissoes_tb" value="0" tabindex="-1"
+                        readonly data-eden-total="sec2_tot-admissoes_tb"></td>
+                <td><input type="number" name="sec2_tot-admissoes_cpn" id="sec2_tot-admissoes_cpn" value="0" tabindex="-1"
+                        readonly data-eden-total="sec2_tot-admissoes_cpn"></td>
+                <td><input type="number" name="sec2_tot-admissoes_cpp" id="sec2_tot-admissoes_cpp" value="0" tabindex="-1"
+                        readonly data-eden-total="sec2_tot-admissoes_cpp"></td>
+                <td><input type="number" name="sec2_tot-admissoes_tarv" id="sec2_tot-admissoes_tarv" value="0" tabindex="-1"
+                        readonly data-eden-total="sec2_tot-admissoes_tarv"></td>
+                <td><input type="number" name="sec2_tot-admissoes_total" id="sec2_tot-admissoes_total" value="0" tabindex="-1"
+                        readonly data-eden-total="sec2_tot-admissoes_total"></td>
+                <td></td>
+            </tr>
+
+            <!-- Secção C - Altas -->
+            <tr class="tes-tda__row--height--md">
+                <th scope="row" colspan="8" class="tes-tda__section-title">ALTAS (C)</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">C1</th>
+                <th scope="row">Nº de pacientes curados</th>
+                <td><input type="number" min="0" name="curados_triagem" id="curados_triagem" data-eden-group="total sec3_tot-altas_triagem sec3_tot-altas_total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="curados_tb" id="curados_tb" data-eden-group="total  sec3_tot-altas_tb sec3_tot-altas_total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="curados_cpn" id="curados_cpn" data-eden-group="total sec3_tot-altas_cpn sec3_tot-altas_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="curados_cpp" id="curados_cpp" data-eden-group="total sec3_tot-altas_cpp sec3_tot-altas_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="curados_tarv" id="curados_tarv" data-eden-group="total sec3_tot-altas_tarv sec3_tot-altas_total sec4_pac-transitam_tarv sec4_pac-transitam_total"></td>
+                <td><input type="number" name="curados_total" id="curados_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">C2</th>
+                <th scope="row">Nº de pacientes que abandonaram o tratamento</th>
+                <td><input type="number" min="0" name="abandonos_triagem" id="abandonos_triagem" data-eden-group="total sec3_tot-altas_triagem sec3_tot-altas_total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="abandonos_tb" id="abandonos_tb" data-eden-group="total  sec3_tot-altas_tb sec3_tot-altas_total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="abandonos_cpn" id="abandonos_cpn" data-eden-group="total sec3_tot-altas_cpn sec3_tot-altas_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="abandonos_cpp" id="abandonos_cpp" data-eden-group="total sec3_tot-altas_cpp sec3_tot-altas_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="abandonos_tarv" id="abandonos_tarv" data-eden-group="total sec3_tot-altas_tarv sec3_tot-altas_total sec4_pac-transitam_tarv sec4_pac-transitam_total"></td>
+                <td><input type="number" name="abandonos_total" id="abandonos_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">C3</th>
+                <th scope="row">Nº de óbitos</th>
+                <td><input type="number" min="0" name="obitos_triagem" id="obitos_triagem" data-eden-group="total sec3_tot-altas_triagem sec3_tot-altas_total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="obitos_tb" id="obitos_tb" data-eden-group="total  sec3_tot-altas_tb sec3_tot-altas_total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="obitos_cpn" id="obitos_cpn" data-eden-group="total sec3_tot-altas_cpn sec3_tot-altas_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="obitos_cpp" id="obitos_cpp" data-eden-group="total sec3_tot-altas_cpp sec3_tot-altas_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="obitos_tarv" id="obitos_tarv" data-eden-group="total sec3_tot-altas_tarv sec3_tot-altas_total sec4_pac-transitam_tarv sec4_pac-transitam_total"></td>
+                <td><input type="number" name="obitos_total" id="obitos_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">C4</th>
+                <th scope="row">Nº de pacientes referidos para o TDI</th>
+                <td><input type="number" min="0" name="ref-para-tdi_triagem" id="ref-para-tdi_triagem" data-eden-group="total sec3_tot-altas_triagem sec3_tot-altas_total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="ref-para-tdi_tb" id="ref-para-tdi_tb" data-eden-group="total  sec3_tot-altas_tb sec3_tot-altas_total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="ref-para-tdi_cpn" id="ref-para-tdi_cpn" data-eden-group="total sec3_tot-altas_cpn sec3_tot-altas_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="ref-para-tdi_cpp" id="ref-para-tdi_cpp" data-eden-group="total sec3_tot-altas_cpp sec3_tot-altas_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="ref-para-tdi_tarv" id="ref-para-tdi_tarv" data-eden-group="total sec3_tot-altas_tarv sec3_tot-altas_total sec4_pac-transitam_tarv sec4_pac-transitam_total"></td>
+                <td><input type="number" name="ref-para-tdi_total" id="ref-para-tdi_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <th scope="row" class="tes-tda__row-number">C5</th>
+                <th scope="row">Nº de pacientes transferidos para outro sector ou US</th>
+                <td><input type="number" min="0" name="transf-para_triagem" id="transf-para_triagem" data-eden-group="total sec3_tot-altas_triagem sec3_tot-altas_total sec4_pac-transitam_triagem sec4_pac-transitam_total">
+                </td>
+                <td><input type="number" min="0" name="transf-para_tb" id="transf-para_tb" data-eden-group="total  sec3_tot-altas_tb sec3_tot-altas_total sec4_pac-transitam_tb sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="transf-para_cpn" id="transf-para_cpn" data-eden-group="total sec3_tot-altas_cpn sec3_tot-altas_total sec4_pac-transitam_cpn sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="transf-para_cpp" id="transf-para_cpp" data-eden-group="total sec3_tot-altas_cpp sec3_tot-altas_total sec4_pac-transitam_cpp sec4_pac-transitam_total"></td>
+                <td><input type="number" min="0" name="transf-para_tarv" id="transf-para_tarv" data-eden-group="total sec3_tot-altas_tarv sec3_tot-altas_total sec4_pac-transitam_tarv sec4_pac-transitam_total"></td>
+                <td><input type="number" name="transf-para_total" id="transf-para_total" value="0" tabindex="-1"
+                        readonly data-eden-total="total"></td>
+                <td>28</td>
+            </tr>
+            <tr  class="eden-c-table__row--toned">
+                <th scope="row" colspan="2" class="eden-u-text-right"><b>Total Altas (C1+C2+C3+C4+C5)</b></th>
+                <td><input type="number" name="sec3_tot-altas_triagem" id="sec3_tot-altas_triagem" value="0" tabindex="-1"
+                        readonly data-eden-total="sec3_tot-altas_triagem"></td>
+                <td><input type="number" name="sec3_tot-altas_tb" id="sec3_tot-altas_tb" value="0" tabindex="-1"
+                        readonly data-eden-total="sec3_tot-altas_tb"></td>
+                <td><input type="number" name="sec3_tot-altas_cpn" id="sec3_tot-altas_cpn" value="0" tabindex="-1"
+                        readonly data-eden-total="sec3_tot-altas_cpn"></td>
+                <td><input type="number" name="sec3_tot-altas_cpp" id="sec3_tot-altas_cpp" value="0" tabindex="-1"
+                        readonly data-eden-total="sec3_tot-altas_cpp"></td>
+                <td><input type="number" name="sec3_tot-altas_tarv" id="sec3_tot-altas_tarv" value="0" tabindex="-1"
+                        readonly data-eden-total="sec3_tot-altas_tarv"></td>
+                <td><input type="number" name="sec3_tot-altas_total" id="sec3_tot-altas_total" value="0" tabindex="-1"
+                        readonly data-eden-total="sec3_tot-altas_total"></td>
+                <td></td>
+            </tr>
+
+            <!-- Linha de fecho -->
+            <tr>
+                <th scope="row" colspan="2" class="eden-u-text-right"><b>Nº de pacientes que transitam para o mês
+                        seguinte (A+B-C)</b></th>
+                <td><input type="number" name="sec4_pac-transitam_triagem" id="sec4_pac-transitam_triagem" value="0" tabindex="-1"
+                        readonly data-eden-total="sec4_pac-transitam_triagem" data-eden-ending-balance="pacientes-mes-anterior_triagem sec2_tot-admissoes_triagem sec3_tot-altas_triagem"></td>
+                <td><input type="number" name="sec4_pac-transitam_tb" id="sec4_pac-transitam_tb" value="0" tabindex="-1"
+                        readonly data-eden-total="sec4_pac-transitam_tb" data-eden-ending-balance="pacientes-mes-anterior_tb sec2_tot-admissoes_tb sec3_tot-altas_tb"></td>
+                <td><input type="number" name="sec4_pac-transitam_cpn" id="sec4_pac-transitam_cpn" value="0" tabindex="-1"
+                        readonly data-eden-total="sec4_pac-transitam_cpn" data-eden-ending-balance="pacientes-mes-anterior_cpn sec2_tot-admissoes_cpn sec3_tot-altas_cpn"></td>
+                <td><input type="number" name="sec4_pac-transitam_cpp" id="sec4_pac-transitam_cpp" value="0" tabindex="-1"
+                        readonly data-eden-total="sec4_pac-transitam_cpp" data-eden-ending-balance="pacientes-mes-anterior_cpp sec2_tot-admissoes_cpp sec3_tot-altas_cpp"></td>
+                <td><input type="number" name="sec4_pac-transitam_tarv" id="sec4_pac-transitam_tarv" value="0" tabindex="-1"
+                        readonly data-eden-total="sec4_pac-transitam_tarv" data-eden-ending-balance="pacientes-mes-anterior_tarv sec2_tot-admissoes_tarv sec3_tot-altas_tarv"></td>
+                <td><input type="number" name="sec4_pac-transitam_total" id="sec4_pac-transitam_total" value="0" tabindex="-1"
+                        readonly data-eden-total="sec4_pac-transitam_total"data-eden-ending-balance="pacientes-mes-anterior_total sec2_tot-admissoes_total sec3_tot-altas_total"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <footer class="tes-c-footer">
+        <div class="tes-c-footer__area tes-c-footer__area--left">
+            <label for="date">Data:</label>
+            <input type="date" name="date" id="date" class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--right">
+            <label for="signature2">Assinatura do Responsável do Sector:</label>
+            <input type="text" name="signature2" id="signature2" class="tes-c-footer__input">
+        </div>
+    </footer>
+
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true"
+            data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes"></p>
+    </div>
+</div>
