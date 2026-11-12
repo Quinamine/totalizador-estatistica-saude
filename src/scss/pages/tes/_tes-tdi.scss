@@ -12,10 +12,6 @@
         --_header-bg: oklch(0.93 0.005 var(--eden-ref-primary-hue));
     }
 
-    @media print {
-        --_header-bg: #{$eden-ref-neutral-100};
-    }
-
     font-size: var(--_content-font-size);
 
     .tes-c-gov__info {
@@ -79,6 +75,26 @@
         th[scope="row"] {
             text-align: left;
             padding-left: var(--eden-sys-space-600);
+        }
+    }
+
+    &__footer {
+        input {
+            max-width: 250px;
+            margin-top: var(--eden-sys-space-100);
+            text-align: center;
+        }
+    }
+
+    @media print {
+        --_header-bg: #{$eden-ref-neutral-100};
+
+        table {
+            --eden-table-cell-height: 28px;
+        }
+
+        &__footer {
+            margin-top: var(--eden-sys-space-400) !important;
         }
     }
 
