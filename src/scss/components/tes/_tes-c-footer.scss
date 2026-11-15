@@ -45,7 +45,7 @@
     
     &__area--stack {
         flex-direction: column;
-        gap: initial;
+        gap: var(--eden-sys-space-100);
     }
 
     &__area--left {
