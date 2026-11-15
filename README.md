@@ -47,7 +47,7 @@ Este repositório está em desenvolvimento activo.
 #### ITS/HIV
 - [x] RM ATS 
 - [x] RM HIV/SIDA 
-- [ ] RM PrEP 
+- [x] RM PrEP 
 - [ ] RM DAH 
 - [ ] RM ITS 
 - [ ] RT APSS/PP
