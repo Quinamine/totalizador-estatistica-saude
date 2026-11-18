@@ -1,0 +1,122 @@
+.tes-dah {
+
+    &__header-row {
+        display: grid;
+        grid-template-columns: 120px 1fr 100px;
+
+        &--flex {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--eden-sys-space-500);
+            margin-block: var(--eden-sys-space-400) var(--eden-sys-space-150);
+            padding-left: 35px;
+        }
+    }
+
+    .tes-c-gov {
+        img {
+            width: 40px;
+        }
+
+        &__info {
+            font-size: 0.5625rem;
+            line-height: 1.2;
+        }
+    }
+
+    &__title {
+        justify-self: center;
+        align-self: center;
+        font-size: var(--eden-sys-font-size-500);
+        margin-bottom: var(--eden-sys-space-400);
+    }
+
+    &__model-code {
+        font-weight: var(--eden-sys-font-weight-bold);
+    }
+
+    &__meta-group {
+        display: flex;
+        align-items: center;
+        gap: var(--eden-sys-space-100);
+
+        label {
+            white-space: nowrap;
+            font-weight: var(--eden-sys-font-weight-bold);
+        }
+    }
+
+    table {
+        --eden-table-cell-height: 36px;
+    }
+
+    thead {
+        --eden-table-cell-height: 24px;
+        --eden-table-cell-padding-x: var(--eden-sys-space-100);
+
+        th:has(strong) {
+            font-size: 0.65625rem; // 10.5px;
+            font-style: italic;
+            vertical-align: bottom;
+            padding-left: 35px;
+            line-height: var(--eden-sys-line-height-heading);
+            letter-spacing: .5px;
+        }
+    }
+
+    &__row-number {
+        padding-inline: var(--eden-sys-space-100);
+        border: none;
+        text-align: right;
+    }
+
+    &__footer-note {
+        font-size: 0.6875rem;
+        padding-left: 30px;
+        font-style: italic;
+        margin-top: var(--eden-sys-space-150);
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 30px;
+
+        .tes-c-footer__area--stack {
+            gap: var(--eden-sys-space-200);
+
+            label {
+                align-self: flex-start;
+                font-weight: var(--eden-sys-font-weight-bold);
+            }
+        }
+
+        .tes-c-footer__subgroup {
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            gap: var(--eden-sys-space-100);
+            margin-top: var(--eden-sys-space-200);
+
+            label {
+                align-self: initial;
+            }
+        }
+    }
+
+    input {
+        font-size: var(--eden-sys-font-size-200);
+    }
+
+    @media print {
+        th,
+        td {
+            line-height: 1.3;
+        }
+
+        .eden-c-table__cell--na {
+            background-color: #9b9e9f;
+            background-color: oklch(0.65 0.01 var(--eden-ref-primary-hue)) !important;
+        }
+    }
+}

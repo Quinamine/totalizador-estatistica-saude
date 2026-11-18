@@ -190,6 +190,25 @@ export const TesManager = {
             fieldElement.value = this.calculateDifference(actualValue, theoreticalValue);
         }
 
+        // Módulos: DAH (Linha 5)
+        if (dataset.edenInitial !== undefined || dataset.edenAdditions !== undefined) {
+            const initialId = dataset.edenInitial;
+            const deductionId = dataset.edenDeduction;
+            const additionsIdsStr = dataset.edenAdditions || '';
+
+            const initial = Number(document.getElementById(initialId)?.value) || 0;
+            const deductions = Number(document.getElementById(deductionId)?.value) || 0;
+
+            const additionIds = additionsIdsStr
+                .split(' ')
+                .map(id => id.trim())
+                .filter(id => Boolean(id));
+            const additionElements = additionIds.map(id => document.getElementById(id)).filter(Boolean);
+            const additions = this.calculateTotal(additionElements);
+
+            fieldElement.value = this.calculateEndingBalance(initial, additions, deductions);
+        }
+
         // Módulos: Requisição Balancete, HIV/SIDA, TDA 1
         if (dataset.edenEndingBalance) {
             const [initialId, additionsId, deductionsId] = dataset.edenEndingBalance.split(' ');
@@ -225,7 +244,7 @@ export const TesManager = {
         }
 
         // Módulos: TDA 1
-        if(dataset.edenProportion) {
+        if (dataset.edenProportion) {
             const [numId, denId] = dataset.edenProportion.split(' ');
             const numerator = Number(document.getElementById(numId)?.value || 0);
             const denominator = Number(document.getElementById(denId)?.value || 0);
@@ -568,13 +587,13 @@ export const TesManager = {
 
     fillCopyFields() {
         if (!this.contentArea) return;
-        if(this.activeReportId !== 'ccd') return;
-        
+        if (this.activeReportId !== 'ccd') return;
+
         const metaFields = this.contentArea.querySelectorAll('.tes-ccd__meta-grid input');
 
-        metaFields.forEach( field => {
+        metaFields.forEach(field => {
             const copyField = document.querySelector(`[name=${field.name}-copy]`);
-            if(copyField) {
+            if (copyField) {
                 copyField.value = field.value;
             }
         });

@@ -54,7 +54,7 @@ export const EdenCellPositionBar = {
 
         const thOffset = tr.querySelectorAll('th').length;
         const tdOffset = Array.from(tr.children).filter( el =>
-            el.tagName === 'TD' && el.cellIndex < rowLabel.cellIndex && !el.querySelector('input')
+            el.tagName === 'TD' && !el.querySelector('input')
         ).length;
         
         const colId = td.dataset.edenColLabelIndex ?? (td.cellIndex - thOffset - tdOffset) + 1;
