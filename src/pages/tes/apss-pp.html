@@ -1,0 +1,283 @@
+<div class="eden-c-page eden-c-page--portrait tes-apss" data-eden-js="tes-report">
+    <header class="tes-apss__header">
+        <div class="tes-apss__header-row">
+            <figure class="tes-c-gov tes-c-gov--text-uppercase">
+                <img src="assets/images/emblem.png" alt="Emblema de Moçambique">
+                <figcaption class="tes-c-gov__info">
+                    <span class="tes-c-gov__country">República de Moçambique</span>
+                    <span class="tes-c-gov__ministry">Ministério da Saúde</span>
+                    <span class="tes-c-gov__service">Serviço Nacional de Saúde</span>
+                </figcaption>
+            </figure>
+
+            <div class="tes-apss__title-block">
+                <h1 class="tes-apss__title">RESUMO TRIMESTRAL DAS ACTIVIDADES DE APOIO <br> PSICOSSOCIAL E PREVENÇÃO
+                    POSITIVA</h1>
+                <span class="tes-apss__model-code">Mod. SIS H05</span>
+            </div>
+        </div>
+
+        <div class="tes-apss__meta-grid">
+            <div class="tes-apss__meta-group">
+                <label for="province">Província</label>
+                <input type="text" name="province" id="province" list="province-datalist" autocomplete="off">
+                <datalist id="province-datalist"></datalist>
+            </div>
+            <div class="tes-apss__meta-group">
+                <label for="district">Distrito</label>
+                <input type="text" name="district" id="district" list="district-datalist" autocomplete="off">
+                <datalist id="district-datalist"></datalist>
+            </div>
+            <div class="tes-apss__meta-group">
+                <label for="health-unit">Unidade Sanitária</label>
+                <input type="text" name="health-unit" id="health-unit" list="health-unit-datalist" autocomplete="off">
+                <datalist id="health-unit-datalist"></datalist>
+            </div>
+            <div class="tes-apss__meta-group">
+                <label for="year">Ano</label>
+                <input type="text" name="year" id="year" list="year-datalist" autocomplete="off">
+                <datalist id="year-datalist"></datalist>
+            </div>
+        </div>
+    </header>
+
+    <table class="eden-c-table" data-eden-row-label-col-index="2">
+        <colgroup>
+            <col style="width: 95px">
+            <col style="width: 40px">
+            <col style="width: 300px">
+            <col span="6" style="width: 65px">
+            <col style="width: 120px">
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="3" class="eden-u-border-none"></th>
+                <th rowspan="3" scope="col">
+                    <div class="tes-apss__axis-indicator tes-apss__axis-indicator--vertical">
+                        <span>L<br>I<br>N<br>H<br>A<br>S</span>
+                        <span>&#9660;</span>
+                    </div>
+                </th>
+                <th scope="row">
+                    <div class="tes-apss__axis-indicator tes-apss__axis-indicator--horizontal">
+                        <span>COLUNAS</span>
+                        <span>&#9654;</span>
+                    </div>
+                </th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+                <th scope="col">6</th>
+                <th scope="col">7</th>
+            </tr>
+            <tr>
+                <th rowspan="2">
+                    <div class="tes-apss__reporting-period">
+                        <label for="apss-period">Período de Reporte</label>
+                        <input type="text" id="apss-period" placeholder="____/____ - ____/____">
+                    </div>
+                </th>
+                <th scope="colgroup" colspan="3" data-eden-col-label="c1 c2">0-14 anos</th>
+                <th scope="colgroup" colspan="3" data-eden-col-label="c4 c5">15/+ anos</th>
+                <th scope="col" rowspan="2">TOTAL GERAL</th>
+            </tr>
+            <tr>
+                <th scope="col" data-eden-complementary-label="c1">Masc.</th>
+                <th scope="col" data-eden-complementary-label="c2">Fem.</th>
+                <th scope="col">Total Grupo</th>
+                <th scope="col" data-eden-complementary-label="c4">Masc.</th>
+                <th scope="col" data-eden-complementary-label="c5">Fem.</th>
+                <th scope="col">Total Grupo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- A1: Revelação Total do Diagnóstico -->
+            <tr>
+                <th scope="row" class="tes-apss__row-category"><span class="eden-u-text-vertical">Revelação Total do
+                        Diagnóstico</span></th>
+                <th scope="row" class="tes-apss__row-number">A1</th>
+                <th scope="row">Nº de crianças e adolescentes de 8-14 anos que receberam revelação total do diagnóstico
+                    <span class="tes-apss__period-text">durante o trimestre</span>
+                </th>
+                <td><input type="number" min="0" name="revelacao-diagnostico_0-14_masc"
+                        id="revelacao-diagnostico_0-14_masc" data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" min="0" name="revelacao-diagnostico_0-14_fem"
+                        id="revelacao-diagnostico_0-14_fem" data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" name="revelacao-diagnostico_0-14_total" id="revelacao-diagnostico_0-14_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-0-14"></td>
+                <td class="eden-c-table__cell--na"></td>
+                <td class="eden-c-table__cell--na"></td>
+                <td class="eden-c-table__cell--na"></td>
+                <td><input type="number" name="revelacao-diagnostico_total-geral" id="revelacao-diagnostico_total-geral"
+                        value="0" tabindex="-1" readonly data-eden-total="tot-geral"></td>
+            </tr>
+
+            <!-- B1: Sessões de APSS e PP (Início cuidados HIV / Pré-TARV) -->
+            <tr>
+                <th scope="rowgroup" rowspan="2" class="tes-apss__row-category"><span
+                        class="eden-u-text-vertical">Sessões de APSS e PP</span></th>
+                <th scope="row" class="tes-apss__row-number">B1</th>
+                <th scope="row">Nº de pacientes que iniciou cuidados HIV nesta unidade sanitária <span
+                        class="tes-apss__period-text">durante o trimestre</span> e que receberam aconselhamento Pré-TARV
+                    no mesmo período</th>
+                <td><input type="number" min="0" name="sessoes-pre-tarv_0-14_masc" id="sessoes-pre-tarv_0-14_masc"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" min="0" name="sessoes-pre-tarv_0-14_fem" id="sessoes-pre-tarv_0-14_fem"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" name="sessoes-pre-tarv_0-14_total" id="sessoes-pre-tarv_0-14_total" value="0"
+                        tabindex="-1" readonly data-eden-total="total-0-14"></td>
+                <td><input type="number" min="0" name="sessoes-pre-tarv_15-plus_masc" id="sessoes-pre-tarv_15-plus_masc"
+                        data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" min="0" name="sessoes-pre-tarv_15-plus_fem" id="sessoes-pre-tarv_15-plus_fem"
+                        data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" name="sessoes-pre-tarv_15-plus_total" id="sessoes-pre-tarv_15-plus_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-15-plus"></td>
+                <td><input type="number" name="sessoes-pre-tarv_total-geral" id="sessoes-pre-tarv_total-geral" value="0"
+                        tabindex="-1" readonly data-eden-total="tot-geral"></td>
+            </tr>
+
+            <!-- C1: Sessões de APSS e PP (Activos em TARV / Seguimento de adesão) -->
+            <tr data-eden-row-label-col-index="1">
+                <th scope="row" class="tes-apss__row-number">C1</th>
+                <th scope="row">Nº total de pacientes activos em TARV que receberam seguimento de adesão <span
+                        class="tes-apss__period-text">durante o trimestre</span></th>
+                <td><input type="number" min="0" name="seguimento-adesao_0-14_masc" id="seguimento-adesao_0-14_masc"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" min="0" name="seguimento-adesao_0-14_fem" id="seguimento-adesao_0-14_fem"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" name="seguimento-adesao_0-14_total" id="seguimento-adesao_0-14_total" value="0"
+                        tabindex="-1" readonly data-eden-total="total-0-14"></td>
+                <td><input type="number" min="0" name="seguimento-adesao_15-plus_masc"
+                        id="seguimento-adesao_15-plus_masc" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" min="0" name="seguimento-adesao_15-plus_fem" id="seguimento-adesao_15-plus_fem"
+                        data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" name="seguimento-adesao_15-plus_total" id="seguimento-adesao_15-plus_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-15-plus"></td>
+                <td><input type="number" name="seguimento-adesao_total-geral" id="seguimento-adesao_total-geral"
+                        value="0" tabindex="-1" readonly data-eden-total="tot-geral"></td>
+            </tr>
+
+            <!-- D1: Pacote Completo PP -->
+            <tr>
+                <th scope="row" class="tes-apss__row-category"><span class="eden-u-text-vertical">Pacote Completo
+                        PP</span></th>
+                <th scope="row" class="tes-apss__row-number">D1</th>
+                <th scope="row">Nº de pacientes que iniciou TARV (15/+ anos) nesta unidade sanitária <span
+                        class="tes-apss__period-text">no trimestre anterior</span> e que receberam o pacote completo de
+                    prevenção positiva <span class="tes-apss__period-text">até ao período do reporte</span></th>
+                <td class="eden-c-table__cell--na"></td>
+                <td class="eden-c-table__cell--na"></td>
+                <td class="eden-c-table__cell--na"></td>
+                <td><input type="number" min="0" name="pacote-completo-pp_15-plus_masc"
+                        id="pacote-completo-pp_15-plus_masc" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" min="0" name="pacote-completo-pp_15-plus_fem"
+                        id="pacote-completo-pp_15-plus_fem" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" name="pacote-completo-pp_15-plus_total" id="pacote-completo-pp_15-plus_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-15-plus"></td>
+                <td><input type="number" name="pacote-completo-pp_total-geral" id="pacote-completo-pp_total-geral"
+                        value="0" tabindex="-1" readonly data-eden-total="tot-geral"></td>
+            </tr>
+
+            <!-- E1: Chamadas e Visitas Domiciliares (Referidos) -->
+            <tr>
+                <th scope="rowgroup" rowspan="3" class="tes-apss__row-category"><span
+                        class="eden-u-text-vertical">Chamadas e Visitas Domiciliares</span></th>
+                <th scope="row" class="tes-apss__row-number">E1</th>
+                <th scope="row">Nº de pacientes faltosos e abandonos referidos para chamadas e/ou visitas de
+                    reintegração <span class="tes-apss__period-text">durante o trimestre</span></th>
+                <td><input type="number" min="0" name="faltosos-referidos_0-14_masc" id="faltosos-referidos_0-14_masc"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" min="0" name="faltosos-referidos_0-14_fem" id="faltosos-referidos_0-14_fem"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" name="faltosos-referidos_0-14_total" id="faltosos-referidos_0-14_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-0-14"></td>
+                <td><input type="number" min="0" name="faltosos-referidos_15-plus_masc"
+                        id="faltosos-referidos_15-plus_masc" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" min="0" name="faltosos-referidos_15-plus_fem"
+                        id="faltosos-referidos_15-plus_fem" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" name="faltosos-referidos_15-plus_total" id="faltosos-referidos_15-plus_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-15-plus"></td>
+                <td><input type="number" name="faltosos-referidos_total-geral" id="faltosos-referidos_total-geral"
+                        value="0" tabindex="-1" readonly data-eden-total="tot-geral"></td>
+            </tr>
+
+            <!-- E2: Chamadas e Visitas Domiciliares (Contactados/encontrados) -->
+            <tr data-eden-row-label-col-index="1">
+                <th scope="row" class="tes-apss__row-number">E2</th>
+                <th scope="row">Nº de pacientes faltosos e abandonos contactados e/ou encontrados <span
+                        class="tes-apss__period-text">durante o trimestre</span> (dos referidos no mesmo período)</th>
+                <td><input type="number" min="0" name="faltosos-contactados_0-14_masc"
+                        id="faltosos-contactados_0-14_masc" data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" min="0" name="faltosos-contactados_0-14_fem" id="faltosos-contactados_0-14_fem"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" name="faltosos-contactados_0-14_total" id="faltosos-contactados_0-14_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-0-14"></td>
+                <td><input type="number" min="0" name="faltosos-contactados_15-plus_masc"
+                        id="faltosos-contactados_15-plus_masc" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" min="0" name="faltosos-contactados_15-plus_fem"
+                        id="faltosos-contactados_15-plus_fem" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" name="faltosos-contactados_15-plus_total"
+                        id="faltosos-contactados_15-plus_total" value="0" tabindex="-1" readonly
+                        data-eden-total="total-15-plus"></td>
+                <td><input type="number" name="faltosos-contactados_total-geral" id="faltosos-contactados_total-geral"
+                        value="0" tabindex="-1" readonly data-eden-total="tot-geral"></td>
+            </tr>
+
+            <!-- E3: Chamadas e Visitas Domiciliares (Retornaram à US) -->
+            <tr data-eden-row-label-col-index="1">
+                <th scope="row" class="tes-apss__row-number">E3</th>
+                <th scope="row">Nº de pacientes faltosos e abandonos que retornaram à unidade sanitária <span
+                        class="tes-apss__period-text">durante o trimestre</span> (dos contactados e/ou encontrados no
+                    mesmo período)</th>
+                <td><input type="number" min="0" name="faltosos-retornaram_0-14_masc" id="faltosos-retornaram_0-14_masc"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" min="0" name="faltosos-retornaram_0-14_fem" id="faltosos-retornaram_0-14_fem"
+                        data-eden-group="total-0-14 tot-geral"></td>
+                <td><input type="number" name="faltosos-retornaram_0-14_total" id="faltosos-retornaram_0-14_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-0-14"></td>
+                <td><input type="number" min="0" name="faltosos-retornaram_15-plus_masc"
+                        id="faltosos-retornaram_15-plus_masc" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" min="0" name="faltosos-retornaram_15-plus_fem"
+                        id="faltosos-retornaram_15-plus_fem" data-eden-group="total-15-plus tot-geral"></td>
+                <td><input type="number" name="faltosos-retornaram_15-plus_total" id="faltosos-retornaram_15-plus_total"
+                        value="0" tabindex="-1" readonly data-eden-total="total-15-plus"></td>
+                <td><input type="number" name="faltosos-retornaram_total-geral" id="faltosos-retornaram_total-geral"
+                        value="0" tabindex="-1" readonly data-eden-total="tot-geral"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer class="tes-c-footer tes-apss__footer">
+        <div class="tes-c-footer__area tes-c-footer__area--left tes-c-footer__area--stack">
+            <label for="elaborado">Elaborado por (Nome)</label>
+            <input type="text" name="elaborado" id="elaborado" class="tes-c-footer__input" autocomplete="off">
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--center tes-c-footer__area--stack">
+            <label for="assinatura">Assinatura</label>
+            <input type="text" name="assinatura" id="assinatura" class="tes-c-footer__input" autocomplete="off">
+        </div>
+        <div class="tes-c-footer__area tes-c-footer__area--right tes-c-footer__area--stack">
+            <label for="data-elaboracao">Data de Elaboração (DD/MM/AA)</label>
+            <input type="date" name="data-elaboracao" id="data-elaboracao"
+                class="tes-c-footer__input tes-c-footer__input--date">
+        </div>
+    </footer>
+
+    <div class="tes-apss__footer-note">
+        <p><strong>NOTA:</strong> Normas de preenchimento do Resumo Trimestral no verso.</p>
+    </div>
+
+    <div class="eden-c-notes-editor" data-eden-js="notes-editor">
+        <p id="tes-notes" class="eden-c-notes-editor__content" contenteditable="true"
+            data-eden-placeholder="Adicionar uma nota..." data-eden-js="report-notes"></p>
+    </div>
+</div>
+
+<div class="eden-c-page-footer">
+    <span class="eden-c-page-footer__date"></span>
+    <span>Totalizado via: <a
+            href="https://quinamine.github.io/totalizador-estatistica-saude">quinamine.github.io/totalizador-estatistica-saude</a>
+        - v2.0</span>
+</div>
