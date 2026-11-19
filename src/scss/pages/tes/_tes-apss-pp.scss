@@ -1,0 +1,137 @@
+@use '../../abstracts/' as *;
+
+.tes-apss {
+    font-size: var(--eden-sys-font-size-200);
+
+    @media print {
+        font-size: var(--eden-sys-font-size-300);
+    }
+
+    .tes-c-gov__info {
+        font-size: 0.5625rem;
+        line-height: var(--eden-sys-line-height-heading);
+    }
+
+    &__header-row {
+        display: flex;
+        gap: 132px;
+    }
+
+    &__title-block {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-size: var(--eden-sys-font-size-400);
+        text-transform: uppercase;
+        text-align: center;
+        line-height: var(--eden-sys-line-height-heading);
+    }
+
+    &__model-code {
+        font-weight: var(--eden-sys-font-weight-bold);
+    }
+
+    &__meta-grid {
+        display: grid;
+        grid-template-columns: 186px 219px 260px 66px;
+        margin-block: var(--eden-sys-space-200);
+        padding-left: 95px;
+    }
+
+    &__meta-group {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: var(--eden-sys-space-100);
+
+        input {
+            border: 1px solid var(--eden-sys-border-color);
+            height: var(--eden-sys-space-600);
+            text-align: center;
+        }
+
+        &:not(:last-of-type) {
+            input {
+                border-right: none;
+            }
+        }
+    }
+
+    &__axis-indicator--horizontal {
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--eden-sys-space-200);
+    }
+
+    &__reporting-period {
+        padding-inline: var(--eden-sys-space-400);
+
+        input {
+            margin-top: var(--eden-sys-space-150);
+            font-weight: var(--eden-sys-font-weight-regular);
+            text-align: center;
+
+            &:placeholder-shown {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__row-number {
+        font-weight: var(--eden-sys-font-weight-bold);
+    }
+
+    &__period-text {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        font-style: italic;
+    }
+
+    thead {
+        th {
+            line-height: var(--eden-sys-line-height-heading);
+        }
+    }
+
+    tbody {
+        th[scope="row"] {
+            line-height: var(--eden-sys-line-height-body);
+            padding-block: var(--eden-sys-space-300);
+        }
+    }
+
+    &__footer-note {
+        margin-top: var(--eden-sys-space-500);
+        display: none;
+
+        @media print {
+            display: block;
+        }
+    }
+
+    &__footer {
+        padding-left: 95px;
+
+        .tes-c-footer__area {
+            gap: var(--eden-sys-space-200);
+        }
+
+        input {
+            text-align: center;
+        }
+    }
+
+    @media print {
+        label {
+            font-weight: var(--eden-sys-font-weight-bold);
+        }
+
+        .eden-c-table__cell--na {
+            background-color: #9b9e9f;
+            background-color: oklch(0.65 0.01 var(--eden-ref-primary-hue)) !important;
+        }
+    }
+}

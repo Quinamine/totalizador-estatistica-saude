@@ -26,7 +26,7 @@ Este repositório está em desenvolvimento activo.
 - [x] **Fase 2:** Desenvolvimento da lógica de injecção de módulos.
 - [ ] **Fase 3:** Implementação individual dos 28 totalizadores.
 
-### 📊 Progresso dos Totalizadores (25/28):
+### 📊 Progresso dos Totalizadores (26/28):
 
 #### Consultas
 - [x] RM Consultas Externas
@@ -50,7 +50,7 @@ Este repositório está em desenvolvimento activo.
 - [x] RM PrEP 
 - [x] RM DAH 
 - [ ] RM ITS 
-- [ ] RT APSS/PP
+- [x] RT APSS/PP
 
 #### Tuberculose
 - [x] PNCT Provisório 
