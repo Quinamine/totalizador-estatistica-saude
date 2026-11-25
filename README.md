@@ -49,7 +49,7 @@ Este repositório está em desenvolvimento activo.
 - [x] RM HIV/SIDA 
 - [x] RM PrEP 
 - [x] RM DAH 
-- [ ] RM ITS 
+- [x] RM ITS 
 - [x] RT APSS/PP
 
 #### Tuberculose
