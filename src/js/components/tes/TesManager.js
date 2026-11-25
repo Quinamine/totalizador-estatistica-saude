@@ -3,6 +3,7 @@ import { EdenToast } from "./../eden/EdenToast.js";
 import { EdenSpinner } from "./../eden/EdenSpinner.js";
 import { EDEN_PAGES_WITHOUT_TOOLBAR } from '../../constants/eden-pages-without-toolbar.config.js';
 import { EdenStringFormatter } from "./../eden/EdenStringFormatter.js";
+import { TesItsComparison } from './../tes/TesItsComparison.js';
 
 export const TesManager = {
     activeReportId: '',
@@ -30,6 +31,7 @@ export const TesManager = {
     init() {
         this.cacheElements();
         this.bindEvents();
+        TesItsComparison.init();
     },
 
     cacheElements() {

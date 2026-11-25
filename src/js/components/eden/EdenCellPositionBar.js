@@ -53,15 +53,18 @@ export const EdenCellPositionBar = {
             document.querySelector(`[data-eden-row-category-label="${rowCategoryId}"]`);
 
         const thOffset = tr.querySelectorAll('th').length;
-        const tdOffset = Array.from(tr.children).filter( el =>
-            el.tagName === 'TD' && el.cellIndex < rowLabel.cellIndex && !el.querySelector('input')
+        const tdOffset = Array.from(tr.children).filter(el =>
+            el.tagName === 'TD' && 
+            el.cellIndex < td.cellIndex &&
+            !el.classList.contains('eden-c-table__cell--na') &&
+            !el.querySelector('input')
         ).length;
-        
+
         let colId = td.dataset.edenColLabelIndex ?? (td.cellIndex - thOffset - tdOffset) + 1;
 
         const isDahModule = table.closest('div.tes-dah');
-        const hasTdSpacer = Array.from(tr.children).some( el => el.matches('.eden-u-cell-spacer'));
-        if(isDahModule && hasTdSpacer) {
+        const hasTdSpacer = Array.from(tr.children).some(el => el.matches('.eden-u-cell-spacer'));
+        if (isDahModule && hasTdSpacer) {
             colId = Number(colId) - 1;
         }
 
@@ -72,13 +75,30 @@ export const EdenCellPositionBar = {
         // NUTRITION MODULE 
         const isNutritionModule = table.closest('div.tes-nutricao');
         const isFormulaInput = field.closest('div.tes-nutricao__grid-formula');
-        if(isNutritionModule && isFormulaInput) {
+        if (isNutritionModule && isFormulaInput) {
             rowLabel = field.previousElementSibling ? field.previousElementSibling : null;
 
-            if(tr?.dataset?.edenRowCategoryId === "desparasitacao") {
+            if (tr?.dataset?.edenRowCategoryId === "desparasitacao") {
                 complementaryLabel = tr.children[0];
             }
         }
+
+        // ITS MODULE
+        const isItsModule = table.closest('div.tes-its');
+        if (isItsModule) {
+            const compEls = table.querySelectorAll(`[data-eden-complementary-label~="c${colId}"]`);
+            if (compEls.length > 0) {
+                const combinedText = Array.from(compEls)
+                    .map(el => (el.textContent || '').replace(/\s+/g, ' ').trim())
+                    .filter(Boolean)
+                    .join(', ');
+
+                complementaryLabel = { textContent: combinedText, innerText: combinedText };
+            } else {
+                complementaryLabel = null;
+            }
+        }
+
 
         // ATS MODULE
         const isAtsModule = table.closest('div.tes-ats');
@@ -92,7 +112,7 @@ export const EdenCellPositionBar = {
             }
 
             colLabel = document.querySelector(`[data-eden-col-label~="c${colId}"]`)
-            
+
         }
 
         let labels = isAtsModule
