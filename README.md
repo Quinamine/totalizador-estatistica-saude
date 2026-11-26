@@ -1,70 +1,18 @@
 # TES - Totalizador de Estatística de Saúde
 
-Este projeto consiste numa plataforma modular desenhada para centralizar **28 ferramentas independentes de cálculo e totalização de resumos mensais e trimestrais**, cujas lógicas e estruturas são baseadas nas fichas oficiais do Sistema Nacional de Saúde de Moçambique.
+Plataforma web modular desenhada para centralizar ferramentas de cálculo e totalização de resumos estatísticos (mensais e trimestrais), estruturadas a partir das fichas oficiais do Sistema Nacional de Saúde de Moçambique.
 
-## 🚀 Diferenciais Técnicos
+## 🚀 Arquitetura e Diferenciais Técnicos
 
-- **Arquitetura Shell & Core:** O portal funciona como um hospedeiro que gere o carregamento dinâmico de módulos autónomos, garantindo que a lógica de uma ficha (ex: Malária) não interfira noutra (ex: Consultas Externas).
-
-- **Design Adaptativo Dinâmico:** Interface optimizada para uso no mobile com barra de acções inferior, e uso no desktop com barra de ferramentas superior.
-
-- **Precisão de Dados:** Ajuda a evitar falhas de cálculo dos totais.
-
-- **CSS Moderno:** Estilização baseada em tokens com suporte a `OKLCH` e fallback para navegadores legados.
+- **App Shell e Carregamento Dinâmico:** Funciona como um hospedeiro que carrega módulos de forma dinâmica por rota (`?page=`), isolando a lógica e o estado de cada ficha para evitar interferências entre módulos.
+- **Funcionamento Offline e Persistência Local:** Concebido para operar no navegador com persistência local de dados (`localStorage`), apoiando o trabalho em contextos com conectividade limitada ou intermitente.
+- **Design Adaptativo e Impressão:** Interface pensada para uso móvel e desktop, com suporte a layouts de impressão configurados para as fichas.
+- **CSS Moderno e Modular:** Estilização baseada em tokens e arquitetura SASS modular, com uso de `OKLCH` e *fallback* para navegadores legados.
 
 ## 🛠️ Stack Tecnológica
 
-- **Linguagem:** HTML5 e Vanilla JavaScript (ES6+).
-- **Estilização:** SASS (Arquitetura Modular).
-- **Cores:** Sistema de cores OKLCH com Progressive Enhancement.
-- **Workflow:** Git com padrão de Conventional Commits.
-
-## 📈 Status do Projeto
-
-Este repositório está em desenvolvimento activo. 
-- [x] **Fase 1:** Implementação do App Shell (Header, Navegação e Action Bar).
-- [x] **Fase 2:** Desenvolvimento da lógica de injecção de módulos.
-- [ ] **Fase 3:** Implementação individual dos 28 totalizadores.
-
-### 📊 Progresso dos Totalizadores (27/28):
-
-#### Consultas
-- [x] RM Consultas Externas
-- [x] RM CCD
-- [x] RM Malária
-- [x] RM SAAJ
-
-#### Farmácia
-- [x] Requisição/Balancete
-- [ ] Mapa de Caixa
-
-#### Nutrição
-- [x] RM Nutrição
-- [x] RM TDA 1 
-- [x] RM TDA 2
-- [x] RM TDI
-
-#### ITS/HIV
-- [x] RM ATS 
-- [x] RM HIV/SIDA 
-- [x] RM PrEP 
-- [x] RM DAH 
-- [x] RM ITS 
-- [x] RT APSS/PP
-
-#### Tuberculose
-- [x] PNCT Provisório 
-- [x] PNCT 01A 
-- [x] PNCT 07 
-- [x] PNCT IC-10A 
-- [x] PNCT R05 
-- [x] PNCT R06 
-- [x] PNCT R07 
-- [x] PNCT 08 
-- [x] PNCT 09 
-- [x] PNCT APSS 11A 
-- [x] PNCT 12 
-- [x] PNCT 14D
-
-
+- **Marcação e Estrutura:** HTML5 semântico.
+- **Lógica:** Vanilla JavaScript (ES6 Modules).
+- **Estilização:** SASS modular.
+- **Controle de Versão:** Git com padrão de Conventional Commits.
 
