@@ -21,9 +21,11 @@
     }
 
     &--ic-10a {
-        thead {
-            th {
-                font-weight: var(--eden-sys-font-weight-regular);
+        th {
+            font-weight: var(--eden-sys-font-weight-regular);
+            
+            @media print {
+                line-height: 1.105;
             }
         }
     }
